@@ -3,7 +3,11 @@ package climbing_stairs;
 import java.lang.Math;
 
 public class ClimbingStairs {
-
+    /*
+        Climbing Stairs
+        https://leetcode.com/problems/climbing-stairs/
+        Difficulty: Easy
+     */
     public class Solution {
         public int climbStairs(int n) {
             int f1 = 1;
@@ -15,8 +19,10 @@ public class ClimbingStairs {
             }
             return f2;
         }
+    }
 
-        public int climbStairs2(int n) {
+    public class Solution_2 {
+        public int climbStairs(int n) {
             double s = Math.sqrt(5);
             return (int) ((Math.pow((1 + s) / 2, n + 1) - Math.pow((1 - s) / 2, n + 1)) / s + 0.5);
         }

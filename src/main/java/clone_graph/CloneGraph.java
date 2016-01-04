@@ -7,16 +7,20 @@ import java.util.List;
 import common.UndirectedGraphNode;
 
 public class CloneGraph {
-
+    /*
+        Clone Graph
+        https://leetcode.com/problems/clone-graph/
+        Difficulty: Medium
+     */
     public class Solution {
         private UndirectedGraphNode cloneGraph(UndirectedGraphNode node,
-                                               HashMap<UndirectedGraphNode, UndirectedGraphNode> nodes) {
+                                               HashMap<UndirectedGraphNode, UndirectedGraphNode> map) {
             UndirectedGraphNode newNode = new UndirectedGraphNode(node.label);
-            nodes.put(node, newNode);
+            map.put(node, newNode);
             for (UndirectedGraphNode neighbor : node.neighbors) {
-                UndirectedGraphNode newNeighbor = nodes.get(neighbor);
+                UndirectedGraphNode newNeighbor = map.get(neighbor);
                 if (newNeighbor == null) {
-                    newNeighbor = cloneGraph(neighbor, nodes);
+                    newNeighbor = cloneGraph(neighbor, map);
                 }
                 newNode.neighbors.add(newNeighbor);
             }

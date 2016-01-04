@@ -3,53 +3,65 @@ package sort_list;
 import common.ListNode;
 
 public class SortList {
-
+    /*
+        Sort List
+        https://leetcode.com/problems/sort-list/
+        Difficulty: Medium
+     */
     public class Solution {
-        private ListNode merge(ListNode h1, ListNode h2) {
-            ListNode dummy = new ListNode(0);
-            ListNode prefix = dummy;
-            while (h1 != null || h2 != null) {
-                if (h2 == null || (h1 != null && h1.val < h2.val)) {
-                    prefix.next = h1;
-                    prefix = h1;
-                    h1 = h1.next;
-                } else {
-                    prefix.next = h2;
-                    prefix = h2;
-                    h2 = h2.next;
-                }
-            }
-            return dummy.next;
-        }
-
-        private ListNode sortList(ListNode head, int start, int end,
-                ListNode[] tail) {
-            if (start == end) {
-                tail[0] = head;
-                return null;
-            }
-            if (end - start == 1) {
-                tail[0] = head.next;
-                head.next = null;
+        public ListNode sortList(ListNode head) {
+            if (head == null || head.next == null) {
                 return head;
             }
-            int mid = start + (end - start) / 2;
-            ListNode left = sortList(head, start, mid, tail);
-            ListNode right = sortList(tail[0], mid, end, tail);
-            return merge(left, right);
-        }
 
-        private int len(ListNode head) {
-            int len = 0;
-            while (head != null) {
-                len++;
-                head = head.next;
+            // find the middle point
+            ListNode slow = head;
+            ListNode fast = head;
+
+            while (fast.next != null && fast.next.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
             }
-            return len;
+
+            ListNode leftHead = head;
+            ListNode rightHead = slow.next;
+
+            slow.next = null;
+
+            // recursively merge
+            leftHead = sortList(leftHead);
+            rightHead = sortList(rightHead);
+
+            return merge(leftHead, rightHead);
         }
 
-        public ListNode sortList(ListNode head) {
-            return sortList(head, 0, len(head), new ListNode[1]);
+        private ListNode merge(ListNode leftHead, ListNode rightHead) {
+            ListNode newHead = new ListNode(0);
+            ListNode curr = newHead;
+
+            while (leftHead != null || rightHead != null) {
+                if (leftHead == null) {
+                    curr.next = rightHead;
+                    break;
+                }
+
+                if (rightHead == null) {
+                    curr.next = leftHead;
+                    break;
+                }
+
+                if (leftHead.val <= rightHead.val) {
+                    curr.next = leftHead;
+                    leftHead = leftHead.next;
+                    curr = curr.next;
+                } else {
+                    curr.next = rightHead;
+                    rightHead = rightHead.next;
+                    curr = curr.next;
+                }
+            }
+
+            return newHead.next;
         }
     }
 

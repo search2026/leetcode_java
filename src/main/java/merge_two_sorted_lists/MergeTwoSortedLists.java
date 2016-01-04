@@ -3,45 +3,39 @@ package merge_two_sorted_lists;
 import common.ListNode;
 
 public class MergeTwoSortedLists {
-
+    /*
+        Merge Two Sorted Lists
+        https://leetcode.com/problems/merge-two-sorted-lists/
+        Difficulty: Easy
+     */
     public class Solution {
         public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-            ListNode head = null;
-            ListNode pre = null;
-            while (l1 != null && l2 != null) {
-                if (l1.val <= l2.val) {
-                    if (head == null) {
-                        head = l1;
-                    } else {
-                        pre.next = l1;
-                    }
-                    pre = l1;
-                    l1 = l1.next;
+            if (l1 == null) return l2;
+            else if (l2 == null) return l1;
+
+            ListNode p1 = l1;
+            ListNode p2 = l2;
+            ListNode dummy = new ListNode(0);
+            ListNode p = dummy;
+
+            while (p1 != null && p2 != null) {
+                if (p1.val <= p2.val) {
+                    p.next = p1;
+                    p1 = p1.next;
                 } else {
-                    if (head == null) {
-                        head = l2;
-                    } else {
-                        pre.next = l2;
-                    }
-                    pre = l2;
-                    l2 = l2.next;
+                    p.next = p2;
+                    p2 = p2.next;
                 }
+                p = p.next;
             }
-            if (l1 != null) {
-                if (head == null) {
-                    head = l1;
-                } else {
-                    pre.next = l1;
-                }
+
+            if (p1 != null) {
+                p.next = p1;
+            } else if (p2 != null) {
+                p.next = p2;
             }
-            if (l2 != null) {
-                if (head == null) {
-                    head = l2;
-                } else {
-                    pre.next = l2;
-                }
-            }
-            return head;
+
+            return dummy.next;
         }
     }
 
