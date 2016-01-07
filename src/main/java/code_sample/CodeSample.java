@@ -15,7 +15,7 @@ public class CodeSample {
         @Test
         public void test1() {
             Solution sol = new CodeSample().new Solution();
-        }        
+        }
     }
 }
 
