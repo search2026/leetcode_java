@@ -1,9 +1,12 @@
 package lowest_common_ancestor_of_a_binary_tree;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class LowestCommonAncestorofaBinaryTree {
     /*
@@ -13,25 +16,20 @@ public class LowestCommonAncestorofaBinaryTree {
      */
     public class Solution {
         public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-            if (root == null || root == p || root == q) {
+            if (root == null || root == p || root == q)
                 return root;
-            }
 
-            // Divide
             TreeNode left = lowestCommonAncestor(root.left, p, q);
             TreeNode right = lowestCommonAncestor(root.right, p, q);
 
-            if (left != null && right != null) {
+            if (left != null && right != null)
                 return root;
-            }
 
-            if (left != null) {
+            if (left != null)
                 return left;
-            }
 
-            if (right != null) {
+            if (right != null)
                 return right;
-            }
 
             return null;
         }
@@ -48,8 +46,8 @@ public class LowestCommonAncestorofaBinaryTree {
                 return null;
             }
 
-            List<TreeNode> list1 = new ArrayList<>();
-            List<TreeNode> list2 = new ArrayList<>();
+            List<TreeNode> list1 = new ArrayList<TreeNode>();
+            List<TreeNode> list2 = new ArrayList<TreeNode>();
 
             if (!getPath(root, p, list1)) {
                 return null;
@@ -143,7 +141,11 @@ public class LowestCommonAncestorofaBinaryTree {
 //    }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new LowestCommonAncestorofaBinaryTree().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

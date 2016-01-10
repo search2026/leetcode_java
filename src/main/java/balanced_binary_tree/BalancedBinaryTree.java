@@ -1,9 +1,16 @@
 package balanced_binary_tree;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class BalancedBinaryTree {
-
+    /*
+        Balanced Binary Tree
+        https://leetcode.com/problems/balanced-binary-tree/
+        Difficulty: Easy
+     */
     class Solution {
         private int getBalancedTreeHeight(TreeNode root) {
             if (root == null) {
@@ -25,6 +32,10 @@ public class BalancedBinaryTree {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new BalancedBinaryTree().new Solution();
+            assertTrue(true);
+        }
     }
 }

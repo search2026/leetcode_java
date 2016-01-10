@@ -1,6 +1,9 @@
 package count_complete_tree_nodes;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class CountCompleteTreeNodes {
     /*
@@ -56,6 +59,10 @@ public class CountCompleteTreeNodes {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new CountCompleteTreeNodes().new Solution();
+            assertTrue(true);
+        }
     }
 }

@@ -1,6 +1,13 @@
 package kth_smallest_element_in_a_bst;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class KthSmallestElementinaBST {
     /*
@@ -9,47 +16,61 @@ public class KthSmallestElementinaBST {
         Difficulty: Medium
      */
     public class Solution {
-        private int counter = 0;
-        private boolean found = false;
-        private int val = Integer.MIN_VALUE;
-
+        int counter;
+        int rslt;
         public int kthSmallest(TreeNode root, int k) {
-            if (root == null) {
-                return 0;
-            }
+            if (root == null || k == 0) return 0;
 
-            kthSmallestHelper(root, k);
-
-            return val;
+            counter = k;
+            helper(root);
+            return rslt;
         }
 
-        private void kthSmallestHelper(TreeNode root, int k) {
-            if (root == null) {
+        private void helper(TreeNode root) {
+            if (root == null) return;
+
+            helper(root.left);
+            counter--;
+            if (counter == 0) {
+                rslt = root.val;
                 return;
             }
 
-            if (!found) {
-                kthSmallestHelper(root.left, k);
-            }
-
-            counter++;
-            if (counter == k) {
-                found = true;
-                val = root.val;
-            }
-
-            if (!found) {
-                kthSmallestHelper(root.right, k);
-            }
+            helper(root.right);
         }
     }
 
     /*
-    Kth Smallest Element in a BST
-    https://leetcode.com/problems/kth-smallest-element-in-a-bst/
-    Difficulty: Medium
+        Kth Smallest Element in a BST - Use List/Stack
+        https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+        Difficulty: Medium
+     */
+    public class Solution_2 {
+        public int kthSmallest(TreeNode root, int k) {
+            TreeNode node = root;
+            Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+            int counter = 0;
+            while (!stack.isEmpty() || node != null) {
+                if (node != null) {
+                    stack.addLast(node);
+                    node = node.left;
+                } else {
+                    node = stack.removeLast();
+                    counter++;
+                    if (counter == k) return node.val;
+                    node = node.right;
+                }
+            }
+            return -1;
+        }
+    }
+
+    /*
+        Kth Smallest Element in a BST - Count Number
+        https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+        Difficulty: Medium
     */
-    public class SolutionModifyStructure {
+    public class Solution_3 {
         public int kthSmallest(TreeNode root, int k) {
             if (root == null) {
                 return 0;
@@ -66,15 +87,17 @@ public class KthSmallestElementinaBST {
         }
 
         private int getNumberNodes(TreeNode root) {
-            if (root == null) {
-                return 0;
-            }
+            if (root == null) return 0;
 
             return getNumberNodes(root.left) + getNumberNodes(root.right) + 1;
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new KthSmallestElementinaBST().new Solution();
+            assertTrue(true);
+        }
     }
 }

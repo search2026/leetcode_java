@@ -3,7 +3,7 @@ package binary_tree_longest_consecutive_sequence;
 import common.TreeNode;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class BinaryTreeLongestConsecutiveSequence {
     /*
@@ -13,18 +13,15 @@ public class BinaryTreeLongestConsecutiveSequence {
      */
     public class Solution {
         public int longestConsecutive(TreeNode root) {
-            if (root == null) {
+            if (root == null)
                 return 0;
-            }
             return findLongest(root, 0, root.val - 1);
         }
 
-        private int findLongest(TreeNode root, int length, int preVal) {
-            if (root == null) {
-                return length;
-            }
-            // Check if it is consecutive
-            int currLen = preVal + 1 == root.val ? length + 1 : 1;
+        private int findLongest(TreeNode root, int len, int pre) {
+            if (root == null) return len;
+
+            int currLen = pre + 1 == root.val ? len + 1 : 1;
 
             return Math.max(currLen, Math.max(findLongest(root.left, currLen, root.val), findLongest(root.right, currLen, root.val)));
         }
@@ -34,6 +31,7 @@ public class BinaryTreeLongestConsecutiveSequence {
         @Test
         public void test1() {
             Solution sol = new BinaryTreeLongestConsecutiveSequence().new Solution();
+            assertTrue(true);
         }
     }
 }

@@ -1,8 +1,12 @@
 package verify_preorder_sequence_in_binary_search_tree;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+
+import static org.junit.Assert.assertTrue;
 
 public class VerifyPreorderSequenceinBinarySearchTree {
     /*
@@ -98,6 +102,10 @@ public class VerifyPreorderSequenceinBinarySearchTree {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new VerifyPreorderSequenceinBinarySearchTree().new Solution();
+            assertTrue(true);
+        }
     }
 }

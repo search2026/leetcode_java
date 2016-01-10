@@ -1,37 +1,44 @@
 package construct_binary_tree_from_preorder_and_inorder_traversal;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import common.TreeNode;
+import org.junit.Test;
+
+import java.util.HashMap;
+
+import static org.junit.Assert.assertTrue;
 
 public class ConstructBinaryTreefromPreorderandInorderTraversal {
 
     public class Solution {
-        private TreeNode buildTree(int[] preorder, int b1,
-                Map<Integer, Integer> inorderNodes, int b2, int len) {
-            if (len == 0) {
+        public TreeNode helper(int[] postorder, int posL, int posR, int[] inorder, int inL, int inR, HashMap<Integer, Integer> map) {
+            if (posL > posR || inL > inR) {
                 return null;
             }
-            TreeNode node = new TreeNode(preorder[b1]);
-            int i = inorderNodes.get(node.val);
-            node.left = buildTree(preorder, b1 + 1, inorderNodes, b2, i - b2);
-            node.right = buildTree(preorder, b1 + 1 + i - b2, inorderNodes,
-                    i + 1, len - i + b2 - 1);
-            return node;
+            TreeNode root = new TreeNode(postorder[posR]);
+            int index = map.get(postorder[posR]);
+            root.left = helper(postorder, posL, posL + index - 1 - inL, inorder, inL, index - 1, map);
+            root.right = helper(postorder, posL + index - inL, posR - 1, inorder, index + 1, inR, map);
+            return root;
         }
 
-        public TreeNode buildTree(int[] preorder, int[] inorder) {
-            assert (preorder != null && inorder != null && preorder.length == inorder.length);
-            Map<Integer, Integer> inorderNodes = new HashMap<Integer, Integer>();
-            for (int i = 0; i < inorder.length; i++) {
-                inorderNodes.put(inorder[i], i);
+        public TreeNode buildTree(int[] inorder, int[] postorder) {
+            if (inorder.length == 0 || postorder.length == 0 || inorder.length != postorder.length) {
+                return null;
             }
-            return buildTree(preorder, 0, inorderNodes, 0, inorder.length);
+            int len = inorder.length;
+            HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+            for (int i = 0; i < inorder.length; i++) {
+                map.put(inorder[i], i);
+            }
+            return helper(postorder, 0, len - 1, inorder, 0, len - 1, map);
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ConstructBinaryTreefromPreorderandInorderTraversal().new Solution();
+            assertTrue(true);
+        }
     }
 }

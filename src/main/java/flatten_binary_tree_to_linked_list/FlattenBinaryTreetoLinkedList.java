@@ -1,9 +1,16 @@
 package flatten_binary_tree_to_linked_list;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class FlattenBinaryTreetoLinkedList {
-
+    /*
+        Flatten Binary Tree to Linked List
+        https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+        Difficulty: Medium
+     */
     public class Solution {
         private TreeNode flattenTree(TreeNode root) {
             if (root == null) {
@@ -29,6 +36,10 @@ public class FlattenBinaryTreetoLinkedList {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new FlattenBinaryTreetoLinkedList().new Solution();
+            assertTrue(true);
+        }
     }
 }

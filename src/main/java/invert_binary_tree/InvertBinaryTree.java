@@ -2,6 +2,9 @@ package invert_binary_tree;
 
 import java.util.*;
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class InvertBinaryTree {
     /*
@@ -25,6 +28,10 @@ public class InvertBinaryTree {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new InvertBinaryTree().new Solution();
+            assertTrue(true);
+        }
     }
 }

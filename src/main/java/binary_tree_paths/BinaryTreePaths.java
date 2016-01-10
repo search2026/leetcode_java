@@ -1,9 +1,12 @@
 package binary_tree_paths;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class BinaryTreePaths {
     /*
@@ -13,58 +16,34 @@ public class BinaryTreePaths {
      */
     public class Solution {
         public List<String> binaryTreePaths(TreeNode root) {
-            List<String> result = new ArrayList<>();
-
-            if (root == null) {
-                return result;
-            }
-
-            List<Integer> curr = new ArrayList<>();
-
-            binaryTreePathsHelper(root, curr, result);
-
-            return result;
+            List<String> rslt = new ArrayList<String>();
+            if (root == null) return rslt;
+            helper(root, rslt, "");
+            return rslt;
         }
 
-        private void binaryTreePathsHelper(TreeNode root, List<Integer> curr, List<String> result) {
-            if (root == null) {
-                return;
-            }
-
-            curr.add(root.val);
-
-            // If is the leaf
+        public void helper(TreeNode root, List<String> rslt, String item) {
             if (root.left == null && root.right == null) {
-                StringBuffer sb = new StringBuffer();
-                if (curr.size() == 1) {
-                    sb.append(curr.get(0));
-                    result.add(sb.toString());
+                if (item.length() == 0) {
+                    rslt.add("" + root.val);
                 } else {
-                    for (int i = 0; i < curr.size() - 1; i++) {
-                        sb.append(curr.get(i));
-                        sb.append("->");
-                    }
-
-                    sb.append(curr.get(curr.size() - 1));
-                    result.add(sb.toString());
+                    rslt.add(item + "->" + root.val);
                 }
-
                 return;
             }
+            if (root.left != null)
+                helper(root.left, rslt, item.length()==0? ""+root.val : item+"->"+root.val);
+            if (root.right != null)
+                helper(root.right, rslt, item.length()==0? ""+root.val : item+"->"+root.val);
 
-            if (root.left != null) {
-                binaryTreePathsHelper(root.left, curr, result);
-                curr.remove(curr.size() - 1);
-            }
-
-            if (root.right != null) {
-                binaryTreePathsHelper(root.right, curr, result);
-                curr.remove(curr.size() - 1);
-            }
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new BinaryTreePaths().new Solution();
+            assertTrue(true);
+        }
     }
 }

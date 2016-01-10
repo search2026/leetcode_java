@@ -1,9 +1,16 @@
 package populating_next_right_pointers_in_each_node;
 
 import common.TreeLinkNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class PopulatingNextRightPointersinEachNode {
-
+    /*
+        Populating Next Right Pointers in Each Node
+        https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+        Difficulty: Medium
+     */
     public class Solution {
         public void connect(TreeLinkNode root) {
             TreeLinkNode leftMost = root;
@@ -21,9 +28,15 @@ public class PopulatingNextRightPointersinEachNode {
                 leftMost = leftMost.left;
             }
         }
+    }
 
-        // Populating Next Right Pointers in Each Node
-        public void connectII(TreeLinkNode root) {
+    /*
+        Populating Next Right Pointers in Each Node II
+        https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
+        Difficulty: Hard
+     */
+    public class Solution_2 {
+        public void connect(TreeLinkNode root) {
             TreeLinkNode leftMost = root;
             while (leftMost != null) {
                 TreeLinkNode p = leftMost;
@@ -55,6 +68,10 @@ public class PopulatingNextRightPointersinEachNode {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new PopulatingNextRightPointersinEachNode().new Solution();
+            assertTrue(true);
+        }
     }
 }

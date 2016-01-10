@@ -54,6 +54,7 @@ public class InorderSuccessorinBST {
         @Test
         public void test1() {
             Solution sol = new InorderSuccessorinBST().new Solution();
+            assertTrue(true);
         }
     }
 }
