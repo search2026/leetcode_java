@@ -81,6 +81,7 @@ public class ${className} {
         @Test
         public void test1() {
             Solution sol = new ${className}().new Solution();
+            assertEquals(1, 1);
         }        
     }
 }
