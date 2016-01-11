@@ -17,7 +17,7 @@ public class GraphValidTree {
             for (int i = 0; i < n; i++)
                 adjList.add(i, new ArrayList<Integer>());
 
-            // add edges
+            // update edges
             for (int i = 0; i < edges.length; i++) {
                 int u = edges[i][0], v = edges[i][1];
                 adjList.get(u).add(v);

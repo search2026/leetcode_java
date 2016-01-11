@@ -19,7 +19,7 @@ public class TheSkylineProblem {
 
             List<Edge> edges = new ArrayList<Edge>();
 
-            // add all left/right edges
+            // update all left/right edges
             for (int[] building : buildings) {
                 Edge startEdge = new Edge(building[0], building[2], true);
                 edges.add(startEdge);

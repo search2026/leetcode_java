@@ -1,7 +1,7 @@
 package range_sum_query_mutable;
 
 import org.junit.Test;
-
+import common.SegmentTreeNode;
 import static org.junit.Assert.assertEquals;
 
 public class RangeSumQueryMutable {
@@ -21,8 +21,8 @@ public class RangeSumQueryMutable {
             update(root, i, val);
         }
 
-        public int sumRange(int i, int j) {
-            return sumRange(root, i, j);
+        public int sumRange(long i, long j) {
+            return (int)sumRange(root, i, j);
         }
 
         public SegmentTreeNode buildTree(int[] nums, int start, int end) {
@@ -30,52 +30,36 @@ public class RangeSumQueryMutable {
             else {
                 SegmentTreeNode cur = new SegmentTreeNode(start, end);
                 if (start == end) {
-                    cur.sum = nums[start];
+                    cur.val = nums[start];
                 } else {
                     int mid = start + (end - start) / 2;
                     cur.left = buildTree(nums, start, mid);
                     cur.right = buildTree(nums, mid + 1, end);
-                    cur.sum = cur.left.sum + cur.right.sum;
+                    cur.val = cur.left.val + cur.right.val;
                 }
                 return cur;
             }
         }
 
-        public void update(SegmentTreeNode root, int i, int val) {
+        public void update(SegmentTreeNode root, long i, long val) {
             if (root.start == root.end) { //leaf node
-                root.sum = val;
+                root.val = val;
                 return;
             }
-            int mid = root.start + (root.end - root.start) / 2;
+            long mid = root.start + (root.end - root.start) / 2;
             if (i <= mid) update(root.left, i, val);
             else update(root.right, i, val);
-            root.sum = root.left.sum + root.right.sum;
+            root.val = root.left.val + root.right.val;
         }
 
-        public int sumRange(SegmentTreeNode root, int i, int j) {
-            if (i == root.start && j == root.end) return root.sum;
+        public long sumRange(SegmentTreeNode root, long i, long j) {
+            if (i == root.start && j == root.end) return root.val;
             else {
-                int mid = root.start + (root.end - root.start) / 2;
+                long mid = root.start + (root.end - root.start) / 2;
                 if (j <= mid) return sumRange(root.left, i, j);
                 else if (i >= mid + 1) return sumRange(root.right, i, j);
                 else
                     return sumRange(root.left, i, mid) + sumRange(root.right, mid + 1, j);
-            }
-        }
-
-        public class SegmentTreeNode {
-            int sum;
-            int start;
-            int end;
-            SegmentTreeNode left;
-            SegmentTreeNode right;
-
-            public SegmentTreeNode(int start, int end) {
-                this.sum = 0;
-                this.start = start;
-                this.end = end;
-                this.left = null;
-                this.right = null;
             }
         }
     }

@@ -1,5 +1,6 @@
 package count_of_smaller_numbers_after_self;
 
+import common.SegmentTreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -101,106 +102,167 @@ public class CountofSmallerNumbersAfterSelf {
         Difficulty: Hard
     */
     public class Solution_3 {
-        public class segmentTreeNode {
-            int start, end, count;
-            segmentTreeNode left, right;
+//       public List<Integer> countSmaller(int[] nums) {
+//            List<Integer> rslt = new ArrayList<Integer>();
+//           if (nums == null || nums.length ==0) return rslt;
+//
+//            int min = nums[0];
+//            for (int i : nums) {
+//                min = Math.min(min, i);
+//            }
+//            // port inputs to [0, max]
+//            if (min != 0) {
+//                for (int i = 0; i < nums.length; i++)
+//                    nums[i] -= min;
+//            }
+//
+//            int max = nums[0];
+//            for (int i : nums) {
+//                max = Math.max(max, i);
+//            }
+//            // Initialize segment tree with [0, max] and 0 value
+//            SegmentTreeNode root = build(0, max);
+//            // Update segment tree with actual value
+//            for (int i : nums) {
+//                update(root, i);
+//            }
+//
+//            for (int i : nums) {
+//                remove(root, i);
+//                rslt.add(query(root, 0, i));
+//            }
+//
+//            return rslt;
+//        }
+//
+//        public SegmentTreeNode build(int left, int right) {
+//            if (left > right) return null;
+//            if (left == right) return new SegmentTreeNode(left, right);
+//            int mid = left + (right - left) / 2;
+//            SegmentTreeNode root = new SegmentTreeNode(left, right);
+//            root.left = build(left, mid);
+//            root.right = build(mid + 1, right);
+//            root.val = root.left.val + root.right.val;
+//            return root;
+//        }
+//
+//        public int query(SegmentTreeNode root, int start, int end) {
+//            if (root == null) return 0;
+//            if (root.start == start && root.end == end) return root.val;
+//            int mid = (root.start + root.end) / 2;
+//            if (end < mid) {
+//                return query(root.left, start, end);
+//            } else if (start > end) {
+//                return query(root.right, start, end);
+//            } else {
+//                return query(root.left, start, mid) + query(root.right, mid + 1, end);
+//            }
+//        }
+//
+//        public void update(SegmentTreeNode root, int val) {
+//            if (root == null || root.start > val || root.end < val) return;
+//            if (root.start == val && root.end == val) {
+//                root.val++;
+//                return;
+//            }
+//            int mid = (root.start + root.end) / 2;
+//            if (val <= mid) {
+//                update(root.left, val);
+//            } else {
+//                update(root.right, val);
+//            }
+//            root.val = root.left.val + root.right.val;
+//        }
+//
+//        public void remove(SegmentTreeNode root, int val) {
+//            if (root == null || root.start > val || root.end < val) return;
+//            if (root.start == val && root.end == val) {
+//                root.val--;
+//                return;
+//            }
+//            int mid = (root.start + root.end) / 2;
+//            if (val <= mid) {
+//                remove(root.left, val);
+//            } else {
+//                remove(root.right, val);
+//            }
+//            root.val = root.left.val + root.right.val;
+//        }
 
-            segmentTreeNode(int start, int end, int count) {
-                this.start = start;
-                this.end = end;
-                this.count = count;
-                left = null;
-                right = null;
+        SegmentTreeNode root = null;
+
+        public SegmentTreeNode buildTree(int[] nums, int left, int right) {
+            SegmentTreeNode root = new SegmentTreeNode(left, right);
+            if (left != right) {
+                int mid = left + (right - left) / 2;
+                root.left = buildTree(nums, left, mid);
+                root.right = buildTree(nums, mid + 1, right);
+            }
+            return root;
+        }
+
+        private void update(SegmentTreeNode root, long i, long val) {
+            if (root.start == root.end) {
+                root.val += 1;
+            } else {
+                long mid = root.start + (root.end - root.start) / 2;
+                if (i <= mid) {
+                    update(root.left, i, val);
+                } else {
+                    update(root.right, i, val);
+                }
+                root.val = root.left.val + root.right.val;
+            }
+        }
+
+        private long query(SegmentTreeNode root, long i, long j) {
+            if (root.start == i && root.end == j) {
+                return root.val;
+            } else {
+                long mid = root.start + (root.end - root.start) / 2;
+                if (j <= mid) {
+                    return query(root.left, i, j);
+                } else if (i > mid) {
+                    return query(root.right, i, j);
+                } else {
+                    return query(root.left, i, root.left.end) + query(root.right, root.right.start, j);
+                }
             }
         }
 
         public List<Integer> countSmaller(int[] nums) {
-            List<Integer> result = new ArrayList<Integer>();
+            List<Integer> rslt = new ArrayList<Integer>();
+            if (nums == null) return rslt;
 
-            int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
-            for (int i : nums) {
-                min = Math.min(min, i);
+            int n = nums.length;
+            if (n <= 0) return rslt;
 
-            }
-            if (min < 0) {
-                for (int i = 0; i < nums.length; i++) {
-                    nums[i] -= min;//deal with negative numbers, seems a dummy way
-                }
-            }
-            for (int i : nums) {
-                max = Math.max(max, i);
-            }
-            segmentTreeNode root = build(0, max);
+            // map input to sorted order. How about duplicates?
+            int[] tmp = nums.clone();
+            Arrays.sort(tmp);
             for (int i = 0; i < nums.length; i++) {
-                add(root, nums[i]);
+                nums[i] = Arrays.binarySearch(tmp, nums[i]) + 1;
             }
-            for (int i = 0; i < nums.length; i++) {
-                remove(root, nums[i]);
-                result.add(query(root, 0, nums[i] - 1));
-            }
-            return result;
-        }
 
-        public segmentTreeNode build(int start, int end) {
-            if (start > end) return null;
-            if (start == end) return new segmentTreeNode(start, end, 0);
-            int mid = (start + end) / 2;
-            segmentTreeNode root = new segmentTreeNode(start, end, 0);
-            root.left = build(start, mid);
-            root.right = build(mid + 1, end);
-            root.count = root.left.count + root.right.count;
-            return root;
-        }
-
-        public int query(segmentTreeNode root, int start, int end) {
-            if (root == null) return 0;
-            if (root.start == start && root.end == end) return root.count;
-            int mid = (root.start + root.end) / 2;
-            if (end < mid) {
-                return query(root.left, start, end);
-            } else if (start > end) {
-                return query(root.right, start, end);
-            } else {
-                return query(root.left, start, mid) + query(root.right, mid + 1, end);
+            root = buildTree(nums, 0, nums.length);
+            for (int i = nums.length - 1; i >= 0; i--) {
+                rslt.add(0, (int)query(root, 0, nums[i] - 1));
+                update(root, nums[i], 1);
             }
-        }
-
-        public void add(segmentTreeNode root, int val) {
-            if (root == null || root.start > val || root.end < val) return;
-            if (root.start == val && root.end == val) {
-                root.count++;
-                return;
-            }
-            int mid = (root.start + root.end) / 2;
-            if (val <= mid) {
-                add(root.left, val);
-            } else {
-                add(root.right, val);
-            }
-            root.count = root.left.count + root.right.count;
-        }
-
-        public void remove(segmentTreeNode root, int val) {
-            if (root == null || root.start > val || root.end < val) return;
-            if (root.start == val && root.end == val) {
-                root.count--;
-                return;
-            }
-            int mid = (root.start + root.end) / 2;
-            if (val <= mid) {
-                remove(root.left, val);
-            } else {
-                remove(root.right, val);
-            }
-            root.count = root.left.count + root.right.count;
+            return rslt;
         }
     }
 
     public static class UnitTest {
         @Test
         public void test1() {
-            Solution sol = new CountofSmallerNumbersAfterSelf().new Solution();
-            assertTrue(true);
+            Solution_3 sol = new CountofSmallerNumbersAfterSelf().new Solution_3();
+            int[] input = new int[]{5, 2, 6, 1};
+            List<Integer> expected = Arrays.asList(2, 1, 1, 0);
+            assertTrue(sol.countSmaller(input).equals(expected));
+            input = new int[]{-1, -1};
+            expected = Arrays.asList(0, 0);
+            assertTrue(sol.countSmaller(input).equals(expected));
         }
     }
 }
