@@ -1,33 +1,35 @@
 package sum_root_to_leaf_numbers;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class SumRoottoLeafNumbers {
-
+    /*
+        Sum Root to Leaf Numbers
+        https://leetcode.com/problems/sum-root-to-leaf-numbers/
+        Difficulty: Medium
+     */
     public class Solution {
-        private int sumNumbers(TreeNode root, int base) {
-            if (root.left == null && root.right == null) {
-                return base;
-            }
-            int sum = 0;
-            if (root.left != null) {
-                sum += sumNumbers(root.left, base * 10 + root.left.val);
-            }
-            if (root.right != null) {
-                sum += sumNumbers(root.right, base * 10 + root.right.val);
-            }
-            return sum;
+        public int sumNumbers(TreeNode root) {
+            return sumTree(root, 0);
         }
 
-        public int sumNumbers(TreeNode root) {
-            if (root == null) {
+        private int sumTree(TreeNode root, int sum) {
+            if (root == null)
                 return 0;
-            }
-            return sumNumbers(root, root.val);
+            if (root.left == null && root.right == null)
+                return sum * 10 + root.val;
+            return sumTree(root.left, sum * 10 + root.val) + sumTree(root.right, sum * 10 + root.val);
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SumRoottoLeafNumbers().new Solution();
+            assertTrue(true);
+        }
     }
 }

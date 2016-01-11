@@ -9,7 +9,7 @@ public class MaxPointsonaLine {
 
     public class Solution {
         public int maxPoints(Point[] points) {
-            int res = 0;
+            int rslt = 0;
             int N = points.length;
             for (int i = 0; i < N; ++i) {
                 HashMap<Double, Integer> m = new HashMap<Double, Integer>();
@@ -30,9 +30,9 @@ public class MaxPointsonaLine {
                     m.put(slope, tmp);
                     ss = Math.max(ss, tmp);
                 }
-                res = Math.max(res, ss + sp);
+                rslt = Math.max(rslt, ss + sp);
             }
-            return res;
+            return rslt;
         }
     }
 

@@ -17,7 +17,6 @@ public class PeekingIterator implements Iterator<Integer> {
     private boolean peaked;
 
     public PeekingIterator(Iterator<Integer> iterator) {
-        // initialize any member here.
         this.it = iterator;
         peakElement = 0;
         peaked = false;

@@ -13,47 +13,47 @@ public class SupportInsertDeleteSearchGetRandomInConstantTime {
         Difficulty: Medium
     */
     public class NewDS {
-        ArrayList<Integer> arr;
-        HashMap<Integer, Integer> hash;
+        ArrayList<Integer> list;
+        HashMap<Integer, Integer> map;
 
         public NewDS() {
-            arr = new ArrayList<Integer>();
-            hash = new HashMap<Integer, Integer>();
+            list = new ArrayList<Integer>();
+            map = new HashMap<Integer, Integer>();
         }
 
         public void add(int x) {
-            if (hash.get(x) != null)
+            if (map.get(x) != null)
                 return;
 
-            int s = arr.size();
-            arr.add(x);
-            hash.put(x, s);
+            int s = list.size();
+            list.add(x);
+            map.put(x, s);
         }
 
         public void remove(int x) {
-            Integer index = hash.get(x);
+            Integer index = map.get(x);
             if (index == null)
                 return;
 
-            hash.remove(x);
+            map.remove(x);
 
-            int size = arr.size();
-            Integer last = arr.get(size - 1);
-            Collections.swap(arr, index, size - 1);
+            int size = list.size();
+            Integer last = list.get(size - 1);
+            Collections.swap(list, index, size - 1);
 
-            arr.remove(size - 1);
+            list.remove(size - 1);
 
-            hash.put(last, index);
+            map.put(last, index);
         }
 
         int getRandom() {
             Random rand = new Random();  // Choose a different seed
-            int index = rand.nextInt(arr.size());
-            return arr.get(index);
+            int index = rand.nextInt(list.size());
+            return list.get(index);
         }
 
         boolean search(int x) {
-            return hash.containsKey(x);
+            return map.containsKey(x);
         }
     }
 

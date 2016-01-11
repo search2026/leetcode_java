@@ -1,6 +1,9 @@
 package lowest_common_ancestor_of_a_binary_search_tree;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class LowestCommonAncestorofaBinarySearchTree {
     /*
@@ -27,7 +30,11 @@ public class LowestCommonAncestorofaBinarySearchTree {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new LowestCommonAncestorofaBinarySearchTree().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

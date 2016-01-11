@@ -1,9 +1,17 @@
 package word_break;
 
+import org.junit.Test;
+
 import java.util.*;
 
-public class WordBreak {
+import static org.junit.Assert.*;
 
+public class WordBreak {
+    /*
+        Word Break
+        https://leetcode.com/problems/word-break/
+        Difficulty: Medium
+     */
     public class Solution {
         public boolean wordBreak(String s, Set<String> dict) {
             assert !s.isEmpty();
@@ -22,7 +30,11 @@ public class WordBreak {
         }
     }
 
-    // Word Break II
+    /*
+        Word Break II
+        https://leetcode.com/problems/word-break-ii/
+        Difficulty: Hard
+     */
     public class SolutionII {
         private ArrayList<String> searchWordBreak(String s, Set<String> dict,
                                                   Map<String, ArrayList<String>> solutions) {

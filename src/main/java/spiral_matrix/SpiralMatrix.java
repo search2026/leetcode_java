@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpiralMatrix {
-
     public class Solution {
+        /*
+            Spiral Matrix
+            https://leetcode.com/problems/spiral-matrix/
+            Difficulty: Medium
+         */
         public List<Integer> spiralOrder(int[][] matrix) {
-            List<Integer> ans = new ArrayList<Integer>();
+            List<Integer> rslt = new ArrayList<Integer>();
             if (matrix.length == 0 || matrix[0].length == 0) {
-                return ans;
+                return rslt;
             }
             int beginX = 0;
             int beginY = 0;
@@ -17,19 +21,19 @@ public class SpiralMatrix {
             int endY = matrix[0].length - 1;
             while (beginX <= endX && beginY <= endY) {
                 for (int i = beginY; i <= endY; i++) {
-                    ans.add(matrix[beginX][i]);
+                    rslt.add(matrix[beginX][i]);
                 }
                 for (int i = beginX + 1; i < endX; i++) {
-                    ans.add(matrix[i][endY]);
+                    rslt.add(matrix[i][endY]);
                 }
                 if (beginX != endX) {
                     for (int i = endY; i >= beginY; i--) {
-                        ans.add(matrix[endX][i]);
+                        rslt.add(matrix[endX][i]);
                     }
                 }
                 if (beginY != endY) {
                     for (int i = endX - 1; i > beginX; i--) {
-                        ans.add(matrix[i][beginY]);
+                        rslt.add(matrix[i][beginY]);
                     }
                 }
                 beginX++;
@@ -37,10 +41,14 @@ public class SpiralMatrix {
                 beginY++;
                 endY--;
             }
-            return ans;
+            return rslt;
         }
 
-        // Spiral Matrix II
+        /*
+            Spiral Matrix II
+            https://leetcode.com/problems/spiral-matrix-ii/
+            Difficulty: Medium
+         */
         public int[][] generateMatrix(int n) {
             int[][] matrix = new int[n][n];
             int num = 0;

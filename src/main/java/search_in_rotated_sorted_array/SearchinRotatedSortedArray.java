@@ -1,7 +1,11 @@
 package search_in_rotated_sorted_array;
 
 public class SearchinRotatedSortedArray {
-
+    /*
+        Search in rotated Sorted Array
+        https://leetcode.com/problems/search-in-rotated-sorted-array/
+        Difficulty: Medium
+     */
     public class Solution {
         public int search(int[] nums, int target) {
             int left = 0;
@@ -27,9 +31,15 @@ public class SearchinRotatedSortedArray {
             }
             return -1;
         }
+    }
 
-        // Search in Rotated Sorted Array II
-        public boolean searchII(int[] nums, int target) {
+    /*
+        Search in rotated Sorted Array II - Duplicates are allowed
+        https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+        Difficulty: Medium
+    */
+    public class SolutionII {
+        public boolean search(int[] nums, int target) {
             int left = 0;
             int right = nums.length - 1;
             while (left <= right) {
@@ -50,7 +60,7 @@ public class SearchinRotatedSortedArray {
                         right = mid - 1;
                     }
                 } else {
-                    left++;
+                    left++; // or right-- take care of duplicates
                 }
             }
             return false;

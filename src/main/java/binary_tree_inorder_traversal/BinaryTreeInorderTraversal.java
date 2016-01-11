@@ -1,19 +1,56 @@
 package binary_tree_inorder_traversal;
 
+import common.TreeNode;
+import org.junit.Test;
+
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
-import common.TreeNode;
+import static org.junit.Assert.assertEquals;
 
 public class BinaryTreeInorderTraversal {
-
+    /*
+        Binary Tree Inorder Traversal - Using Stacks
+        https://leetcode.com/problems/binary-tree-inorder-traversal/
+        Difficulty: Medium
+    */
     public class Solution {
         public List<Integer> inorderTraversal(TreeNode root) {
-            List<Integer> ans = new ArrayList<Integer>();
+            ArrayList<Integer> rslt = new ArrayList<Integer>();
+            if (root == null) return rslt;
+
+            Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+            TreeNode p = root;
+
+            while (!stack.isEmpty() || p != null) {
+                if (p != null) {
+                    stack.offerLast(p);
+                    p = p.left;
+                } else {
+                    p = stack.removeLast();
+                    rslt.add(p.val);
+                    p = p.right;
+                }
+            }
+
+            return rslt;
+        }
+    }
+
+    /*
+        Binary Tree Inorder Traversal - Morris Traversal
+        https://leetcode.com/problems/binary-tree-inorder-traversal/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
+        public List<Integer> inorderTraversal(TreeNode root) {
+            List<Integer> rslt = new ArrayList<Integer>();
             TreeNode p = root;
             while (p != null) {
                 if (p.left == null) {
-                    ans.add(p.val);
+                    rslt.add(p.val);
                     p = p.right;
                 } else {
                     TreeNode temp = p.left;
@@ -24,17 +61,21 @@ public class BinaryTreeInorderTraversal {
                         temp.right = p;
                         p = p.left;
                     } else {
-                        ans.add(p.val);
+                        rslt.add(p.val);
                         temp.right = null;
                         p = p.right;
                     }
                 }
             }
-            return ans;
+            return rslt;
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new BinaryTreeInorderTraversal().new Solution();
+            assertEquals(1, 1);
+        }
     }
 }

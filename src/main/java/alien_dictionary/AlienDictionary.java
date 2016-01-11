@@ -4,8 +4,6 @@ import org.junit.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.*;
-
 public class AlienDictionary {
     /*
         Alien Dictionary
@@ -64,8 +62,7 @@ public class AlienDictionary {
             }
         }
 
-        private boolean toplogicalSort(char vertexId, Map<Character, Set<Character>> graph, StringBuffer sb,
-                                       Map<Character, Integer> visited) {
+        private boolean toplogicalSort(char vertexId, Map<Character, Set<Character>> graph, StringBuffer sb, Map<Character, Integer> visited) {
             if (visited.containsKey(vertexId)) {
                 // visited
                 if (visited.get(vertexId) == -1) {

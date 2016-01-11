@@ -1,109 +1,268 @@
 package count_of_smaller_numbers_after_self;
 
+import common.SegmentTreeNode;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class CountofSmallerNumbersAfterSelf {
     /*
-        Count of Smaller Numbers After Self Binary Index Tree
+        Count of Smaller Numbers After Self - Binary Search Tree
         https://leetcode.com/problems/count-of-smaller-numbers-after-self/
         Difficulty: Hard
      */
     public class Solution {
-        public int MAX = 11000; //we set max value that can be store in the tree
-        int[] tree = new int[MAX];
-
         public List<Integer> countSmaller(int[] nums) {
-            Integer[] result = new Integer[nums.length];
-
-            //make all elements in the array posive while maintaining their order
-            makePositive(nums);
-
-            for (int i = nums.length - 1; i >= 0; i--) {
-                result[i] = get(nums[i]);
-                add(nums[i] + 1, 1);
+            List<Integer> res = new ArrayList<Integer>();
+            if (nums == null || nums.length == 0) return res;
+            TreeNode root = new TreeNode(nums[nums.length - 1]);
+            res.add(0);
+            for (int i = nums.length - 2; i >= 0; i--) {
+                res.add(insert(root, nums[i]));
             }
-            return Arrays.asList(result);
+            Collections.reverse(res);
+            return res;
         }
 
-        public void makePositive(int[] nums) {
-            int min = MAX;
-            for (int i = 0; i < nums.length; i++)
-                min = Math.min(min, nums[i]);
-            if (min < 0) {
-                min = -min + 1;
-                for (int i = 0; i < nums.length; i++)
-                    nums[i] += min;
+        public int insert(TreeNode root, int num) {
+            int thisCount = 0;
+            while (true) {
+                if (root.val >= num) {
+                    root.count++;
+                    if (root.left == null) {
+                        root.left = new TreeNode(num);
+                        break;
+                    } else {
+                        root = root.left;
+                    }
+                } else {
+                    thisCount += root.count;
+                    if (root.right == null) {
+                        root.right = new TreeNode(num);
+                        break;
+                    } else {
+                        root = root.right;
+                    }
+                }
             }
+            return thisCount;
         }
 
-        public void add(int idx, int val) {
-            while (idx < MAX) {
-                tree[idx] += val;
-                idx += (idx & (-idx));
-            }
-        }
+        public class TreeNode {
+            int val;
+            TreeNode left;
+            TreeNode right;
+            int count;
 
-        public int get(int idx) {
-            int result = 0;
-            while (idx > 0) {
-                result += tree[idx];
-                idx &= (idx - 1);
+            public TreeNode(int value) {
+                this.val = value;
+                this.count = 1;
             }
-            return result;
         }
     }
 
     /*
-    Count of Smaller Numbers After Self Binary Tree
-    https://leetcode.com/problems/count-of-smaller-numbers-after-self/
-    Difficulty: Hard
- */
-    public class SolutionII {
-        class Node {
-            Node left, right;
-            int val, sum, dup = 1;
+        Count of Smaller Numbers After Self - Binary Index Tree/Fenwick Tree
+        https://leetcode.com/problems/count-of-smaller-numbers-after-self/
+        Difficulty: Hard
+    */
+    public class Solution_2 {
+        private void add(int[] bit, int i, int val) {
+            for (; i < bit.length; i += i & -i) bit[i] += val;
+        }
 
-            public Node(int v, int s) {
-                val = v;
-                sum = s;
+        private int query(int[] bit, int i) {
+            int ans = 0;
+            for (; i > 0; i -= i & -i) ans += bit[i];
+            return ans;
+        }
+
+        public List<Integer> countSmaller(int[] nums) {
+            int[] tmp = nums.clone();
+            Arrays.sort(tmp);
+            for (int i = 0; i < nums.length; i++) nums[i] = Arrays.binarySearch(tmp, nums[i]) + 1;
+            int[] bit = new int[nums.length + 1];
+            Integer[] ans = new Integer[nums.length];
+            for (int i = nums.length - 1; i >= 0; i--) {
+                ans[i] = query(bit, nums[i] - 1);
+                add(bit, nums[i], 1);
+            }
+            return Arrays.asList(ans);
+        }
+    }
+
+    /*
+        Count of Smaller Numbers After Self - Segment Tree
+        https://leetcode.com/problems/count-of-smaller-numbers-after-self/
+        Difficulty: Hard
+    */
+    public class Solution_3 {
+//       public List<Integer> countSmaller(int[] nums) {
+//            List<Integer> rslt = new ArrayList<Integer>();
+//           if (nums == null || nums.length ==0) return rslt;
+//
+//            int min = nums[0];
+//            for (int i : nums) {
+//                min = Math.min(min, i);
+//            }
+//            // port inputs to [0, max]
+//            if (min != 0) {
+//                for (int i = 0; i < nums.length; i++)
+//                    nums[i] -= min;
+//            }
+//
+//            int max = nums[0];
+//            for (int i : nums) {
+//                max = Math.max(max, i);
+//            }
+//            // Initialize segment tree with [0, max] and 0 value
+//            SegmentTreeNode root = build(0, max);
+//            // Update segment tree with actual value
+//            for (int i : nums) {
+//                update(root, i);
+//            }
+//
+//            for (int i : nums) {
+//                remove(root, i);
+//                rslt.add(query(root, 0, i));
+//            }
+//
+//            return rslt;
+//        }
+//
+//        public SegmentTreeNode build(int left, int right) {
+//            if (left > right) return null;
+//            if (left == right) return new SegmentTreeNode(left, right);
+//            int mid = left + (right - left) / 2;
+//            SegmentTreeNode root = new SegmentTreeNode(left, right);
+//            root.left = build(left, mid);
+//            root.right = build(mid + 1, right);
+//            root.val = root.left.val + root.right.val;
+//            return root;
+//        }
+//
+//        public int query(SegmentTreeNode root, int start, int end) {
+//            if (root == null) return 0;
+//            if (root.start == start && root.end == end) return root.val;
+//            int mid = (root.start + root.end) / 2;
+//            if (end < mid) {
+//                return query(root.left, start, end);
+//            } else if (start > end) {
+//                return query(root.right, start, end);
+//            } else {
+//                return query(root.left, start, mid) + query(root.right, mid + 1, end);
+//            }
+//        }
+//
+//        public void update(SegmentTreeNode root, int val) {
+//            if (root == null || root.start > val || root.end < val) return;
+//            if (root.start == val && root.end == val) {
+//                root.val++;
+//                return;
+//            }
+//            int mid = (root.start + root.end) / 2;
+//            if (val <= mid) {
+//                update(root.left, val);
+//            } else {
+//                update(root.right, val);
+//            }
+//            root.val = root.left.val + root.right.val;
+//        }
+//
+//        public void remove(SegmentTreeNode root, int val) {
+//            if (root == null || root.start > val || root.end < val) return;
+//            if (root.start == val && root.end == val) {
+//                root.val--;
+//                return;
+//            }
+//            int mid = (root.start + root.end) / 2;
+//            if (val <= mid) {
+//                remove(root.left, val);
+//            } else {
+//                remove(root.right, val);
+//            }
+//            root.val = root.left.val + root.right.val;
+//        }
+
+        SegmentTreeNode root = null;
+
+        public SegmentTreeNode buildTree(int[] nums, int left, int right) {
+            SegmentTreeNode root = new SegmentTreeNode(left, right);
+            if (left != right) {
+                int mid = left + (right - left) / 2;
+                root.left = buildTree(nums, left, mid);
+                root.right = buildTree(nums, mid + 1, right);
+            }
+            return root;
+        }
+
+        private void update(SegmentTreeNode root, long i, long val) {
+            if (root.start == root.end) {
+                root.val += 1;
+            } else {
+                long mid = root.start + (root.end - root.start) / 2;
+                if (i <= mid) {
+                    update(root.left, i, val);
+                } else {
+                    update(root.right, i, val);
+                }
+                root.val = root.left.val + root.right.val;
+            }
+        }
+
+        private long query(SegmentTreeNode root, long i, long j) {
+            if (root.start == i && root.end == j) {
+                return root.val;
+            } else {
+                long mid = root.start + (root.end - root.start) / 2;
+                if (j <= mid) {
+                    return query(root.left, i, j);
+                } else if (i > mid) {
+                    return query(root.right, i, j);
+                } else {
+                    return query(root.left, i, root.left.end) + query(root.right, root.right.start, j);
+                }
             }
         }
 
         public List<Integer> countSmaller(int[] nums) {
-            Integer[] ans = new Integer[nums.length];
-            Node root = null;
-            for (int i = nums.length - 1; i >= 0; i--) {
-                root = insert(nums[i], root, ans, i, 0);
-            }
-            return Arrays.asList(ans);
-        }
+            List<Integer> rslt = new ArrayList<Integer>();
+            if (nums == null) return rslt;
 
-        private Node insert(int num, Node node, Integer[] ans, int i, int preSum) {
-            if (node == null) {
-                node = new Node(num, 0);
-                ans[i] = preSum;
-            } else if (node.val == num) {
-                node.dup++;
-                ans[i] = preSum + node.sum;
-            } else if (node.val > num) {
-                node.sum++;
-                node.left = insert(num, node.left, ans, i, preSum);
-            } else {
-                node.right = insert(num, node.right, ans, i, preSum + node.dup + node.sum);
+            int n = nums.length;
+            if (n <= 0) return rslt;
+
+            // map input to sorted order. How about duplicates?
+            int[] tmp = nums.clone();
+            Arrays.sort(tmp);
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = Arrays.binarySearch(tmp, nums[i]) + 1;
             }
-            return node;
+
+            root = buildTree(nums, 0, nums.length);
+            for (int i = nums.length - 1; i >= 0; i--) {
+                rslt.add(0, (int)query(root, 0, nums[i] - 1));
+                update(root, nums[i], 1);
+            }
+            return rslt;
         }
     }
 
     public static class UnitTest {
         @Test
         public void test1() {
-            Solution sol = new CountofSmallerNumbersAfterSelf().new Solution();
+            Solution_3 sol = new CountofSmallerNumbersAfterSelf().new Solution_3();
+            int[] input = new int[]{5, 2, 6, 1};
+            List<Integer> expected = Arrays.asList(2, 1, 1, 0);
+            assertTrue(sol.countSmaller(input).equals(expected));
+            input = new int[]{-1, -1};
+            expected = Arrays.asList(0, 0);
+            assertTrue(sol.countSmaller(input).equals(expected));
         }
     }
 }

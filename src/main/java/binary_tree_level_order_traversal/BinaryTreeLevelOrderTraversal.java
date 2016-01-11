@@ -1,31 +1,64 @@
 package binary_tree_level_order_traversal;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import common.TreeNode;
+import org.junit.Test;
+
+import java.util.*;
+
+import static org.junit.Assert.assertTrue;
 
 public class BinaryTreeLevelOrderTraversal {
-
+    /*
+        Binary Tree Level Order Traversal
+        https://leetcode.com/problems/binary-tree-level-order-traversal/
+        Difficulty: Medium
+     */
     public class Solution {
-        private void search(TreeNode root, int level,
-                            List<List<Integer>> ans) {
+        public List<List<Integer>> levelOrder(TreeNode root) {
+            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            if(root==null) return rslt;
+
+            int queueIn = 1;
+            Queue<TreeNode> queue = new LinkedList<TreeNode>();
+            queue.offer(root);
+
+            while(queue.size()!=0){
+                int queueOut = 0;
+                List<Integer> temp = new ArrayList<Integer>();
+                while(queueOut<queueIn){
+                    TreeNode curr = queue.poll();
+                    temp.add(curr.val);
+                    if(curr.left != null){
+                        queue.offer(curr.left);
+                    }
+                    if(curr.right != null){
+                        queue.offer(curr.right);
+                    }
+                    queueOut++;
+                }
+                rslt.add(temp);
+                queueIn = queue.size();
+            }
+            return rslt;
+        }
+    }
+
+    /*
+        Binary Tree Level Order Traversal II
+        https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
+        private void search(TreeNode root, int level, List<List<Integer>> rslt) {
             if (root == null) {
                 return;
             }
-            if (level >= ans.size()) {
-                ans.add(new ArrayList<Integer>());
+            if (level >= rslt.size()) {
+                rslt.add(new ArrayList<Integer>());
             }
-            ans.get(level).add(root.val);
-            search(root.left, level + 1, ans);
-            search(root.right, level + 1, ans);
-        }
-
-        public List<List<Integer>> levelOrder(TreeNode root) {
-            List<List<Integer>> ans = new ArrayList<List<Integer>>();
-            search(root, 0, ans);
-            return ans;
+            rslt.get(level).add(root.val);
+            search(root.left, level + 1, rslt);
+            search(root.right, level + 1, rslt);
         }
 
         public List<List<Integer>> levelOrderBottom(TreeNode root) {
@@ -37,6 +70,10 @@ public class BinaryTreeLevelOrderTraversal {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new BinaryTreeLevelOrderTraversal().new Solution();
+            assertTrue(true);
+        }
     }
 }

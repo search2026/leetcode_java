@@ -3,7 +3,11 @@ package course_schedule;
 import java.util.*;
 
 public class CourseSchedule {
-
+    /*
+        Course Schedule
+        https://leetcode.com/problems/course-schedule/
+        Difficulty: Medium
+     */
     public class Solution {
         public boolean canFinish(int numCourses, int[][] prerequisites) {
             Map<Integer, List<Integer>> outNodes = new HashMap<Integer, List<Integer>>();
@@ -39,63 +43,147 @@ public class CourseSchedule {
         }
     }
 
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        if(prerequisites == null){
-            throw new IllegalArgumentException("illegal prerequisites array");
-        }
-
-        int len = prerequisites.length;
-
-        //if there is no prerequisites, return a sequence of courses
-        if(len == 0){
-            int[] res = new int[numCourses];
-            for(int m=0; m<numCourses; m++){
-                res[m]=m;
+    /*
+        Course Schedule - DFS
+        https://leetcode.com/problems/course-schedule/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
+        public boolean canFinish(int numCourses, int[][] prerequisites) {
+            if (numCourses <= 0) {
+                return true;
             }
-            return res;
-        }
 
-        //records the number of prerequisites each course (0,...,numCourses-1) requires
-        int[] pCounter = new int[numCourses];
-        for(int i=0; i<len; i++){
-            pCounter[prerequisites[i][0]]++;
-        }
-
-        //stores courses that have no prerequisites
-        LinkedList<Integer> queue = new LinkedList<Integer>();
-        for(int i=0; i<numCourses; i++){
-            if(pCounter[i]==0){
-                queue.add(i);
+            if (prerequisites == null || prerequisites.length == 0) {
+                return true;
             }
+
+            // First transform the edge list to adj. list
+            Map<Integer, List<Integer>> adjList = new HashMap<>();
+            for (int[] edge : prerequisites) {
+                if (adjList.containsKey(edge[0])) {
+                    List<Integer> neighbors = adjList.get(edge[0]);
+                    neighbors.add(edge[1]);
+                    adjList.put(edge[0], neighbors);
+                } else {
+                    List<Integer> neighbors = new ArrayList<Integer>();
+                    neighbors.add(edge[1]);
+                    adjList.put(edge[0], neighbors);
+                }
+            }
+
+            int[] visited = new int[numCourses];
+            // Check if the graph contains a circle, if yes, return false.
+            for (int i = 0; i < numCourses; i++) {
+                if (hasCircles(i, visited, adjList)) {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        int numNoPre = queue.size();
+        private boolean hasCircles(int vertexId, int[] visited, Map<Integer, List<Integer>> adjList) {
+            if (visited[vertexId] == -1) {
+                return true;
+            }
 
-        //initialize result
-        int[] result = new int[numCourses];
-        int j=0;
+            if (visited[vertexId] == 1) {
+                return false;
+            }
 
-        while(!queue.isEmpty()){
-            int c = queue.remove();
-            result[j++]=c;
+            visited[vertexId] = -1;
 
-            for(int i=0; i<len; i++){
-                if(prerequisites[i][1]==c){
-                    pCounter[prerequisites[i][0]]--;
-                    if(pCounter[prerequisites[i][0]]==0){
-                        queue.add(prerequisites[i][0]);
-                        numNoPre++;
+            List<Integer> neighbors = adjList.get(vertexId);
+            if (neighbors != null) {
+                for (int neighbor : neighbors) {
+                    if (hasCircles(neighbor, visited, adjList)) {
+                        return true;
                     }
                 }
-
             }
+
+            visited[vertexId] = 1;
+
+            return false;
+        }
+    }
+
+    /*
+        Course Schedule II
+        https://leetcode.com/problems/course-schedule-ii/
+        Difficulty: Medium
+    */
+    public class Solution_3 {
+        private int label;
+
+        public int[] findOrder(int numCourses, int[][] prerequisites) {
+            if (numCourses <= 0) {
+                return new int[0];
+            }
+            this.label = numCourses - 1;
+
+            int[] result = new int[numCourses];
+
+            // No prerequisites
+            if (prerequisites == null || prerequisites.length == 0) {
+                for (int i = 0; i < numCourses; i++) {
+                    result[i] = i;
+                }
+
+                return result;
+            }
+
+            // Convert the edge list to adj. list
+            Map<Integer, List<Integer>> adjList = new HashMap<>();
+            for (int[] edge : prerequisites) {
+                if (adjList.containsKey(edge[1])) {
+                    List<Integer> neighbors = adjList.get(edge[1]);
+                    neighbors.add(edge[0]);
+                    adjList.put(edge[1], neighbors);
+                } else {
+                    List<Integer> neighbors = new ArrayList<Integer>();
+                    neighbors.add(edge[0]);
+                    adjList.put(edge[1], neighbors);
+                }
+            }
+
+            int[] visited = new int[numCourses];
+            for (int i = 0; i < numCourses; i++) {
+                if (!toplogicalSorting(i, visited, adjList, result)) {
+                    return new int[0];
+                }
+            }
+
+            return result;
         }
 
-        //return result
-        if(numNoPre==numCourses){
-            return result;
-        }else{
-            return new int[0];
+        private boolean toplogicalSorting(int vertexId, int[] visited, Map<Integer, List<Integer>> adjList, int[] result) {
+            // Has been visited
+            if (visited[vertexId] == -1) {
+                return false;
+            }
+
+            // Has been added into the list
+            if (visited[vertexId] == 1) {
+                return true;
+            }
+
+            visited[vertexId] = -1;
+
+            List<Integer> neighbors = adjList.get(vertexId);
+            if (neighbors != null) {
+                for (int neighbor : neighbors) {
+                    if (!toplogicalSorting(neighbor, visited, adjList, result)) {
+                        return false;
+                    }
+                }
+            }
+
+            result[label--] = vertexId;
+            visited[vertexId] = 1;
+
+            return true;
         }
     }
 }

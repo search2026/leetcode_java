@@ -1,9 +1,16 @@
 package convert_sorted_array_to_binary_search_tree;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class ConvertSortedArraytoBinarySearchTree {
-
+    /*
+        Convert Sorted Array to Binary Search Tree
+        https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+        Difficulty: Medium
+     */
     public class Solution {
         private TreeNode sortedArrayToBST(int[] num, int left, int right) {
             if (left > right) {
@@ -22,6 +29,10 @@ public class ConvertSortedArraytoBinarySearchTree {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ConvertSortedArraytoBinarySearchTree().new Solution();
+            assertTrue(true);
+        }
     }
 }

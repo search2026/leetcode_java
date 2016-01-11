@@ -16,10 +16,7 @@ public class SerializeandDeserializeBinaryTree {
      */
     public class Codec {
         public String serialize(TreeNode root) {
-            // write your code here
-            if (root == null) {
-                return "";
-            }
+            if (root == null) return "";
 
             StringBuilder sb = new StringBuilder();
             Queue<TreeNode> queue = new LinkedList<TreeNode>();
@@ -51,13 +48,12 @@ public class SerializeandDeserializeBinaryTree {
             String delim = " ";
             String[] arr = data.split(delim);
 
-            Queue<TreeNode> queue = new LinkedList<>();
+            Queue<TreeNode> queue = new LinkedList<TreeNode>();
 
             TreeNode root = new TreeNode(Integer.parseInt(arr[0]));
             queue.offer(root);
 
             int i = 1;
-
             while (!queue.isEmpty() && i < arr.length) {
                 int size = queue.size();
                 for (int j = 0; j < size; j++) {
