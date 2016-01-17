@@ -1,13 +1,21 @@
 package number_of_islands;
 
+import org.junit.Test;
+
 import java.util.*;
 
-public class NumberofIslands {
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+public class NumberofIslands {
+    /*
+        Number of Islands
+        https://leetcode.com/problems/number-of-islands/
+        Difficulty: Medium
+    */
     public class Solution {
-        // Number of Islands
-        // https://leetcode.com/problems/number-of-islands/
-        // Difficulty: Medium
+        int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+
         public int numIslands(char[][] grid) {
             if (grid == null || grid.length == 0 || grid[0].length == 0) return 0;
             int count = 0;
@@ -16,90 +24,181 @@ public class NumberofIslands {
                 for (int j = 0; j < grid[0].length; j++) {
                     if (grid[i][j] == '1') {
                         count++;
-                        merge(grid, i, j);
+                        floodFill(grid, i, j);
                     }
                 }
             }
             return count;
         }
 
-        public void merge(char[][] grid, int i, int j) {
+        public void floodFill(char[][] grid, int i, int j) {
             if (i < 0 || j < 0 || i > grid.length - 1 || j > grid[0].length - 1)
                 return;
 
             if (grid[i][j] != '1') return;
 
-            //set visited cell to '0'
-            grid[i][j] = '0';
-            //merge all adjacent land
-            merge(grid, i - 1, j);
-            merge(grid, i + 1, j);
-            merge(grid, i, j - 1);
-            merge(grid, i, j + 1);
+            grid[i][j] = '2'; // set visited island to 2
+
+            for (int[] dir : dirs) {
+                floodFill(grid, i + dir[0], j + dir[1]);
+            }
         }
     }
 
-    // Number of Islands II
-    // http://blog.csdn.net/pointbreak1/article/details/49900853
-    // Difficulty: Hard
-    public class SolutionII {
-        public List<Integer> numIslands2(int m, int n, int[][] positions) {
-            List<Integer> results = new ArrayList<Integer>();
-            if (m <= 0 || n <= 0 || positions.length == 0)
-                return results;
-            //假设相邻的1都有相同的标识符，不相邻的1有不同的标识符，此为标识符到坐标列表的映射
-            HashMap<Integer, List<Integer>> map1 = new HashMap<Integer, List<Integer>>();
-            //用于快速查找某一位置的标识符
-            HashMap<Integer, Integer> map2 = new HashMap<Integer, Integer>();
-            //标识符
-            int count = 1;
-            for (int i = 0; i < positions.length; i++) {
-                int r = positions[i][0], c = positions[i][1];
-                int p = r * n + c;
-                //收集邻居的标识符，加入到set中
-                Set<Integer> candidate = new HashSet<Integer>();
-                int top = r - 1 >= 0 ? (r - 1) * n + c : -1;
-                int bot = r + 1 < m ? (r + 1) * n + c : -1;
-                int left = c - 1 >= 0 ? r * n + (c - 1) : -1;
-                int right = c + 1 < n ? r * n + (c + 1) : -1;
-                if (map2.containsKey(top))
-                    candidate.add(map2.get(top));
-                if (map2.containsKey(bot))
-                    candidate.add(map2.get(bot));
-                if (map2.containsKey(left))
-                    candidate.add(map2.get(left));
-                if (map2.containsKey(right))
-                    candidate.add(map2.get(right));
-                //如set为空，说明没有相邻的1，加入新的1
-                if (candidate.isEmpty()) {
-                    List<Integer> l = new ArrayList<Integer>();
-                    l.add(p);
-                    map1.put(count, l);
-                    map2.put(p, count);
-                    count++;
-                    //否则，需要merge邻居，统一他们的标识符
-                } else {
-                    Iterator iter = candidate.iterator();
-                    int cur = (Integer) iter.next();
-                    while (iter.hasNext()) {
-                        int old = (Integer) iter.next();
-                        for (int q : map1.get(old)) {
-                            map2.put(q, cur);
-                            map1.get(cur).add(q);
-                        }
-                        map1.remove(old);
+    /*
+        Find connected island
+        http://www.elvisyu.com/leetcode-number-of-islands/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
+        Map<Integer, Set<Integer>> map = new HashMap<Integer, Set<Integer>>();
+
+        private void findAdjacentIsland(int[][] grid) {
+            for (int i = 0; i < grid.length; i++) {
+                for (int j = 0; j < grid[0].length; j++) {
+                    if (grid[i][j] != 0) {
+                        map.put(grid[i][j], new HashSet<Integer>());
+                        merge(grid, i, j, grid[i][j]);
                     }
-                    map1.get(cur).add(p);
-                    map2.put(p, cur);
                 }
-                //每次的岛数，为map1的size
-                results.add(map1.size());
             }
-            return results;
+        }
+
+        private void merge(int[][] grid, int i, int j, int islandNumber) {
+            if (i < 0 || j < 0 || i > grid.length - 1 || j > grid[0].length - 1) {
+                return;
+            }
+            if (grid[i][j] == 0)
+                return;
+            if (grid[i][j] != 0 && grid[i][j] != islandNumber) {
+                map.get(islandNumber).add(grid[i][j]);
+                return;
+            }
+            grid[i][j] = 0; // set visited island to 0
+            merge(grid, i - 1, j, islandNumber);
+            merge(grid, i + 1, j, islandNumber);
+            merge(grid, i, j + 1, islandNumber);
+            merge(grid, i, j - 1, islandNumber);
+            grid[i][j] = islandNumber;
+        }
+    }
+
+    /*
+        Number of Islands II - Union Find
+        http://www.cnblogs.com/EdwardLiu/p/5087633.html
+        Difficulty: Hard
+    */
+    public class Solution_3 {
+        public List<Integer> numIslands2(int m, int n, int[][] positions) {
+            int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+            unionFind uf = new unionFind(m * n);
+            List<Integer> rslt = new ArrayList<Integer>();
+            for (int[] pos : positions) {
+                int cur = pos[0] * n + pos[1];
+                uf.ids[cur] = cur;
+                uf.count++;
+                for (int[] dir : dirs) {
+                    int x = dir[0] + pos[0];
+                    int y = dir[1] + pos[1];
+                    int nb = x * n + y;
+                    if (x < 0 || x >= m || y < 0 || y >= n || uf.ids[nb] == -1) continue;
+                    if (uf.find(nb) != uf.find(cur)) {
+                        uf.union(nb, cur);
+                    }
+                }
+                rslt.add(uf.count);
+            }
+            return rslt;
+        }
+
+        public class unionFind {
+            int[] ids;
+            int count;
+
+            public unionFind(int num) {
+                this.ids = new int[num];
+                Arrays.fill(ids, -1);
+                this.count = 0;
+            }
+
+            public int find(int num) {
+                return ids[num];
+            }
+
+            public boolean union(int n1, int n2) {
+                int id1 = ids[n1], id2 = ids[n2];
+                if (id1 != id2) {
+                    for (int i = 0; i < ids.length; i++) {
+                        if (ids[i] == id2) {
+                            ids[i] = id1;
+                        }
+                    }
+                    count--;
+                    return true;
+                }
+                return false;
+            }
+        }
+    }
+
+    /*
+      Number of Islands II - Union Find
+      http://www.cnblogs.com/EdwardLiu/p/5087633.html
+      Difficulty: Hard
+  */
+    public class Solution_4 {
+        int[][] dirs = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+
+        public List<Integer> numIslands2(int m, int n, int[][] positions) {
+            List<Integer> rslt = new ArrayList<Integer>();
+            if (m <= 0 || n <= 0) return rslt;
+
+            int count = 0;                      // number of islands
+            int[] roots = new int[m * n];       // one island = one tree
+            Arrays.fill(roots, -1);
+
+            for (int[] p : positions) {
+                int root = n * p[0] + p[1];     // assume new point is isolated island
+                roots[root] = root;             // add new island
+                count++;
+
+                for (int[] dir : dirs) {
+                    int x = p[0] + dir[0];
+                    int y = p[1] + dir[1];
+                    int nb = n * x + y;
+                    if (x < 0 || x >= m || y < 0 || y >= n || roots[nb] == -1) continue;
+
+                    int rootNb = findIsland(roots, nb);
+                    if (roots[root] != rootNb) { // if neighbor is in another island
+                        roots[root] = rootNb; // union two islands
+                        root = rootNb; // current tree root = joined tree root
+                        count--;
+                    }
+                }
+
+                rslt.add(count);
+            }
+            return rslt;
+        }
+
+        public int findIsland(int[] roots, int id) {
+            while (id != roots[id]) id = roots[id];
+            return id;
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new NumberofIslands().new Solution();
+            char[][] island = new char[][]{
+                    new char[]{'1', '1', '0', '0', '0'},
+                    new char[]{'1', '1', '0', '0', '0'},
+                    new char[]{'0', '0', '1', '0', '0'},
+                    new char[]{'0', '0', '0', '1', '1'}
+            };
+            assertEquals(3, sol.numIslands(island));
+            assertTrue(true);
+        }
     }
 }

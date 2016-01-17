@@ -2,8 +2,6 @@ package game_of_life;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class GameofLife {
     /*
         Game of Life
@@ -11,123 +9,120 @@ public class GameofLife {
         Difficulty: Hard
      */
     public class Solution {
-        final int DEAD = 0;
-        final int ALIVE = 1;
-        final int DEAD_TO_DEAD = 0;
-        final int ALIVE_TO_ALIVE = 1;
-        final int ALIVE_TO_DEAD = 2;
-        final int DEAD_TO_ALIVE = 3;
-
-        private boolean isAliveOld(int obj) {
-            if (obj == ALIVE_TO_ALIVE || obj == ALIVE_TO_DEAD) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        private boolean isAliveNew(int obj) {
-            if (obj % 2 == 1) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
         public void gameOfLife(int[][] board) {
-            if (board == null) {
-                return;
-            }
-            int height = board.length;
-            if (height == 0) {
-                return;
-            }
-            int width = board[0].length;
-            if (width == 0) {
-                return;
-            }
-
-            int counter = 0;
-            for (int i = 0; i < height; i++) {
-                for (int j = 0; j < width; j++) {
-                    counter = 0;
-                    if (i > 0 && j > 0 && isAliveOld(board[i - 1][j - 1])) {
-                        counter++;
+            if (board == null || board.length == 0 || board[0].length == 0) return;
+            int m = board.length;
+            int n = board[0].length;
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    int lives = 0;
+                    //up
+                    if (i > 0) {
+                        if (board[i - 1][j] == 1 || board[i - 1][j] == 2) lives++;
                     }
-                    if (i > 0 && isAliveOld(board[i - 1][j])) {
-                        counter++;
+                    //down
+                    if (i < m - 1) {
+                        if (board[i + 1][j] == 1 || board[i + 1][j] == 2) lives++;
                     }
-                    if (i > 0 && j < width - 1 && isAliveOld(board[i - 1][j + 1])) {
-                        counter++;
+                    //left
+                    if (j > 0) {
+                        if (board[i][j - 1] == 1 || board[i][j - 1] == 2) lives++;
                     }
-                    if (j > 0 && isAliveOld(board[i][j - 1])) {
-                        counter++;
+                    //right
+                    if (j < n - 1) {
+                        if (board[i][j + 1] == 1 || board[i][j + 1] == 2) lives++;
                     }
-                    if (j < width - 1 && isAliveOld(board[i][j + 1])) {
-                        counter++;
+                    //left up
+                    if (i > 0 && j > 0) {
+                        if (board[i - 1][j - 1] == 1 || board[i - 1][j - 1] == 2) lives++;
                     }
-                    if (i < height - 1 && j > 0 && isAliveOld(board[i + 1][j - 1])) {
-                        counter++;
+                    //right up
+                    if (i > 0 && j < n - 1) {
+                        if (board[i - 1][j + 1] == 1 || board[i - 1][j + 1] == 2) lives++;
                     }
-                    if (i < height - 1 && isAliveOld(board[i + 1][j])) {
-                        counter++;
+                    //left down
+                    if (i < m - 1 && j > 0) {
+                        if (board[i + 1][j - 1] == 1 || board[i + 1][j - 1] == 2) lives++;
                     }
-                    if (i < height - 1 && j < width - 1 && isAliveOld(board[i + 1][j + 1])) {
-                        counter++;
+                    //right down
+                    if (i < m - 1 && j < n - 1) {
+                        if (board[i + 1][j + 1] == 1 || board[i + 1][j + 1] == 2) lives++;
                     }
 
-                    if (isAliveOld(board[i][j])) {
-                        if (counter < 2) {
-                            //1.存活单位周边的存活单位少于2个，该单位死亡
-                            board[i][j] = ALIVE_TO_DEAD;
-                        } else if (counter == 2 || counter == 3) {
-                            //2.存活单位周边的存活单位有2-3个，该单位继续存活
-                            board[i][j] = ALIVE_TO_ALIVE;
-                        } else {
-                            //3.存活单位周边的存活单位多余3个，该单位死亡
-                            board[i][j] = ALIVE_TO_DEAD;
-                        }
-                    } else {
-                        if (counter == 3) {
-                            //4.死亡单位周边的存活单位恰好为3个，该单位变为存活状态
-                            board[i][j] = DEAD_TO_ALIVE;
-                        } else {
-                            board[i][j] = DEAD_TO_DEAD;
-                        }
+
+                    //update board[i][j]
+                    if (board[i][j] == 0) {
+                        if (lives == 3) board[i][j] = 3;
+                        else board[i][j] = 0;
+                    } else { //board[i][j] == 1
+                        if (lives < 2 || lives > 3) board[i][j] = 2;
+                        else board[i][j] = 1;
                     }
                 }
             }
 
-            for (int i = 0; i < height; i++) {
-                for (int j = 0; j < width; j++) {
-                    if (isAliveNew(board[i][j])) {
-                        board[i][j] = ALIVE;
-                    } else {
-                        board[i][j] = DEAD;
-                    }
+            //decode
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    board[i][j] %= 2;
                 }
             }
         }
     }
 
     /*
-    Game of Life II
-    https://segmentfault.com/a/1190000003819277
+    Game of Life
+    https://leetcode.com/problems/game-of-life/
     Difficulty: Hard
  */
-    public class SolutionII {
-        public void solveOneDWithTable(int[] board) {
+    public class Solution_2 {
+        public void gameOfLife(int[][] board) {
+            int m = board.length, n = board[0].length;
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    int lives = 0;
+                    // 累加上下左右及四个角还有自身的值
+                    for (int y = Math.max(i - 1, 0); y <= Math.min(i + 1, m - 1); y++) {
+                        for (int x = Math.max(j - 1, 0); x <= Math.min(j + 1, n - 1); x++) {
+                            // 累加bit1的值
+                            lives += board[y][x] & 1;
+                        }
+                    }
+                    // 如果自己是活的，周边有两个活的，lives是3
+                    // 如果自己是死的，周边有三个活的，lives是3
+                    // 如果自己是活的，周边有三个活的，lives减自己是3
+                    if (lives == 3 || lives - board[i][j] == 3) {
+                        board[i][j] |= 2;
+                    }
+                }
+            }
+            // 右移就是新的值
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    board[i][j] >>>= 1;
+                }
+            }
+        }
+    }
+
+    /*
+        Game of Life II
+        https://segmentfault.com/a/1190000003819277
+        Difficulty: Hard
+    */
+    public class Solution_3 {
+        public void solveOneD(int rounds, int[] board) {
             int n = board.length;
-            int[] lookupTable = {0, 1, 0, 1, 1, 0, 1, 0};
-            int[] buffer = new int[n];
-            int env = board[n - 1] * 2 + board[0] * 1;
             for (int i = 0; i < n; i++) {
-                env = (env % 4) * 2 + board[(i + n + 1) % n] * 1;
-                buffer[i] = (lookupTable[env] + board[i]) % 2;
-                System.out.println(env);
+                int lives = board[(i + n + 1) % n] % 2 + board[(i + n - 1) % n] % 2;
+                if (lives == 1) {
+                    board[i] = board[i] % 2 + 2;
+                } else {
+                    board[i] = board[i];
+                }
             }
             for (int i = 0; i < n; i++) {
-                board[i] = buffer[i];
+                board[i] = board[i] >= 2 ? (board[i] + 1) % 2 : board[i] % 2;
             }
         }
     }

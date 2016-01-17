@@ -6,17 +6,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UniqueBinarySearchTrees {
-
+    /*
+        Unique Binary Search Trees
+        https://leetcode.com/problems/unique-binary-search-trees/
+        Difficulty: Medium
+    */
     public class Solution {
-        public int numTrees1(int n) {
-            // Catalan number;
-            int c = 1;
+        public int numTrees(int n) {
+            long c = 1;
             for (int i = 2; i <= n; i++) {
                 c = c * 2 * (2 * i - 1) / (i + 1);
             }
-            return c;
+            return (int) c;
         }
+    }
 
+    /*
+        Unique Binary Search Trees
+        https://leetcode.com/problems/unique-binary-search-trees/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
         public int numTrees(int n) {
             int[] nums = new int[n + 1];
             nums[0] = 1;
@@ -32,34 +42,39 @@ public class UniqueBinarySearchTrees {
         }
     }
 
-    // unique binary search trees II
-    public class SolutionII {
-        public List<TreeNode> generateTreesRe(int l, int r) {
-            ArrayList<TreeNode> res = new ArrayList<TreeNode>();
-            if (l > r) {
-                res.add(null);
-                return res;
+    /*
+        Unique Binary Search Trees II
+        https://leetcode.com/problems/unique-binary-search-trees-ii/
+        Difficulty: Medium
+    */
+    public class Solution_3 {
+        public List<TreeNode> search(int left, int right) {
+            ArrayList<TreeNode> rslt = new ArrayList<TreeNode>();
+            if (left > right) {
+                rslt.add(null);
+                return rslt;
             }
-            for (int k = l; k <= r; ++k) {
-                List<TreeNode> leftTrees = generateTreesRe(l, k - 1);
-                List<TreeNode> rightTrees = generateTreesRe(k + 1, r);
+            for (int k = left; k <= right; k++) {
+                List<TreeNode> leftTrees = search(left, k - 1);
+                List<TreeNode> rightTrees = search(k + 1, right);
                 for (int i = 0; i < leftTrees.size(); i++) {
                     for (int j = 0; j < rightTrees.size(); j++) {
                         TreeNode root = new TreeNode(k);
                         root.left = leftTrees.get(i);
                         root.right = rightTrees.get(j);
-                        res.add(root);
+                        rslt.add(root);
                     }
                 }
             }
-            return res;
+            return rslt;
         }
 
         public List<TreeNode> generateTrees(int n) {
             if (n <= 0) return new ArrayList<TreeNode>();
-            return generateTreesRe(1, n);
+            return search(1, n);
         }
     }
+
     public static class UnitTest {
 
     }

@@ -1,90 +1,88 @@
 package lru_cache;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static org.junit.Assert.assertEquals;
 
-/*
-    LRU Cache naive double linked list + hashmap approach
-    https://leetcode.com/problems/lru-cache/
-    Difficulty: Hard
- */
+
 public class LRUCache {
-    private HashMap<Integer, DoubleLinkedListNode> map
-            = new HashMap<Integer, DoubleLinkedListNode>();
-    private DoubleLinkedListNode head;
-    private DoubleLinkedListNode end;
-    private int capacity;
-//    private int len;
+    /*
+        LRU Cache naive double linked list + hashmap approach
+        https://leetcode.com/problems/lru-cache/
+        Difficulty: Hard
+     */
+    public class LRUCache_1 {
+        private HashMap<Integer, DoubleLinkedListNode> map = new HashMap<Integer, DoubleLinkedListNode>();
+        private DoubleLinkedListNode head;
+        private DoubleLinkedListNode tail;
+        private int capacity;
 
-    public LRUCache(int capacity) {
-        this.capacity = capacity;
-//        len = 0;
-    }
 
-    public int get(int key) {
-        if (map.containsKey(key)) {
-            DoubleLinkedListNode latest = map.get(key);
-            removeNode(latest);
-            setHead(latest);
-            return latest.val;
-        } else {
-            return -1;
+        public LRUCache_1(int capacity) {
+            this.capacity = capacity;
         }
-    }
 
-    public void set(int key, int value) {
-        if (map.containsKey(key)) {
-            DoubleLinkedListNode oldNode = map.get(key);
-            oldNode.val = value;
-            removeNode(oldNode);
-            setHead(oldNode);
-        } else {
-            DoubleLinkedListNode newNode = new DoubleLinkedListNode(key, value);
-            setHead(newNode);
-            map.put(key, newNode);
-            if (map.size() > capacity) {
-                map.remove(end.key);
-                end = end.pre;
-                if (end != null) {
-                    end.next = null;
+        public int get(int key) {
+            if (map.containsKey(key)) {
+                DoubleLinkedListNode latest = map.get(key);
+                removeNode(latest);
+                setHead(latest);
+                return latest.val;
+            } else {
+                return -1;
+            }
+        }
+
+        public void set(int key, int value) {
+            if (map.containsKey(key)) {
+                DoubleLinkedListNode oldNode = map.get(key);
+                oldNode.val = value;
+                removeNode(oldNode);
+                setHead(oldNode);
+            } else {
+                DoubleLinkedListNode newNode = new DoubleLinkedListNode(key, value);
+                if (map.size() >= capacity) {
+                    setHead(newNode);
+                    map.remove(tail.key);
+                    tail = tail.pre;
+                    if (tail != null) {
+                        tail.next = null;
+                    }
                 }
+                setHead(newNode);
+                map.put(key, newNode);
+            }
+        }
+
+        public void removeNode(DoubleLinkedListNode node) {
+            if (node.pre != null) {
+                node.pre.next = node.next;
+            } else {
+                head = node.next;
+            }
+            if (node.next != null) {
+                node.next.pre = node.pre;
+            } else {
+                tail = node.pre;
+            }
+        }
+
+        public void setHead(DoubleLinkedListNode node) {
+            node.next = head;
+            node.pre = null;
+            if (head != null) {
+                head.pre = node;
+            }
+            head = node;
+            if (tail == null) {
+                tail = node;
             }
         }
     }
-
-    public void removeNode(DoubleLinkedListNode node) {
-        DoubleLinkedListNode cur = node;
-        DoubleLinkedListNode pre = cur.pre;
-        DoubleLinkedListNode post = cur.next;
-
-        if (pre != null) {
-            pre.next = post;
-        } else {
-            head = post;
-        }
-
-        if (post != null) {
-            post.pre = pre;
-        } else {
-            end = pre;
-        }
-    }
-
-    public void setHead(DoubleLinkedListNode node) {
-        node.next = head;
-        node.pre = null;
-        if (head != null) {
-            head.pre = node;
-        }
-
-        head = node;
-        if (end == null) {
-            end = node;
-        }
-    }
-
 
     class DoubleLinkedListNode {
         public int val;
@@ -92,22 +90,22 @@ public class LRUCache {
         public DoubleLinkedListNode pre;
         public DoubleLinkedListNode next;
 
-        public DoubleLinkedListNode(int key, int value) {
-            val = value;
+        public DoubleLinkedListNode(int key, int val) {
+            this.val = val;
             this.key = key;
         }
     }
 
     /*
-        LRU Cache using LinkedHashMap
+        LRU Cache using - LinkedHashMap
         https://leetcode.com/problems/lru-cache/
         Difficulty: Hard
      */
-    public class LRUCacheII {
+    public class LRUCache_2 {
         private Map<Integer, Integer> map;
         private int capacity;
 
-        public LRUCacheII(int capacity) {
+        public LRUCache_2(int capacity) {
             this.capacity = capacity;
             map = new LinkedHashMap<Integer, Integer>(capacity + 1);
         }
@@ -126,13 +124,38 @@ public class LRUCache {
             if (map.size() > capacity)
                 map.remove(map.entrySet().iterator().next().getKey());
         }
-
     }
 
     public static class UnitTest {
-//3,[set(1,1),set(2,2),set(3,3),set(4,4),get(4),get(3),get(2),get(1),set(5,5),get(1),get(2),get(3),get(4),get(5)]
-//[4,3,2,-1,-1,2,3,-1,5]
+        @Test
+        public void test1() {
+            LRUCache_1 lru = new LRUCache().new LRUCache_1(5);
+            lru.set(1, 1);
+            lru.set(2, 2);
+            lru.set(3, 3);
+            lru.set(4, 4);
+            assertEquals(lru.get(4), 4);
+            assertEquals(lru.get(6), -1);
+            lru.set(5, 5);
+            lru.set(6, 6);
+            assertEquals(lru.get(6), 6);
+            assertEquals(lru.get(1), -1);
+        }
 
+        @Test
+        public void test2() {
+            LRUCache_2 lru = new LRUCache().new LRUCache_2(5);
+            lru.set(4, 4);
+            lru.set(3, 3);
+            lru.set(2, 2);
+            lru.set(1, 1);
+            assertEquals(lru.get(4), 4);
+            assertEquals(lru.get(6), -1);
+            lru.set(6, 6);
+            lru.set(5, 5);
+            assertEquals(lru.get(6), 6);
+            assertEquals(lru.get(3), -1);
+        }
     }
 }
 

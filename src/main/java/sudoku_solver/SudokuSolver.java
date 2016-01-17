@@ -1,13 +1,17 @@
 package sudoku_solver;
 
 public class SudokuSolver {
-
+    /*
+        Sudoku Solver
+        https://leetcode.com/problems/sudoku-solver/
+        Difficulty: Hard
+     */
     public class Solution {
-        private boolean isValid(char[][] board, int row, int column, char c) {
+        private boolean isValid(char[][] board, int row, int col, char c) {
             int cellRow = row - row % 3;
-            int cellColumn = column - column % 3;
+            int cellColumn = col - col % 3;
             for (int i = 0; i < 9; i++) {
-                if (board[i][column] == c || board[row][i] == c
+                if (board[i][col] == c || board[row][i] == c
                         || board[cellRow + i / 3][cellColumn + i % 3] == c) {
                     return false;
                 }
@@ -26,16 +30,16 @@ public class SudokuSolver {
                 return true;
             }
             int row = pos / 9;
-            int column = pos % 9;
+            int col = pos % 9;
             for (char c = '1'; c <= '9'; c++) {
-                if (isValid(board, row, column, c)) {
-                    board[row][column] = c;
+                if (isValid(board, row, col, c)) {
+                    board[row][col] = c;
                     if (search(board, pos + 1)) {
                         return true;
                     }
                 }
             }
-            board[row][column] = '.';
+            board[row][col] = '.'; //very important
             return false;
         }
 

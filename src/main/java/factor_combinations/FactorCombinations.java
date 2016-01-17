@@ -1,53 +1,49 @@
 package factor_combinations;
 
-import java.util.*;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class FactorCombinations {
     /*
         Factor Combinations
-        http://buttercola.blogspot.com/2015/08/leetcode-factor-combinations.html
+        http://www.cnblogs.com/EdwardLiu/p/5068718.html
         Difficulty: Medium
      */
     public class Solution {
         public List<List<Integer>> getFactors(int n) {
-            List<List<Integer>> result = new ArrayList<>();
-
-            if (n <= 1) {
-                return result;
-            }
-
-            List<Integer> curr = new ArrayList<>();
-
-            getFactorsHelper(2, 1, n, curr, result);
-
-            return result;
+            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            List<Integer> cur = new ArrayList<Integer>();
+            if (n <= 3) return rslt;
+            search(2, n, rslt, cur);
+            return rslt;
         }
 
-        private void getFactorsHelper(int start, int product, int n, List<Integer> curr, List<List<Integer>> result) {
-            if (start > n || product > n) {
-                return;
-            }
-
-            if (product == n) {
-                result.add(new ArrayList<Integer>(curr));
-                return;
-            }
-
-            for (int i = start; i < n; i++) {
-                if (i * product > n) {
-                    break;
+        public void search(int start, int n, List<List<Integer>> rslt, List<Integer> cur) {
+            if (n == 1) {
+                if (cur.size() > 1) {
+                    rslt.add(new ArrayList<Integer>(cur));
+                    return;
                 }
-
-                if (n % (product * i) == 0) {
-                    curr.add(i);
-                    getFactorsHelper(i, product * i, n, curr, result);
-                    curr.remove(curr.size() - 1);
+            }
+            for (int i = start; i <= n; i++) {
+                if (n % i == 0) {
+                    cur.add(i);
+                    search(i, n / i, rslt, cur);
+                    cur.remove(cur.size() - 1);
                 }
             }
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new FactorCombinations().new Solution();
+            assertTrue(true);
+        }
     }
 }

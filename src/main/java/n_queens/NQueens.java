@@ -1,90 +1,130 @@
 package n_queens;
 
-import java.util.*;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class NQueens {
-    public List<List<String>> solveNQueens(int n) {
-        List<List<String>> res = new ArrayList();
-        List<String> sol = new ArrayList<String>();
-        HashMap<Integer, Integer> flag = new HashMap<Integer, Integer>();
-        int column = 0;
-        int row = 0;
-        find(row, -1, n, flag, sol, res);
-        return res;
-    }
+    /*
+        N-Queens
+        https://leetcode.com/problems/n-queens/
+        Difficulty: Hard
+     */
+    public class Solution {
+        public boolean validate(int row, int[] colForRow) {
+            for (int i = 0; i < row; i++) {
+                if (colForRow[i] == colForRow[row] || Math.abs(colForRow[i] - colForRow[row]) == Math.abs(i - row))
+                    return false;
+            }
+            return true;
+        }
 
-    public void find(int row, int index, int n, HashMap<Integer, Integer> flag, List<String> sol, List<List<String>> res) {
-        if (row <= n - 1) {
-            int p = 0;
+        public void search(int n, int row, int[] colForRow, List<List<String>> rslt) {
+            if (row == n) { //find a suitable solution, add to result list
+                List<String> list = new ArrayList<String>();
+                for (int i = 0; i < n; i++) {
+                    StringBuilder buff = new StringBuilder();
+                    for (int m = 0; m < n; m++) {
+                        if (colForRow[i] == m) buff.append('Q');
+                        else buff.append('.');
+                    }
+                    String st = buff.toString();
+                    list.add(st);
+                }
+                rslt.add(list);
+                return;
+            }
+
             for (int i = 0; i < n; i++) {
-                if (!check(flag, index, n, row, i))
-                    continue;
-                if (!flag.containsKey(i)) {
-                    //if(row < n-1)
-                    flag.put(i, row);
-                    p = 1;
-                    place(sol, n, i);
-                    if (row == n - 1) {
-                        ArrayList<String> q = new ArrayList<String>(sol);
-                        res.add(q);
-                    } else
-                        find(row + 1, i, n, flag, sol, res);
-                    sol.remove(sol.size() - 1);
-                    flag.remove(i);
+                colForRow[row] = i;
+                if (validate(row, colForRow)) {
+                    search(n, row+1, colForRow, rslt);
                 }
             }
-            if (p == 0)
-                return;
+        }
+
+        public List<List<String>> solveNQueens(int n) {
+            List<List<String>> rslt = new ArrayList<List<String>>();
+            search(n, 0, new int[n], rslt);
+            return rslt;
         }
     }
 
-    public void place(List<String> sol, int n, int i) {
-        char[] temp = new char[n];
-        Arrays.fill(temp, '.');
-        temp[i] = 'Q';
-        String tmp = new String(temp);
-        sol.add(tmp);
+    /*
+         N-Queens II - Mathmatic
+         https://leetcode.com/problems/n-queens_ii/
+         Difficulty: Hard
+    */
+    public class Solution_2 {
+        private int search(int row, int left, int right, int upper) {
+            if (row == upper) {
+                return 1;
+            }
+            int count = 0;
+            int allow = upper & ~(row | left | right);
+            while (allow != 0) {
+                int pos = (-allow) & allow;
+                count += search(row + pos, (left + pos) >> 1, (right + pos) << 1, upper);
+                allow = allow - pos;
+            }
+            return count;
+        }
+
+        public int totalNQueens(int n) {
+            return search(0, 0, 0, (1 << n) - 1);
+        }
     }
 
-    public boolean check(HashMap flag, int index, int n, int row, int i) {
-        if (index == -1)
+    /*
+         N-Queens II - Backtracking
+         https://leetcode.com/problems/n-queens_ii/
+         Difficulty: Hard
+    */
+    public class Solution_3 {
+        private boolean validate(int row, int[] ColForRow) {
+            for (int i = 0; i < row; i++) {
+                if (ColForRow[i] == ColForRow[row] || Math.abs(ColForRow[i] - ColForRow[row]) == Math.abs(i - row)) {
+                    return false;
+                }
+            }
             return true;
-        if (index - 2 < i && i < index + 2)
-            return false;
-        int flag2 = 0;
-        for (int ii = 0; ii < n; ii++) {
-            if (flag.containsKey(ii)) {
-                if (Math.abs(i - ii) == Math.abs(row - (int) flag.get(ii)))
-                    flag2 = 1;
+        }
+
+        private void search(int n, int row, int[] ColForRow, ArrayList<Integer> rslt) {
+            if (row == n) { //find a suitable solution
+                rslt.set(0, rslt.get(0) + 1);
+                return;
+            }
+            for (int i = 0; i < n; i++) {
+                ColForRow[row] = i;
+                if (validate(row, ColForRow)) {
+                    search(n, row + 1, ColForRow, rslt);
+                }
             }
         }
-        if (flag2 == 1)
-            return false;
-        return true;
-    }
 
-    // N-Queens II
-    private int search(int row, int lDiag, int rDiag, int upper) {
-        if (row == upper) {
-            return 1;
+        public int totalNQueens(int n) {
+            ArrayList<Integer> rslt = new ArrayList<Integer>();
+            rslt.add(0);
+            search(n, 0, new int[n], rslt);
+            return rslt.get(0);
         }
-        int count = 0;
-        int allow = upper & ~(row | lDiag | rDiag);
-        while (allow != 0) {
-            int pos = (-allow) & allow;
-            count += search(row + pos, (lDiag + pos) >> 1,
-                    (rDiag + pos) << 1, upper);
-            allow = allow - pos;
-        }
-        return count;
-    }
-
-    public int totalNQueens(int n) {
-        return search(0, 0, 0, (1 << n) - 1);
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution_2 sol2 = new NQueens().new Solution_2();
+            Solution_3 sol3 = new NQueens().new Solution_3();
+            assertEquals(1, sol2.totalNQueens(1));
+            assertEquals(1, sol3.totalNQueens(1));
+            assertEquals(92, sol2.totalNQueens(8));
+            assertEquals(92, sol3.totalNQueens(8));
+        }
     }
 }
 

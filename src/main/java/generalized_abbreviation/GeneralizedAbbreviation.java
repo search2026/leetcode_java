@@ -1,8 +1,9 @@
 package generalized_abbreviation;
 
-import java.util.*;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GeneralizedAbbreviation {
     /*
@@ -11,28 +12,28 @@ public class GeneralizedAbbreviation {
         Difficulty: Medium
      */
     public class Solution {
-        public List<String> generateAbbreviations(String word) {
-            List<String> rslt = new ArrayList<>();
-            dfs(rslt, "", 0, word);
-            return rslt;
-        }
-
-        public void dfs(List<String> rslt, String curr, int start, String s) {
-            if (start > s.length())
+        public void search(List<String> rslt, String cur, int start, String word) {
+            if (start > word.length())
                 return;
 
-            rslt.add(curr + s.substring(start));
+            rslt.add(cur + word.substring(start));
 
             int i = 0;
             if (start > 0) {
                 i = start + 1;
             }
 
-            for (; i < s.length(); i++) {
-                for (int j = 1; j <= s.length(); j++) {
-                    dfs(rslt, curr + s.substring(start, i) + j, i + j, s);
+            for (; i < word.length(); i++) {
+                for (int j = 1; j <= word.length(); j++) {
+                    search(rslt, cur + word.substring(start, i) + j, i + j, word);
                 }
             }
+        }
+
+        public List<String> generateAbbreviations(String word) {
+            List<String> rslt = new ArrayList<String>();
+            search(rslt, "", 0, word);
+            return rslt;
         }
     }
 
@@ -40,7 +41,7 @@ public class GeneralizedAbbreviation {
         @Test
         public void test1() {
             Solution sol = new GeneralizedAbbreviation().new Solution();
-        }        
+        }
     }
 }
 

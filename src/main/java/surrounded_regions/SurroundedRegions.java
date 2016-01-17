@@ -1,68 +1,70 @@
 package surrounded_regions;
 
-import java.util.ArrayDeque;
+import org.junit.Test;
+
+import java.util.LinkedList;
+
+import static org.junit.Assert.assertTrue;
 
 public class SurroundedRegions {
-
+    /*
+        Surrounded Regions
+        https://leetcode.com/problems/surrounded-regions/
+        Difficulty: Medium
+     */
     public class Solution {
-        private class Pos {
-            int x;
-            int y;
+        public void search(char[][] board, int i, int j) {
+            LinkedList<Integer> queue = new LinkedList<Integer>();
+            queue.offer(i * board[0].length + j);
+            board[i][j] = '$';
+            while (queue.size() != 0) {
+                int num = queue.poll();
+                int row = num / board[0].length;
+                int col = num % board[0].length;
 
-            Pos(int x, int y) {
-                this.x = x;
-                this.y = y;
+                if (row > 0 && board[row - 1][col] == 'O') {
+                    queue.offer((row - 1) * board[0].length + col);
+                    board[row - 1][col] = '$';
+                }
+                if (row < board.length - 1 && board[row + 1][col] == 'O') {
+                    queue.offer((row + 1) * board[0].length + col);
+                    board[row + 1][col] = '$';
+                }
+                if (col > 0 && board[row][col - 1] == 'O') {
+                    queue.offer(row * board[0].length + col - 1);
+                    board[row][col - 1] = '$';
+                }
+                if (col < board[0].length - 1 && board[row][col + 1] == 'O') {
+                    queue.offer(row * board[0].length + col + 1);
+                    board[row][col + 1] = '$';
+                }
             }
-        }
-
-        private boolean isOutOfBound(int x, int y, int rows, int columns) {
-            return x < 0 || y < 0 || x >= rows || y >= columns;
         }
 
         public void solve(char[][] board) {
-            if (board.length == 0 || board[0].length == 0) {
-                return;
+            if (board == null || board.length == 0 || board[0].length == 0) return;
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[0][j] == 'O') search(board, 0, j);
+                if (board[board.length - 1][j] == 'O') search(board, board.length - 1, j);
             }
-            int rows = board.length;
-            int columns = board[0].length;
-
-            ArrayDeque<Pos> stack = new ArrayDeque<Pos>();
-            for (int i = 0; i < rows; i++) {
-                stack.offerLast(new Pos(i, 0));
-                stack.offerLast(new Pos(i, columns - 1));
+            for (int i = 0; i < board.length; i++) {
+                if (board[i][0] == 'O') search(board, i, 0);
+                if (board[i][board[0].length - 1] == 'O') search(board, i, board[0].length - 1);
             }
-            for (int i = 0; i < columns; i++) {
-                stack.offerLast(new Pos(0, i));
-                stack.offerLast(new Pos(rows - 1, i));
-            }
-
-            while (!stack.isEmpty()) {
-                Pos pos = stack.removeLast();
-                int x = pos.x;
-                int y = pos.y;
-                if (isOutOfBound(x, y, rows, columns) || board[x][y] != 'O') {
-                    continue;
-                }
-                board[x][y] = 'N';
-                stack.offerLast(new Pos(x - 1, y));
-                stack.offerLast(new Pos(x + 1, y));
-                stack.offerLast(new Pos(x, y - 1));
-                stack.offerLast(new Pos(x, y + 1));
-            }
-
-            for (int i = 0; i < rows; i++) {
-                for (int j = 0; j < columns; j++) {
-                    if (board[i][j] == 'O') {
-                        board[i][j] = 'X';
-                    } else if (board[i][j] == 'N') {
-                        board[i][j] = 'O';
-                    }
+            for (int i = 0; i < board.length; i++) {
+                for (int j = 0; j < board[0].length; j++) {
+                    if (board[i][j] == '$') board[i][j] = 'O';
+                    else if (board[i][j] == 'O') board[i][j] = 'X';
                 }
             }
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SurroundedRegions().new Solution();
+            assertTrue(true);
+        }
     }
 }

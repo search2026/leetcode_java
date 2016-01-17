@@ -1,7 +1,15 @@
 package valid_sudoku;
 
-public class ValidSudoku {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class ValidSudoku {
+    /*
+        Valid Sudoku
+        https://leetcode.com/problems/valid-sudoku/
+        Difficulty: Easy
+     */
     public class Solution {
         public boolean isValidSudoku(char[][] board) {
             boolean[][] rows = new boolean[9][9];
@@ -17,7 +25,7 @@ public class ValidSudoku {
                             || cells[i / 3 * 3 + j / 3][num]) {
                         return false;
                     }
-                    rows[i][num] = columns[j][num] = cells[i / 3 * 3 + j / 3][num] = true;
+                    rows[i][num] = columns[j][num] = cells[(i / 3) * 3 + j / 3][num] = true;
                 }
             }
             return true;
@@ -25,6 +33,10 @@ public class ValidSudoku {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ValidSudoku().new Solution();
+            assertTrue(true);
+        }
     }
 }

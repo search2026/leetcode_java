@@ -1,7 +1,11 @@
 package implement_trie;
 
 public class ImplementTrie {
-
+    /*
+        Implement Trie
+        https://leetcode.com/problems/implement-trie-prefix-tree/
+        Difficulty: Medium
+     */
     class TrieNode {
         private TrieNode[] children = new TrieNode[26];
 
