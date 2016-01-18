@@ -257,12 +257,10 @@ public class CountofSmallerNumbersAfterSelf {
         @Test
         public void test1() {
             Solution_3 sol = new CountofSmallerNumbersAfterSelf().new Solution_3();
-            int[] input = new int[]{5, 2, 6, 1};
-            List<Integer> expected = Arrays.asList(2, 1, 1, 0);
-            assertTrue(sol.countSmaller(input).equals(expected));
-            input = new int[]{-1, -1};
-            expected = Arrays.asList(0, 0);
-            assertTrue(sol.countSmaller(input).equals(expected));
+            List<Integer> list = new ArrayList<Integer>();
+            ArrayList<Integer> list1 = new ArrayList<Integer>();
+            List<List<Integer>> list2 = new ArrayList<List<Integer>>();
+            List<Integer> list3 = Arrays.asList(2, 1, 1, 0);
         }
     }
 }
