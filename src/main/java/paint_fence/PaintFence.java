@@ -12,23 +12,15 @@ public class PaintFence {
      */
     public class Solution {
         public int numWays(int n, int k) {
-            if (n <= 0 || k <= 0) {
-                return 0;
-            }
-
-            if (n == 1) {
-                return k;
-            }
+            if (n <= 0 || k <= 0) return 0;
+            if (n == 1) return k;
 
             int preSame = 0;
             int preDiff = k;
-
             for (int i = 1; i < n; i++) {
-                int same = preDiff;
-                int diff = (k - 1) * (preSame + preDiff);
-
-                preSame = same;
-                preDiff = diff;
+                int curDiff = (k - 1) * (preSame + preDiff);
+                preSame = preDiff;
+                preDiff = curDiff;
             }
 
             return preSame + preDiff;
@@ -36,10 +28,10 @@ public class PaintFence {
     }
 
     /*
-    Paint Fence DP Solution
-    http://buttercola.blogspot.com/2015/09/leetcode-paint-fence.html
-    Difficulty: Easy
- */
+        Paint Fence
+        http://buttercola.blogspot.com/2015/09/leetcode-paint-fence.html
+        Difficulty: Easy
+    */
     public class SolutionII {
         public int numWays(int n, int k) {
             if (n <= 0 || k <= 0) {

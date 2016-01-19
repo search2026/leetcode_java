@@ -1,9 +1,12 @@
 package unique_binary_search_trees;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class UniqueBinarySearchTrees {
     /*
@@ -28,17 +31,17 @@ public class UniqueBinarySearchTrees {
     */
     public class Solution_2 {
         public int numTrees(int n) {
-            int[] nums = new int[n + 1];
-            nums[0] = 1;
-            nums[1] = 1;
+            int[] dp = new int[n + 1];
+            dp[0] = 1;
+            dp[1] = 1;
             for (int i = 2; i < n + 1; i++) {
                 int tmp = 0;
                 for (int j = 0; j < i; j++) {
-                    tmp += nums[j] * nums[i - j - 1];
+                    tmp += dp[j] * dp[i - j - 1];
                 }
-                nums[i] = tmp;
+                dp[i] = tmp;
             }
-            return nums[n];
+            return dp[n];
         }
     }
 
@@ -76,6 +79,10 @@ public class UniqueBinarySearchTrees {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new UniqueBinarySearchTrees().new Solution();
+            assertTrue(true);
+        }
     }
 }

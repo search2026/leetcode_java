@@ -12,24 +12,23 @@ public class CoinChange {
      */
     public class Solution {
         public int coinChange(int[] coins, int amount) {
-            int length = coins.length;
+            int n = coins.length;
             int[] dp = new int[amount + 1];
             dp[0] = 0;
-            for (int i = 1; i <= amount; i++)
-                dp[i] = Integer.MAX_VALUE;
             for (int i = 1; i <= amount; i++) {
-                for (int j = 0; j < length; j++) {
+                dp[i] = Integer.MAX_VALUE;
+                for (int j = 0; j < n; j++) {
                     if (coins[j] <= i) {
+                        if (i - coins[j] < 0) continue;
                         int local = dp[i - coins[j]];
-                        if (local != Integer.MAX_VALUE && local + 1 < dp[i])
-                            dp[i] = local + 1;
+                        if (local != Integer.MAX_VALUE)
+                            dp[i] = Math.min(dp[i], local +1);
                     }
                 }
             }
             if (dp[amount] != Integer.MAX_VALUE)
                 return dp[amount];
-            else
-                return -1;
+            return -1;
         }
     }
 
@@ -37,10 +36,8 @@ public class CoinChange {
         @Test
         public void test1() {
             Solution sol = new CoinChange().new Solution();
-            int[] coins = new int[]{1, 2, 5};
-            int amount = 11;
-            //TODO: this unit actually failed, expected 2 instead of 3
-            assertEquals(3, sol.coinChange(coins, amount));
+            assertEquals(3, sol.coinChange(new int[]{1, 2, 5}, 11));
+            assertEquals(-1, sol.coinChange(new int[]{2}, 3));
         }
     }
 }
