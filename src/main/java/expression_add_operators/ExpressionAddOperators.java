@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class ExpressionAddOperators {
     /*
@@ -14,53 +14,32 @@ public class ExpressionAddOperators {
         Difficulty: Medium
      */
     public class Solution {
-        public List<String> addOperators(String num, int target) {
-            List<String> result = new ArrayList<>();
-
-            if (num == null || num.length() == 0) {
-                return result;
+        public void search(List<String> rslt, String cur, String num, int pos, long sum, long preVal, long target) {
+            if (pos == num.length()) {
+                if (sum == target) {
+                    rslt.add(cur);
+                }
+                return;
             }
-
-            addOperatorHelper(num, 0, target, 0, 0, "", result);
-
-            return result;
+            for (int i = pos + 1; i <= num.length(); i++) {
+                if (num.charAt(pos) == '0' && i > pos + 1) break; // case like: 105  1+05 wrong, 1+0+5 right
+                String curStr = num.substring(pos, i);
+                long curNum = Long.parseLong(curStr);
+                if (pos == 0) {
+                    search(rslt, curStr, num, i, curNum, curNum, target);
+                } else {
+                    search(rslt, cur + "+" + curStr, num, i, sum + curNum, curNum, target);
+                    search(rslt, cur + "-" + curStr, num, i, sum - curNum, -curNum, target);
+                    search(rslt, cur + "*" + curStr, num, i, sum - preVal + preVal * curNum, preVal * curNum, target);
+                }
+            }
         }
 
-        private void addOperatorHelper(String num, int start, int target, long curSum,
-                                       long preNum, String curResult, List<String> result) {
-            if (start == num.length() && curSum == target) {
-                result.add(curResult);
-                return;
-            }
-
-            if (start == num.length()) {
-                return;
-            }
-
-            for (int i = start; i < num.length(); i++) {
-                String curStr = num.substring(start, i + 1);
-                if (curStr.length() > 1 && curStr.charAt(0) == '0') {
-                    break;
-                }
-
-                long curNum = Long.parseLong(curStr);
-
-                if (curResult.isEmpty()) {
-                    addOperatorHelper(num, i + 1, target, curNum, curNum, curStr, result);
-                } else {
-                    // Multiply
-                    addOperatorHelper(num, i + 1, target, curSum - preNum + preNum * curNum,
-                            preNum * curNum, curResult + "*" + curNum, result);
-
-                    // Add
-                    addOperatorHelper(num, i + 1, target, curSum + curNum, curNum,
-                            curResult + "+" + curNum, result);
-
-                    // Subtract
-                    addOperatorHelper(num, i + 1, target, curSum - curNum, -curNum,
-                            curResult + "-" + curNum, result);
-                }
-            }
+        public List<String> addOperators(String num, int target) {
+            List<String> rslt = new ArrayList<String>();
+            if (num == null || num.length() == 0) return rslt;
+            search(rslt, "", num, 0, 0, 0, (long) target);
+            return rslt;
         }
     }
 
@@ -68,6 +47,9 @@ public class ExpressionAddOperators {
         @Test
         public void test1() {
             Solution sol = new ExpressionAddOperators().new Solution();
+            List<String> rslt = sol.addOperators("123", 6);
+            assertTrue(rslt.get(0).equals("1+2+3") || rslt.get(0).equals("1*2*3"));
+            assertTrue(true);
         }
     }
 }

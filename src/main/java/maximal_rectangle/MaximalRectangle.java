@@ -1,49 +1,63 @@
 package maximal_rectangle;
 
+import org.junit.Test;
+
 import java.util.ArrayDeque;
+import java.util.LinkedList;
+
+import static org.junit.Assert.assertEquals;
 
 public class MaximalRectangle {
-
+    /*
+        Maximal Rectangle
+        https://leetcode.com/problems/maximal-rectangle/
+        Difficulty: Hard
+     */
     public class Solution {
-        private int largestRectangleArea(int[] height) {
-            ArrayDeque<Integer> p = new ArrayDeque<Integer>();
-            int i = 0;
-            int maxArea = 0;
-            while (i < height.length) {
-                if (p.isEmpty() || height[p.peekLast()] <= height[i]) {
-                    p.offerLast(i++);
-                } else {
-                    int pos = p.removeLast();
-                    maxArea = Math.max(maxArea, height[pos]
-                            * (p.isEmpty() ? i : (i - p.peekLast() - 1)));
-                }
-            }
-            return maxArea;
-        }
-
         public int maximalRectangle(char[][] matrix) {
-            if (matrix.length == 0 || matrix[0].length == 0) {
-                return 0;
-            }
-            int m = matrix.length;
-            int n = matrix[0].length;
-            int[] height = new int[n + 1];
+            if (matrix==null || matrix.length==0 || matrix[0].length==0) return 0;
+            int[] height = new int[matrix[0].length];
             int maxArea = 0;
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (matrix[i][j] == '1') {
-                        height[j]++;
-                    } else {
-                        height[j] = 0;
+
+            for (int row=0; row<matrix.length; row++) {
+                LinkedList<Integer> stack = new LinkedList<Integer>();
+                for (int i=0; i<matrix[0].length; i++) {
+                    if (matrix[row][i] != '0') height[i] = height[i] + 1;
+                    else height[i] = 0;
+                }
+                for (int col=0; col<matrix[0].length; col++) {
+                    if (stack.size()==0 || height[col]>height[stack.peek()]) {
+                        stack.push(col);
+                    }
+                    else {
+                        int temp = stack.pop();
+                        int width = (stack.size()==0)? col : col-stack.peek()-1;
+                        maxArea = Math.max(maxArea, width*height[temp]);
+                        col--;
                     }
                 }
-                maxArea = Math.max(maxArea, largestRectangleArea(height));
+                while (stack.size() != 0) {
+                    int temp = stack.pop();
+                    int width = (stack.size()==0)? height.length : height.length-stack.peek()-1;
+                    maxArea = Math.max(maxArea, width*height[temp]);
+                }
             }
+
             return maxArea;
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MaximalRectangle().new Solution();
+            char[][] grid = new char[][]{
+                    new char[]{'1', '0', '1', '0', '0'},
+                    new char[]{'1', '0', '1', '1', '1'},
+                    new char[]{'1', '1', '1', '1', '1'},
+                    new char[]{'1', '0', '0', '1', '0'}
+            };
+            assertEquals(6, sol.maximalRectangle(grid));
+        }
     }
 }
