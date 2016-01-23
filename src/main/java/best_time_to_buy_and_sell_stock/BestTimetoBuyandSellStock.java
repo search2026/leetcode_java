@@ -1,5 +1,9 @@
 package best_time_to_buy_and_sell_stock;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class BestTimetoBuyandSellStock {
     /*
         Best Time to Buy and Sell Stock
@@ -8,9 +12,7 @@ public class BestTimetoBuyandSellStock {
      */
     public class Solution {
         public int maxProfit(int[] prices) {
-            if (prices.length == 0) {
-                return 0;
-            }
+            if (prices == null || prices.length == 0) return 0;
             int maxProfit = 0;
             int minPrice = prices[0];
             for (int i = 1; i < prices.length; i++) {
@@ -27,15 +29,13 @@ public class BestTimetoBuyandSellStock {
         Difficulty: Medium
      */
     public class Solution_2 {
-        public int maxProfitII(int[] prices) {
-            if (prices.length == 0) {
-                return 0;
-            }
-            int profit = 0;
+        public int maxProfit(int[] prices) {
+            if (prices == null || prices.length == 0) return 0;
+            int profit_sum = 0;
             for (int i = 1; i < prices.length; i++) {
-                profit += Math.max(0, prices[i] - prices[i - 1]);
+                profit_sum += Math.max(0, prices[i] - prices[i - 1]);
             }
-            return profit;
+            return profit_sum;
         }
     }
 
@@ -45,25 +45,18 @@ public class BestTimetoBuyandSellStock {
         Difficulty: Hard
      */
     public class Solution_3 {
-        public int maxProfitIII(int[] prices) {
-            if (prices.length == 0) {
-                return 0;
+        public int maxProfit(int[] prices) {
+            if (prices == null || prices.length == 0) return 0;
+            int[] local = new int[3];
+            int[] global = new int[3];
+            for (int i = 0; i < prices.length - 1; i++) {
+                int diff = prices[i + 1] - prices[i];
+                for (int j = 2; j >= 1; j--) {
+                    local[j] = Math.max(global[j - 1] + (diff > 0 ? diff : 0), local[j] + diff);
+                    global[j] = Math.max(local[j], global[j]);
+                }
             }
-            int[] profit = new int[prices.length];
-            profit[0] = 0;
-            int minPrice = prices[0];
-            for (int i = 1; i < prices.length; i++) {
-                profit[i] = Math.max(profit[i - 1], prices[i] - minPrice);
-                minPrice = Math.min(minPrice, prices[i]);
-            }
-            int maxPrice = prices[prices.length - 1];
-            int maxProfit = profit[prices.length - 1];
-            for (int i = prices.length - 2; i > 0; i--) {
-                maxProfit = Math.max(maxProfit, profit[i - 1] + maxPrice
-                        - prices[i]);
-                maxPrice = Math.max(maxPrice, prices[i]);
-            }
-            return maxProfit;
+            return global[2];
         }
     }
 
@@ -81,15 +74,11 @@ public class BestTimetoBuyandSellStock {
             return profit;
         }
 
-        // Best Time to Buy and Sell Stock IV
-        public int maxProfitIV(int k, int[] prices) {
+        public int maxProfit(int k, int[] prices) {
             int n = prices.length;
-            if (n <= 1) {
-                return 0;
-            }
-            if (k >= n) {
-                return maxProfitUnlimited(prices);
-            }
+            if (n <= 1) return 0;
+            if (k >= n) return maxProfitUnlimited(prices);
+
             int[] global = new int[k + 1];
             int[] local = new int[k + 1];
             for (int i = 1; i < n; i++) {
@@ -109,7 +98,7 @@ public class BestTimetoBuyandSellStock {
          Difficulty: Medium
     */
     public class Solution_5 {
-        public int maxProfitCoolDown(int[] prices) {
+        public int maxProfit(int[] prices) {
             int profit1 = 0, profit2 = 0;
             for (int i = 1; i < prices.length; i++) {
                 int copy = profit1;
@@ -121,6 +110,16 @@ public class BestTimetoBuyandSellStock {
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new BestTimetoBuyandSellStock().new Solution();
+            assertEquals("a", "a");
+        }
 
+        @Test
+        public void test5() {
+            Solution_5 sol = new BestTimetoBuyandSellStock().new Solution_5();
+            assertEquals(3, sol.maxProfit(new int[]{1, 2, 3, 0, 2}));
+        }
     }
 }
