@@ -12,83 +12,80 @@ public class AlienDictionary {
      */
     public class Solution {
         public String alienOrder(String[] words) {
-            // Step 1: build the graph
-            Map<Character, Set<Character>> graph = new HashMap<>();
-            for (int i = 0; i < words.length; i++) {
-                String curr = words[i];
-                for (int j = 0; j < curr.length(); j++) {
-                    if (!graph.containsKey(curr.charAt(j))) {
-                        graph.put(curr.charAt(j), new HashSet<Character>());
-                    }
-                }
+            HashMap<Character, HashSet<Character>> graph = new HashMap<Character, HashSet<Character>>();
+            HashMap<Character, Integer> indegree = new HashMap<Character, Integer>();
+            String order = "";
+            initialization(words, graph, indegree);
 
-                if (i > 0) {
-                    connectGraph(graph, words[i - 1], curr);
-                }
-            }
+            buildGraphCountIndegree(words, graph, indegree);
 
-            // Step 2: toplogical sorting
-            StringBuffer sb = new StringBuffer();
-            Map<Character, Integer> visited = new HashMap<Character, Integer>();
+            order = topologicalSort(graph, indegree);
 
-            Iterator it = graph.entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry) it.next();
-                char vertexId = (char) pair.getKey();
-                if (!toplogicalSort(vertexId, graph, sb, visited)) {
-                    return "";
-                }
-            }
-
-            return sb.toString();
+            return (order.length()==indegree.size())? order : "";
         }
 
-        private void connectGraph(Map<Character, Set<Character>> graph, String prev, String curr) {
-            if (prev == null || curr == null) {
-                return;
-            }
-
-            int len = Math.min(prev.length(), curr.length());
-
-            for (int i = 0; i < len; i++) {
-                char p = prev.charAt(i);
-                char q = curr.charAt(i);
-                if (p != q) {
-                    if (!graph.get(p).contains(q)) {
-                        graph.get(p).add(q);
+        public void initialization(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
+            for (String each : words) {
+                for (int t=0; t<each.length(); t++) {
+                    if (!graph.containsKey(each.charAt(t))) {
+                        graph.put(each.charAt(t), new HashSet<Character>());
                     }
-                    break;
+                    if (!indegree.containsKey(each.charAt(t))) {
+                        indegree.put(each.charAt(t), 0);
+                    }
                 }
             }
         }
 
-        private boolean toplogicalSort(char vertexId, Map<Character, Set<Character>> graph, StringBuffer sb, Map<Character, Integer> visited) {
-            if (visited.containsKey(vertexId)) {
-                // visited
-                if (visited.get(vertexId) == -1) {
-                    return false;
-                }
+        public void buildGraphCountIndegree(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
+            HashSet<String> edges = new HashSet<String>();
+            for (int i=0; i<words.length-1; i++) {
+                String word1 = words[i];
+                String word2 = words[i+1];
+                for (int j=0; j<word1.length()&&j<word2.length(); j++) {
+                    if (word1.charAt(j) == word2.charAt(j)) continue;
+                    char from = word1.charAt(j);
+                    char to = word2.charAt(j);
+                    String edge = from + "" + to;
+                    if (!edges.contains(edge)) {
+                        // add to node to from node's adjacent set
+                        graph.get(from).add(to);
 
-                // already in the list
-                if (visited.get(vertexId) == 1) {
-                    return true;
+                        // increase to node's indegree by 1
+                        indegree.put(to, indegree.get(to)+1);
+
+                        // add the edge to visited set
+                        edges.add(edge);
+                        break;
+                    }
                 }
-            } else {
-                // mark as visited
-                visited.put(vertexId, -1);
+            }
+        }
+
+        public String topologicalSort(HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
+            StringBuffer rslt = new StringBuffer();
+            LinkedList<Character> queue = new LinkedList<Character>();
+            for (Character key : indegree.keySet()) {
+                if (indegree.get(key) == 0) {
+                    queue.offer(key);
+                    //break;
+                }
             }
 
-            Set<Character> neighbors = graph.get(vertexId);
-            for (char neighbor : neighbors) {
-                if (!toplogicalSort(neighbor, graph, sb, visited)) {
-                    return false;
+            while (!queue.isEmpty()) {
+                Character cur = queue.poll();
+                rslt.append(cur.charValue());
+                HashSet<Character> adjList = graph.get(cur);
+                if (adjList != null) {
+                    for (Character dst : adjList) {
+                        int dstIndegree = indegree.get(dst);
+                        dstIndegree--;
+                        if (dstIndegree == 0) queue.offer(dst);
+                        indegree.put(dst, dstIndegree);
+                    }
                 }
             }
-
-            sb.insert(0, vertexId);
-            visited.put(vertexId, 1);
-
-            return true;
+            return rslt.toString();
         }
     }
 

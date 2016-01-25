@@ -15,28 +15,28 @@ public class RegularExpressionMatching {
     public class Solution_2 {
         public boolean isMatch(String s, String p) {
             if (s == null || p == null) return false;
-            boolean[][] res = new boolean[s.length() + 1][p.length() + 1];
-            res[0][0] = true;
+            boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
+            dp[0][0] = true;
             for (int m = 1; m <= p.length(); m++) {
                 if (p.charAt(m - 1) == '*') {
-                    res[0][m] = res[0][m - 2];
+                    dp[0][m] = dp[0][m - 2];
                 }
             }
 
             for (int j = 1; j <= p.length(); j++) {
                 if (p.charAt(j - 1) == '*' && p.charAt(j - 2) != '.') {
                     for (int i = 1; i <= s.length(); i++) {
-                        if (res[i][j - 1] || res[i][j - 2]) res[i][j] = true;
-                        else if (res[i - 1][j] && i > 1 && p.charAt(j - 2) == s.charAt(i - 2) && s.charAt(i - 2) == s.charAt(i - 1)) {
-                            res[i][j] = true;
+                        if (dp[i][j - 1] || dp[i][j - 2]) dp[i][j] = true;
+                        else if (dp[i - 1][j] && i > 1 && p.charAt(j - 2) == s.charAt(i - 2) && s.charAt(i - 2) == s.charAt(i - 1)) {
+                            dp[i][j] = true;
                         }
                     }
                 } else if (p.charAt(j - 1) == '*' && p.charAt(j - 2) == '.') {
                     for (int i = 1; i <= s.length(); i++) {
-                        if (res[i][j - 1] || res[i][j - 2]) {
-                            res[i][j] = true;
+                        if (dp[i][j - 1] || dp[i][j - 2]) {
+                            dp[i][j] = true;
                             while (i <= s.length()) {
-                                res[i][j] = true;
+                                dp[i][j] = true;
                                 i++;
                             }
                         }
@@ -44,12 +44,12 @@ public class RegularExpressionMatching {
                 } else {
                     for (int i = 1; i <= s.length(); i++) {
                         if (p.charAt(j - 1) == s.charAt(i - 1) || p.charAt(j - 1) == '.') {
-                            res[i][j] = res[i - 1][j - 1];
+                            dp[i][j] = dp[i - 1][j - 1];
                         }
                     }
                 }
             }
-            return res[s.length()][p.length()];
+            return dp[s.length()][p.length()];
         }
     }
 
@@ -60,6 +60,7 @@ public class RegularExpressionMatching {
     */
     public class Solution {
         public boolean isMatch(String s, String p) {
+            if (s == null || p == null) return false;
             boolean[][] dp = new boolean[p.length() + 1][s.length() + 1];
             dp[0][0] = true;
             for (int i = 1; i <= p.length(); i++) {
@@ -81,9 +82,7 @@ public class RegularExpressionMatching {
                             }
                         }
                     } else {
-                        dp[i][j] = dp[i - 1][j - 1]
-                                && (p.charAt(i - 1) == '.' || p.charAt(i - 1) == s
-                                .charAt(j - 1));
+                        dp[i][j] = dp[i - 1][j - 1] && (p.charAt(i - 1) == '.' || p.charAt(i - 1) == s.charAt(j - 1));
                     }
                 }
 

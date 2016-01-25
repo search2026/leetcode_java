@@ -19,27 +19,27 @@ public class WildcardMatching {
             boolean[] dp = new boolean[s.length() + 1];
             dp[0] = true;
 
-            for (int j = 0; j < p.length(); j++) {
-                if (p.charAt(j) != '*') {
-                    for (int i = s.length() - 1; i >= 0; i--) {
-                        dp[i + 1] = dp[i] && (p.charAt(j) == '?' || s.charAt(i) == p.charAt(j));
+            for (int i = 0; i < p.length(); i++) {
+                if (p.charAt(i) != '*') {
+                    for (int j = s.length() - 1; j >= 0; j--) {
+                        dp[j + 1] = dp[j] && (p.charAt(i) == '?' || s.charAt(j) == p.charAt(i));
                     }
                 } else {
-                    int i = 0;
-                    while (i <= s.length() && !dp[i])
-                        i++;
-                    for (; i <= s.length(); i++) {
-                        dp[i] = true;
+                    int k = 0;
+                    while (k <= s.length() && !dp[k])
+                        k++;
+                    for (; k <= s.length(); k++) {
+                        dp[k] = true;
                     }
                 }
-                dp[0] = dp[0] && p.charAt(j) == '*';
+                dp[0] = dp[0] && p.charAt(i) == '*';
             }
             return dp[s.length()];
         }
     }
 
     /*
-        Wildcard Matching - Backtracking
+        Wildcard Matching - Greedy Search
         https://leetcode.com/problems/wildcard-matching/
         Difficulty: Hard
      */
@@ -47,51 +47,48 @@ public class WildcardMatching {
         public boolean isMatch(String s, String p) {
             int sLen = s.length();
             int pLen = p.length();
-            if (s == "" && p == "") return true;
+            if (s.length() == 0 && p.length() == 0) return true;
 
-
-            int pInd = 0;
-            int sInd = 0;
-            int star = -1;
-            int starS = -1;
+            int pIdx = 0;
+            int sIdx = 0;
+            int star_p = -1;
+            int star_s = -1;
             char charS, charP;
             while (true) {
-                //Determin the current state of the problem first.
-                //if all s has been matched, but there is still unused p,
-                //then return true only if all the p left are '*", otherwise return false;
-                if (pInd < pLen && sInd >= sLen) {
-                    for (int i = pInd; i < pLen; i++)
+                //if all of s has been matched and there is still unused p,
+                //then return true only if what left inside p are '*".
+                if (pIdx < pLen && sIdx >= sLen) {
+                    for (int i = pIdx; i < pLen; i++)
                         if (p.charAt(i) != '*')
                             return false;
                     return true;
                 }
 
-                //If all the p has been used
-                if (pInd >= pLen) {
-                    //if still has unmatched s, then backtrack to the last currence of '*'
-                    //otherwise, return true;
-                    if (sInd < sLen) {
-                        if (star == -1) return false;
-                        pInd = star + 1;
-                        starS++;
-                        sInd = starS;
+                //if all of p has been used
+                if (pIdx >= pLen) {
+                    //if still has unmatched s, then backtrack to the last occurrence
+                    //of '*'. If there is no '*', return true.
+                    if (sIdx < sLen) {
+                        if (star_p == -1) return false;
+                        pIdx = star_p + 1;
+                        star_s++;
+                        sIdx = star_s;
                     } else return true;
                 } else {
-                    charS = s.charAt(sInd);
-                    charP = p.charAt(pInd);
-                    boolean match = false;
+                    charS = s.charAt(sIdx);
+                    charP = p.charAt(pIdx);
                     if (charP == '?' || charP == charS) {
-                        pInd++;
-                        sInd++;
+                        pIdx++;
+                        sIdx++;
                     } else if (charP == '*') {
-                        star = pInd;
-                        starS = sInd;
-                        pInd++;
+                        star_p = pIdx;
+                        star_s = sIdx;
+                        pIdx++;
                     } else {
-                        if (star == -1) return false;
-                        pInd = star + 1;
-                        starS++;
-                        sInd = starS;
+                        if (star_p == -1) return false;
+                        pIdx = star_p + 1;
+                        star_s++;
+                        sIdx = star_s;
                     }
                 }
             }

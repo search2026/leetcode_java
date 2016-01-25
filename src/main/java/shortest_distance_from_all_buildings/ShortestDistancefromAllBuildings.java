@@ -15,66 +15,60 @@ import static org.junit.Assert.*;
 public class ShortestDistancefromAllBuildings {
     /*
         Shortest Distance From All Building
-        http://blog.csdn.net/u012175043/article/details/50336803
+        http://www.cnblogs.com/EdwardLiu/p/5094091.html
         Difficulty: Hard
      */
     public class Solution {
         public int shortestDistance(int[][] grid) {
-            if (grid == null) return -1;
+            if (grid==null || grid.length==0 || grid[0].length==0) return -1;
             int m = grid.length;
             int n = grid[0].length;
+            int[][] dist = new int[m][n];
+            int[][] reach = new int[m][n];
+            int houseNum = 0;
+            int[][] directions = {{-1,0},{1,0},{0,-1},{0,1}};
 
-            int[][] total = new int[m][n];
-            int[][] newGrid = new int[m][n];
-            List<Pair<Integer, Integer>> dirs = Arrays.asList(
-                    new Pair<Integer, Integer>(0, 1),
-                    new Pair<Integer, Integer>(1, 0),
-                    new Pair<Integer, Integer>(0, -1),
-                    new Pair<Integer, Integer>(-1, 0)
-            );
-
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    newGrid[i][j] = grid[i][j];
-                    total[i][j] = 0;
-                }
-            }
-
-            int canAchieve = 0, minDist = Integer.MAX_VALUE;
-
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
+            for (int i=0; i<m; i++) {
+                for (int j=0; j<n; j++) {
                     if (grid[i][j] == 1) {
-                        Queue<Pair<Integer, Integer>> q = new LinkedList<Pair<Integer, Integer>>();
-                        q.add(new Pair<>(i, j));
-                        int[][] dist = new int[m][n];
-                        while (!q.isEmpty()) {
-                            Pair<Integer, Integer> cur = q.poll();
-                            for (Pair<Integer, Integer> d : dirs) {
-                                int newX = cur.getKey() + d.getKey();
-                                int newY = cur.getValue() + d.getValue();
-                                if (newX < m && newX >= 0 && newY >= 0 && newY < n && newGrid[newX][newY] == canAchieve) {
-                                    newGrid[newX][newY]--;
-                                    dist[newX][newY] = dist[cur.getKey()][cur.getValue()] + 1;
-                                    total[newX][newY] += dist[newX][newY];
-                                    q.add(new Pair<>(newX, newY));
+                        houseNum++;
+                        int level = 0;
+                        boolean[][] visited = new boolean[m][n];
+                        LinkedList<Integer> queue = new LinkedList<Integer>();
+                        queue.offer(i*n+j);
+                        visited[i][j] = true;
+                        while (!queue.isEmpty()) {
+                            int size = queue.size();
+                            for (int t=0; t<size; t++) {
+                                int cur = queue.poll();
+                                int x = cur/n;
+                                int y = cur%n;
+                                for (int[] dir : directions) {
+                                    int xnew = x + dir[0];
+                                    int ynew = y + dir[1];
+                                    if (xnew>=0 && xnew<m && ynew>=0 && ynew<n && !visited[xnew][ynew] && grid[xnew][ynew]==0) {
+                                        queue.offer(xnew*n+ynew);
+                                        visited[xnew][ynew] = true;
+                                        dist[xnew][ynew] += level+1;
+                                        reach[xnew][ynew]++;
+                                    }
                                 }
                             }
+                            level++;
                         }
-                        canAchieve--;
                     }
                 }
             }
 
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (total[i][j] > 0 && newGrid[i][j] == canAchieve)
-                        minDist = Math.min(minDist, total[i][j]);
+            int minDist = Integer.MAX_VALUE;
+            for (int i=0; i<m; i++) {
+                for (int j=0; j<n; j++) {
+                    if (grid[i][j]==0 && reach[i][j] == houseNum) {
+                        minDist = Math.min(minDist, dist[i][j]);
+                    }
                 }
             }
-
-            //return minDist == Integer.MIN_VALUE ? -1 : minDist;
-            return 7;
+            return minDist==Integer.MAX_VALUE? -1 : minDist;
         }
     }
 
@@ -85,7 +79,7 @@ public class ShortestDistancefromAllBuildings {
             int[][] test = new int[][]{
                     new int[]{1, 0, 2, 0, 1},
                     new int[]{0, 0, 0, 0, 0},
-                    new int[]{0, 0, 1, 0, 1}
+                    new int[]{0, 0, 1, 0, 0}
             };
 
             assertEquals(7, sol.shortestDistance(test));

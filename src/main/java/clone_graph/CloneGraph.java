@@ -1,11 +1,13 @@
 package clone_graph;
 
 import common.UndirectedGraphNode;
+import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 
 public class CloneGraph {
     /*
@@ -51,7 +53,6 @@ public class CloneGraph {
             while (!queue.isEmpty()) {
                 UndirectedGraphNode nodeInQueue = queue.poll();
                 for (UndirectedGraphNode n : nodeInQueue.neighbors) {
-                    //UndirectedGraphNode n1 = neighbors.get(i);
                     if (map.containsKey(n)) {
                         map.get(nodeInQueue).neighbors.add(map.get(n));
                     } else {
@@ -68,6 +69,10 @@ public class CloneGraph {
 
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new CloneGraph().new Solution();
+            assertEquals(1, 1);
+        }
     }
 }

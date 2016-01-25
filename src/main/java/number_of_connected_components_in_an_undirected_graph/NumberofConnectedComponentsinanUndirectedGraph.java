@@ -65,10 +65,10 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
         public void test1() {
             Solution sol = new NumberofConnectedComponentsinanUndirectedGraph().new Solution();
             int n = 5;
-            int[][] edges = new int [][]{
-                    new int[]{0,1},
-                    new int[]{1,2},
-                    new int[]{3,4}
+            int[][] edges = new int[][]{
+                    new int[]{0, 1},
+                    new int[]{1, 2},
+                    new int[]{3, 4}
             };
             assertEquals(2, sol.countComponents(n, edges));
         }

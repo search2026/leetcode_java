@@ -1,6 +1,10 @@
 package word_ladder;
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class WordLadder {
     /*
@@ -10,9 +14,7 @@ public class WordLadder {
      */
     public class Solution {
         public int ladderLength(String start, String end, Set<String> dict) {
-            if (start == null || start.isEmpty() || end == null || end.isEmpty())
-                return 0;
-
+            if (start == null || start.isEmpty() || end == null || end.isEmpty()) return 0;
             int length = 1;
             Queue<String> queue = new LinkedList<String>();
             queue.offer(start);
@@ -21,18 +23,18 @@ public class WordLadder {
             while (!queue.isEmpty()) {
                 int size = queue.size();
                 for (int i = 0; i < size; i++) {
-                    String curr = queue.poll();
-                    for (int j = 0; j < curr.length(); j++) {
-                        char[] charCurr = curr.toCharArray();
+                    String cur = queue.poll();
+                    for (int j = 0; j < cur.length(); j++) {
+                        char[] curChar = cur.toCharArray();
                         for (char c = 'a'; c < 'z'; c++) {
-                            charCurr[j] = c;  // change one character at a time
-                            String strCurr = new String(charCurr);
-                            if (strCurr.equals(end)) {
+                            curChar[j] = c;
+                            String curStr = new String(curChar);
+                            if (curStr.equals(end)) {
                                 return length + 1;
                             } else {
-                                if (dict.contains(strCurr) && !visited.contains(strCurr)) {
-                                    queue.offer(strCurr);
-                                    visited.add(strCurr);
+                                if (dict.contains(curStr) && !visited.contains(curStr)) {
+                                    queue.offer(curStr);
+                                    visited.add(curStr);
                                 }
                             }
                         }
@@ -52,32 +54,32 @@ public class WordLadder {
     public class Solution_2 {
         public List<List<String>> findLadders(String start, String end, Set<String> dict) {
             List<List<String>> results = new ArrayList<List<String>>();
-            if(start.isEmpty() || end.isEmpty() || dict.isEmpty())
+            if (start.isEmpty() || end.isEmpty() || dict.isEmpty())
                 return results;
-            Set<String> q1 = new HashSet<>();
-            Map<String, Set<String>> p = new HashMap<>();
+            Set<String> q1 = new HashSet<String>();
+            Map<String, Set<String>> p = new HashMap<String, Set<String>>();
             q1.add(end);
             dict.add(end);
             dict.add(start);
-            for(String i : dict) {
-                Set<String> temp = new HashSet<>();
-                p.put(i, temp);
+            for (String i : dict) {
+                Set<String> cur = new HashSet<String>();
+                p.put(i, cur);
             }
-            Set<String> visited = new HashSet<>();
+            Set<String> visited = new HashSet<String>();
             boolean found = false;
-            while(!q1.isEmpty() && !found) {
-                for(String i : q1)
+            while (!q1.isEmpty() && !found) {
+                for (String i : q1)
                     visited.add(i);
-                Set<String> q2 = new HashSet<>();
-                for(String current : q1) {
+                Set<String> q2 = new HashSet<String>();
+                for (String current : q1) {
                     char[] curChar = current.toCharArray();
-                    for(int i = 0; i < current.length(); i++) {
+                    for (int i = 0; i < current.length(); i++) {
                         char original = curChar[i];
-                        for(char j = 'a'; j <= 'z'; j++) {
+                        for (char j = 'a'; j <= 'z'; j++) {
                             curChar[i] = j;
                             String newStr = new String(curChar);
-                            if(!visited.contains(newStr) && dict.contains(newStr)) {
-                                if(newStr.equals(start))
+                            if (!visited.contains(newStr) && dict.contains(newStr)) {
+                                if (newStr.equals(start))
                                     found = true;
                                 p.get(newStr).add(current);
                                 q2.add(newStr);
@@ -89,26 +91,30 @@ public class WordLadder {
                 q1 = q2;
             }
 
-            List<String> result = new ArrayList<>();
-            if(found)
-                generateResult(result, start, p, results);
+            List<String> result = new ArrayList<String>();
+            if (found)
+                search(result, start, p, results);
 
             return results;
         }
 
-        void generateResult(List<String> result, String start, Map<String, Set<String>> p, List<List<String>> results) {
-            List<String> extendedResult = new ArrayList<>(result);
+        void search(List<String> result, String start, Map<String, Set<String>> p, List<List<String>> results) {
+            List<String> extendedResult = new ArrayList<String>(result);
             extendedResult.add(start);
-            if(p.get(start).size() == 0) {
+            if (p.get(start).size() == 0) {
                 results.add(extendedResult);
                 return;
             }
-            for(String s : p.get(start))
-                generateResult(extendedResult, s, p, results);
+            for (String s : p.get(start))
+                search(extendedResult, s, p, results);
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new WordLadder().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }
