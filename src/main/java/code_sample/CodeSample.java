@@ -1,18 +1,14 @@
 package code_sample;
 
-import common.TreeNode;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.*;
 
 public class CodeSample {
     /*
      */
     public class Solution {
-
+        public  void main(String[] args) {
+            System.out.println("Hello World!");
+        }
     }
 
 
