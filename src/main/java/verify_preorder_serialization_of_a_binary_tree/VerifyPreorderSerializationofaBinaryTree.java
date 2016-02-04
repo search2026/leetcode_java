@@ -38,15 +38,13 @@ public class VerifyPreorderSerializationofaBinaryTree {
         public boolean isValidSerialization(String preorder) {
             if (preorder == null || preorder.length() == 0) return false;
             String[] tks = preorder.split(",");
-            int depth = 0, i = 0;
-            while (i < tks.length - 1) {
-                if (tks[i].equals("#")) {
-                    if (depth == 0) return false;
-                    else depth--;
-                } else depth++;
-                i++;
+            int diff = 1;
+            for (String token: tks) {
+                diff--;
+                if (diff < 0) return false;
+                if (!token.equals("#")) diff += 2;
             }
-            return (depth == 0) && tks[tks.length - 1].equals("#");
+            return (diff == 0) && tks[tks.length - 1].equals("#");
         }
     }
 
