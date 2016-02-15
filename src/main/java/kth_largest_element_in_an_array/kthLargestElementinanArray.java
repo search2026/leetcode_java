@@ -1,5 +1,9 @@
 package kth_largest_element_in_an_array;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class kthLargestElementinanArray {
     /*
         Kth Largest number in an Array
@@ -7,43 +11,39 @@ public class kthLargestElementinanArray {
         Difficulty: Medium
      */
     public class Solution {
-        public int findKthLargest(int[] nums, int k) {
-            return quickSelect(nums, 0, nums.length - 1, nums.length - k);
+        public void swap(int[] nums, int l, int r) {
+            int temp = nums[l];
+            nums[l] = nums[r];
+            nums[r] = temp;
         }
 
-        private int partition(int[] nums, int left, int right) {
-            int pivot = nums[right];
-            int index = left;
-            for (int i = left; i < right; i++) {
-                if (nums[i] < pivot) {
-                    swap(nums, index, i);
-                    index++;
-                }
+        public int quickSelect(int[] nums, int start, int end, int k) {
+            int l = start;
+            int r = end;
+            int pivot = end;
+            while (l < r) {
+                while (l < r && nums[l] < nums[pivot]) l++;
+                while (l < r && nums[r] >= nums[pivot]) r--;
+                if (l == r) break;
+                swap(nums, l, r);
             }
-            swap(nums, index, right);
-            return index;
+            swap(nums, l, pivot);
+            if (l + 1 == k) return nums[l];
+            else if (l + 1 < k) return quickSelect(nums, l + 1, end, k);
+            else return quickSelect(nums, start, l - 1, k);
         }
 
-        private int quickSelect(int[] nums, int left, int right, int k) {
-            if (left == right)
-                return nums[left];
-            int index = partition(nums, left, right);
-            if (index == k)
-                return nums[k];
-            else if (k < index)//left
-                return quickSelect(nums, left, index - 1, k);
-            else//right
-                return quickSelect(nums, index + 1, right, k);
-        }
-
-        private void swap(int[] nums, int a, int b) {
-            int temp = nums[a];
-            nums[a] = nums[b];
-            nums[b] = temp;
+        public int findKthLargest(int[] nums, int k) {
+            int len = nums.length;
+            return quickSelect(nums, 0, len - 1, len - k + 1);
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new kthLargestElementinanArray().new Solution();
+            assertEquals(5, sol.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
+        }
     }
 }

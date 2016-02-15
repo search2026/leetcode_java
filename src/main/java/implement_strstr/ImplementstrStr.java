@@ -1,25 +1,36 @@
 package implement_strstr;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class ImplementstrStr {
     /*
-        Implement stratr
+        Implement strstr - Brute Force
         https://leetcode.com/problems/implement-strstr/
-        Difficulty: Easy
+        Difficulty: Medium
      */
     public class Solution {
-        public int strStr_1(String haystack, String needle) {
-            int sLen = haystack.length(), tLen = needle.length();
-            if (tLen == 0) return 0;
-            if (haystack == null || needle == null || sLen == 0) return -1;
-            int i = 0, j = 0;
-            while (i < sLen) {
-                for (j = 0; j < tLen && (i + j) < sLen && haystack.charAt(i + j) == needle.charAt(j); ++j) ;
-                if (j == tLen) return i;
-                ++i;
-            }
-            return (int) -1;
-        }
+        public int strStr(String haystack, String needle) {
+            if (haystack == null || needle == null) return -1;
 
+            for (int i = 0; i < haystack.length() - needle.length() + 1; i++) {
+                int j;
+                for (j = 0; j < needle.length(); j++) {
+                    if (haystack.charAt(i + j) != needle.charAt(j)) break;
+                }
+                if (j == needle.length()) return i;
+            }
+            return -1;
+        }
+    }
+
+    /*
+        Implement strstr - KMP
+        https://leetcode.com/problems/implement-strstr/
+        Difficulty: Medium
+     */
+    public class Solution_2 {
         void getNext(String T, int[] next) {
             int i = 0, j = -1;
             next[0] = -1;
@@ -33,7 +44,7 @@ public class ImplementstrStr {
             }
         }
 
-        public int strStr_2(String haystack, String needle) {
+        public int strStr(String haystack, String needle) {
             int sLen = haystack.length(), tLen = needle.length();
             if (tLen == 0) return 0;
             if (haystack == null || needle == null || sLen == 0) return -1;
@@ -48,53 +59,77 @@ public class ImplementstrStr {
             }
             return -1;
         }
+    }
 
-        public int strStr_3(String haystack, String needle) {
-            int sLen = haystack.length(), tLen = needle.length();
-            if (tLen == 0) return 0;
-            if (haystack == null || needle == null || sLen == 0 || sLen < tLen) return -1;
-            long fh = 0, fn = 0;
-            int head = 0, tail = tLen - 1;
-            for (int i = 0; i < tLen; ++i) {
-                fh += haystack.charAt(i);
-                fn += needle.charAt(i);
+    /*
+        Implement strstr - Rolling Hash
+        https://leetcode.com/problems/implement-strstr/
+        Difficulty: Medium
+     */
+    public class Solution_3 {
+        final int A = 3;
+
+        private int getHash(char[] array, int start, int end) {
+            int k = end - start;
+            int sum = 0;
+            for (int i = start; i <= end; i++) {
+                int item = (int) (array[i] * Math.pow(A, k--));
+                sum += item;
             }
-            while (tail < sLen) {
-                if (fn == fh) {
-                    int i = 0;
-                    while (i < tLen && needle.charAt(i) == haystack.charAt(i + head)) {
-                        ++i;
-                    }
-                    if (i == tLen) return head;
-                }
-                if (tail == sLen - 1) return -1;
-                fh -= haystack.charAt(head++);
-                fh += haystack.charAt(++tail);
-            }
-            return -1;
+            return sum;
         }
 
-        public int strStr_4(String haystack, String needle) {
-            for (int i = 0; i <= haystack.length() - needle.length(); i++) {
-                int j = 0;
-                int start = i;
-                for (j = 0; j < needle.length(); j++) {
-                    if (start < haystack.length() && haystack.charAt(start) == needle.charAt(j)) {
-                        start++;
-                    } else {
-                        break;
-                    }
+        public int strStr(String haystack, String needle) {
+            int n = haystack.length();
+            int m = needle.length();
+            if (m == 0) return 0;
+            if (n < m) return -1;
+
+            char[] input = haystack.toCharArray();
+            int needleHash = getHash(needle.toCharArray(), 0, m - 1);
+            int haystackHash = getHash(input, 0, m - 1);
+
+            for (int i = 0; i < n - m; i++) {
+                if (haystackHash == needleHash) {
+                    if (haystack.substring(i, i + m).equals(needle))
+                        return i;
                 }
-                if (j == needle.length()) {
-                    return i;
-                }
+                //rolling hash
+                haystackHash -= (int) (input[i] * Math.pow(A, m - 1));
+                haystackHash *= A;
+                haystackHash += input[i + m];
+            }
+
+            if (haystackHash == needleHash) {
+                if (haystack.substring(n - m, n).equals(needle))
+                    return n - m;
             }
 
             return -1;
         }
     }
 
-    public static class UnitTest {
 
+    public class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new ImplementstrStr().new Solution();
+            assertEquals(1, sol.strStr("acd1f3ghjk", "cd1f"));
+            assertEquals(-1, sol.strStr("acd1f3ghjk", "cd2f"));
+        }
+
+        @Test
+        public void test2() {
+            Solution_2 sol = new ImplementstrStr().new Solution_2();
+            assertEquals(1, sol.strStr("acd1f3ghjk", "cd1f"));
+            assertEquals(-1, sol.strStr("acd1f3ghjk", "cd2f"));
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new ImplementstrStr().new Solution_3();
+            assertEquals(1, sol.strStr("acd1f3ghjk", "cd1f"));
+            assertEquals(-1, sol.strStr("acd1f3ghjk", "cd2f"));
+        }
     }
 }

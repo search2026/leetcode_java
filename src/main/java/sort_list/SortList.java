@@ -1,6 +1,9 @@
 package sort_list;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class SortList {
     /*
@@ -9,62 +12,56 @@ public class SortList {
         Difficulty: Medium
      */
     public class Solution {
-        public ListNode sortList(ListNode head) {
-            if (head == null || head.next == null) {
-                return head;
+        public ListNode merge(ListNode head1, ListNode head2) {
+            if (head1 == null) return head2;
+            if (head2 == null) return head1;
+            ListNode dummy = new ListNode(-1);
+            ListNode cur = dummy;
+
+            while (head1 != null && head2 != null) {
+                if (head1.val <= head2.val) {
+                    cur.next = head1;
+                    head1 = head1.next;
+                } else {
+                    cur.next = head2;
+                    head2 = head2.next;
+                }
+                cur = cur.next;
             }
 
-            // findRoot the middle point
-            ListNode slow = head;
-            ListNode fast = head;
+            if (head1 == null) cur.next = head2;
+            if (head2 == null) cur.next = head1;
 
-            while (fast.next != null && fast.next.next != null) {
-                slow = slow.next;
-                fast = fast.next.next;
-            }
-
-            ListNode leftHead = head;
-            ListNode rightHead = slow.next;
-
-            slow.next = null;
-
-            // recursively merge
-            leftHead = sortList(leftHead);
-            rightHead = sortList(rightHead);
-
-            return merge(leftHead, rightHead);
+            return dummy.next;
         }
 
-        private ListNode merge(ListNode leftHead, ListNode rightHead) {
-            ListNode newHead = new ListNode(0);
-            ListNode curr = newHead;
-
-            while (leftHead != null || rightHead != null) {
-                if (leftHead == null) {
-                    curr.next = rightHead;
-                    break;
-                }
-
-                if (rightHead == null) {
-                    curr.next = leftHead;
-                    break;
-                }
-
-                if (leftHead.val <= rightHead.val) {
-                    curr.next = leftHead;
-                    leftHead = leftHead.next;
-                    curr = curr.next;
-                } else {
-                    curr.next = rightHead;
-                    rightHead = rightHead.next;
-                    curr = curr.next;
-                }
+        public ListNode mergesort(ListNode head) {
+            if (head == null || head.next == null) return head;
+            ListNode dummy = new ListNode(-1);
+            dummy.next = head;
+            ListNode slow = dummy;
+            ListNode fast = dummy;
+            while (fast != null && fast.next != null) {
+                fast = fast.next.next;
+                slow = slow.next;
             }
+            ListNode head1 = dummy.next;
+            ListNode head2 = slow.next;
+            slow.next = null;
+            return merge(mergesort(head1), mergesort(head2));
+        }
 
-            return newHead.next;
+        public ListNode sortList(ListNode head) {
+            if (head == null || head.next == null) return head;
+            return mergesort(head);
         }
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new SortList().new Solution();
+            assertTrue(true);
+        }
     }
 }
