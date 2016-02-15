@@ -2,7 +2,12 @@ package alien_dictionary;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Queue;
+
+import static org.junit.Assert.assertTrue;
 
 public class AlienDictionary {
     /*
@@ -11,81 +16,67 @@ public class AlienDictionary {
         Difficulty: Hard
      */
     public class Solution {
-        public String alienOrder(String[] words) {
-            HashMap<Character, HashSet<Character>> graph = new HashMap<Character, HashSet<Character>>();
-            HashMap<Character, Integer> indegree = new HashMap<Character, Integer>();
-            String order = "";
-            initialization(words, graph, indegree);
-
-            buildGraphCountIndegree(words, graph, indegree);
-
-            order = topologicalSort(graph, indegree);
-
-            return (order.length()==indegree.size())? order : "";
-        }
-
-        public void initialization(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
-            for (String each : words) {
-                for (int t=0; t<each.length(); t++) {
-                    if (!graph.containsKey(each.charAt(t))) {
-                        graph.put(each.charAt(t), new HashSet<Character>());
-                    }
-                    if (!indegree.containsKey(each.charAt(t))) {
-                        indegree.put(each.charAt(t), 0);
-                    }
-                }
-            }
-        }
-
-        public void buildGraphCountIndegree(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
+        public void generateIndegree(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
             HashSet<String> edges = new HashSet<String>();
-            for (int i=0; i<words.length-1; i++) {
+            for (int i = 0; i < words.length - 1; i++) {
                 String word1 = words[i];
-                String word2 = words[i+1];
-                for (int j=0; j<word1.length()&&j<word2.length(); j++) {
+                String word2 = words[i + 1];
+                for (int j = 0; j < word1.length() && j < word2.length(); j++) {
                     if (word1.charAt(j) == word2.charAt(j)) continue;
                     char from = word1.charAt(j);
                     char to = word2.charAt(j);
-                    String edge = from + "" + to;
+                    String edge = from + "" + to; //as a key to check duplicates
                     if (!edges.contains(edge)) {
-                        // add to node to from node's adjacent set
                         graph.get(from).add(to);
-
-                        // increase to node's indegree by 1
-                        indegree.put(to, indegree.get(to)+1);
-
-                        // add the edge to visited set
+                        indegree.put(to, indegree.get(to) + 1);
                         edges.add(edge);
-                        break;
+                        break; // skip rest of characters
                     }
                 }
             }
         }
 
-        public String topologicalSort(HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
-            StringBuffer rslt = new StringBuffer();
-            LinkedList<Character> queue = new LinkedList<Character>();
-            for (Character key : indegree.keySet()) {
-                if (indegree.get(key) == 0) {
-                    queue.offer(key);
-                    //break;
-                }
+        public String topologicalSort(HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> inDegree) {
+            StringBuilder order = new StringBuilder();
+            Queue<Character> queue = new ArrayDeque<Character>();
+            for (Character key : inDegree.keySet()) {
+                if (inDegree.get(key) == 0) queue.offer(key);
             }
 
             while (!queue.isEmpty()) {
                 Character cur = queue.poll();
-                rslt.append(cur.charValue());
-                HashSet<Character> adjList = graph.get(cur);
-                if (adjList != null) {
-                    for (Character dst : adjList) {
-                        int dstIndegree = indegree.get(dst);
-                        dstIndegree--;
-                        if (dstIndegree == 0) queue.offer(dst);
-                        indegree.put(dst, dstIndegree);
+                order.append(cur.charValue());
+                HashSet<Character> adj = graph.get(cur);
+                for (Character c : adj) {
+                    int cInDegree = inDegree.get(c);
+                    cInDegree--;
+                    inDegree.put(c, cInDegree);
+                    if (cInDegree == 0) queue.offer(c);
+                }
+            }
+            return order.toString();
+        }
+
+        public String alienOrder(String[] words) {
+            HashMap<Character, HashSet<Character>> graph = new HashMap<Character, HashSet<Character>>();
+            HashMap<Character, Integer> inDegree = new HashMap<Character, Integer>();
+
+            for (String word : words) {
+                for (int t = 0; t < word.length(); t++) {
+                    if (!graph.containsKey(word.charAt(t))) {
+                        graph.put(word.charAt(t), new HashSet<Character>());
+                    }
+                    if (!inDegree.containsKey(word.charAt(t))) {
+                        inDegree.put(word.charAt(t), 0);
                     }
                 }
             }
-            return rslt.toString();
+
+            generateIndegree(words, graph, inDegree);
+
+            String order = topologicalSort(graph, inDegree);
+
+            return (order.length() == inDegree.size()) ? order : "";
         }
     }
 
@@ -93,6 +84,14 @@ public class AlienDictionary {
         @Test
         public void test1() {
             Solution sol = new AlienDictionary().new Solution();
+            String[] words = {
+                    "wrt",
+                    "wrf",
+                    "er",
+                    "ett",
+                    "rftt"
+            };
+            assertTrue(sol.alienOrder(words).equals("wertf"));
         }
     }
 }

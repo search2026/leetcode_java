@@ -14,7 +14,7 @@ public class SortList {
                 return head;
             }
 
-            // find the middle point
+            // findRoot the middle point
             ListNode slow = head;
             ListNode fast = head;
 

@@ -13,29 +13,24 @@ public class ReconstructItinerary {
         Difficulty: Medium
      */
     public class Solution {
-        Map<String, PriorityQueue<String>> adj;
-
-        public void search(String depart, List<String> rslt) {
-            while (!adj.get(depart).isEmpty()) {
-                String arrive = adj.get(depart).poll();
-                search(arrive, rslt);
-                rslt.add(arrive);
+        public void search(LinkedList<String> rslt, String cur, Map<String, PriorityQueue<String>> adj) {
+            while (adj.containsKey(cur) && !adj.get(cur).isEmpty()) {
+                search(rslt, adj.get(cur).poll(), adj);
             }
+            rslt.addFirst(cur);
         }
 
         public List<String> findItinerary(String[][] tickets) {
-            adj = new HashMap<String, PriorityQueue<String>>();
-            List<String> rslt = new ArrayList<String>();
+            if (tickets == null || tickets.length == 0) return new LinkedList<String>();
+            LinkedList<String> rslt = new LinkedList<String>();
+            Map<String, PriorityQueue<String>> adj = new HashMap<String, PriorityQueue<String>>();
             for (String[] ticket : tickets) {
-                String depart = ticket[0];
-                String arrive = ticket[1];
-                adj.putIfAbsent(depart, new PriorityQueue<String>());
-                adj.putIfAbsent(arrive, new PriorityQueue<String>());
-                adj.get(depart).add(arrive);
+                if (!adj.containsKey(ticket[0])) {
+                    adj.put(ticket[0], new PriorityQueue<String>());
+                }
+                adj.get(ticket[0]).offer(ticket[1]);
             }
-            search("JFK", rslt);
-            rslt.add("JFK");
-            Collections.reverse(rslt);
+            search(rslt, "JFK", adj);
             return rslt;
         }
     }
@@ -53,8 +48,7 @@ public class ReconstructItinerary {
             List<String> rslt = sol.findItinerary(tickets);
             String[] tmpArray = new String[rslt.size()];
             tmpArray = rslt.toArray(tmpArray);
-            assertArrayEquals(new String[]{"JFK", "MUC", "LHR", "SFO", "SJC"}, tmpArray
-            );
+            assertArrayEquals(new String[]{"JFK", "MUC", "LHR", "SFO", "SJC"}, tmpArray);
 
             tickets = new String[][]{
                     new String[]{"JFK", "SFO"},
@@ -65,8 +59,8 @@ public class ReconstructItinerary {
             };
             rslt = sol.findItinerary(tickets);
             tmpArray = new String[rslt.size()];
-            assertArrayEquals(new String[]{"JFK","ATL","JFK","SFO","ATL","SFO"}, tmpArray
-            );
+            tmpArray = rslt.toArray(tmpArray);
+            assertArrayEquals(new String[]{"JFK", "ATL", "JFK", "SFO", "ATL", "SFO"}, tmpArray);
         }
     }
 }

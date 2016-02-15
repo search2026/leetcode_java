@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
     http://algs4.cs.princeton.edu/32bst/
  */
 public class BinarySearchTree<Key extends Comparable<Key>, Value> {
-    private Node root;             // root of BST
+    private Node root;             // findRoot of BST
 
     private class Node {
         private Key key;           // sorted by key

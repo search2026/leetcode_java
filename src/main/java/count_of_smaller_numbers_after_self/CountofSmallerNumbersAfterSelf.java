@@ -121,15 +121,15 @@ public class CountofSmallerNumbersAfterSelf {
 //                max = Math.max(max, i);
 //            }
 //            // Initialize segment tree with [0, max] and 0 value
-//            SegmentTreeNode root = build(0, max);
+//            SegmentTreeNode findRoot = build(0, max);
 //            // Update segment tree with actual value
 //            for (int i : nums) {
-//                update(root, i);
+//                update(findRoot, i);
 //            }
 //
 //            for (int i : nums) {
-//                remove(root, i);
-//                rslt.add(query(root, 0, i));
+//                remove(findRoot, i);
+//                rslt.add(query(findRoot, 0, i));
 //            }
 //
 //            return rslt;
@@ -139,54 +139,54 @@ public class CountofSmallerNumbersAfterSelf {
 //            if (left > right) return null;
 //            if (left == right) return new SegmentTreeNode(left, right);
 //            int mid = left + (right - left) / 2;
-//            SegmentTreeNode root = new SegmentTreeNode(left, right);
-//            root.left = build(left, mid);
-//            root.right = build(mid + 1, right);
-//            root.val = root.left.val + root.right.val;
-//            return root;
+//            SegmentTreeNode findRoot = new SegmentTreeNode(left, right);
+//            findRoot.left = build(left, mid);
+//            findRoot.right = build(mid + 1, right);
+//            findRoot.val = findRoot.left.val + findRoot.right.val;
+//            return findRoot;
 //        }
 //
-//        public int query(SegmentTreeNode root, int start, int end) {
-//            if (root == null) return 0;
-//            if (root.start == start && root.end == end) return root.val;
-//            int mid = (root.start + root.end) / 2;
+//        public int query(SegmentTreeNode findRoot, int start, int end) {
+//            if (findRoot == null) return 0;
+//            if (findRoot.start == start && findRoot.end == end) return findRoot.val;
+//            int mid = (findRoot.start + findRoot.end) / 2;
 //            if (end < mid) {
-//                return query(root.left, start, end);
+//                return query(findRoot.left, start, end);
 //            } else if (start > end) {
-//                return query(root.right, start, end);
+//                return query(findRoot.right, start, end);
 //            } else {
-//                return query(root.left, start, mid) + query(root.right, mid + 1, end);
+//                return query(findRoot.left, start, mid) + query(findRoot.right, mid + 1, end);
 //            }
 //        }
 //
-//        public void update(SegmentTreeNode root, int val) {
-//            if (root == null || root.start > val || root.end < val) return;
-//            if (root.start == val && root.end == val) {
-//                root.val++;
+//        public void update(SegmentTreeNode findRoot, int val) {
+//            if (findRoot == null || findRoot.start > val || findRoot.end < val) return;
+//            if (findRoot.start == val && findRoot.end == val) {
+//                findRoot.val++;
 //                return;
 //            }
-//            int mid = (root.start + root.end) / 2;
+//            int mid = (findRoot.start + findRoot.end) / 2;
 //            if (val <= mid) {
-//                update(root.left, val);
+//                update(findRoot.left, val);
 //            } else {
-//                update(root.right, val);
+//                update(findRoot.right, val);
 //            }
-//            root.val = root.left.val + root.right.val;
+//            findRoot.val = findRoot.left.val + findRoot.right.val;
 //        }
 //
-//        public void remove(SegmentTreeNode root, int val) {
-//            if (root == null || root.start > val || root.end < val) return;
-//            if (root.start == val && root.end == val) {
-//                root.val--;
+//        public void remove(SegmentTreeNode findRoot, int val) {
+//            if (findRoot == null || findRoot.start > val || findRoot.end < val) return;
+//            if (findRoot.start == val && findRoot.end == val) {
+//                findRoot.val--;
 //                return;
 //            }
-//            int mid = (root.start + root.end) / 2;
+//            int mid = (findRoot.start + findRoot.end) / 2;
 //            if (val <= mid) {
-//                remove(root.left, val);
+//                remove(findRoot.left, val);
 //            } else {
-//                remove(root.right, val);
+//                remove(findRoot.right, val);
 //            }
-//            root.val = root.left.val + root.right.val;
+//            findRoot.val = findRoot.left.val + findRoot.right.val;
 //        }
 
         SegmentTreeNode root = null;

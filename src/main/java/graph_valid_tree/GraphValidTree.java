@@ -1,6 +1,10 @@
 package graph_valid_tree;
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static org.junit.Assert.*;
 
 public class GraphValidTree {
     /*
@@ -9,47 +13,35 @@ public class GraphValidTree {
         Difficulty: Medium
      */
     public class Solution {
-        public boolean validTree(int n, int[][] edges) {
-            // initialize adjacency list
-            List<List<Integer>> adjList = new ArrayList<List<Integer>>(n);
+        private boolean hasCycle(List<List<Integer>> adj, int cur, HashSet<Integer> visited, int parent) {
+            visited.add(cur);
 
-            // initialize vertices
-            for (int i = 0; i < n; i++)
-                adjList.add(i, new ArrayList<Integer>());
-
-            // update edges
-            for (int i = 0; i < edges.length; i++) {
-                int u = edges[i][0], v = edges[i][1];
-                adjList.get(u).add(v);
-                adjList.get(v).add(u);
-            }
-
-            boolean[] visited = new boolean[n];
-
-            // make sure there's no cycle
-            if (hasCycle(adjList, 0, visited, -1))
-                return false;
-
-            // make sure all vertices are connected. check the islands.
-            for (int i = 0; i < n; i++) {
-                if (!visited[i])
-                    return false;
-            }
-
-            return true;
-        }
-
-        // check if an undirected graph has cycle started from vertex u
-        boolean hasCycle(List<List<Integer>> adjList, int u, boolean[] visited, int parent) {
-            visited[u] = true;
-
-            for (int i = 0; i < adjList.get(u).size(); i++) {
-                int v = adjList.get(u).get(i);
-                if ((visited[v] && parent != v) || (!visited[v] && hasCycle(adjList, v, visited, u)))
+            for (int i = 0; i < adj.get(cur).size(); i++) {
+                int neighbor = adj.get(cur).get(i);
+                if ((visited.contains(neighbor) && parent != neighbor) ||
+                        (!visited.contains(neighbor) && hasCycle(adj, neighbor, visited, cur)))
                     return true;
             }
 
             return false;
+        }
+
+        public boolean validTree(int n, int[][] edges) {
+            List<List<Integer>> adj = new ArrayList<List<Integer>>(n);
+            for (int i = 0; i < n; i++)
+                adj.add(i, new ArrayList<Integer>());
+            for (int i = 0; i < edges.length; i++) {
+                int u = edges[i][0], v = edges[i][1];
+                adj.get(u).add(v);
+                adj.get(v).add(u);
+            }
+
+            HashSet<Integer> visited = new HashSet<Integer>();
+            if (hasCycle(adj, 0, visited, -1))
+                return false;
+
+            // checks if there is an isolated island
+            return visited.size() == n;
         }
     }
 
@@ -60,46 +52,31 @@ public class GraphValidTree {
      */
     public class Solution_2 {
         public boolean validTree(int n, int[][] edges) {
-            // Create an adj list
-            List<List<Integer>> adjList = new ArrayList<List<Integer>>();
+            List<Set<Integer>> graph = new ArrayList<Set<Integer>>();
+
             for (int i = 0; i < n; i++) {
-                adjList.add(new ArrayList<Integer>());
+                graph.add(i, new HashSet<Integer>());
             }
-
             for (int[] edge : edges) {
-                adjList.get(edge[1]).add(edge[0]);
-                adjList.get(edge[0]).add(edge[1]);
+                graph.get(edge[0]).add(edge[1]);
+                graph.get(edge[1]).add(edge[0]);
             }
 
-            boolean[] visited = new boolean[n];
-
+            HashSet<Integer> visited = new HashSet<Integer>();
             Queue<Integer> queue = new LinkedList<Integer>();
             queue.offer(0);
-
             while (!queue.isEmpty()) {
-                int vertexId = queue.poll();
-
-                if (visited[vertexId]) {
-                    return false;
-                }
-
-                visited[vertexId] = true;
-
-                for (int neighbor : adjList.get(vertexId)) {
-                    if (!visited[neighbor]) {
+                int cur = queue.poll();
+                if (visited.contains(cur)) return false;
+                visited.add(cur);
+                for (int neighbor : graph.get(cur)) {
+                    if (!visited.contains(neighbor))
                         queue.offer(neighbor);
-                    }
                 }
             }
 
-            // Check the islands
-            for (boolean v : visited) {
-                if (!v) {
-                    return false;
-                }
-            }
-
-            return true;
+            // checks if there is an isolated island
+            return visited.size() == n;
         }
     }
 
@@ -110,34 +87,96 @@ public class GraphValidTree {
     */
     public class Solution_3 {
         public boolean validTree(int n, int[][] edges) {
-            // initialize n isolated islands
-            int[] nums = new int[n];
-            Arrays.fill(nums, -1);
+            int[] root = new int[n];
+            for (int i=0; i<n;i++)
+                root[i] = i;
 
-            // perform union find
-            for (int i = 0; i < edges.length; i++) {
-                int x = find(nums, edges[i][0]);
-                int y = find(nums, edges[i][1]);
-
-                // if two vertices happen to be in the same set
-                // then there's a cycle
+            for (int[] edge : edges) {
+                int x = findRoot(root, edge[0]);
+                int y = findRoot(root, edge[1]);
+                // if two vertices are in the same set, there's a cycle
                 if (x == y) return false;
-
                 // union
-                nums[x] = y;
+                root[x] = y;
             }
 
             return edges.length == n - 1;
         }
 
-        public int find(int nums[], int i) {
-            if (nums[i] == -1) return i;
-            // recursively search for parents
-            return find(nums, nums[i]);
+        public int findRoot(int root[], int n) {
+            while (root[n] != n) n = root[n];
+            return n;
         }
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new GraphValidTree().new Solution();
+            int n = 5;
+            int[][] edges = new int[][]{
+                    new int[]{0, 1},
+                    new int[]{0, 2},
+                    new int[]{0, 3},
+                    new int[]{1, 4}
+            };
+            assertTrue(sol.validTree(n, edges));
 
+            n = 5;
+            edges = new int[][]{
+                    new int[]{0, 1},
+                    new int[]{1, 2},
+                    new int[]{2, 3},
+                    new int[]{1, 3},
+                    new int[]{1, 4}
+            };
+            assertFalse(sol.validTree(n, edges));
+        }
+
+        @Test
+        public void test2() {
+            Solution_2 sol = new GraphValidTree().new Solution_2();
+            int n = 5;
+            int[][] edges = new int[][]{
+                    new int[]{0, 1},
+                    new int[]{0, 2},
+                    new int[]{0, 3},
+                    new int[]{1, 4}
+            };
+            assertTrue(sol.validTree(n, edges));
+
+            n = 5;
+            edges = new int[][]{
+                    new int[]{0, 1},
+                    new int[]{1, 2},
+                    new int[]{2, 3},
+                    new int[]{1, 3},
+                    new int[]{1, 4}
+            };
+            assertFalse(sol.validTree(n, edges));
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new GraphValidTree().new Solution_3();
+            int n = 5;
+            int[][] edges = new int[][]{
+                    new int[]{0, 1},
+                    new int[]{0, 2},
+                    new int[]{0, 3},
+                    new int[]{1, 4}
+            };
+            assertTrue(sol.validTree(n, edges));
+
+            n = 5;
+            edges = new int[][]{
+                    new int[]{0, 1},
+                    new int[]{1, 2},
+                    new int[]{2, 3},
+                    new int[]{1, 3},
+                    new int[]{1, 4}
+            };
+            assertFalse(sol.validTree(n, edges));
+        }
     }
 }

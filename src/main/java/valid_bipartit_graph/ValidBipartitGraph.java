@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Queue;
 
 import static org.junit.Assert.assertTrue;
 
@@ -16,16 +17,16 @@ public class ValidBipartitGraph {
     public class Solution {
         boolean isBipartite(int grid[][], int root) {
             if (grid == null || grid.length ==0 || grid[0] == null || grid[0].length == 0) return false;
-            int num_vertice = grid[0].length;
-            int colors[] = new int[num_vertice];
+            int n = grid[0].length;
+            int colors[] = new int[n];
             Arrays.fill(colors, -1);
             colors[root] = 1;
-            LinkedList<Integer> queue = new LinkedList<Integer>();
+            Queue<Integer> queue = new LinkedList<Integer>();
             queue.add(root);
 
             while (queue.size() != 0) {
                 int cur = queue.poll();
-                for (int v = 0; v < num_vertice; ++v) {
+                for (int v = 0; v < n; ++v) {
                     if (grid[cur][v] == 1 && colors[v] == -1) {
                         colors[v] = 1 - colors[cur];
                         queue.add(v);

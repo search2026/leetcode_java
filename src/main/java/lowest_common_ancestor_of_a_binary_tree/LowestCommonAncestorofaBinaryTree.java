@@ -104,10 +104,10 @@ public class LowestCommonAncestorofaBinaryTree {
         Difficulty: Medium
      */
 //    public class SolutionWithParentPointer {
-//        public Node findLCA(Node root, Node p, Node q) {
-//            if (root == null || p == null || q == null) return null;
-//            int depth1 = getDepth(root, p);
-//            int depth2 = getDepth(root, q);
+//        public Node findLCA(Node findRoot, Node p, Node q) {
+//            if (findRoot == null || p == null || q == null) return null;
+//            int depth1 = getDepth(findRoot, p);
+//            int depth2 = getDepth(findRoot, q);
 //            if (depth1 > depth2) {
 //                swap(depth1, depth2);
 //                swap(p, q);
@@ -123,10 +123,10 @@ public class LowestCommonAncestorofaBinaryTree {
 //            return null;
 //        }
 //
-//        public int getDepth(Node root, Node n) {
-//            if (root == null || n == null) return null;
+//        public int getDepth(Node findRoot, Node n) {
+//            if (findRoot == null || n == null) return null;
 //            int depth = 0;
-//            while (root != n) {
+//            while (findRoot != n) {
 //                depth++;
 //                n = n.parent;
 //            }
