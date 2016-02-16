@@ -1,12 +1,20 @@
 package max_points_on_a_line;
 
+import org.junit.Test;
+
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MaxPointsonaLine {
+import static org.junit.Assert.assertEquals;
 
+public class MaxPointsonaLine {
+    /*
+        Max Points on a Line
+        https://leetcode.com/problems/max-points-on-a-line/
+        Difficulty: Hard
+     */
     public class Solution {
         public int maxPoints(Point[] points) {
             int rslt = 0;
@@ -37,6 +45,10 @@ public class MaxPointsonaLine {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MaxPointsonaLine().new Solution();
+            assertEquals(5, 5);
+        }
     }
 }

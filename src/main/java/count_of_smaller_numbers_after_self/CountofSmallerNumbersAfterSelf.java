@@ -103,8 +103,8 @@ public class CountofSmallerNumbersAfterSelf {
     */
     public class Solution_3 {
 //       public List<Integer> countSmaller(int[] nums) {
-//            List<Integer> rslt = new ArrayList<Integer>();
-//           if (nums == null || nums.length ==0) return rslt;
+//            List<Integer> search = new ArrayList<Integer>();
+//           if (nums == null || nums.length ==0) return search;
 //
 //            int min = nums[0];
 //            for (int i : nums) {
@@ -129,10 +129,10 @@ public class CountofSmallerNumbersAfterSelf {
 //
 //            for (int i : nums) {
 //                remove(findRoot, i);
-//                rslt.add(query(findRoot, 0, i));
+//                search.add(query(findRoot, 0, i));
 //            }
 //
-//            return rslt;
+//            return search;
 //        }
 //
 //        public SegmentTreeNode build(int left, int right) {

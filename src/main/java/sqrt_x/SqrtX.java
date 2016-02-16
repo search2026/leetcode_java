@@ -1,5 +1,9 @@
 package sqrt_x;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class SqrtX {
     /*
         Sqrt(x) Binary Search
@@ -36,6 +40,10 @@ public class SqrtX {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SqrtX().new Solution();
+            assertEquals(5, 5);
+        }
     }
 }

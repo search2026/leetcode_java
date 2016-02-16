@@ -21,7 +21,6 @@ public class LRUCache {
         private DoubleLinkedListNode tail;
         private int capacity;
 
-
         public LRUCache_1(int capacity) {
             this.capacity = capacity;
         }

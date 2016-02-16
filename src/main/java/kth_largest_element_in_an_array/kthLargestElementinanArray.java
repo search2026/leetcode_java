@@ -2,11 +2,14 @@ package kth_largest_element_in_an_array;
 
 import org.junit.Test;
 
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 import static org.junit.Assert.assertEquals;
 
 public class kthLargestElementinanArray {
     /*
-        Kth Largest number in an Array
+        Kth Largest number in an Array - QuickSelect
         https://leetcode.com/problems/kth-largest-element-in-an-array/
         Difficulty: Medium
      */
@@ -39,10 +42,32 @@ public class kthLargestElementinanArray {
         }
     }
 
+    /*
+        Kth Largest number in an Array
+        https://leetcode.com/problems/kth-largest-element-in-an-array/
+        Difficulty: Medium
+     */
+    public class Solution_2 {
+        public int findKthLargest(int[] nums, int k) {
+            Queue<Integer> pq = new PriorityQueue<Integer>();
+            for (int i = 0; i < nums.length; i++) {
+                pq.add(nums[i]);
+                if (pq.size() > k) pq.poll();
+            }
+            return pq.poll();
+        }
+    }
+
     public static class UnitTest {
         @Test
         public void test1() {
             Solution sol = new kthLargestElementinanArray().new Solution();
+            assertEquals(5, sol.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
+        }
+
+        @Test
+        public void test2() {
+            Solution_2 sol = new kthLargestElementinanArray().new Solution_2();
             assertEquals(5, sol.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
         }
     }

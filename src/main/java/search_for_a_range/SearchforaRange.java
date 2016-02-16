@@ -55,28 +55,27 @@ public class SearchforaRange {
             return rslt;
         }
 
-        int search(int[] nums, int left, int right, int target, boolean turn_left) {
-            if (left > right) {
-                return -1;
-            }
+        int search(int[] nums, int left, int right, int target, boolean turnLeft) {
+            if (left > right) return -1;
+
             int mid = left + (right - left) / 2;
             if (nums[mid] < target) {
-                return search(nums, mid + 1, right, target, turn_left);
+                return search(nums, mid + 1, right, target, turnLeft);
             } else if (nums[mid] > target) {
-                return search(nums, left, mid - 1, target, turn_left);
+                return search(nums, left, mid - 1, target, turnLeft);
             }
 
-            if (turn_left) {
+            if (turnLeft) {
                 if (mid == 0 || nums[mid - 1] < nums[mid]) {
                     return mid;
                 } else {
-                    return search(nums, left, mid - 1, target, turn_left);
+                    return search(nums, left, mid - 1, target, turnLeft);
                 }
             } else {
                 if (mid == nums.length - 1 || nums[mid + 1] > nums[mid]) {
                     return mid;
                 } else {
-                    return search(nums, mid + 1, right, target, turn_left);
+                    return search(nums, mid + 1, right, target, turnLeft);
                 }
             }
         }
@@ -85,6 +84,14 @@ public class SearchforaRange {
     public static class UnitTest {
         @Test
         public void test1() {
+            Solution sol = new SearchforaRange().new Solution();
+            int[] results = sol.searchRange(new int[]{1,2,2,2,3,5}, 2);
+            assertEquals(results[0], 1);
+            assertEquals(results[1], 3);
+        }
+
+        @Test
+        public void test2() {
             Solution_2 sol = new SearchforaRange().new Solution_2();
             int[] results = sol.searchRange(new int[]{1,2,2,2,3,5}, 2);
             assertEquals(results[0], 1);

@@ -99,13 +99,17 @@ public class BestTimetoBuyandSellStock {
     */
     public class Solution_5 {
         public int maxProfit(int[] prices) {
-            int profit1 = 0, profit2 = 0;
-            for (int i = 1; i < prices.length; i++) {
-                int copy = profit1;
-                profit1 = Math.max(profit1 + prices[i] - prices[i - 1], profit2);
-                profit2 = Math.max(copy, profit2);
+            if (prices == null || prices.length <= 1) return 0;
+            int n= prices.length;
+            int[] buy = new int[n];
+            int[] sell = new int[n];
+            buy[0] = -prices[0];
+            sell[0] = 0;
+            for (int i = 1; i < n; i++) {
+                buy[i] = Math.max(buy[i - 1], -prices[i] + ((i >= 2) ? sell[i - 2] : 0));
+                sell[i] = Math.max(sell[i - 1], buy[i - 1] + prices[i]);
             }
-            return Math.max(profit1, profit2);
+            return sell[n - 1];
         }
     }
 

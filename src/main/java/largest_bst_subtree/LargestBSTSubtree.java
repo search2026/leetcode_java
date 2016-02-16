@@ -74,7 +74,7 @@ public class LargestBSTSubtree {
             boolean isRightValid = search(root.right, rMin, rMax, rSize);
 
             if (!isLeftValid || !isRightValid || root.val <= lMax[0] || root.val >= rMin[0]) {
-                //rslt[0] = Math.max(lSize[0], rSize[0]);
+                //search[0] = Math.max(lSize[0], rSize[0]);
                 return false;
             }
 
