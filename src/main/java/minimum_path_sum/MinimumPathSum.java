@@ -50,6 +50,16 @@ public class MinimumPathSum {
     public static class UnitTest {
         @Test
         public void test1() {
+            Solution sol = new MinimumPathSum().new Solution();
+            int[][] grid1 = new int[][]{
+                    new int[]{1, 2},
+                    new int[]{1, 1}
+            };
+            assertEquals(3, sol.minPathSum(grid1));
+        }
+
+        @Test
+        public void test2() {
             Solution_2 sol = new MinimumPathSum().new Solution_2();
             int[][] grid1 = new int[][]{
                     new int[]{1, 2},
