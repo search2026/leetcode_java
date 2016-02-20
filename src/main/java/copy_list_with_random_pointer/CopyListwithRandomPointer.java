@@ -1,11 +1,17 @@
 package copy_list_with_random_pointer;
 
 import common.RandomListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class CopyListwithRandomPointer {
-
+    /*
+        Copy List with Random Pointer
+        https://leetcode.com/problems/copy-list-with-random-pointer/
+        Difficulty: Hard
+     */
     public class Solution {
-
         public RandomListNode copyRandomList(RandomListNode head) {
             if (head == null) {
                 return null;
@@ -41,6 +47,10 @@ public class CopyListwithRandomPointer {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new CopyListwithRandomPointer().new Solution();
+            assertTrue(true);
+        }
     }
 }

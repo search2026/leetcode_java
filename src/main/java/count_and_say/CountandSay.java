@@ -1,7 +1,15 @@
 package count_and_say;
 
-public class CountandSay {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class CountandSay {
+    /*
+        Count and Say
+        https://leetcode.com/problems/count-and-say/
+        https://leetcode.com/problems/count-and-say/
+     */
     public class Solution {
         public String countAndSay(int n) {
             String ans = "1";
@@ -28,6 +36,10 @@ public class CountandSay {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new CountandSay().new Solution();
+            assertTrue(true);
+        }
     }
 }

@@ -1,6 +1,10 @@
 package climbing_stairs;
 
+import org.junit.Test;
+
 import java.lang.Math;
+
+import static org.junit.Assert.assertTrue;
 
 public class ClimbingStairs {
     /*
@@ -29,6 +33,10 @@ public class ClimbingStairs {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ClimbingStairs().new Solution();
+            assertTrue(true);
+        }
     }
 }

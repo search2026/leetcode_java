@@ -1,9 +1,13 @@
 package basic_calculator;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
+
+import static org.junit.Assert.assertTrue;
 
 public class BasicCalculator {
     // Basic Calculator
@@ -182,7 +186,11 @@ public class BasicCalculator {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new BasicCalculator().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

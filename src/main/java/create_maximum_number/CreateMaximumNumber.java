@@ -2,6 +2,8 @@ package create_maximum_number;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 public class CreateMaximumNumber {
     /*
         Create Maximum Number
@@ -54,6 +56,7 @@ public class CreateMaximumNumber {
         @Test
         public void test1() {
             Solution sol = new CreateMaximumNumber().new Solution();
+            assertTrue(true);
         }        
     }
 }

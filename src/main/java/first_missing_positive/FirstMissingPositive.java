@@ -1,7 +1,15 @@
 package first_missing_positive;
 
-public class FirstMissingPositive {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class FirstMissingPositive {
+    /*
+        First Missing Positive
+        https://leetcode.com/problems/first-missing-positive/
+        Difficulty: Hard
+     */
     public class Solution {
         public int firstMissingPositive(int[] nums) {
             int n = nums.length;
@@ -26,6 +34,10 @@ public class FirstMissingPositive {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new FirstMissingPositive().new Solution();
+            assertTrue(true);
+        }
     }
 }

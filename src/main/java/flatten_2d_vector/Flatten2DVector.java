@@ -1,8 +1,13 @@
 package flatten_2d_vector;
 
+import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class Flatten2DVector {
     /*
@@ -88,6 +93,10 @@ public class Flatten2DVector {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Vector2D sol = new Flatten2DVector().new Vector2D(new ArrayList<List<Integer>>());
+            assertTrue(true);
+        }
     }
 }

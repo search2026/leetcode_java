@@ -1,5 +1,7 @@
 package anagrams;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -7,8 +9,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Anagrams {
+import static org.junit.Assert.assertTrue;
 
+public class Anagrams {
+    /*
+        Anagrams
+        ???
+     */
     public class Solution {
         public ArrayList<String> anagrams(String[] strs) {
             Map<String, List<String>> dict = new HashMap<String, List<String>>();
@@ -34,6 +41,10 @@ public class Anagrams {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new Anagrams().new Solution();
+            assertTrue(true);
+        }
     }
 }

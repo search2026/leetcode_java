@@ -49,6 +49,7 @@ public class FindtheDuplicateNumber {
         @Test
         public void test1() {
             Solution sol = new FindtheDuplicateNumber().new Solution();
+            assertTrue(true);
         }
     }
 }

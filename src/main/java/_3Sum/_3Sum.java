@@ -1,10 +1,19 @@
 package _3Sum;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
+
 public class _3Sum {
+    /*
+        3 Sum
+        https://leetcode.com/problems/3sum/
+        Difficulty: Medium
+     */
     public class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
             List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -41,6 +50,10 @@ public class _3Sum {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new _3Sum().new Solution();
+            assertTrue(true);
+        }
     }
 }

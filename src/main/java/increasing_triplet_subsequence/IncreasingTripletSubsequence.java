@@ -47,15 +47,13 @@ public class IncreasingTripletSubsequence {
             int n = nums.length;
             if (n < 3) return false;
 
-            int lmin = nums[0];
-            int middle = nums[0];
-            boolean sawOnce = false;
-            for (int i = 1; i < n; i++) {
-                if (nums[i] <= lmin) {
-                    lmin = nums[i];
-                } else if (!sawOnce || nums[i] <= middle) {
-                    middle = nums[i];
-                    sawOnce = true;
+            int n1 = Integer.MAX_VALUE;
+            int n2 = Integer.MAX_VALUE;
+            for (int num : nums) {
+                if (num <= n1) {
+                    n1 = num;
+                } else if (num <= n2) {
+                    n2 = num;
                 } else {
                     return true;
                 }

@@ -8,7 +8,11 @@ import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 
 public class FractiontoRecurringDecimal {
-
+    /*
+        Fraction to Recurring Decimal
+        https://leetcode.com/problems/fraction-to-recurring-decimal/
+        Difficulty: Medium
+     */
     public class Solution {
         public String fractionToDecimal(int numerator, int denominator) {
             if (numerator == 0)
@@ -62,7 +66,6 @@ public class FractiontoRecurringDecimal {
     }
 
     public static class UnitTest {
-
         @Test
         public void testFractionToDecimal() {
             Solution s = new FractiontoRecurringDecimal().new Solution();

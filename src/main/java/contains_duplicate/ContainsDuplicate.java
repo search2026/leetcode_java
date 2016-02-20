@@ -1,11 +1,19 @@
 package contains_duplicate;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeSet;
 
-public class ContainsDuplicate {
+import static org.junit.Assert.assertTrue;
 
+public class ContainsDuplicate {
+    /*
+        Contains Duplicate
+        https://leetcode.com/problems/contains-duplicate/
+        Difficulty: Easy
+     */
     public class Solution {
         // Contains Duplicates
         // https://leetcode.com/problems/contains-duplicate/
@@ -14,7 +22,7 @@ public class ContainsDuplicate {
             if (nums == null || nums.length == 0) {
                 return false;
             }
-            HashSet<Integer> set = new HashSet<>();
+            HashSet<Integer> set = new HashSet<Integer>();
             for (int n : nums) {
                 if (!set.add(n)) {
                     return true;
@@ -24,12 +32,14 @@ public class ContainsDuplicate {
         }
     }
 
-    // Contains Duplicates II
-    // https://leetcode.com/problems/contains-duplicate-ii/
-    // Difficulty: Easy
+    /*
+        Contains Duplicates II
+        https://leetcode.com/problems/contains-duplicate-ii/
+        Difficulty: Easy
+    */
     public class SolutionII {
         public boolean containsNearbyDuplicate(int[] nums, int k) {
-            HashMap<Integer, Integer> map = new HashMap<>();
+            HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
             for (int i = 0; i < nums.length; i++) {
                 if (map.containsKey(nums[i])) {
                     if (Math.abs(map.get(nums[i]) - i) <= k) {
@@ -45,9 +55,11 @@ public class ContainsDuplicate {
         }
     }
 
-    // Contains Duplicates III
-    // https://leetcode.com/problems/contains-duplicate-iii/
-    // Difficulty: Medium
+    /*
+        Contains Duplicates III
+        https://leetcode.com/problems/contains-duplicate-iii/
+        Difficulty: Medium
+    */
     public class SolutionIII {
         public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
             if (k < 1 || t < 0)
@@ -72,6 +84,10 @@ public class ContainsDuplicate {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ContainsDuplicate().new Solution();
+            assertTrue(true);
+        }
     }
 }

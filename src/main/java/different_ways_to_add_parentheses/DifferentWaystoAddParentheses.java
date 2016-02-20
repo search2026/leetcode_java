@@ -1,7 +1,11 @@
 package different_ways_to_add_parentheses;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class DifferentWaystoAddParentheses {
     /*
@@ -11,7 +15,7 @@ public class DifferentWaystoAddParentheses {
      */
     public class Solution {
         public List<Integer> diffWaysToCompute(String input) {
-            List<Integer> result = new ArrayList<>();
+            List<Integer> result = new ArrayList<Integer>();
             if (input == null || input.length() == 0) {
                 return result;
             }
@@ -68,6 +72,10 @@ public class DifferentWaystoAddParentheses {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new DifferentWaystoAddParentheses().new Solution();
+            assertTrue(true);
+        }
     }
 }

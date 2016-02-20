@@ -9,7 +9,11 @@ import java.util.Map;
 import static org.junit.Assert.assertTrue;
 
 public class ConstructBinaryTreefromInorderandPostorderTraversal {
-
+    /*
+        Construct Binary Tree from Inorder and Postorder Traversal
+        https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+        Difficulty: Medium
+     */
     public class Solution {
         private TreeNode buildTree(Map<Integer, Integer> inorder, int b1, int[] postorder, int b2, int len) {
             if (len == 0) {

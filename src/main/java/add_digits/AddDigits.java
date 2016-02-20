@@ -1,5 +1,9 @@
 package add_digits;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
+
 public class AddDigits {
     /*
         Add Digits
@@ -30,6 +34,10 @@ public class AddDigits {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new AddDigits().new Solution();
+            assertTrue(true);
+        }
     }
 }

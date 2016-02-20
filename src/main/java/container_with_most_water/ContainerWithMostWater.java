@@ -1,7 +1,15 @@
 package container_with_most_water;
 
-public class ContainerWithMostWater {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class ContainerWithMostWater {
+    /*
+        Container with Most Water
+        https://leetcode.com/problems/container-with-most-water/
+        Difficulty: Medium
+     */
     public class Solution {
         public int maxArea(int[] height) {
             int maxArea = 0;
@@ -21,6 +29,10 @@ public class ContainerWithMostWater {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ContainerWithMostWater().new Solution();
+            assertTrue(true);
+        }
     }
 }

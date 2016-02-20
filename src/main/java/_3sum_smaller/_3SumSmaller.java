@@ -1,6 +1,10 @@
 package _3sum_smaller;
 
+import org.junit.Test;
+
 import java.util.Arrays;
+
+import static org.junit.Assert.assertTrue;
 
 public class _3SumSmaller {
     /*
@@ -35,6 +39,10 @@ public class _3SumSmaller {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new _3SumSmaller().new Solution();
+            assertTrue(true);
+        }
     }
 }

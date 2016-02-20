@@ -1,7 +1,15 @@
 package add_binary;
 
-public class AddBinary {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class AddBinary {
+    /*
+        Add Binary
+        https://leetcode.com/problems/add-binary/
+        Difficulty: Easy
+     */
     public class Solution {
         public String addBinary(String a, String b) {
             StringBuilder re = new StringBuilder();
@@ -21,6 +29,10 @@ public class AddBinary {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new AddBinary().new Solution();
+            assertTrue(true);
+        }
     }
 }

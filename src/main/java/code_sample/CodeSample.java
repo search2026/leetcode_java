@@ -6,6 +6,8 @@ import java.util.*;
 
 public class CodeSample {
     /*
+        Coding Sample
+        For free style writing
      */
     public class Solution {
         public void main(String[] args) {

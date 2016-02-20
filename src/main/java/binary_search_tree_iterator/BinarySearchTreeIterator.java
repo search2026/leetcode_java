@@ -3,9 +3,16 @@ package binary_search_tree_iterator;
 import java.util.ArrayDeque;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class BinarySearchTreeIterator {
-
+    /*
+        Binary Search Tree Iterator
+        https://leetcode.com/problems/binary-search-tree-iterator/
+        Difficulty: Medium
+     */
     public class BSTIterator {
 
         private ArrayDeque<TreeNode> stack = new ArrayDeque<TreeNode>();
@@ -54,7 +61,11 @@ public class BinarySearchTreeIterator {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            BSTIterator sol = new BinarySearchTreeIterator().new BSTIterator(new TreeNode(1));
+            assertTrue(true);
+        }
     }
 }
 

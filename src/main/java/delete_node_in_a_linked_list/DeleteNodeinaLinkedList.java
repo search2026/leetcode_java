@@ -1,6 +1,9 @@
 package delete_node_in_a_linked_list;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class DeleteNodeinaLinkedList {
     /*
@@ -20,7 +23,11 @@ public class DeleteNodeinaLinkedList {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new DeleteNodeinaLinkedList().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

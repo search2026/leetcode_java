@@ -52,6 +52,7 @@ public class FindtheCelebrity {
         @Test
         public void test1() {
             Solution sol = new FindtheCelebrity().new Solution();
+            assertTrue(true);
         }
     }
 }
