@@ -1,14 +1,22 @@
 package merge_k_sorted_lists;
 
 import common.ListNode;
+import org.junit.Test;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class MergekSortedLists {
+import static org.junit.Assert.assertEquals;
 
+public class MergekSortedLists {
+    /*
+        Merge K Sorted Lists
+        https://leetcode.com/problems/merge-k-sorted-lists/
+        leetcode 23
+        Difficulty: Hard
+     */
     public class Solution {
         private Comparator<ListNode> ListNodeComparator = new Comparator<ListNode>() {
             public int compare(ListNode left, ListNode right) {
@@ -46,6 +54,10 @@ public class MergekSortedLists {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MergekSortedLists().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

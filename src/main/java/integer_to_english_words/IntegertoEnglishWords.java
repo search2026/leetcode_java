@@ -77,6 +77,7 @@ public class IntegertoEnglishWords {
         @Test
         public void test1() {
             Solution sol = new IntegertoEnglishWords().new Solution();
+            assertEquals(3, 3);
         }
     }
 }

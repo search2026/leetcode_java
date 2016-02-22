@@ -1,9 +1,17 @@
 package reverse_nodes_in_kgroup;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ReverseNodesinkGroup {
-
+    /*
+        Reverse Nodes in K Group
+        https://leetcode.com/problems/reverse-nodes-in-k-group/
+        leetcode 25
+        Difficulty: Hard
+     */
     public class Solution {
         private ListNode reverseGroup(ListNode start, ListNode end) {
             ListNode prefix = start.next;
@@ -45,6 +53,10 @@ public class ReverseNodesinkGroup {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ReverseNodesinkGroup().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

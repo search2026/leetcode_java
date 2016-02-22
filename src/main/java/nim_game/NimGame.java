@@ -20,6 +20,8 @@ public class NimGame {
         @Test
         public void test1() {
             Solution sol = new NimGame().new Solution();
+            assertTrue(sol.canWinNim(7));
+            assertFalse(sol.canWinNim(8));
         }
     }
 }

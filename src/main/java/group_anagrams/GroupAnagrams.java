@@ -1,8 +1,17 @@
 package group_anagrams;
 
+import org.junit.Test;
+
 import java.util.*;
 
+import static org.junit.Assert.assertEquals;
+
 public class GroupAnagrams {
+    /*
+        Group Anagrams
+        https://leetcode.com/problems/anagrams/
+        Difficulty: Medium
+     */
     public class Solution {
         public List<List<String>> groupAnagrams(String[] strs) {
             List<List<String>> res = new ArrayList<List<String>>();
@@ -32,6 +41,10 @@ public class GroupAnagrams {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new GroupAnagrams().new Solution();
+            assertEquals(3, 3);
+        }
     }
 } 

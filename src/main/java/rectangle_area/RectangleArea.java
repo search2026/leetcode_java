@@ -1,5 +1,9 @@
 package rectangle_area;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class RectangleArea {
     /*
         Rectangle Area
@@ -24,6 +28,10 @@ public class RectangleArea {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new RectangleArea().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

@@ -1,7 +1,11 @@
 package restore_ip_addresses;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class RestoreIPAddresses {
     /*
@@ -98,5 +102,10 @@ public class RestoreIPAddresses {
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new RestoreIPAddresses().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

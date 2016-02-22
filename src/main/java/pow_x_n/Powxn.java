@@ -1,7 +1,16 @@
 package pow_x_n;
 
-public class Powxn {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class Powxn {
+    /*
+        Pow(x, n)
+        https://leetcode.com/problems/powx-n/
+        leetcode 50
+        Difficulty: Medium
+     */
     public class Solution {
         public double pow(double x, int n) {
             boolean overflow = false;
@@ -28,6 +37,10 @@ public class Powxn {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new Powxn().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

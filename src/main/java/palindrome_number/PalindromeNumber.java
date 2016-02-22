@@ -1,7 +1,16 @@
 package palindrome_number;
 
-public class PalindromeNumber {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class PalindromeNumber {
+    /*
+        Palindrome Number
+        https://leetcode.com/problems/palindrome-number/
+        leetcode 9
+        Difficulty: Easy
+     */
     public class Solution {
         public boolean isPalindrome(int x) {
             if (x == 0) {
@@ -23,6 +32,10 @@ public class PalindromeNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new PalindromeNumber().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

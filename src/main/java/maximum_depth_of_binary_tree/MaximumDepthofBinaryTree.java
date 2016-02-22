@@ -1,9 +1,17 @@
 package maximum_depth_of_binary_tree;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class MaximumDepthofBinaryTree {
-
+    /*
+        Maximum Depth of Binary Tree
+        https://leetcode.com/problems/maximum-depth-of-binary-tree/
+        leetcode 104
+        Difficulty: Easy
+     */
     public class Solution {
         public int maxDepth(TreeNode root) {
             if (root == null) {
@@ -14,6 +22,10 @@ public class MaximumDepthofBinaryTree {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MaximumDepthofBinaryTree().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

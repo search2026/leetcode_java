@@ -1,5 +1,9 @@
 package maximum_product_of_word_lengths;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class MaximumProductofWordLengths {
     /*
         Maximum Product of Word Lengths
@@ -35,7 +39,11 @@ public class MaximumProductofWordLengths {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MaximumProductofWordLengths().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }
 

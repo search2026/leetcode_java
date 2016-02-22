@@ -1,11 +1,18 @@
 package integer_to_roman;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class IntegertoRoman {
-
+    /*
+        Integer to Roman
+        https://leetcode.com/problems/integer-to-roman/
+        leetcode 12
+        Difficulty: Medium
+     */
     public class Solution {
-
-        private final char[] symbols = new char[] { 'M', 'D', 'C', 'L', 'X',
-                'V', 'I' };
+        private final char[] symbols = new char[] { 'M', 'D', 'C', 'L', 'X', 'V', 'I' };
 
         private String repeat(char c, int times) {
             String re = "";
@@ -40,6 +47,10 @@ public class IntegertoRoman {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new IntegertoRoman().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

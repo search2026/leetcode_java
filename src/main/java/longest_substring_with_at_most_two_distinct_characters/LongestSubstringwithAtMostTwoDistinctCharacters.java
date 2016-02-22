@@ -1,7 +1,16 @@
 package longest_substring_with_at_most_two_distinct_characters;
 
-public class LongestSubstringwithAtMostTwoDistinctCharacters {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class LongestSubstringwithAtMostTwoDistinctCharacters {
+    /*
+        Longest Substring with At Most Two Distinct Characters
+        http://www.cnblogs.com/EdwardLiu/p/4241421.html
+        leetcode 159
+        Difficulty: Hard
+     */
     public class Solution {
         public int lengthOfLongestSubstringTwoDistinct(String s) {
             int i = 0, j = -1, maxLen = 0;
@@ -18,6 +27,10 @@ public class LongestSubstringwithAtMostTwoDistinctCharacters {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new LongestSubstringwithAtMostTwoDistinctCharacters().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

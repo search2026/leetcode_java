@@ -1,7 +1,16 @@
 package length_of_last_word;
 
-public class LengthofLastWord {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class LengthofLastWord {
+    /*
+        Length of Last Word
+        https://leetcode.com/problems/length-of-last-word/
+        leetcode 58
+        Difficulty: Easy
+     */
     public class Solution {
         public int lengthOfLastWord(String s) {
             int i = s.length() - 1;
@@ -21,6 +30,10 @@ public class LengthofLastWord {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new LengthofLastWord().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

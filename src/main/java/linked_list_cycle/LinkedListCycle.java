@@ -1,9 +1,17 @@
 package linked_list_cycle;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class LinkedListCycle {
-
+    /*
+        Linked List Cycle
+        https://leetcode.com/problems/linked-list-cycle/
+        leetcode 141
+        Difficulty: Medium
+     */
     public class Solution {
         public boolean hasCycle(ListNode head) {
             ListNode slow = head;
@@ -17,7 +25,15 @@ public class LinkedListCycle {
             } while (fast != slow);
             return true;
         }
+    }
 
+    /*
+        Linked List Cycle
+        https://leetcode.com/problems/linked-list-cycle-ii/
+        leetcode 142
+        Difficulty: Medium
+     */
+    public class Solution_2 {
         public ListNode detectCycle(ListNode head) {
             if (head == null || head.next == null) {
                 return null;
@@ -42,6 +58,10 @@ public class LinkedListCycle {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new LinkedListCycle().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

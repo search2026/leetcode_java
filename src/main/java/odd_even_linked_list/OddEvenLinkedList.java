@@ -53,7 +53,7 @@ public class OddEvenLinkedList {
         @Test
         public void test1() {
             Solution sol = new OddEvenLinkedList().new Solution();
-            assertEquals(1, 1);
+            assertEquals(7, 7);
         }
     }
 }

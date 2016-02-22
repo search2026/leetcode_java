@@ -65,6 +65,7 @@ public class PaintFence {
         @Test
         public void test1() {
             Solution sol = new PaintFence().new Solution();
+            assertEquals(7, 7);
         }
     }
 }

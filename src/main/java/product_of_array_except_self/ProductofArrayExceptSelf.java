@@ -1,5 +1,9 @@
 package product_of_array_except_self;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class ProductofArrayExceptSelf {
     /*
         Product of Array Except Self
@@ -66,6 +70,10 @@ public class ProductofArrayExceptSelf {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ProductofArrayExceptSelf().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

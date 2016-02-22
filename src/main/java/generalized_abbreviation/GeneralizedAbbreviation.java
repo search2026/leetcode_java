@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class GeneralizedAbbreviation {
     /*
         Generalized Abbreviation
@@ -41,6 +43,7 @@ public class GeneralizedAbbreviation {
         @Test
         public void test1() {
             Solution sol = new GeneralizedAbbreviation().new Solution();
+            assertEquals(3, 3);
         }
     }
 }

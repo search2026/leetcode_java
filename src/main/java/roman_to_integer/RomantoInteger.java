@@ -1,10 +1,19 @@
 package roman_to_integer;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class RomantoInteger {
+import static org.junit.Assert.assertEquals;
 
+public class RomantoInteger {
+    /*
+        Roman to Integer
+        https://leetcode.com/problems/roman-to-integer/
+        leetcode 13
+        Difficulty: Easy
+     */
     public class Solution {
         private Map<Character, Integer> symbols = new HashMap<Character, Integer>();
         {
@@ -34,6 +43,10 @@ public class RomantoInteger {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new RomantoInteger().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

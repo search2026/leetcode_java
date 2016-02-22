@@ -1,9 +1,15 @@
 package house_robber;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class HouseRobber {
-    // House Robber
-    // https://leetcode.com/problems/house-robber/
-    // Difficulty: Easy
+    /*
+        House Robber
+        https://leetcode.com/problems/house-robber/
+        Difficulty: Easy
+    */
     public class Solution {
         public int rob(int[] nums) {
             if (nums.length == 0) {
@@ -24,10 +30,12 @@ public class HouseRobber {
         }
     }
 
-    // House Robber II
-    // https://leetcode.com/problems/house-robber-ii/
-    // Difficulty: Medium
-    public class SolutionII {
+    /*
+        House Robber II
+        https://leetcode.com/problems/house-robber-ii/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
         public int rob(int[] nums) {
             if (nums == null || nums.length == 0)
                 return 0;
@@ -64,7 +72,11 @@ public class HouseRobber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new HouseRobber().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }
 

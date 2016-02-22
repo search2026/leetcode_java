@@ -1,5 +1,9 @@
 package number_of_digit_one;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class NumberofDigitOne {
     /*
         Number of Digital One
@@ -19,6 +23,10 @@ public class NumberofDigitOne {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new NumberofDigitOne().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

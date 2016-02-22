@@ -1,7 +1,16 @@
 package one_edit_distance;
 
-public class OneEditDistance {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class OneEditDistance {
+    /*
+        One Edit Distance
+        http://www.cnblogs.com/EdwardLiu/p/4245378.html
+        leetcode 161
+        Difficulty: Medium
+     */
     public class Solution {
         public boolean isOneEditDistance(String s, String t) {
             int m = s.length(), n = t.length();
@@ -20,6 +29,10 @@ public class OneEditDistance {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new OneEditDistance().new Solution();
+            assertEquals(1, 1);
+        }
     }
 }

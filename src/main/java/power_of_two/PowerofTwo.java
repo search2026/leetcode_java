@@ -1,5 +1,9 @@
 package power_of_two;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class PowerofTwo {
     /*
         Power of Two
@@ -17,6 +21,10 @@ public class PowerofTwo {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new PowerofTwo().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

@@ -1,7 +1,16 @@
 package merge_sorted_array;
 
-public class MergeSortedArray {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class MergeSortedArray {
+    /*
+        Merge Sorted Array
+        https://leetcode.com/problems/merge-sorted-array/
+        leetcode 88
+        Difficulty: Easy
+     */
     public class Solution {
         public void merge(int A[], int m, int B[], int n) {
             int i = m - 1;
@@ -16,6 +25,10 @@ public class MergeSortedArray {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MergeSortedArray().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

@@ -1,9 +1,17 @@
 package intersection_of_two_linked_lists;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class IntersectionofTwoLinkedLists {
-
+    /*
+        Intersection of Two Linked Lists
+        https://leetcode.com/problems/intersection-of-two-linked-lists/
+        leetcode 160
+        Difficulty: Easy
+     */
     public class Solution {
         public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
             if (headA == null) {
@@ -39,6 +47,10 @@ public class IntersectionofTwoLinkedLists {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new IntersectionofTwoLinkedLists().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

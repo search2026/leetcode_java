@@ -1,7 +1,16 @@
 package rotate_image;
 
-public class RotateImage {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class RotateImage {
+    /*
+        Rotate Image
+        https://leetcode.com/problems/rotate-image/
+        leetcode 48
+        Difficulty: Medium
+     */
     public class Solution {
         public void rotate(int[][] matrix) {
             int n = matrix.length;
@@ -18,6 +27,10 @@ public class RotateImage {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new RotateImage().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

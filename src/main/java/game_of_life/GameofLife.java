@@ -2,10 +2,13 @@ package game_of_life;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class GameofLife {
     /*
         Game of Life
         https://leetcode.com/problems/game-of-life/
+        leetcode 289
         Difficulty: Hard
      */
     public class Solution {
@@ -131,6 +134,7 @@ public class GameofLife {
         @Test
         public void test1() {
             Solution sol = new GameofLife().new Solution();
+            assertEquals(3, 3);
         }
     }
 }

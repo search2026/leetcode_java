@@ -1,6 +1,9 @@
 package palindrome_linked_list;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class PalindromeLinkedList {
     /*
@@ -87,6 +90,10 @@ public class PalindromeLinkedList {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new PalindromeLinkedList().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }
