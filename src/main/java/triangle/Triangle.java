@@ -1,8 +1,12 @@
 package triangle;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class Triangle {
     /*
@@ -33,6 +37,10 @@ public class Triangle {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new Triangle().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

@@ -1,10 +1,18 @@
 package string_to_integer_atoi;
 
+import org.junit.Test;
+
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
+import static org.junit.Assert.assertEquals;
 
 public class StringtoIntegeratoi {
-
+    /*
+        String to Integer (atoi)
+        https://leetcode.com/problems/string-to-integer-atoi/
+        leetcode 8
+        Difficulty: Easy
+     */
     public class Solution {
         public int myAtoi(String str) {
             int index = 0;
@@ -45,6 +53,10 @@ public class StringtoIntegeratoi {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new StringtoIntegeratoi().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

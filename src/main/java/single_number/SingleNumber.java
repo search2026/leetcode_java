@@ -1,5 +1,9 @@
 package single_number;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class SingleNumber {
     /*
         Single Number
@@ -84,6 +88,10 @@ public class SingleNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SingleNumber().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

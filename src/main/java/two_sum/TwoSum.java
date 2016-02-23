@@ -31,7 +31,7 @@ public class TwoSum {
         http://www.programcreek.com/2014/03/two-sum-ii-input-array-is-sorted-java/
         Difficulty: Medium
      */
-    public class SolutionII {
+    public class Solution_2 {
         public int[] twoSumII(final int[] nums, int target) {
             if (nums == null || nums.length == 0)
                 return null;
@@ -59,7 +59,7 @@ public class TwoSum {
        http://www.programcreek.com/2014/03/two-sum-iii-data-structure-design-java/
         Difficulty: Medium
      */
-    public class SolutionIII {
+    public class Solution_3 {
         private HashMap<Integer, Integer> elements = new HashMap<Integer, Integer>();
 
         public void add(int number) {
@@ -82,9 +82,6 @@ public class TwoSum {
             }
             return false;
         }
-    }
-
-    public class TwoSumIII {
     }
 
     public static class UnitTest {

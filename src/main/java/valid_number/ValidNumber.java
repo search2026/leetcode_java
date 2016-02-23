@@ -1,13 +1,22 @@
 package valid_number;
 
-public class ValidNumber {
+import org.junit.Test;
 
-    enum Status {
+import static org.junit.Assert.assertEquals;
+
+public class ValidNumber {
+    /*
+        Valid Number
+        https://leetcode.com/problems/valid-number/
+        leetcode 65
+        Difficulty: Hard
+     */
+
+    public enum Status {
         INIT, SYMBOL, INT, DOT, FRAC, E, SYMBOL_E, INT_E
     }
 
     public class Solution {
-
         public boolean isNumber(String s) {
             s = s.trim();
             Status status = Status.INIT;
@@ -98,6 +107,10 @@ public class ValidNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ValidNumber().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

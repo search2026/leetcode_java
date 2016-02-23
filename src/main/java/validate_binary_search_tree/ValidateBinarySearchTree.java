@@ -41,10 +41,10 @@ public class ValidateBinarySearchTree {
     }
 
     /*
-    Validate Binary Search Tree
-    https://leetcode.com/problems/validate-binary-search-tree/
-    Difficulty: Medium
- */
+        Validate Binary Search Tree
+        https://leetcode.com/problems/validate-binary-search-tree/
+        Difficulty: Medium
+     */
     public class Solution_2 {
         public boolean isValidBST(TreeNode root) {
             if (root == null) return true;

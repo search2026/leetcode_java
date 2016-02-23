@@ -1,13 +1,17 @@
 package unique_word_abbreviation;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import static org.junit.Assert.assertEquals;
+
 public class UniqueWordAbbreviation {
     /*
-        Unique Word Abbrevation
+        Unique Word Abbreviation
         http://buttercola.blogspot.com/2015/10/leetcode-unique-word-abbreviation.html
         Difficulty: Medium
      */
@@ -16,8 +20,8 @@ public class UniqueWordAbbreviation {
         private Map<String, String> abbrDict;
 
         public ValidWordAbbr(String[] dictionary) {
-            uniqueDict = new HashSet<>();
-            abbrDict = new HashMap<>();
+            uniqueDict = new HashSet<String>();
+            abbrDict = new HashMap<String, String>();
 
             for (String word : dictionary) {
                 if (!uniqueDict.contains(word)) {
@@ -61,5 +65,10 @@ public class UniqueWordAbbreviation {
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            ValidWordAbbr sol = new UniqueWordAbbreviation().new ValidWordAbbr(new String[]{});
+            assertEquals(7, 7);
+        }
     }
 }

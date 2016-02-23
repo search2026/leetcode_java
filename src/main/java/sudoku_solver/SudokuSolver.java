@@ -1,5 +1,9 @@
 package sudoku_solver;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class SudokuSolver {
     /*
         Sudoku Solver
@@ -49,6 +53,10 @@ public class SudokuSolver {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SudokuSolver().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

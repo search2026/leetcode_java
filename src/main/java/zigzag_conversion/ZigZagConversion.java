@@ -1,7 +1,16 @@
 package zigzag_conversion;
 
-public class ZigZagConversion {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class ZigZagConversion {
+    /*
+        ZigZag Conversion
+        https://leetcode.com/problems/zigzag-conversion/
+        leetcode 6
+        Difficulty: Easy
+     */
     public class Solution {
         public String convert(String s, int numRows) {
             assert numRows >= 1;
@@ -26,6 +35,10 @@ public class ZigZagConversion {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ZigZagConversion().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

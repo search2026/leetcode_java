@@ -1,5 +1,9 @@
 package search_in_rotated_sorted_array;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class SearchinRotatedSortedArray {
     /*
         Search in rotated Sorted Array
@@ -68,6 +72,10 @@ public class SearchinRotatedSortedArray {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SearchinRotatedSortedArray().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

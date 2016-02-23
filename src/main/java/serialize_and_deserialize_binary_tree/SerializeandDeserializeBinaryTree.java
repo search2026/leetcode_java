@@ -86,6 +86,7 @@ public class SerializeandDeserializeBinaryTree {
         @Test
         public void test1() {
             Codec sol = new SerializeandDeserializeBinaryTree().new Codec();
+            assertEquals(7, 7);
         }
     }
 }

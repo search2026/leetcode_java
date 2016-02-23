@@ -1,7 +1,16 @@
 package valid_palindrome;
 
-public class ValidPalindrome {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class ValidPalindrome {
+    /*
+        Valid Palindrome
+        https://leetcode.com/problems/valid-palindrome/
+        leetcode 125
+        Difficulty: Easy
+     */
     public class Solution {
         public boolean isPalindrome(String s) {
             assert s != null;
@@ -25,6 +34,10 @@ public class ValidPalindrome {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ValidPalindrome().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

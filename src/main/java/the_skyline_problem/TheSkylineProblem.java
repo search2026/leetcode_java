@@ -1,13 +1,18 @@
 package the_skyline_problem;
 
 import com.sun.javafx.geom.Edge;
+import org.junit.Test;
 
 import java.util.*;
 
+import static org.junit.Assert.assertEquals;
+
 public class TheSkylineProblem {
-    // The Skyline Problem
-    // http://www.programcreek.com/2014/06/leetcode-the-skyline-problem-java/
-    // Difficulty: Hard
+    /*
+         The Skyline Problem
+         http://www.programcreek.com/2014/06/leetcode-the-skyline-problem-java/
+         Difficulty: Hard
+    */
     public class Solution {
         public List<int[]> getSkyline(int[][] buildings) {
             List<int[]> result = new ArrayList<int[]>();
@@ -82,7 +87,11 @@ public class TheSkylineProblem {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new TheSkylineProblem().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }
 

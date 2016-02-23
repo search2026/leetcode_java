@@ -47,6 +47,7 @@ public class SuperUglyNumber {
         @Test
         public void test1() {
             Solution sol = new SuperUglyNumber().new Solution();
+            assertEquals(7, 7);
         }
     }
 }

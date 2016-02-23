@@ -1,9 +1,15 @@
 package shortest_palindrome;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class ShortestPalindrome {
-    // Shortest Palindrome
-    // https://leetcode.com/problems/shortest-palindrome/
-    // Difficulty: Hard
+    /*
+    Shortest Palindrome
+    https://leetcode.com/problems/shortest-palindrome/
+    Difficulty: Hard
+    */
     public class Solution {
         public String shortestPalindrome(String s) {
             int j = 0;
@@ -25,13 +31,16 @@ public class ShortestPalindrome {
             String prefix = new StringBuilder(suffix).reverse().toString();
             //递归调用找 [0,j]要最少可以补充多少个字符让他回文
             String mid = shortestPalindrome(s.substring(0, j));
-            String ans = prefix + mid + suffix;
-            return ans;
+            return prefix + mid + suffix;
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ShortestPalindrome().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }
 

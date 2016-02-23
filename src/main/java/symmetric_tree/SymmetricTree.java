@@ -3,9 +3,17 @@ package symmetric_tree;
 import java.util.LinkedList;
 
 import common.TreeNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class SymmetricTree {
-
+    /*
+        Symmetric Tree
+        https://leetcode.com/problems/symmetric-tree/
+        leetcode 101
+        Difficulty: Easy
+     */
     public class Solution {
         private boolean isSymmetric(TreeNode left, TreeNode right) {
             if (left == null && right == null) {
@@ -57,6 +65,10 @@ public class SymmetricTree {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SymmetricTree().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

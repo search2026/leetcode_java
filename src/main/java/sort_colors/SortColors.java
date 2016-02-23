@@ -1,7 +1,16 @@
 package sort_colors;
 
-public class SortColors {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class SortColors {
+    /*
+        Sort Colors
+        https://leetcode.com/problems/sort-colors/
+        leetcode 75
+        Difficulty: Medium
+     */
     public class Solution {
         public void sortColors(int[] nums) {
             int zero = -1;
@@ -21,6 +30,10 @@ public class SortColors {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SortColors().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }
