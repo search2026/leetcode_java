@@ -42,7 +42,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
             int p0 = 0, p1 = 0;
             while (p1 < s.length()) {
                 if (set.contains(s.charAt(p1))) {
-                    global_max = Math.max(global_max, p1-p0);
+                    global_max = Math.max(global_max, p1 - p0);
                     while (s.charAt(p0) != s.charAt(p1)) {
                         set.remove(s.charAt(p0));
                         p0++;
@@ -58,6 +58,25 @@ public class LongestSubstringWithoutRepeatingCharacters {
         }
     }
 
+    /*
+        Longest Substring Without Repeating Characters - template
+        https://leetcode.com/problems/longest-substring-without-repeating-characters/
+        https://leetcode.com/discuss/72701/here-10-line-template-that-can-solve-most-substring-problems
+        Difficulty: Medium
+     */
+    public class Solution_3 {
+        public int lengthOfLongestSubstring(String s) {
+            int[] map = new int[256];
+            int counter = 0, p1 = 0, p2 = 0, dist = 0;
+            while (p2 < s.length()) {
+                if (map[s.charAt(p2++)]++ > 0) counter++;
+                while (counter > 0) if (map[s.charAt(p1++)]-- > 1) counter--;
+                dist = Math.max(dist, p2 - p1);
+            }
+            return dist;
+        }
+    }
+
     public static class UnitTest {
         @Test
         public void test1() {
@@ -69,6 +88,14 @@ public class LongestSubstringWithoutRepeatingCharacters {
         @Test
         public void test2() {
             Solution_2 sol = new LongestSubstringWithoutRepeatingCharacters().new Solution_2();
+            assertEquals(3, sol.lengthOfLongestSubstring("abcabcbb"));
+            assertEquals(1, sol.lengthOfLongestSubstring("bbbb"));
+        }
+
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new LongestSubstringWithoutRepeatingCharacters().new Solution_3();
             assertEquals(3, sol.lengthOfLongestSubstring("abcabcbb"));
             assertEquals(1, sol.lengthOfLongestSubstring("bbbb"));
         }

@@ -49,22 +49,23 @@ public class MinimumWindowSubstring {
     }
 
     /*
-        Minimum Window Substring - Map
+        Minimum Window Substring - general template
         https://leetcode.com/problems/minimum-window-substring/
+        https://leetcode.com/discuss/72701/here-10-line-template-that-can-solve-most-substring-problems
         Difficulty: Hard
      */
     public class Solution_2 {
         public String minWindow(String s, String t) {
             int[] map = new int[256];
             for (Character c : t.toCharArray()) map[c]++;
-            int counter = t.length(), p1 = 0, dist = Integer.MAX_VALUE;
+            int counter = t.length(), p1 = 0, p2 = 0, dist = Integer.MAX_VALUE;
             String rslt = "";
-            for (int p2 = 0; p2 < s.length(); p2++) {
-                if (map[s.charAt(p2)]-- > 0) counter--;
+            while (p2 < s.length()) {
+                if (map[s.charAt(p2++)]-- > 0) counter--;
                 while (counter == 0) {
-                    if (p2 - p1 + 1 < dist) {
-                        dist = p2 - p1 + 1;
-                        rslt = s.substring(p1, p2 + 1);
+                    if (p2 - p1 < dist) {
+                        dist = p2 - p1;
+                        rslt = s.substring(p1, p2);
                     }
                     if (map[s.charAt(p1++)]++ == 0) counter++;
                 }

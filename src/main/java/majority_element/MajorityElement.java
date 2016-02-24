@@ -83,6 +83,63 @@ public class MajorityElement {
         }
     }
 
+    /*
+        Majority Element III
+        http://www.cnblogs.com/jy02414216/archive/2011/03/04/1970497.html
+        Difficulty: Medium
+    */
+    public class Solution_3 {
+        public int candiA = 0, candiB = 0, candiC = 0;
+
+        public void FindThreeMost(int[] nums) {
+            int countA = 0, countB = 0, countC = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (countA == 0 || countB == 0 || countC == 0) {
+                    if (countA == 0) {
+                        if (countB != 0 && nums[i] == candiB)
+                            countB++;
+                        else if (countC != 0 && nums[i] == candiC)
+                            countC++;
+                        else {
+                            candiA = nums[i];
+                            countA++;
+                        }
+                    } else if (countB == 0) {
+                        if (countA != 0 && nums[i] == candiA)
+                            countA++;
+                        else if (countC != 0 && nums[i] == candiC)
+                            countC++;
+                        else {
+                            candiB = nums[i];
+                            countB++;
+                        }
+                    } else if (countC == 0) {
+                        if (countA != 0 && nums[i] == candiA)
+                            countA++;
+                        else if (countB != 0 && nums[i] == candiB)
+                            countB++;
+                        else {
+                            candiC = nums[i];
+                            countC++;
+                        }
+                    }
+                } else {
+                    if (nums[i] == candiA)
+                        countA++;
+                    else if (nums[i] == candiB)
+                        countB++;
+                    else if (nums[i] == candiC)
+                        countC++;
+                    else {
+                        countA--;
+                        countB--;
+                        countC--;
+                    }
+                }
+            }
+        }
+    }
+
     public static class UnitTest {
         @Test
         public void test1() {
