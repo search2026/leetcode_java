@@ -1,7 +1,15 @@
 package bitwise_and_of_numbers_range;
 
-public class BitwiseANDofNumbersRange {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class BitwiseANDofNumbersRange {
+    /*
+        Bitwise AND of Numbers Range
+        https://leetcode.com/problems/bitwise-and-of-numbers-range/
+        Difficulty: Medium
+     */
     public class Solution {
         public int rangeBitwiseAnd(int m, int n) {
             int r = 0;
@@ -13,6 +21,14 @@ public class BitwiseANDofNumbersRange {
                 m >>>= 1;
             }
             return r;
+        }
+    }
+
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new BitwiseANDofNumbersRange().new Solution();
+            assertTrue(true);
         }
     }
 }

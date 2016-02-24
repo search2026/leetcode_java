@@ -1,7 +1,15 @@
 package compare_version_numbers;
 
-public class CompareVersionNumbers {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class CompareVersionNumbers {
+    /*
+        Compare Version Numbers
+        https://leetcode.com/problems/compare-version-numbers/
+        Difficulty: Easy
+     */
     public class Solution {
         public int compareVersion(String version1, String version2) {
             String[] splits1 = version1.split("\\.");
@@ -36,7 +44,11 @@ public class CompareVersionNumbers {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new CompareVersionNumbers().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

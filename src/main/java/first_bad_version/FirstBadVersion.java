@@ -51,6 +51,7 @@ public class FirstBadVersion {
         @Test
         public void test1() {
             Solution sol = new FirstBadVersion().new Solution();
+            assertTrue(true);
         }
     }
 }

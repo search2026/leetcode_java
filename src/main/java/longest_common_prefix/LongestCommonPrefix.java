@@ -1,7 +1,15 @@
 package longest_common_prefix;
 
-public class LongestCommonPrefix {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class LongestCommonPrefix {
+    /*
+        Longest Common Prefix
+        https://leetcode.com/problems/longest-common-prefix/
+        Difficulty: Easy
+     */
     public class Solution {
         public String longestCommonPrefix(String[] strs) {
             if (strs.length == 0) {
@@ -23,6 +31,10 @@ public class LongestCommonPrefix {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new LongestCommonPrefix().new Solution();
+            assertTrue(true);
+        }
     }
 }

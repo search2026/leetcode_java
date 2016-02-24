@@ -57,6 +57,7 @@ public class AdditiveNumber {
         @Test
         public void test1() {
             Solution sol = new AdditiveNumber().new Solution();
+            assertTrue(true);
         }
     }
 }

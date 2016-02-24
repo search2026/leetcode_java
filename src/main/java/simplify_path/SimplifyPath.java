@@ -1,9 +1,18 @@
 package simplify_path;
 
+import org.junit.Test;
+
 import java.util.ArrayDeque;
 
-public class SimplifyPath {
+import static org.junit.Assert.assertEquals;
 
+public class SimplifyPath {
+    /*
+        Simplify Path
+        https://leetcode.com/problems/simplify-path/
+        leetcode 71
+        Difficulty: Medium
+     */
     public class Solution {
         public String simplifyPath(String path) {
             String[] splits = path.split("/");
@@ -31,6 +40,10 @@ public class SimplifyPath {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SimplifyPath().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

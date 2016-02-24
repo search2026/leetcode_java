@@ -1,11 +1,19 @@
 package _4sum;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class _4Sum {
+import static org.junit.Assert.assertTrue;
 
+public class _4Sum {
+    /*
+        4 Sum
+        https://leetcode.com/problems/4sum/
+        Difficulty: Medium
+     */
     public class Solution {
         public List<List<Integer>> fourSum(int[] num, int target) {
             List<List<Integer>> ret = new ArrayList<List<Integer>>();
@@ -63,6 +71,10 @@ public class _4Sum {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new _4Sum().new Solution();
+            assertTrue(true);
+        }
     }
 }

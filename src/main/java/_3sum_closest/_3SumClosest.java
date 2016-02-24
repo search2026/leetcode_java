@@ -1,9 +1,17 @@
 package _3sum_closest;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
-public class _3SumClosest {
+import static org.junit.Assert.assertTrue;
 
+public class _3SumClosest {
+    /*
+        3 Sum Closest
+        https://leetcode.com/problems/3sum/
+        Difficulty: Medium
+     */
     public class Solution {
         public int threeSumClosest(int[] nums, int target) {
             Arrays.sort(nums);
@@ -34,6 +42,10 @@ public class _3SumClosest {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new _3SumClosest().new Solution();
+            assertTrue(true);
+        }
     }
 }

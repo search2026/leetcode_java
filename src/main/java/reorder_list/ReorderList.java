@@ -1,9 +1,17 @@
 package reorder_list;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ReorderList {
-
+    /*
+        Reorder List
+        https://leetcode.com/problems/reorder-list/
+        leetcode 143
+        Difficulty: Medium
+     */
     public class Solution {
         private ListNode reverse(ListNode head) {
             ListNode pre = null;
@@ -56,5 +64,10 @@ public class ReorderList {
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new ReorderList().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

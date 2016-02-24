@@ -1,10 +1,19 @@
 package missing_ranges;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MissingRanges {
+import static org.junit.Assert.assertEquals;
 
+public class MissingRanges {
+    /*
+        Missing Ranges
+        http://www.cnblogs.com/EdwardLiu/p/4249626.html
+        leetcode 163
+        Difficulty: Medium
+     */
     public class Solution {
         public List<String> findMissingRanges(int[] vals, int start, int end) {
             List<String> ranges = new ArrayList<String>();
@@ -25,6 +34,10 @@ public class MissingRanges {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MissingRanges().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

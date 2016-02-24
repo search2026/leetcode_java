@@ -1,9 +1,17 @@
 package remove_nth_node_from_end_of_list;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class RemoveNthNodeFromEndofList {
-
+    /*
+        Remove Nth Node From End of List
+        https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+        leetcode 19
+        Difficulty: Easy
+     */
     public class Solution {
         public ListNode removeNthFromEnd(ListNode head, int n) {
             ListNode fast = head;
@@ -26,6 +34,10 @@ public class RemoveNthNodeFromEndofList {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new RemoveNthNodeFromEndofList().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

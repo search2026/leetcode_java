@@ -1,10 +1,19 @@
 package pascals_triangle;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class PascalsTriangle {
+import static org.junit.Assert.assertEquals;
 
+public class PascalsTriangle {
+    /*
+        Pascals Triangle
+        https://leetcode.com/problems/pascals-triangle/
+        leetcode 118
+        Difficulty: Easy
+     */
     public class Solution {
         public List<List<Integer>> generate(int numRows) {
             List<List<Integer>> ans = new ArrayList<List<Integer>>();
@@ -26,8 +35,15 @@ public class PascalsTriangle {
             }
             return ans;
         }
+    }
 
-        // Pascals Triangle II
+    /*
+        Pascals Triangle
+        https://leetcode.com/problems/pascals-triangle/
+        leetcode 118
+        Difficulty: Easy
+     */
+    public class Solution_2 {
         public List<Integer> getRow(int rowIndex) {
             List<Integer> row = new ArrayList<Integer>();
             for (int r = 0; r <= rowIndex; r++) {
@@ -41,6 +57,10 @@ public class PascalsTriangle {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new PascalsTriangle().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

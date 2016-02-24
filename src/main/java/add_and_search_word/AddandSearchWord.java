@@ -1,10 +1,18 @@
 package add_and_search_word;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddandSearchWord {
+import static org.junit.Assert.assertTrue;
 
+public class AddandSearchWord {
+    /*
+        Add and Search Word
+        https://leetcode.com/problems/add-and-search-word-data-structure-design/
+        Difficulty: Medium
+     */
     public class WordDictionary {
         class TrieNode {
             char c;
@@ -82,6 +90,10 @@ public class AddandSearchWord {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            WordDictionary sol = new AddandSearchWord().new WordDictionary();
+            assertTrue(true);
+        }
     }
 }

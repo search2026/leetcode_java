@@ -1,9 +1,17 @@
 package remove_linked_list_elements;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class RemoveLinkedListElements {
-
+    /*
+        Remove Linked List Elements
+        https://leetcode.com/problems/remove-linked-list-elements/
+        leetcode 203
+        Difficulty: Easy
+     */
     public class Solution {
         public ListNode removeElements(ListNode head, int val) {
             if (head == null) return null;
@@ -13,6 +21,10 @@ public class RemoveLinkedListElements {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new RemoveLinkedListElements().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

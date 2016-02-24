@@ -1,7 +1,15 @@
 package count_primes;
 
-public class CountPrimes {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class CountPrimes {
+    /*
+        Count Primes
+        https://leetcode.com/problems/count-primes/
+        Difficulty: Easy
+     */
     public class Solution {
         public int countPrimes(int n) {
             if (n < 3) {
@@ -31,5 +39,12 @@ public class CountPrimes {
         }
     }
 
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new CountPrimes().new Solution();
+            assertTrue(true);
+        }
+    }
 }
 

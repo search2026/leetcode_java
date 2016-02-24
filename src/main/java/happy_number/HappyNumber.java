@@ -1,7 +1,18 @@
+package happy_number;
+
+import org.junit.Test;
+
 import java.util.HashSet;
 
-public class HappyNumber {
+import static org.junit.Assert.assertEquals;
 
+public class HappyNumber {
+    /*
+        Happy Number
+        https://leetcode.com/problems/happy-number/
+        leetcode 202
+        Difficulty: Easy
+     */
     public class Solution {
         public int[] getDigits(int n) {
             String s = String.valueOf(n);
@@ -41,6 +52,10 @@ public class HappyNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new HappyNumber().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

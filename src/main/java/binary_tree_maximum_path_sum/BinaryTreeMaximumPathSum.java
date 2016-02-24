@@ -1,8 +1,11 @@
 package binary_tree_maximum_path_sum;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
+
+import static org.junit.Assert.assertTrue;
 
 public class BinaryTreeMaximumPathSum {
     /*
@@ -10,7 +13,6 @@ public class BinaryTreeMaximumPathSum {
         https://leetcode.com/problems/binary-tree-maximum-path-sum/
         Difficulty: Hard
      */
-
     public class Solution {
         public int maxPathSum(TreeNode root) {
             if (root == null) return 0;
@@ -33,6 +35,10 @@ public class BinaryTreeMaximumPathSum {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new BinaryTreeMaximumPathSum().new Solution();
+            assertTrue(true);
+        }
     }
 }

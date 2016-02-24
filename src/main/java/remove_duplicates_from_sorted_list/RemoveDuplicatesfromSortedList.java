@@ -1,9 +1,17 @@
 package remove_duplicates_from_sorted_list;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class RemoveDuplicatesfromSortedList {
-
+    /*
+        Remove Duplicates from Sorted List
+        https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+        leetcode 83
+        Difficulty: Easy
+     */
     public class Solution {
         public ListNode deleteDuplicates(ListNode head) {
             if (head != null) {
@@ -20,8 +28,15 @@ public class RemoveDuplicatesfromSortedList {
             }
             return head;
         }
+    }
 
-        // Remove Duplicates from Sorted List II
+    /*
+        Remove Duplicates from Sorted List
+        https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+        leetcode 82
+        Difficulty: Medium
+     */
+    public class Solution_2 {
         public ListNode deleteDuplicatesII(ListNode head) {
             if (head == null) {
                 return null;
@@ -61,6 +76,10 @@ public class RemoveDuplicatesfromSortedList {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new RemoveDuplicatesfromSortedList().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

@@ -1,7 +1,16 @@
 package remove_element;
 
-public class RemoveElement {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class RemoveElement {
+    /*
+        Remove Element
+        https://leetcode.com/problems/remove-element/
+        leetcode 27
+        Difficulty: Easy
+     */
     public class Solution {
         public int removeElement(int[] nums, int val) {
             int len = 0;
@@ -15,6 +24,10 @@ public class RemoveElement {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new RemoveElement().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

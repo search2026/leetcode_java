@@ -7,7 +7,11 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class FindMinimuminRotatedSortedArray {
-
+    /*
+        Find Minimum in Rotated Sorted Array
+        https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+        Difficulty: Medium
+     */
     public class Solution {
         public int findMin(int[] nums) {
             assert (nums.length > 0);
@@ -26,7 +30,14 @@ public class FindMinimuminRotatedSortedArray {
             }
             return nums[left];
         }
+    }
 
+    /*
+        Find Minimum in Rotated Sorted Array II
+        https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
+        Difficulty: Hard
+     */
+    public class Solution_2 {
         public int findMinII(int[] num) {
             assert (num.length > 0);
             int left = 0;
@@ -52,7 +63,11 @@ public class FindMinimuminRotatedSortedArray {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new FindMinimuminRotatedSortedArray().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

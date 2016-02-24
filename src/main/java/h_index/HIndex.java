@@ -1,9 +1,15 @@
 package h_index;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class HIndex {
-    // H-Index
-    // https://leetcode.com/problems/h-index/
-    // Difficulty: Medium
+    /*
+        H-Index
+        https://leetcode.com/problems/h-index/
+        Difficulty: Medium
+    */
     public class Solution {
         public int hIndex(int[] citations) {
             int n = citations.length;
@@ -24,10 +30,12 @@ public class HIndex {
         }
     }
 
-    // H-Index II
-    // https://leetcode.com/problems/h-index-ii/
-    // Difficulty: Medium
-    public class SolutionII {
+    /*
+        H-Index II
+        https://leetcode.com/problems/h-index-ii/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
         public int hIndex(int[] citations) {
             int n = citations.length;
 
@@ -44,6 +52,10 @@ public class HIndex {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new HIndex().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

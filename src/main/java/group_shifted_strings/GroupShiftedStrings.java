@@ -1,6 +1,10 @@
 package group_shifted_strings;
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class GroupShiftedStrings {
     /*
@@ -68,6 +72,10 @@ public class GroupShiftedStrings {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new GroupShiftedStrings().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

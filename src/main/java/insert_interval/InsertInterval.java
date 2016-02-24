@@ -10,38 +10,46 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class InsertInterval {
-
+    /*
+        Insert Interval
+        https://leetcode.com/problems/insert-interval/
+        Difficulty: Hard
+     */
     public class Solution {
-
         public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
-            List<Interval> newIntervals = new ArrayList<Interval>();
+            if (newInterval == null || intervals == null) return intervals;
+
+            List<Interval> rslt = new ArrayList<Interval>();
+            int insertPos = 0;
+
             for (Interval interval : intervals) {
-                if (newInterval == null || interval.end < newInterval.start) {
-                    newIntervals.add(interval);
+                if (interval.end < newInterval.start) {
+                    rslt.add(interval);
+                    insertPos++;
                 } else if (interval.start > newInterval.end) {
-                    newIntervals.add(newInterval);
-                    newIntervals.add(interval);
-                    newInterval = null;
+                    rslt.add(interval);
                 } else {
-                    newInterval.start = Math.min(newInterval.start, interval.start);
-                    newInterval.end = Math.max(newInterval.end, interval.end);
+                    newInterval.start = Math.min(interval.start, newInterval.start);
+                    newInterval.end = Math.max(interval.end, newInterval.end);
                 }
             }
-            if (newInterval != null) {
-                newIntervals.add(newInterval);
-            }
-            return newIntervals;
+
+            rslt.add(insertPos, newInterval);
+
+            return rslt;
         }
     }
 
     public static class UnitTest {
-
         @Test
         public void testInsert() {
-            Solution s = new InsertInterval().new Solution();
-            assertEquals(
-                    Arrays.asList(new Interval(0, 0), new Interval(1, 5)),
-                    s.insert(Arrays.asList(new Interval(1, 5)), new Interval(0, 0)));
+            Solution sol = new InsertInterval().new Solution();
+            List<Interval> intervals = new ArrayList<Interval>();
+            intervals.add(new Interval(1, 3));
+            intervals.add(new Interval(6, 9));
+            List<Interval> rslt = sol.insert(intervals, new Interval(2,5));
+            assertEquals(1, rslt.get(0).start);
+            assertEquals(5, rslt.get(0).end);
         }
     }
 }

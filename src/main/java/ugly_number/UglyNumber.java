@@ -1,7 +1,11 @@
 package ugly_number;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class UglyNumber {
     /*
@@ -40,13 +44,13 @@ public class UglyNumber {
         https://leetcode.com/problems/ugly-number-ii/
         Difficulty: Medium
     */
-    public class SolutionII {
+    public class Solution_2 {
         public int nthUglyNumber(int n) {
             if (n <= 0) {
                 return 0;
             }
 
-            List<Integer> nums = new ArrayList<>();
+            List<Integer> nums = new ArrayList<Integer>();
             nums.add(1);
 
             int i = 0;
@@ -79,6 +83,10 @@ public class UglyNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new UglyNumber().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

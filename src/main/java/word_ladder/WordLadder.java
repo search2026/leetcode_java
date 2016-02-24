@@ -1,6 +1,10 @@
 package word_ladder;
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class WordLadder {
     /*
@@ -10,9 +14,7 @@ public class WordLadder {
      */
     public class Solution {
         public int ladderLength(String start, String end, Set<String> dict) {
-            if (start == null || start.isEmpty() || end == null || end.isEmpty())
-                return 0;
-
+            if (start == null || start.isEmpty() || end == null || end.isEmpty()) return 0;
             int length = 1;
             Queue<String> queue = new LinkedList<String>();
             queue.offer(start);
@@ -21,18 +23,19 @@ public class WordLadder {
             while (!queue.isEmpty()) {
                 int size = queue.size();
                 for (int i = 0; i < size; i++) {
-                    String curr = queue.poll();
-                    for (int j = 0; j < curr.length(); j++) {
-                        char[] charCurr = curr.toCharArray();
-                        for (char c = 'a'; c < 'z'; c++) {
-                            charCurr[j] = c;  // change one character at a time
-                            String strCurr = new String(charCurr);
-                            if (strCurr.equals(end)) {
+                    String cur = queue.poll();
+                    for (int j = 0; j < cur.length(); j++) {
+                        char[] newCand = cur.toCharArray();
+                        for (char c = 'a'; c <= 'z'; c++) {
+                            if (c == cur.charAt(j)) continue;
+                            newCand[j] = c;
+                            String curStr = new String(newCand);
+                            if (curStr.equals(end)) {
                                 return length + 1;
                             } else {
-                                if (dict.contains(strCurr) && !visited.contains(strCurr)) {
-                                    queue.offer(strCurr);
-                                    visited.add(strCurr);
+                                if (dict.contains(curStr) && !visited.contains(curStr)) {
+                                    queue.offer(curStr);
+                                    visited.add(curStr);
                                 }
                             }
                         }
@@ -50,65 +53,88 @@ public class WordLadder {
         Difficulty: Hard
      */
     public class Solution_2 {
-        public List<List<String>> findLadders(String start, String end, Set<String> dict) {
-            List<List<String>> results = new ArrayList<List<String>>();
-            if(start.isEmpty() || end.isEmpty() || dict.isEmpty())
-                return results;
-            Set<String> q1 = new HashSet<>();
-            Map<String, Set<String>> p = new HashMap<>();
-            q1.add(end);
-            dict.add(end);
-            dict.add(start);
-            for(String i : dict) {
-                Set<String> temp = new HashSet<>();
-                p.put(i, temp);
-            }
-            Set<String> visited = new HashSet<>();
-            boolean found = false;
-            while(!q1.isEmpty() && !found) {
-                for(String i : q1)
-                    visited.add(i);
-                Set<String> q2 = new HashSet<>();
-                for(String current : q1) {
-                    char[] curChar = current.toCharArray();
-                    for(int i = 0; i < current.length(); i++) {
-                        char original = curChar[i];
-                        for(char j = 'a'; j <= 'z'; j++) {
-                            curChar[i] = j;
-                            String newStr = new String(curChar);
-                            if(!visited.contains(newStr) && dict.contains(newStr)) {
-                                if(newStr.equals(start))
-                                    found = true;
-                                p.get(newStr).add(current);
-                                q2.add(newStr);
-                            }
+        private List<String> expand(String crt, Set<String> dict) {
+            List<String> expansion = new ArrayList<String>();
+
+            for (int i = 0; i < crt.length(); i++) {
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+                    if (ch != crt.charAt(i)) {
+                        String expanded = crt.substring(0, i) + ch + crt.substring(i + 1);
+                        if (dict.contains(expanded)) {
+                            expansion.add(expanded);
                         }
-                        curChar[i] = original;
                     }
                 }
-                q1 = q2;
             }
 
-            List<String> result = new ArrayList<>();
-            if(found)
-                generateResult(result, start, p, results);
-
-            return results;
+            return expansion;
         }
 
-        void generateResult(List<String> result, String start, Map<String, Set<String>> p, List<List<String>> results) {
-            List<String> extendedResult = new ArrayList<>(result);
-            extendedResult.add(start);
-            if(p.get(start).size() == 0) {
-                results.add(extendedResult);
-                return;
+        private void dfs(List<List<String>> ladders, List<String> path, String crt, String start, Map<String, Integer> distance, Map<String, List<String>> map) {
+            path.add(crt);
+            if (crt.equals(start)) {
+                Collections.reverse(path);
+                ladders.add(new ArrayList<String>(path));
+                Collections.reverse(path);
+            } else {
+                for (String next : map.get(crt)) {
+                    if (distance.containsKey(next) && distance.get(crt) == distance.get(next) + 1) {
+                        dfs(ladders, path, next, start, distance, map);
+                    }
+                }
             }
-            for(String s : p.get(start))
-                generateResult(extendedResult, s, p, results);
+            path.remove(path.size() - 1);
+        }
+
+        private void bfs(Map<String, List<String>> map, Map<String, Integer> distance, String start, String end, Set<String> dict) {
+            Queue<String> q = new LinkedList<String>();
+            q.offer(start);
+            distance.put(start, 0);
+            for (String s : dict) {
+                map.put(s, new ArrayList<String>());
+            }
+
+            while (!q.isEmpty()) {
+                String crt = q.poll();
+
+                List<String> nextList = expand(crt, dict);
+                for (String next : nextList) {
+                    map.get(next).add(crt);
+                    if (!distance.containsKey(next)) {
+                        distance.put(next, distance.get(crt) + 1);
+                        q.offer(next);
+                    }
+                }
+            }
+        }
+
+        public List<List<String>> findLadders(String start, String end, Set<String> dict) {
+            List<List<String>> ladders = new ArrayList<List<String>>();
+            Map<String, List<String>> map = new HashMap<String, List<String>>();
+            Map<String, Integer> distance = new HashMap<String, Integer>();
+
+            dict.add(start);
+            dict.add(end);
+
+            bfs(map, distance, start, end, dict);
+
+            dfs(ladders, new ArrayList<String>(), end, start, distance, map);
+
+            return ladders;
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new WordLadder().new Solution();
+            Set<String> dict = new HashSet<String>();
+            dict.add("hot");
+            dict.add("dot");
+            dict.add("dog");
+            dict.add("lot");
+            dict.add("log");
+            assertEquals(5, sol.ladderLength("hit", "cog", dict));
+        }
     }
 }

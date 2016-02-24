@@ -8,7 +8,11 @@ import java.util.HashMap;
 import static org.junit.Assert.assertTrue;
 
 public class ConstructBinaryTreefromPreorderandInorderTraversal {
-
+    /*
+        Construct Binary Tree from Preorder and Inorder Travseral
+        https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+        Difficulty: Medium
+     */
     public class Solution {
         public TreeNode helper(int[] postorder, int posL, int posR, int[] inorder, int inL, int inR, HashMap<Integer, Integer> map) {
             if (posL > posR || inL > inR) {

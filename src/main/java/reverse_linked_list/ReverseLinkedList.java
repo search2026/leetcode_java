@@ -1,48 +1,71 @@
 package reverse_linked_list;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class ReverseLinkedList {
-
+    /*
+        Reverse Linked List
+        https://leetcode.com/problems/reverse-linked-list/
+        Difficulty: Easy
+     */
     public class Solution {
         public ListNode reverseList(ListNode head) {
-            ListNode reversed = null;
-            ListNode p = head;
-            while (p != null) {
-                ListNode temp = p.next;
-                p.next = reversed;
-                reversed = p;
-                p = temp;
+            ListNode prev = null;
+            while (head != null) {
+                ListNode temp = head.next;
+                head.next = prev;
+                prev = head;
+                head = temp;
             }
-            return reversed;
+            return prev;
         }
+    }
 
-        // Reverse Linked List II
+    /*
+        Reverse Linked List II
+        https://leetcode.com/problems/reverse-linked-list-ii/
+        Difficulty: Medium
+     */
+    public class Solution_2 {
         public ListNode reverseBetween(ListNode head, int m, int n) {
+            if (m >= n || head == null) {
+                return head;
+            }
+
             ListNode dummy = new ListNode(0);
             dummy.next = head;
-            ListNode prefix = dummy;
-            int count = n - m + 1;
-            m--;
-            while (m > 0) {
-                prefix = prefix.next;
-                m--;
+            head = dummy;
+
+            for (int i = 1; i < m; i++) {
+                if (head == null) return null;
+                head = head.next;
             }
-            ListNode pre = null;
-            ListNode p = prefix.next;
-            ListNode reversedTail = p;
-            while (count > 0) {
-                ListNode temp = p.next;
-                p.next = pre;
-                pre = p;
-                p = temp;
-                count--;
+
+            ListNode premNode = head;
+            ListNode mNode = head.next;
+            ListNode nNode = mNode, postnNode = mNode.next;
+            for (int i = m; i < n; i++) {
+                if (postnNode == null) return null;
+                ListNode temp = postnNode.next;
+                postnNode.next = nNode;
+                nNode = postnNode;
+                postnNode = temp;
             }
-            prefix.next = pre;
-            if (reversedTail != null) {
-                reversedTail.next = p;
-            }
+            mNode.next = postnNode;
+            premNode.next = nNode;
+
             return dummy.next;
+        }
+    }
+
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new ReverseLinkedList().new Solution();
+            assertTrue(true);
         }
     }
 }

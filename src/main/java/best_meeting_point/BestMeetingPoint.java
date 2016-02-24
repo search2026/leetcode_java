@@ -23,8 +23,8 @@ public class BestMeetingPoint {
             int m = grid.length;
             int n = grid[0].length;
 
-            List<Integer> rowIndex = new ArrayList<>();
-            List<Integer> colIndex = new ArrayList<>();
+            List<Integer> rowIndex = new ArrayList<Integer>();
+            List<Integer> colIndex = new ArrayList<Integer>();
 
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n; j++) {
@@ -56,6 +56,7 @@ public class BestMeetingPoint {
         @Test
         public void test1() {
             Solution sol = new BestMeetingPoint().new Solution();
+            assertTrue(true);
         }
     }
 }

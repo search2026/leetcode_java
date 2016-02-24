@@ -1,111 +1,90 @@
 package course_schedule;
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static org.junit.Assert.*;
+
 
 public class CourseSchedule {
     /*
-        Course Schedule
+        Course Schedule - DFS
         https://leetcode.com/problems/course-schedule/
         Difficulty: Medium
-     */
+    */
     public class Solution {
+        private boolean hasCycle(List<List<Integer>> adjList, int cur, int[] visited) {
+            visited[cur] = 1;
+            for (Integer next : adjList.get(cur)) {
+                if (visited[next] == 1) {
+                    return true;
+                }
+                if (hasCycle(adjList, next, visited)) {
+                    return true;
+                }
+            }
+            visited[cur] = 2;
+            return false;
+        }
+
         public boolean canFinish(int numCourses, int[][] prerequisites) {
-            Map<Integer, List<Integer>> outNodes = new HashMap<Integer, List<Integer>>();
-            int[] inDegree = new int[numCourses];
-            Set<Integer> courses = new HashSet<Integer>(numCourses);
-            for (int i = 0; i < numCourses; i++) {
-                courses.add(i);
-                outNodes.put(i, new ArrayList<Integer>());
+            if (numCourses <= 0) return false;
+
+            List<List<Integer>> adj = new ArrayList<List<Integer>>();
+            for (int i = 0; i < numCourses; ++i) {
+                adj.add(new ArrayList<Integer>());
             }
-            for (int[] edge : prerequisites) {
-                int from = edge[1];
-                int to = edge[0];
-                inDegree[to]++;
-                List<Integer> nodes = outNodes.get(from);
-                nodes.add(to);
+            for (int[] p : prerequisites) {
+                adj.get(p[0]).add(p[1]);
             }
-            while (!courses.isEmpty()) {
-                List<Integer> toRemoved = new ArrayList<Integer>();
-                for (int course : courses) {
-                    if (inDegree[course] == 0) {
-                        toRemoved.add(course);
-                        for (int node : outNodes.get(course)) {
-                            inDegree[node]--;
-                        }
+            int[] visited = new int[numCourses];
+            for (int i = 0; i < numCourses; ++i) {
+                if (visited[i] == 0) {
+                    if (hasCycle(adj, i, visited)) {
+                        return false;
                     }
                 }
-                if (toRemoved.isEmpty()) {
-                    return false;
-                }
-                courses.removeAll(toRemoved);
             }
             return true;
         }
     }
 
     /*
-        Course Schedule - DFS
+        Course Schedule - Topological Sorting
         https://leetcode.com/problems/course-schedule/
         Difficulty: Medium
     */
     public class Solution_2 {
         public boolean canFinish(int numCourses, int[][] prerequisites) {
-            if (numCourses <= 0) {
-                return true;
+            if (numCourses <= 0) return false;
+
+            int[] inDegree = new int[numCourses];
+            List<List<Integer>> graph = new ArrayList<List<Integer>>();
+            for (int i = 0; i < numCourses; i++)
+                graph.add(new ArrayList<Integer>());
+            for (int[] pre: prerequisites) {
+                inDegree[pre[0]]++;
+                graph.get(pre[1]).add(pre[0]);
             }
 
-            if (prerequisites == null || prerequisites.length == 0) {
-                return true;
-            }
-
-            // First transform the edge list to adj. list
-            Map<Integer, List<Integer>> adjList = new HashMap<>();
-            for (int[] edge : prerequisites) {
-                if (adjList.containsKey(edge[0])) {
-                    List<Integer> neighbors = adjList.get(edge[0]);
-                    neighbors.add(edge[1]);
-                    adjList.put(edge[0], neighbors);
-                } else {
-                    List<Integer> neighbors = new ArrayList<Integer>();
-                    neighbors.add(edge[1]);
-                    adjList.put(edge[0], neighbors);
-                }
-            }
-
-            int[] visited = new int[numCourses];
-            // Check if the graph contains a circle, if yes, return false.
+            Queue<Integer> leaves = new ArrayDeque<Integer>();
             for (int i = 0; i < numCourses; i++) {
-                if (hasCircles(i, visited, adjList)) {
-                    return false;
+                if (inDegree[i] == 0) {
+                    leaves.offer(i);
                 }
             }
 
-            return true;
-        }
-
-        private boolean hasCircles(int vertexId, int[] visited, Map<Integer, List<Integer>> adjList) {
-            if (visited[vertexId] == -1) {
-                return true;
-            }
-
-            if (visited[vertexId] == 1) {
-                return false;
-            }
-
-            visited[vertexId] = -1;
-
-            List<Integer> neighbors = adjList.get(vertexId);
-            if (neighbors != null) {
-                for (int neighbor : neighbors) {
-                    if (hasCircles(neighbor, visited, adjList)) {
-                        return true;
-                    }
+            int count = 0;
+            while (!leaves.isEmpty()) {
+                Integer cur = leaves.poll();
+                count++;
+                for (Integer course: graph.get(cur)) {
+                    inDegree[course]--;
+                    if (inDegree[course] == 0) leaves.offer(course);
                 }
             }
-
-            visited[vertexId] = 1;
-
-            return false;
+            return count == numCourses;
         }
     }
 
@@ -115,75 +94,78 @@ public class CourseSchedule {
         Difficulty: Medium
     */
     public class Solution_3 {
-        private int label;
-
         public int[] findOrder(int numCourses, int[][] prerequisites) {
-            if (numCourses <= 0) {
-                return new int[0];
-            }
-            this.label = numCourses - 1;
+            if (numCourses <= 0) return new int[0];
+            int[] rslt = new int[numCourses];
 
-            int[] result = new int[numCourses];
-
-            // No prerequisites
-            if (prerequisites == null || prerequisites.length == 0) {
-                for (int i = 0; i < numCourses; i++) {
-                    result[i] = i;
-                }
-
-                return result;
+            List<List<Integer>> graph = new ArrayList<List<Integer>>();
+            for (int i = 0; i < numCourses; i++)
+                graph.add(new ArrayList<Integer>());
+            int[] inDegree = new int[numCourses];
+            for (int[] pre: prerequisites) {
+                inDegree[pre[0]]++;
+                graph.get(pre[1]).add(pre[0]);
             }
 
-            // Convert the edge list to adj. list
-            Map<Integer, List<Integer>> adjList = new HashMap<>();
-            for (int[] edge : prerequisites) {
-                if (adjList.containsKey(edge[1])) {
-                    List<Integer> neighbors = adjList.get(edge[1]);
-                    neighbors.add(edge[0]);
-                    adjList.put(edge[1], neighbors);
-                } else {
-                    List<Integer> neighbors = new ArrayList<Integer>();
-                    neighbors.add(edge[0]);
-                    adjList.put(edge[1], neighbors);
-                }
-            }
-
-            int[] visited = new int[numCourses];
+            Queue<Integer> leaves = new ArrayDeque<Integer>();
             for (int i = 0; i < numCourses; i++) {
-                if (!toplogicalSorting(i, visited, adjList, result)) {
-                    return new int[0];
+                if (inDegree[i] == 0) {
+                    leaves.offer(i);
                 }
             }
+            int count = 0;
+            while (!leaves.isEmpty()) {
+                int cur = leaves.poll();
+                rslt[count++] = cur;
+                for (Integer course: graph.get(cur)) {
+                    inDegree[course]--;
+                    if (inDegree[course] == 0) leaves.offer(course);
+                }
+            }
+            //if cycle exists
+            if (count != numCourses) return new int[0];
+            return rslt;
+        }
+    }
 
-            return result;
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new CourseSchedule().new Solution();
+            int n = 2;
+            int[][] pre = new int[][]{
+                    new int[]{1, 0}
+            };
+            assertTrue(sol.canFinish(n, pre));
+
+            pre = new int[][]{
+                    new int[]{1, 0},
+                    new int[]{0, 1}
+            };
+            assertFalse(sol.canFinish(n, pre));
         }
 
-        private boolean toplogicalSorting(int vertexId, int[] visited, Map<Integer, List<Integer>> adjList, int[] result) {
-            // Has been visited
-            if (visited[vertexId] == -1) {
-                return false;
-            }
+        @Test
+        public void test2() {
+            Solution_2 sol = new CourseSchedule().new Solution_2();
+            int n = 2;
+            int[][] pre = new int[][]{
+                    new int[]{1, 0}
+            };
+            assertTrue(sol.canFinish(n, pre));
 
-            // Has been added into the list
-            if (visited[vertexId] == 1) {
-                return true;
-            }
+            pre = new int[][]{
+                    new int[]{1, 0},
+                    new int[]{0, 1}
+            };
+            assertFalse(sol.canFinish(n, pre));
+        }
 
-            visited[vertexId] = -1;
-
-            List<Integer> neighbors = adjList.get(vertexId);
-            if (neighbors != null) {
-                for (int neighbor : neighbors) {
-                    if (!toplogicalSorting(neighbor, visited, adjList, result)) {
-                        return false;
-                    }
-                }
-            }
-
-            result[label--] = vertexId;
-            visited[vertexId] = 1;
-
-            return true;
+        @Test
+        public void test3() {
+            Solution_3 sol = new CourseSchedule().new Solution_3();
+            assertArrayEquals(new int[]{0, 1}, sol.findOrder(2, new int[][]{{1, 0}}));
+            assertArrayEquals(new int[]{0, 1, 2, 3}, sol.findOrder(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}}));
         }
     }
 }

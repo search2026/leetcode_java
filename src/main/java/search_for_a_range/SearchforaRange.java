@@ -1,5 +1,9 @@
 package search_for_a_range;
 
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 public class SearchforaRange {
     /*
         Search for a Range
@@ -7,10 +11,10 @@ public class SearchforaRange {
         Difficulty: Medium
      */
     public class Solution {
-        private int lowerBound(int[] A, int left, int right, int target) {
+        private int lowerBound(int[] nums, int left, int right, int target) {
             while (left <= right) {
                 int mid = left + (right - left) / 2;
-                if (A[mid] < target) {
+                if (nums[mid] < target) {
                     left = mid + 1;
                 } else {
                     right = mid - 1;
@@ -33,60 +37,65 @@ public class SearchforaRange {
         }
     }
 
-    public class SolutionII {
+    /*
+        Search for a Range - With Flag
+        https://leetcode.com/problems/search-for-a-range/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
         public int[] searchRange(int[] nums, int target) {
-            if (nums == null || nums.length == 0) {
-                return null;
+            int[] rslt = new int[]{-1, -1};
+            if (nums.length <= 0) return rslt;
+
+            int begin = search(nums, 0, nums.length - 1, target, true);
+            if (begin >= 0 && begin < nums.length && nums[begin] == target) {
+                rslt[0] = begin;
+                rslt[1] = search(nums, begin, nums.length - 1, target, false);
             }
-
-            int[] arr = new int[2];
-            arr[0] = -1;
-            arr[1] = -1;
-
-            binarySearch(nums, 0, nums.length - 1, target, arr);
-
-            return arr;
+            return rslt;
         }
 
-        public void binarySearch(int[] nums, int left, int right, int target, int[] arr) {
-            if (right < left)
-                return;
-
-            if (nums[left] == nums[right] && nums[left] == target) {
-                arr[0] = left;
-                arr[1] = right;
-                return;
-            }
+        int search(int[] nums, int left, int right, int target, boolean turnLeft) {
+            if (left > right) return -1;
 
             int mid = left + (right - left) / 2;
-
             if (nums[mid] < target) {
-                binarySearch(nums, mid + 1, right, target, arr);
+                return search(nums, mid + 1, right, target, turnLeft);
             } else if (nums[mid] > target) {
-                binarySearch(nums, left, mid - 1, target, arr);
+                return search(nums, left, mid - 1, target, turnLeft);
+            }
+
+            if (turnLeft) {
+                if (mid == 0 || nums[mid - 1] < nums[mid]) {
+                    return mid;
+                } else {
+                    return search(nums, left, mid - 1, target, turnLeft);
+                }
             } else {
-                arr[0] = mid;
-                arr[1] = mid;
-
-                //handle duplicates - left
-                int t1 = mid;
-                while (t1 > left && nums[t1] == nums[t1 - 1]) {
-                    t1--;
-                    arr[0] = t1;
+                if (mid == nums.length - 1 || nums[mid + 1] > nums[mid]) {
+                    return mid;
+                } else {
+                    return search(nums, mid + 1, right, target, turnLeft);
                 }
-
-                //handle duplicates - right
-                int t2 = mid;
-                while (t2 < right && nums[t2] == nums[t2 + 1]) {
-                    t2++;
-                    arr[1] = t2;
-                }
-                return;
             }
         }
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new SearchforaRange().new Solution();
+            int[] results = sol.searchRange(new int[]{1,2,2,2,3,5}, 2);
+            assertEquals(results[0], 1);
+            assertEquals(results[1], 3);
+        }
 
+        @Test
+        public void test2() {
+            Solution_2 sol = new SearchforaRange().new Solution_2();
+            int[] results = sol.searchRange(new int[]{1,2,2,2,3,5}, 2);
+            assertEquals(results[0], 1);
+            assertEquals(results[1], 3);
+        }
     }
 }

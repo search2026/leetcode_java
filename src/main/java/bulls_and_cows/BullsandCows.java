@@ -2,9 +2,7 @@ package bulls_and_cows;
 
 import org.junit.Test;
 
-import java.util.*;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class BullsandCows {
     /*
@@ -30,8 +28,8 @@ public class BullsandCows {
                     if (count[secret.charAt(i) - '0'] <= 0) {
                         countB++;
                     }
-                    count[guess.charAt(i)- '0']--;
-                    if (count[guess.charAt(i)- '0'] >= 0) {
+                    count[guess.charAt(i) - '0']--;
+                    if (count[guess.charAt(i) - '0'] >= 0) {
                         countB++;
                     }
                 }
@@ -45,6 +43,8 @@ public class BullsandCows {
         @Test
         public void test1() {
             Solution sol = new BullsandCows().new Solution();
+            assertTrue(sol.getHint("1807", "7810").equals("1A3B"));
+            assertTrue(sol.getHint("1123", "0111").equals("1A1B"));
         }
     }
 }

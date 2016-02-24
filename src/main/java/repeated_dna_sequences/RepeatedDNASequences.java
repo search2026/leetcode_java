@@ -1,12 +1,21 @@
 package repeated_dna_sequences;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class RepeatedDNASequences {
+import static org.junit.Assert.assertEquals;
 
+public class RepeatedDNASequences {
+    /*
+        Repeated DNA Sequences
+        https://leetcode.com/problems/repeated-dna-sequences/
+        leetcode 187
+        Difficulty: Medium
+     */
     public class Solution {
         public List<String> findRepeatedDnaSequences(String s) {
             Set<String> sequences = new HashSet<String>();
@@ -21,6 +30,14 @@ public class RepeatedDNASequences {
             }
             System.gc();
             return new ArrayList<String>(result);
+        }
+    }
+
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new RepeatedDNASequences().new Solution();
+            assertEquals(7, 7);
         }
     }
 }

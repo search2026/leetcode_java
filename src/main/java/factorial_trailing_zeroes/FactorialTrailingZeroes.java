@@ -1,7 +1,15 @@
 package factorial_trailing_zeroes;
 
-public class FactorialTrailingZeroes {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class FactorialTrailingZeroes {
+    /*
+        Factorial Trailing Zeros
+        https://leetcode.com/problems/factorial-trailing-zeroes/
+        Difficulty: Easy
+     */
     public class Solution {
         public int trailingZeroes(int n) {
             if (n < 0) return -1;
@@ -14,7 +22,11 @@ public class FactorialTrailingZeroes {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new FactorialTrailingZeroes().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

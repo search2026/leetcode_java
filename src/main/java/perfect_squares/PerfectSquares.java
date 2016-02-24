@@ -12,12 +12,9 @@ public class PerfectSquares {
      */
     public class Solution {
         public int numSquares(int n) {
-            if (n <= 0) {
-                return 0;
-            }
+            if (n <= 0) return 0;
 
             int[] dp = new int[n + 1];
-
             for (int i = 1; i <= n; i++) {
                 dp[i] = Integer.MAX_VALUE;
                 for (int j = 1; j * j <= i; j++) {
@@ -33,6 +30,9 @@ public class PerfectSquares {
         @Test
         public void test1() {
             Solution sol = new PerfectSquares().new Solution();
+            assertEquals(3, sol.numSquares(12));
+            assertEquals(2, sol.numSquares(13));
+            assertEquals(3, sol.numSquares(3));
         }
     }
 }

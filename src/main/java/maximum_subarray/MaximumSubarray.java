@@ -1,20 +1,32 @@
 package maximum_subarray;
 
-public class MaximumSubarray {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class MaximumSubarray {
+    /*
+        Maximum Subarray
+        https://leetcode.com/problems/maximum-subarray/
+        Difficulty: Medium
+     */
     public class Solution {
         public int maxSubArray(int[] nums) {
-            int sum = nums[0];
-            int maxSum = nums[0];
+            int local = nums[0];
+            int global = nums[0];
             for (int i = 1; i < nums.length; i++) {
-                sum = Math.max(sum + nums[i], nums[i]);
-                maxSum = Math.max(maxSum, sum);
+                local = Math.max(local + nums[i], nums[i]);
+                global = Math.max(global, local);
             }
-            return maxSum;
+            return global;
         }
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MaximumSubarray().new Solution();
+            assertEquals(6, sol.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+        }
     }
 }

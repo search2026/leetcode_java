@@ -1,6 +1,10 @@
 package strobogrammatic_number;
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class StrobogrammaticNumber {
     /*
@@ -141,7 +145,7 @@ public class StrobogrammaticNumber {
      */
     public class SolutionIII {
         private int count = 0;
-        private Map<Character, Character> map = new HashMap<>();
+        private Map<Character, Character> map = new HashMap<Character, Character>();
 
         public int strobogrammaticInRange(String low, String high) {
             if (low == null || low.length() == 0 || high == null || high.length() == 0) {
@@ -200,6 +204,10 @@ public class StrobogrammaticNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new StrobogrammaticNumber().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

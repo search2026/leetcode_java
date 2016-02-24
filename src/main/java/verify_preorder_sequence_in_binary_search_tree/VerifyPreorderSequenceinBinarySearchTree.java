@@ -21,7 +21,7 @@ public class VerifyPreorderSequenceinBinarySearchTree {
             }
 
             Stack<Integer> stack = new Stack<Integer>();
-            List<Integer> list = new ArrayList<>();
+            List<Integer> list = new ArrayList<Integer>();
 
             for (int num : preorder) {
                 if (!list.isEmpty() && num < list.get(list.size() - 1)) {

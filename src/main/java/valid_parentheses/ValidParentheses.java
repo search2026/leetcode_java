@@ -1,9 +1,18 @@
 package valid_parentheses;
 
+import org.junit.Test;
+
 import java.util.ArrayDeque;
 
-public class ValidParentheses {
+import static org.junit.Assert.assertEquals;
 
+public class ValidParentheses {
+    /*
+        Valid Parentheses
+        https://leetcode.com/problems/valid-parentheses/
+        leetcode 20
+        Difficulty: Easy
+     */
     public class Solution {
         public boolean isValid(String s) {
             ArrayDeque<Character> stack = new ArrayDeque<Character>();
@@ -31,6 +40,10 @@ public class ValidParentheses {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ValidParentheses().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

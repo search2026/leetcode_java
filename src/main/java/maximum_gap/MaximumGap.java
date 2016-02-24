@@ -7,7 +7,12 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class MaximumGap {
-
+    /*
+        Maximum Gap
+        https://leetcode.com/problems/maximum-gap/
+        leetcode 164
+        Difficulty: Hard
+     */
     public class Solution {
         public int maximumGap(int[] num) {
             if (num.length < 2) {
@@ -56,7 +61,11 @@ public class MaximumGap {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MaximumGap().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }
 

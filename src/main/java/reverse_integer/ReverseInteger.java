@@ -1,10 +1,18 @@
 package reverse_integer;
 
+import org.junit.Test;
+
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
+import static org.junit.Assert.assertEquals;
 
 public class ReverseInteger {
-
+    /*
+        Reverse Integer
+        https://leetcode.com/problems/reverse-integer/
+        leetcode 7
+        Difficulty: Easy
+     */
     public class Solution {
         public int reverse(int x) {
             if (x == MIN_VALUE) {
@@ -29,6 +37,10 @@ public class ReverseInteger {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ReverseInteger().new Solution();
+            assertEquals(321, sol.reverse(123));
+        }
     }
 }

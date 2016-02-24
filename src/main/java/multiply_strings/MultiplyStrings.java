@@ -1,10 +1,19 @@
 package multiply_strings;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiplyStrings {
+import static org.junit.Assert.assertEquals;
 
+public class MultiplyStrings {
+    /*
+        Multiply Strings
+        https://leetcode.com/problems/multiply-strings/
+        leetcode 43
+        Difficulty: Medium
+     */
     public class Solution {
         private List<Integer> multiply(List<Integer> l1, List<Integer> l2) {
             List<Integer> result = new ArrayList<Integer>();
@@ -85,5 +94,10 @@ public class MultiplyStrings {
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new MultiplyStrings().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

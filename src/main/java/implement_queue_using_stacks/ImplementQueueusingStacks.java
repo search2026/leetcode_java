@@ -1,6 +1,10 @@
 package implement_queue_using_stacks;
 
+import org.junit.Test;
+
 import java.util.Stack;
+
+import static org.junit.Assert.assertEquals;
 
 public class ImplementQueueusingStacks {
     /*
@@ -50,6 +54,10 @@ public class ImplementQueueusingStacks {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            MyQueue sol = new ImplementQueueusingStacks().new MyQueue();
+            assertEquals(3, 3);
+        }
     }
 }

@@ -1,7 +1,16 @@
 package longest_valid_parentheses;
 
-public class LongestValidParentheses {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class LongestValidParentheses {
+    /*
+        Longest Valid Parentheses
+        https://leetcode.com/problems/longest-valid-parentheses/
+        leetcode 32
+        Difficulty: Hard
+     */
     public class Solution {
         public int longestValidParentheses(String s) {
             int[] dp = new int[s.length()];
@@ -26,6 +35,10 @@ public class LongestValidParentheses {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new LongestValidParentheses().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

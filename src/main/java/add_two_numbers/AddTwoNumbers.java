@@ -1,9 +1,16 @@
 package add_two_numbers;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class AddTwoNumbers {
-
+    /*
+        Add Two Numbers
+        https://leetcode.com/problems/add-two-numbers/
+        Difficulty: Medium
+     */
     public class Solution {
         public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
             ListNode head = null;
@@ -36,6 +43,10 @@ public class AddTwoNumbers {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new AddTwoNumbers().new Solution();
+            assertTrue(true);
+        }
     }
 }

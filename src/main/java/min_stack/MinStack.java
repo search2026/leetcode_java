@@ -1,8 +1,17 @@
 package min_stack;
 
-public class MinStack {
+import org.junit.Test;
 
-    private static class IntStack {
+import static org.junit.Assert.assertEquals;
+
+public class MinStack {
+    /*
+        Min Stack
+        https://leetcode.com/problems/min-stack/
+        leetcode 155
+        Difficulty: Easy
+     */
+    public static class IntStack {
         private int[] items = new int[16];
         private int size = 0;
 
@@ -64,4 +73,11 @@ public class MinStack {
         return minStack.top();
     }
 
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            MinStack sol = new MinStack();
+            assertEquals(3, 3);
+        }
+    }
 }

@@ -1,11 +1,16 @@
 package valid_anagram;
 
+import org.junit.Test;
+
 import java.util.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class ValidAnagram {
     /*
         Valid Anagram
         https://leetcode.com/problems/valid-anagram/
+        leetcode 242
         Difficulty: Easy
      */
     public class Solution {
@@ -39,6 +44,10 @@ public class ValidAnagram {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ValidAnagram().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

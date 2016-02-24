@@ -28,7 +28,7 @@ public class MissingNumber {
                 }
             }
 
-            // Step 2: iterate again to find out the missing number
+            // Step 2: iterate again to findRoot out the missing number
             for (int i = 0; i < nums.length; i++) {
                 if (nums[i] != i) {
                     return i;

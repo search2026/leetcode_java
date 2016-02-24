@@ -1,7 +1,16 @@
 package trapping_rain_water;
 
-public class TrappingRainWater {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class TrappingRainWater {
+    /*
+        Trapping Rain Water
+        https://leetcode.com/problems/trapping-rain-water/
+        leetcode 42
+        Difficulty: Hard
+     */
     public class Solution {
         public int trap(int[] height) {
             if (height.length == 0) {
@@ -35,6 +44,10 @@ public class TrappingRainWater {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new TrappingRainWater().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

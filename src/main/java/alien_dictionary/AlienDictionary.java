@@ -2,7 +2,12 @@ package alien_dictionary;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Queue;
+
+import static org.junit.Assert.assertTrue;
 
 public class AlienDictionary {
     /*
@@ -11,84 +16,67 @@ public class AlienDictionary {
         Difficulty: Hard
      */
     public class Solution {
+        public void generateIndegree(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
+            HashSet<String> edges = new HashSet<String>();
+            for (int i = 0; i < words.length - 1; i++) {
+                String word1 = words[i];
+                String word2 = words[i + 1];
+                for (int j = 0; j < word1.length() && j < word2.length(); j++) {
+                    if (word1.charAt(j) == word2.charAt(j)) continue;
+                    char from = word1.charAt(j);
+                    char to = word2.charAt(j);
+                    String edge = from + "" + to; //as a key to check duplicates
+                    if (!edges.contains(edge)) {
+                        graph.get(from).add(to);
+                        indegree.put(to, indegree.get(to) + 1);
+                        edges.add(edge);
+                        break; // skip rest of characters
+                    }
+                }
+            }
+        }
+
+        public String topologicalSort(HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> inDegree) {
+            StringBuilder order = new StringBuilder();
+            Queue<Character> queue = new ArrayDeque<Character>();
+            for (Character key : inDegree.keySet()) {
+                if (inDegree.get(key) == 0) queue.offer(key);
+            }
+
+            while (!queue.isEmpty()) {
+                Character cur = queue.poll();
+                order.append(cur.charValue());
+                HashSet<Character> adj = graph.get(cur);
+                for (Character c : adj) {
+                    int cInDegree = inDegree.get(c);
+                    cInDegree--;
+                    inDegree.put(c, cInDegree);
+                    if (cInDegree == 0) queue.offer(c);
+                }
+            }
+            return order.toString();
+        }
+
         public String alienOrder(String[] words) {
-            // Step 1: build the graph
-            Map<Character, Set<Character>> graph = new HashMap<>();
-            for (int i = 0; i < words.length; i++) {
-                String curr = words[i];
-                for (int j = 0; j < curr.length(); j++) {
-                    if (!graph.containsKey(curr.charAt(j))) {
-                        graph.put(curr.charAt(j), new HashSet<Character>());
+            HashMap<Character, HashSet<Character>> graph = new HashMap<Character, HashSet<Character>>();
+            HashMap<Character, Integer> inDegree = new HashMap<Character, Integer>();
+
+            for (String word : words) {
+                for (int t = 0; t < word.length(); t++) {
+                    if (!graph.containsKey(word.charAt(t))) {
+                        graph.put(word.charAt(t), new HashSet<Character>());
+                    }
+                    if (!inDegree.containsKey(word.charAt(t))) {
+                        inDegree.put(word.charAt(t), 0);
                     }
                 }
-
-                if (i > 0) {
-                    connectGraph(graph, words[i - 1], curr);
-                }
             }
 
-            // Step 2: toplogical sorting
-            StringBuffer sb = new StringBuffer();
-            Map<Character, Integer> visited = new HashMap<Character, Integer>();
+            generateIndegree(words, graph, inDegree);
 
-            Iterator it = graph.entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry) it.next();
-                char vertexId = (char) pair.getKey();
-                if (!toplogicalSort(vertexId, graph, sb, visited)) {
-                    return "";
-                }
-            }
+            String order = topologicalSort(graph, inDegree);
 
-            return sb.toString();
-        }
-
-        private void connectGraph(Map<Character, Set<Character>> graph, String prev, String curr) {
-            if (prev == null || curr == null) {
-                return;
-            }
-
-            int len = Math.min(prev.length(), curr.length());
-
-            for (int i = 0; i < len; i++) {
-                char p = prev.charAt(i);
-                char q = curr.charAt(i);
-                if (p != q) {
-                    if (!graph.get(p).contains(q)) {
-                        graph.get(p).add(q);
-                    }
-                    break;
-                }
-            }
-        }
-
-        private boolean toplogicalSort(char vertexId, Map<Character, Set<Character>> graph, StringBuffer sb, Map<Character, Integer> visited) {
-            if (visited.containsKey(vertexId)) {
-                // visited
-                if (visited.get(vertexId) == -1) {
-                    return false;
-                }
-
-                // already in the list
-                if (visited.get(vertexId) == 1) {
-                    return true;
-                }
-            } else {
-                // mark as visited
-                visited.put(vertexId, -1);
-            }
-
-            Set<Character> neighbors = graph.get(vertexId);
-            for (char neighbor : neighbors) {
-                if (!toplogicalSort(neighbor, graph, sb, visited)) {
-                    return false;
-                }
-            }
-
-            sb.insert(0, vertexId);
-            visited.put(vertexId, 1);
-
-            return true;
+            return (order.length() == inDegree.size()) ? order : "";
         }
     }
 
@@ -96,6 +84,14 @@ public class AlienDictionary {
         @Test
         public void test1() {
             Solution sol = new AlienDictionary().new Solution();
+            String[] words = {
+                    "wrt",
+                    "wrf",
+                    "er",
+                    "ett",
+                    "rftt"
+            };
+            assertTrue(sol.alienOrder(words).equals("wertf"));
         }
     }
 }

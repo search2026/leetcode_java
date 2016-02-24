@@ -81,7 +81,7 @@ public class RecoverBinarySearchTree {
             helper(root.left, inorderlist, swap);
             if (inorderlist.size() != 0) {
                 TreeNode pre = inorderlist.get(inorderlist.size()-1);
-                if (pre.val > root.val) { //find a case that has been swapped
+                if (pre.val > root.val) { //findRoot a case that has been swapped
                     swap.add(pre);
                     swap.add(root);
                 }

@@ -1,7 +1,11 @@
 package sliding_window_maximum;
 
+import org.junit.Test;
+
 import java.util.Deque;
 import java.util.LinkedList;
+
+import static org.junit.Assert.assertEquals;
 
 public class SlidingWindowMaximum {
     /*
@@ -34,6 +38,10 @@ public class SlidingWindowMaximum {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SlidingWindowMaximum().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

@@ -1,7 +1,16 @@
 package set_matrix_zeroes;
 
-public class SetMatrixZeroes {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class SetMatrixZeroes {
+    /*
+        Set Matrix Zeroes
+        https://leetcode.com/problems/set-matrix-zeroes/
+        leetcode 73
+        Difficulty: Medium
+     */
     public class Solution {
         public void setZeroes(int[][] matrix) {
             if (matrix.length == 0 || matrix[0].length == 0) {
@@ -55,6 +64,10 @@ public class SetMatrixZeroes {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SetMatrixZeroes().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

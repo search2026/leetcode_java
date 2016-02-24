@@ -17,12 +17,12 @@ public class RemoveInvalidParentheses {
      */
     public class Solution {
         public List<String> removeInvalidParentheses(String s) {
-            List<String> list = new ArrayList<>();
-            Set<String> set = new HashSet<>();
+            List<String> list = new ArrayList<String>();
+            Set<String> set = new HashSet<String>();
             set.add(s);
 
             while (list.isEmpty()) {
-                Set<String> newSet = new HashSet<>();
+                Set<String> newSet = new HashSet<String>();
                 for (String ss : set) {
                     if (isValid(ss)) {
                         list.add(ss);
@@ -55,7 +55,7 @@ public class RemoveInvalidParentheses {
         }
 
         private Set<String> removeOneLetter(String s) {
-            Set<String> set = new HashSet<>();
+            Set<String> set = new HashSet<String>();
             if (s.length() == 1) {
                 set.add("");
                 return set;
@@ -72,6 +72,7 @@ public class RemoveInvalidParentheses {
         @Test
         public void test1() {
             Solution sol = new RemoveInvalidParentheses().new Solution();
+            assertEquals(7, 7);
         }
     }
 }

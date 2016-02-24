@@ -7,7 +7,11 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class FindPeakElement {
-
+    /*
+        Find Peak Element
+        https://leetcode.com/problems/find-peak-element/
+        Difficulty: Medium
+     */
     public class Solution {
         public int findPeakElement(int[] nums) {
             for (int i = 0; i < nums.length - 1; i++) {
@@ -48,7 +52,11 @@ public class FindPeakElement {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new FindPeakElement().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

@@ -2,6 +2,8 @@ package wiggle_sort;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class WiggleSort {
     /*
         Wiggle Sort
@@ -91,6 +93,7 @@ public class WiggleSort {
         @Test
         public void test1() {
             Solution sol = new WiggleSort().new Solution();
+            assertEquals(7, 7);
         }
     }
 }

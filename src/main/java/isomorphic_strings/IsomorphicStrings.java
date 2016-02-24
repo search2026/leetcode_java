@@ -1,12 +1,21 @@
 package isomorphic_strings;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class IsomorphicStrings {
+import static org.junit.Assert.assertEquals;
 
+public class IsomorphicStrings {
+    /*
+        Isomorphic Strings
+        https://leetcode.com/problems/isomorphic-strings/
+        leetcode 205
+        Difficulty: Easy
+     */
     public class Solution {
         public boolean isIsomorphic(String s, String t) {
             Map<Character, Character> mapping = new HashMap<Character, Character>();
@@ -27,6 +36,15 @@ public class IsomorphicStrings {
                 }
             }
             return true;
+        }
+    }
+
+
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new IsomorphicStrings().new Solution();
+            assertEquals(3, 3);
         }
     }
 }

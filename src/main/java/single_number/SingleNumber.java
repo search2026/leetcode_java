@@ -1,5 +1,9 @@
 package single_number;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class SingleNumber {
     /*
         Single Number
@@ -60,7 +64,7 @@ public class SingleNumber {
                 xor ^= num;
             }
 
-            // Step 2: find the first bit 1 from right
+            // Step 2: findRoot the first bit 1 from right
             int mask = 1;
             while ((mask & xor) == 0) {
                 mask = mask << 1;
@@ -84,6 +88,10 @@ public class SingleNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SingleNumber().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

@@ -1,12 +1,19 @@
 package binary_tree_right_side_view;
 
 import common.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTreeRightSideView {
+import static org.junit.Assert.assertTrue;
 
+public class BinaryTreeRightSideView {
+    /*
+        Binary Tree Right Side View
+        https://leetcode.com/problems/binary-tree-right-side-view/
+        Difficulty: Medium
+     */
     public class Solution {
         public List<Integer> rightSideView(TreeNode root) {
             List<Integer> res = new ArrayList<Integer>();
@@ -28,6 +35,14 @@ public class BinaryTreeRightSideView {
                 }
             }
             return res;
+        }
+    }
+
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new BinaryTreeRightSideView().new Solution();
+            assertTrue(true);
         }
     }
 }

@@ -1,9 +1,17 @@
 package insertion_sort_list;
 
 import common.ListNode;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class InsertionSortList {
-
+    /*
+        Insert Sort List
+        https://leetcode.com/problems/insertion-sort-list/
+        leetcode 147
+        Difficulty: Medium
+     */
     public class Solution {
         public ListNode insertionSortList(ListNode head) {
             ListNode dummy = new ListNode(0);
@@ -27,6 +35,10 @@ public class InsertionSortList {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new InsertionSortList().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

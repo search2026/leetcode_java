@@ -1,7 +1,15 @@
 package excel_sheet_column_title;
 
-public class ExcelSheetColumnTitle {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class ExcelSheetColumnTitle {
+    /*
+        Excel Sheet Column Title
+        https://leetcode.com/problems/excel-sheet-column-number/
+        Difficulty: Easy
+     */
     public class Solution {
         public String convertToTitle(int n) {
             StringBuilder builder = new StringBuilder();
@@ -16,7 +24,11 @@ public class ExcelSheetColumnTitle {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ExcelSheetColumnTitle().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

@@ -1,14 +1,20 @@
 package shortest_word_distance;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.junit.Assert.assertEquals;
+
 public class ShortestWordDistance {
-    // Shortest Word Distance
-    // http://www.cnblogs.com/anne-vista/p/4831049.html
-    // Difficulty: Easy
+    /*
+        Shortest Word Distance
+        http://www.cnblogs.com/anne-vista/p/4831049.html
+        Difficulty: Easy
+    */
     public class Solution {
         public int shortestDistance(String[] words, String word1, String word2) {
             int p1 = -1, p2 = -1, distance = Integer.MAX_VALUE;
@@ -28,11 +34,13 @@ public class ShortestWordDistance {
         }
     }
 
-    // Shortest Word Distance II
-    // http://sbzhouhao.net/LeetCode/LeetCode-Shortest-Word-Distance-II.html
-    // Difficulty: Medium
+    /*
+        Shortest Word Distance II
+        http://sbzhouhao.net/LeetCode/LeetCode-Shortest-Word-Distance-II.html
+        Difficulty: Medium
+    */
     public class SolutionII {
-        private Map<String, List<Integer>> map = new HashMap<>();
+        private Map<String, List<Integer>> map = new HashMap<String, List<Integer>>();
 
         public SolutionII(String[] words) {
             for (int i = 0; i < words.length; i++) {
@@ -41,7 +49,7 @@ public class ShortestWordDistance {
                 if (map.containsKey(s)) {
                     list = map.get(s);
                 } else {
-                    list = new ArrayList<>();
+                    list = new ArrayList<Integer>();
                 }
                 list.add(i);
                 map.put(s, list);
@@ -62,9 +70,11 @@ public class ShortestWordDistance {
         }
     }
 
-    // Shortest Word Distance III
-    // http://www.cnblogs.com/anne-vista/p/4831092.html
-    // Difficulty: Medium
+    /*
+        Shortest Word Distance III
+        http://www.cnblogs.com/anne-vista/p/4831092.html
+        Difficulty: Medium
+    */
     public class SolutionIII {
         public int shortestWordDistance(String[] words, String word1, String word2) {
             int p1 = -1, p2 = -1, distance = words.length;
@@ -88,6 +98,10 @@ public class ShortestWordDistance {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ShortestWordDistance().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

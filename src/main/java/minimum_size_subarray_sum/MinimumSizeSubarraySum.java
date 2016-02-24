@@ -1,7 +1,15 @@
 package minimum_size_subarray_sum;
 
-public class MinimumSizeSubarraySum {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class MinimumSizeSubarraySum {
+    /*
+        Minimum Size Subarray Sum
+        https://leetcode.com/problems/minimum-size-subarray-sum/
+        Difficulty: Medium
+     */
     public class Solution {
         public int minSubArrayLen(int s, int[] nums) {
             int left = 0, right = 0;
@@ -22,6 +30,10 @@ public class MinimumSizeSubarraySum {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new MinimumSizeSubarraySum().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }

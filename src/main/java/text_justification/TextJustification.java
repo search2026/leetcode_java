@@ -1,10 +1,19 @@
 package text_justification;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextJustification {
+import static org.junit.Assert.assertEquals;
 
+public class TextJustification {
+    /*
+        Text Justification
+        https://leetcode.com/problems/text-justification/
+        leetcode 68
+        Difficulty: Hard
+     */
     public class Solution {
         private void appendSpace(StringBuilder line, int space) {
             for (int i = 0; i < space; i++) {
@@ -62,6 +71,10 @@ public class TextJustification {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new TextJustification().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

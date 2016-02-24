@@ -1,7 +1,15 @@
 package excel_sheet_column_number;
 
-public class ExcelSheetColumnNumber {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class ExcelSheetColumnNumber {
+    /*
+        Excel Sheet Column Number
+        https://leetcode.com/problems/excel-sheet-column-number/
+        Difficulty: Easy
+     */
     public class Solution {
         public int titleToNumber(String s) {
             int n = 0;
@@ -14,7 +22,11 @@ public class ExcelSheetColumnNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ExcelSheetColumnNumber().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

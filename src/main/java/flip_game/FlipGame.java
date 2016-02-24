@@ -1,12 +1,18 @@
 package flip_game;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
+
 public class FlipGame {
-    // Flip Game
-    // http://www.cnblogs.com/anne-vista/p/4886775.html
-    // Difficulty: Easy
+    /*
+        Flip Game
+        http://www.cnblogs.com/anne-vista/p/4886775.html
+        Difficulty: Easy
+    */
     public class Solution {
         public List<String> generatePossibleNextMoves(String s) {
             List<String> result = new ArrayList<String>();
@@ -19,9 +25,11 @@ public class FlipGame {
         }
     }
 
-    // Flip Game II
-    // http://www.cnblogs.com/anne-vista/p/4886786.html
-    // Difficulty: Medium
+    /*
+        Flip Game II
+        http://www.cnblogs.com/anne-vista/p/4886786.html
+        Difficulty: Medium
+    */
     public class SolutionII {
         public boolean canWin(String s) {
             for (int i = 0; i < s.length() - 1; i++) {
@@ -34,6 +42,10 @@ public class FlipGame {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new FlipGame().new Solution();
+            assertTrue(true);
+        }
     }
 }

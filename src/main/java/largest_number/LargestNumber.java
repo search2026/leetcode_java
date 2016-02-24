@@ -1,9 +1,19 @@
 package largest_number;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
+import static org.junit.Assert.assertEquals;
+
 public class LargestNumber {
+    /*
+        Largest Number
+        https://leetcode.com/problems/largest-number/
+        leetcode 179
+        Difficulty: Medium
+     */
     public class Solution {
         private int skipLendingZeros(String s) {
             int i = 0;
@@ -45,7 +55,11 @@ public class LargestNumber {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new LargestNumber().new Solution();
+            assertEquals(3, 3);
+        }
     }
 }
 

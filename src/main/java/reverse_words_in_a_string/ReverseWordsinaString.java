@@ -1,7 +1,16 @@
 package reverse_words_in_a_string;
 
-public class ReverseWordsinaString {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class ReverseWordsinaString {
+    /*
+        Reverse Words in a String
+        https://leetcode.com/problems/reverse-nodes-in-k-group/
+        leetcode 25
+        Difficulty: Hard
+     */
     public class Solution {
         public String reverseWords(String s) {
             String[] tokens = s.split(" +");
@@ -42,6 +51,10 @@ public class ReverseWordsinaString {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new ReverseWordsinaString().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

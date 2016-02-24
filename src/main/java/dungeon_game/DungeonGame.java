@@ -1,7 +1,15 @@
 package dungeon_game;
 
-public class DungeonGame {
+import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+public class DungeonGame {
+    /*
+        Dungeon Game
+        https://leetcode.com/problems/dungeon-game/
+        Difficulty: Hard
+     */
     public class Solution {
         public int calculateMinimumHP(int[][] dungeon) {
             int m = dungeon.length;
@@ -26,7 +34,11 @@ public class DungeonGame {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new DungeonGame().new Solution();
+            assertTrue(true);
+        }
     }
 }
 

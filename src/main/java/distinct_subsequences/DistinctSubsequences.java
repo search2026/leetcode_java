@@ -1,7 +1,15 @@
 package distinct_subsequences;
 
-public class DistinctSubsequences {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class DistinctSubsequences {
+    /*
+        Distinct Subsequences
+        https://leetcode.com/problems/distinct-subsequences/
+        Difficulty: Hard
+     */
     public class Solution {
         public int numDistinct(String s, String t) {
             int[] dp = new int[t.length() + 1];
@@ -18,6 +26,10 @@ public class DistinctSubsequences {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new DistinctSubsequences().new Solution();
+            assertEquals(3, sol.numDistinct("rabbbit", "rabbit"));
+        }
     }
 }

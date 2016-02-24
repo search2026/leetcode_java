@@ -1,7 +1,11 @@
 package spiral_matrix;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class SpiralMatrix {
     public class Solution {
@@ -77,6 +81,10 @@ public class SpiralMatrix {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SpiralMatrix().new Solution();
+            assertEquals(5, 5);
+        }
     }
 }

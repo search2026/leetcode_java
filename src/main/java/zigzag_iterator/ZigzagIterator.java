@@ -1,6 +1,10 @@
 package zigzag_iterator;
 
+import org.junit.Test;
+
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 /*
     Zigzag Iterator
@@ -50,6 +54,11 @@ public class ZigzagIterator {
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            //Solution sol = new RotateList().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }
 

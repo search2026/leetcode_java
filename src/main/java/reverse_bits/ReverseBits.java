@@ -1,7 +1,16 @@
 package reverse_bits;
 
-public class ReverseBits {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class ReverseBits {
+    /*
+        Reverse Bits
+        https://leetcode.com/problems/reverse-bits/
+        leetcode 190
+        Difficulty: Easy
+     */
     public class Solution {
         public int reverseBits(int n) {
             int reversed = 0;
@@ -15,5 +24,12 @@ public class ReverseBits {
         }
     }
 
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new ReverseBits().new Solution();
+            assertEquals(7, 7);
+        }
+    }
 }
 

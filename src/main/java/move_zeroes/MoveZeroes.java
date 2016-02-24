@@ -42,6 +42,7 @@ public class MoveZeroes {
         @Test
         public void test1() {
             Solution sol = new MoveZeroes().new Solution();
+            assertEquals(3, 3);
         }
     }
 }

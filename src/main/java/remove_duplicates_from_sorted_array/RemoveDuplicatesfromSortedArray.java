@@ -1,7 +1,16 @@
 package remove_duplicates_from_sorted_array;
 
-public class RemoveDuplicatesfromSortedArray {
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+public class RemoveDuplicatesfromSortedArray {
+    /*
+        Remove Duplicates from Sorted Array
+        https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+        leetcode 26
+        Difficulty: Easy
+     */
     public class Solution {
         public int removeDuplicates(int[] nums) {
             if (nums.length == 0) {
@@ -15,8 +24,15 @@ public class RemoveDuplicatesfromSortedArray {
             }
             return len;
         }
+    }
 
-        // Remove Duplicates from Sorted Array
+    /*
+        Remove Duplicates from Sorted Array
+        hhttps://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+        leetcode 80
+        Difficulty: Medium
+     */
+    public class Solution_2 {
         public int removeDuplicatesII(int[] nums) {
             int len = 0;
             boolean twice = false;
@@ -34,6 +50,10 @@ public class RemoveDuplicatesfromSortedArray {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new RemoveDuplicatesfromSortedArray().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }

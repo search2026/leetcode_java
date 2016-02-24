@@ -52,6 +52,11 @@ public class PeekingIterator implements Iterator<Integer> {
     }
 
     public static class UnitTest {
+        @Test
+        public void test1() {
+            //PeekingIterator sol = new PeekingIterator(Iterator<Integer> i);
+            assertEquals(7, 7);
+        }
     }
 }
 

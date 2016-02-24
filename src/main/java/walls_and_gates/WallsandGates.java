@@ -2,147 +2,58 @@ package walls_and_gates;
 
 import org.junit.Test;
 
-import java.util.*;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class WallsandGates {
     /*
-        Walls and Gates BFS
-        http://buttercola.blogspot.com/2015/09/leetcode-walls-and-gates.html
+        Walls and Gates - BFS
+        http://www.cnblogs.com/EdwardLiu/p/5077950.html
         Difficulty: Medium
      */
     public class Solution {
-        public void wallsAndGates(int[][] rooms) {
-            if (rooms == null || rooms.length == 0) {
-                return;
-            }
+        int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-            int m = rooms.length;
-            int n = rooms[0].length;
+        private void search(int[][] rooms, int i, int j, int dis) {
+            if (i < 0 || i >= rooms.length || j < 0 || j >= rooms[0].length) return;
+            if (rooms[i][j] < dis) return;
 
-            boolean[][] visited = new boolean[m][n];
+            rooms[i][j] = dis;
 
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (rooms[i][j] == 0) {
-                        wallsAndGatesHelper(i, j, 0, visited, rooms);
-                    }
-                }
-            }
+            for (int[] dir : dirs)
+                search(rooms, i + dir[0], j + dir[1], dis + 1);
         }
 
-        private void wallsAndGatesHelper(int row, int col, int distance, boolean[][] visited, int[][] rooms) {
-            int rows = rooms.length;
-            int cols = rooms[0].length;
+        public void wallsAndGates(int[][] rooms) {
+            if (rooms == null || rooms.length == 0 || rooms[0].length == 0) return;
 
-            if (row < 0 || row >= rows || col < 0 || col >= cols) {
-                return;
+            for (int i = 0; i < rooms.length; ++i) {
+                for (int j = 0; j < rooms[0].length; j++)
+                    if (rooms[i][j] == 0) search(rooms, i, j, 0);
             }
-
-            // visited
-            if (visited[row][col]) {
-                return;
-            }
-
-            // Is wall?
-            if (rooms[row][col] == -1) {
-                return;
-            }
-
-            // Distance greater than current
-            if (distance > rooms[row][col]) {
-                return;
-            }
-
-
-            // Mark as visited
-            visited[row][col] = true;
-
-            if (distance < rooms[row][col]) {
-                rooms[row][col] = distance;
-            }
-
-            // go up, down, left and right
-            wallsAndGatesHelper(row - 1, col, distance + 1, visited, rooms);
-            wallsAndGatesHelper(row + 1, col, distance + 1, visited, rooms);
-            wallsAndGatesHelper(row, col - 1, distance + 1, visited, rooms);
-            wallsAndGatesHelper(row, col + 1, distance + 1, visited, rooms);
-
-            // Mark as unvisited
-            visited[row][col] = false;
         }
     }
 
     /*
-    Walls and Gates DFS
-    http://buttercola.blogspot.com/2015/09/leetcode-walls-and-gates.html
-    Difficulty: Medium
- */
-    public class SolutionII {
+        Walls and Gates - DFS
+        https://leetcode.com/discuss/questions/oj/walls-and-gates
+        Difficulty: Medium
+     */
+    public class Solution_2 {
+        int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+        private void search(int[][] rooms, int i, int j, int d) {
+            if (i < 0 || i >= rooms.length || j < 0 || j >= rooms[0].length || rooms[i][j] < d) return;
+            rooms[i][j] = d;
+            for (int[] dir : dirs)
+                search(rooms, i + dir[0], j + dir[1], d + 1);
+        }
+
         public void wallsAndGates(int[][] rooms) {
-            if (rooms == null || rooms.length == 0) {
-                return;
-            }
+            if (rooms == null || rooms.length == 0 || rooms[0].length == 0) return;
 
-            int m = rooms.length;
-            int n = rooms[0].length;
-
-            Queue<Integer> queue = new LinkedList<>();
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (rooms[i][j] == 0) {
-                        wallsAndGatesHelper(i, j, 0, rooms, queue);
-                    }
-                }
-            }
-        }
-
-        private void wallsAndGatesHelper(int row, int col, int distance, int[][] rooms, Queue<Integer> queue) {
-            fill(row, col, distance, rooms, queue);
-
-            int m = rooms.length;
-            int n = rooms[0].length;
-
-            while (!queue.isEmpty()) {
-                int size = queue.size();
-                for (int i = 0; i < size; i++) {
-                    int cord = queue.poll();
-                    int x = cord / n;
-                    int y = cord % n;
-
-                    fill(x - 1, y, distance + 1, rooms, queue);
-                    fill(x + 1, y, distance + 1, rooms, queue);
-                    fill(x, y - 1, distance + 1, rooms, queue);
-                    fill(x, y + 1, distance + 1, rooms, queue);
-
-                }
-                distance++;
-            }
-        }
-
-        private void fill (int row, int col, int distance, int[][] rooms, Queue<Integer> queue) {
-            int m = rooms.length;
-            int n = rooms[0].length;
-
-            if (row < 0 || row >= m || col < 0 || col >= n) {
-                return;
-            }
-
-            if (rooms[row][col] == -1) {
-                return;
-            }
-
-            if (distance > rooms[row][col]) {
-                return;
-            }
-
-            if (distance < rooms[row][col]) {
-                rooms[row][col] = distance;
-            }
-
-            int cord = row * n + col;
-            queue.offer(cord);
+            for (int i = 0; i < rooms.length; i++)
+                for (int j = 0; j < rooms[0].length; j++)
+                    if (rooms[i][j] == 0) search(rooms, i, j, 0);
         }
     }
 
@@ -150,6 +61,33 @@ public class WallsandGates {
         @Test
         public void test1() {
             Solution sol = new WallsandGates().new Solution();
+            int[][] grid = new int[][]{
+                    new int[]{2147483647, -1, 0, 2147483647},
+                    new int[]{2147483647, 2147483647, 2147483647, -1},
+                    new int[]{2147483647, -1, 2147483647, -1},
+                    new int[]{0, -1, 2147483647, 2147483647}
+            };
+            sol.wallsAndGates(grid);
+            assertArrayEquals(new int[]{3, -1, 0, 1}, grid[0]);
+            assertArrayEquals(new int[]{2, 2, 1, -1}, grid[1]);
+            assertArrayEquals(new int[]{1, -1, 2, -1}, grid[2]);
+            assertArrayEquals(new int[]{0, -1, 3, 4}, grid[3]);
+        }
+
+        @Test
+        public void test2() {
+            Solution_2 sol = new WallsandGates().new Solution_2();
+            int[][] grid = new int[][]{
+                    new int[]{2147483647, -1, 0, 2147483647},
+                    new int[]{2147483647, 2147483647, 2147483647, -1},
+                    new int[]{2147483647, -1, 2147483647, -1},
+                    new int[]{0, -1, 2147483647, 2147483647}
+            };
+            sol.wallsAndGates(grid);
+            assertArrayEquals(new int[]{3, -1, 0, 1}, grid[0]);
+            assertArrayEquals(new int[]{2, 2, 1, -1}, grid[1]);
+            assertArrayEquals(new int[]{1, -1, 2, -1}, grid[2]);
+            assertArrayEquals(new int[]{0, -1, 3, 4}, grid[3]);
         }
     }
 }

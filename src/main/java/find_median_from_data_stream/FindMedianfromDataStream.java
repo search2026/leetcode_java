@@ -32,6 +32,7 @@ public class FindMedianfromDataStream {
         @Test
         public void test1() {
             MedianFinder sol = new FindMedianfromDataStream().new MedianFinder();
+            assertTrue(true);
         }
     }
 }

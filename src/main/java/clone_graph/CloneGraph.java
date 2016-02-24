@@ -1,11 +1,14 @@
 package clone_graph;
 
 import common.UndirectedGraphNode;
+import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
+
+import static org.junit.Assert.assertEquals;
 
 public class CloneGraph {
     /*
@@ -14,7 +17,7 @@ public class CloneGraph {
         Difficulty: Medium
      */
     public class Solution {
-        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+        HashMap<UndirectedGraphNode, UndirectedGraphNode> visited = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
 
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
             return clone(node);
@@ -22,10 +25,10 @@ public class CloneGraph {
 
         private UndirectedGraphNode clone(UndirectedGraphNode node) {
             if (node == null) return null;
-            if (map.containsKey(node)) return map.get(node);
+            if (visited.containsKey(node)) return visited.get(node);
 
             UndirectedGraphNode copyNode = new UndirectedGraphNode(node.label);
-            map.put(node, copyNode);
+            visited.put(node, copyNode);
             for (UndirectedGraphNode n : node.neighbors) {
                 copyNode.neighbors.add(clone(n));
             }
@@ -42,32 +45,34 @@ public class CloneGraph {
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
             if (node == null) return null;
 
-            UndirectedGraphNode rslt = new UndirectedGraphNode(node.label);
-            LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+            UndirectedGraphNode root = new UndirectedGraphNode(node.label);
+            Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
             queue.add(node);
-            Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
-            map.put(node, rslt);
+            Map<UndirectedGraphNode, UndirectedGraphNode> visited = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+            visited.put(node, root);
 
             while (!queue.isEmpty()) {
                 UndirectedGraphNode nodeInQueue = queue.poll();
                 for (UndirectedGraphNode n : nodeInQueue.neighbors) {
-                    //UndirectedGraphNode n1 = neighbors.get(i);
-                    if (map.containsKey(n)) {
-                        map.get(nodeInQueue).neighbors.add(map.get(n));
+                    if (visited.containsKey(n)) {
+                        visited.get(nodeInQueue).neighbors.add(visited.get(n));
                     } else {
                         UndirectedGraphNode n_clone = new UndirectedGraphNode(n.label);
-                        map.get(nodeInQueue).neighbors.add(n_clone);
-                        map.put(n, n_clone);
+                        visited.get(nodeInQueue).neighbors.add(n_clone);
+                        visited.put(n, n_clone);
                         queue.add(n);
                     }
                 }
             }
-            return rslt;
+            return root;
         }
     }
 
-
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new CloneGraph().new Solution();
+            assertEquals(1, 1);
+        }
     }
 }

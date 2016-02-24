@@ -1,7 +1,11 @@
 package summary_ranges;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class SummaryRanges {
     /*
@@ -54,6 +58,10 @@ public class SummaryRanges {
     }
 
     public static class UnitTest {
-
+        @Test
+        public void test1() {
+            Solution sol = new SummaryRanges().new Solution();
+            assertEquals(7, 7);
+        }
     }
 }
