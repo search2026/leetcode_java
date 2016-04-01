@@ -8,12 +8,12 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class SpiralMatrix {
+    /*
+        Spiral Matrix
+        https://leetcode.com/problems/spiral-matrix/
+        Difficulty: Medium
+     */
     public class Solution {
-        /*
-            Spiral Matrix
-            https://leetcode.com/problems/spiral-matrix/
-            Difficulty: Medium
-         */
         public List<Integer> spiralOrder(int[][] matrix) {
             List<Integer> rslt = new ArrayList<Integer>();
             if (matrix.length == 0 || matrix[0].length == 0) {
@@ -47,12 +47,55 @@ public class SpiralMatrix {
             }
             return rslt;
         }
+    }
 
-        /*
-            Spiral Matrix II
-            https://leetcode.com/problems/spiral-matrix-ii/
-            Difficulty: Medium
-         */
+    /*
+        Spiral Matrix
+        https://leetcode.com/problems/spiral-matrix/
+        Difficulty: Medium
+     */
+    public class Solution_2 {
+        public List<Integer> spiralOrder(int[][] matrix) {
+            List<Integer> rslt = new ArrayList<Integer>();
+            if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return rslt;
+            int Min = Math.min(matrix.length, matrix[0].length);
+            int levelMax = Min / 2;
+            for (int level = 0; level < levelMax; level++) {
+                for (int i = level; i < matrix[0].length - 1 - level; i++) {
+                    rslt.add(matrix[level][i]);
+                }
+                for (int i = level; i < matrix.length - 1 - level; i++) {
+                    rslt.add(matrix[i][matrix[0].length - 1 - level]);
+                }
+                for (int i = matrix[0].length - 1 - level; i > level; i--) {
+                    rslt.add(matrix[matrix.length - 1 - level][i]);
+                }
+                for (int i = matrix.length - 1 - level; i > level; i--) {
+                    rslt.add(matrix[i][level]);
+                }
+            }
+
+            if (Min % 2 == 1) {
+                if (matrix.length < matrix[0].length) {
+                    for (int i = levelMax; i < matrix[0].length - levelMax; i++) {
+                        rslt.add(matrix[levelMax][i]);
+                    }
+                } else {
+                    for (int i = levelMax; i < matrix.length - levelMax; i++) {
+                        rslt.add(matrix[i][levelMax]);
+                    }
+                }
+            }
+            return rslt;
+        }
+    }
+
+    /*
+        Spiral Matrix II
+        https://leetcode.com/problems/spiral-matrix-ii/
+        Difficulty: Medium
+     */
+    public class Solution_3 {
         public int[][] generateMatrix(int n) {
             int[][] matrix = new int[n][n];
             int num = 0;
