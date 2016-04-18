@@ -1,6 +1,10 @@
 package house_robber;
 
+import common.TreeNode;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -68,6 +72,79 @@ public class HouseRobber {
             }
 
             return Math.max(dp[n - 1], dr[n - 1]);
+        }
+    }
+
+    /*
+        House Robber III - DFS
+        https://leetcode.com/problems/house-robber-iii/
+        Difficulty: Medium
+    */
+    public class Solution_3 {
+        int[] search(TreeNode node) {
+            int[] rslt = new int[2];
+            if (node == null) return rslt;
+            int[] left = search(node.left);
+            int[] right = search(node.right);
+            rslt[0] = left[1] + right[1];
+            rslt[1] = Math.max(rslt[0], left[0] + right[0] + node.val);
+            return rslt;
+        }
+
+        public int rob(TreeNode root) {
+            return search(root)[1];
+        }
+    }
+
+    /*
+        House Robber III - DFS
+        https://leetcode.com/problems/house-robber-iii/
+        http://bookshadow.com/weblog/2016/03/13/leetcode-house-robber-iii/
+        Difficulty: Medium
+    */
+    public class Solution_4 {
+        private int[] search(TreeNode root) {
+            if (root == null) return new int[2];
+            int[] left = search(root.left);
+            int[] right = search(root.right);
+            int[] rslt = new int[2];
+            rslt[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+            rslt[1] = root.val + left[0] + right[0];
+
+            return rslt;
+        }
+
+        public int rob(TreeNode root) {
+            int[] rslt = search(root);
+            return Math.max(rslt[0], rslt[1]);
+        }
+    }
+
+    /*
+        House Robber III - DFS
+        https://leetcode.com/problems/house-robber-iii/
+        http://bookshadow.com/weblog/2016/03/13/leetcode-house-robber-iii/
+        Difficulty: Medium
+    */
+    public class Solution_5 {
+        private Map<TreeNode, Integer> map = new HashMap<>();
+
+        public int rob(TreeNode root) {
+            if (root == null) return 0;
+            if (root.left == null && root.right == null) return root.val;
+            if (map.containsKey(root)) return map.get(root);
+
+            //case 1
+            int sum1 = root.val;
+            if (root.left != null) sum1 += rob(root.left.left) + rob(root.left.right);
+            if (root.right != null) sum1 += rob(root.right.left) + rob(root.right.right);
+
+            //case 2
+            int sum2 = rob(root.left) + rob(root.right);
+
+            int sum = Math.max(sum1, sum2);
+            map.put(root, sum);
+            return sum;
         }
     }
 

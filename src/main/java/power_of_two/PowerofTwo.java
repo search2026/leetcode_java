@@ -3,6 +3,8 @@ package power_of_two;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class PowerofTwo {
     /*
@@ -11,12 +13,8 @@ public class PowerofTwo {
         Difficulty: Easy
      */
     public class Solution {
-        public boolean isPowerOfTwo(int n) {
-            if (n <= 0) {
-                return false;
-            }
-
-            return (n & (n - 1)) == 0;
+        public boolean isPowerOfTwo(int num) {
+            return num > 0 && (num & (num - 1)) ==0;
         }
     }
 
@@ -24,7 +22,8 @@ public class PowerofTwo {
         @Test
         public void test1() {
             Solution sol = new PowerofTwo().new Solution();
-            assertEquals(7, 7);
+            assertFalse(sol.isPowerOfTwo(7));
+            assertTrue(sol.isPowerOfTwo(8));
         }
     }
 }
