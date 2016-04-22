@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class PowerofFour {
     /*
         Power of Four
+        leetcode #342
         https://leetcode.com/problems/power-of-four/
         Difficulty: Easy
      */
