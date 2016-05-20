@@ -1,8 +1,8 @@
 package design_tic_tac_toe;
 
-import java.util.*;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class DesignTicTacToe {
     /*
@@ -25,17 +25,6 @@ public class DesignTicTacToe {
             cols = new int[n];
         }
 
-        /**
-         * Player {player} makes a move at ({row}, {col}).
-         *
-         * @param row    The row of the board.
-         * @param col    The column of the board.
-         * @param player The player, can be either 1 or 2.
-         * @return The current winning condition, can be either:
-         * 0: No one wins.
-         * 1: Player 1 wins.
-         * 2: Player 2 wins.
-         */
         public int move(int row, int col, int player) {
             int toAdd = player == 1 ? 1 : -1;
 
@@ -66,7 +55,7 @@ public class DesignTicTacToe {
         public void test1() {
             TicTacToe sol = new DesignTicTacToe().new TicTacToe(3);
             assertEquals(1, 1);
-        }        
+        }
     }
 }
 
