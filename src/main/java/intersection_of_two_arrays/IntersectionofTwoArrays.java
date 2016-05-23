@@ -1,8 +1,10 @@
 package intersection_of_two_arrays;
 
+import org.junit.Test;
+
 import java.util.*;
-import org.junit.*;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class IntersectionofTwoArrays {
     /*
@@ -18,27 +20,35 @@ public class IntersectionofTwoArrays {
 
             Arrays.sort(nums1);
             Arrays.sort(nums2);
-            int m= nums1.length;
-            int n= nums2.length;
+            int m = nums1.length;
+            int n = nums2.length;
 
-            List<Integer> intersec = new ArrayList<>();
-            for (int p1=0, p2=0; p1<m&&p2<n;) {
+            List<Integer> list = new ArrayList<>();
+            for (int p1 = 0, p2 = 0; p1 < m && p2 < n; ) {
                 if (nums1[p1] < nums2[p2]) {
-                    do{p1++;} while (p1<m && nums1[p1]==nums1[p1-1]);
+                    do {
+                        p1++;
+                    } while (p1 < m && nums1[p1] == nums1[p1 - 1]);
                 } else if (nums1[p1] > nums2[p2]) {
-                    do{p2++;} while (p2<n && nums2[p2]==nums2[p2-1]);
+                    do {
+                        p2++;
+                    } while (p2 < n && nums2[p2] == nums2[p2 - 1]);
                 } else {
-                    intersec.add(nums1[p1]);
-                    do{p1++;} while (p1<m && nums1[p1]==nums1[p1-1]);
-                    do{p2++;} while (p2<n && nums2[p2]==nums2[p2-1]);
+                    list.add(nums1[p1]);
+                    do {
+                        p1++;
+                    } while (p1 < m && nums1[p1] == nums1[p1 - 1]);
+                    do {
+                        p2++;
+                    } while (p2 < n && nums2[p2] == nums2[p2 - 1]);
                 }
-                if (p1>=m || p2>=n)
+                if (p1 >= m || p2 >= n)
                     break;
             }
 
-            int[] rslt = new int[intersec.size()];
+            int[] rslt = new int[list.size()];
             int i = 0;
-            for (Integer d : intersec) {
+            for (Integer d : list) {
                 rslt[i++] = d;
             }
             return rslt;
@@ -74,11 +84,55 @@ public class IntersectionofTwoArrays {
     }
 
     /*
+        Intersection of Two Arrays II
+        Leetcode 350
+        https://leetcode.com/problems/intersection-of-two-arrays-ii/
+        Difficulty: Medium
+    */
+    public class Solution_3 {
+        public int[] intersect(int[] nums1, int[] nums2) {
+            if (nums1 == null || nums1.length == 0) return new int[]{};
+            if (nums2 == null || nums2.length == 0) return new int[]{};
+
+            Arrays.sort(nums1);
+            Arrays.sort(nums2);
+            int m = nums1.length;
+            int n = nums2.length;
+
+            List<Integer> list = new ArrayList<>();
+            for (int p1 = 0, p2 = 0; p1 < m && p2 < n; ) {
+                if (nums1[p1] < nums2[p2]) {
+                    do {
+                        p1++;
+                    } while (p1 < m && nums1[p1] == nums1[p1 - 1]);
+                } else if (nums1[p1] > nums2[p2]) {
+                    do {
+                        p2++;
+                    } while (p2 < n && nums2[p2] == nums2[p2 - 1]);
+                } else {
+                    list.add(nums1[p1]);
+                     p1++;
+                     p2++;
+                }
+                if (p1 >= m || p2 >= n)
+                    break;
+            }
+
+            int[] rslt = new int[list.size()];
+            int i = 0;
+            for (Integer d : list) {
+                rslt[i++] = d;
+            }
+            return rslt;
+        }
+    }
+
+    /*
         Intersection of N Arrays - N Pointers
         http://stackoverflow.com/questions/5630685/efficient-algorithm-to-produce-the-n-way-intersection-of-sorted-arrays-in-c
         Difficulty: Medium
     */
-    public class Solution_3 {
+    public class Solution_4 {
         public List<Integer> findCommon(int[][] input) {
             List<Integer> rslt = new ArrayList<Integer>();
             if (input == null || input.length == 0) return rslt;
@@ -122,7 +176,9 @@ public class IntersectionofTwoArrays {
             Solution sol = new IntersectionofTwoArrays().new Solution();
             int[] a = {1, 2, 2, 1};
             int[] b = {2, 2};
-            assertEquals(1, 1);
+            int[] rslt = sol.intersection(a, b);
+            assertEquals(1, rslt.length);
+            assertEquals(2, rslt[0]);
         }
 
         @Test
@@ -130,7 +186,20 @@ public class IntersectionofTwoArrays {
             Solution_2 sol = new IntersectionofTwoArrays().new Solution_2();
             int[] a = {1, 2, 2, 1};
             int[] b = {2, 2};
-            assertEquals(1, 1);
+            int[] rslt = sol.intersection(a, b);
+            assertEquals(1, rslt.length);
+            assertEquals(2, rslt[0]);
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new IntersectionofTwoArrays().new Solution_3();
+            int[] a = {1, 2, 2, 1};
+            int[] b = {2, 2};
+            int[] rslt = sol.intersect(a, b);
+            assertEquals(2, rslt.length);
+            assertEquals(2, rslt[0]);
+            assertEquals(2, rslt[1]);
         }
     }
 }
