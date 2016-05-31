@@ -12,33 +12,23 @@ public class CodeSample {
     public class Solution {
         public void main(String[] args) {
             System.out.println("Hello World!");
-            Random random = new Random();
-            int randomInt = random.nextInt(100); //exclude 100
-            double randomDbl = random.nextDouble();
-            ArrayDeque<Integer> stack = new ArrayDeque<Integer>();
-            stack.offerLast(10);
-            int a = stack.removeLast();
-
-            List<Integer> list = new ArrayList<Integer>();
-            ArrayList<Integer> list1 = new ArrayList<Integer>();
-            List<List<Integer>> list2 = new ArrayList<List<Integer>>();
-            List<Integer> list3 = Arrays.asList(2, 1, 1, 0);
-            list.add(0);
-            list.add(0, 1);
-            list.get(0);
-            list.remove(list.size() - 1);
-            Collections.sort(list);
-            Collections.sort(list, Collections.reverseOrder());
-            Collections.sort(list, new Comparator<Integer>() {
-                @Override
-                public int compare(Integer o1, Integer o2) {
-                    return o1 - o2;
-                }
-            });
-
+            int[] a = new int[10];
+            char[] b = { 'a', 'b' };
+            Integer[] c = {1, 2, 3};
+            int[][] d = new int[10][10];
+            int m = a.length;
+            int n = d[0].length;
+            int max = Integer.MAX_VALUE;
+            int min = Integer.MIN_VALUE;
+            Arrays.sort(a);
+            for (int i = 0; i < c.length; i++) {
+                System.out.println(c[i]);
+            }
+            List<Integer> list = Arrays.asList(c);
+            Integer[] e = new Integer[list.size()];
+            e = list.toArray(e);
         }
     }
-
 
     public static class UnitTest {
         @Test

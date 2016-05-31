@@ -14,23 +14,23 @@ public class BinaryTreeMaximumPathSum {
         Difficulty: Hard
      */
     public class Solution {
+        public int FindMaxSum(TreeNode root, ArrayList<Integer> res) {
+            if (root == null) return 0;
+
+            int leftsum = FindMaxSum(root.left, res);
+            int rightsum = FindMaxSum(root.right, res);
+            int maxsum = root.val + (leftsum > 0 ? leftsum : 0) + (rightsum > 0 ? rightsum : 0);
+            if (maxsum > res.get(0)) res.set(0, maxsum);
+
+            return root.val + Math.max(leftsum, Math.max(rightsum, 0));
+        }
+
         public int maxPathSum(TreeNode root) {
             if (root == null) return 0;
             ArrayList<Integer> rslt = new ArrayList<Integer>();
             rslt.add(Integer.MIN_VALUE);
             FindMaxSum(root, rslt);
             return rslt.get(0);
-        }
-
-        public int FindMaxSum(TreeNode root, ArrayList<Integer> res) {
-            if (root == null) return 0;
-
-            int leftsum = FindMaxSum(root.left, res);
-            int rightsum = FindMaxSum(root.right, res);
-            int maxsum = root.val + (leftsum>0? leftsum : 0) + (rightsum>0? rightsum : 0);
-            if (maxsum > res.get(0)) res.set(0, maxsum);
-
-            return root.val + Math.max(leftsum, Math.max(rightsum, 0));
         }
     }
 

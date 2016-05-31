@@ -30,6 +30,8 @@ public class CombinationSum {
 
         public List<List<Integer>> combinationSum(int[] candidates, int target) {
             List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            if (candidates == null || candidates.length == 0)
+                return rslt;
             Arrays.sort(candidates);
             search(rslt, new ArrayList<Integer>(), candidates, target, 0);
             return rslt;
@@ -42,13 +44,6 @@ public class CombinationSum {
         Difficulty: Medium
     */
     public class Solution_2 {
-        public List<List<Integer>> combinationSum(int[] candidates, int target) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-            Arrays.sort(candidates);
-            search(candidates, 0, target, new ArrayList<Integer>(), rslt);
-            return rslt;
-        }
-
         private void search(int[] n, int index, int target, List<Integer> cur, List<List<Integer>> rslt) {
             if (target == 0) {
                 rslt.add(new ArrayList<Integer>(cur));
@@ -65,6 +60,15 @@ public class CombinationSum {
             for (int i = 0; i <= target / n[index]; i++) {
                 cur.remove(cur.size() - 1);
             }
+        }
+
+        public List<List<Integer>> combinationSum(int[] candidates, int target) {
+            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            if (candidates == null || candidates.length == 0)
+                return rslt;
+            Arrays.sort(candidates);
+            search(candidates, 0, target, new ArrayList<Integer>(), rslt);
+            return rslt;
         }
     }
 
@@ -90,7 +94,7 @@ public class CombinationSum {
         }
 
         public List<List<Integer>> combinationSum2(int[] nums, int target) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            List<List<Integer>> rslt = new ArrayList<>();
             if (nums == null || nums.length == 0)
                 return rslt;
             Arrays.sort(nums);
@@ -125,9 +129,8 @@ public class CombinationSum {
 
         public List<List<Integer>> combinationSum2(int[] candidates, int target) {
             List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-            if (candidates.length == 0) {
+            if (candidates == null || candidates.length == 0)
                 return rslt;
-            }
             Arrays.sort(candidates);
             List<Integer> nums = new ArrayList<Integer>();
             List<Integer> counts = new ArrayList<Integer>();
@@ -174,7 +177,7 @@ public class CombinationSum {
         }
 
         public List<List<Integer>> combinationSum3(int k, int n) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            List<List<Integer>> rslt = new ArrayList<>();
             search(rslt, 1, n, new ArrayList<Integer>(), k);
             return rslt;
         }

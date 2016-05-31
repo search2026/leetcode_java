@@ -15,15 +15,6 @@ public class Permutations {
         Difficulty: Medium
     */
     public class Solution {
-        public List<List<Integer>> permute(int[] nums) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-            List<Integer> cur = new ArrayList<Integer>();
-            int len = nums.length;
-            int[] visited = new int[len];
-            permute(nums, visited, len, cur, rslt);
-            return rslt;
-        }
-
         public void permute(int[] num, int[] visited, int len, List<Integer> cur, List<List<Integer>> rslt) {
             if (cur.size() == len) {
                 rslt.add(new ArrayList<Integer>(cur));
@@ -40,6 +31,15 @@ public class Permutations {
                 }
             }
         }
+
+        public List<List<Integer>> permute(int[] nums) {
+            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            List<Integer> cur = new ArrayList<Integer>();
+            int len = nums.length;
+            int[] visited = new int[len];
+            permute(nums, visited, len, cur, rslt);
+            return rslt;
+        }
     }
 
     /*
@@ -48,17 +48,6 @@ public class Permutations {
         Difficulty: Medium
     */
     public class Solution_2 {
-        public List<List<Integer>> permute(int[] num) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-            List<Integer> a = new ArrayList<Integer>();
-            a.add(num[0]);
-            rslt.add(a);
-            for (int i = 1; i < num.length; i++) {
-                rslt = insert(rslt, num[i]);
-            }
-            return rslt;
-        }
-
         public List<List<Integer>> insert(List<List<Integer>> list, int num) {
             List<List<Integer>> rslt = new ArrayList<List<Integer>>();
             for (int i = 0; i < list.size(); i++) {
@@ -67,6 +56,17 @@ public class Permutations {
                     temp.add(j, num);
                     rslt.add(temp);
                 }
+            }
+            return rslt;
+        }
+
+        public List<List<Integer>> permute(int[] num) {
+            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            List<Integer> a = new ArrayList<Integer>();
+            a.add(num[0]);
+            rslt.add(a);
+            for (int i = 1; i < num.length; i++) {
+                rslt = insert(rslt, num[i]);
             }
             return rslt;
         }

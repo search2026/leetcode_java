@@ -17,18 +17,16 @@ public class MeetingRooms {
         Difficulty: Easy
      */
     public class Solution {
-        public class IntervalComparator implements Comparator<Interval> {
-            @Override
-            public int compare(Interval a, Interval b) {
-                return a.start - b.start;
-            }
-        }
-
         public boolean canAttendMeetings(Interval[] intervals) {
             if (intervals == null || intervals.length == 0) return true;
 
             // Sort according to the start time
-            Arrays.sort(intervals, new IntervalComparator());
+            Arrays.sort(intervals, new Comparator<Interval>() {
+                @Override
+                public int compare(Interval o1, Interval o2) {
+                    return o1.start - o2.start;
+                }
+            });
 
             Interval prev = intervals[0];
             for (int i = 1; i < intervals.length; i++) {

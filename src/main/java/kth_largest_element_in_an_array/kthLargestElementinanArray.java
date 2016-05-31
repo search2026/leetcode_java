@@ -54,7 +54,7 @@ public class kthLargestElementinanArray {
                 pq.add(nums[i]);
                 if (pq.size() > k) pq.poll();
             }
-            return pq.poll();
+            return pq.peek();
         }
     }
 
