@@ -10,10 +10,36 @@ import static org.junit.Assert.assertEquals;
 public class NestedListWeightSum {
     /*
         Nested List Weight Sum
+        Leetcode #339
         http://www.cnblogs.com/grandyang/p/5340305.html
         Difficulty: Easy
      */
     public class Solution {
+        int depthSum(List<NestedInteger> nestedList) {
+            int res = 0;
+            for (NestedInteger a : nestedList) {
+                res += getSum(a, 1);
+            }
+            return res;
+        }
+
+        int getSum(NestedInteger ni, int level) {
+            int res = 0;
+            if (ni.isInteger()) return level * ni.getInteger();
+            for (NestedInteger a : ni.getList()) {
+                res += getSum(a, level + 1);
+            }
+            return res;
+        }
+    }
+
+    /*
+        Nested List Weight Sum
+        Leetcode #339
+        https://leetcode.com/discuss/94956/2ms-easy-to-understand-java-solution
+        Difficulty: Easy
+     */
+    public class Solution_2 {
         private int search(List<NestedInteger> list, int depth) {
             int rslt = 0;
             for (NestedInteger e : list) {

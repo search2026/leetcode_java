@@ -2,7 +2,11 @@ package code_sample;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Queue;
+
 
 public class CodeSample {
     /*
@@ -12,21 +16,14 @@ public class CodeSample {
     public class Solution {
         public void main(String[] args) {
             System.out.println("Hello World!");
-            int[] a = new int[10];
-            char[] b = { 'a', 'b' };
-            Integer[] c = {1, 2, 3};
-            int[][] d = new int[10][10];
-            int m = a.length;
-            int n = d[0].length;
-            int max = Integer.MAX_VALUE;
-            int min = Integer.MIN_VALUE;
-            Arrays.sort(a);
-            for (int i = 0; i < c.length; i++) {
-                System.out.println(c[i]);
-            }
-            List<Integer> list = Arrays.asList(c);
-            Integer[] e = new Integer[list.size()];
-            e = list.toArray(e);
+            ArrayDeque<Integer> stack = new ArrayDeque<Integer>();
+            stack.push(2);
+            stack.push(3);
+            int t = stack.peek();
+            t = stack.pop();
+            boolean b = stack.isEmpty();
+
+
         }
     }
 
