@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class CoinChange {
     /*
         Coin Changes
+        Leetcode #322
         https://leetcode.com/problems/coin-change/
         Difficulty: Medium
      */

@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class DecodeWays {
     /*
         Decode Ways
+        Leetcode #91
         https://leetcode.com/problems/decode-ways/
         Difficulty: Medium
      */
@@ -27,9 +28,9 @@ public class DecodeWays {
         }
     }
 
-
     /*
         Decode Ways
+        Leetcode #91
         https://leetcode.com/problems/decode-ways/
         Difficulty: Medium
      */

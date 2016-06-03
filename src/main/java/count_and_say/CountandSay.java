@@ -7,8 +7,9 @@ import static org.junit.Assert.assertTrue;
 public class CountandSay {
     /*
         Count and Say
+        leetcode #38
         https://leetcode.com/problems/count-and-say/
-        https://leetcode.com/problems/count-and-say/
+        Difficulty: Easy
      */
     public class Solution {
         public String countAndSay(int n) {

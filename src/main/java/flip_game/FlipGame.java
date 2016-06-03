@@ -10,6 +10,8 @@ import static org.junit.Assert.assertTrue;
 public class FlipGame {
     /*
         Flip Game
+        Leetcode #293
+        https://leetcode.com/discuss/questions/oj/flip-game?sort=votes
         http://www.cnblogs.com/anne-vista/p/4886775.html
         Difficulty: Easy
     */
@@ -27,6 +29,8 @@ public class FlipGame {
 
     /*
         Flip Game II
+        Leetcode #294
+        https://leetcode.com/discuss/questions/oj/flip-game-ii?sort=votes
         http://www.cnblogs.com/anne-vista/p/4886786.html
         Difficulty: Medium
     */

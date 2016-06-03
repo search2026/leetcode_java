@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class EditDistance {
     /*
         Edit Distance
+        Leetcode #72
         https://leetcode.com/problems/edit-distance/
         Difficulty: Hard
      */
@@ -35,6 +36,7 @@ public class EditDistance {
 
     /*
         Edit Distance - In memory array
+        Leetcode #72
         https://leetcode.com/problems/edit-distance/
         Difficulty: Hard
      */

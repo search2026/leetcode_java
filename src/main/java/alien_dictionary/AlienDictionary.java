@@ -12,12 +12,14 @@ import static org.junit.Assert.assertTrue;
 public class AlienDictionary {
     /*
         Alien Dictionary
+        Leetcode #269
+        https://leetcode.com/discuss/questions/oj/alien-dictionary?sort=votes
         http://buttercola.blogspot.com/2015/09/leetcode-alien-dictionary.html
         Difficulty: Hard
      */
     public class Solution {
         public void generateIndegree(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
-            HashSet<String> edges = new HashSet<String>();
+            HashSet<String> edges = new HashSet<>();
             for (int i = 0; i < words.length - 1; i++) {
                 String word1 = words[i];
                 String word2 = words[i + 1];

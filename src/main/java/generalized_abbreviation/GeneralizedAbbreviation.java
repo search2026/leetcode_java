@@ -10,6 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class GeneralizedAbbreviation {
     /*
         Generalized Abbreviation
+        Leetcode #320
+        https://leetcode.com/discuss/questions/oj/generalized-abbreviation?sort=votes
         https://segmentfault.com/a/1190000004187690
         Difficulty: Medium
      */

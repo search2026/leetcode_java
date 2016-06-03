@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class GasStation {
     /*
         Gas Station - Brute Force
+        Leetcode #134
         https://leetcode.com/problems/gas-station/
         Difficulty: Medium
      */
@@ -37,6 +38,7 @@ public class GasStation {
 
     /*
         Gas Station - Dynamic Programming
+        Leetcode #134
         https://leetcode.com/problems/gas-station/
         Difficulty: Medium
     */
@@ -63,6 +65,7 @@ public class GasStation {
 
     /*
         Gas Station - Dynamic Programming
+        Leetcode #134
         https://leetcode.com/problems/gas-station/
         Difficulty: Medium
     */

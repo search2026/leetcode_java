@@ -8,9 +8,13 @@ import java.util.*;
 import static org.junit.Assert.assertTrue;
 
 public class ClosestBinarySearchTreeValue {
-    // Closest Binary Search Tree Value - Recursion
-    // http://blog.csdn.net/xudli/article/details/48749493
-    // Difficulty: Easy
+    /*
+        Closest Binary Search Tree Value - Recursion
+        Leetcode #270
+        https://leetcode.com/discuss/questions/oj/closest-binary-search-tree-value?sort=votes
+        http://blog.csdn.net/xudli/article/details/48749493
+        Difficulty: Easy
+      */
     public class Solution {
         public int closestValue(TreeNode root, double target) {
             TreeNode kid = target < root.val ? root.left : root.right;
@@ -21,9 +25,13 @@ public class ClosestBinarySearchTreeValue {
         }
     }
 
-    // Closest Binary Search Tree Value - Iterative
-    // http://blog.csdn.net/xudli/article/details/48749493
-    // Difficulty: Easy
+    /*
+        Closest Binary Search Tree Value - Iterative
+        Leetcode #270
+        https://leetcode.com/discuss/questions/oj/closest-binary-search-tree-value?sort=votes
+        http://blog.csdn.net/xudli/article/details/48749493
+        Difficulty: Easy
+      */
     public class Solution_2 {
         public int closestValue(TreeNode root, double target) {
             int closest = root.val;
@@ -35,9 +43,13 @@ public class ClosestBinarySearchTreeValue {
         }
     }
 
-    // Closest Binary Search Tree Value II
-    // http://blog.csdn.net/xudli/article/details/48752907
-    // Difficulty: Hard
+    /*
+        Closest Binary Search Tree Value II
+        Leetcode #272
+        https://leetcode.com/discuss/questions/oj/closest-binary-search-tree-value-ii?sort=votes
+        http://blog.csdn.net/xudli/article/details/48752907
+        Difficulty: Hard
+      */
     public class Solution_3 {
         public List<Integer> closestKValues(TreeNode root, double target, int k) {
             PriorityQueue<Double> maxHeap = new PriorityQueue<Double>(k, new Comparator<Double>() {

@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class IntersectionofTwoLinkedLists {
     /*
         Intersection of Two Linked Lists
+        leetcode #160
         https://leetcode.com/problems/intersection-of-two-linked-lists/
-        leetcode 160
         Difficulty: Easy
      */
     public class Solution {

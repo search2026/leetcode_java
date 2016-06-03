@@ -9,6 +9,7 @@ import static org.junit.Assert.assertTrue;
 public class ClimbingStairs {
     /*
         Climbing Stairs
+        Leetcode #70
         https://leetcode.com/problems/climbing-stairs/
         Difficulty: Easy
      */
@@ -25,6 +26,12 @@ public class ClimbingStairs {
         }
     }
 
+    /*
+        Climbing Stairs
+        Leetcode #70
+        https://leetcode.com/problems/climbing-stairs/
+        Difficulty: Easy
+     */
     public class Solution_2 {
         public int climbStairs(int n) {
             double s = Math.sqrt(5);

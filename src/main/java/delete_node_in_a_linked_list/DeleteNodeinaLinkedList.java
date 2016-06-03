@@ -7,7 +7,8 @@ import static org.junit.Assert.assertTrue;
 
 public class DeleteNodeinaLinkedList {
     /*
-        Delete Bode in a Linked List
+        Delete Node in a Linked List
+        Leetcode #237
         https://leetcode.com/problems/delete-node-in-a-linked-list/
         Difficulty: Easy
      */

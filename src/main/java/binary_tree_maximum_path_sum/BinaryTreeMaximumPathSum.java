@@ -10,6 +10,7 @@ import static org.junit.Assert.assertTrue;
 public class BinaryTreeMaximumPathSum {
     /*
         Binary Tree Maximum Path Sum
+        Leetcode #124
         https://leetcode.com/problems/binary-tree-maximum-path-sum/
         Difficulty: Hard
      */

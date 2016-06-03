@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class InsertionSortList {
     /*
         Insert Sort List
+        leetcode #147
         https://leetcode.com/problems/insertion-sort-list/
-        leetcode 147
         Difficulty: Medium
      */
     public class Solution {

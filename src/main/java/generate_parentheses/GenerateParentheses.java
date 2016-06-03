@@ -10,6 +10,7 @@ import static org.junit.Assert.assertTrue;
 public class GenerateParentheses {
     /*
         Generate Parentheses
+        Leetcode #22
         https://leetcode.com/problems/generate-parentheses/
         Difficulty: Medium
      */
@@ -37,6 +38,7 @@ public class GenerateParentheses {
 
     /*
         Generate Parentheses
+        Leetcode #22
         https://leetcode.com/problems/generate-parentheses/
         Difficulty: Medium
     */

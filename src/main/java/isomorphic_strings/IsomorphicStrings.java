@@ -12,8 +12,8 @@ import static org.junit.Assert.assertEquals;
 public class IsomorphicStrings {
     /*
         Isomorphic Strings
+        Leetcode #205
         https://leetcode.com/problems/isomorphic-strings/
-        leetcode 205
         Difficulty: Easy
      */
     public class Solution {

@@ -12,6 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class BinaryTreePostorderTraversal {
     /*
         Binary Tree Postorder Traversal - Using Stacks
+        Leetcode #94
         https://leetcode.com/problems/binary-tree-inorder-traversal/
         Difficulty: Medium
     */
@@ -46,10 +47,11 @@ public class BinaryTreePostorderTraversal {
     }
 
     /*
-    Binary Tree Postorder Traversal - Morris Traversal
-    https://leetcode.com/problems/binary-tree-inorder-traversal/
-    Difficulty: Medium
-*/
+        Binary Tree Postorder Traversal - Morris Traversal
+        Leetcode #94
+        https://leetcode.com/problems/binary-tree-inorder-traversal/
+        Difficulty: Medium
+    */
     public class Solution_2 {
         public List<Integer> postorderTraversal(TreeNode root) {
             ArrayList<Integer> rslt = new ArrayList<Integer>();

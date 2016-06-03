@@ -11,6 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class ContainsDuplicate {
     /*
         Contains Duplicate
+        Leetcode #217
         https://leetcode.com/problems/contains-duplicate/
         Difficulty: Easy
      */
@@ -34,6 +35,7 @@ public class ContainsDuplicate {
 
     /*
         Contains Duplicates II
+        leetcode #219
         https://leetcode.com/problems/contains-duplicate-ii/
         Difficulty: Easy
     */
@@ -57,6 +59,7 @@ public class ContainsDuplicate {
 
     /*
         Contains Duplicates III
+        Leetcode #220
         https://leetcode.com/problems/contains-duplicate-iii/
         Difficulty: Medium
     */

@@ -5,12 +5,13 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
+import common.Interval;
 
 import static org.junit.Assert.assertEquals;
 
 public class DataStreamasDisjointIntervals {
     /*
-        Data Stream as Disjoint Intervals - Merging Intervals
+        Data Stream as Disjoint Intervals - Insert Intervals
         Leetcode #352
         https://leetcode.com/problems/data-stream-as-disjoint-intervals/
         Difficulty: Hard
@@ -18,9 +19,6 @@ public class DataStreamasDisjointIntervals {
     public class SummaryRanges {
         List<Interval> rslt;
 
-        /**
-         * Initialize your data structure here.
-         */
         public SummaryRanges() {
             rslt = new ArrayList<Interval>();
         }
@@ -89,27 +87,16 @@ public class DataStreamasDisjointIntervals {
         }
     }
 
-    // Definition for an interval
-    public class Interval {
-        int start;
-        int end;
-
-        Interval() {
-            start = 0;
-            end = 0;
-        }
-
-        Interval(int s, int e) {
-            start = s;
-            end = e;
-        }
-    }
-
     public static class UnitTest {
         @Test
         public void test1() {
             //Solution sol = new DataStreamasDisjointIntervals().new Solution();
             assertEquals(1, 1);
+            // Test case
+            // input: ["SummaryRanges","addNum","getIntervals","addNum","getIntervals","addNum","getIntervals","addNum","getIntervals","addNum","getIntervals"]
+            // [[],[1],[],[3],[],[7],[],[2],[],[6],[]]
+            // Output:
+            // [null,null,[[1,1]],null,[[1,1],[3,3]],null,[[1,1],[3,3],[7,7]],null,[[1,3],[7,7]],null,[[1,3],[6,7]]]
         }
     }
 }

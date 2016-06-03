@@ -7,7 +7,8 @@ import static org.junit.Assert.assertTrue;
 public class ExcelSheetColumnTitle {
     /*
         Excel Sheet Column Title
-        https://leetcode.com/problems/excel-sheet-column-number/
+        Leetcode #168
+        https://leetcode.com/problems/excel-sheet-column-title/
         Difficulty: Easy
      */
     public class Solution {

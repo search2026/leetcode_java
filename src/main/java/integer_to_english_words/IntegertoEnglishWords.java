@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class IntegertoEnglishWords {
     /*
         Integer to English Words
+        Leetcode #273
         https://leetcode.com/problems/integer-to-english-words/
         Difficulty: Medium
      */
@@ -47,29 +48,29 @@ public class IntegertoEnglishWords {
         }
 
         private String numToWordsHelper(int num, String[] dict1, String[] dict2) {
-            StringBuilder result = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             int a = num / 100;
             int b = num % 100;
             int c = num % 10;
 
             if (a > 0) {
-                result.append(dict1[a] + "Hundred ");
+                sb.append(dict1[a]).append("Hundred ");
             }
 
             if (b > 0 && b < 20) {
-                result.append(dict1[b]);
+                sb.append(dict1[b]);
                 c = 0;
             } else if (b >= 20) {
                 b /= 10;
-                result.append(dict2[b]);
+                sb.append(dict2[b]);
             }
 
             if (c > 0) {
-                result.append(dict1[c]);
+                sb.append(dict1[c]);
             }
 
-            return result.toString();
+            return sb.toString();
         }
     }
 

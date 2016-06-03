@@ -8,6 +8,8 @@ import static org.junit.Assert.assertTrue;
 public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence
+        Leetcode #298
+        https://leetcode.com/discuss/questions/oj/binary-tree-longest-consecutive-sequence?sort=votes
         https://segmentfault.com/a/1190000003957798
         Difficulty: Medium
      */

@@ -11,12 +11,13 @@ import static org.junit.Assert.assertTrue;
 public class _3Sum {
     /*
         3 Sum
+        Leetcode #15
         https://leetcode.com/problems/3sum/
         Difficulty: Medium
      */
     public class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
-            List<List<Integer>> result = new ArrayList<List<Integer>>();
+            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
             Arrays.sort(nums);
             for (int i = 0; i < nums.length; i++) {
                 if (i == 0 || nums[i] != nums[i - 1]) {
@@ -28,7 +29,7 @@ public class _3Sum {
                             solution.add(nums[i]);
                             solution.add(nums[start]);
                             solution.add(nums[end]);
-                            result.add(solution);
+                            rslt.add(solution);
                             int startnum = nums[start];
                             int endnum = nums[end];
                             while (start < nums.length && nums[start] == startnum) {
@@ -45,7 +46,7 @@ public class _3Sum {
                     }
                 }
             }
-            return result;
+            return rslt;
         }
     }
 

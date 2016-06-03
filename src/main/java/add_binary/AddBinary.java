@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class AddBinary {
     /*
         Add Binary
+        Leetcode #67
         https://leetcode.com/problems/add-binary/
         Difficulty: Easy
      */

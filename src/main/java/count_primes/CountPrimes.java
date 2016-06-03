@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class CountPrimes {
     /*
         Count Primes
+        Leetcode #204
         https://leetcode.com/problems/count-primes/
         Difficulty: Easy
      */

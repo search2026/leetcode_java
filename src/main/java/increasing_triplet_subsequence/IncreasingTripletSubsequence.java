@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class IncreasingTripletSubsequence {
     /*
         Increasing Triplet Subsequence - O(N) Space
+        Leetcode #334
         https://leetcode.com/problems/increasing-triplet-subsequence/
         Difficulty: Medium
      */

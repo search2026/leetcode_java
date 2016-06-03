@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class CombinationSum {
     /*
         Combination Sum
+        Leetcode #39
         https://leetcode.com/problems/combination-sum/
         Difficulty: Medium
     */
@@ -40,6 +41,7 @@ public class CombinationSum {
 
     /*
         Combination Sum - From Least Weight Item to Most Weight
+        Leetcode #39
         https://leetcode.com/problems/combination-sum/
         Difficulty: Medium
     */
@@ -73,7 +75,8 @@ public class CombinationSum {
     }
 
     /*
-        Combination Sum II - From Least Weight Item to Most Weight
+        Combination Sum II
+        Leetcode #40
         https://leetcode.com/problems/combination-sum-ii/
         Difficulty: Medium
     */
@@ -105,6 +108,7 @@ public class CombinationSum {
 
     /*
         Combination Sum II - From Least Weight Item to Most Weight
+        Leetcode #40
         https://leetcode.com/problems/combination-sum-ii/
         Difficulty: Medium
     */
@@ -155,6 +159,7 @@ public class CombinationSum {
 
     /*
         Combination Sum III
+        Leetcode #216
         https://leetcode.com/problems/combination-sum-iii/
         Difficulty: Medium
     */
