@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class AdditiveNumber {
     /*
         Additive Number
+        Leetcode #306
         https://leetcode.com/problems/additive-number/
         Difficulty: Medium
      */

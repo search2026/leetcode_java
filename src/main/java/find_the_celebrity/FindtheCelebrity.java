@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
 public class FindtheCelebrity {
     /*
         Find the Celebrity
+        Leetcode #277
+        https://leetcode.com/discuss/questions/oj/find-the-celebrity?sort=votes
         http://buttercola.blogspot.com/2015/09/leetcode-find-celebrity.html
         Difficulty: Medium
      */

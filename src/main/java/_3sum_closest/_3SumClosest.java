@@ -9,7 +9,8 @@ import static org.junit.Assert.assertTrue;
 public class _3SumClosest {
     /*
         3 Sum Closest
-        https://leetcode.com/problems/3sum/
+        Leetcode #16
+        https://leetcode.com/problems/3sum-closest/
         Difficulty: Medium
      */
     public class Solution {

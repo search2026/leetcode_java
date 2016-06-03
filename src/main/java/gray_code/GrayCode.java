@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class GrayCode {
     /*
         Gray Code - Formula
+        Leetcode #89
         https://leetcode.com/problems/gray-code/
         Difficulty: Medium
      */
@@ -25,6 +26,7 @@ public class GrayCode {
 
     /*
         Gray Code - Recursive
+        Leetcode #89
         https://leetcode.com/problems/gray-code/
         Difficulty: Medium
      */

@@ -3,9 +3,7 @@ package flatten_nested_list_iterator;
 import common.NestedInteger;
 import org.junit.Test;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,11 +11,12 @@ import static org.junit.Assert.assertEquals;
 public class FlattenNestedListIterator {
     /*
         Flatten Nested List Iterator
+        Leetcode #341
         https://leetcode.com/problems/flatten-nested-list-iterator/
         Difficulty: Medium
      */
     public class NestedIterator implements Iterator<Integer> {
-        Stack<NestedInteger> stack = new Stack<>();
+        Deque<NestedInteger> stack = new ArrayDeque<>();
 
         public NestedIterator(List<NestedInteger> nestedList) {
             for (int i = nestedList.size() - 1; i >= 0; i--) {
@@ -43,6 +42,34 @@ public class FlattenNestedListIterator {
                 }
             }
             return false;
+        }
+    }
+
+    /*
+        Flatten Nested List Iterator
+        Leetcode #341
+        https://leetcode.com/problems/flatten-nested-list-iterator/
+        Difficulty: Medium
+     */
+    public class NestedIterator_2 implements Iterator<Integer> {
+        Deque<NestedInteger> s;
+
+        public NestedIterator_2(List<NestedInteger> nestedList) {
+            s = new ArrayDeque<>(nestedList == null ? Arrays.asList() : nestedList);
+        }
+
+        @Override
+        public Integer next() {
+            return s.pollFirst().getInteger();
+        }
+
+        @Override
+        public boolean hasNext() {
+            while(!s.isEmpty() && !s.peekFirst().isInteger()) {
+                List<NestedInteger> list = s.pollFirst().getList();
+                for (int i=list.size()-1; i>=0; i--) s.addFirst(list.get(i));
+            }
+            return !s.isEmpty();
         }
     }
 

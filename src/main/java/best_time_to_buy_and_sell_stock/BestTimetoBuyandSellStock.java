@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class BestTimetoBuyandSellStock {
     /*
         Best Time to Buy and Sell Stock
+        Leetcode #121
         https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
         Difficulty: Medium
      */
@@ -14,10 +15,10 @@ public class BestTimetoBuyandSellStock {
         public int maxProfit(int[] prices) {
             if (prices == null || prices.length == 0) return 0;
             int maxProfit = 0;
-            int minPrice = prices[0];
+            int monSoFar = prices[0];
             for (int i = 1; i < prices.length; i++) {
-                maxProfit = Math.max(maxProfit, prices[i] - minPrice);
-                minPrice = Math.min(minPrice, prices[i]);
+                maxProfit = Math.max(maxProfit, prices[i] - monSoFar);
+                monSoFar = Math.min(monSoFar, prices[i]);
             }
             return maxProfit;
         }
@@ -25,6 +26,7 @@ public class BestTimetoBuyandSellStock {
 
     /*
         Best Time to Buy and Sell Stock II
+        Leetcode #122
         https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
         Difficulty: Medium
      */
@@ -41,6 +43,7 @@ public class BestTimetoBuyandSellStock {
 
     /*
         Best Time to Buy and Sell Stock III
+        Leetcode #123
         https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
         Difficulty: Hard
      */
@@ -62,6 +65,7 @@ public class BestTimetoBuyandSellStock {
 
     /*
         Best Time to Buy and Sell Stock IV
+        Leetcode #188
         https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
         Difficulty: Hard
      */
@@ -94,6 +98,7 @@ public class BestTimetoBuyandSellStock {
 
     /*
          Best Time to Buy and Sell Stock with Cooldown
+         Leetcode #309
          https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
          Difficulty: Medium
     */

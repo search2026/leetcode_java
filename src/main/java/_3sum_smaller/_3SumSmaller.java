@@ -9,7 +9,9 @@ import static org.junit.Assert.assertTrue;
 public class _3SumSmaller {
     /*
         3 Sum Smaller
+        Leetcode #259
         http://buttercola.blogspot.com/2015/08/leetcode.html
+        https://leetcode.com/discuss/questions/oj/3sum-smaller?sort=votes
         Difficulty: Medium
      */
     public class Solution {

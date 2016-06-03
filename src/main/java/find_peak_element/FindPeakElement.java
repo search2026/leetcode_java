@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class FindPeakElement {
     /*
         Find Peak Element
+        Leetcode #162
         https://leetcode.com/problems/find-peak-element/
         Difficulty: Medium
      */

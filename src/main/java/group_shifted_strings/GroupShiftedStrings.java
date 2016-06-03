@@ -9,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class GroupShiftedStrings {
     /*
         Group Shifted Strings
+        Leetcode #249
+        https://leetcode.com/discuss/questions/oj/group-shifted-strings
         http://buttercola.blogspot.com/2015/08/leetcode-group-shifted-strings.html
         Difficulty: Easy
      */

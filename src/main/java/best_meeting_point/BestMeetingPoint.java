@@ -11,6 +11,8 @@ import static org.junit.Assert.*;
 public class BestMeetingPoint {
     /*
         Best Meeting Point
+        Leetcode #296
+        https://leetcode.com/discuss/questions/oj/best-meeting-point?sort=votes
         http://buttercola.blogspot.com/2015/10/leetcode-best-meeting-point.html
         Difficulty: Hard
      */

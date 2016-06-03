@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class CreateMaximumNumber {
     /*
         Create Maximum Number
+        Leetcode #321
         https://leetcode.com/problems/create-maximum-number/
         Difficulty: Hard
      */

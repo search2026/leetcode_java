@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class GameofLife {
     /*
         Game of Life
+        leetcode #289
         https://leetcode.com/problems/game-of-life/
-        leetcode 289
         Difficulty: Hard
      */
     public class Solution {

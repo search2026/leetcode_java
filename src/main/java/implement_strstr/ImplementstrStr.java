@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class ImplementstrStr {
     /*
         Implement strstr - Brute Force
+        Leetcode #28
         https://leetcode.com/problems/implement-strstr/
         Difficulty: Medium
      */
@@ -27,6 +28,7 @@ public class ImplementstrStr {
 
     /*
         Implement strstr - KMP
+        Leetcode #28
         https://leetcode.com/problems/implement-strstr/
         Difficulty: Medium
      */
@@ -63,6 +65,7 @@ public class ImplementstrStr {
 
     /*
         Implement strstr - Rolling Hash
+        Leetcode #28
         https://leetcode.com/problems/implement-strstr/
         Difficulty: Medium
      */

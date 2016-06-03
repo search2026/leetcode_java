@@ -9,8 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class HappyNumber {
     /*
         Happy Number
+        leetcode #202
         https://leetcode.com/problems/happy-number/
-        leetcode 202
         Difficulty: Easy
      */
     public class Solution {

@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class kthLargestElementinanArray {
     /*
         Kth Largest number in an Array - QuickSelect
+        Leetcode #215
         https://leetcode.com/problems/kth-largest-element-in-an-array/
         Difficulty: Medium
      */
@@ -43,7 +44,8 @@ public class kthLargestElementinanArray {
     }
 
     /*
-        Kth Largest number in an Array
+        Kth Largest number in an Array - Using heap
+        Leetcode #215
         https://leetcode.com/problems/kth-largest-element-in-an-array/
         Difficulty: Medium
      */
@@ -54,7 +56,7 @@ public class kthLargestElementinanArray {
                 pq.add(nums[i]);
                 if (pq.size() > k) pq.poll();
             }
-            return pq.poll();
+            return pq.peek();
         }
     }
 

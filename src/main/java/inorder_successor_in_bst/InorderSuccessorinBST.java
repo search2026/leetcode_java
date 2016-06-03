@@ -8,7 +8,8 @@ import static org.junit.Assert.*;
 public class InorderSuccessorinBST {
     /*
         Inorder Successor in BST
-        http://buttercola.blogspot.com/2015/10/leetcode-inorder-successor-in-bst.html
+        Leetcode #285
+        https://leetcode.com/discuss/questions/oj/inorder-successor-in-bst?sort=votes
         Difficulty: Medium
      */
     public class Solution {

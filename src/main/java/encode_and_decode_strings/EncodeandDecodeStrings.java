@@ -10,6 +10,8 @@ import static org.junit.Assert.*;
 public class EncodeandDecodeStrings {
     /*
         Encode and Decode Strings
+        Leetcode #271
+        https://leetcode.com/discuss/questions/oj/encode-and-decode-strings?sort=votes
         http://buttercola.blogspot.com/2015/09/leetcode-encode-and-decode-strings.html
         Difficulty: Medium
      */

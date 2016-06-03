@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class BullsandCows {
     /*
         Bulls and Cows
+        Leetcode #299
         https://leetcode.com/problems/bulls-and-cows/
         Difficulty: Easy
      */

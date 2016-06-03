@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class FirstMissingPositive {
     /*
         First Missing Positive
+        Leetcode #41
         https://leetcode.com/problems/first-missing-positive/
         Difficulty: Hard
      */

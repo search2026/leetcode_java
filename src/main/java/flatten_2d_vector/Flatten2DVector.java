@@ -12,6 +12,8 @@ import static org.junit.Assert.assertTrue;
 public class Flatten2DVector {
     /*
         Flatten 2D Vector
+        Leetcode #251
+        https://leetcode.com/discuss/questions/oj/flatten-2d-vector
         http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
         Difficulty: Medium
      */

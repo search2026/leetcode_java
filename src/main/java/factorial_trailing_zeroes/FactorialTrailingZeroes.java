@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class FactorialTrailingZeroes {
     /*
         Factorial Trailing Zeros
+        leetcode #172
         https://leetcode.com/problems/factorial-trailing-zeroes/
         Difficulty: Easy
      */

@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 public class CourseSchedule {
     /*
         Course Schedule - DFS
+        Leetcode #207
         https://leetcode.com/problems/course-schedule/
         Difficulty: Medium
     */
@@ -52,6 +53,7 @@ public class CourseSchedule {
 
     /*
         Course Schedule - Topological Sorting
+        Leetcode #207
         https://leetcode.com/problems/course-schedule/
         Difficulty: Medium
     */
@@ -90,6 +92,7 @@ public class CourseSchedule {
 
     /*
         Course Schedule II
+        Leetcode #210
         https://leetcode.com/problems/course-schedule-ii/
         Difficulty: Medium
     */

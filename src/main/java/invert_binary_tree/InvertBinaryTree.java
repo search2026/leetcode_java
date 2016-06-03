@@ -9,14 +9,13 @@ import static org.junit.Assert.assertTrue;
 public class InvertBinaryTree {
     /*
         Invert Binary Tree
+        Leetcode #226
         https://leetcode.com/problems/invert-binary-tree/
         Difficulty: Easy
      */
     public class Solution {
         public TreeNode invertTree(TreeNode root) {
-            if (root == null) {
-                return null;
-            }
+            if (root == null) return null;
 
             TreeNode temp = root.left;
 

@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class HouseRobber {
     /*
         House Robber
+        Leetcode #198
         https://leetcode.com/problems/house-robber/
         Difficulty: Easy
     */

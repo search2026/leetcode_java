@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class KthSmallestElementinaBST {
     /*
         Kth Smallest Element in a BST
+        Leetcode #230
         https://leetcode.com/problems/kth-smallest-element-in-a-bst/
         Difficulty: Medium
      */
@@ -41,7 +42,8 @@ public class KthSmallestElementinaBST {
     }
 
     /*
-        Kth Smallest Element in a BST - Use List/Stack
+        Kth Smallest Element in a BST - Using List/Stack
+        Leetcode #230
         https://leetcode.com/problems/kth-smallest-element-in-a-bst/
         Difficulty: Medium
      */
@@ -67,6 +69,7 @@ public class KthSmallestElementinaBST {
 
     /*
         Kth Smallest Element in a BST - Count Number
+        Leetcode #230
         https://leetcode.com/problems/kth-smallest-element-in-a-bst/
         Difficulty: Medium
     */

@@ -10,9 +10,12 @@ import java.util.Stack;
 import static org.junit.Assert.assertTrue;
 
 public class BasicCalculator {
-    // Basic Calculator
-    // https://leetcode.com/problems/basic-calculator/
-    // Difficulty: Medium
+    /*
+        Basic Calculator
+        Leetcode #224
+        https://leetcode.com/problems/basic-calculator/
+        Difficulty: Medium
+    */
     public class Solution {
         public int calculate(String s) {
             // delete white spaces

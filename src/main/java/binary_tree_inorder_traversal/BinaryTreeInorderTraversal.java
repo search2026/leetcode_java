@@ -13,6 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class BinaryTreeInorderTraversal {
     /*
         Binary Tree Inorder Traversal - Using Stacks
+        Leetcode #94
         https://leetcode.com/problems/binary-tree-inorder-traversal/
         Difficulty: Medium
     */
@@ -41,6 +42,7 @@ public class BinaryTreeInorderTraversal {
 
     /*
         Binary Tree Inorder Traversal - Morris Traversal
+        Leetcode #94
         https://leetcode.com/problems/binary-tree-inorder-traversal/
         Difficulty: Medium
     */

@@ -10,6 +10,8 @@ import static org.junit.Assert.assertTrue;
 public class FactorCombinations {
     /*
         Factor Combinations
+        Leetcode #254
+        https://leetcode.com/discuss/questions/oj/factor-combinations?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/5068718.html
         Difficulty: Medium
      */

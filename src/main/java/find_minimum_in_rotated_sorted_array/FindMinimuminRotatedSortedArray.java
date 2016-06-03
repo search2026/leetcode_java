@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class FindMinimuminRotatedSortedArray {
     /*
         Find Minimum in Rotated Sorted Array
+        Leetcode #153
         https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
         Difficulty: Medium
      */
@@ -34,6 +35,7 @@ public class FindMinimuminRotatedSortedArray {
 
     /*
         Find Minimum in Rotated Sorted Array II
+        Leetcode #154
         https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
         Difficulty: Hard
      */

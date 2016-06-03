@@ -56,7 +56,7 @@ public class TwoSum {
 
     /*
         Two Sum III Data Structure
-       http://www.programcreek.com/2014/03/two-sum-iii-data-structure-design-java/
+        http://www.programcreek.com/2014/03/two-sum-iii-data-structure-design-java/
         Difficulty: Medium
      */
     public class Solution_3 {

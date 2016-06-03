@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class CountingBits {
     /*
         Counting Bits
+        Leetcode #338
         https://leetcode.com/problems/counting-bits/
         Difficulty: Medium
      */

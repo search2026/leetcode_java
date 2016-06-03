@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class HIndex {
     /*
         H-Index
+        Leetcode #274
         https://leetcode.com/problems/h-index/
         Difficulty: Medium
     */
@@ -32,6 +33,7 @@ public class HIndex {
 
     /*
         H-Index II
+        leetcode #275
         https://leetcode.com/problems/h-index-ii/
         Difficulty: Medium
     */

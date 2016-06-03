@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class JumpGame {
     /*
         Jump Game - Dynamic Programming
+        leetcode #55
         https://leetcode.com/problems/jump-game/
         Difficulty: Medium
      */
@@ -26,6 +27,7 @@ public class JumpGame {
 
     /*
         Jump Game - Checking "0" points
+        leetcode #55
         https://leetcode.com/problems/jump-game/
         Difficulty: Medium
     */
@@ -52,6 +54,7 @@ public class JumpGame {
 
     /*
         Jump Game II
+        Leetcode #45
         https://leetcode.com/problems/jump-game-ii/
         Difficulty: Hard
     */

@@ -13,6 +13,8 @@ import static org.junit.Assert.assertTrue;
 public class BinaryTreeVerticalOrderTraversal {
     /*
         Binary Tree Vertical Order Traversal
+        Leetcode #314
+        https://leetcode.com/discuss/questions/oj/binary-tree-vertical-order-traversal?sort=votes
         http://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
         Difficulty: Medium
      */
