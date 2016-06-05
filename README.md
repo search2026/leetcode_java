@@ -36,6 +36,10 @@ If you write some unit tests, you can use the following command to run them.
 
 ## Update Logs
 
+6/4/2016
+* Update leetcode questions to #353
+* Add some unit tests
+
 12/20/2015
 * Update all leetcode coding questions (Up to #319)
 * Few codes have unit tests
