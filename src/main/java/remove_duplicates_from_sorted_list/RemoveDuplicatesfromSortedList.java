@@ -31,7 +31,7 @@ public class RemoveDuplicatesfromSortedList {
     }
 
     /*
-        Remove Duplicates from Sorted List
+        Remove Duplicates from Sorted List II
         https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
         leetcode 82
         Difficulty: Medium

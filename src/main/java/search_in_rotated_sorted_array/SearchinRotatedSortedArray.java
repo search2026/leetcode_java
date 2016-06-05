@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class SearchinRotatedSortedArray {
     /*
         Search in rotated Sorted Array
+        Leetcode #33
         https://leetcode.com/problems/search-in-rotated-sorted-array/
         Difficulty: Medium
      */
@@ -39,6 +40,7 @@ public class SearchinRotatedSortedArray {
 
     /*
         Search in rotated Sorted Array II - Duplicates are allowed
+        Leetcode #81
         https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
         Difficulty: Medium
     */

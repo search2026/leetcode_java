@@ -9,8 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class StringtoIntegeratoi {
     /*
         String to Integer (atoi)
+        Leetcode #8
         https://leetcode.com/problems/string-to-integer-atoi/
-        leetcode 8
         Difficulty: Easy
      */
     public class Solution {

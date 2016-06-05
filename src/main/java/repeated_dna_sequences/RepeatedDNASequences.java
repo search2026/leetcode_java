@@ -12,8 +12,8 @@ import static org.junit.Assert.assertEquals;
 public class RepeatedDNASequences {
     /*
         Repeated DNA Sequences
+        Leetcode #187
         https://leetcode.com/problems/repeated-dna-sequences/
-        leetcode 187
         Difficulty: Medium
      */
     public class Solution {

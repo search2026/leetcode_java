@@ -10,8 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class MultiplyStrings {
     /*
         Multiply Strings
+        leetcode #43
         https://leetcode.com/problems/multiply-strings/
-        leetcode 43
         Difficulty: Medium
      */
     public class Solution {

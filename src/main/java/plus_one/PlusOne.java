@@ -7,8 +7,8 @@ import static org.junit.Assert.assertArrayEquals;
 public class PlusOne {
     /*
         Plus One
+        Leetcode 66
         https://leetcode.com/problems/plus-one/
-        leetcode 66
         Difficulty: Easy
      */
     public class Solution {

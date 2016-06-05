@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class MaximumDepthofBinaryTree {
     /*
         Maximum Depth of Binary Tree
+        Leetcode 104
         https://leetcode.com/problems/maximum-depth-of-binary-tree/
-        leetcode 104
         Difficulty: Easy
      */
     public class Solution {

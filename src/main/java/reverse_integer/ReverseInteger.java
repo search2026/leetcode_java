@@ -9,8 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class ReverseInteger {
     /*
         Reverse Integer
+        Leetcode #7
         https://leetcode.com/problems/reverse-integer/
-        leetcode 7
         Difficulty: Easy
      */
     public class Solution {

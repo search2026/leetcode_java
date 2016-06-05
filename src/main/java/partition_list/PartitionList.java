@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class PartitionList {
     /*
         Partition List
+        Leetcode #86
         https://leetcode.com/problems/partition-list/
-        leetcode 86
         Difficulty: Medium
      */
     public class Solution {

@@ -11,6 +11,8 @@ import static org.junit.Assert.assertTrue;
 public class VerifyPreorderSequenceinBinarySearchTree {
     /*
         Verify Preorder Sequence in Binary Search Tree
+        Leetcode #255
+        https://leetcode.com/discuss/questions/oj/verify-preorder-sequence-in-binary-search-tree?sort=votes
         http://buttercola.blogspot.com/2015/09/leetcode-verify-preorder-sequence-in.html
         Difficulty: Easy
      */
@@ -41,10 +43,12 @@ public class VerifyPreorderSequenceinBinarySearchTree {
 
     /*
         Verify Preorder Sequence in Binary Search Tree constant space
+        Leetcode #255
+        https://leetcode.com/discuss/questions/oj/verify-preorder-sequence-in-binary-search-tree?sort=votes
         http://buttercola.blogspot.com/2015/09/leetcode-verify-preorder-sequence-in.html
         Difficulty: Easy
    */
-    public class SolutionII {
+    public class Solution_2 {
         public boolean verifyPreorder(int[] preorder) {
             if (preorder == null || preorder.length <= 1) {
                 return true;
@@ -71,6 +75,8 @@ public class VerifyPreorderSequenceinBinarySearchTree {
 
     /*
         Verify Preorder Sequence in Binary Search Tree using one stack
+        Leetcode #255
+        https://leetcode.com/discuss/questions/oj/verify-preorder-sequence-in-binary-search-tree?sort=votes
         http://buttercola.blogspot.com/2015/09/leetcode-verify-preorder-sequence-in.html
         Difficulty: Easy
    */

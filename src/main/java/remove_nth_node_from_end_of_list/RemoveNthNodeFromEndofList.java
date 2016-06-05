@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class RemoveNthNodeFromEndofList {
     /*
         Remove Nth Node From End of List
+        Leetcode #19
         https://leetcode.com/problems/remove-nth-node-from-end-of-list/
-        leetcode 19
         Difficulty: Easy
      */
     public class Solution {

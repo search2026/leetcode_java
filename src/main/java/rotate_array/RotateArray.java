@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class RotateArray {
     /*
         Rotate Array
+        Leetcode #189
         https://leetcode.com/problems/rotate-array/
-        leetcode 189
         Difficulty: Easy
      */
     public class Solution {

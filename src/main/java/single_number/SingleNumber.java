@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class SingleNumber {
     /*
         Single Number
+        Leetcode #136
         https://leetcode.com/problems/single-number/
         Difficulty: Medium
      */
@@ -22,6 +23,7 @@ public class SingleNumber {
 
     /*
         Single Number II
+        Leetcode #137
         https://leetcode.com/problems/single-number-ii/
         Difficulty: Medium
      */
@@ -47,6 +49,7 @@ public class SingleNumber {
 
     /*
         Single Number III
+        Leetcode #260
         https://leetcode.com/problems/single-number-iii/
         Difficulty: Medium
      */

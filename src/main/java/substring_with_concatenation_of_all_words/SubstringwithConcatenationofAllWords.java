@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class SubstringwithConcatenationofAllWords {
     /*
         Substring with Concatenation of All Words - Hashmap
+        Leetcode #60
         https://leetcode.com/problems/substring-with-concatenation-of-all-words/
         Difficulty: Hard
      */
@@ -50,10 +51,11 @@ public class SubstringwithConcatenationofAllWords {
     }
 
     /*
-    Substring with Concatenation of All Words - Sliding Window
-    https://leetcode.com/problems/substring-with-concatenation-of-all-words/
-    Difficulty: Hard
- */
+        Substring with Concatenation of All Words - Sliding Window
+        Leetcode #60
+        https://leetcode.com/problems/substring-with-concatenation-of-all-words/
+        Difficulty: Hard
+     */
     public class Solution_2 {
         public List<Integer> findSubstring(String s, String[] words) {
             HashMap<String, Integer> dict = new HashMap<String, Integer>();

@@ -12,7 +12,8 @@ import static org.junit.Assert.assertTrue;
 public class WordPattern {
     /*
         Word Pattern
-       https://leetcode.com/problems/word-pattern/
+        Leetcode #290
+        https://leetcode.com/problems/word-pattern/
         Difficulty: Easy
     */
     public class Solution {
@@ -36,6 +37,8 @@ public class WordPattern {
 
     /*
         Word Pattern II
+        Leetcode #291
+        https://leetcode.com/discuss/questions/oj/word-pattern-ii
         http://www.cnblogs.com/EdwardLiu/p/5081358.html
         Difficulty: Medium
     */

@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class NumberofIslands {
     /*
         Number of Islands - Flood Fill
+        Leetcode #200
         https://leetcode.com/problems/number-of-islands/
         Difficulty: Medium
     */
@@ -43,6 +44,7 @@ public class NumberofIslands {
 
     /*
         Number of Islands - Union-Find
+        Leetcode #200
         https://leetcode.com/problems/number-of-islands/
         Difficulty: Medium
     */
@@ -157,6 +159,8 @@ public class NumberofIslands {
 
     /*
       Number of Islands II - Union Find
+      Leetcode #305
+      https://leetcode.com/discuss/questions/oj/number-of-islands-ii?sort=votes
       http://www.cnblogs.com/EdwardLiu/p/5087633.html
       Difficulty: Hard
   */

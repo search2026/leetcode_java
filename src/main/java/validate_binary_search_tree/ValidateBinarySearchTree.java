@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class ValidateBinarySearchTree {
     /*
         Validate Binary Search Tree
+        Leetcode #98
         https://leetcode.com/problems/validate-binary-search-tree/
         Difficulty: Medium
      */

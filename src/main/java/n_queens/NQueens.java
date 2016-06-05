@@ -11,6 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class NQueens {
     /*
         N-Queens
+        Leetcode #51
         https://leetcode.com/problems/n-queens/
         Difficulty: Hard
      */
@@ -55,9 +56,10 @@ public class NQueens {
     }
 
     /*
-         N-Queens II - Mathmatic
-         https://leetcode.com/problems/n-queens_ii/
-         Difficulty: Hard
+        N-Queens II - Mathmatic
+        Leetcode #52
+        https://leetcode.com/problems/n-queens_ii/
+        Difficulty: Hard
     */
     public class Solution_2 {
         private int search(int row, int left, int right, int upper) {
@@ -80,9 +82,10 @@ public class NQueens {
     }
 
     /*
-         N-Queens II - Backtracking
-         https://leetcode.com/problems/n-queens_ii/
-         Difficulty: Hard
+        N-Queens II - Backtracking
+        Leetcode #52
+        https://leetcode.com/problems/n-queens_ii/
+        Difficulty: Hard
     */
     public class Solution_3 {
         private boolean validate(int row, int[] ColForRow) {

@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class RemoveDuplicatesfromSortedArray {
     /*
         Remove Duplicates from Sorted Array
+        Leetcode #80
         https://leetcode.com/problems/remove-duplicates-from-sorted-array/
-        leetcode 26
         Difficulty: Easy
      */
     public class Solution {
@@ -27,9 +27,9 @@ public class RemoveDuplicatesfromSortedArray {
     }
 
     /*
-        Remove Duplicates from Sorted Array
-        hhttps://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
-        leetcode 80
+        Remove Duplicates from Sorted Array II
+        Leetcode #81
+        https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
         Difficulty: Medium
      */
     public class Solution_2 {

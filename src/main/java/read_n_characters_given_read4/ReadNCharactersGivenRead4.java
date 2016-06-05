@@ -2,7 +2,13 @@ package read_n_characters_given_read4;
 
 
 public class ReadNCharactersGivenRead4 {
-    // Read N Characters Given Read4
+    /*
+        Read N Characters Given Read4
+        Leetcode #157
+        https://leetcode.com/discuss/questions/oj/read-n-characters-given-read4?sort=votes
+        http://www.danielbit.com/blog/puzzle/leetcode/leetcode-read-n-characters-given-read4
+        Difficulty: Hard
+      */
     public class Solution {
         /**
          * @param buf Destination buffer
@@ -24,8 +30,14 @@ public class ReadNCharactersGivenRead4 {
         }
     }
 
-    // Read N Characters Given Read4 II
-    public class SolutionII {
+    /*
+        Read N Characters Given Read4 II
+        Leetcode #158
+        https://leetcode.com/discuss/questions/oj/read-n-characters-given-read4-ii-call-multiple-times?sort=votes
+        http://blog.csdn.net/u013325815/article/details/41892619
+        Difficulty: Hard
+      */
+    public class Solution_2 {
         private char[] buffer = new char[4];
         int offset = 0, bufsize = 0;
 

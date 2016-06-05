@@ -9,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class NumberofConnectedComponentsinanUndirectedGraph {
     /*
         Number of Connected Components in an Undirected Graph - BFS/DFS
+        Leetcode #323
+        https://leetcode.com/discuss/questions/oj/number-of-connected-components-in-an-undirected-graph?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/5088502.html
         Difficulty: Medium
      */
@@ -62,6 +64,8 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
 
     /*
         Number of Connected Components in an Undirected Graph - Union Find
+        Leetcode #323
+        https://leetcode.com/discuss/questions/oj/number-of-connected-components-in-an-undirected-graph?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/5088502.html
         Difficulty: Medium
      */
@@ -92,6 +96,8 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
 
     /*
         Number of Connected Components in an Undirected Graph
+        Leetcode #323
+        https://leetcode.com/discuss/questions/oj/number-of-connected-components-in-an-undirected-graph?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/5088502.html
         Difficulty: Medium
      */

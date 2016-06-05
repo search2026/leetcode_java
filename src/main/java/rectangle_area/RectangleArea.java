@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class RectangleArea {
     /*
         Rectangle Area
+        Leetcode #223
         https://leetcode.com/problems/rectangle-area/
         Difficulty: Easy
      */

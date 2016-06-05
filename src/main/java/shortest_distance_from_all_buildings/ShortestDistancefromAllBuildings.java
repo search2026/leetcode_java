@@ -12,6 +12,8 @@ import static org.junit.Assert.assertEquals;
 public class ShortestDistancefromAllBuildings {
     /*
         Shortest Distance From All Building
+        Leetcode #317
+        https://leetcode.com/discuss/questions/oj/shortest-distance-from-all-buildings?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/5094091.html
         Difficulty: Hard
      */
@@ -71,6 +73,8 @@ public class ShortestDistancefromAllBuildings {
 
     /*
         Shortest Distance From All Building
+        Leetcode #317
+        https://leetcode.com/discuss/questions/oj/shortest-distance-from-all-buildings?sort=votes
         https://leetcode.com/discuss/questions/oj/shortest-distance-from-all-buildings
         Difficulty: Hard
      */

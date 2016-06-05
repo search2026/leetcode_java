@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class Triangle {
     /*
         Triangle
+        Leetcode #120
         https://leetcode.com/problems/triangle/
         Difficulty: Medium
      */

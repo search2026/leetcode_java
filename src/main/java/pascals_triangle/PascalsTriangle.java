@@ -10,8 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class PascalsTriangle {
     /*
         Pascals Triangle
+        Leetcode #118
         https://leetcode.com/problems/pascals-triangle/
-        leetcode 118
         Difficulty: Easy
      */
     public class Solution {
@@ -39,8 +39,8 @@ public class PascalsTriangle {
 
     /*
         Pascals Triangle
+        Leetcode #118
         https://leetcode.com/problems/pascals-triangle/
-        leetcode 118
         Difficulty: Easy
      */
     public class Solution_2 {

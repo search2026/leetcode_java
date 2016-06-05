@@ -11,6 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class Subsets {
     /*
         Subsets - Recursion
+        Leetcode #78
         https://leetcode.com/problems/subsets/
         Difficulty: Medium
      */
@@ -42,6 +43,7 @@ public class Subsets {
 
     /*
         Subsets - Iterative
+        Leetcode #78
         https://leetcode.com/problems/subsets/
         Difficulty: Medium
      */
@@ -68,6 +70,7 @@ public class Subsets {
 
     /*
         Subsets II - Recursion
+        Leetcode #90
         https://leetcode.com/problems/subsets_ii/
         Difficulty: Medium
     */
@@ -103,6 +106,7 @@ public class Subsets {
 
     /*
         Subsets II - Iterative
+        Leetcode #90
         https://leetcode.com/problems/subsets_ii/
         Difficulty: Medium
     */

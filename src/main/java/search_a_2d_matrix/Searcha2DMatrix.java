@@ -6,7 +6,8 @@ import static org.junit.Assert.assertEquals;
 
 public class Searcha2DMatrix {
     /*
-        Search a 2D Matrix II
+        Search a 2D Matrix
+        Leetcode #74
         https://leetcode.com/problems/search-a-2d-matrix/
         Difficulty: Medium
     */
@@ -35,6 +36,7 @@ public class Searcha2DMatrix {
 
     /*
         Search a 2D Matrix II
+        Leetcode #240
         https://leetcode.com/problems/search-a-2d-matrix-ii/
         Difficulty: Medium
     */

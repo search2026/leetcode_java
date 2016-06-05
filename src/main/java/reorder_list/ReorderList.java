@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class ReorderList {
     /*
         Reorder List
+        Leetcode #143
         https://leetcode.com/problems/reorder-list/
-        leetcode 143
         Difficulty: Medium
      */
     public class Solution {

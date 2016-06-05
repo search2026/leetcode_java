@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class SearchInsertPosition {
     /*
         Search Insert Position
+        Leetcode #35
         https://leetcode.com/problems/search-insert-position/
-        leetcode 35
         Difficulty: Medium
      */
     public class Solution {

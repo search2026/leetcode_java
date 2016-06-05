@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class WordSearch {
     /*
         Word Search
+        Leetcode #79
         https://leetcode.com/problems/word-search/
         Difficulty: Medium
     */
@@ -53,6 +54,7 @@ public class WordSearch {
 
     /*
         Word Search II
+        Leetcode #212
         https://leetcode.com/problems/word-search-ii/
         Difficulty: Medium
     */

@@ -11,6 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class Permutations {
     /*
         Permutations - Recursive
+        Leetcode #46
         https://leetcode.com/problems/permutations/
         Difficulty: Medium
     */
@@ -44,6 +45,7 @@ public class Permutations {
 
     /*
         Permutations - Insert
+        Leetcode #46
         https://leetcode.com/problems/permutations/
         Difficulty: Medium
     */
@@ -74,6 +76,7 @@ public class Permutations {
 
     /*
         Permutations II
+        Leetcode #47
         https://leetcode.com/problems/permutations-ii/
         Difficulty: Medium
     */

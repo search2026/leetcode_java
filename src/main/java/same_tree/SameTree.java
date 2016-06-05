@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class SameTree {
     /*
         Same Tree
+        Leetcode #100
         https://leetcode.com/problems/same-tree/
-        leetcode 100
         Difficulty: Easy
      */
     public class Solution {

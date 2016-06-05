@@ -10,8 +10,9 @@ import static org.junit.Assert.assertEquals;
 public class MissingRanges {
     /*
         Missing Ranges
+        Leetcode #163
+        https://leetcode.com/discuss/questions/oj/missing-ranges?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/4249626.html
-        leetcode 163
         Difficulty: Medium
      */
     public class Solution {

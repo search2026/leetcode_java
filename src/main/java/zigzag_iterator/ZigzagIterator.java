@@ -8,6 +8,8 @@ import static org.junit.Assert.assertEquals;
 
 /*
     Zigzag Iterator
+    Leetcode #281
+    https://leetcode.com/discuss/questions/oj/zigzag-iterator
     http://buttercola.blogspot.com/2015/09/leetocode-zigzag-iterator.html
     Difficulty: Medium
  */

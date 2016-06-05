@@ -6,9 +6,10 @@ import static org.junit.Assert.assertEquals;
 
 public class ShortestPalindrome {
     /*
-    Shortest Palindrome
-    https://leetcode.com/problems/shortest-palindrome/
-    Difficulty: Hard
+        Shortest Palindrome
+        Leetcode #214
+        https://leetcode.com/problems/shortest-palindrome/
+        Difficulty: Hard
     */
     public class Solution {
         public String shortestPalindrome(String s) {

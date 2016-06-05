@@ -1,3 +1,5 @@
+package maximal_square;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -5,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class MaximalSquare {
     /*
         Maximal Square
+        Leetcode #221
         https://leetcode.com/problems/maximal-square/
         Difficulty: Medium
      */

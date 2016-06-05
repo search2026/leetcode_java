@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class MinStack {
     /*
         Min Stack
+        Leetcode #155
         https://leetcode.com/problems/min-stack/
-        leetcode 155
         Difficulty: Easy
      */
     public static class IntStack {

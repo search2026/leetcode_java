@@ -12,6 +12,8 @@ import static org.junit.Assert.assertEquals;
 public class UniqueWordAbbreviation {
     /*
         Unique Word Abbreviation
+        Leetcode #288
+        https://leetcode.com/discuss/questions/oj/unique-word-abbreviation
         http://buttercola.blogspot.com/2015/10/leetcode-unique-word-abbreviation.html
         Difficulty: Medium
      */

@@ -10,8 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class MajorityElement {
     /*
         Majority Element
+        leetcode #169
         https://leetcode.com/problems/majority-element/
-        leetcode 169
         Difficulty: Easy
      */
     public class Solution {

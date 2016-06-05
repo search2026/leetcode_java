@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class Powxn {
     /*
         Pow(x, n)
+        Leetcode #50
         https://leetcode.com/problems/powx-n/
-        leetcode 50
         Difficulty: Medium
      */
     public class Solution {

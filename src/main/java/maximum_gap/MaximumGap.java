@@ -9,8 +9,8 @@ import static org.junit.Assert.*;
 public class MaximumGap {
     /*
         Maximum Gap
+        Leetcode #164
         https://leetcode.com/problems/maximum-gap/
-        leetcode 164
         Difficulty: Hard
      */
     public class Solution {

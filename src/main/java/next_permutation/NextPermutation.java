@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class NextPermutation {
     /*
         Next Permutation
+        Leetcode #31
         https://leetcode.com/problems/next-permutation/
         Difficulty: Medium
      */

@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class ReverseLinkedList {
     /*
         Reverse Linked List
+        Leetcode #206
         https://leetcode.com/problems/reverse-linked-list/
         Difficulty: Easy
      */
@@ -26,6 +27,7 @@ public class ReverseLinkedList {
 
     /*
         Reverse Linked List II
+        Leetcode #92
         https://leetcode.com/problems/reverse-linked-list-ii/
         Difficulty: Medium
      */

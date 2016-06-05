@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class PowerofThree {
     /*
         Power of Three - Divide by Three
+        Leetcode #326
         https://leetcode.com/problems/power-of-three/
         Difficulty: Easy
      */
@@ -24,6 +25,7 @@ public class PowerofThree {
 
     /*
         Power of Three - Recursively
+        Leetcode #326
         https://leetcode.com/problems/power-of-three/
         Difficulty: Easy
      */

@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class SortColors {
     /*
         Sort Colors
+        Leetcode #75
         https://leetcode.com/problems/sort-colors/
-        leetcode 75
         Difficulty: Medium
      */
     public class Solution {

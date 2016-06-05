@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class UniquePaths {
     /*
         Unique Path
+        Leetcode #62
         https://leetcode.com/problems/unique-paths/
         Difficulty: Medium
      */
@@ -28,6 +29,7 @@ public class UniquePaths {
 
     /*
         Unique Path II
+        Leetcode #63
         https://leetcode.com/problems/unique-paths-ii/
         Difficulty: Medium
      */

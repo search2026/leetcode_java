@@ -9,8 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class ValidParentheses {
     /*
         Valid Parentheses
+        Leetcode #20
         https://leetcode.com/problems/valid-parentheses/
-        leetcode 20
         Difficulty: Easy
      */
     public class Solution {

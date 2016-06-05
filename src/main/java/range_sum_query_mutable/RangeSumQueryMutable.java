@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class RangeSumQueryMutable {
     /*
         Range Summary Query Mutable
+        Leetcode #307
         https://leetcode.com/problems/range-sum-query-mutable/
         Difficulty: Medium
      */
@@ -66,7 +67,9 @@ public class RangeSumQueryMutable {
 
     /*
         Range Sum Query 2D - Mutable
-        https://leetcode.com/problems/range-sum-query-immutable/
+        Leetcode #308
+        https://leetcode.com/discuss/questions/oj/range-sum-query-2d-mutable?sort=votes
+        http://blog.csdn.net/u012175043/article/details/50093933
         Difficulty: Hard
     */
     public class NumMatrix {

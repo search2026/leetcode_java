@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 public class ValidSudoku {
     /*
         Valid Sudoku
+        Leetcode #36
         https://leetcode.com/problems/valid-sudoku/
         Difficulty: Easy
      */

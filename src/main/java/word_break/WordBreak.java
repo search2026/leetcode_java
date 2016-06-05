@@ -10,6 +10,7 @@ import static org.junit.Assert.assertTrue;
 public class WordBreak {
     /*
         Word Break
+        Leetcode #139
         https://leetcode.com/problems/word-break/
         Difficulty: Medium
      */
@@ -33,6 +34,7 @@ public class WordBreak {
 
     /*
         Word Break II - Backtracking
+        Leetcode #140
         https://leetcode.com/problems/word-break-ii/
         Difficulty: Hard
      */

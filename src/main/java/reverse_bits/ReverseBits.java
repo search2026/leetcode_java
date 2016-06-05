@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class ReverseBits {
     /*
         Reverse Bits
+        Leetcode #190
         https://leetcode.com/problems/reverse-bits/
-        leetcode 190
         Difficulty: Easy
      */
     public class Solution {

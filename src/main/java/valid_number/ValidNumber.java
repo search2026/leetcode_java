@@ -7,11 +7,10 @@ import static org.junit.Assert.assertEquals;
 public class ValidNumber {
     /*
         Valid Number
+        leetcode #65
         https://leetcode.com/problems/valid-number/
-        leetcode 65
         Difficulty: Hard
      */
-
     public enum Status {
         INIT, SYMBOL, INT, DOT, FRAC, E, SYMBOL_E, INT_E
     }

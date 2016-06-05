@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class MinimumPathSum {
     /*
         Minimum Path Sum
+        Leetcode #54
         https://leetcode.com/problems/minimum-path-sum/
         Difficulty: Medium
      */
@@ -25,6 +26,12 @@ public class MinimumPathSum {
         }
     }
 
+    /*
+        Minimum Path Sum
+        Leetcode #54
+        https://leetcode.com/problems/minimum-path-sum/
+        Difficulty: Medium
+     */
     public class Solution_2 {
         public int minPathSum(int[][] grid) {
             if (grid == null || grid.length == 0 || grid[0].length == 0)

@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class RemoveLinkedListElements {
     /*
         Remove Linked List Elements
+        Leetcode #203
         https://leetcode.com/problems/remove-linked-list-elements/
-        leetcode 203
         Difficulty: Easy
      */
     public class Solution {

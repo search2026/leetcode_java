@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
 public class SparseMatrixMultiplication {
     /*
         Sparse Matrix Multiplication
+        Leetcode #311
+        https://leetcode.com/discuss/questions/oj/sparse-matrix-multiplication?sort=votes
         http://blog.csdn.net/u012175043/article/details/50093937
         Difficulty: Easy
      */

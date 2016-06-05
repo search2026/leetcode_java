@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class StrobogrammaticNumber {
     /*
         Strobogrammtic Number
+        Leetcode #246
         http://buttercola.blogspot.com/2015/08/leetcode-strobogrammatic-number.html
         Difficulty: Easy
      */
@@ -50,6 +51,7 @@ public class StrobogrammaticNumber {
 
     /*
         Strobogrammtic Number II
+        Leetcode #247
         http://buttercola.blogspot.com/2015/08/leetcode-strobogrammatic-number-ii.html
         Difficulty: Medium
      */
@@ -140,6 +142,7 @@ public class StrobogrammaticNumber {
 
     /*
         Strobogrammtic Number III
+        Leetcode #248
         http://buttercola.blogspot.com/2015/09/leetcode-strobogrammatic-number-iii.html
         Difficulty: Hard
      */

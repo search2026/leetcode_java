@@ -7,8 +7,8 @@ import static org.junit.Assert.*;
 public class PalindromeNumber {
     /*
         Palindrome Number
+        Leetcode #9
         https://leetcode.com/problems/palindrome-number/
-        leetcode 9
         Difficulty: Easy
      */
     public class Solution {
@@ -27,8 +27,8 @@ public class PalindromeNumber {
 
     /*
         Palindrome Number
+        Leetcode #9
         https://leetcode.com/problems/palindrome-number/
-        leetcode 9
         Difficulty: Easy
      */
     public class Solution_2 {

@@ -7,6 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class WiggleSort {
     /*
         Wiggle Sort
+        Leetcode #280
+        https://leetcode.com/discuss/questions/oj/wiggle-sort?sort=votes
         http://buttercola.blogspot.com/2015/09/leetcode-wiggle-sort.html
         Difficulty: Medium
      */
@@ -38,6 +40,8 @@ public class WiggleSort {
 
     /*
         Wiggle Sort II
+        Leetcode #324
+        https://leetcode.com/discuss/questions/oj/wiggle-sort-ii?sort=votes
         https://leetcode.com/problems/wiggle-sort-ii/
         Difficulty: Medium
    */
