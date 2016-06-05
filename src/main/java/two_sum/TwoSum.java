@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class TwoSum {
     /*
         Two Sum
+        Leetcode #1
         https://leetcode.com/problems/two-sum/
         Difficulty: Medium
      */
@@ -27,8 +28,10 @@ public class TwoSum {
     }
 
     /*
-        Two Sum II Input Array is sorted
-        http://www.programcreek.com/2014/03/two-sum-ii-input-array-is-sorted-java/
+        Two Sum II
+        Leetcode #167
+        https://leetcode.com/discuss/oj/two-sum-ii-input-array-is-sorted
+        http://www.cnblogs.com/ganganloveu/p/4198968.html
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -56,7 +59,9 @@ public class TwoSum {
 
     /*
         Two Sum III Data Structure
-        http://www.programcreek.com/2014/03/two-sum-iii-data-structure-design-java/
+        Leetcode #170
+        https://leetcode.com/discuss/questions/oj/two-sum-iii-data-structure-design?sort=votes
+        http://www.cnblogs.com/EdwardLiu/p/4252598.html
         Difficulty: Medium
      */
     public class Solution_3 {

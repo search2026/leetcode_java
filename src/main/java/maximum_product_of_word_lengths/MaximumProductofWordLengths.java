@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class MaximumProductofWordLengths {
     /*
         Maximum Product of Word Lengths
+        Leetcode #318
         https://leetcode.com/problems/maximum-product-of-word-lengths/
         Difficulty: Medium
      */

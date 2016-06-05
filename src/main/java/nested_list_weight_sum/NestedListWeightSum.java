@@ -11,6 +11,7 @@ public class NestedListWeightSum {
     /*
         Nested List Weight Sum
         Leetcode #339
+        https://leetcode.com/discuss/questions/oj/nested-list-weight-sum
         http://www.cnblogs.com/grandyang/p/5340305.html
         Difficulty: Easy
      */
@@ -36,6 +37,7 @@ public class NestedListWeightSum {
     /*
         Nested List Weight Sum
         Leetcode #339
+        https://leetcode.com/discuss/questions/oj/nested-list-weight-sum
         https://leetcode.com/discuss/94956/2ms-easy-to-understand-java-solution
         Difficulty: Easy
      */

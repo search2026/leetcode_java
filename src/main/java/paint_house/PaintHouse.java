@@ -7,6 +7,8 @@ import static org.junit.Assert.assertTrue;
 public class PaintHouse {
     /*
         Paint House - Time O(n*k*k) Solution
+        Leetcode #256
+        https://leetcode.com/discuss/questions/oj/paint-house?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/5063170.html
         Difficulty: Medium
     */
@@ -36,6 +38,8 @@ public class PaintHouse {
 
     /*
         Paint House
+        Leetcode #256
+        https://leetcode.com/discuss/questions/oj/paint-house?sort=votes
         https://leetcode.com/discuss/51721/simple-java-dp-solution?show=51755#a51755
         Difficulty: Medium
     */
@@ -55,6 +59,8 @@ public class PaintHouse {
 
     /*
         Paint House II - Time O(n*K) Solution
+        Leetcode #265
+        https://leetcode.com/discuss/oj/paint-house-ii
         http://buttercola.blogspot.com/2015/09/leetcode-paint-house-ii.html
         Difficulty: Hard
     */

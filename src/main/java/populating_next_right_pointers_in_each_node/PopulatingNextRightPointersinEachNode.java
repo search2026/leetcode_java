@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class PopulatingNextRightPointersinEachNode {
     /*
         Populating Next Right Pointers in Each Node
+        Leetcode #116
         https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
         Difficulty: Medium
      */
@@ -32,6 +33,7 @@ public class PopulatingNextRightPointersinEachNode {
 
     /*
         Populating Next Right Pointers in Each Node II
+        Leetcode #117
         https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
         Difficulty: Hard
      */

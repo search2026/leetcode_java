@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class ZigZagConversion {
     /*
         ZigZag Conversion
+        Leetcode #6
         https://leetcode.com/problems/zigzag-conversion/
-        leetcode 6
         Difficulty: Easy
      */
     public class Solution {

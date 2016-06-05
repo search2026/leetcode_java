@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class WildcardMatching {
     /*
         Wildcard Matching - Dynamic Programming
+        Leetcode #44
         https://leetcode.com/problems/wildcard-matching/
         Difficulty: Hard
      */
@@ -36,6 +37,7 @@ public class WildcardMatching {
 
     /*
         Wildcard Matching - Greedy Search
+        Leetcode #44
         https://leetcode.com/problems/wildcard-matching/
         Difficulty: Hard
      */

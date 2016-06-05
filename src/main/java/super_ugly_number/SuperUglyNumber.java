@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class SuperUglyNumber {
     /*
         Super Ugly Number
+        Leetcode #313
         https://leetcode.com/problems/super-ugly-number/
         Difficulty: Medium
      */

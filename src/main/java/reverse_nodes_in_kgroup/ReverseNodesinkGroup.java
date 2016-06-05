@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class ReverseNodesinkGroup {
     /*
         Reverse Nodes in K Group
+        Leetcode #25
         https://leetcode.com/problems/reverse-nodes-in-k-group/
-        leetcode 25
         Difficulty: Hard
      */
     public class Solution {

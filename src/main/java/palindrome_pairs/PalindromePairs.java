@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class PalindromePairs {
     /*
         Palindrome Pairs - HashMap
+        Leetcode #336
         https://leetcode.com/problems/palindrome-pairs/
         Difficulty: Hard
      */
@@ -40,6 +41,7 @@ public class PalindromePairs {
 
     /*
         Palindrome Pairs - Trie
+        Leetcode #336
         https://leetcode.com/problems/palindrome-pairs/
         https://leetcode.com/discuss/91429/solution-with-structure-total-number-words-average-length
         Difficulty: Hard

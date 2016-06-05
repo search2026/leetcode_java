@@ -10,8 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class TextJustification {
     /*
         Text Justification
+        Leetcode #68
         https://leetcode.com/problems/text-justification/
-        leetcode 68
         Difficulty: Hard
      */
     public class Solution {

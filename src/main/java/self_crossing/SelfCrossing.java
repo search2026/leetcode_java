@@ -8,8 +8,8 @@ import static org.junit.Assert.assertTrue;
 public class SelfCrossing {
     /*
         Self Crossing
+        Leetcode #335
         https://leetcode.com/problems/self-crossing/
-        leetcode 335
         Difficulty: Medium
      */
     public class Solution {

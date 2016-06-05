@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class PalindromePartitioning {
     /*
         Palindrome Partitioning - Backtracking
+        Leetcode #131
         https://leetcode.com/problems/palindrome-partitioning/
         Difficulty: Medium
      */
@@ -50,6 +51,7 @@ public class PalindromePartitioning {
 
     /*
         Palindrome Partitioning - Dynamic Programming
+        Leetcode #131
         https://leetcode.com/problems/palindrome-partitioning/
         Difficulty: Medium
      */
@@ -93,6 +95,7 @@ public class PalindromePartitioning {
 
     /*
         Palindrome Partitioning II
+        Leetcode #132
         https://leetcode.com/problems/palindrome-partitioning-ii/
         Difficulty: Medium
      */

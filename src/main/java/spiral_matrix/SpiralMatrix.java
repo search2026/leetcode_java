@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class SpiralMatrix {
     /*
         Spiral Matrix
+        Leetcode #54
         https://leetcode.com/problems/spiral-matrix/
         Difficulty: Medium
      */
@@ -51,6 +52,7 @@ public class SpiralMatrix {
 
     /*
         Spiral Matrix
+        Leetcode #54
         https://leetcode.com/problems/spiral-matrix/
         Difficulty: Medium
      */
@@ -92,6 +94,7 @@ public class SpiralMatrix {
 
     /*
         Spiral Matrix II
+        Leetcode #59
         https://leetcode.com/problems/spiral-matrix-ii/
         Difficulty: Medium
      */

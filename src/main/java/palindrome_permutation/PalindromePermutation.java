@@ -13,6 +13,8 @@ import static org.junit.Assert.assertTrue;
 public class PalindromePermutation {
     /*
         Palindrome Permutation
+        Leetcode #266
+        https://leetcode.com/discuss/oj/palindrome-permutation
         http://www.cnblogs.com/EdwardLiu/p/5069359.html
         Difficulty: Easy
     */
@@ -53,6 +55,8 @@ public class PalindromePermutation {
 
     /*
         Palindrome Permutation II
+        Leetcode #267
+        https://leetcode.com/discuss/questions/oj/palindrome-permutation-ii
         http://www.cnblogs.com/EdwardLiu/p/5069573.html
         Difficulty: Medium
     */

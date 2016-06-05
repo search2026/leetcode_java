@@ -6,10 +6,11 @@ import static org.junit.Assert.assertEquals;
 
 public class PatchingArray {
     /*
-      Patching Array
-      https://leetcode.com/problems/patching-array/
-      Difficulty: Medium
-   */
+        Patching Array
+        Leetcode #330
+        https://leetcode.com/problems/patching-array/
+        Difficulty: Medium
+    */
     public class Solution {
         public int minPatches(int[] nums, int n) {
             long sum = 0;
@@ -32,10 +33,11 @@ public class PatchingArray {
 
 
     /*
-      Patching Array
-      https://leetcode.com/problems/patching-array/
-      Difficulty: Medium
-    */
+        Patching Array
+        Leetcode #330
+        https://leetcode.com/problems/patching-array/
+        Difficulty: Medium
+     */
     public class Solution_2 {
         public int minPatches(int[] nums, int n) {
             long sum = 1;

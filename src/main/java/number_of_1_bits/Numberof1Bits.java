@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class Numberof1Bits {
     /*
         Number of 1 Bits
+        Leetcode #191
         https://leetcode.com/problems/number-of-1-bits/
-        leetcode 191
         Difficulty: Easy
      */
     public class Solution {

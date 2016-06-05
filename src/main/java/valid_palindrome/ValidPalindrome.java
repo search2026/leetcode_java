@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class ValidPalindrome {
     /*
         Valid Palindrome
+        Leetcode #125
         https://leetcode.com/problems/valid-palindrome/
-        leetcode 125
         Difficulty: Easy
      */
     public class Solution {

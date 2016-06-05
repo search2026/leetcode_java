@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class PerfectSquares {
     /*
         Perfect Squares
+        Leetcode #279
         https://leetcode.com/problems/perfect-squares/
         Difficulty: Medium
      */

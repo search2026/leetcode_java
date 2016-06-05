@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class RangeSumQuery {
     /*
         Range Sum Query - Immutable
+        Leetcode #303
         https://leetcode.com/problems/range-sum-query-immutable/
         Difficulty: Easy
      */
@@ -32,6 +33,7 @@ public class RangeSumQuery {
 
     /*
         Range Sum Query 2D - Immutable
+        Leetcode #304
         https://leetcode.com/problems/range-sum-query-immutable/
         Difficulty: Medium
     */

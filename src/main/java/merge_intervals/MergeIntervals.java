@@ -13,6 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class MergeIntervals {
     /*
         Merge Intervals
+        Leetcode #56
         https://leetcode.com/problems/merge-intervals/
         Difficulty: Hard
      */

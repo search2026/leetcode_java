@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class RemoveElement {
     /*
         Remove Element
+        leetcode #27
         https://leetcode.com/problems/remove-element/
-        leetcode 27
         Difficulty: Easy
      */
     public class Solution {

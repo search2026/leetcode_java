@@ -13,6 +13,8 @@ import static org.junit.Assert.assertFalse;
 public class MeetingRooms {
     /*
         Meeting Rooms
+        Leetcode #252
+        https://leetcode.com/discuss/questions/oj/meeting-rooms?sort=votes
         http://buttercola.blogspot.com/2015/08/leetcode-meeting-rooms.html
         Difficulty: Easy
      */
@@ -42,9 +44,11 @@ public class MeetingRooms {
     }
 
     /*
-       Meeting Rooms II
-       http://buttercola.blogspot.com/2015/08/leetcode-meeting-rooms-ii.html
-       Difficulty: Medium
+        Meeting Rooms II
+        Leetcode #253
+        https://leetcode.com/discuss/questions/oj/meeting-rooms-ii?sort=votes
+        http://buttercola.blogspot.com/2015/08/leetcode-meeting-rooms-ii.html
+        Difficulty: Medium
     */
     public class Solution_2 {
         public int minMeetingRooms(Interval[] intervals) {
@@ -86,9 +90,11 @@ public class MeetingRooms {
     }
 
     /*
-       Meeting Rooms II - Priority Queue
-       http://buttercola.blogspot.com/2015/08/leetcode-meeting-rooms-ii.html
-       Difficulty: Medium
+        Meeting Rooms II - Priority Queue
+        Leetcode #253
+        https://leetcode.com/discuss/questions/oj/meeting-rooms-ii?sort=votes
+        http://buttercola.blogspot.com/2015/08/leetcode-meeting-rooms-ii.html
+        Difficulty: Medium
     */
     public class Solution_3 {
         public class IntervalComparator implements Comparator<Interval> {

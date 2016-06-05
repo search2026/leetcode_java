@@ -9,8 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class ValidAnagram {
     /*
         Valid Anagram
+        Leetcode #242
         https://leetcode.com/problems/valid-anagram/
-        leetcode 242
         Difficulty: Easy
      */
     public class Solution {

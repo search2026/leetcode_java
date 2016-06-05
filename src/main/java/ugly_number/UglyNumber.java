@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class UglyNumber {
     /*
         Ugly Number
+        Leetcode #263
         https://leetcode.com/problems/ugly-number/
         Difficulty: Easy
     */
@@ -41,6 +42,7 @@ public class UglyNumber {
 
     /*
         Ugly Number II
+        Leetcode #264
         https://leetcode.com/problems/ugly-number-ii/
         Difficulty: Medium
     */

@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class MinimumDepthofBinaryTree {
     /*
         Minimum Depth of Binary Tree
+        Leetcode #111
         https://leetcode.com/problems/minimum-depth-of-binary-tree/
-        leetcode 111
         Difficulty: Easy
      */
     public class Solution {

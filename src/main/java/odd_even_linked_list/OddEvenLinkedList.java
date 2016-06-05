@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class OddEvenLinkedList {
     /*
         Odd Even Linked List
+        Leetcode #328
         https://leetcode.com/problems/odd-even-linked-list/
         Difficulty: Easy
      */
@@ -30,6 +31,7 @@ public class OddEvenLinkedList {
 
     /*
         Odd Even Linked List
+        Leetcode #328
         https://leetcode.com/problems/odd-even-linked-list/
         Difficulty: Easy
     */

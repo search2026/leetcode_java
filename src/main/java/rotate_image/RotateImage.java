@@ -8,7 +8,7 @@ public class RotateImage {
     /*
         Rotate Image
         https://leetcode.com/problems/rotate-image/
-        leetcode 48
+        Leetcode #48
         Difficulty: Medium
      */
     public class Solution {

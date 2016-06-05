@@ -7,8 +7,9 @@ import static org.junit.Assert.assertEquals;
 public class OneEditDistance {
     /*
         One Edit Distance
+        leetcode #161
+        https://leetcode.com/discuss/questions/oj/one-edit-distance?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/4245378.html
-        leetcode 161
         Difficulty: Medium
      */
     public class Solution {

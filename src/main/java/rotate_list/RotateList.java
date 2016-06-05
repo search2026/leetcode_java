@@ -9,7 +9,7 @@ public class RotateList {
     /*
         Rotate List
         https://leetcode.com/problems/rotate-list/
-        leetcode 61
+        Leetcode #61
         Difficulty: Medium
      */
     public class Solution {

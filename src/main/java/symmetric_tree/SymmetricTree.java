@@ -9,19 +9,16 @@ import static org.junit.Assert.assertEquals;
 
 public class SymmetricTree {
     /*
-        Symmetric Tree
+        Symmetric Tree - Recursive
+        Leetcode #101
         https://leetcode.com/problems/symmetric-tree/
-        leetcode 101
         Difficulty: Easy
      */
     public class Solution {
         private boolean isSymmetric(TreeNode left, TreeNode right) {
-            if (left == null && right == null) {
-                return true;
-            }
-            if (left == null || right == null) {
-                return left == right;
-            }
+            if (left == null && right == null) return true;
+            if (left == null || right == null) return false;
+
             return left.val == right.val && isSymmetric(left.left, right.right)
                     && isSymmetric(left.right, right.left);
         }
@@ -34,7 +31,13 @@ public class SymmetricTree {
         }
     }
 
-    public class SolutionWithIterative {
+    /*
+        Symmetric Tree - Iterative
+        Leetcode #101
+        https://leetcode.com/problems/symmetric-tree/
+        Difficulty: Easy
+     */
+    public class Solution_2 {
         public boolean isSymmetric(TreeNode root) {
             if (root == null) {
                 return true;

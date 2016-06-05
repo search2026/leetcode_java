@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class MergeSortedArray {
     /*
         Merge Sorted Array
+        Leetcode #88
         https://leetcode.com/problems/merge-sorted-array/
-        leetcode 88
         Difficulty: Easy
      */
     public class Solution {

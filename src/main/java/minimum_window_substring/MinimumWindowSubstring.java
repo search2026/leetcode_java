@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class MinimumWindowSubstring {
     /*
         Minimum Window Substring - Array
+        Leetcode #76
         https://leetcode.com/problems/minimum-window-substring/
         Difficulty: Hard
      */
@@ -50,6 +51,7 @@ public class MinimumWindowSubstring {
 
     /*
         Minimum Window Substring - general template
+        Leetcode #76
         https://leetcode.com/problems/minimum-window-substring/
         https://leetcode.com/discuss/72701/here-10-line-template-that-can-solve-most-substring-problems
         Difficulty: Hard

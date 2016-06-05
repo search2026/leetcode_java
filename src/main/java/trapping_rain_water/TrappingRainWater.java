@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class TrappingRainWater {
     /*
         Trapping Rain Water
+        Leetcode #42
         https://leetcode.com/problems/trapping-rain-water/
-        leetcode 42
         Difficulty: Hard
      */
     public class Solution {

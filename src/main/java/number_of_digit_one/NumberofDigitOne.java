@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class NumberofDigitOne {
     /*
         Number of Digital One
+        Leetcode #233
         https://leetcode.com/problems/number-of-digit-one/
         Difficulty: Medium
      */

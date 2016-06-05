@@ -7,6 +7,8 @@ import static org.junit.Assert.assertArrayEquals;
 public class WallsandGates {
     /*
         Walls and Gates - BFS
+        Leetcode #286
+        https://leetcode.com/discuss/questions/oj/walls-and-gates?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/5077950.html
         Difficulty: Medium
      */
@@ -35,7 +37,9 @@ public class WallsandGates {
 
     /*
         Walls and Gates - DFS
-        https://leetcode.com/discuss/questions/oj/walls-and-gates
+        Leetcode #286
+        https://leetcode.com/discuss/questions/oj/walls-and-gates?sort=votes
+        http://www.cnblogs.com/EdwardLiu/p/5077950.html
         Difficulty: Medium
      */
     public class Solution_2 {

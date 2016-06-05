@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class SetMatrixZeroes {
     /*
         Set Matrix Zeroes
+        Leetcode #73
         https://leetcode.com/problems/set-matrix-zeroes/
-        leetcode 73
         Difficulty: Medium
      */
     public class Solution {

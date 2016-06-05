@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class MaximalRectangle {
     /*
         Maximal Rectangle
+        Leetcode #85
         https://leetcode.com/problems/maximal-rectangle/
         Difficulty: Hard
      */

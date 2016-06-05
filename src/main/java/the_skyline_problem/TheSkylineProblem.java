@@ -11,7 +11,6 @@ public class TheSkylineProblem {
          The Skyline Problem
          Leetcode #218
          https://leetcode.com/problems/the-skyline-problem/
-         https://briangordon.github.io/2014/08/the-skyline-problem.html
          Difficulty: Hard
     */
     public class Solution {

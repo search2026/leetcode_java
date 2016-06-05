@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class ScrambleString {
     /*
         Scramble String
+        Leetcode #87
         https://leetcode.com/problems/scramble-string/
         Difficulty: Hard
      */

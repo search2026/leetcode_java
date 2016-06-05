@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class MaximumProductSubarray {
     /*
         Maximum Product Subarray
+        Leetcode #152
         https://leetcode.com/problems/maximum-product-subarray/
         Difficulty: Medium
      */

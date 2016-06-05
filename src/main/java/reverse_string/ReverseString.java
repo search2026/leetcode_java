@@ -29,10 +29,10 @@ public class ReverseString {
 
     /*
     Reverse String
-    Leetcode #344
-    https://leetcode.com/problems/reverse-string/
-    Difficulty: Easy
- */
+        Leetcode #344
+        https://leetcode.com/problems/reverse-string/
+        Difficulty: Easy
+     */
     public class Solution_2 {
         private void reverseStringArray(char[] s) {
             int n = s.length;

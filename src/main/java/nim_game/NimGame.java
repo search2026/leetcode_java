@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class NimGame {
     /*
         Nim Game
+        Leetcode #292
         https://leetcode.com/problems/nim-game/
         Difficulty: Easy
      */

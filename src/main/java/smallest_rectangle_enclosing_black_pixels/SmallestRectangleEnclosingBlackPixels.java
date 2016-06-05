@@ -7,8 +7,9 @@ import static org.junit.Assert.*;
 public class SmallestRectangleEnclosingBlackPixels {
     /*
         Smallest Rectangle Enclosing Black Pixels
+        Leetcode #302
+        https://leetcode.com/discuss/questions/oj/smallest-rectangle-enclosing-black-pixels?sort=votes
         http://blog.csdn.net/xudli/article/details/49738267
-        https://leetcode.com/discuss/68246/c-java-python-binary-search-solution-with-explanation
         Difficulty: Medium
      */
     public class Solution {

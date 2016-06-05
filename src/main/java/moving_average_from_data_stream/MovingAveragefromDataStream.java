@@ -8,6 +8,7 @@ public class MovingAveragefromDataStream {
     /*
         Moving Average from Data Stream - Queue
         Leetcode #346
+        https://leetcode.com/discuss/questions/oj/moving-average-from-data-stream?sort=votes
         http://www.cnblogs.com/grandyang/p/5450001.html
         Difficulty: Easy
      */
@@ -36,6 +37,7 @@ public class MovingAveragefromDataStream {
     /*
         Moving Average from Data Stream - Circular Buffer
         Leetcode #346
+        https://leetcode.com/discuss/questions/oj/moving-average-from-data-stream?sort=votes
         http://www.cnblogs.com/grandyang/p/5450001.html
         Difficulty: Easy
      */

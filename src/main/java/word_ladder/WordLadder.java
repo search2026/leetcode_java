@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class WordLadder {
     /*
         Word Ladder
+        Leetcode #127
         https://leetcode.com/problems/word-ladder/
         Difficulty: Medium
      */
@@ -49,6 +50,7 @@ public class WordLadder {
 
     /*
         Word Ladder II
+        Leetcode #126
         hhttps://leetcode.com/problems/word-ladder-ii/
         Difficulty: Hard
      */

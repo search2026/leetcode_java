@@ -11,6 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class UniqueBinarySearchTrees {
     /*
         Unique Binary Search Trees
+        Leetcode #96
         https://leetcode.com/problems/unique-binary-search-trees/
         Difficulty: Medium
     */
@@ -26,6 +27,7 @@ public class UniqueBinarySearchTrees {
 
     /*
         Unique Binary Search Trees
+        Leetcode #96
         https://leetcode.com/problems/unique-binary-search-trees/
         Difficulty: Medium
     */
@@ -47,6 +49,7 @@ public class UniqueBinarySearchTrees {
 
     /*
         Unique Binary Search Trees II
+        Leetcode #95
         https://leetcode.com/problems/unique-binary-search-trees-ii/
         Difficulty: Medium
     */

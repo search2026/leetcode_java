@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class PathSum {
     /*
         Path Sum
+        Leetcode #112
         https://leetcode.com/problems/path-sum/
         Difficulty: Easy
      */
@@ -30,6 +31,7 @@ public class PathSum {
 
     /*
         Path Sum II
+        Leetcode #113
         https://leetcode.com/problems/path-sum/
         Difficulty: Medium
      */

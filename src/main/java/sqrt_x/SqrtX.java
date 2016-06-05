@@ -6,7 +6,8 @@ import static org.junit.Assert.assertEquals;
 
 public class SqrtX {
     /*
-        Sqrt(x) Binary Search
+        Sqrt(x) - Binary Search
+        Leetcode #69
         https://leetcode.com/problems/sqrtx/
         Difficulty: Medium
      */
@@ -25,7 +26,8 @@ public class SqrtX {
     }
 
     /*
-        Sqrt(x) Newton
+        Sqrt(x) - Newton's method
+        Leetcode #69
         https://leetcode.com/problems/sqrtx/
         Difficulty: Medium
      */

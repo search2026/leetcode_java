@@ -7,6 +7,8 @@ import static org.junit.Assert.*;
 public class PaintFence {
     /*
         Paint Fence
+        Leetcode #276
+        https://leetcode.com/discuss/oj/paint-fence
         http://buttercola.blogspot.com/2015/09/leetcode-paint-fence.html
         Difficulty: Medium
      */
@@ -29,6 +31,8 @@ public class PaintFence {
 
     /*
         Paint Fence
+        Leetcode #276
+        https://leetcode.com/discuss/oj/paint-fence
         http://buttercola.blogspot.com/2015/09/leetcode-paint-fence.html
         Difficulty: Easy
     */

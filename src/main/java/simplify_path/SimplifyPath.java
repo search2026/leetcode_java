@@ -9,8 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class SimplifyPath {
     /*
         Simplify Path
+        Leetcode #71
         https://leetcode.com/problems/simplify-path/
-        leetcode 71
         Difficulty: Medium
      */
     public class Solution {

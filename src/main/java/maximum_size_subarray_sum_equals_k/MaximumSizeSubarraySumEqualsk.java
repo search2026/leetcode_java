@@ -9,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class MaximumSizeSubarraySumEqualsk {
     /*
         Maximum Size Subarray Sum Equals k
+        Leetcode #325
+        https://leetcode.com/discuss/oj/maximum-size-subarray-sum-equals-k
         http://www.cnblogs.com/EdwardLiu/p/5104280.html
         Difficulty: Medium
      */
