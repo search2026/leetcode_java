@@ -1,10 +1,11 @@
 package common;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UndirectedGraphNode {
     public int label;
-    public ArrayList<UndirectedGraphNode> neighbors;
+    public List<UndirectedGraphNode> neighbors;
 
     public UndirectedGraphNode(int x) {
         label = x;
