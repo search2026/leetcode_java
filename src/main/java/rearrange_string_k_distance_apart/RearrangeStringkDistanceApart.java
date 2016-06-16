@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class RearrangeStringkDistanceApart {
   /*
@@ -27,32 +27,65 @@ public class RearrangeStringkDistanceApart {
 
       for (int i = 0; i < n; i++) {
         char c = arr[i];
-        int count = map.getOrDefault(c, 0) + 1;
-        map.put(c, count);
+        map.put(c, map.getOrDefault(c, 0) + 1);
       }
       pq.addAll(map.entrySet());
 
-      Deque<Map.Entry<Character, Integer>> queue = new ArrayDeque<>(k);
-
+      Deque<Map.Entry<Character, Integer>> q = new ArrayDeque<>(k);
       StringBuilder sb = new StringBuilder();
       for (int i = 0; i < n; i++) {
-        if (pq.size() == 0) {
-          return "";
-        }
-        Map.Entry<Character, Integer> entry = pq.remove();
+        if (pq.size() == 0) return "";
+
+        Map.Entry<Character, Integer> entry = pq.poll();
         sb.append(entry.getKey());
         int newVal = entry.getValue() - 1;
         entry.setValue(newVal);
-
-        queue.offer(entry);
-        if (queue.size() == k) {
-          Map.Entry<Character, Integer> poll = queue.poll();
-          if (poll.getValue() > 0) {
-            pq.add(poll);
-          }
+        q.offer(entry);
+        if (q.size() == k) {
+          Map.Entry<Character, Integer> curr = q.poll();
+          if (curr.getValue() > 0) pq.add(curr);
         }
       }
 
+      return sb.toString();
+    }
+  }
+
+  /*
+    Rearrange String k Distance Apart
+    Leetcode #358
+    https://leetcode.com/discuss/oj/rearrange-string-k-distance-apart
+    http://www.cnblogs.com/grandyang/p/5586009.html
+    Difficulty: Hard
+ */
+  public class Solution_2 {
+    private int findValidMax(int[] count, int[] valid, int index) {
+      int max = Integer.MIN_VALUE;
+      int candidatePos = -1;
+      for (int i = 0; i < count.length; i++) {
+        if (count[i] > 0 && count[i] > max && index >= valid[i]) {
+          max = count[i];
+          candidatePos = i;
+        }
+      }
+      return candidatePos;
+    }
+
+    public String rearrangeString(String str, int k) {
+      int length = str.length();
+      int[] count = new int[26];
+      int[] valid = new int[26];
+      for (int i = 0; i < length; i++) {
+        count[str.charAt(i) - 'a']++;
+      }
+      StringBuilder sb = new StringBuilder();
+      for (int index = 0; index < length; index++) {
+        int candidatePos = findValidMax(count, valid, index);
+        if (candidatePos == -1) return "";
+        count[candidatePos]--;
+        valid[candidatePos] = index + k;
+        sb.append((char) ('a' + candidatePos));
+      }
       return sb.toString();
     }
   }
@@ -61,10 +94,12 @@ public class RearrangeStringkDistanceApart {
     @Test
     public void test1() {
       Solution sol = new RearrangeStringkDistanceApart().new Solution();
-//      assertTrue(sol.rearrangeString("aabbcc", 3).equals("abcabc"));
-//      assertTrue(sol.rearrangeString("aaabc", 3).equals(""));
-//      assertTrue(sol.rearrangeString("aaadbbcc", 2).equals("abacabcd") ||
-//              sol.rearrangeString("aaadbbcc", 2).equals("abcabcda"));
+      String rslt = sol.rearrangeString("aabbcc", 3);
+      assertEquals("acbacb", rslt);
+      rslt = sol.rearrangeString("aaabc", 3);
+      assertEquals("", rslt);
+      rslt = sol.rearrangeString("aaadbbcc", 2);
+      assertEquals("abcabcad", rslt);
     }
   }
 }
