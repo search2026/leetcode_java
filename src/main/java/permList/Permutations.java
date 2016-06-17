@@ -1,15 +1,14 @@
-package permutations;
+package permList;
 
 import org.junit.Test;
 
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class Permutations {
   /*
-      Permutations - Backtracking
+      Permutations - Backtracking with DFS Recursion
       Leetcode #46
       https://leetcode.com/problems/permutations/
       Difficulty: Medium
@@ -17,7 +16,8 @@ public class Permutations {
   public class Solution {
     private void search(int[] nums, List<List<Integer>> permList, List<Integer> curr, boolean[] visited, int level, int n) {
       if (level == n) {
-        permList.add(new ArrayList(curr));
+        permList.add(new ArrayList<Integer>(curr));
+        return;
       }
 
       for (int i = 0; i < n; i++) {
@@ -37,7 +37,7 @@ public class Permutations {
 
       int n = nums.length;
       boolean[] visited = new boolean[n];
-      List<Integer> curr = new ArrayList<Integer>();
+      List<Integer> curr = new ArrayList<>();
       search(nums, permList, curr, visited, 1, n);
 
       return permList;
@@ -45,69 +45,12 @@ public class Permutations {
   }
 
   /*
-      Permutations - Iterative
+      Permutations - Backtracking with BFS Iterative
       Leetcode #46
       https://leetcode.com/problems/permutations/
       Difficulty: Medium
   */
   public class Solution_2 {
-    public List<List<Integer>> permute(int[] nums) {
-      LinkedList<List<Integer>> permList = new LinkedList<>();
-      if (nums == null || nums.length == 0) return permList;
-      permList.add(new ArrayList<Integer>());
-      for (int n : nums) {
-        int size = permList.size();
-        for (; size > 0; size--) {
-          List<Integer> r = permList.pollFirst();
-          for (int i = 0; i <= r.size(); i++) {
-            List<Integer> t = new ArrayList<>(r);
-            t.add(i, n);
-            permList.add(t);
-          }
-        }
-      }
-      return permList;
-    }
-  }
-
-  /*
-      Permutations - Insert
-      Leetcode #46
-      https://leetcode.com/problems/permutations/
-      Difficulty: Medium
-  */
-  public class Solution_3 {
-    private List<List<Integer>> insert(List<List<Integer>> list, int num) {
-      List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-      for (int i = 0; i < list.size(); i++) {
-        for (int j = 0; j < list.get(i).size() + 1; j++) {
-          ArrayList<Integer> curr = new ArrayList<Integer>(list.get(i));
-          curr.add(j, num);
-          rslt.add(curr);
-        }
-      }
-      return rslt;
-    }
-
-    public List<List<Integer>> permute(int[] num) {
-      List<List<Integer>> permList = new ArrayList<List<Integer>>();
-      List<Integer> curr = new ArrayList<>();
-      curr.add(num[0]);
-      permList.add(curr);
-      for (int i = 1; i < num.length; i++) {
-        permList = insert(permList, num[i]);
-      }
-      return permList;
-    }
-  }
-
-  /*
-    Permutations - Insert
-    Leetcode #46
-    https://leetcode.com/problems/permutations/
-    Difficulty: Medium
-*/
-  public class Solution_4 {
     public List<List<Integer>> permute(int[] num) {
       List<List<Integer>> permList = new ArrayList<>();
       if (num.length == 0) return permList;
@@ -130,38 +73,73 @@ public class Permutations {
   }
 
   /*
-      Permutations II
+      Permutations II - Backtracking with DFS Recursion
       Leetcode #47
       https://leetcode.com/problems/permutations-ii/
       Difficulty: Medium
   */
-  public class Solution_5 {
-    private List<List<Integer>> permuteUnique(int[] nums) {
-      Arrays.sort(nums);
-      List<Integer> cur = new ArrayList<Integer>();
-      List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-      boolean[] visited = new boolean[nums.length];
-
-      permute(nums, visited, cur, rslt);
-      return rslt;
-    }
-
-    public void permute(int[] nums, boolean[] visited, List<Integer> cur, List<List<Integer>> rslt) {
-      if (cur.size() == nums.length) {
-        rslt.add(new ArrayList<Integer>(cur));
+  public class Solution_3 {
+    private void search(int[] nums, List<List<Integer>> permList, List<Integer> curr, boolean[] visited) {
+      if (curr.size() == nums.length) {
+        permList.add(new ArrayList<Integer>(curr));
         return;
       }
 
-      for (int k = 0; k < nums.length; k++) {
-        if (k > 0 && !visited[k - 1] && nums[k] == nums[k - 1]) continue;
-        if (!visited[k]) {
-          visited[k] = true;
-          cur.add(nums[k]);
-          permute(nums, visited, cur, rslt);
-          cur.remove(cur.size() - 1);
-          visited[k] = false;
+      for (int i = 0; i < nums.length; i++) {
+        if (i > 0 && !visited[i - 1] && nums[i] == nums[i - 1]) continue;
+        if (!visited[i]) {
+          visited[i] = true;
+          curr.add(nums[i]);
+          search(nums, permList, curr, visited);
+          curr.remove(curr.size() - 1);
+          visited[i] = false;
         }
       }
+    }
+
+    public List<List<Integer>> permuteUnique(int[] nums) {
+      List<List<Integer>> permList = new ArrayList<>();
+      if (nums == null || nums.length == 0) return permList;
+
+      int n = nums.length;
+      boolean[] visited = new boolean[n];
+      List<Integer> curr = new ArrayList<>();
+      Arrays.sort(nums);
+
+      search(nums, permList, curr, visited);
+      return permList;
+    }
+  }
+
+  /*
+      Permutations II - Backtracking with BFS Iterative
+      Leetcode #47
+      https://leetcode.com/problems/permutations-ii/
+      Difficulty: Medium
+  */
+  public class Solution_4 {
+    public List<List<Integer>> permuteUnique(int[] nums) {
+      Set<List<Integer>> permSet = new HashSet<>();
+
+      int n = nums.length;
+      if (n == 0) return new ArrayList<List<Integer>>();
+
+      permSet.add(Arrays.asList(nums[0]));
+      for(int idx = 1; idx < n; idx++) {
+        Set<List<Integer>> newPermutations = new HashSet<>();
+        for(List<Integer> list : permSet){
+
+          for(int innerIndex = 0; innerIndex <= list.size(); innerIndex++){
+            List<Integer> newList = new ArrayList<>(list);
+            newList.add(innerIndex, nums[idx]);
+            newPermutations.add(newList);
+          }
+        }
+
+        permSet = newPermutations;
+      }
+
+      return new ArrayList<List<Integer>>(permSet);
     }
   }
 
@@ -215,9 +193,9 @@ public class Permutations {
     @Test
     public void test3() {
       Solution_3 sol = new Permutations().new Solution_3();
-      int[] test = {1, 2, 3};
-      List<List<Integer>> rslt = sol.permute(test);
-      assertEquals(6, rslt.size());
+      int[] test = {1, 2, 1};
+      List<List<Integer>> rslt = sol.permuteUnique(test);
+      assertEquals(3, rslt.size());
       assertEquals(test.length, rslt.get(0).size());
       Collections.sort(rslt, new Comparator<List<Integer>>() {
         @Override
@@ -228,10 +206,33 @@ public class Permutations {
         }
       });
       assertEquals(1, (int) rslt.get(0).get(0));
-      assertEquals(2, (int) rslt.get(0).get(1));
-      assertEquals(3, (int) rslt.get(0).get(2));
-      assertEquals(3, (int) rslt.get(rslt.size() - 1).get(0));
-      assertEquals(2, (int) rslt.get(rslt.size() - 1).get(1));
+      assertEquals(1, (int) rslt.get(0).get(1));
+      assertEquals(2, (int) rslt.get(0).get(2));
+      assertEquals(2, (int) rslt.get(rslt.size() - 1).get(0));
+      assertEquals(1, (int) rslt.get(rslt.size() - 1).get(1));
+      assertEquals(1, (int) rslt.get(rslt.size() - 1).get(2));
+    }
+
+    @Test
+    public void test4() {
+      Solution_4 sol = new Permutations().new Solution_4();
+      int[] test = {1, 2, 1};
+      List<List<Integer>> rslt = sol.permuteUnique(test);
+      assertEquals(3, rslt.size());
+      assertEquals(test.length, rslt.get(0).size());
+      Collections.sort(rslt, new Comparator<List<Integer>>() {
+        @Override
+        public int compare(List<Integer> o1, List<Integer> o2) {
+          if (o1.get(0).equals(o2.get(0)))
+            return o1.get(1) - o2.get(1);
+          return o1.get(0) - o2.get(0);
+        }
+      });
+      assertEquals(1, (int) rslt.get(0).get(0));
+      assertEquals(1, (int) rslt.get(0).get(1));
+      assertEquals(2, (int) rslt.get(0).get(2));
+      assertEquals(2, (int) rslt.get(rslt.size() - 1).get(0));
+      assertEquals(1, (int) rslt.get(rslt.size() - 1).get(1));
       assertEquals(1, (int) rslt.get(rslt.size() - 1).get(2));
     }
   }

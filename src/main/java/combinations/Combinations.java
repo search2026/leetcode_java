@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class Combinations {
   /*
@@ -66,7 +65,6 @@ public class Combinations {
     }
   }
 
-
   /*
       Combinations - Iterative
       Leetcode #77
@@ -75,13 +73,13 @@ public class Combinations {
    */
   public class Solution_3 {
     public List<List<Integer>> combine(int n, int k) {
-      List<List<Integer>> combList = new ArrayList<List<Integer>>();
-      List<Integer> curr = new ArrayList<Integer>();
+      List<List<Integer>> combList = new ArrayList<>();
+      if (n < 1 || k < 1 || n < k) return combList;
+      List<Integer> curr = new ArrayList<>();
       int i = 1;
       while (i <= n || curr.size() != 0) {
-        if (curr.size() == k) {
-          combList.add(new ArrayList(curr));
-        }
+        if (curr.size() == k) combList.add(new ArrayList(curr));
+
         if (i > n || curr.size() == k) {
           i = curr.get(curr.size() - 1) + 1;
           curr.remove(curr.size() - 1);
@@ -95,7 +93,7 @@ public class Combinations {
   }
 
   /*
-      Combinations - C(n,k)=C(n-1,k-1)+C(n-1,k)
+      Combinations - Dynamic Programming
       Leetcode #77
       https://leetcode.com/problems/combinations/
       Difficulty: Medium
