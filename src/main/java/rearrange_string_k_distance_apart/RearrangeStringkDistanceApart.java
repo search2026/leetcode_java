@@ -80,11 +80,11 @@ public class RearrangeStringkDistanceApart {
       }
       StringBuilder sb = new StringBuilder();
       for (int index = 0; index < length; index++) {
-        int candidatePos = findValidMax(count, valid, index);
-        if (candidatePos == -1) return "";
-        count[candidatePos]--;
-        valid[candidatePos] = index + k;
-        sb.append((char) ('a' + candidatePos));
+        int cand = findValidMax(count, valid, index);
+        if (cand == -1) return "";
+        count[cand]--;
+        valid[cand] = index + k;
+        sb.append((char) ('a' + cand));
       }
       return sb.toString();
     }
@@ -100,6 +100,17 @@ public class RearrangeStringkDistanceApart {
       assertEquals("", rslt);
       rslt = sol.rearrangeString("aaadbbcc", 2);
       assertEquals("abcabcad", rslt);
+    }
+
+    @Test
+    public void test2() {
+      Solution_2 sol = new RearrangeStringkDistanceApart().new Solution_2();
+      String rslt = sol.rearrangeString("aabbcc", 3);
+      assertEquals("abcabc", rslt);
+      rslt = sol.rearrangeString("aaabc", 3);
+      assertEquals("", rslt);
+      rslt = sol.rearrangeString("aaadbbcc", 2);
+      assertEquals("abacabcd", rslt);
     }
   }
 }
