@@ -18,6 +18,8 @@ public class LineReflection {
     Difficulty: Medium
    */
   public class Solution {
+    private final String DELIMITER = "a";
+
     public boolean isReflected(int[][] points) {
       if (points == null || points.length == 0 ||
               points[0] == null || points[0].length != 2) return false;
@@ -28,13 +30,13 @@ public class LineReflection {
       for (int[] p : points) {
         max = Math.max(max, p[0]);
         min = Math.min(min, p[0]);
-        String str = p[0] + "a" + p[1];
+        String str = p[0] + DELIMITER + p[1];
         set.add(str);
       }
 
       long sum = max + min;
       for (int[] p : points) {
-        String str = (sum - p[0]) + "a" + p[1];
+        String str = (sum - p[0]) + DELIMITER + p[1];
         if (!set.contains(str)) return false;
       }
       return true;

@@ -88,22 +88,22 @@ public class RussianDollEnvelopes {
 
             int n = envelopes.length;
             int[][] matrix = new int[n + 1][2];
-            int rslt = 1;
+            int maxEnv = 1;
             matrix[1][0] = envelopes[0][0];
             matrix[1][1] = envelopes[0][1];
             for (int i = 1; i < n; i++) {
-                int idx = search(matrix, rslt, envelopes[i]);
-                if (idx > rslt) rslt++;
+                int idx = search(matrix, maxEnv, envelopes[i]);
+                if (idx > maxEnv) maxEnv++;
                 matrix[idx][0] = envelopes[i][0];
                 matrix[idx][1] = envelopes[i][1];
             }
 
-            return rslt;
+            return maxEnv;
         }
     }
 
     /*
-        Russian Doll Envelopes - Binary Search
+        Russian Doll Envelopes - NLogN
         Leetcode #354
         https://leetcode.com/problems/russian-doll-envelopes/
         Difficulty: Hard
@@ -125,12 +125,12 @@ public class RussianDollEnvelopes {
 
             int n = envelopes.length;
             int[][] matrix = new int[n][2];
-            int rslt = 0;
+            int maxEnv = 0;
             for (int i = 0; i < n; ) {
                 int j = i;
                 while (j < n && envelopes[i][0] == envelopes[j][0]) j++;
                 for (int k = i; k < j; ++k) {
-                    int l = 0, r = rslt - 1;
+                    int l = 0, r = maxEnv - 1;
                     while (l <= r) {
                         int m = (r - l) / 2 + l;
                         if (matrix[m][0] >= envelopes[k][1])
@@ -144,14 +144,14 @@ public class RussianDollEnvelopes {
                 for (int k = j - 1; k >= i; --k) {
                     int l = matrix[k][1];
                     matrix[l][0] = envelopes[k][1];
-                    if (l == rslt) flag = true;
+                    if (l == maxEnv) flag = true;
                 }
-                if (flag) rslt += 1;
+                if (flag) maxEnv += 1;
 
                 i = j;
             }
 
-            return rslt;
+            return maxEnv;
         }
     }
 
