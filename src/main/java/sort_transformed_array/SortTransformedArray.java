@@ -12,6 +12,7 @@ public class SortTransformedArray {
       Sort Transformed Array - Heap
       Leetcode #360
       https://leetcode.com/discuss/oj/sort-transformed-array
+      http://www.cnblogs.com/grandyang/p/5595614.html
       Difficulty: Medium
    */
   public class Solution {
@@ -34,6 +35,7 @@ public class SortTransformedArray {
       Sort Transformed Array - Two Pointers
       Leetcode #360
       https://leetcode.com/discuss/oj/sort-transformed-array
+      http://www.cnblogs.com/grandyang/p/5595614.html
       Difficulty: Medium
    */
   public class Solution_2 {
