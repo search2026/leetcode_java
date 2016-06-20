@@ -26,7 +26,8 @@ public class RearrangeStringkDistanceApart {
       PriorityQueue<Map.Entry<Character, Integer>> pq = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
 
       for (int i = 0; i < n; i++) {
-        char c = arr[i];
+          char c = arr[i];
+
         map.put(c, map.getOrDefault(c, 0) + 1);
       }
       pq.addAll(map.entrySet());
@@ -38,8 +39,7 @@ public class RearrangeStringkDistanceApart {
 
         Map.Entry<Character, Integer> entry = pq.poll();
         sb.append(entry.getKey());
-        int newVal = entry.getValue() - 1;
-        entry.setValue(newVal);
+        entry.setValue(entry.getValue() - 1);
         q.offer(entry);
         if (q.size() == k) {
           Map.Entry<Character, Integer> curr = q.poll();
@@ -52,12 +52,12 @@ public class RearrangeStringkDistanceApart {
   }
 
   /*
-    Rearrange String k Distance Apart
-    Leetcode #358
-    https://leetcode.com/discuss/oj/rearrange-string-k-distance-apart
-    http://www.cnblogs.com/grandyang/p/5586009.html
-    Difficulty: Hard
- */
+      Rearrange String k Distance Apart
+      Leetcode #358
+      https://leetcode.com/discuss/oj/rearrange-string-k-distance-apart
+      http://www.cnblogs.com/grandyang/p/5586009.html
+      Difficulty: Hard
+   */
   public class Solution_2 {
     private int findValidMax(int[] count, int[] valid, int index) {
       int max = Integer.MIN_VALUE;
