@@ -11,11 +11,13 @@ public class MaxSumofRectangleNoLargerThanK {
       Max Sum of Rectangle No Larger Than K
       Leetcode #363
       https://leetcode.com/problems/max-sum-of-sub-matrix-no-larger-than-k/
+      http://www.geeksforgeeks.org/dynamic-programming-set-27-max-sum-rectangle-in-a-2d-matrix/
       Difficulty: Hard
    */
   public class Solution {
     public int maxSumSubmatrix(int[][] matrix, int k) {
-      if (matrix.length == 0) return 0;
+      if (matrix == null || matrix.length == 0 ||
+              matrix[0] == null || matrix[0].length == 0) return 0;
 
       int m = matrix.length, n = matrix[0].length;
       int maxSum = Integer.MIN_VALUE;
