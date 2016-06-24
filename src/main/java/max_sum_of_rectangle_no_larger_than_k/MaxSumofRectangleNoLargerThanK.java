@@ -22,20 +22,14 @@ public class MaxSumofRectangleNoLargerThanK {
       int m = matrix.length, n = matrix[0].length;
       int maxSum = Integer.MIN_VALUE;
 
-      //outer loop should use smaller axis
-      //now we assume we have more rows than cols, therefore outer loop will be based on cols
-      for (int left = 0; left < n; left++) {
-        //array that accumulate sums for each row from left to right
+      for (int leftCol = 0; leftCol < n; leftCol++) {
         int[] sums = new int[m];
-        for (int right = left; right < n; right++) {
-          //update sums[] to include values in curr right col
+        for (int rightCol = leftCol; rightCol < n; rightCol++) {
           for (int i = 0; i < m; i++) {
-            sums[i] += matrix[i][right];
+            sums[i] += matrix[i][rightCol];
           }
 
-          //we use TreeSet to help us find the rectangle with maxSum <= k with O(logN) time
-          TreeSet<Integer> set = new TreeSet<Integer>();
-          //add 0 to cover the single row case
+          TreeSet<Integer> set = new TreeSet<>();
           set.add(0);
           int currSum = 0;
 
@@ -63,7 +57,7 @@ public class MaxSumofRectangleNoLargerThanK {
               {0, -2, 3}
       };
       assertEquals(2, sol.maxSumSubmatrix(matrix, 2));
-      matrix = new int [][]{
+      matrix = new int[][]{
               {1, 2, -1, -4, -20},
               {-8, -3, 4, 2, 1},
               {3, 8, 10, 1, 3},
