@@ -74,7 +74,7 @@ public class NestedListWeightSum {
 
   /*
     Nested List Weight Sum ii
-    Leetcode #339
+    Leetcode #364
     https://leetcode.com/discuss/questions/oj/nested-list-weight-sum-ii
     Difficulty: Medium
  */
@@ -103,7 +103,7 @@ public class NestedListWeightSum {
 
   /*
     Nested List Weight Sum ii
-    Leetcode #339
+    Leetcode #364
     https://leetcode.com/discuss/questions/oj/nested-list-weight-sum-ii
     Difficulty: Medium
   */
