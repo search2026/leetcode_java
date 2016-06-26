@@ -9,7 +9,7 @@ public class DeleteaBinarySearchTreeNode {
     /*
         Delete a Binary Search Tree Node
         http://www.algolist.net/Data_structures/Binary_search_tree/Removal
-        Diffculty: Medium
+        Difficulty: Medium
      */
     public class Solution {
         public TreeNode deleteBSTNode(int key, TreeNode node) {
