@@ -19,8 +19,8 @@ public class NestedListWeightSum {
   public class Solution {
     private int search(List<NestedInteger> list, int depth) {
       int sum = 0;
-      for (NestedInteger e : list) {
-        sum += e.isInteger() ? e.getInteger() * depth : search(e.getList(), depth + 1);
+      for (NestedInteger ni : list) {
+        sum += ni.isInteger() ? ni.getInteger() * depth : search(ni.getList(), depth + 1);
       }
       return sum;
     }
@@ -59,11 +59,11 @@ public class NestedListWeightSum {
       int unweighted = 0, weighted = 0;
       while (!nestedList.isEmpty()) {
         List<NestedInteger> nextLevel = new ArrayList<>();
-        for (NestedInteger ni : nestedList) {
-          if (ni.isInteger())
-            unweighted += ni.getInteger();
+        for (NestedInteger e : nestedList) {
+          if (e.isInteger())
+            unweighted += e.getInteger();
           else
-            nextLevel.addAll(ni.getList());
+            nextLevel.addAll(e.getList());
         }
         weighted += unweighted;
         nestedList = nextLevel;
@@ -73,16 +73,13 @@ public class NestedListWeightSum {
   }
 
   /*
-    Nested List Weight Sum ii
+    Nested List Weight Sum II - Recursive
     Leetcode #364
     https://leetcode.com/discuss/questions/oj/nested-list-weight-sum-ii
+    http://www.cnblogs.com/grandyang/p/5615583.html
     Difficulty: Medium
  */
   public class Solution_4 {
-    public int depthSumInverse(List<NestedInteger> nestedList) {
-      return search(nestedList, 0);
-    }
-
     private int search(List<NestedInteger> list, int prev) {
       int intSum = prev;
       List<NestedInteger> levelBreak = new ArrayList<>();
@@ -99,12 +96,17 @@ public class NestedListWeightSum {
 
       return listSum + intSum;
     }
+
+    public int depthSumInverse(List<NestedInteger> nestedList) {
+      return search(nestedList, 0);
+    }
   }
 
   /*
-    Nested List Weight Sum ii
+    Nested List Weight Sum II - Iterative
     Leetcode #364
     https://leetcode.com/discuss/questions/oj/nested-list-weight-sum-ii
+    http://www.cnblogs.com/grandyang/p/5615583.html
     Difficulty: Medium
   */
   public class Solution_5 {

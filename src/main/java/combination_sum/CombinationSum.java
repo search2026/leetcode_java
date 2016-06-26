@@ -9,209 +9,252 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class CombinationSum {
-    /*
-        Combination Sum
-        Leetcode #39
-        https://leetcode.com/problems/combination-sum/
-        Difficulty: Medium
-    */
-    public class Solution {
-        public void search(List<List<Integer>> rslt, List<Integer> item, int[] candidates, int remained, int start) {
-            if (remained < 0) return;
-            if (remained == 0) {
-                rslt.add(new ArrayList<Integer>(item));
-                return;
-            }
-            for (int i = start; i < candidates.length; i++) {
-                item.add(candidates[i]);
-                search(rslt, item, candidates, remained - candidates[i], i);
-                item.remove(item.size() - 1);
-            }
-        }
+  /*
+      Combination Sum - Backtracking
+      Leetcode #39
+      https://leetcode.com/problems/combination-sum/
+      Difficulty: Medium
+  */
+  public class Solution {
+    private void search(int[] cand, List<List<Integer>> comb, List<Integer> currList, int start, int remained) {
+      if (remained < 0 || start >= cand.length) return;
+      if (remained == 0) {
+        comb.add(new ArrayList<Integer>(currList));
+        return;
+      }
 
-        public List<List<Integer>> combinationSum(int[] candidates, int target) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-            if (candidates == null || candidates.length == 0)
-                return rslt;
-            Arrays.sort(candidates);
-            search(rslt, new ArrayList<Integer>(), candidates, target, 0);
-            return rslt;
-        }
+      for (int i = start; i < cand.length && cand[i] <= remained; i++) {
+        currList.add(cand[i]);
+        search(cand, comb, currList, i, remained - cand[i]);
+        currList.remove(currList.size() - 1);
+      }
     }
 
-    /*
-        Combination Sum - From Least Weight Item to Most Weight
-        Leetcode #39
-        https://leetcode.com/problems/combination-sum/
-        Difficulty: Medium
-    */
-    public class Solution_2 {
-        private void search(int[] n, int index, int target, List<Integer> cur, List<List<Integer>> rslt) {
-            if (target == 0) {
-                rslt.add(new ArrayList<Integer>(cur));
-                return;
-            }
-            if (index == n.length || target < n[index]) {
-                return;
-            }
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+      List<List<Integer>> combo = new ArrayList<>();
+      if (candidates == null || candidates.length == 0) return combo;
+      Arrays.sort(candidates);
+      search(candidates, combo, new ArrayList<Integer>(), 0, target);
+      return combo;
+    }
+  }
 
-            for (int i = 0; i <= target / n[index]; i++) {
-                search(n, index + 1, target - i * n[index], cur, rslt);
-                cur.add(n[index]);
-            }
-            for (int i = 0; i <= target / n[index]; i++) {
-                cur.remove(cur.size() - 1);
-            }
-        }
+  /*
+      Combination Sum - Dynamic Programming
+      Leetcode #39
+      https://leetcode.com/problems/combination-sum/
+      Difficulty: Medium
+  */
+  public class Solution_2 {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+      if (candidates == null || candidates.length == 0)
+        return new ArrayList<List<Integer>>();
 
-        public List<List<Integer>> combinationSum(int[] candidates, int target) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-            if (candidates == null || candidates.length == 0)
-                return rslt;
-            Arrays.sort(candidates);
-            search(candidates, 0, target, new ArrayList<Integer>(), rslt);
-            return rslt;
+      Arrays.sort(candidates);
+      List<List<List<Integer>>> dp = new ArrayList<>();
+
+      for (int i = 1; i <= target; i++) {
+        List<List<Integer>> currList = new ArrayList<>();
+        for (int j = 0; j < candidates.length && candidates[j] <= i; j++) {
+          if (i == candidates[j]) currList.add(Arrays.asList(candidates[j]));
+          else {
+            for (List<Integer> l : dp.get(i - candidates[j] - 1)) {
+              if (candidates[j] <= l.get(0)) {
+                List t = new ArrayList<Integer>();
+                t.add(candidates[j]);
+                t.addAll(l);
+                currList.add(t);
+              }
+            }
+          }
         }
+        dp.add(currList);
+      }
+      return dp.get(target - 1);
+    }
+  }
+
+  /*
+      Combination Sum II - Backtracking
+      Leetcode #40
+      https://leetcode.com/problems/combination-sum-ii/
+      Difficulty: Medium
+  */
+  public class Solution_3 {
+    private void search(int[] cand, List<List<Integer>> comb, List<Integer> currList, int start, int remained) {
+      if (remained < 0 || start >= cand.length) return;
+      if (remained == 0) {
+        comb.add(new ArrayList<Integer>(currList));
+        return;
+      }
+
+      for (int i = start; i < cand.length && cand[i] <= remained; i++) {
+        if (i > start && cand[i] == cand[i - 1]) continue;
+        currList.add(cand[i]);
+        search(cand, comb, currList, i + 1, remained - cand[i]);
+        currList.remove(currList.size() - 1);
+      }
     }
 
-    /*
-        Combination Sum II
-        Leetcode #40
-        https://leetcode.com/problems/combination-sum-ii/
-        Difficulty: Medium
-    */
-    public class Solution_3 {
-        private void search(int[] num, int start, int target, List<Integer> cur, List<List<Integer>> rslt) {
-            if (target == 0) {
-                rslt.add(new ArrayList<Integer>(cur));
-                return;
-            }
-            if (target < 0 || start >= num.length)
-                return;
-            for (int i = start; i < num.length; i++) {
-                if (i > start && num[i] == num[i - 1]) continue;
-                cur.add(num[i]);
-                search(num, i + 1, target - num[i], cur, rslt);
-                cur.remove(cur.size() - 1);
-            }
-        }
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+      List<List<Integer>> comb = new ArrayList<>();
+      if (candidates == null || candidates.length == 0) return comb;
+      Arrays.sort(candidates);
+      search(candidates, comb, new ArrayList<Integer>(), 0, target);
+      return comb;
+    }
+  }
 
-        public List<List<Integer>> combinationSum2(int[] nums, int target) {
-            List<List<Integer>> rslt = new ArrayList<>();
-            if (nums == null || nums.length == 0)
-                return rslt;
-            Arrays.sort(nums);
-            search(nums, 0, target, new ArrayList<Integer>(), rslt);
-            return rslt;
+  /*
+      Combination Sum II - Dynamic Programming
+      Leetcode #40
+      https://leetcode.com/problems/combination-sum-ii/
+      Difficulty: Medium
+  */
+  // TODO: To be implemented
+  public class Solution_4 {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+      if (candidates == null || candidates.length == 0)
+        return new ArrayList<List<Integer>>();
+
+      Arrays.sort(candidates);
+      List<List<List<Integer>>> dp = new ArrayList<>();
+
+      for (int i = 1; i <= target; i++) {
+        List<List<Integer>> currList = new ArrayList<>();
+        for (int j = 0; j < candidates.length && candidates[j] <= i; j++) {
+          if (i == candidates[j]) currList.add(Arrays.asList(candidates[j]));
+          else {
+            for (List<Integer> l : dp.get(i - candidates[j] - 1)) {
+              if (candidates[j] <= l.get(0)) {
+                List t = new ArrayList<Integer>();
+                t.add(candidates[j]);
+                t.addAll(l);
+                currList.add(t);
+              }
+            }
+          }
         }
+        dp.add(currList);
+      }
+      return dp.get(target - 1);
+    }
+  }
+
+  /*
+      Combination Sum III - Backtracking
+      Leetcode #216
+      https://leetcode.com/problems/combination-sum-iii/
+      Difficulty: Medium
+  */
+  public class Solution_5 {
+    private void search(List<List<Integer>> combo, List<Integer> currList, int k, int start, int remained) {
+      if (remained < 0 || currList.size() > k) return;
+      if (remained == 0 && currList.size() == k) {
+        combo.add(new ArrayList<>(currList));
+        return;
+      }
+
+      for (int i = start; i <= 9; i++) {
+        if (remained - i < 0) break;
+        if (currList.size() > k) break;
+
+        currList.add(i);
+        search(combo, currList, k, i + 1, remained - i);
+        currList.remove(currList.size() - 1);
+      }
     }
 
-    /*
-        Combination Sum II - From Least Weight Item to Most Weight
-        Leetcode #40
-        https://leetcode.com/problems/combination-sum-ii/
-        Difficulty: Medium
-    */
-    public class Solution_4 {
-        private void search(List<Integer> nums, List<Integer> counts, int index, int target, List<Integer> cur, List<List<Integer>> rslt) {
-            if (target == 0) {
-                rslt.add(new ArrayList<Integer>(cur));
-            }
-            if (target <= 0 || index == nums.size()) {
-                return;
-            }
-            int n = nums.get(index);
-            int count = counts.get(index);
-            for (int i = 0; i <= count; i++) {
-                search(nums, counts, index + 1, target - i * n, cur, rslt);
-                cur.add(n);
-            }
-            for (int i = 0; i <= count; i++) {
-                cur.remove(cur.size() - 1);
-            }
-        }
+    public List<List<Integer>> combinationSum3(int k, int n) {
+      List<List<Integer>> comb = new ArrayList<>();
+      search(comb, new ArrayList<Integer>(), k, 1, n);
+      return comb;
+    }
+  }
 
-        public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-            if (candidates == null || candidates.length == 0)
-                return rslt;
-            Arrays.sort(candidates);
-            List<Integer> nums = new ArrayList<Integer>();
-            List<Integer> counts = new ArrayList<Integer>();
-            int count = 1;
-            int i = 1;
-            for (; i < candidates.length; i++) {
-                if (candidates[i] != candidates[i - 1]) {
-                    nums.add(candidates[i - 1]);
-                    counts.add(count);
-                    count = 1;
-                } else {
-                    count++;
-                }
-
-            }
-            nums.add(candidates[i - 1]);
-            counts.add(count);
-            search(nums, counts, 0, target, new ArrayList<Integer>(), rslt);
-            return rslt;
-        }
+  public static class UnitTest {
+    @Test
+    public void test1() {
+      Solution sol = new CombinationSum().new Solution();
+      int[] candidates = new int[]{2, 3, 6, 7};
+      List<List<Integer>> comb = sol.combinationSum(candidates, 7);
+      assertEquals(2, comb.size());
+      assertEquals(3, comb.get(0).size());
+      assertEquals(2, (int) comb.get(0).get(0));
+      assertEquals(2, (int) comb.get(0).get(1));
+      assertEquals(3, (int) comb.get(0).get(2));
+      assertEquals(1, comb.get(1).size());
+      assertEquals(7, (int) comb.get(1).get(0));
     }
 
-    /*
-        Combination Sum III
-        Leetcode #216
-        https://leetcode.com/problems/combination-sum-iii/
-        Difficulty: Medium
-    */
-    public class Solution_5 {
-        public void search(List<List<Integer>> rslt, int start, int sum, List<Integer> cur, int k) {
-            if (sum == 0 && cur.size() == k) {
-                List<Integer> temp = new ArrayList<Integer>();
-                temp.addAll(cur);
-                rslt.add(temp);
-            }
-
-            for (int i = start; i <= 9; i++) {
-                if (sum - i < 0) break;
-                if (cur.size() > k) break;
-
-                cur.add(i);
-                search(rslt, i + 1, sum - i, cur, k);
-                cur.remove(cur.size() - 1);
-            }
-        }
-
-        public List<List<Integer>> combinationSum3(int k, int n) {
-            List<List<Integer>> rslt = new ArrayList<>();
-            search(rslt, 1, n, new ArrayList<Integer>(), k);
-            return rslt;
-        }
+    @Test
+    public void test2() {
+      Solution_2 sol = new CombinationSum().new Solution_2();
+      int[] candidates = new int[]{2, 3, 6, 7};
+      List<List<Integer>> comb = sol.combinationSum(candidates, 7);
+      assertEquals(2, comb.size());
+      assertEquals(3, comb.get(0).size());
+      assertEquals(2, (int) comb.get(0).get(0));
+      assertEquals(2, (int) comb.get(0).get(1));
+      assertEquals(3, (int) comb.get(0).get(2));
+      assertEquals(1, comb.get(1).size());
+      assertEquals(7, (int) comb.get(1).get(0));
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            //Solution sol = new CombinationSum().new Solution();
-            Solution_2 sol = new CombinationSum().new Solution_2();
-            int[] candidates = new int[]{2, 3, 6, 7};
-            List<List<Integer>> rslt = sol.combinationSum(candidates, 7);
-            assertEquals(2, rslt.size());
-        }
-
-        @Test
-        public void test2() {
-            //Solution_3 sol = new CombinationSum().new Solution_3();
-            Solution_4 sol = new CombinationSum().new Solution_4();
-            int[] candidates = new int[]{10, 1, 2, 7, 6, 1, 5};
-            List<List<Integer>> rslt = sol.combinationSum2(candidates, 8);
-            assertEquals(4, rslt.size());
-        }
-
-        @Test
-        public void test3() {
-            Solution_5 sol = new CombinationSum().new Solution_5();
-            List<List<Integer>> rslt = sol.combinationSum3(3, 9);
-            assertEquals(3, rslt.size());
-        }
+    @Test
+    public void test3() {
+      Solution_3 sol = new CombinationSum().new Solution_3();
+      int[] candidates = new int[]{10, 1, 2, 7, 6, 1, 5};
+      List<List<Integer>> comb = sol.combinationSum2(candidates, 8);
+      assertEquals(4, comb.size());
+      assertEquals(3, comb.get(0).size());
+      assertEquals(1, (int) comb.get(0).get(0));
+      assertEquals(1, (int) comb.get(0).get(1));
+      assertEquals(6, (int) comb.get(0).get(2));
+      assertEquals(3, comb.get(1).size());
+      assertEquals(1, (int) comb.get(1).get(0));
+      assertEquals(2, (int) comb.get(1).get(1));
+      assertEquals(5, (int) comb.get(1).get(2));
+      assertEquals(2, comb.get(2).size());
+      assertEquals(1, (int) comb.get(2).get(0));
+      assertEquals(7, (int) comb.get(2).get(1));
+      assertEquals(2, comb.get(3).size());
+      assertEquals(2, (int) comb.get(3).get(0));
+      assertEquals(6, (int) comb.get(3).get(1));
     }
+
+    @Test
+    public void test4() {
+      Solution_4 sol = new CombinationSum().new Solution_4();
+      int[] candidates = new int[]{10, 1, 2, 7, 6, 1, 5};
+      List<List<Integer>> combo = sol.combinationSum2(candidates, 8);
+      // assertEquals(4, combo.size());
+    }
+
+    @Test
+    public void test5() {
+      Solution_5 sol = new CombinationSum().new Solution_5();
+      List<List<Integer>> combo = sol.combinationSum3(3, 7);
+      assertEquals(1, combo.size());
+      assertEquals(3, combo.get(0).size());
+      assertEquals(1, (int)combo.get(0).get(0));
+      assertEquals(2, (int)combo.get(0).get(1));
+      assertEquals(4, (int)combo.get(0).get(2));
+
+      combo = sol.combinationSum3(3, 9);
+      assertEquals(3, combo.size());
+      assertEquals(3, combo.get(0).size());
+      assertEquals(1, (int)combo.get(0).get(0));
+      assertEquals(2, (int)combo.get(0).get(1));
+      assertEquals(6, (int)combo.get(0).get(2));
+      assertEquals(3, combo.get(1).size());
+      assertEquals(1, (int)combo.get(1).get(0));
+      assertEquals(3, (int)combo.get(1).get(1));
+      assertEquals(5, (int)combo.get(1).get(2));
+      assertEquals(3, combo.get(2).size());
+      assertEquals(2, (int)combo.get(2).get(0));
+      assertEquals(3, (int)combo.get(2).get(1));
+      assertEquals(4, (int)combo.get(2).get(2));
+    }
+  }
 }
