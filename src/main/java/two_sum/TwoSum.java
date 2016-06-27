@@ -15,21 +15,21 @@ public class TwoSum {
    */
   public class Solution {
     public int[] twoSum(int[] nums, int target) {
-      if (nums == null || nums.length < 2) return null;
-
+      if (nums == null) return null;
       int n = nums.length;
+      if (n < 2) return null;
       Map<Integer, Integer> map = new HashMap<>();
-      map.put(nums[0], 1);
-      for (int i=1; i< n; i++) {
+
+      for (int i = 0; i < n; i++) {
         int diff = target - nums[i];
         if (map.containsKey(diff)) {
-          return new int[]{map.get(diff), i+1};
-        } else {
-          map.put(nums[i], i+1);
+          return new int[]{map.get(diff), i};
         }
+        map.put(nums[i], i);
       }
 
       return null;
+      // throw new IllegalArgumentException("No two summ solution");
     }
   }
 
@@ -37,18 +37,18 @@ public class TwoSum {
       Two Sum II - Two Pointers
       Leetcode #167
       https://leetcode.com/discuss/oj/two-sum-ii-input-array-is-sorted
-      http://www.cnblogs.com/ganganloveu/p/4198968.html
+      http://www.cnblogs.com/grandyang/p/5185815.html
       Difficulty: Medium
    */
   public class Solution_2 {
     public int[] twoSum(int[] nums, int target) {
       if (nums == null || nums.length < 2) return null;
 
-      int p1=0, p2=nums.length-1;
+      int p1 = 0, p2 = nums.length - 1;
 
-      while(p1<p2) {
+      while (p1 < p2) {
         int sum = nums[p1] + nums[p2];
-        if (sum == target) return new int[]{p1+1, p2+1};
+        if (sum == target) return new int[]{p1, p2};
         else if (sum < target) p1++;
         else p2--;
       }
@@ -61,7 +61,7 @@ public class TwoSum {
       Two Sum III Data Structure
       Leetcode #170
       https://leetcode.com/discuss/questions/oj/two-sum-iii-data-structure-design?sort=votes
-      http://www.cnblogs.com/EdwardLiu/p/4252598.html
+      http://www.cnblogs.com/grandyang/p/5184143.html
       Difficulty: Medium
    */
   public class TwoSumDS {
@@ -82,7 +82,7 @@ public class TwoSum {
     public boolean find(int target) {
       if (map.size() < 2) return false;
 
-      for (Integer key : map.keySet()){
+      for (Integer key : map.keySet()) {
         int diff = target - key;
         if (map.containsKey(diff)) {
           if (diff != key) return true;
@@ -94,13 +94,12 @@ public class TwoSum {
     }
   }
 
-
   public static class UnitTest {
     @Test
     public void test1() {
       Solution sol = new TwoSum().new Solution();
       int[] test = {5, 75, 25};
-      assertArrayEquals(new int[]{2, 3}, sol.twoSum(test, 100));
+      assertArrayEquals(new int[]{1, 2}, sol.twoSum(test, 100));
       assertArrayEquals(null, sol.twoSum(test, 99));
     }
 
@@ -108,18 +107,20 @@ public class TwoSum {
     public void test2() {
       Solution_2 sol = new TwoSum().new Solution_2();
       int[] test = {5, 25, 75};
-      assertArrayEquals(new int[]{2, 3}, sol.twoSum(test, 100));
+      assertArrayEquals(new int[]{1, 2}, sol.twoSum(test, 100));
       assertArrayEquals(null, sol.twoSum(test, 99));
     }
 
     @Test
     public void test3() {
       TwoSumDS sol = new TwoSum().new TwoSumDS();
+      sol.add(1);
+      sol.add(3);
       sol.add(5);
-      sol.add(75);
-      sol.add(25);
-      assertTrue(sol.find(100));
-      assertFalse(sol.find(99));
+      sol.add(4);
+      assertTrue(sol.find(4));
+      assertTrue(sol.find(7));
+      assertFalse(sol.find(10));
     }
   }
 }
