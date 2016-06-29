@@ -59,18 +59,18 @@ public class LargestDivisibleSubset {
   // ToDo: Not working yet
   public class Solution_2 {
     public List<Integer> largestDivisibleSubset(int[] nums) {
-      List<Integer> maxSeq = new ArrayList<>();
+      List<Integer> maxSeq = new LinkedList<>();
       if (nums == null) return maxSeq;
       int n = nums.length;
       if (n == 0) return maxSeq;
 
       Arrays.sort(nums);
       for (int i = 0; i < n; i++) {
-        List<Integer> currList = new ArrayList<>();
+        LinkedList<Integer> currList = new LinkedList<>();
         currList.add(nums[i]);
-        for (int j = i + 1; j < n; j++) {
-          if (nums[j] % currList.get(currList.size() - 1) == 0) {
-            currList.add(nums[j]);
+        for (int j = i - 1; j >= 0; j--) {
+          if (currList.getFirst() % nums[j] == 0) {
+            currList.addFirst(nums[j]);
           }
         }
 
@@ -91,18 +91,18 @@ public class LargestDivisibleSubset {
  */
   public class Solution_3 {
     public List<Integer> largestDivisibleSubset(int[] nums) {
-      List<Integer> maxSeq = new ArrayList<>();
+      List<Integer> maxSeq = new LinkedList<>();
       if (nums == null) return maxSeq;
       int n = nums.length;
       if (n == 0) return maxSeq;
 
       Arrays.sort(nums);
       for (int i = n - 1; i >= 0; i--) {
-        List<Integer> currList = new ArrayList<>();
+        LinkedList<Integer> currList = new LinkedList<>();
         currList.add(nums[i]);
         for (int j = i - 1; j >= 0; j--) {
-          if (currList.get(0) % nums[j] == 0) {
-            currList.add(0, nums[j]);
+          if (currList.getFirst() % nums[j] == 0) {
+            currList.addFirst(nums[j]);
           }
         }
 
@@ -124,6 +124,7 @@ public class LargestDivisibleSubset {
       List<Integer> expected = new ArrayList<Integer>() {{
         add(1);
       }};
+      assertEquals(1, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{1, 2, 3};
@@ -132,6 +133,7 @@ public class LargestDivisibleSubset {
         add(1);
         add(3);
       }};
+      assertEquals(2, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{1, 2, 4, 8};
@@ -142,6 +144,18 @@ public class LargestDivisibleSubset {
         add(4);
         add(8);
       }};
+      assertEquals(4, result.size());
+      assertTrue(result.equals(expected));
+
+      test = new int[]{1, 2, 3, 4, 6, 24};
+      result = sol.largestDivisibleSubset(test);
+      expected = new ArrayList<Integer>() {{
+        add(1);
+        add(3);
+        add(6);
+        add(24);
+      }};
+      assertEquals(4, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{546, 669};
@@ -149,6 +163,7 @@ public class LargestDivisibleSubset {
       expected = new ArrayList<Integer>() {{
         add(669);
       }};
+      assertEquals(1, result.size());
       assertTrue(result.equals(expected));
     }
 
@@ -160,6 +175,7 @@ public class LargestDivisibleSubset {
       List<Integer> expected = new ArrayList<Integer>() {{
         add(1);
       }};
+      assertEquals(1, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{1, 2, 3};
@@ -168,6 +184,7 @@ public class LargestDivisibleSubset {
         add(1);
         add(2);
       }};
+      assertEquals(2, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{1, 2, 4, 8};
@@ -178,6 +195,18 @@ public class LargestDivisibleSubset {
         add(4);
         add(8);
       }};
+      assertEquals(4, result.size());
+      assertTrue(result.equals(expected));
+
+      test = new int[]{1, 2, 3, 4, 6, 24};
+      result = sol.largestDivisibleSubset(test);
+      expected = new ArrayList<Integer>() {{
+        add(1);
+        add(3);
+        add(6);
+        add(24);
+      }};
+      assertEquals(4, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{546, 669};
@@ -185,6 +214,7 @@ public class LargestDivisibleSubset {
       expected = new ArrayList<Integer>() {{
         add(546);
       }};
+      assertEquals(1, result.size());
       assertTrue(result.equals(expected));
     }
 
@@ -196,6 +226,7 @@ public class LargestDivisibleSubset {
       List<Integer> expected = new ArrayList<Integer>() {{
         add(1);
       }};
+      assertEquals(1, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{1, 2, 3};
@@ -204,6 +235,7 @@ public class LargestDivisibleSubset {
         add(1);
         add(3);
       }};
+      assertEquals(2, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{1, 2, 4, 8};
@@ -214,6 +246,18 @@ public class LargestDivisibleSubset {
         add(4);
         add(8);
       }};
+      assertEquals(4, result.size());
+      assertTrue(result.equals(expected));
+
+      test = new int[]{1, 2, 3, 4, 6, 24};
+      result = sol.largestDivisibleSubset(test);
+      expected = new ArrayList<Integer>() {{
+        add(1);
+        add(3);
+        add(6);
+        add(24);
+      }};
+      assertEquals(4, result.size());
       assertTrue(result.equals(expected));
 
       test = new int[]{546, 669};
@@ -221,8 +265,8 @@ public class LargestDivisibleSubset {
       expected = new ArrayList<Integer>() {{
         add(669);
       }};
+      assertEquals(1, result.size());
       assertTrue(result.equals(expected));
     }
   }
 }
-
