@@ -28,7 +28,7 @@ public class ReverseString {
     }
 
     /*
-    Reverse String
+        Reverse String
         Leetcode #344
         https://leetcode.com/problems/reverse-string/
         Difficulty: Easy
