@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class LongestSubstringwithAtMostTwoDistinctCharacters {
   /*
-      Longest Substring with At Most Two Distinct Characters - Using Hasmap
+      Longest Substring with At Most Two Distinct Characters
       leetcode #159
       https://leetcode.com/discuss/questions/oj/longest-substring-with-at-most-two-distinct-characters?sort=votes
       http://www.cnblogs.com/grandyang/p/5185561.html
