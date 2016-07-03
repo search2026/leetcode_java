@@ -35,7 +35,19 @@ public class ClimbingStairs {
   public class Solution_2 {
     public int climbStairs(int n) {
       double root5 = Math.sqrt(5);
-//      return (int) ((Math.pow((1 + root5) / 2, n + 1) - Math.pow((1 - root5) / 2, n + 1)) / root5 + 0.5);
+      return (int) ((Math.pow((1 + root5) / 2, n + 1) - Math.pow((1 - root5) / 2, n + 1)) / root5 + 0.5);
+    }
+  }
+
+  /*
+      Climbing Stairs
+      Leetcode #70
+      https://leetcode.com/problems/climbing-stairs/
+      Difficulty: Easy
+   */
+  public class Solution_3 {
+    public int climbStairs(int n) {
+      double root5 = Math.sqrt(5);
       double phi = (1 + root5) / 2;
       return (int) (Math.pow(phi, n + 1) / root5 + 0.5);
     }
@@ -57,6 +69,18 @@ public class ClimbingStairs {
     @Test
     public void test2() {
       Solution_2 sol = new ClimbingStairs().new Solution_2();
+      assertEquals(1, sol.climbStairs(1));
+      assertEquals(2, sol.climbStairs(2));
+      assertEquals(3, sol.climbStairs(3));
+      assertEquals(5, sol.climbStairs(4));
+      assertEquals(8, sol.climbStairs(5));
+      assertEquals(13, sol.climbStairs(6));
+      assertEquals(21, sol.climbStairs(7));
+    }
+
+    @Test
+    public void test3() {
+      Solution_3 sol = new ClimbingStairs().new Solution_3();
       assertEquals(1, sol.climbStairs(1));
       assertEquals(2, sol.climbStairs(2));
       assertEquals(3, sol.climbStairs(3));

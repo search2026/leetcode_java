@@ -216,6 +216,7 @@ public class SingleNumber {
 
   /*
     Single Number IV
+    every element appears k times except for one. find that single one which appears l times.
     https://leetcode.com/discuss/857/constant-space-solution?show=2542#a2542
     Difficulty: Medium
   */
@@ -226,9 +227,9 @@ public class SingleNumber {
       int[] x = new int[k];
       x[0] = ~0;
       for (int i = 0; i < nums.length; i++) {
-        t = x[k-1];
-        for (int j = k-1; j > 0; j--) {
-          x[j] = (x[j-1] & nums[i]) | (x[j] & ~nums[i]);
+        t = x[k - 1];
+        for (int j = k - 1; j > 0; j--) {
+          x[j] = (x[j - 1] & nums[i]) | (x[j] & ~nums[i]);
         }
         x[0] = (t & nums[i]) | (x[0] & ~nums[i]);
       }
@@ -347,7 +348,8 @@ public class SingleNumber {
     public void test9() {
       Solution_9 sol = new SingleNumber().new Solution_9();
 
-      int[] test1 = {1, 2, -3, -3, -3, 2, 2};;
+      int[] test1 = {1, 2, -3, -3, -3, 2, 2};
+      ;
       assertEquals(1, sol.singleNumber(test1, 3, 1));
 
       int[] test2 = {1, 2, -3, -3, 2, 1, 9};

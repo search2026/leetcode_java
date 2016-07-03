@@ -2,82 +2,55 @@ package min_stack;
 
 import org.junit.Test;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 import static org.junit.Assert.assertEquals;
 
+/*
+    Min Stack
+    Leetcode #155
+    https://leetcode.com/problems/min-stack/
+    Difficulty: Easy
+ */
 public class MinStack {
-    /*
-        Min Stack
-        Leetcode #155
-        https://leetcode.com/problems/min-stack/
-        Difficulty: Easy
-     */
-    public static class IntStack {
-        private int[] items = new int[16];
-        private int size = 0;
+  private Deque<Integer> minStack = new ArrayDeque<>();
+  private Deque<Integer> stack = new ArrayDeque<>();
 
-        private void ensureSize(int newSize) {
-            if (items.length < newSize) {
-                int[] newItems = new int[items.length * 2];
-                System.arraycopy(items, 0, newItems, 0, items.length);
-                items = newItems;
-            }
-        }
-
-        public void push(int v) {
-            ensureSize(size + 1);
-            items[size++] = v;
-        }
-
-        public void pop() {
-            if (size == 0) {
-                throw new IllegalStateException("The stack is empty");
-            }
-            size--;
-        }
-
-        public int top() {
-            if (size == 0) {
-                throw new IllegalStateException("The stack is empty");
-            }
-            return items[size - 1];
-        }
-
-        public boolean isEmpty() {
-            return size == 0;
-        }
+  public void push(int x) {
+    stack.push(x);
+    if (minStack.isEmpty() || x <= minStack.peek()) {
+      minStack.push(x);
     }
+  }
 
-    private IntStack minStack = new IntStack();
-    private IntStack stack = new IntStack();
-
-    public void push(int x) {
-        if (stack.isEmpty() || x <= minStack.top()) {
-            minStack.push(x);
-        }
-        stack.push(x);
+  public void pop() {
+    int x = stack.peek();
+    stack.pop();
+    if (x == minStack.peek()) {
+      minStack.pop();
     }
+  }
 
-    public void pop() {
-        int x = stack.top();
-        stack.pop();
-        if (x == minStack.top()) {
-            minStack.pop();
-        }
-    }
+  public int top() {
+    return stack.peek();
+  }
 
-    public int top() {
-        return stack.top();
-    }
+  public int getMin() {
+    return minStack.peek();
+  }
 
-    public int getMin() {
-        return minStack.top();
+  public static class UnitTest {
+    @Test
+    public void test1() {
+      MinStack minStack = new MinStack();
+      minStack.push(-2);
+      minStack.push(0);
+      minStack.push(-3);
+      assertEquals(-3, minStack.getMin());
+      minStack.pop();
+      assertEquals(0, minStack.top());
+      assertEquals(-2, minStack.getMin());
     }
-
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            MinStack sol = new MinStack();
-            assertEquals(3, 3);
-        }
-    }
+  }
 }
