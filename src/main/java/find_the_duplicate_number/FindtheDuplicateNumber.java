@@ -50,7 +50,8 @@ public class FindtheDuplicateNumber {
         @Test
         public void test1() {
             Solution sol = new FindtheDuplicateNumber().new Solution();
-            assertTrue(true);
+            int[] test = {4, 1, 5, 2, 3, 1};
+            assertEquals(1, sol.findDuplicate(test));
         }
     }
 }
