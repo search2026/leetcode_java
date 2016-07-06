@@ -34,7 +34,7 @@ public class LongestSubstringwithAtMostKDistinctCharacters {
   }
 
   /*
-    Longest Substring with At Most K Distinct Characters - tempplate
+    Longest Substring with At Most K Distinct Characters - template
     leetcode #340
     https://leetcode.com/discuss/questions/oj/longest-substring-with-at-most-k-distinct-characters?sort=votes
     http://www.cnblogs.com/grandyang/p/5351347.html
