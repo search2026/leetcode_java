@@ -53,6 +53,7 @@ public class HouseRobber {
         exclude = Math.max(exclude, include);
         include = curr;
       }
+
       return Math.max(include, exclude);
     }
   }
@@ -125,7 +126,7 @@ public class HouseRobber {
   */
   public class Solution_5 {
     private int[] search(TreeNode node) {
-      int[] maxVal = new int[2]; //include and exclude
+      int[] maxVal = new int[2]; //exclude and include
       if (node == null) return maxVal;
       int[] left = search(node.left);
       int[] right = search(node.right);
@@ -164,6 +165,7 @@ public class HouseRobber {
 
       int sum = Math.max(sum1, sum2);
       map.put(root, sum);
+
       return sum;
     }
   }
