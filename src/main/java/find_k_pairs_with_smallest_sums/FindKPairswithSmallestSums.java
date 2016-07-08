@@ -8,12 +8,53 @@ import static org.junit.Assert.assertEquals;
 
 public class FindKPairswithSmallestSums {
   /*
-      Find K Pairs with Smallest Sums - Priority Queue
+      Find K Pairs with Smallest Sums - Two Points
       Leetcode #373
       https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
       Difficulty: Medium
    */
   public class Solution {
+    public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+      List<int[]> sPairs = new ArrayList<>();
+      if (nums1 == null || nums1.length == 0 || nums2 == null
+              || nums2.length == 0 || k == 0) return sPairs;
+
+      int len1 = nums1.length, len2 = nums2.length;
+
+      int[] idx = new int[len1]; // map to last used element in nums2
+      while (sPairs.size() < k) {
+        int minSoFar = Integer.MAX_VALUE;
+        int nums1pos = -1;
+        // find smallest pair
+        for (int i = 0; i < len1; i++) {
+          if (idx[i] >= len2) {
+            continue;
+          }
+          if (nums1[i] + nums2[idx[i]] < minSoFar) {
+            minSoFar = nums1[i] + nums2[idx[i]];
+            nums1pos = i;
+          }
+        }
+
+        if (nums1pos == -1) {
+          break;
+        }
+
+        int[] minPairVal = {nums1[nums1pos], nums2[idx[nums1pos]]};
+        sPairs.add(minPairVal);
+        idx[nums1pos]++;
+      }
+      return sPairs;
+    }
+  }
+
+  /*
+      Find K Pairs with Smallest Sums - Priority Queue
+      Leetcode #373
+      https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
+      Difficulty: Medium
+   */
+  public class Solution_2 {
     final int[][] neighbors = {{0, 1}, {1, 0}};
 
     public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {
@@ -22,15 +63,15 @@ public class FindKPairswithSmallestSums {
               || nums2.length == 0 || k == 0) return sPairs;
 
       int m = nums1.length, n = nums2.length;
-      int p = k;
       boolean[][] visited = new boolean[m][n];
       Queue<Pair> pq = new PriorityQueue<>();
       pq.offer(new Pair(0, 0, nums1[0] + nums2[0]));
       visited[0][0] = true;
-      while (p > 0 && !pq.isEmpty()) {
+
+      while (sPairs.size() < k && !pq.isEmpty()) {
         Pair minSoFar = pq.poll();
         sPairs.add(new int[] {nums1[minSoFar.row], nums2[minSoFar.col]});
-        p--;
+
         for (int[] neighbor : neighbors) {
           int row1 = minSoFar.row + neighbor[0];
           int col1 = minSoFar.col + neighbor[1];
@@ -41,6 +82,7 @@ public class FindKPairswithSmallestSums {
           pq.offer(new Pair(row1, col1, nums1[row1] + nums2[col1]));
         }
       }
+
       return sPairs;
     }
 
@@ -67,7 +109,7 @@ public class FindKPairswithSmallestSums {
       https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
       Difficulty: Medium
    */
-  public class Solution_2 {
+  public class Solution_3 {
     private void search(PriorityQueue<int[]> pq, boolean[][] visited, int[] nums1, int[] nums2, int n1, int n2){
       if(n1 < nums1.length && n2 < nums2.length && !visited[n1][n2]){
         pq.add(new int[]{n1, n2});
@@ -80,17 +122,13 @@ public class FindKPairswithSmallestSums {
       if (nums1 == null || nums1.length == 0 || nums2 == null
               || nums2.length == 0 || k == 0) return sPairs;
 
-      PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>(){
-        public int compare(int[] pair1, int[] pair2){
-          return (nums1[pair1[0]] + nums2[pair1[1]]) - (nums1[pair2[0]] + nums2[pair2[1]]);
-        }
-      });
+      PriorityQueue<int[]> pq = new PriorityQueue<>((int[] pair1, int[] pair2)->
+              (nums1[pair1[0]] + nums2[pair1[1]]) - (nums1[pair2[0]] + nums2[pair2[1]]));
 
-      int length1 = nums1.length;
-      int length2 = nums2.length;
-      boolean[][] visited = new boolean[length1][length2];
-
+      int len1 = nums1.length, len2 = nums2.length;
+      boolean[][] visited = new boolean[len1][len2];
       search(pq, visited, nums1, nums2, 0, 0);
+
       while(pq.size() > 0 && sPairs.size() < k){
         int[] next = pq.poll();
         sPairs.add(new int[]{nums1[next[0]], nums2[next[1]]});
@@ -98,49 +136,6 @@ public class FindKPairswithSmallestSums {
         search(pq, visited, nums1, nums2, next[0], next[1] + 1);
       }
 
-      return sPairs;
-    }
-  }
-
-  /*
-      Find K Pairs with Smallest Sums - Two Points
-      Leetcode #373
-      https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
-      Difficulty: Medium
-   */
-  public class Solution_3 {
-    public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {
-      List<int[]> sPairs = new ArrayList<>();
-      if (nums1 == null || nums1.length == 0 || nums2 == null
-              || nums2.length == 0 || k == 0) return sPairs;
-
-      int m = nums1.length, n = nums2.length;
-      int p = k;
-
-      int[] idx = new int[m]; // map to last used element in nums2
-      while (p > 0) {
-        int minSoFar = Integer.MAX_VALUE;
-        int nums1pos = -1;
-        // find smallest pair
-        for (int i = 0; i < m; i++) {
-          if (idx[i] >= n) {
-            continue;
-          }
-          if (nums1[i] + nums2[idx[i]] < minSoFar) {
-            minSoFar = nums1[i] + nums2[idx[i]];
-            nums1pos = i;
-          }
-        }
-
-        if (nums1pos == -1) {
-          break;
-        }
-
-        int[] minPairVal = {nums1[nums1pos], nums2[idx[nums1pos]]};
-        sPairs.add(minPairVal);
-        idx[nums1pos]++;
-        p--;
-      }
       return sPairs;
     }
   }
