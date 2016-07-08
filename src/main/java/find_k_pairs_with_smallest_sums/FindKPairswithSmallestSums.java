@@ -20,18 +20,17 @@ public class FindKPairswithSmallestSums {
               || nums2.length == 0 || k == 0) return sPairs;
 
       int len1 = nums1.length, len2 = nums2.length;
-
-      int[] idx = new int[len1]; // map to last used element in nums2
+      int[] nums2idx = new int[len1]; // map to last used element in nums2
       while (sPairs.size() < k) {
         int minSoFar = Integer.MAX_VALUE;
         int nums1pos = -1;
         // find smallest pair
         for (int i = 0; i < len1; i++) {
-          if (idx[i] >= len2) {
+          if (nums2idx[i] >= len2) {
             continue;
           }
-          if (nums1[i] + nums2[idx[i]] < minSoFar) {
-            minSoFar = nums1[i] + nums2[idx[i]];
+          if (nums1[i] + nums2[nums2idx[i]] <= minSoFar) {
+            minSoFar = nums1[i] + nums2[nums2idx[i]];
             nums1pos = i;
           }
         }
@@ -40,10 +39,10 @@ public class FindKPairswithSmallestSums {
           break;
         }
 
-        int[] minPairVal = {nums1[nums1pos], nums2[idx[nums1pos]]};
-        sPairs.add(minPairVal);
-        idx[nums1pos]++;
+        sPairs.add(new int[]{nums1[nums1pos], nums2[nums2idx[nums1pos]]});
+        nums2idx[nums1pos]++;
       }
+
       return sPairs;
     }
   }
@@ -62,44 +61,29 @@ public class FindKPairswithSmallestSums {
       if (nums1 == null || nums1.length == 0 || nums2 == null
               || nums2.length == 0 || k == 0) return sPairs;
 
-      int m = nums1.length, n = nums2.length;
-      boolean[][] visited = new boolean[m][n];
-      Queue<Pair> pq = new PriorityQueue<>();
-      pq.offer(new Pair(0, 0, nums1[0] + nums2[0]));
+      int len1 = nums1.length, len2 = nums2.length;
+      boolean[][] visited = new boolean[len1][len2];
       visited[0][0] = true;
+      PriorityQueue<int[]> pq = new PriorityQueue<>((int[] pair1, int[] pair2)->
+              (nums1[pair1[0]] + nums2[pair1[1]]) - (nums1[pair2[0]] + nums2[pair2[1]]));
+      pq.offer(new int[]{0, 0});
 
       while (sPairs.size() < k && !pq.isEmpty()) {
-        Pair minSoFar = pq.poll();
-        sPairs.add(new int[] {nums1[minSoFar.row], nums2[minSoFar.col]});
+        int[] currPair = pq.poll();
+        sPairs.add(new int[] {nums1[currPair[0]], nums2[currPair[1]]});
 
         for (int[] neighbor : neighbors) {
-          int row1 = minSoFar.row + neighbor[0];
-          int col1 = minSoFar.col + neighbor[1];
-          if (row1 < 0 || row1 == m || col1 < 0 || col1 == n || visited[row1][col1]) {
+          int row = currPair[0] + neighbor[0];
+          int col = currPair[1] + neighbor[1];
+          if (row < 0 || row == len1 || col < 0 || col == len2 || visited[row][col]) {
             continue;
           }
-          visited[row1][col1] = true;
-          pq.offer(new Pair(row1, col1, nums1[row1] + nums2[col1]));
+          visited[row][col] = true;
+          pq.offer(new int[]{row, col});
         }
       }
 
       return sPairs;
-    }
-
-    private class Pair implements Comparable<Pair> {
-      int row;
-      int col;
-      int value;
-
-      Pair(int row, int col, int value) {
-        this.row = row;
-        this.col = col;
-        this.value = value;
-      }
-
-      public int compareTo(Pair other) {
-        return value - other.value;
-      }
     }
   }
 
