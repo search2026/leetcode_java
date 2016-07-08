@@ -22,8 +22,8 @@ public class HouseRobber {
       if (n == 0) return 0;
       if (n == 1) return nums[0];
 
-      int f1 = nums[0];
-      int f2 = Math.max(nums[0], nums[1]);
+      int f1 = nums[0]; // exclude max
+      int f2 = Math.max(nums[0], nums[1]); // max so far
       for (int i = 2; i < n; i++) {
         int f = Math.max(f1 + nums[i], f2);
         f1 = f2;
@@ -35,36 +35,12 @@ public class HouseRobber {
   }
 
   /*
-      House Robber - Dynamic Programming
-      Leetcode #198
-      https://leetcode.com/problems/house-robber/
-      Difficulty: Easy
-  */
-  public class Solution_2 {
-    public int rob(int[] nums) {
-      if (nums == null) return 0;
-      int n = nums.length;
-      if (n == 0) return 0;
-      if (n == 1) return nums[0];
-
-      int include = 0, exclude = 0;
-      for (int i = 0; i < n; i++) {
-        int curr = exclude + nums[i];
-        exclude = Math.max(exclude, include);
-        include = curr;
-      }
-
-      return Math.max(include, exclude);
-    }
-  }
-
-  /*
       House Robber II - Dynamic Programming
       Leetcode #213
       https://leetcode.com/problems/house-robber-ii/
       Difficulty: Medium
   */
-  public class Solution_3 {
+  public class Solution_2 {
     public int rob(int[] nums) {
       if (nums == null || nums.length == 0) return 0;
       int n = nums.length;
@@ -98,15 +74,17 @@ public class HouseRobber {
       https://leetcode.com/problems/house-robber-ii/
       Difficulty: Medium
   */
-  public class Solution_4 {
-    private int rob(int[] num, int left, int right) {
-      int include = 0, exclude = 0;
-      for (int j = left; j <= right; j++) {
-        int i = include, e = exclude;
-        include = e + num[j];
-        exclude = Math.max(e, i);
+  public class Solution_3 {
+    private int rob(int[] nums, int left, int right) {
+      int excludeMax = 0, maxSoFar = nums[left];
+
+      for (int i = left + 1; i <= right; i++) {
+        int f = Math.max(excludeMax + nums[i], maxSoFar);
+        excludeMax = maxSoFar;
+        maxSoFar = f;
       }
-      return Math.max(include, exclude);
+
+      return maxSoFar;
     }
 
     public int rob(int[] nums) {
@@ -124,49 +102,20 @@ public class HouseRobber {
       https://leetcode.com/problems/house-robber-iii/
       Difficulty: Medium
   */
-  public class Solution_5 {
+  public class Solution_4 {
     private int[] search(TreeNode node) {
-      int[] maxVal = new int[2]; //exclude and include
+      int[] maxVal = new int[2]; //excludeMax and maxSoFar
       if (node == null) return maxVal;
       int[] left = search(node.left);
       int[] right = search(node.right);
       maxVal[0] = left[1] + right[1];
-      maxVal[1] = Math.max(maxVal[0], left[0] + right[0] + node.val);
+      maxVal[1] = Math.max(left[0] + right[0] + node.val, maxVal[0]);
       return maxVal;
     }
 
     public int rob(TreeNode root) {
       int[] maxVal = search(root);
       return Math.max(maxVal[0], maxVal[1]);
-    }
-  }
-
-  /*
-      House Robber III - Backtracking with HashMap
-      Leetcode #337
-      https://leetcode.com/problems/house-robber-iii/
-      Difficulty: Medium
-  */
-  public class Solution_6 {
-    private Map<TreeNode, Integer> map = new HashMap<>();
-
-    public int rob(TreeNode root) {
-      if (root == null) return 0;
-      if (root.left == null && root.right == null) return root.val;
-      if (map.containsKey(root)) return map.get(root);
-
-      //case 1
-      int sum1 = root.val;
-      if (root.left != null) sum1 += rob(root.left.left) + rob(root.left.right);
-      if (root.right != null) sum1 += rob(root.right.left) + rob(root.right.right);
-
-      //case 2
-      int sum2 = rob(root.left) + rob(root.right);
-
-      int sum = Math.max(sum1, sum2);
-      map.put(root, sum);
-
-      return sum;
     }
   }
 
@@ -186,7 +135,7 @@ public class HouseRobber {
       int[] test1 = {5, 6, 3, 1};
       assertEquals(8, sol.rob(test1));
       int[] test2 = {6, 5, 0, 1, 0, 9};
-      assertEquals(16, sol.rob(test2));
+      assertEquals(15, sol.rob(test2));
     }
 
     @Test
@@ -201,34 +150,6 @@ public class HouseRobber {
     @Test
     public void test4() {
       Solution_4 sol = new HouseRobber().new Solution_4();
-      int[] test1 = {5, 6, 3, 1};
-      assertEquals(8, sol.rob(test1));
-      int[] test2 = {6, 5, 0, 1, 0, 9};
-      assertEquals(15, sol.rob(test2));
-    }
-
-    @Test
-    public void test5() {
-      Solution_5 sol = new HouseRobber().new Solution_5();
-      TreeNode root = new TreeNode(3);
-      root.left = new TreeNode(2);
-      root.right = new TreeNode(3);
-      root.left.right = new TreeNode(3);
-      root.right.right = new TreeNode(1);
-      assertEquals(7, sol.rob(root));
-
-      root = new TreeNode(3);
-      root.left = new TreeNode(4);
-      root.right = new TreeNode(5);
-      root.left.left = new TreeNode(1);
-      root.left.right = new TreeNode(3);
-      root.right.right = new TreeNode(1);
-      assertEquals(9, sol.rob(root));
-    }
-
-    @Test
-    public void test6() {
-      Solution_6 sol = new HouseRobber().new Solution_6();
       TreeNode root = new TreeNode(3);
       root.left = new TreeNode(2);
       root.right = new TreeNode(3);
