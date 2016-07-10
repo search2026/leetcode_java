@@ -14,11 +14,12 @@ public class MaxSumofRectangle {
     /**
      * To find maxSum in 1d array
      */
-    private int findMaxium(int[] a) {
+    private int findMaxium(int[] sumArray) {
       int maxSum = Integer.MIN_VALUE, localSum = 0;
 
-      for (int i = 0; i < a.length; i++) {
-        localSum += a[i];
+      // Maximum SubArray
+      for (int i = 0; i < sumArray.length; i++) {
+        localSum += sumArray[i];
         if (localSum < 0) {
           localSum = 0;
         } else {
@@ -28,8 +29,8 @@ public class MaxSumofRectangle {
 
       // if all numbers are negative
       if (maxSum == Integer.MIN_VALUE) {
-        for (int i = 0; i < a.length; i++) {
-          maxSum = Math.max(maxSum, a[i]);
+        for (int i = 0; i < sumArray.length; i++) {
+          maxSum = Math.max(maxSum, sumArray[i]);
         }
       }
 
@@ -45,13 +46,13 @@ public class MaxSumofRectangle {
       int maxSum = Integer.MIN_VALUE;
 
       for (int leftCol = 0; leftCol < n; leftCol++) {
-        int[] sums = new int[m];
+        int[] sumArray = new int[m];
 
         for (int rightCol = leftCol; rightCol < n; rightCol++) {
           for (int i = 0; i < m; i++) {
-            sums[i] += matrix[i][rightCol];
+            sumArray[i] += matrix[i][rightCol];
           }
-          int currMax = findMaxium(sums);
+          int currMax = findMaxium(sumArray);
           maxSum = Math.max(currMax, maxSum);
         }
       }
@@ -61,10 +62,10 @@ public class MaxSumofRectangle {
   }
 
   /*
-    Max Sum of Rectangle
-    http://www.geeksforgeeks.org/dynamic-programming-set-27-max-sum-rectangle-in-a-2d-matrix/
-    Difficulty: Hard
- */
+      Max Sum of Rectangle
+      http://www.geeksforgeeks.org/dynamic-programming-set-27-max-sum-rectangle-in-a-2d-matrix/
+      Difficulty: Hard
+   */
   public class Solution_2 {
     /**
      * To find maxSum in 1d array
@@ -134,7 +135,6 @@ public class MaxSumofRectangle {
       return maxSum;
     }
   }
-
 
   public static class UnitTest {
     @Test

@@ -2,13 +2,15 @@ package find_k_pairs_with_smallest_sums;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
 
 import static org.junit.Assert.assertEquals;
 
 public class FindKPairswithSmallestSums {
   /*
-      Find K Pairs with Smallest Sums - Two Points
+      Find K Pairs with Smallest Sums - No Priority Queue
       Leetcode #373
       https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
       Difficulty: Medium
@@ -26,10 +28,7 @@ public class FindKPairswithSmallestSums {
         int nums1pos = -1;
         // find smallest pair
         for (int i = 0; i < len1; i++) {
-          if (nums2idx[i] >= len2) {
-            continue;
-          }
-          if (nums1[i] + nums2[nums2idx[i]] <= minSoFar) {
+          if ((nums2idx[i] < len2) && (nums1[i] + nums2[nums2idx[i]] <= minSoFar)) {
             minSoFar = nums1[i] + nums2[nums2idx[i]];
             nums1pos = i;
           }
@@ -64,22 +63,22 @@ public class FindKPairswithSmallestSums {
       int len1 = nums1.length, len2 = nums2.length;
       boolean[][] visited = new boolean[len1][len2];
       visited[0][0] = true;
-      PriorityQueue<int[]> pq = new PriorityQueue<>((int[] pair1, int[] pair2)->
+      PriorityQueue<int[]> pq = new PriorityQueue<>((int[] pair1, int[] pair2) ->
               (nums1[pair1[0]] + nums2[pair1[1]]) - (nums1[pair2[0]] + nums2[pair2[1]]));
       pq.offer(new int[]{0, 0});
 
       while (sPairs.size() < k && !pq.isEmpty()) {
         int[] currPair = pq.poll();
-        sPairs.add(new int[] {nums1[currPair[0]], nums2[currPair[1]]});
+        sPairs.add(new int[]{nums1[currPair[0]], nums2[currPair[1]]});
 
         for (int[] neighbor : neighbors) {
-          int row = currPair[0] + neighbor[0];
-          int col = currPair[1] + neighbor[1];
-          if (row < 0 || row == len1 || col < 0 || col == len2 || visited[row][col]) {
+          int nums1pos = currPair[0] + neighbor[0];
+          int nums2pos = currPair[1] + neighbor[1];
+          if (nums1pos < 0 || nums1pos == len1 || nums2pos < 0 || nums2pos == len2 || visited[nums1pos][nums2pos]) {
             continue;
           }
-          visited[row][col] = true;
-          pq.offer(new int[]{row, col});
+          visited[nums1pos][nums2pos] = true;
+          pq.offer(new int[]{nums1pos, nums2pos});
         }
       }
 
@@ -94,8 +93,8 @@ public class FindKPairswithSmallestSums {
       Difficulty: Medium
    */
   public class Solution_3 {
-    private void search(PriorityQueue<int[]> pq, boolean[][] visited, int[] nums1, int[] nums2, int n1, int n2){
-      if(n1 < nums1.length && n2 < nums2.length && !visited[n1][n2]){
+    private void search(PriorityQueue<int[]> pq, boolean[][] visited, int[] nums1, int[] nums2, int n1, int n2) {
+      if (n1 < nums1.length && n2 < nums2.length && !visited[n1][n2]) {
         pq.add(new int[]{n1, n2});
         visited[n1][n2] = true;
       }
@@ -106,14 +105,14 @@ public class FindKPairswithSmallestSums {
       if (nums1 == null || nums1.length == 0 || nums2 == null
               || nums2.length == 0 || k == 0) return sPairs;
 
-      PriorityQueue<int[]> pq = new PriorityQueue<>((int[] pair1, int[] pair2)->
+      PriorityQueue<int[]> pq = new PriorityQueue<>((int[] pair1, int[] pair2) ->
               (nums1[pair1[0]] + nums2[pair1[1]]) - (nums1[pair2[0]] + nums2[pair2[1]]));
 
       int len1 = nums1.length, len2 = nums2.length;
       boolean[][] visited = new boolean[len1][len2];
       search(pq, visited, nums1, nums2, 0, 0);
 
-      while(pq.size() > 0 && sPairs.size() < k){
+      while (pq.size() > 0 && sPairs.size() < k) {
         int[] next = pq.poll();
         sPairs.add(new int[]{nums1[next[0]], nums2[next[1]]});
         search(pq, visited, nums1, nums2, next[0] + 1, next[1]);
