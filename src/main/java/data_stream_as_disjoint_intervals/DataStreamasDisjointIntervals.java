@@ -22,23 +22,15 @@ public class DataStreamasDisjointIntervals {
     }
 
     public void addNum(int val) {
-      int start = 0;
-      List<Interval> list = new ArrayList<>();
-      Interval newItem = new Interval(val, val);
-      for (int i = 0; i < intervals.size(); i++) {
-        Interval curr = intervals.get(i);
-        if (curr.end + 1 < newItem.start) {
-          list.add(curr);
-        } else if (curr.start - 1 > newItem.end) {
-          list.add(newItem);
-          newItem = curr;
-        } else {
-          newItem.start = Math.min(newItem.start, curr.start);
-          newItem.end = Math.max(newItem.end, curr.end);
-        }
+      int pos = 0;
+      Interval newInterval = new Interval(val, val);
+      while (pos < intervals.size() && intervals.get(pos).end + 1 < newInterval.start) pos++;
+      while (pos < intervals.size() && intervals.get(pos).start - 1 <= newInterval.end) {
+        newInterval.start = Math.min(intervals.get(pos).start, newInterval.start);
+        newInterval.end = Math.max(intervals.get(pos).end, newInterval.end);
+        intervals.remove(pos);
       }
-      list.add(newItem);
-      intervals = list;
+      intervals.add(pos, newInterval);
     }
 
     public List<Interval> getIntervals() {
@@ -55,9 +47,6 @@ public class DataStreamasDisjointIntervals {
   public class SummaryRanges_2 {
     TreeMap<Integer, Interval> tree;
 
-    /**
-     * Initialize your data structure here.
-     */
     public SummaryRanges_2() {
       tree = new TreeMap<>();
     }
@@ -94,9 +83,6 @@ public class DataStreamasDisjointIntervals {
     Map<Integer, Integer> map;
     Map<Integer, Integer> Intervals;
 
-    /**
-     * Initialize your data structure here.
-     */
     public SummaryRanges_3() {
       map = new HashMap<>();
       Intervals = new HashMap<>();
@@ -172,6 +158,30 @@ public class DataStreamasDisjointIntervals {
     @Test
     public void test2() {
       SummaryRanges_2 sr = new DataStreamasDisjointIntervals().new SummaryRanges_2();
+      sr.addNum(1);
+      sr.addNum(3);
+      sr.addNum(7);
+      sr.addNum(2);
+      sr.addNum(6);
+      List<Interval> rslt = sr.getIntervals();
+      assertEquals(2, rslt.size());
+      assertEquals(1, rslt.get(0).start);
+      assertEquals(3, rslt.get(0).end);
+      assertEquals(6, rslt.get(1).start);
+      assertEquals(7, rslt.get(1).end);
+
+      sr.addNum(5);
+      rslt = sr.getIntervals();
+      assertEquals(2, rslt.size());
+      assertEquals(1, rslt.get(0).start);
+      assertEquals(3, rslt.get(0).end);
+      assertEquals(5, rslt.get(1).start);
+      assertEquals(7, rslt.get(1).end);
+    }
+
+    @Test
+    public void test3() {
+      SummaryRanges_3 sr = new DataStreamasDisjointIntervals().new SummaryRanges_3();
       sr.addNum(1);
       sr.addNum(3);
       sr.addNum(7);

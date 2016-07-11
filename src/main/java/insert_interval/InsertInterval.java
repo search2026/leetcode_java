@@ -19,24 +19,24 @@ public class InsertInterval {
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
       if (newInterval == null || intervals == null) return intervals;
 
-      List<Interval> rslt = new ArrayList<>();
+      List<Interval> intervalList = new ArrayList<>();
       int pos = 0;
 
       for (Interval interval : intervals) {
         if (interval.end < newInterval.start) {
-          rslt.add(interval);
+          intervalList.add(interval);
           pos++;
         } else if (interval.start > newInterval.end) {
-          rslt.add(interval);
+          intervalList.add(interval);
         } else {
           newInterval.start = Math.min(interval.start, newInterval.start);
           newInterval.end = Math.max(interval.end, newInterval.end);
         }
       }
 
-      rslt.add(pos, newInterval);
+      intervalList.add(pos, newInterval);
 
-      return rslt;
+      return intervalList;
     }
   }
 
@@ -53,10 +53,12 @@ public class InsertInterval {
       int pos = 0;
       while (pos < intervals.size() && intervals.get(pos).end < newInterval.start) pos++;
       while (pos < intervals.size() && intervals.get(pos).start <= newInterval.end) {
-        newInterval = new Interval(Math.min(intervals.get(pos).start, newInterval.start), Math.max(intervals.get(pos).end, newInterval.end));
+        newInterval.start = Math.min(intervals.get(pos).start, newInterval.start);
+        newInterval.end = Math.max(intervals.get(pos).end, newInterval.end);
         intervals.remove(pos);
       }
       intervals.add(pos, newInterval);
+
       return intervals;
     }
   }

@@ -24,24 +24,23 @@ public class MergeIntervals {
 
     public List<Interval> merge(List<Interval> intervals) {
       if (intervals == null || intervals.size() == 0) return intervals;
-
-      //Collections.sort(intervals, new IntervalComparator());
+      
       Collections.sort(intervals, (Interval i1, Interval i2) -> (i1.start - i2.start));
 
-      List<Interval> rslt = new ArrayList<>();
+      List<Interval> intervalList = new ArrayList<>();
       Interval last = intervals.get(0);
       for (int i = 1; i < intervals.size(); i++) {
         Interval cur = intervals.get(i);
         if (cur.start <= last.end) {
           last.end = Math.max(last.end, cur.end);
         } else {
-          rslt.add(last);
+          intervalList.add(last);
           last = cur;
         }
       }
 
-      rslt.add(last);
-      return rslt;
+      intervalList.add(last);
+      return intervalList;
     }
   }
 
