@@ -1,10 +1,9 @@
 package valid_perfect_square;
 
-import java.util.*;
+import org.junit.Test;
 
-import org.junit.*;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ValidPerfectSquare {
   /*
@@ -16,8 +15,9 @@ public class ValidPerfectSquare {
   public class Solution {
     boolean isPerfectSquare(int num) {
       if (num < 1) return false;
-      for (int i = 1; num > 0; i += 2)
+      for (int i = 1; num > 0; i += 2) {
         num -= i;
+      }
       return num == 0;
     }
   }
@@ -50,7 +50,7 @@ public class ValidPerfectSquare {
   }
 
   /*
-      Valid Perfect Square - Newton
+      Valid Perfect Square - Newton Method
       Leetcode #367
       https://leetcode.com/problems/valid-perfect-square/
       Difficulty: Medium
@@ -58,11 +58,11 @@ public class ValidPerfectSquare {
   public class Solution_3 {
     boolean isPerfectSquare(int num) {
       if (num < 1) return false;
+      if (num == 1) return true;
       long t = num / 2;
       while (t * t > num) {
         t = (t + num / t) / 2;
       }
-      //if (t * t < num) t++;
       return t * t == num;
     }
   }
@@ -71,6 +71,8 @@ public class ValidPerfectSquare {
     @Test
     public void test1() {
       Solution sol = new ValidPerfectSquare().new Solution();
+      assertFalse(sol.isPerfectSquare(0));
+      assertTrue(sol.isPerfectSquare(1));
       assertFalse(sol.isPerfectSquare(8));
       assertTrue(sol.isPerfectSquare(9));
       assertFalse(sol.isPerfectSquare(10));
@@ -86,6 +88,8 @@ public class ValidPerfectSquare {
     @Test
     public void test2() {
       Solution_2 sol = new ValidPerfectSquare().new Solution_2();
+      assertFalse(sol.isPerfectSquare(0));
+      assertTrue(sol.isPerfectSquare(1));
       assertFalse(sol.isPerfectSquare(8));
       assertTrue(sol.isPerfectSquare(9));
       assertFalse(sol.isPerfectSquare(10));
@@ -101,6 +105,8 @@ public class ValidPerfectSquare {
     @Test
     public void test3() {
       Solution_3 sol = new ValidPerfectSquare().new Solution_3();
+      assertFalse(sol.isPerfectSquare(0));
+      assertTrue(sol.isPerfectSquare(1));
       assertFalse(sol.isPerfectSquare(8));
       assertTrue(sol.isPerfectSquare(9));
       assertFalse(sol.isPerfectSquare(10));

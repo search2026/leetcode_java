@@ -23,7 +23,6 @@ public class MeetingRooms {
       if (intervals == null || intervals.length == 0) return true;
 
       Arrays.sort(intervals, (Interval o1, Interval o2) -> (o1.start - o2.start));
-
       Interval prev = intervals[0];
       for (int i = 1; i < intervals.length; i++) {
         Interval cur = intervals[i];
@@ -75,9 +74,9 @@ public class MeetingRooms {
   */
   public class Solution_3 {
     public int minMeetingRooms(Interval[] intervals) {
-      if (intervals == null || intervals.length == 0) return 0;
-
+      if (intervals == null) return 0;
       int n = intervals.length;
+      if (n == 0) return 0;
       int[] startTime = new int[n];
       int[] endTime = new int[n];
 

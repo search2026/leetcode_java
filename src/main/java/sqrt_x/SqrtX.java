@@ -13,13 +13,21 @@ public class SqrtX {
    */
   public class Solution {
     public int sqrt(int x) {
-      int left = 1, right = x / 2;
+      if (x < 0)
+        throw new IllegalArgumentException("invalidate input");
       if (x < 2) return x;
+
+      int left = 1, right = x / 2;
       while (left <= right) {
         int mid = (left + right) / 2;
-        if (x / mid == mid) return mid;
-        if (x / mid > mid) left = mid + 1;
-        else right = mid - 1;
+        if (x / mid == mid) {
+          return mid;
+        }
+        if (x / mid > mid) {
+          left = mid + 1;
+        } else {
+          right = mid - 1;
+        }
       }
       return right;
     }
@@ -33,6 +41,10 @@ public class SqrtX {
    */
   public class Solution_2 {
     public int sqrt(int x) {
+      if (x < 0)
+        throw new IllegalArgumentException("invalidate input");
+      if (x < 2) return x;
+
       double root = 1.0;
       while (Math.abs(root * root - x) > 10E-6) {
         root = (root + x / root) / 2;
@@ -45,6 +57,8 @@ public class SqrtX {
     @Test
     public void test1() {
       Solution sol = new SqrtX().new Solution();
+      assertEquals(0, sol.sqrt(0));
+      assertEquals(1, sol.sqrt(1));
       assertEquals(2, sol.sqrt(5));
       assertEquals(4, sol.sqrt(16));
       assertEquals(4, sol.sqrt(17));
@@ -53,6 +67,8 @@ public class SqrtX {
     @Test
     public void test2() {
       Solution_2 sol = new SqrtX().new Solution_2();
+      assertEquals(0, sol.sqrt(0));
+      assertEquals(1, sol.sqrt(1));
       assertEquals(2, sol.sqrt(5));
       assertEquals(4, sol.sqrt(16));
       assertEquals(4, sol.sqrt(17));
