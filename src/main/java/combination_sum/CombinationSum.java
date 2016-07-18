@@ -16,16 +16,16 @@ public class CombinationSum {
       Difficulty: Medium
   */
   public class Solution {
-    private void search(int[] cand, List<List<Integer>> comb, List<Integer> currList, int start, int remained) {
-      if (remained < 0 || start >= cand.length) return;
+    private void search(int[] cands, List<List<Integer>> comb, List<Integer> currList, int start, int remained) {
+      if (remained < 0 || start >= cands.length) return;
       if (remained == 0) {
         comb.add(new ArrayList<Integer>(currList));
         return;
       }
 
-      for (int i = start; i < cand.length && cand[i] <= remained; i++) {
-        currList.add(cand[i]);
-        search(cand, comb, currList, i, remained - cand[i]);
+      for (int i = start; i < cands.length && cands[i] <= remained; i++) {
+        currList.add(cands[i]);
+        search(cands, comb, currList, i, remained - cands[i]);
         currList.remove(currList.size() - 1);
       }
     }
@@ -81,17 +81,17 @@ public class CombinationSum {
       Difficulty: Medium
   */
   public class Solution_3 {
-    private void search(int[] cand, List<List<Integer>> comb, List<Integer> currList, int start, int remained) {
-      if (remained < 0 || start >= cand.length) return;
+    private void search(int[] cands, List<List<Integer>> comb, List<Integer> currList, int start, int remained) {
+      if (remained < 0) return;
       if (remained == 0) {
         comb.add(new ArrayList<Integer>(currList));
         return;
       }
 
-      for (int i = start; i < cand.length && cand[i] <= remained; i++) {
-        if (i > start && cand[i] == cand[i - 1]) continue;
-        currList.add(cand[i]);
-        search(cand, comb, currList, i + 1, remained - cand[i]);
+      for (int i = start; i < cands.length && cands[i] <= remained; i++) {
+        if (i > start && cands[i] == cands[i - 1]) continue;
+        currList.add(cands[i]);
+        search(cands, comb, currList, i + 1, remained - cands[i]);
         currList.remove(currList.size() - 1);
       }
     }
@@ -155,10 +155,7 @@ public class CombinationSum {
         return;
       }
 
-      for (int i = start; i <= 9; i++) {
-        if (remained - i < 0) break;
-        if (currList.size() > k) break;
-
+      for (int i=start; i<=9 && i<=remained &&currList.size() < k; i++) {
         currList.add(i);
         search(combo, currList, k, i + 1, remained - i);
         currList.remove(currList.size() - 1);

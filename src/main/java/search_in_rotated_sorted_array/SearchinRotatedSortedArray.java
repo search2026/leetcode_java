@@ -17,8 +17,7 @@ public class SearchinRotatedSortedArray {
     public int search(int[] nums, int target) {
       if (nums == null || nums.length == 0) return -1;
 
-      int left = 0;
-      int right = nums.length - 1;
+      int left = 0, right = nums.length - 1;
       while (left <= right) {
         int mid = left + (right - left) / 2;
         if (nums[mid] == target) {
@@ -38,6 +37,7 @@ public class SearchinRotatedSortedArray {
           }
         }
       }
+
       return -1;
     }
   }
@@ -50,8 +50,9 @@ public class SearchinRotatedSortedArray {
   */
   public class Solution_2 {
     public boolean search(int[] nums, int target) {
-      int left = 0;
-      int right = nums.length - 1;
+      if (nums == null || nums.length == 0) return false;
+
+      int left = 0, right = nums.length - 1;
       while (left <= right) {
         int mid = left + (right - left) / 2;
         if (nums[mid] == target) {
@@ -73,6 +74,7 @@ public class SearchinRotatedSortedArray {
           left++; // or right-- take care of duplicates
         }
       }
+
       return false;
     }
   }
