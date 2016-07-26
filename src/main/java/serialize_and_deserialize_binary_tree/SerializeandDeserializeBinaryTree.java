@@ -19,7 +19,7 @@ public class SerializeandDeserializeBinaryTree {
     private static final String NULLNODE = "#";
 
     public String serialize(TreeNode root) {
-      if (root == null) return NULLNODE;
+      if (root == null) return "";
 
       StringBuilder sb = new StringBuilder();
       Queue<TreeNode> queue = new LinkedList<>();
@@ -44,31 +44,22 @@ public class SerializeandDeserializeBinaryTree {
       data = data.trim();
       String[] tokens = data.split(SPLITER);
 
-      Queue<TreeNode> queue = new ArrayDeque<>();
+      Queue<TreeNode> queue = new LinkedList<>();
       TreeNode root = new TreeNode(Integer.parseInt(tokens[0]));
       queue.offer(root);
 
-      int idx = 1;
-      while (!queue.isEmpty() && idx < tokens.length) {
-        int size = queue.size();
-        for (int i = 0; i < size; i++) {
-          // Left child
-          TreeNode curr = queue.poll();
-          if (!tokens[idx].equals(NULLNODE)) {
-            curr.left = new TreeNode(Integer.parseInt(tokens[idx]));
-            queue.offer(curr.left);
-          } else {
-            curr.left = null;
-          }
-          idx++;
-          // Right child
-          if (!tokens[idx].equals(NULLNODE)) {
-            curr.right = new TreeNode(Integer.parseInt(tokens[idx]));
-            queue.offer(curr.right);
-          } else {
-            curr.right = null;
-          }
-          idx++;
+      for (int i =1; i<tokens.length; i++) {
+        TreeNode curr = queue.poll();
+        if (!tokens[i].equals(NULLNODE)) {
+          TreeNode left = new TreeNode(Integer.parseInt(tokens[i]));
+          curr.left = left;
+          queue.add(left);
+        }
+        i++;
+        if (!tokens[i].equals(NULLNODE)) {
+          TreeNode right = new TreeNode(Integer.parseInt(tokens[i]));
+          curr.right = right;
+          queue.add(right);
         }
       }
       return root;
@@ -84,6 +75,30 @@ public class SerializeandDeserializeBinaryTree {
   public class Codec_2 {
     private static final String SPLITER = " ";
     private static final String NULLNODE = "#";
+
+
+//    // Encodes a tree to a single string.
+//    public String serialize(TreeNode root) {
+//      if(root == null) return NULLNODE;
+//
+//      return "" + root.val + SPLITER + serialize(root.left) + SPLITER + serialize(root.right);
+//    }
+//
+//    public TreeNode deserialize(String data) {
+//      return build(new Scanner(data));
+//    }
+//
+//    private TreeNode build(Scanner sc) {
+//      if(!sc.hasNext()) return null;
+//      String token = sc.next();
+//      if(token.equals(NULLNODE)) return null;
+//
+//      TreeNode root = new TreeNode(Integer.parseInt(token));
+//      root.left = build(sc);
+//      root.right = build(sc);
+//
+//      return root;
+//    }
 
     private void buildString(TreeNode node, StringBuilder sb) {
       if (node == null) {
@@ -102,8 +117,8 @@ public class SerializeandDeserializeBinaryTree {
       return sb.toString();
     }
 
-    private TreeNode buildTree(Deque<String> nodes) {
-      String val = nodes.remove();
+    private TreeNode buildTree(LinkedList<String> nodes) {
+      String val = nodes.pop();
       if (val.equals(NULLNODE)) return null;
       else {
         TreeNode node = new TreeNode(Integer.valueOf(val));
@@ -115,7 +130,7 @@ public class SerializeandDeserializeBinaryTree {
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-      Deque<String> nodes = new LinkedList<>();
+      LinkedList<String> nodes = new LinkedList<>();
       nodes.addAll(Arrays.asList(data.split(SPLITER)));
       return buildTree(nodes);
     }

@@ -71,7 +71,7 @@ public class SearchinRotatedSortedArray {
             right = mid - 1;
           }
         } else {
-          left++; // or right-- take care of duplicates
+          left++; // take care of duplicates Note: right-- will not work
         }
       }
 
@@ -98,6 +98,12 @@ public class SearchinRotatedSortedArray {
       assertTrue(sol.search(test, 4));
       assertTrue(sol.search(test, 7));
       assertTrue(sol.search(test, 2));
+      test = new int[]{1, 3};
+      assertTrue(sol.search(test, 3));
+      assertTrue(sol.search(test, 1));
+      assertFalse(sol.search(test, 0));
+      assertFalse(sol.search(test, 2));
+      assertFalse(sol.search(test, 8));
     }
   }
 }
