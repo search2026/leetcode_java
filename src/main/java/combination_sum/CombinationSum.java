@@ -169,6 +169,30 @@ public class CombinationSum {
     }
   }
 
+  /*
+      Combination Sum IV - Dynamic Programming
+      Leetcode #2377
+      https://leetcode.com/problems/combination-sum-iv/
+      Difficulty: Medium
+  */
+  public class Solution_6 {
+    public int combinationSum4(int[] nums, int target) {
+      Arrays.sort(nums);
+      int[] comb = new int[target + 1];
+      for (int i = 1; i < comb.length; i++) {
+        for (int num : nums) {
+          if (num > i)
+            break;
+          else if (num == i)
+            comb[i] += 1;
+          else
+            comb[i] += comb[i-num];
+        }
+      }
+      return comb[target];
+    }
+  }
+
   public static class UnitTest {
     @Test
     public void test1() {
@@ -252,6 +276,12 @@ public class CombinationSum {
       assertEquals(2, (int)combo.get(2).get(0));
       assertEquals(3, (int)combo.get(2).get(1));
       assertEquals(4, (int)combo.get(2).get(2));
+    }
+
+    @Test
+    public void test6() {
+      Solution_6 sol = new CombinationSum().new Solution_6();
+      assertEquals(7, sol.combinationSum4(new int[]{1, 3, 2}, 4));
     }
   }
 }

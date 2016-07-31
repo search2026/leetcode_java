@@ -30,8 +30,11 @@ public class MergeTwoSortedLists {
         p = p.next;
       }
 
-      if (l1 != null) p.next = l1;
-      else p.next = l2;
+      if (l1 != null) {
+        p.next = l1;
+      } else {
+        p.next = l2;
+      }
 
       return dummy.next;
     }

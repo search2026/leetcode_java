@@ -93,14 +93,13 @@ public class SpiralMatrix {
    */
   public class Solution_3 {
     public int[][] generateMatrix(int n) {
+      if (n < 0) return null;
       int[][] matrix = new int[n][n];
-      if (n <= 0) return matrix;
+      if (n == 1) return matrix;
 
-      int rowStart = 0;
-      int rowEnd = n - 1;
-      int colStart = 0;
-      int colEnd = n - 1;
-      int num = 1; //change
+      int rowStart = 0, rowEnd = n - 1;
+      int colStart = 0, colEnd = n - 1;
+      int num = 1;
 
       while (rowStart <= rowEnd && colStart <= colEnd) {
         for (int i = colStart; i <= colEnd; i++) {
