@@ -1,4 +1,4 @@
-package permList;
+package permutations;
 
 import org.junit.Test;
 
@@ -16,7 +16,7 @@ public class Permutations {
   public class Solution {
     private void search(int[] nums, List<List<Integer>> permList, List<Integer> curr, boolean[] visited, int level, int n) {
       if (level == n) {
-        permList.add(new ArrayList<Integer>(curr));
+        permList.add(new ArrayList<>(curr));
         return;
       }
 
@@ -81,7 +81,7 @@ public class Permutations {
   public class Solution_3 {
     private void search(int[] nums, List<List<Integer>> permList, List<Integer> curr, boolean[] visited) {
       if (curr.size() == nums.length) {
-        permList.add(new ArrayList<Integer>(curr));
+        permList.add(new ArrayList<>(curr));
         return;
       }
 
@@ -122,14 +122,14 @@ public class Permutations {
       Set<List<Integer>> permSet = new HashSet<>();
 
       int n = nums.length;
-      if (n == 0) return new ArrayList<List<Integer>>();
+      if (n == 0) return new ArrayList<>();
 
       permSet.add(Arrays.asList(nums[0]));
-      for(int idx = 1; idx < n; idx++) {
+      for (int idx = 1; idx < n; idx++) {
         Set<List<Integer>> newPermutations = new HashSet<>();
-        for(List<Integer> list : permSet){
+        for (List<Integer> list : permSet) {
 
-          for(int innerIndex = 0; innerIndex <= list.size(); innerIndex++){
+          for (int innerIndex = 0; innerIndex <= list.size(); innerIndex++) {
             List<Integer> newList = new ArrayList<>(list);
             newList.add(innerIndex, nums[idx]);
             newPermutations.add(newList);
@@ -139,7 +139,7 @@ public class Permutations {
         permSet = newPermutations;
       }
 
-      return new ArrayList<List<Integer>>(permSet);
+      return new ArrayList<>(permSet);
     }
   }
 
