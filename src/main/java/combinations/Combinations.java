@@ -14,15 +14,15 @@ public class Combinations {
       Difficulty: Medium
    */
   public class Solution {
-    private void search(List<List<Integer>> rslt, List<Integer> curr, int start, int end, int k) {
+    private void search(List<List<Integer>> comb, List<Integer> curr, int start, int end, int k) {
       if (k == 0) {
-        rslt.add(new ArrayList<Integer>(curr));
+        comb.add(new ArrayList<>(curr));
         return;
       }
 
       for (int i = start; i <= end - k + 1; i++) {
         curr.add(i);
-        search(rslt, curr, i + 1, end, k - 1);
+        search(comb, curr, i + 1, end, k - 1);
         curr.remove(curr.size() - 1);
       }
     }
@@ -31,7 +31,7 @@ public class Combinations {
       List<List<Integer>> combList = new ArrayList<>();
       if (n < 1 || k < 1 || n < k) return combList;
 
-      search(combList, new ArrayList<Integer>(), 1, n, k);
+      search(combList, new ArrayList<>(), 1, n, k);
 
       return combList;
     }

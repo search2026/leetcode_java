@@ -71,6 +71,7 @@ public class FindMinimuminRotatedSortedArray {
       assertEquals(-4, sol.findMin(new int[]{-1, -1, 0, 0, 0, 0, 9, 11, -4, -4}));
       assertEquals(0, sol.findMin(new int[]{1, 1, 1, 0, 1}));
       assertEquals(0, sol.findMin(new int[]{1, 1, 1, 1, 1, 0}));
+      assertEquals(0, sol.findMin(new int[]{0, 1, 1, 1, 1, 1}));
     }
   }
 }
