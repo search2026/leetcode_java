@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 public class LinkedListRandomNode {
@@ -27,17 +25,17 @@ public class LinkedListRandomNode {
     public int getRandom() {
       ListNode c = head;
       int r = c.val;
-      for(int i=1;c.next != null;i++){
+      for (int i = 1; c.next != null; i++) {
 
         c = c.next;
-        if(randInt(0,i) == i) r = c.val;
+        if (randInt(0, i) == i) r = c.val;
       }
 
       return r;
     }
 
     private int randInt(int min, int max) {
-      return min + (int)(Math.random() * ((max - min) + 1));
+      return min + (int) (Math.random() * ((max - min) + 1));
     }
   }
 
