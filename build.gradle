@@ -26,6 +26,7 @@ repositories {
 dependencies {
   compile 'junit:junit:4.12'
   compile 'org.apache.commons:commons-lang3:3.4'
+  testCompile 'junit:junit:4.12'
 }
 
 sourceSets.test.java.srcDir 'src/main/java'
