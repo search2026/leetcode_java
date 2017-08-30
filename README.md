@@ -4,8 +4,8 @@ java-exercise
 Some Java coding exercises. Under development and optimization.
 
 ## Requirements
-* Java >= 1.8
-* Gradle >= 3.0
+* Java >= 1.8.141
+* Gradle >= 4.1
 
 ## Generate an IntelliJ IDEA project
 
@@ -16,7 +16,7 @@ gradle idea
 ## Generate a file for a question
 
 ```bash
-gradle question "-Pq=Some Question"
+gradle -q question "-Pq=Some Question"
 ```
 
 The above command will generate a source file called `src/main/java/some_question/SomeQuestion.java`, and you can write your solution in this file directly.
@@ -29,9 +29,9 @@ If you write some unit tests, you can use the following command to run them.
 
 ```bash
 # run all tests
-./gradlew test 
+gradlew test 
 # run TwoSum test only
-./gradle -Dtest.single=TwoSum test
+gradle -Dtest.single=TwoSum test
 ```
 
 ## Update Logs
