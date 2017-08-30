@@ -16,7 +16,7 @@ gradle idea
 ## Generate a file for a question
 
 ```bash
-gradle question "-Pq=Some Question"
+gradle -q question "-Pq=Some Question"
 ```
 
 The above command will generate a source file called `src/main/java/some_question/SomeQuestion.java`, and you can write your solution in this file directly.
