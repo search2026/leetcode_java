@@ -8,10 +8,10 @@ targetCompatibility = JavaVersion.VERSION_1_8
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 eclipse {
-  classpath {
-   downloadSources = true
-   downloadJavadoc = false
-  }
+    classpath {
+        downloadSources = true
+        downloadJavadoc = false
+    }
 }
 
 group = 'search2018'
@@ -20,51 +20,51 @@ version = '1.0'
 description = 'java coding exercise'
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-  compile 'junit:junit:4.12'
-  compile 'org.apache.commons:commons-lang3:3.4'
-  testCompile 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    testCompile 'junit:junit:4.12'
 }
 
 sourceSets.test.java.srcDir 'src/main/java'
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.9'
+    gradleVersion = '4.1'
 }
 
-task(question) << {
+task(question) {
+    doLast {
+        def insertUnderlineIfStartsWithDigit = { s ->
+            if (Character.isDigit(s.charAt(0))) {
+                s = "_" + s
+            }
+            s
+        }
 
-  def insertUnderlineIfStartsWithDigit = { s ->
-    if (Character.isDigit(s.charAt(0))) {
-      s = '_' + s
-    }
-    s
-  }
-  
-  if (!project.hasProperty('q')) {
-     throw new InvalidUserDataException('You need to specify a question. E.g., gradle question "-Pq=Some Question"')
-  }
+        if (!project.hasProperty('q')) {
+            throw new InvalidUserDataException('You need to specify a question. E.g., gradle question "-Pq=Some Question"')
+        }
 
-  def question = project.q
-  
-  def questionPackage = insertUnderlineIfStartsWithDigit(question.replaceAll(' ', '_').toLowerCase())
- 
-  def className = insertUnderlineIfStartsWithDigit(question.replaceAll(' ', ''))
-  
-  def questionPackageDir = new File(sourceSets.main.java.srcDirs.iterator().next(), questionPackage)
-  if(!questionPackageDir.exists()) {
-    println 'Create ' + questionPackageDir  
-    questionPackageDir.mkdirs()
-  }
-  
-  def questionFile = new File(questionPackageDir, className + '.java')
-  if(!questionFile.exists()) {
-    println 'Create ' + questionFile
-    questionFile.withWriter { out ->
-      out.writeLine("""\
+        def question = project.q
+
+        def questionPackage = insertUnderlineIfStartsWithDigit(question.replaceAll(' ', '_').toLowerCase())
+
+        def className = insertUnderlineIfStartsWithDigit(question.replaceAll(' ', ''))
+
+        def questionPackageDir = new File(sourceSets.main.java.srcDirs.iterator().next(), questionPackage)
+        if (!questionPackageDir.exists()) {
+            println 'Create ' + questionPackageDir
+            questionPackageDir.mkdirs()
+        }
+
+        def questionFile = new File(questionPackageDir, className + '.java')
+        if (!questionFile.exists()) {
+            println 'Create ' + questionFile
+            questionFile.withWriter { out ->
+                out.writeLine("""\
 package ${questionPackage};
 
 import java.util.*;
@@ -87,8 +87,8 @@ public class ${className} {
     }
 }
 """)
+            }
+        }
     }
-  }
-
 }
 
