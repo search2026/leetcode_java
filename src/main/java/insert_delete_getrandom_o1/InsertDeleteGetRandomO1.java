@@ -1,6 +1,5 @@
 package insert_delete_getrandom_o1;
 
-import insert_delete_getrandom_o1_duplicates_allowed.InsertDeleteGetRandomO1Duplicatesallowed;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -68,11 +67,11 @@ public class InsertDeleteGetRandomO1 {
     }
 
     /*
-    Insert Delete GetRandom O(1) - Duplicates allowed
-    Leetcode #381
-    https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
-    Difficulty: Medium
- */
+        Insert Delete GetRandom O(1) - Duplicates allowed
+        Leetcode #381
+        https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
+        Difficulty: Medium
+     */
     public class RandomizedCollection {
         ArrayList<Integer> nums;
         HashMap<Integer, Set<Integer>> val2PosMap;
@@ -82,8 +81,8 @@ public class InsertDeleteGetRandomO1 {
          * Initialize your data structure here.
          */
         public RandomizedCollection() {
-            nums = new ArrayList<Integer>();
-            val2PosMap = new HashMap<Integer, Set<Integer>>();
+            nums = new ArrayList<>();
+            val2PosMap = new HashMap<>();
             rand = new java.util.Random();
         }
 
@@ -157,7 +156,7 @@ public class InsertDeleteGetRandomO1 {
         @Test
         public void test2() {
             // Init an empty collection.
-            InsertDeleteGetRandomO1Duplicatesallowed.RandomizedCollection collection = new InsertDeleteGetRandomO1Duplicatesallowed().new RandomizedCollection();
+            RandomizedCollection collection = new InsertDeleteGetRandomO1().new RandomizedCollection();
 
             // Inserts 1 to the collection. Returns true as the collection did not contain 1.
             assertTrue(collection.insert(1));
