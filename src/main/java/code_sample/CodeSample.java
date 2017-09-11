@@ -2,10 +2,7 @@ package code_sample;
 
 import org.junit.Test;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 
 public class CodeSample {
@@ -15,15 +12,22 @@ public class CodeSample {
      */
     public class Solution {
         public void main(String[] args) {
-            System.out.println("Hello World!");
-            ArrayDeque<Integer> stack = new ArrayDeque<Integer>();
-            stack.push(2);
-            stack.push(3);
-            int t = stack.peek();
-            t = stack.pop();
-            boolean b = stack.isEmpty();
-
-
+            List<Integer> list = new ArrayList<Integer>();
+            ArrayList<Integer> list1 = new ArrayList<Integer>();
+            List<List<Integer>> list2 = new ArrayList<List<Integer>>();
+            List<Integer> list3 = Arrays.asList(2, 1, 1, 0);
+            list.add(0);
+            list.add(0, 1);
+            int a = list.get(0);
+            list.remove(list.size() - 1); // remove last element
+            Collections.sort(list);
+            Collections.sort(list, Collections.reverseOrder());
+            Collections.sort(list, new Comparator<Integer>() {
+                @Override
+                public int compare(Integer o1, Integer o2) {
+                    return o1 - o2;
+                }
+            });
         }
     }
 
