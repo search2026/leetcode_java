@@ -13,7 +13,6 @@ public class SerializeandDeserializeBinaryTree {
         Leetcode #297
         https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
         Difficulty: Medium
-        BFS
      */
     public class Codec_1 {
         private static final String SPLITER = " ";
@@ -72,7 +71,6 @@ public class SerializeandDeserializeBinaryTree {
         Leetcode #297
         https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
         Difficulty: Medium
-        DFS
      */
     public class Codec_2 {
         private static final String SPLITER = " ";
@@ -106,7 +104,6 @@ public class SerializeandDeserializeBinaryTree {
       Leetcode #297
       https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
       Difficulty: Medium
-      DFS
    */
     public class Codec_3 {
         private static final String SPLITER = " ";
@@ -115,11 +112,12 @@ public class SerializeandDeserializeBinaryTree {
         private void buildString(TreeNode node, StringBuilder sb) {
             if (node == null) {
                 sb.append(NULLNODE).append(SPLITER);
-            } else {
-                sb.append(node.val).append(SPLITER);
-                buildString(node.left, sb);
-                buildString(node.right, sb);
+                return;
             }
+
+            sb.append(node.val).append(SPLITER);
+            buildString(node.left, sb);
+            buildString(node.right, sb);
         }
 
         // Encodes a tree to a single string.
@@ -132,12 +130,11 @@ public class SerializeandDeserializeBinaryTree {
         private TreeNode buildTree(LinkedList<String> nodes) {
             String val = nodes.pop();
             if (val.equals(NULLNODE)) return null;
-            else {
-                TreeNode node = new TreeNode(Integer.valueOf(val));
-                node.left = buildTree(nodes);
-                node.right = buildTree(nodes);
-                return node;
-            }
+
+            TreeNode node = new TreeNode(Integer.valueOf(val));
+            node.left = buildTree(nodes);
+            node.right = buildTree(nodes);
+            return node;
         }
 
         // Decodes your encoded data to tree.
