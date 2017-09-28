@@ -1,7 +1,9 @@
 package palindrome_pairs;
 
 import java.util.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class PalindromePairs {
@@ -13,18 +15,18 @@ public class PalindromePairs {
      */
     public class Solution {
         private boolean isPalindrome(String s) {
-            for (int i = 0; i < s.length()/2; ++ i)
-                if (s.charAt(i) != s.charAt(s.length()-1-i))
+            for (int i = 0; i < s.length() / 2; ++i)
+                if (s.charAt(i) != s.charAt(s.length() - 1 - i))
                     return false;
             return true;
         }
 
         public List<List<Integer>> palindromePairs(String[] words) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            List<List<Integer>> rslt = new ArrayList<>();
             if (words == null) return rslt;
-            HashMap<String, Integer> map = new HashMap<String, Integer>();
-            for (int i = 0; i < words.length; ++ i) map.put(words[i], i);
-            for (int i = 0; i < words.length; ++ i) {
+            HashMap<String, Integer> map = new HashMap<>();
+            for (int i = 0; i < words.length; ++i) map.put(words[i], i);
+            for (int i = 0; i < words.length; ++i) {
                 int left = 0, right = 0;
                 while (left <= right) {
                     String s = words[i].substring(left, right);
@@ -55,7 +57,7 @@ public class PalindromePairs {
             TrieNode() {
                 next = new TrieNode[26];
                 index = -1;
-                list = new ArrayList<Integer>();
+                list = new ArrayList<>();
             }
         }
 
@@ -101,7 +103,14 @@ public class PalindromePairs {
         }
 
         public List<List<Integer>> palindromePairs(String[] words) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+//            Case1: If s1 is a blank string, then for any string that is palindrome s2, s1+s2 and s2+s1 are palindrome.
+//
+//            Case 2: If s2 is the reversing string of s1, then s1+s2 and s2+s1 are palindrome.
+//
+//            Case 3: If s1[0:cut] is palindrome and there exists s2 is the reversing string of s1[cut+1:] , then s2+s1 is palindrome.
+//
+//            Case 4: Similiar to case3. If s1[cut+1: ] is palindrome and there exists s2 is the reversing string of s1[0:cut] , then s1+s2 is palindrome.
+            List<List<Integer>> rslt = new ArrayList<>();
 
             TrieNode root = new TrieNode();
 
@@ -116,6 +125,7 @@ public class PalindromePairs {
             return rslt;
         }
     }
+
     public static class UnitTest {
         @Test
         public void test1() {

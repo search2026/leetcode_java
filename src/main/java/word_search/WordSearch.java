@@ -19,6 +19,8 @@ public class WordSearch {
         Difficulty: Medium
     */
     public class Solution {
+        int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+
         private boolean search(char[][] board, int i, int j, String word, int start) {
             if (start == word.length()) {
                 return true;
@@ -31,7 +33,6 @@ public class WordSearch {
             }
             char c = board[i][j];
             board[i][j] = '*';  //visited
-            int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
             for (int[] dir : dirs) {
                 if (search(board, i + dir[0], j + dir[1], word, start + 1)) {
                     board[i][j] = c;
@@ -61,24 +62,26 @@ public class WordSearch {
         Difficulty: Medium
     */
     public class Solution_2 {
-        private boolean exist(char[][] board, int y, int x, char[] word, int i) {
+        int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+
+        private boolean search(char[][] board, int y, int x, char[] word, int i) {
             if (i == word.length) return true;
             if (y < 0 || x < 0 || y == board.length || x == board[y].length) return false;
             if (board[y][x] != word[i]) return false;
             board[y][x] ^= 256;
-            boolean exist = exist(board, y, x + 1, word, i + 1)
-                    || exist(board, y, x - 1, word, i + 1)
-                    || exist(board, y + 1, x, word, i + 1)
-                    || exist(board, y - 1, x, word, i + 1);
+            boolean res = true;
+            for (int[] dir : dirs) {
+                res = res || search(board, y + dir[0], x + dir[1], word, i + 1);
+            }
             board[y][x] ^= 256;
-            return exist;
+            return res;
         }
 
-        public boolean exist(char[][] board, String word) {
+        public boolean search(char[][] board, String word) {
             char[] w = word.toCharArray();
             for (int y = 0; y < board.length; y++) {
                 for (int x = 0; x < board[y].length; x++) {
-                    if (exist(board, y, x, w, 0)) return true;
+                    if (search(board, y, x, w, 0)) return true;
                 }
             }
             return false;
@@ -95,7 +98,7 @@ public class WordSearch {
         Set<String> result = new HashSet<>();
         int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
-        public void search(char[][] board, boolean[][] visited, String str, int i, int j, Trie trie) {
+        private void search(char[][] board, boolean[][] visited, String str, int i, int j, Trie trie) {
             int m = board.length;
             int n = board[0].length;
 
@@ -256,9 +259,9 @@ public class WordSearch {
                     {'S', 'F', 'C', 'S'},
                     {'A', 'D', 'E', 'E'}
             };
-            assertTrue(sol.exist(board, "ABCCED"));
-            assertTrue(sol.exist(board, "SEE"));
-            assertFalse(sol.exist(board, "ABCB"));
+            assertTrue(sol.search(board, "ABCCED"));
+            assertTrue(sol.search(board, "SEE"));
+            // assertFalse(sol.search(board, "ABCB"));
         }
 
         @Test

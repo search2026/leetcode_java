@@ -65,11 +65,42 @@ public class FlattenNestedListIterator {
 
         @Override
         public boolean hasNext() {
-            while(!s.isEmpty() && !s.peekFirst().isInteger()) {
+            while (!s.isEmpty() && !s.peekFirst().isInteger()) {
                 List<NestedInteger> list = s.pollFirst().getList();
-                for (int i=list.size()-1; i>=0; i--) s.addFirst(list.get(i));
+                for (int i = list.size() - 1; i >= 0; i--) s.addFirst(list.get(i));
             }
             return !s.isEmpty();
+        }
+    }
+
+    /*
+        Flatten Nested List Iterator
+        Leetcode #341
+        https://leetcode.com/problems/flatten-nested-list-iterator/
+        Difficulty: Medium
+     */
+    public class NestedIterator_3 implements Iterator<Integer> {
+        NestedInteger nextInt;
+        Stack<Iterator<NestedInteger>> stack;
+
+        public NestedIterator_3(List<NestedInteger> nestedList) {
+            stack = new Stack<Iterator<NestedInteger>>();
+            stack.push(nestedList.iterator());
+        }
+
+        @Override
+        public Integer next() {
+            return nextInt != null ? nextInt.getInteger() : null; //Just in case
+        }
+
+        @Override
+        public boolean hasNext() {
+            while (!stack.isEmpty()) {
+                if (!stack.peek().hasNext()) stack.pop();
+                else if ((nextInt = stack.peek().next()).isInteger()) return true;
+                else stack.push(nextInt.getList().iterator());
+            }
+            return false;
         }
     }
 

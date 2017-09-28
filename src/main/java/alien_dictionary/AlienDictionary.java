@@ -18,7 +18,7 @@ public class AlienDictionary {
         Difficulty: Hard
      */
     public class Solution {
-        public void generateIndegree(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
+        private void generateIndegree(String[] words, HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> indegree) {
             HashSet<String> edges = new HashSet<>();
             for (int i = 0; i < words.length - 1; i++) {
                 String word1 = words[i];
@@ -38,7 +38,7 @@ public class AlienDictionary {
             }
         }
 
-        public String topologicalSort(HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> inDegree) {
+        private String topologicalSort(HashMap<Character, HashSet<Character>> graph, HashMap<Character, Integer> inDegree) {
             StringBuilder order = new StringBuilder();
             Queue<Character> queue = new ArrayDeque<Character>();
             for (Character key : inDegree.keySet()) {
@@ -60,8 +60,8 @@ public class AlienDictionary {
         }
 
         public String alienOrder(String[] words) {
-            HashMap<Character, HashSet<Character>> graph = new HashMap<Character, HashSet<Character>>();
-            HashMap<Character, Integer> inDegree = new HashMap<Character, Integer>();
+            HashMap<Character, HashSet<Character>> graph = new HashMap<>();
+            HashMap<Character, Integer> inDegree = new HashMap<>();
 
             for (String word : words) {
                 for (int t = 0; t < word.length(); t++) {
