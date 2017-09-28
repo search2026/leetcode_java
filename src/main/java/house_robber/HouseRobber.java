@@ -152,6 +152,29 @@ public class HouseRobber {
         }
     }
 
+    /*
+        House Robber III - Backtracking
+        Leetcode #337
+        https://leetcode.com/problems/house-robber-iii/
+        Difficulty: Medium
+    */
+    public class Solution_7 {
+        private int robInclude(TreeNode node) {
+            if (node == null) return 0;
+            return robExclude(node.left) + robExclude(node.right) + node.val;
+        }
+
+        private int robExclude(TreeNode node) {
+            if (node == null) return 0;
+            return rob(node.left) + rob(node.right);
+        }
+
+        public int rob(TreeNode root) {
+            if (root == null) return 0;
+            return Math.max(robInclude(root), robExclude(root));
+        }
+    }
+
     public static class UnitTest {
         @Test
         public void test1() {
@@ -219,6 +242,25 @@ public class HouseRobber {
         @Test
         public void test6() {
             Solution_6 sol = new HouseRobber().new Solution_6();
+            TreeNode root = new TreeNode(3);
+            root.left = new TreeNode(2);
+            root.right = new TreeNode(3);
+            root.left.right = new TreeNode(3);
+            root.right.right = new TreeNode(1);
+            assertEquals(7, sol.rob(root));
+
+            root = new TreeNode(3);
+            root.left = new TreeNode(4);
+            root.right = new TreeNode(5);
+            root.left.left = new TreeNode(1);
+            root.left.right = new TreeNode(3);
+            root.right.right = new TreeNode(1);
+            assertEquals(9, sol.rob(root));
+        }
+
+        @Test
+        public void test7() {
+            Solution_7 sol = new HouseRobber().new Solution_7();
             TreeNode root = new TreeNode(3);
             root.left = new TreeNode(2);
             root.right = new TreeNode(3);
