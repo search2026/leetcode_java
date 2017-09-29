@@ -22,8 +22,8 @@ public class PalindromePairs {
         }
 
         public List<List<Integer>> palindromePairs(String[] words) {
-            List<List<Integer>> rslt = new ArrayList<>();
-            if (words == null) return rslt;
+            List<List<Integer>> res = new ArrayList<>();
+            if (words == null) return res;
             HashMap<String, Integer> map = new HashMap<>();
             for (int i = 0; i < words.length; ++i) map.put(words[i], i);
             for (int i = 0; i < words.length; ++i) {
@@ -32,12 +32,64 @@ public class PalindromePairs {
                     String s = words[i].substring(left, right);
                     Integer j = map.get(new StringBuilder(s).reverse().toString());
                     if (j != null && i != j && isPalindrome(words[i].substring(left == 0 ? right : 0, left == 0 ? words[i].length() : left)))
-                        rslt.add(Arrays.asList(left == 0 ? new Integer[]{i, j} : new Integer[]{j, i}));
+                        res.add(Arrays.asList(left == 0 ? new Integer[]{i, j} : new Integer[]{j, i}));
                     if (right < words[i].length()) ++right;
                     else ++left;
                 }
             }
-            return rslt;
+            return res;
+        }
+    }
+
+    /*
+        Palindrome Pairs - HashMap
+        Leetcode #336
+        https://leetcode.com/problems/palindrome-pairs/
+        Difficulty: Hard
+     */
+    public class Solution_2 {
+        private boolean isPalindrome(String s) {
+            for (int i = 0; i < s.length() / 2; ++i)
+                if (s.charAt(i) != s.charAt(s.length() - 1 - i))
+                    return false;
+            return true;
+        }
+
+        public List<List<Integer>> palindromePairs(String[] words) {
+            List<List<Integer>> res = new ArrayList<>();
+            if (words == null || words.length < 2) return res;
+            Map<String, Integer> map = new HashMap<>();
+            for (int i = 0; i < words.length; i++) map.put(words[i], i);
+            // Case1: If s1 is a blank string, then for any string that is palindrome s2, s1+s2 and s2+s1 are palindrome.
+            // Case 2: If s2 is the reversing string of s1, then s1+s2 and s2+s1 are palindrome.
+            // Case 3: If s1[0:cut] is palindrome and there exists s2 is the reversing string of s1[cut+1:] , then s2+s1 is palindrome.
+            // Case 4: Similiar to case3. If s1[cut+1: ] is palindrome and there exists s2 is the reversing string of s1[0:cut] , then s1+s2 is palindrome.
+            for (int i = 0; i < words.length; i++) {
+                // j <= words[i].length() to make substring
+                for (int j = 0; j <= words[i].length(); j++) {
+                    String str1 = words[i].substring(0, j);
+                    String str2 = words[i].substring(j);
+                    if (isPalindrome(str1)) {
+                        String str2rvs = new StringBuilder(str2).reverse().toString();
+                        if (map.containsKey(str2rvs) && map.get(str2rvs) != i) {
+                            List<Integer> list = new ArrayList<Integer>();
+                            list.add(map.get(str2rvs));
+                            list.add(i);
+                            res.add(list);
+                        }
+                    }
+                    if (isPalindrome(str2)) {
+                        String str1rvs = new StringBuilder(str1).reverse().toString();
+                        if (map.containsKey(str1rvs) && map.get(str1rvs) != i && str2.length() != 0) {
+                            List<Integer> list = new ArrayList<Integer>();
+                            list.add(i);
+                            list.add(map.get(str1rvs));
+                            res.add(list);
+                        }
+                    }
+                }
+            }
+            return res;
         }
     }
 
@@ -48,7 +100,7 @@ public class PalindromePairs {
         https://leetcode.com/discuss/91429/solution-with-structure-total-number-words-average-length
         Difficulty: Hard
      */
-    public class Solution_2 {
+    public class Solution_3 {
         class TrieNode {
             TrieNode[] next;
             int index;
@@ -103,26 +155,18 @@ public class PalindromePairs {
         }
 
         public List<List<Integer>> palindromePairs(String[] words) {
-//            Case1: If s1 is a blank string, then for any string that is palindrome s2, s1+s2 and s2+s1 are palindrome.
-//
-//            Case 2: If s2 is the reversing string of s1, then s1+s2 and s2+s1 are palindrome.
-//
-//            Case 3: If s1[0:cut] is palindrome and there exists s2 is the reversing string of s1[cut+1:] , then s2+s1 is palindrome.
-//
-//            Case 4: Similiar to case3. If s1[cut+1: ] is palindrome and there exists s2 is the reversing string of s1[0:cut] , then s1+s2 is palindrome.
-            List<List<Integer>> rslt = new ArrayList<>();
+            List<List<Integer>> res = new ArrayList<>();
 
             TrieNode root = new TrieNode();
-
             for (int i = 0; i < words.length; i++) {
                 addWord(root, words[i], i);
             }
 
             for (int i = 0; i < words.length; i++) {
-                search(words, i, root, rslt);
+                search(words, i, root, res);
             }
 
-            return rslt;
+            return res;
         }
     }
 
@@ -141,6 +185,18 @@ public class PalindromePairs {
 
         @Test
         public void test2() {
+            Solution_2 sol = new PalindromePairs().new Solution_2();
+            String[] test = new String[]{"bat", "tab", "cat"};
+            List<List<Integer>> rslt = sol.palindromePairs(test);
+            assertEquals(2, rslt.size());
+
+            test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
+            rslt = sol.palindromePairs(test);
+            assertEquals(4, rslt.size());
+        }
+
+        @Test
+        public void test3() {
             Solution_2 sol = new PalindromePairs().new Solution_2();
             String[] test = new String[]{"bat", "tab", "cat"};
             List<List<Integer>> rslt = sol.palindromePairs(test);
