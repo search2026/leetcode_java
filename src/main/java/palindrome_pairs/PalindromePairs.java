@@ -72,7 +72,7 @@ public class PalindromePairs {
                     if (isPalindrome(str1)) {
                         String str2rvs = new StringBuilder(str2).reverse().toString();
                         if (map.containsKey(str2rvs) && map.get(str2rvs) != i) {
-                            List<Integer> list = new ArrayList<Integer>();
+                            List<Integer> list = new ArrayList<>();
                             list.add(map.get(str2rvs));
                             list.add(i);
                             res.add(list);
@@ -81,11 +81,65 @@ public class PalindromePairs {
                     if (isPalindrome(str2)) {
                         String str1rvs = new StringBuilder(str1).reverse().toString();
                         if (map.containsKey(str1rvs) && map.get(str1rvs) != i && str2.length() != 0) {
-                            List<Integer> list = new ArrayList<Integer>();
+                            List<Integer> list = new ArrayList<>();
                             list.add(i);
                             list.add(map.get(str1rvs));
                             res.add(list);
                         }
+                    }
+                }
+            }
+            return res;
+        }
+    }
+
+    /*
+        Palindrome Pairs - HashMap
+        Leetcode #336
+        https://leetcode.com/problems/palindrome-pairs/
+        Difficulty: Hard
+     */
+    public class Solution_3 {
+        private boolean isPalindrome(String s) {
+            for (int i = 0; i < s.length() / 2; ++i)
+                if (s.charAt(i) != s.charAt(s.length() - 1 - i))
+                    return false;
+            return true;
+        }
+
+        private void addPair(Map<String, Integer> map, List<List<Integer>> res, String str1, String str2, int index, boolean reverse) {
+            if (isPalindrome(str1)) {
+                String str2rev = new StringBuilder(str2).reverse().toString();
+                if (map.containsKey(str2rev) && map.get(str2rev) != index) {
+                    List<Integer> list = new ArrayList<>();
+                    if (!reverse) {
+                        list.add(map.get(str2rev));
+                        list.add(index);
+                    } else {
+                        list.add(index);
+                        list.add(map.get(str2rev));
+                    }
+                    res.add(list);
+                }
+            }
+        }
+
+        public List<List<Integer>> palindromePairs(String[] words) {
+            List<List<Integer>> res = new ArrayList<>();
+            if (words == null || words.length < 2) {
+                return res;
+            }
+            Map<String, Integer> map = new HashMap<String, Integer>();
+            for (int i = 0; i < words.length; i++) {
+                map.put(words[i], i);
+            }
+            for (int i = 0; i < words.length; i++) {
+                for (int j = 0; j <= words[i].length(); j++) {
+                    String str1 = words[i].substring(0, j);
+                    String str2 = words[i].substring(j);
+                    addPair(map, res, str1, str2, i, false);
+                    if (str2.length() != 0) {
+                        addPair(map, res, str2, str1, i, true);
                     }
                 }
             }
@@ -100,7 +154,7 @@ public class PalindromePairs {
         https://leetcode.com/discuss/91429/solution-with-structure-total-number-words-average-length
         Difficulty: Hard
      */
-    public class Solution_3 {
+    public class Solution_4 {
         class TrieNode {
             TrieNode[] next;
             int index;
@@ -181,6 +235,10 @@ public class PalindromePairs {
             test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
             rslt = sol.palindromePairs(test);
             assertEquals(4, rslt.size());
+
+            test = new String[]{"a", ""};
+            rslt = sol.palindromePairs(test);
+            assertEquals(2, rslt.size());
         }
 
         @Test
@@ -193,11 +251,15 @@ public class PalindromePairs {
             test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
             rslt = sol.palindromePairs(test);
             assertEquals(4, rslt.size());
+
+            test = new String[]{"a", ""};
+            rslt = sol.palindromePairs(test);
+            assertEquals(2, rslt.size());
         }
 
         @Test
         public void test3() {
-            Solution_2 sol = new PalindromePairs().new Solution_2();
+            Solution_3 sol = new PalindromePairs().new Solution_3();
             String[] test = new String[]{"bat", "tab", "cat"};
             List<List<Integer>> rslt = sol.palindromePairs(test);
             assertEquals(2, rslt.size());
@@ -205,6 +267,26 @@ public class PalindromePairs {
             test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
             rslt = sol.palindromePairs(test);
             assertEquals(4, rslt.size());
+
+            test = new String[]{"a", ""};
+            rslt = sol.palindromePairs(test);
+            assertEquals(2, rslt.size());
+        }
+
+        @Test
+        public void test4() {
+            Solution_4 sol = new PalindromePairs().new Solution_4();
+            String[] test = new String[]{"bat", "tab", "cat"};
+            List<List<Integer>> rslt = sol.palindromePairs(test);
+            assertEquals(2, rslt.size());
+
+            test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
+            rslt = sol.palindromePairs(test);
+            assertEquals(4, rslt.size());
+
+            test = new String[]{"a", ""};
+            rslt = sol.palindromePairs(test);
+            assertEquals(2, rslt.size());
         }
     }
 }
