@@ -1,5 +1,6 @@
 package number_of_islands;
 
+import common.UnionFind2D;
 import org.junit.Test;
 
 import java.util.*;
@@ -163,11 +164,11 @@ public class NumberofIslands {
       https://leetcode.com/discuss/questions/oj/number-of-islands-ii?sort=votes
       http://www.cnblogs.com/EdwardLiu/p/5087633.html
       Difficulty: Hard
-  */
+    */
     public class Solution_4 {
         public List<Integer> numIslands2(int m, int n, int[][] positions) {
-            List<Integer> rslt = new ArrayList<Integer>();
-            if (m <= 0 || n <= 0) return rslt;
+            List<Integer> res = new ArrayList<>();
+            if (m <= 0 || n <= 0) return res;
 
             int count = 0;
             int[] root = new int[m * n];
@@ -193,14 +194,41 @@ public class NumberofIslands {
                     }
                 }
 
-                rslt.add(count);
+                res.add(count);
             }
-            return rslt;
+            return res;
         }
 
-        public int findRoot(int[] root, int n) {
+        private int findRoot(int[] root, int n) {
             while (n != root[n]) n = root[n];
             return n;
+        }
+    }
+
+    /*
+      Number of Islands II - Union Find
+      Leetcode #305
+      https://leetcode.com/discuss/questions/oj/number-of-islands-ii?sort=votes
+      http://www.cnblogs.com/EdwardLiu/p/5087633.html
+      Difficulty: Hard
+    */
+    public class Solution_5 {
+        private int[][] dir = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
+
+        public List<Integer> numIslands2(int m, int n, int[][] positions) {
+            UnionFind2D islands = new UnionFind2D(m, n);
+            List<Integer> ans = new ArrayList<>();
+            for (int[] position : positions) {
+                int x = position[0], y = position[1];
+                int p = islands.add(x, y);
+                for (int[] d : dir) {
+                    int q = islands.getID(x + d[0], y + d[1]);
+                    if (q > 0 && !islands.find(p, q))
+                        islands.unite(p, q);
+                }
+                ans.add(islands.size());
+            }
+            return ans;
         }
     }
 
@@ -246,23 +274,43 @@ public class NumberofIslands {
         }
 
         @Test
-        public void test3() {
+        public void test4() {
             Solution_4 sol = new NumberofIslands().new Solution_4();
-            int[][] island = new int[][]{
-                    new int[]{1, 1, 1, 1, 0},
-                    new int[]{1, 1, 0, 1, 0},
-                    new int[]{1, 1, 1, 0, 0},
-                    new int[]{0, 0, 0, 0, 0}
-            };
-            //assertEquals(1, sol.numIslands2(5, 4, island));
 
-            island = new int[][]{
-                    new int[]{1, 1, 0, 0, 0},
-                    new int[]{1, 1, 0, 0, 0},
-                    new int[]{0, 0, 1, 0, 0},
-                    new int[]{0, 0, 0, 1, 1}
+            int[][] positions = new int[][]{
+                    {0, 0},
+                    {0, 1},
+                    {1, 2},
+                    {2, 1}
             };
-            //assertEquals(3, sol.numIslands2(5, 4, island));
+            // positions[0][0] = 1;
+            List<Integer> res = sol.numIslands2(3, 3, positions);
+
+            assertEquals(positions.length, res.size());
+            assertEquals(1, (int)res.get(0));
+            assertEquals(1, (int)res.get(1));
+            assertEquals(2, (int)res.get(2));
+            assertEquals(3, (int)res.get(3));
+        }
+
+        @Test
+        public void test5() {
+            Solution_5 sol = new NumberofIslands().new Solution_5();
+
+            int[][] positions = new int[][]{
+                    {0, 0},
+                    {0, 1},
+                    {1, 2},
+                    {2, 1}
+            };
+            // positions[0][0] = 1;
+            List<Integer> res = sol.numIslands2(3, 3, positions);
+
+            assertEquals(positions.length, res.size());
+            assertEquals(1, (int)res.get(0));
+            assertEquals(1, (int)res.get(1));
+            assertEquals(2, (int)res.get(2));
+            assertEquals(3, (int)res.get(3));
         }
     }
 }
