@@ -217,7 +217,7 @@ public class NumberofIslands {
 
         public List<Integer> numIslands2(int m, int n, int[][] positions) {
             UnionFind2D islands = new UnionFind2D(m, n);
-            List<Integer> ans = new ArrayList<>();
+            List<Integer> res = new ArrayList<>();
             for (int[] position : positions) {
                 int x = position[0], y = position[1];
                 int p = islands.add(x, y);
@@ -226,9 +226,9 @@ public class NumberofIslands {
                     if (q > 0 && !islands.find(p, q))
                         islands.unite(p, q);
                 }
-                ans.add(islands.size());
+                res.add(islands.size());
             }
-            return ans;
+            return res;
         }
     }
 
