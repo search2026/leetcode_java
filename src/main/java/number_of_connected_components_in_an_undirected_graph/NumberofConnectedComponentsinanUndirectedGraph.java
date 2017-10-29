@@ -30,7 +30,7 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
             for (int i = 0; i < n; i++) {
                 if (!visited.contains(i)) {
                     count++;
-                    // dfs(i, graph, visited);
+                    // search(i, graph, visited);
                     bfs(graph, i, visited);
                 }
             }

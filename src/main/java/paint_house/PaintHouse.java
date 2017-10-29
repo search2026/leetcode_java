@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 public class PaintHouse {
     /*
-        Paint House - Time O(n*k*k) Solution
+        Paint House - Time O(n*k*k) Solution_2
         Leetcode #256
         https://leetcode.com/discuss/questions/oj/paint-house?sort=votes
         http://www.cnblogs.com/EdwardLiu/p/5063170.html
@@ -58,7 +58,7 @@ public class PaintHouse {
     }
 
     /*
-        Paint House II - Time O(n*K) Solution
+        Paint House II - Time O(n*K) Solution_2
         Leetcode #265
         https://leetcode.com/discuss/oj/paint-house-ii
         http://buttercola.blogspot.com/2015/09/leetcode-paint-house-ii.html
