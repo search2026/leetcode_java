@@ -12,9 +12,9 @@ public class CodeSample {
      */
     public class Solution {
         public void main(String[] args) {
-            List<Integer> list = new ArrayList<Integer>();
-            ArrayList<Integer> list1 = new ArrayList<Integer>();
-            List<List<Integer>> list2 = new ArrayList<List<Integer>>();
+            List<Integer> list = new ArrayList<>();
+            ArrayList<Integer> list1 = new ArrayList<>();
+            List<List<Integer>> list2 = new ArrayList<>();
             List<Integer> list3 = Arrays.asList(2, 1, 1, 0);
             list.add(0);
             list.add(0, 1);

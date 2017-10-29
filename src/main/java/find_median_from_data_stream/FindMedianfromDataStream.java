@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 import static org.junit.Assert.*;
 
@@ -16,16 +15,21 @@ public class FindMedianfromDataStream {
         Difficulty: Medium
      */
     public class MedianFinder {
-        Queue<Integer> q = new PriorityQueue(), z = q, t,
-                Q = new PriorityQueue(Collections.reverseOrder());
+        PriorityQueue<Integer> minHeap = new PriorityQueue();
+        PriorityQueue<Integer> maxHeap = new PriorityQueue(Collections.reverseOrder());
 
         public void addNum(int num) {
-            (t = Q).add(num);
-            (Q = q).add((q = t).poll());
+            maxHeap.offer(num);
+            minHeap.offer(maxHeap.poll());
+            if (maxHeap.size() < minHeap.size()) {
+                maxHeap.offer(minHeap.poll());
+            }
         }
 
         public double findMedian() {
-            return (Q.peek() + z.peek()) / 2.;
+            return maxHeap.size() == minHeap.size()
+                    ? (maxHeap.peek() + minHeap.peek()) / 2.0
+                    : maxHeap.peek();
         }
     }
 
@@ -33,7 +37,11 @@ public class FindMedianfromDataStream {
         @Test
         public void test1() {
             MedianFinder sol = new FindMedianfromDataStream().new MedianFinder();
-            assertTrue(true);
+            sol.addNum(2);
+            sol.addNum(3);
+            assertEquals(2.5, sol.findMedian(), 1E-03);
+            sol.addNum(4);
+            assertEquals(3, sol.findMedian(), 1E-03);
         }
     }
 }
