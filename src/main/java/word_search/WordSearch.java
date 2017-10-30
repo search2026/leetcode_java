@@ -95,7 +95,7 @@ public class WordSearch {
         Difficulty: Medium
     */
     public class Solution_3 {
-        Set<String> result = new HashSet<>();
+        Set<String> res = new HashSet<>();
         int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
         private void search(char[][] board, boolean[][] visited, String str, int i, int j, Trie trie) {
@@ -108,13 +108,12 @@ public class WordSearch {
             str = str + board[i][j];
 
             if (!trie.startsWith(str)) return;
-            if (trie.search(str)) result.add(str);
+            if (trie.search(str)) res.add(str);
 
             visited[i][j] = true;
             for (int[] dir : dirs) {
                 search(board, visited, str, i + dir[0], j + dir[1], trie);
             }
-
             visited[i][j] = false;
         }
 
@@ -135,7 +134,7 @@ public class WordSearch {
                 }
             }
 
-            return new ArrayList<String>(result);
+            return new ArrayList<>(res);
         }
 
         //Trie Node
@@ -180,7 +179,6 @@ public class WordSearch {
             }
         }
     }
-
 
     /*
         Word Search II - Backtracking + Trie
