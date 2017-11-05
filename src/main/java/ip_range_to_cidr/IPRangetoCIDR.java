@@ -75,11 +75,11 @@ public class IPRangetoCIDR {
 
 
     /*
-    IP range to CIDR
-    https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
-    http://www.ipaddressguide.com/cidr
-    Difficulty: Medium
- */
+        IP range to CIDR
+        https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
+        http://www.ipaddressguide.com/cidr
+        Difficulty: Medium
+     */
     public class Solution_2 {
         public List<String> ipRange2Cidr(String startIp, int range) {
             long start = ip2Long(startIp);
