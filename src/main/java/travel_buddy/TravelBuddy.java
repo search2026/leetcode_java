@@ -34,13 +34,13 @@ public class TravelBuddy {
             Collections.sort(buddies);
             List<Buddy> res = new ArrayList<>(buddies);
 
-            for (Buddy b : res) {
-                // System.out.print(b.name + " : ");
-                for (String city : b.wishList) {
-                    System.out.print(city + " ");
-                }
-                System.out.println();
-            }
+//            for (Buddy b : res) {
+//                // System.out.print(b.name + " : ");
+//                for (String city : b.wishList) {
+//                    System.out.print(city + " ");
+//                }
+//                System.out.println();
+//            }
 
             return res;
         }
