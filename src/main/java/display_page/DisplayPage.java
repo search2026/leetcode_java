@@ -69,26 +69,31 @@ public class DisplayPage {
                 return res;
             }
 
-            Set<String> visited = new HashSet<>();
+            List<String> visited = new ArrayList<>();
             Iterator<String> iter = input.iterator();
 
+            boolean reachended = false;
             while (iter.hasNext()) {
                 String curr = iter.next();
                 String hostId = curr.split(",")[0];
-                if (!visited.contains(hostId)) {
+                if (!visited.contains(hostId) || reachended ) {
                     res.add(curr);
                     visited.add(hostId);
                     iter.remove();
                 }
 
-                if (visited.size() == pageSize  || (!iter.hasNext()) ) {
-                    //if (visited.size() == pageSize) {
-                        visited.clear();
-                        if (!input.isEmpty()) {
-                            res.add(" ");
-                        }
-                    //}
+                if (visited.size() == pageSize) {
+                    visited.clear();
+                    reachended = false;
+                    if (!input.isEmpty()) {
+                        res.add(" ");
+                    }
                     iter = input.iterator();
+                }
+
+                if (!iter.hasNext()) {
+                    iter = input.iterator();
+                    reachended = true;
                 }
             }
 
@@ -170,11 +175,15 @@ public class DisplayPage {
             };
             List<String> input = new ArrayList<>(Arrays.asList(strs));
             List<String> result = sol.displayPages(input, 5);
-//            assertEquals(15, result.size());
-//            assertEquals("1,28,300.1,SanFrancisco", result.get(0));
-//            assertEquals("7,20,180.1,SF", result.get(4));
-//            assertEquals(" ", result.get(5));
-//            assertEquals("6,10,199.1,SF ", result.get(6));
+            assertEquals(15, result.size());
+            assertEquals("1,28,310.6,SF", result.get(0));
+            assertEquals("7,20,180.1,SF", result.get(4));
+            assertEquals(" ", result.get(5));
+            assertEquals("6,10,199.1,SF", result.get(6));
+            assertEquals("6,29,185.2,SF", result.get(10));
+            assertEquals(" ", result.get(11));
+            assertEquals("6,21,162.1,SF", result.get(12));
+            assertEquals("2,14,141.1,San Jose", result.get(14));
         }
     }
 }

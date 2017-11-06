@@ -114,8 +114,8 @@ public class BasicCalculator {
         }
 
         List<Object> infixToPostfix(String s) {
-            Stack<Character> operators = new Stack<Character>();
-            List<Object> postfix = new LinkedList<Object>();
+            Stack<Character> operators = new Stack<>();
+            List<Object> postfix = new LinkedList<>();
 
             int numberBuffer = 0;
             boolean bufferingOperand = false;
