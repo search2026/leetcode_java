@@ -18,13 +18,12 @@ public class HappyNumber {
      */
     public class Solution {
         private int cal(int n) {
-            int x = n;
-            int s = 0;
-            while (x > 0) {
-                s = s + (x % 10) * (x % 10);
-                x = x / 10;
+            int res = 0;
+            while (n > 0) {
+                res += (n % 10) * (n % 10);
+                n = n / 10;
             }
-            return s;
+            return res;
         }
 
         public boolean isHappy(int n) {
@@ -36,6 +35,7 @@ public class HappyNumber {
                 y = cal(cal(y));
                 if (y == 1) return true;
                 if (x == y) return false;
+
             }
             return true;
         }
@@ -49,9 +49,9 @@ public class HappyNumber {
      */
     public class Solution_2 {
         public boolean isHappy(int n) {
-            Set<Integer> inLoop = new HashSet<>();
+            Set<Integer> set = new HashSet<>();
             int squareSum, remain;
-            while (inLoop.add(n)) {
+            while (set.add(n)) {
                 squareSum = 0;
                 while (n > 0) {
                     remain = n % 10;

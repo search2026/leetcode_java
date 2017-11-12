@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class SingleNumber {
   /*
-      Single Number - Using HashSet
+      Single Number - Set
       Leetcode #136
       https://leetcode.com/problems/single-number/
       Difficulty: Medium
@@ -56,9 +56,9 @@ public class SingleNumber {
   public class Solution_3 {
     public int singleNumber(int[] nums) {
       int[] bitCount = new int[32];
-      for (int e : nums) {
+      for (int n : nums) {
         for (int i = 0; i < 32; i++) {
-          if ((e & (1 << i)) != 0) {
+          if ((n & (1 << i)) != 0) {
             bitCount[i]++;
           }
         }

@@ -3,6 +3,8 @@ package mini_parser;
 import common.NestedInteger;
 import org.junit.Test;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 import static org.junit.Assert.assertEquals;
@@ -18,40 +20,31 @@ public class MiniParser {
         public NestedInteger deserialize(String s) {
             if (s.isEmpty())
                 return null;
-            if (s.charAt(0) != '[') // ERROR: special case
-                return new NestedInteger((Integer.valueOf(s)));
-
-            Stack<NestedInteger> stack = new Stack<>();
-            NestedInteger res = null;
-            int left = 0; // l shall point to the start of a number substring;
-            // r shall point to the end+1 of a number substring
-            for (int right = 0; right < s.length(); right++) {
-                char c = s.charAt(right);
+            if (!s.startsWith("[")) {
+                return new NestedInteger(Integer.valueOf(s));
+            }
+            Deque<NestedInteger> stack = new ArrayDeque<>();
+            NestedInteger res = new NestedInteger();
+            stack.push(res);
+            int start = 1;
+            for (int i = 1; i < s.length(); i++) {
+                char c = s.charAt(i);
                 if (c == '[') {
-                    if (res != null) {
-                        stack.push(res);
+                    NestedInteger ni = new NestedInteger();
+                    stack.peek().add(ni);
+                    stack.push(ni);
+                    start = i + 1;
+                } else if (c == ',' || c == ']') {
+                    if (i > start) {
+                        Integer val = Integer.valueOf(s.substring(start, i));
+                        stack.peek().add(new NestedInteger(val));
                     }
-                    res = new NestedInteger();
-                    left = right + 1;
-                } else if (c == ']') {
-                    String num = s.substring(left, right);
-                    if (!num.isEmpty())
-                        res.add(new NestedInteger(Integer.valueOf(num)));
-                    if (!stack.isEmpty()) {
-                        NestedInteger pop = stack.pop();
-                        pop.add(res);
-                        res = pop;
+                    start = i + 1;
+                    if (c == ']') {
+                        stack.pop();
                     }
-                    left = right + 1;
-                } else if (c == ',') {
-                    if (s.charAt(right - 1) != ']') {
-                        String num = s.substring(left, right);
-                        res.add(new NestedInteger(Integer.valueOf(num)));
-                    }
-                    left = right + 1;
                 }
             }
-
             return res;
         }
     }

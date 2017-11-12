@@ -88,6 +88,7 @@ public class ValidParentheses {
             Solution sol = new ValidParentheses().new Solution();
             assertTrue(sol.isValid("()"));
             assertTrue(sol.isValid("()[]{}"));
+            assertFalse(sol.isValid("("));
             assertFalse(sol.isValid("(]"));
             assertFalse(sol.isValid("([)]"));
         }
@@ -99,6 +100,7 @@ public class ValidParentheses {
             assertTrue(sol.isValid("()[]{}"));
             assertFalse(sol.isValid("(]"));
             assertFalse(sol.isValid("([)]"));
+            assertFalse(sol.isValid("("));
         }
     }
 }
