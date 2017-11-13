@@ -18,27 +18,33 @@ public class Flatten2DVector {
         http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
         Difficulty: Medium
      */
-    public class Solution {
-        int outerIdx, innerIdx;
-        List<List<Integer>> vec;
+    public class Solution implements Iterator<Integer> {
+        private int row, col;
+        private List<List<Integer>> vec2d;
 
-        public Solution(List<List<Integer>> vec2d) {
-            outerIdx = 0;
-            innerIdx = 0;
-            vec = vec2d;
+        public Solution(List<List<Integer>> vec) {
+            row = 0;
+            col = 0;
+            vec2d = vec;
         }
 
-        public int next() {
-            return vec.get(outerIdx).get(innerIdx++);
+        @Override
+        public Integer next() {
+            int val = vec2d.get(row).get(col);
+            col++;
+            return val;
         }
 
+        @Override
         public boolean hasNext() {
-            while (outerIdx < vec.size()) {
-                if (innerIdx < vec.get(outerIdx).size())
+            if (vec2d == null || vec2d.isEmpty())
+                return false;
+            while (row < vec2d.size()) {
+                if (col < vec2d.get(row).size()) {
                     return true;
-                else {
-                    outerIdx++;
-                    innerIdx = 0;
+                } else {
+                    row++;
+                    col = 0;
                 }
             }
             return false;
@@ -52,23 +58,25 @@ public class Flatten2DVector {
         http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
         Difficulty: Medium
      */
-    public class Solution_2 {
-        private Iterator<List<Integer>> outerIter;
-        private Iterator<Integer> innerIter;
+    public class Solution_2 implements Iterator<Integer> {
+        private Iterator<List<Integer>> rowIter;
+        private Iterator<Integer> colIter;
 
         public Solution_2(List<List<Integer>> vec2d) {
-            outerIter = vec2d.iterator();
-            innerIter = Collections.emptyIterator();
+            rowIter = vec2d.iterator();
+            colIter = Collections.emptyIterator();
         }
 
-        public int next() {
-            return innerIter.next();
+        @Override
+        public Integer next() {
+            return colIter.next();
         }
 
+        @Override
         public boolean hasNext() {
-            while ((innerIter == null || !innerIter.hasNext()) && outerIter.hasNext())
-                innerIter = outerIter.next().iterator();
-            return innerIter != null && innerIter.hasNext();
+            while ((colIter == null || !colIter.hasNext()) && rowIter.hasNext())
+                colIter = rowIter.next().iterator();
+            return colIter != null && colIter.hasNext();
         }
     }
 
@@ -79,7 +87,7 @@ public class Flatten2DVector {
         http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
         Difficulty: Medium
      */
-    public class Vector2DIterator implements Iterator<Integer> {
+    public class Solution_3 implements Iterator<Integer> {
         private Integer cur;
         private int outerIndex;
         private int innerIndex;
@@ -87,7 +95,7 @@ public class Flatten2DVector {
         private int lastInnerIndex;
         private List<List<Integer>> vector;
 
-        public Vector2DIterator(List<List<Integer>> vec2d) {
+        public Solution_3(List<List<Integer>> vec2d) {
             this.vector = vec2d;
             this.outerIndex = 0;
             this.innerIndex = 0;
@@ -140,6 +148,106 @@ public class Flatten2DVector {
             } else {
                 cur = null;
             }
+        }
+    }
+
+    /*
+        Flatten 2D Vector
+        Leetcode #251
+        https://leetcode.com/discuss/questions/oj/flatten-2d-vector
+        http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
+        Difficulty: Medium
+     */
+    public class Solution_4 implements Iterator<Integer> {
+        private int row, col;
+        private List<List<Integer>> vec2d;
+
+        public Solution_4(List<List<Integer>> vec) {
+            row = 0;
+            col = 0;
+            vec2d = vec;
+        }
+
+        @Override
+        public Integer next() {
+            int val = vec2d.get(row).get(col);
+            col++;
+            return val;
+        }
+
+        @Override
+        public boolean hasNext() {
+            if (vec2d == null || vec2d.isEmpty())
+                return false;
+            while (row < vec2d.size()) {
+                if (col < vec2d.get(row).size()) {
+                    return true;
+                } else {
+                    row++;
+                    col = 0;
+                }
+            }
+            return false;
+        }
+
+        @Override
+        public void remove() {
+            List<Integer> listToBeRemoved;
+            int rowToBeRemoved = row;
+            int colToBeRemoved = col;
+            if (col == 0) {
+                rowToBeRemoved--;
+                colToBeRemoved = vec2d.get(rowToBeRemoved).size() - 1;
+                listToBeRemoved = vec2d.get(rowToBeRemoved);
+            } else {
+                colToBeRemoved--;
+                listToBeRemoved = vec2d.get(rowToBeRemoved);
+            }
+            listToBeRemoved.remove(colToBeRemoved);
+            if (listToBeRemoved.isEmpty()) {
+                vec2d.remove(listToBeRemoved);
+                row--;
+            }
+            if (col > 0)
+                col--;
+        }
+    }
+
+
+    /*
+        Flatten 2D Vector
+        Leetcode #251
+        https://leetcode.com/discuss/questions/oj/flatten-2d-vector
+        http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
+        Difficulty: Medium
+     */
+    public class Solution_5 implements Iterator<Integer> {
+        private Iterator<List<Integer>> rowIter;
+        private Iterator<Integer> colIter;
+
+        public Solution_5(List<List<Integer>> vec2d) {
+            rowIter = vec2d.iterator();
+            colIter = Collections.emptyIterator();
+        }
+
+        @Override
+        public Integer next() {
+            return colIter.next();
+        }
+
+        @Override
+        public boolean hasNext() {
+            while ((colIter == null || !colIter.hasNext()) && rowIter.hasNext())
+                colIter = rowIter.next().iterator();
+            return colIter != null && colIter.hasNext();
+        }
+
+        @Override
+        public void remove() {
+            while (colIter == null && rowIter.hasNext())
+                colIter = rowIter.next().iterator();
+            if (colIter != null)
+                colIter.remove();
         }
     }
 
@@ -211,9 +319,9 @@ public class Flatten2DVector {
                 add(5);
                 add(6);
             }});
-            Vector2DIterator sol = new Flatten2DVector().new Vector2DIterator(test);
+            Solution_3 sol = new Flatten2DVector().new Solution_3(test);
             assertTrue(sol.hasNext());
-            assertEquals(1, (int)sol.next());
+            assertEquals(1, (int) sol.next());
             sol.remove();
             List<Integer> res = new ArrayList<>();
             while (sol.hasNext()) {
@@ -223,6 +331,115 @@ public class Flatten2DVector {
             assertEquals(2, (int) res.get(0));
             assertEquals(4, (int) res.get(2));
             assertEquals(6, (int) res.get(4));
+
+            test = new ArrayList<>();
+            test.add(new ArrayList<Integer>() {{
+                add(1);
+                add(2);
+            }});
+            test.add(new ArrayList<Integer>() {{
+                add(3);
+            }});
+            sol = new Flatten2DVector().new Solution_3(test);
+            assertTrue(sol.hasNext());
+            assertEquals(1, (int) sol.next());
+            assertTrue(sol.hasNext());
+            assertEquals(2, (int) sol.next());
+            sol.remove();
+            assertTrue(sol.hasNext());
+            assertEquals(3, (int) sol.next());
+        }
+
+        @Test
+        public void test4() {
+            List<List<Integer>> test = new ArrayList<>();
+            test.add(new ArrayList<Integer>() {{
+                add(1);
+                add(2);
+            }});
+            test.add(new ArrayList<Integer>() {{
+                add(3);
+            }});
+            test.add(new ArrayList<Integer>() {{
+                add(4);
+                add(5);
+                add(6);
+            }});
+            Solution_4 sol = new Flatten2DVector().new Solution_4(test);
+            assertTrue(sol.hasNext());
+            assertEquals(1, (int) sol.next());
+            sol.remove();
+            List<Integer> res = new ArrayList<>();
+            while (sol.hasNext()) {
+                res.add(sol.next());
+            }
+            assertEquals(5, res.size());
+            assertEquals(2, (int) res.get(0));
+            assertEquals(4, (int) res.get(2));
+            assertEquals(6, (int) res.get(4));
+
+            test = new ArrayList<>();
+            test.add(new ArrayList<Integer>() {{
+                add(1);
+                add(2);
+            }});
+            test.add(new ArrayList<Integer>() {{
+                add(3);
+            }});
+            sol = new Flatten2DVector().new Solution_4(test);
+            assertTrue(sol.hasNext());
+            assertEquals(1, (int) sol.next());
+            assertTrue(sol.hasNext());
+            assertEquals(2, (int) sol.next());
+            sol.remove();
+            assertTrue(sol.hasNext());
+            assertEquals(3, (int) sol.next());
+        }
+
+        @Test
+        public void test5() {
+            List<List<Integer>> test = new ArrayList<>();
+            test.add(new ArrayList<Integer>() {{
+                add(1);
+                add(2);
+            }});
+            test.add(new ArrayList<Integer>() {{
+                add(3);
+            }});
+            test.add(new ArrayList<Integer>() {{
+                add(4);
+                add(5);
+                add(6);
+            }});
+            Solution_5 sol = new Flatten2DVector().new Solution_5(test);
+            assertTrue(sol.hasNext());
+            assertEquals(1, (int) sol.next());
+            sol.remove();
+            List<Integer> res = new ArrayList<>();
+            while (sol.hasNext()) {
+                res.add(sol.next());
+            }
+            assertEquals(5, res.size());
+            assertEquals(2, (int) res.get(0));
+            assertEquals(4, (int) res.get(2));
+            assertEquals(6, (int) res.get(4));
+
+            test = new ArrayList<>();
+            test.add(new ArrayList<Integer>() {{
+                add(1);
+                add(2);
+            }});
+            test.add(new ArrayList<Integer>() {{
+                add(3);
+            }});
+            sol = new Flatten2DVector().new Solution_5(test);
+            assertTrue(sol.hasNext());
+            assertEquals(1, (int) sol.next());
+            assertTrue(sol.hasNext());
+            assertEquals(2, (int) sol.next());
+            sol.remove();
+            assertTrue(sol.hasNext());
+            assertEquals(3, (int) sol.next());
         }
     }
 }

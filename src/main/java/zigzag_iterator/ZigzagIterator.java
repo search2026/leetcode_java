@@ -58,7 +58,7 @@ public class ZigzagIterator {
     public static class UnitTest {
         @Test
         public void test1() {
-            //Solution_2 sol = new RotateList().new Solution_2();
+            //Solution_4 sol = new RotateList().new Solution_4();
             assertEquals(7, 7);
         }
     }

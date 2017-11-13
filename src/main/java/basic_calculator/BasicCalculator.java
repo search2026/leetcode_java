@@ -2,189 +2,271 @@ package basic_calculator;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class BasicCalculator {
     /*
-        Basic Calculator
+        Basic Calculator - Recursive
         Leetcode #224
         https://leetcode.com/problems/basic-calculator/
         Difficulty: Medium
     */
     public class Solution {
+        private int eval(String s, int[] p) {
+            int val = 0;
+            int i = p[0];
+            int oper = 1; //1:+ -1:-
+            int num = 0;
+            while (i < s.length()) {
+                char c = s.charAt(i);
+                switch (c) {
+                    case '+':
+                        val = val + oper * num;
+                        num = 0;
+                        oper = 1;
+                        i++;
+                        break;// end of number and set operator
+                    case '-':
+                        val = val + oper * num;
+                        num = 0;
+                        oper = -1;
+                        i++;
+                        break;// end of number and set operator
+                    case '(':
+                        p[0] = i + 1;
+                        val = val + oper * eval(s, p);
+                        i = p[0];
+                        break; // start a new eval
+                    case ')':
+                        p[0] = i + 1;
+                        return val + oper * num; // end current eval and return. Note that we need to deal with the last num
+                    case ' ':
+                        i++;
+                        continue;
+                    default:
+                        num = num * 10 + c - '0';
+                        i++;
+                }
+            }
+            return val;
+        }
+
         public int calculate(String s) {
-            // delete white spaces
-            s = s.replaceAll(" ", "");
-
-            Stack<String> stack = new Stack<String>();
-            char[] arr = s.toCharArray();
-
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] == ' ')
-                    continue;
-
-                if (arr[i] >= '0' && arr[i] <= '9') {
-                    sb.append(arr[i]);
-
-                    if (i == arr.length - 1) {
-                        stack.push(sb.toString());
-                    }
-                } else {
-                    if (sb.length() > 0) {
-                        stack.push(sb.toString());
-                        sb = new StringBuilder();
-                    }
-
-                    if (arr[i] != ')') {
-                        stack.push(new String(new char[]{arr[i]}));
-                    } else {
-                        // when meet ')', pop and calculate
-                        ArrayList<String> t = new ArrayList<String>();
-                        while (!stack.isEmpty()) {
-                            String top = stack.pop();
-                            if (top.equals("(")) {
-                                break;
-                            } else {
-                                t.add(0, top);
-                            }
-                        }
-
-                        int temp = 0;
-                        if (t.size() == 1) {
-                            temp = Integer.valueOf(t.get(0));
-                        } else {
-                            for (int j = t.size() - 1; j > 0; j = j - 2) {
-                                if (t.get(j - 1).equals("-")) {
-                                    temp += 0 - Integer.valueOf(t.get(j));
-                                } else {
-                                    temp += Integer.valueOf(t.get(j));
-                                }
-                            }
-                            temp += Integer.valueOf(t.get(0));
-                        }
-                        stack.push(String.valueOf(temp));
-                    }
-                }
+            if (s == null || s.isEmpty()) {
+                throw new IllegalArgumentException("input can not be empty");
             }
-
-            ArrayList<String> t = new ArrayList<String>();
-            while (!stack.isEmpty()) {
-                String elem = stack.pop();
-                t.add(0, elem);
-            }
-
-            int temp = 0;
-            for (int i = t.size() - 1; i > 0; i = i - 2) {
-                if (t.get(i - 1).equals("-")) {
-                    temp += 0 - Integer.valueOf(t.get(i));
-                } else {
-                    temp += Integer.valueOf(t.get(i));
-                }
-            }
-            temp += Integer.valueOf(t.get(0));
-
-            return temp;
+            s = "(" + s + ")";
+            int[] p = {0};
+            return eval(s, p);
         }
     }
 
-    // Basic Calculator II
-    // https://leetcode.com/problems/basic-calculator-ii/
-    // Difficulty: Medium
-    public class SolutionII {
-        int rank(char op) {
-            // the bigger the number, the higher the rank
-            switch (op) {
-                case '+':
-                    return 1;
-                case '-':
-                    return 1;
-                case '*':
-                    return 2;
-                case '/':
-                    return 2;
-                default:
-                    return 0; // '('
+    /*
+        Basic Calculator - Stack
+        Leetcode #224
+        https://leetcode.com/problems/basic-calculator/
+        Difficulty: Medium
+    */
+    public class Solution_2 {
+        public int calculate(String s) {
+            if (s == null || s.isEmpty()) {
+                throw new IllegalArgumentException("input can not be empty");
             }
-        }
-
-        List<Object> infixToPostfix(String s) {
-            Stack<Character> operators = new Stack<>();
-            List<Object> postfix = new LinkedList<>();
-
-            int numberBuffer = 0;
-            boolean bufferingOperand = false;
-            for (char c : s.toCharArray()) {
-                if (c >= '0' && c <= '9') {
-                    numberBuffer = numberBuffer * 10 + c - '0';
-                    bufferingOperand = true;
-                } else {
-                    if (bufferingOperand)
-                        postfix.add(numberBuffer);
-                    numberBuffer = 0;
-                    bufferingOperand = false;
-
-                    if (c == ' ' || c == '\t')
-                        continue;
-
-                    if (c == '(') {
-                        operators.push('(');
-                    } else if (c == ')') {
-                        while (operators.peek() != '(')
-                            postfix.add(operators.pop());
-                        operators.pop(); // popping "("
-                    } else { // operator
-                        while (!operators.isEmpty() && rank(c) <= rank(operators.peek()))
-                            postfix.add(operators.pop());
-                        operators.push(c);
+            int len = s.length(), sign = 1, res = 0;
+            Deque<Integer> stack = new ArrayDeque<>();
+            for (int i = 0; i < len; i++) {
+                if (Character.isDigit(s.charAt(i))) {
+                    int sum = s.charAt(i) - '0';
+                    while (i + 1 < len && Character.isDigit(s.charAt(i + 1))) {
+                        sum = sum * 10 + s.charAt(i + 1) - '0';
+                        i++;
                     }
+                    res += sum * sign;
+                } else if (s.charAt(i) == '+')
+                    sign = 1;
+                else if (s.charAt(i) == '-')
+                    sign = -1;
+                else if (s.charAt(i) == '(') {
+                    stack.push(res);
+                    stack.push(sign);
+                    res = 0;
+                    sign = 1;
+                } else if (s.charAt(i) == ')') {
+                    res = res * stack.pop() + stack.pop();
                 }
-
             }
-            if (bufferingOperand)
-                postfix.add(numberBuffer);
-
-            while (!operators.isEmpty())
-                postfix.add(operators.pop());
-
-            return postfix;
+            return res;
         }
+    }
 
-        int evaluatePostfix(List<Object> postfix) {
-            Stack<Integer> operands = new Stack<Integer>();
-            int a = 0, b = 0;
-            for (Object s : postfix) {
-                if (s instanceof Character) {
-                    char c = (Character) s;
-                    b = operands.pop();
-                    a = operands.pop();
-                    switch (c) {
+    /*
+        Basic Calculator - Array
+        Leetcode #224
+        https://leetcode.com/problems/basic-calculator/
+        Difficulty: Medium
+    */
+    public class Solution_3 {
+        public int calculate(String s) {
+            if (s == null || s.isEmpty()) {
+                throw new IllegalArgumentException("input can not be empty");
+            }
+            int res = 0, sign = 1, len = s.length(), top = 0;
+            int[] stack = new int[len]; // custom stack based on array
+            for (int i = 0; i < len; i++) {
+                char c = s.charAt(i);
+                if (c >= '0' && c <= '9') {
+                    int num = c - '0';
+                    while (i + 1 < len && s.charAt(i + 1) >= '0' && s.charAt(i + 1) <= '9')
+                        num = num * 10 + (s.charAt(i++ + 1) - '0');
+                    res += num * sign;
+                } else if (c == '+' || c == '-') {
+                    sign = c == '+' ? 1 : -1;
+                } else if (c == '(') {
+                    stack[top++] = res; // push
+                    stack[top++] = sign; // push
+                    res = 0;
+                    sign = 1;
+                } else if (c == ')') {
+                    res = res * stack[--top] + stack[--top]; // first pop is for sign which says negative or positive.
+                }
+            }
+            return res;
+        }
+    }
+
+    /*
+        Basic Calculator II - Stack
+        Leetcode #227
+        https://leetcode.com/problems/basic-calculator-ii/
+        Difficulty: Medium
+    */
+    public class Solution_4 {
+        public int calculate(String s) {
+            if (s == null || s.isEmpty()) {
+                throw new IllegalArgumentException("input can not be empty");
+            }
+            Deque<Integer> stack = new ArrayDeque<>();
+            int num = 0, len = s.length();
+            char sign = '+';
+            for (int i = 0; i < len; i++) {
+                char c = s.charAt(i);
+                if (Character.isDigit(c)) {
+                    num = num * 10 + c - '0';
+                }
+                if ((!Character.isDigit(c) && c != ' ') || i == len - 1) {
+                    if (sign == '-') {
+                        stack.push(-num);
+                    } else if (sign == '+') {
+                        stack.push(num);
+                    } else if (sign == '*') {
+                        stack.push(stack.pop() * num);
+                    } else if (sign == '/') {
+                        stack.push(stack.pop() / num);
+                    }
+                    sign = c;
+                    num = 0;
+                }
+            }
+
+            int res = 0;
+            for (int i : stack) {
+                res += i;
+            }
+            return res;
+        }
+    }
+
+    /*
+        Basic Calculator II - Stack
+        Leetcode #227
+        https://leetcode.com/problems/basic-calculator-ii/
+        Difficulty: Medium
+    */
+    public class Solution_5 {
+        public int calculate(String s) {
+            if (s == null || s.isEmpty()) {
+                throw new IllegalArgumentException("input can not be empty");
+            }
+            Deque<Integer> stack = new ArrayDeque<>();
+            int res = 0;
+            char op = '+';
+            for (int i = 0, num = 0; i < s.length(); i++) {
+                char c = s.charAt(i);
+                if (Character.isDigit(c))
+                    num = num * 10 + (c - '0');
+                if ("+-*/".indexOf(c) >= 0 || i == s.length() - 1) {
+                    if ("*/".indexOf(op) >= 0)
+                        res -= stack.peek();
+                    switch (op) {
                         case '+':
-                            operands.push(a + b);
+                            stack.push(num);
                             break;
                         case '-':
-                            operands.push(a - b);
+                            stack.push(-num);
                             break;
                         case '*':
-                            operands.push(a * b);
+                            stack.push(stack.pop() * num);
                             break;
-                        default:
-                            operands.push(a / b);
+                        case '/':
+                            stack.push(stack.pop() / num);
+                            break;
                     }
-                } else { // instanceof Integer
-                    operands.push((Integer) s);
+                    num = 0;
+                    op = c;
+                    res += stack.peek();
                 }
             }
-            return operands.pop();
+            return res;
         }
+    }
 
+    /*
+        Basic Calculator II - Np Stack
+        Leetcode #227
+        https://leetcode.com/problems/basic-calculator-ii/
+        Difficulty: Medium
+    */
+    public class Solution_6 {
         public int calculate(String s) {
-            return evaluatePostfix(infixToPostfix(s));
+            if (s == null || s.isEmpty()) return 0;
+            s = s.replaceAll(" ", "");
+            int n = s.length(), res = 0, i = 0;
+            long prevVal = 0;
+            char sign = '+';
+            while (i < n) {
+                long curVal = 0;
+                while (i < n && Character.isDigit(s.charAt(i))) {
+                    curVal = curVal * 10 + s.charAt(i) - '0';
+                    i++;
+                }
+                switch (sign) {
+                    case '+':
+                        res += prevVal;
+                        prevVal = curVal;
+                        break;
+                    case '-':
+                        res += prevVal;
+                        prevVal = -curVal;
+                        break;
+                    case '*':
+                        prevVal *= curVal;
+                        break;
+                    case '/':
+                        prevVal /= curVal;
+                        break;
+                    default:
+                        break;
+                }
+                if (i < n) {
+                    sign = s.charAt(i);
+                    i++;
+                }
+            }
+            res += prevVal;
+            return res;
         }
     }
 
@@ -192,7 +274,49 @@ public class BasicCalculator {
         @Test
         public void test1() {
             Solution sol = new BasicCalculator().new Solution();
-            assertTrue(true);
+            assertEquals(2, sol.calculate("1 + 1"));
+            assertEquals(3, sol.calculate(" 2-1 + 2 "));
+            assertEquals(23, sol.calculate("(1+(4+5+2)-3)+(6+8)"));
+        }
+
+        @Test
+        public void test2() {
+            Solution_2 sol = new BasicCalculator().new Solution_2();
+            assertEquals(2, sol.calculate("1 + 1"));
+            assertEquals(3, sol.calculate(" 2-1 + 2 "));
+            assertEquals(23, sol.calculate("(1+(4+5+2)-3)+(6+8)"));
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new BasicCalculator().new Solution_3();
+            assertEquals(2, sol.calculate("1 + 1"));
+            assertEquals(3, sol.calculate(" 2-1 + 2 "));
+            assertEquals(23, sol.calculate("(1+(4+5+2)-3)+(6+8)"));
+        }
+
+        @Test
+        public void test4() {
+            Solution_4 sol = new BasicCalculator().new Solution_4();
+            assertEquals(7, sol.calculate("3+2*2"));
+            assertEquals(1, sol.calculate(" 3/2 "));
+            assertEquals(5, sol.calculate(" 3+5 / 2 "));
+        }
+
+        @Test
+        public void test5() {
+            Solution_5 sol = new BasicCalculator().new Solution_5();
+            assertEquals(7, sol.calculate("3+2*2"));
+            assertEquals(1, sol.calculate(" 3/2 "));
+            assertEquals(5, sol.calculate(" 3+5 / 2 "));
+        }
+
+        @Test
+        public void test6() {
+            Solution_6 sol = new BasicCalculator().new Solution_6();
+            assertEquals(7, sol.calculate("3+2*2"));
+            assertEquals(1, sol.calculate(" 3/2 "));
+            assertEquals(5, sol.calculate(" 3+5 / 2 "));
         }
     }
 }

@@ -32,30 +32,36 @@ public class DisplayPage {
                 return res;
             }
 
-            Set<String> visited = new HashSet<>();
+            List<String> visited = new ArrayList<>();
             Iterator<String> iter = input.iterator();
-
+            boolean reachEnd = false;
             while (iter.hasNext()) {
                 String curr = iter.next();
                 String hostId = curr.split(",")[0];
-                if (!visited.contains(hostId)) {
+                if (!visited.contains(hostId) || reachEnd ) {
                     res.add(curr);
                     visited.add(hostId);
                     iter.remove();
                 }
-                if (visited.size() == pageSize || (!iter.hasNext())) {
+
+                if (visited.size() == pageSize) {
                     visited.clear();
-                    iter = input.iterator();
+                    reachEnd = false;
                     if (!input.isEmpty()) {
                         res.add(" ");
                     }
+                    iter = input.iterator();
+                }
+
+                if (!iter.hasNext()) {
+                    iter = input.iterator();
+                    reachEnd = true;
                 }
             }
 
             return res;
         }
     }
-
 
     /*
         Display Page - LinkedList + HashSet
@@ -71,12 +77,11 @@ public class DisplayPage {
 
             List<String> visited = new ArrayList<>();
             Iterator<String> iter = input.iterator();
-
-            boolean reachended = false;
+            boolean reachEnd = false;
             while (iter.hasNext()) {
                 String curr = iter.next();
                 String hostId = curr.split(",")[0];
-                if (!visited.contains(hostId) || reachended ) {
+                if (!visited.contains(hostId) || reachEnd ) {
                     res.add(curr);
                     visited.add(hostId);
                     iter.remove();
@@ -84,7 +89,7 @@ public class DisplayPage {
 
                 if (visited.size() == pageSize) {
                     visited.clear();
-                    reachended = false;
+                    reachEnd = false;
                     if (!input.isEmpty()) {
                         res.add(" ");
                     }
@@ -93,7 +98,48 @@ public class DisplayPage {
 
                 if (!iter.hasNext()) {
                     iter = input.iterator();
-                    reachended = true;
+                    reachEnd = true;
+                }
+            }
+
+            return res;
+        }
+    }
+
+    /*
+        Display Page - LinkedList + HashSet
+        fill full for each page
+        Difficulty: Medium
+     */
+    public class Solution_3 {
+        public List<String> displayPages(List<String> input, int pageSize) {
+            List<String> res = new ArrayList<>();
+            Iterator<String> iter = input.iterator();
+            Set<String> set = new HashSet<>();
+            boolean reachEnd = false;
+            int counter = 0;
+            while(iter.hasNext()) {
+                String cur = iter.next();
+                String id = (cur.split(","))[0];
+                if (!set.contains(id) || reachEnd) {
+                    res.add(cur);
+                    set.add(id);
+                    iter.remove();
+                    counter++;
+                }
+
+                if (counter == pageSize) {
+                    if (!input.isEmpty())
+                        res.add(" ");
+                    set.clear();
+                    counter = 0;
+                    reachEnd = false;
+                    iter = input.iterator();
+                }
+
+                if (!iter.hasNext()) {
+                    reachEnd = true;
+                    iter = input.iterator();
                 }
             }
 
@@ -139,7 +185,7 @@ public class DisplayPage {
             };
             List<String> input = new ArrayList<>(Arrays.asList(strs));
             List<String> result = sol.displayPages(input, 12);
-            assertEquals(33, result.size());
+            assertEquals(32, result.size());
             assertEquals("1,28,300.1,SanFrancisco", result.get(0));
             assertEquals("11,26,107.1,Oakland", result.get(11));
             assertEquals(" ", result.get(12));
@@ -149,14 +195,45 @@ public class DisplayPage {
             assertEquals(" ", result.get(25));
             assertEquals("1,2,103.1,Oakland", result.get(26));
             assertEquals("3,11,7.1,Oakland", result.get(27));
-            assertEquals("1,3,5.1,Oakland", result.get(32));
-            assertEquals(" ", result.get(31));
-            assertEquals("1,3,5.1,Oakland", result.get(32));
+            assertEquals("30,23,1.1,SanJose", result.get(30));
+            assertEquals("1,3,5.1,Oakland", result.get(31));
         }
 
         @Test
         public void test2() {
             Solution_2 sol = new DisplayPage().new Solution_2();
+            String[] strs = new String[]{
+                    "1,28,310.6,SF",
+                    "4,5,204.1,SF",
+                    "20,7,203.2,Oakland",
+                    "6,8,202.2,SF",
+                    "6,10,199.1,SF",
+                    "1,16,190.4,SF",
+                    "6,29,185.2,SF",
+                    "7,20,180.1,SF",
+                    "6,21,162.1,SF",
+                    "2,18,161.2,SF",
+                    "2,30,149.1,SF",
+                    "3,76,146.2,SF",
+                    "2,14,141.1,San Jose"
+
+            };
+            List<String> input = new ArrayList<>(Arrays.asList(strs));
+            List<String> result = sol.displayPages(input, 5);
+            assertEquals(15, result.size());
+            assertEquals("1,28,310.6,SF", result.get(0));
+            assertEquals("7,20,180.1,SF", result.get(4));
+            assertEquals(" ", result.get(5));
+            assertEquals("6,10,199.1,SF", result.get(6));
+            assertEquals("6,29,185.2,SF", result.get(10));
+            assertEquals(" ", result.get(11));
+            assertEquals("6,21,162.1,SF", result.get(12));
+            assertEquals("2,14,141.1,San Jose", result.get(14));
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new DisplayPage().new Solution_3();
             String[] strs = new String[]{
                     "1,28,310.6,SF",
                     "4,5,204.1,SF",
