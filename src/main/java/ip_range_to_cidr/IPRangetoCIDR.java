@@ -12,13 +12,36 @@ public class IPRangetoCIDR {
         Difficulty: Medium
      */
     public class Solution {
+        private long ipToLong(String strIP) {
+            long[] ip = new long[4];
+            String[] ipSec = strIP.split("\\.");
+            for (int k = 0; k < 4; k++) {
+                ip[k] = Long.valueOf(ipSec[k]);
+            }
+
+            return (ip[0] << 24) + (ip[1] << 16) + (ip[2] << 8) + ip[3];
+        }
+
+        private String longToIP(long longIP) {
+            StringBuffer sb = new StringBuffer("");
+            sb.append(String.valueOf(longIP >>> 24));
+            sb.append(".");
+            sb.append(String.valueOf((longIP & 0x00FFFFFF) >>> 16));
+            sb.append(".");
+            sb.append(String.valueOf((longIP & 0x0000FFFF) >>> 8));
+            sb.append(".");
+            sb.append(String.valueOf(longIP & 0x000000FF));
+
+            return sb.toString();
+        }
+
         public List<String> ipRange2Cidr(String startIp, int range ) {
             // check parameters
             String a = "";
             long start = ipToLong(startIp);
             long end = start + range - 1;
 
-            List<String> result = new ArrayList<String>();
+            List<String> res = new ArrayList<>();
             while (start <= end) {
                 // identify the location of first 1's from lower bit to higher bit of start IP
                 // e.g. 00000001.00000001.00000001.01101100, return 4 (100)
@@ -41,35 +64,12 @@ public class IPRangetoCIDR {
 
                 // Add to results
                 String ip = longToIP(start);
-                result.add(ip + "/" + maxMask);
+                res.add(ip + "/" + maxMask);
                 // We have already included 2^(32 - maxMask) numbers of IP into result
                 // So the next round start must add that number
                 start += Math.pow(2, (32 - maxMask));
             }
-            return result;
-        }
-
-        private long ipToLong(String strIP) {
-            long[] ip = new long[4];
-            String[] ipSec = strIP.split("\\.");
-            for (int k = 0; k < 4; k++) {
-                ip[k] = Long.valueOf(ipSec[k]);
-            }
-
-            return (ip[0] << 24) + (ip[1] << 16) + (ip[2] << 8) + ip[3];
-        }
-
-        private String longToIP(long longIP) {
-            StringBuffer sb = new StringBuffer("");
-            sb.append(String.valueOf(longIP >>> 24));
-            sb.append(".");
-            sb.append(String.valueOf((longIP & 0x00FFFFFF) >>> 16));
-            sb.append(".");
-            sb.append(String.valueOf((longIP & 0x0000FFFF) >>> 8));
-            sb.append(".");
-            sb.append(String.valueOf(longIP & 0x000000FF));
-
-            return sb.toString();
+            return res;
         }
     }
 
