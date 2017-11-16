@@ -81,18 +81,18 @@ public class CombinationSum {
         Difficulty: Medium
     */
     public class Solution_3 {
-        private void search(int[] cands, List<List<Integer>> comb, List<Integer> currList, int start, int remained) {
+        private void search(int[] cands, List<List<Integer>> res, List<Integer> curr, int start, int remained) {
             if (remained < 0) return;
             if (remained == 0) {
-                comb.add(new ArrayList<Integer>(currList));
+                res.add(new ArrayList<>(curr));
                 return;
             }
 
             for (int i = start; i < cands.length && cands[i] <= remained; i++) {
                 if (i > start && cands[i] == cands[i - 1]) continue;
-                currList.add(cands[i]);
-                search(cands, comb, currList, i + 1, remained - cands[i]);
-                currList.remove(currList.size() - 1);
+                curr.add(cands[i]);
+                search(cands, res, curr, i + 1, remained - cands[i]);
+                curr.remove(curr.size() - 1);
             }
         }
 
@@ -100,7 +100,7 @@ public class CombinationSum {
             List<List<Integer>> comb = new ArrayList<>();
             if (candidates == null || candidates.length == 0) return comb;
             Arrays.sort(candidates);
-            search(candidates, comb, new ArrayList<Integer>(), 0, target);
+            search(candidates, comb, new ArrayList<>(), 0, target);
             return comb;
         }
     }

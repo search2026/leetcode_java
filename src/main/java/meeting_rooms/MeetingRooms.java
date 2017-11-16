@@ -139,10 +139,12 @@ public class MeetingRooms {
         class Point implements Comparable<Point> {
             int time;
             boolean isStart;
+
             Point(int time, boolean isStart) {
                 this.time = time;
                 this.isStart = isStart;
             }
+
             @Override
             public int compareTo(Point that) {
                 if (this.time != that.time || this.isStart == that.isStart) {
@@ -241,10 +243,10 @@ public class MeetingRooms {
         public void test5() {
             Solution_5 sol = new MeetingRooms().new Solution_5();
             List<List<Interval>> intervals = new ArrayList<List<Interval>>() {{
-               add(new ArrayList<Interval>() {{
-                   add(new Interval(1, 3));
-                   add(new Interval(6, 7));
-               }});
+                add(new ArrayList<Interval>() {{
+                    add(new Interval(1, 3));
+                    add(new Interval(6, 7));
+                }});
                 add(new ArrayList<Interval>() {{
                     add(new Interval(2, 4));
                 }});

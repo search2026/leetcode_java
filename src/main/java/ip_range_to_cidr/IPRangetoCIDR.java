@@ -1,7 +1,9 @@
 package ip_range_to_cidr;
 
 import java.util.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class IPRangetoCIDR {
@@ -9,6 +11,7 @@ public class IPRangetoCIDR {
         IP range to CIDR
         https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
         http://www.ipaddressguide.com/cidr
+        https://stackoverflow.com/questions/33443914/how-to-convert-ip-address-range-to-cidr-in-java
         Difficulty: Medium
      */
     public class Solution {
@@ -35,7 +38,7 @@ public class IPRangetoCIDR {
             return sb.toString();
         }
 
-        public List<String> ipRange2Cidr(String startIp, int range ) {
+        public List<String> ipRange2Cidr(String startIp, int range) {
             // check parameters
             String a = "";
             long start = ipToLong(startIp);
@@ -46,28 +49,28 @@ public class IPRangetoCIDR {
                 // identify the location of first 1's from lower bit to higher bit of start IP
                 // e.g. 00000001.00000001.00000001.01101100, return 4 (100)
                 long locOfFirstOne = start & (-start);
-                int maxMask = 32 - (int) (Math.log(locOfFirstOne) / Math.log(2));
+                int curMask = 32 - (int) (Math.log(locOfFirstOne) / Math.log(2));
 
                 // calculate how many IP addresses between the start and end
                 // e.g. between 1.1.1.111 and 1.1.1.120, there are 10 IP address
                 // 3 bits to represent 8 IPs, from 1.1.1.112 to 1.1.1.119 (119 - 112 + 1 = 8)
-                double curRange = Math.log(end - start + 1) / Math.log(2);
-                int maxDiff = 32 - (int) Math.floor(curRange);
+                double currRange = Math.log(end - start + 1) / Math.log(2);
+                int currRangeMask = 32 - (int) Math.floor(currRange);
 
                 // why max?
-                // if the maxDiff is larger than maxMask
+                // if the currRangeMask is larger than curMask
                 // which means the numbers of IPs from start to end is smaller than mask range
                 // so we can't use as many as bits we want to mask the start IP to avoid exceed the end IP
-                // Otherwise, if maxDiff is smaller than maxMask, which means number of IPs is larger than mask range
-                // in this case we can use maxMask to mask as many as IPs from start we want.
-                maxMask = Math.max(maxDiff, maxMask);
+                // Otherwise, if currRangeMask is smaller than curMask, which means number of IPs is larger than mask range
+                // in this case we can use curMask to mask as many as IPs from start we want.
+                curMask = Math.max(currRangeMask, curMask);
 
                 // Add to results
                 String ip = longToIP(start);
-                res.add(ip + "/" + maxMask);
-                // We have already included 2^(32 - maxMask) numbers of IP into result
+                res.add(ip + "/" + curMask);
+                // We have already included 2^(32 - curMask) numbers of IP into result
                 // So the next round start must add that number
-                start += Math.pow(2, (32 - maxMask));
+                start += Math.pow(2, (32 - curMask));
             }
             return res;
         }
@@ -81,52 +84,37 @@ public class IPRangetoCIDR {
         Difficulty: Medium
      */
     public class Solution_2 {
-        public List<String> ipRange2Cidr(String startIp, int range) {
-            long start = ip2Long(startIp);
-            long end = start + range - 1;
-
-            List<String> res = new ArrayList<>();
-            while (start <= end) {
-                long maskCovered = start & (-start);
-                int maskBits = (int)(Math.log(maskCovered) / Math.log(2));
-                long remain = end - start + 1;
-                int remainBits = (int)(Math.log(remain) / Math.log(2));
-
-                StringBuilder sb = new StringBuilder();
-                int actualBits = Math.min(maskBits, remainBits);
-                res.add(sb.append(long2Ip(start)).append("/").append(32 - actualBits).toString());
-
-                start += (long)Math.pow(2, actualBits);
+        private long ipToLong(String ip) {
+            long res = 0;
+            String[] ips = ip.split("\\.");
+            for (int i = 0; i < 4; i++) {
+                res += (long) Integer.valueOf(ips[i]) << ((4 - i - 1) * 8);
             }
-
             return res;
         }
 
-        // 256-based to 10-based
-        private long ip2Long(String ip) {
-            String[] parts = ip.split("\\.");
-            long sum = 0;
-            for (int i = 0; i < 4; i++) {
-                sum += Long.parseLong(parts[i]);
-                if (i < 3) {
-                    sum <<= 8;
-                }
-            }
-
-            return sum;
+        private String longToIp(long num) {
+            String[] ips = new String[4];
+            ips[0] = String.valueOf(num >> 24);
+            ips[1] = String.valueOf((num & 0x00FFFFFF) >> 16);
+            ips[2] = String.valueOf((num & 0x0000FFFF) >> 8);
+            ips[3] = String.valueOf(num & 0x000000FF);
+            return String.join(".", ips);
         }
 
-        // 10-based to 256-based
-        private String long2Ip(long num) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(num >> 24);
-            sb.append(".");
-            sb.append((num & 0x00FFFFFF) >> 16);
-            sb.append(".");
-            sb.append((num & 0x0000FFFF) >> 8);
-            sb.append(".");
-            sb.append((num & 0x000000FF));
-            return sb.toString();
+        public List<String> ipRange2Cidr(String startIp, int range) {
+            long start = ipToLong(startIp);
+            long end = start + range - 1;
+            List<String> res = new ArrayList<>();
+            while (start <= end) {
+                long currCovered = start & (-start);
+                int currMask = 32 - (int) (Math.log(currCovered) / Math.log(2));
+                int currRangeMask = 32 - (int) Math.floor(Math.log(end - start + 1) / Math.log(2));
+                currMask = Math.max(currMask, currRangeMask);
+                res.add(longToIp(start) + "/" + String.valueOf(currMask));
+                start += Math.pow(2, (32 - currMask));
+            }
+            return res;
         }
     }
 
@@ -143,7 +131,6 @@ public class IPRangetoCIDR {
             res = sol.ipRange2Cidr("1.1.1.0", 4);
             assertEquals(1, res.size());
             assertEquals("1.1.1.0/30", res.get(0));
-
 
             res = sol.ipRange2Cidr("1.1.1.1", 4);
             assertEquals(3, res.size());
@@ -164,7 +151,6 @@ public class IPRangetoCIDR {
             res = sol.ipRange2Cidr("1.1.1.0", 4);
             assertEquals(1, res.size());
             assertEquals("1.1.1.0/30", res.get(0));
-
 
             res = sol.ipRange2Cidr("1.1.1.1", 4);
             assertEquals(3, res.size());

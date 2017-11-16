@@ -36,59 +36,86 @@ public class WildcardMatching {
     }
 
     /*
-        Wildcard Matching - Greedy Search
+        Wildcard Matching - Iterative
         Leetcode #44
         https://leetcode.com/problems/wildcard-matching/
         Difficulty: Hard
      */
     public class Solution_2 {
         public boolean isMatch(String s, String p) {
-            int pLen = p.length();
-            int sLen = s.length();
-            if (s.length() == 0 && p.length() == 0) return true;
-
-            int pIdx = 0;
-            int sIdx = 0;
-            int star_p = -1;
-            int star_s = -1;
-            char charS, charP;
-            while (true) {
-                // if all of s has been matched and there is still unused p,
-                // then return true only if what left inside p are '*".
-                if (pIdx < pLen && sIdx >= sLen) {
-                    for (int i = pIdx; i < pLen; i++)
-                        if (p.charAt(i) != '*') return false;
-                    return true;
-                }
-
-                // if all of p has been used
-                if (pIdx >= pLen) {
-                    // if still has unmatched s, then backtrack to the last occurrence
-                    // of '*'. If there is no '*', return false.
-                    if (sIdx < sLen) {
-                        if (star_p == -1) return false;
-                        pIdx = star_p + 1;
-                        star_s++;
-                        sIdx = star_s;
-                    } else return true;
+            int ps = 0, pp = 0, match = 0, starIdx = -1;
+            while (ps < s.length()) {
+                if (pp < p.length() && (p.charAt(pp) == '?' || s.charAt(ps) == p.charAt(pp))) {
+                    // advancing both pointers
+                    ps++;
+                    pp++;
+                } else if (pp < p.length() && p.charAt(pp) == '*') {
+                    // * found, only advancing pattern pointer
+                    starIdx = pp;
+                    match = ps;
+                    pp++;
+                } else if (starIdx != -1) {
+                    // last pattern pointer was *, advancing string pointer
+                    pp = starIdx + 1;
+                    match++;
+                    ps = match;
                 } else {
-                    charS = s.charAt(sIdx);
-                    charP = p.charAt(pIdx);
-                    if (charP == '?' || charP == charS) {
-                        pIdx++;
-                        sIdx++;
-                    } else if (charP == '*') {
-                        star_p = pIdx;
-                        star_s = sIdx;
-                        pIdx++;
-                    } else {
-                        if (star_p == -1) return false;
-                        pIdx = star_p + 1;
-                        star_s++;
-                        sIdx = star_s;
-                    }
+                    // current pattern pointer is not star, last patter pointer was not *
+                    // characters do not match
+                    return false;
                 }
             }
+
+            //check for remaining characters in pattern
+            while (pp < p.length() && p.charAt(pp) == '*')
+                pp++;
+
+            return pp == p.length();
+        }
+    }
+
+    /*
+        Wildcard Matching - Recursion
+        Leetcode #44
+        https://leetcode.com/problems/wildcard-matching/
+        Difficulty: Hard
+     */
+    public class Solution_3 {
+        Integer level = 0;
+
+        private boolean search(char[] s, char[] p, int i, int j) {
+            boolean first = true;
+            int curlevel = level;
+            if (j == p.length) return i == s.length || p[j - 1] == '*';
+            if (i == s.length) {
+                while (p[j] == '*' && j < p.length - 1) j++;
+                return p[j] == '*';
+            }
+            if (p[j] == '?')
+                return search(s, p, ++i, ++j);
+            if (p[j] != '*')
+                return p[j] == s[i] && search(s, p, ++i, ++j);
+            //p[j]=='*'
+            boolean res = false;
+            while (j < p.length && p[j] == '*') j++;
+            for (int k = i; k <= s.length; k++) {
+                if (first) {
+                    ++level;
+                    first = false;
+                }
+                if (level > curlevel + 1)
+                    return false;
+                res |= search(s, p, k, j);
+                if (res) return res;
+            }
+            return res;
+        }
+
+        public boolean isMatch(String sS, String pS) {
+            char[] s = sS.toCharArray();
+            char[] p = pS.toCharArray();
+            if (p.length == 0 && s.length > 0) return false;
+            return search(s, p, 0, 0);
         }
     }
 
@@ -109,6 +136,19 @@ public class WildcardMatching {
         @Test
         public void test2() {
             Solution_2 sol = new WildcardMatching().new Solution_2();
+            assertFalse(sol.isMatch("aa", "a"));
+            assertTrue(sol.isMatch("aa", "aa"));
+            assertFalse(sol.isMatch("aaa", "aa"));
+            assertTrue(sol.isMatch("aa", "*"));
+            assertTrue(sol.isMatch("aa", "a*"));
+            assertTrue(sol.isMatch("ab", "?*"));
+            assertFalse(sol.isMatch("aab", "c*a*b"));
+            assertTrue(sol.isMatch("cazb", "c*a*b"));
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new WildcardMatching().new Solution_3();
             assertFalse(sol.isMatch("aa", "a"));
             assertTrue(sol.isMatch("aa", "aa"));
             assertFalse(sol.isMatch("aaa", "aa"));
