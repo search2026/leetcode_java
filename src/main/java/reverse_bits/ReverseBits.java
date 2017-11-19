@@ -19,7 +19,7 @@ public class ReverseBits {
             int res = 0, i;
             for (i = 32; i > 0 && n != 0; i--) {
                 res = (res << 1) + (n & 1);
-                n = n >> 1;
+                n = n >>> 1;
             }
             return res << i;
         }

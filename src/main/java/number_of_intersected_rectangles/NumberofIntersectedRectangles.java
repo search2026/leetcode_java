@@ -13,6 +13,18 @@ public class NumberofIntersectedRectangles {
         Difficulty: Hard
      */
     public class Solution {
+        private boolean intersect(int[][] r1, int[][] r2) {
+            return r1[0][0] < r2[0][0] && r1[0][1] < r2[0][1] && r1[1][0] > r2[0][0] && r1[1][1] > r2[0][1] ||
+                    r1[0][0] < r2[1][0] && r1[0][1] < r2[1][1] && r1[1][0] > r2[1][0] && r1[1][1] > r2[1][1];
+        }
+
+        private int find(int val, int[] parents) {
+            while (parents[val] != val) {
+                val = parents[val];
+            }
+            return val;
+        }
+
         public int countIntersection(int[][][] rectangles) {
             int[] parents = new int[rectangles.length];
             for (int i = 0; i < parents.length; i++) {
@@ -38,19 +50,6 @@ public class NumberofIntersectedRectangles {
             }
 
             return set.size();
-        }
-
-        private int find(int i, int[] parents) {
-            int temp = i;
-            while (parents[temp] != temp) {
-                temp = parents[temp];
-            }
-            return temp;
-        }
-
-        private boolean intersect(int[][] r1, int[][] r2) {
-            return r1[0][0] < r2[0][0] && r2[0][0] < r1[1][0] && r1[0][1] < r2[0][1] && r2[0][1] < r1[1][1] ||
-                    r1[0][0] < r2[1][0] && r2[1][0] < r1[1][0] && r1[0][1] < r2[1][1] && r2[1][1] < r1[1][1];
         }
     }
 

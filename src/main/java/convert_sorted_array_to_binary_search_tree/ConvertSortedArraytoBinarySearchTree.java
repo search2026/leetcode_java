@@ -17,13 +17,13 @@ public class ConvertSortedArraytoBinarySearchTree {
         Difficulty: Medium
      */
     public class Solution {
-        private TreeNode sortedArrayToBST(int[] num, int right, int left) {
-            if (right > left) return null;
+        private TreeNode sortedArrayToBST(int[] num, int left, int right) {
+            if (left > right) return null;
 
-            int mid = right + (left - right) / 2;
+            int mid = left + (right - left) / 2;
             TreeNode node = new TreeNode(num[mid]);
-            node.left = sortedArrayToBST(num, right, mid - 1);
-            node.right = sortedArrayToBST(num, mid + 1, left);
+            node.left = sortedArrayToBST(num, left, mid - 1);
+            node.right = sortedArrayToBST(num, mid + 1, right);
             return node;
         }
 

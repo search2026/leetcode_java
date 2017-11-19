@@ -7,12 +7,48 @@ import static org.junit.Assert.assertEquals;
 
 public class IntersectionofTwoLinkedLists {
     /*
-        Intersection of Two Linked Lists
+        Intersection of Two Linked Lists - Calculate Length
         leetcode #160
         https://leetcode.com/problems/intersection-of-two-linked-lists/
         Difficulty: Easy
      */
     public class Solution {
+        private int length(ListNode node) {
+            int length = 0;
+            while (node != null) {
+                node = node.next;
+                length++;
+            }
+            return length;
+        }
+
+        public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+            int lenA = length(headA), lenB = length(headB);
+            // move headA and headB to the same start point
+            while (lenA > lenB) {
+                headA = headA.next;
+                lenA--;
+            }
+            while (lenA < lenB) {
+                headB = headB.next;
+                lenB--;
+            }
+            // find the intersection until end
+            while (headA != headB) {
+                headA = headA.next;
+                headB = headB.next;
+            }
+            return headA;
+        }
+    }
+
+    /*
+        Intersection of Two Linked Lists
+        leetcode #160
+        https://leetcode.com/problems/intersection-of-two-linked-lists/
+        Difficulty: Easy
+     */
+    public class Solution_2 {
         public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
             if (headA == null || headB == null) return null;
             ListNode tailA = headA;
@@ -50,7 +86,7 @@ public class IntersectionofTwoLinkedLists {
         https://leetcode.com/problems/intersection-of-two-linked-lists/
         Difficulty: Easy
      */
-    public class Solution_2 {
+    public class Solution_3 {
         public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
             if (headA == null || headB == null) return null;
             ListNode a = headA, b = headB;
@@ -70,7 +106,82 @@ public class IntersectionofTwoLinkedLists {
         @Test
         public void test1() {
             Solution sol = new IntersectionofTwoLinkedLists().new Solution();
-            assertEquals(3, 3);
+            ListNode node1 = new ListNode(1);
+            ListNode node2 = new ListNode(2);
+            ListNode node3 = new ListNode(3);
+            ListNode node4 = new ListNode(4);
+            ListNode node5 = new ListNode(5);
+            ListNode node6 = new ListNode(6);
+            ListNode node7 = new ListNode(7);
+            ListNode node8 = new ListNode(8);
+            ListNode node9 = new ListNode(9);
+            node1.next = node3;
+            node3.next = node5;
+            node5.next = node7;
+            node7.next = node9;
+            node2.next = node3;
+            ListNode res = sol.getIntersectionNode(node1, node2);
+            assertEquals(3, (int)res.val);
+            node2.next = node4;
+            node4.next = node6;
+            node6.next = node8;
+            node8.next = node9;
+            res = sol.getIntersectionNode(node1, node2);
+            assertEquals(9, (int)res.val);
+        }
+
+        @Test
+        public void test2() {
+            Solution_2 sol = new IntersectionofTwoLinkedLists().new Solution_2();
+            ListNode node1 = new ListNode(1);
+            ListNode node2 = new ListNode(2);
+            ListNode node3 = new ListNode(3);
+            ListNode node4 = new ListNode(4);
+            ListNode node5 = new ListNode(5);
+            ListNode node6 = new ListNode(6);
+            ListNode node7 = new ListNode(7);
+            ListNode node8 = new ListNode(8);
+            ListNode node9 = new ListNode(9);
+            node1.next = node3;
+            node3.next = node5;
+            node5.next = node7;
+            node7.next = node9;
+            node2.next = node3;
+            ListNode res = sol.getIntersectionNode(node1, node2);
+            assertEquals(3, (int)res.val);
+            node2.next = node4;
+            node4.next = node6;
+            node6.next = node8;
+            node8.next = node9;
+            res = sol.getIntersectionNode(node1, node2);
+            assertEquals(9, (int)res.val);
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new IntersectionofTwoLinkedLists().new Solution_3();
+            ListNode node1 = new ListNode(1);
+            ListNode node2 = new ListNode(2);
+            ListNode node3 = new ListNode(3);
+            ListNode node4 = new ListNode(4);
+            ListNode node5 = new ListNode(5);
+            ListNode node6 = new ListNode(6);
+            ListNode node7 = new ListNode(7);
+            ListNode node8 = new ListNode(8);
+            ListNode node9 = new ListNode(9);
+            node1.next = node3;
+            node3.next = node5;
+            node5.next = node7;
+            node7.next = node9;
+            node2.next = node3;
+            ListNode res = sol.getIntersectionNode(node1, node2);
+            assertEquals(3, (int)res.val);
+            node2.next = node4;
+            node4.next = node6;
+            node6.next = node8;
+            node8.next = node9;
+            res = sol.getIntersectionNode(node1, node2);
+            assertEquals(9, (int)res.val);
         }
     }
 }

@@ -1,7 +1,9 @@
 package guess_number;
 
 import java.util.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class GuessNumber {
@@ -10,86 +12,119 @@ public class GuessNumber {
         Difficulty: Medium
      */
     public class Solution {
-        private int count = 0;
-        private List<Integer> target = new ArrayList<>();
+        String target;
 
-        // Simulation method, to generate or reset the random number, don't have to focus on it
-        public void reset() {
-            target.clear();
-            for (int i = 0; i < 4; ++i) {
-                target.add((int)(Math.random() * 6) + 1);
-            }
-            count = 0;
+        public Solution(String target) {
+            this.target = target;
         }
 
-        // Simulation method, don't have to focus it
-        public String sendAndReceive(String str) {
-            if (str.toLowerCase().equals("start")) {
-                reset();
-                return "Ready, target # is " + target.get(0) + target.get(1) + target.get(2) + target.get(3);
+        private int guessServer(String guess) {
+            int res = 0;
+            Map<Character, Integer> targetMap = new HashMap<>();
+            for (char c : target.toCharArray()) targetMap.put(c, targetMap.getOrDefault(c, 0) + 1);
+            Map<Character, Integer> guessMap = new HashMap<>();
+            for (char c : guess.toCharArray()) guessMap.put(c, guessMap.getOrDefault(c, 0) + 1);
+            for (char k : guessMap.keySet()) {
+                if (targetMap.containsKey(k))
+                    res += Math.min(guessMap.get(k), targetMap.get(k));
             }
-            System.out.println("Times of method call: " + ++count + ", coming number: " + str);
-            int a = 0;
-            List<Integer> copyOfTarget = new ArrayList<>(target);
-            List<Integer> t = new ArrayList<>();
-            List<Integer> g = new ArrayList<>();
+            return res;
+        }
 
-            for (int i = 0; i < 4; ++i) {
-                int digit = copyOfTarget.get(i);
-                char c = str.charAt(i);
+        private String genNumber(List<Integer> guessed, int c) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < guessed.size(); i++)
+                sb.append(guessed.get(i));
+            for (int i = guessed.size(); i < 4; i++)
+                sb.append(c);
+            return sb.toString();
+        }
 
-                if (digit == c - '0') {
-                    ++a;
-                } else {
-                    t.add(digit);
-                    g.add(c - '0');
-                }
-            }
-
-            int size = g.size();
-            g.removeAll(t);
-            int b = size - g.size();
-
-            return a + " " + b;
+        private String genNumber(List<Integer> guessed) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < guessed.size(); i++)
+                sb.append(guessed.get(i));
+            return sb.toString();
         }
 
         public String guess() {
-            String base = "1111";
-            int firstResp = Integer.parseInt(sendAndReceive(base).split(" ")[0]);
-            if (firstResp == 4) {
-                return base;
+            int counter = 0;
+            List<Integer> res = new ArrayList<>();
+            List<Integer> candList = new ArrayList<>();
+            for (int i = 1; i <= 6; i++) {
+                candList.add(i);
             }
 
-            char[] res = new char[4];
-            Arrays.fill(res, '0');
-            for (int i = 0; i < 4; i++) {
-                int lastResp = firstResp;
-                char[] charBase = base.toCharArray();
-                for (int j = 2; j < 6; j++) {
-                    charBase[i] = (char)('0' + j);
-                    int resp = Integer.parseInt(sendAndReceive(new String(charBase)).split(" ")[0]);
-                    if (resp == 4) {
-                        return new String(charBase);
+            Iterator<Integer> iter = candList.iterator();
+            // System.out.println("\nstart to guess " + target + " ...");
+            // System.out.println("res: " + res);
+            // System.out.println("candList: " + candList);
+            while (iter.hasNext() && res.size() < 4) {
+                int cand = iter.next();
+                counter++;
+                int guessedCount = res.size();
+                String toBeGuessed = genNumber(res, cand);
+                int guessRes = guessServer(toBeGuessed);
+                // System.out.println("guessedCount: " + toBeGuessed);
+                // System.out.println("guessRes: " + guessRes);
+                if (guessRes == guessedCount) {
+                    // no luck, remove cand from candsList
+                    iter.remove();
+                } else if (guessRes > guessedCount) {
+                    // add matched cands
+                    for (int i = guessedCount; i < guessRes; i++) {
+                        res.add(cand);
                     }
-                    if (resp != lastResp) {
-                        res[i] = lastResp > resp ? '1' : (char)('0' + j);
-                        break;
-                    }
+                    iter.remove();
+                } else {
+                    return genNumber(res);
                 }
-                if (res[i] == '0') {
-                    res[i] = '6';
+                // System.out.println("res: " + res);
+                // System.out.println("candList: " + candList);
+                if (candList.size() == 1) {
+                    // early termination if only one left in candList
+                    for (int i = res.size(); i < 4; i++)
+                        res.add(candList.get(0));
                 }
             }
 
-            return new String(res);
+            // System.out.println("guessed " + counter + " times");
+            return genNumber(res);
         }
     }
 
     public static class UnitTest {
         @Test
-        public void test1() {
-            Solution sol = new GuessNumber().new Solution();
-            // String num = sol.guess();
+        public void test() {
+            String guess = "2345";
+            Solution sol = new GuessNumber().new Solution(guess);
+            assertEquals(guess, sol.guess());
+
+            guess = "3456";
+            sol = new GuessNumber().new Solution(guess);
+            assertEquals(guess, sol.guess());
+
+            guess = "4536";
+            sol = new GuessNumber().new Solution(guess);
+            char[] res = guess.toCharArray();
+            Arrays.sort(res);
+            assertEquals(new String(res), sol.guess());
+
+            guess = "1111";
+            sol = new GuessNumber().new Solution(guess);
+            assertEquals(guess, sol.guess());
+
+            guess = "6666";
+            sol = new GuessNumber().new Solution(guess);
+            assertEquals(guess, sol.guess());
+
+            guess = "2266";
+            sol = new GuessNumber().new Solution(guess);
+            assertEquals(guess, sol.guess());
+
+            guess = "5566";
+            sol = new GuessNumber().new Solution(guess);
+            assertEquals(guess, sol.guess());
         }
     }
 }
