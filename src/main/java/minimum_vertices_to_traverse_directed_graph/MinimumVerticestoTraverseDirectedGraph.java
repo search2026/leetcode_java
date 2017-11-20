@@ -15,10 +15,8 @@ public class MinimumVerticestoTraverseDirectedGraph {
     public class Solution {
         private void search(Set<Integer> res, Map<Integer, Set<Integer>> nodes, int cur, int start,
                             Set<Integer> visited, Set<Integer> currVisited) {
-            if (currVisited.contains(cur)) return;
             currVisited.add(cur);
             visited.add(cur);
-
             for (int next : nodes.get(cur)) {
                 if (res.contains(next) && next != start) {
                     res.remove(next);
@@ -30,8 +28,6 @@ public class MinimumVerticestoTraverseDirectedGraph {
         }
 
         public List<Integer> getMin(int[][] edges, int n) {
-            Set<Integer> res = new HashSet<>();
-
             Map<Integer, Set<Integer>> nodes = new HashMap<>();
             for (int i = 0; i < n; i++) {
                 nodes.put(i, new HashSet<>());
@@ -41,6 +37,7 @@ public class MinimumVerticestoTraverseDirectedGraph {
             }
 
             Set<Integer> visited = new HashSet<>();
+            Set<Integer> res = new HashSet<>();
             for (int i = 0; i < n; i++) {
                 if (!visited.contains(i)) {
                     res.add(i);
@@ -53,14 +50,6 @@ public class MinimumVerticestoTraverseDirectedGraph {
         }
     }
 
-    /*
-        Minimum Vertices to Traverse Directed Graph - SCC + UNION/Find
-        https://cs.stackexchange.com/questions/1698/find-the-minimal-number-of-runs-to-visit-every-edge-of-a-directed-graph
-        Difficulty: Hard
-     */
-    public class Solution_2 {
-
-    }
     public static class UnitTest {
         @Test
         public void test1() {
@@ -113,7 +102,6 @@ public class MinimumVerticestoTraverseDirectedGraph {
             res = sol.getMin(edges, 10);
             System.out.println(res);
             assertEquals(3, res.size());
-
         }
     }
 }

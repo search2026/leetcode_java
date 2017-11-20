@@ -61,7 +61,6 @@ public class FindMedianinLargeIntegerFileofIntegers {
                 return left;
             }
             long guess = left + (right - left) / 2;
-            // long guess = (right + left) / 2;
             long nextToGuess = right, counter = 0;
             for (int n : nums) {
                 if (n <= guess) {

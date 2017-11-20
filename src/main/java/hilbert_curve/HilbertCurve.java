@@ -32,7 +32,6 @@ public class HilbertCurve {
                 return 3 * num + hilbertCurve(len - 1 - y, 2 * len - 1 - x, iter - 1);
             }
         }
-
     }
 
     public static class UnitTest {

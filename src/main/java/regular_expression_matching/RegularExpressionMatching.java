@@ -60,7 +60,7 @@ public class RegularExpressionMatching {
     }
 
     /*
-        Regular Expression Matching - recursion
+        Regular Expression Matching - Recursion
         Leetcode #10
         https://leetcode.com/problems/regular-expression-matching/
         Difficulty: Hard

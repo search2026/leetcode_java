@@ -41,6 +41,7 @@ public class GuessNumber {
         }
 
         private String genNumber(List<Integer> guessed) {
+            if (guessed == null || guessed.size() == 0) return "";
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < guessed.size(); i++)
                 sb.append(guessed.get(i));
@@ -48,44 +49,43 @@ public class GuessNumber {
         }
 
         public String guess() {
-            int counter = 0;
             List<Integer> res = new ArrayList<>();
-            List<Integer> candList = new ArrayList<>();
-            for (int i = 1; i <= 6; i++) {
-                candList.add(i);
-            }
-
-            Iterator<Integer> iter = candList.iterator();
+            List<Integer> cands = new ArrayList<Integer>(){{
+                add(1);
+                add(2);
+                add(3);
+                add(4);
+                add(5);
+                // insert(6);
+            }};
             // System.out.println("\nstart to guess " + target + " ...");
             // System.out.println("res: " + res);
             // System.out.println("candList: " + candList);
+            int counter = 0;
+            Iterator<Integer> iter = cands.iterator();
             while (iter.hasNext() && res.size() < 4) {
                 int cand = iter.next();
                 counter++;
                 int guessedCount = res.size();
-                String toBeGuessed = genNumber(res, cand);
-                int guessRes = guessServer(toBeGuessed);
-                // System.out.println("guessedCount: " + toBeGuessed);
+                String guessCand = genNumber(res, cand);
+                int guessRes = guessServer(guessCand);
+                // System.out.println("cand: " + cand);
                 // System.out.println("guessRes: " + guessRes);
                 if (guessRes == guessedCount) {
-                    // no luck, remove cand from candsList
                     iter.remove();
                 } else if (guessRes > guessedCount) {
-                    // add matched cands
-                    for (int i = guessedCount; i < guessRes; i++) {
+                    for (int i=guessedCount; i< guessRes; i++) {
                         res.add(cand);
                     }
                     iter.remove();
                 } else {
+                    // something wrong here
                     return genNumber(res);
                 }
-                // System.out.println("res: " + res);
-                // System.out.println("candList: " + candList);
-                if (candList.size() == 1) {
-                    // early termination if only one left in candList
-                    for (int i = res.size(); i < 4; i++)
-                        res.add(candList.get(0));
-                }
+            }
+            if (res.size() < 4) {
+                for (int i=res.size(); i<4; i++)
+                    res.add(6);
             }
 
             // System.out.println("guessed " + counter + " times");

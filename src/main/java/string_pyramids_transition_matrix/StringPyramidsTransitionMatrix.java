@@ -1,7 +1,9 @@
 package string_pyramids_transition_matrix;
 
 import java.util.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class StringPyramidsTransitionMatrix {
@@ -11,72 +13,63 @@ public class StringPyramidsTransitionMatrix {
         Difficultly: Medium
      */
     public class Solution {
-        private Set<Character> ruleSet;
-        private Map<Character, Map<Character, Set<Character>>> transitionDict;
+        Map<String, Set<Character>> map;
         private Map<String, Boolean> cache;
+        final String SEP = "###";
 
-        public Solution(String[] lines, String rule) {
-            ruleSet = new HashSet<>();
-            for (int i = 0; i < rule.length(); i++) {
-                ruleSet.add(rule.charAt(i));
-            }
-
-            transitionDict = new HashMap<>();
-            for (String line : lines) {
-                String[] parts = line.split(",");
-                char left = parts[0].charAt(0);
-                char right = parts[1].charAt(0);
-
-                if (!transitionDict.containsKey(left)) {
-                    transitionDict.put(left, new HashMap<>());
-                }
-                transitionDict.get(left).put(right, new HashSet<>());
-
-                for (int i = 0; i < parts[2].length(); i++) {
-                    transitionDict.get(left).get(right).add(parts[2].charAt(i));
-                }
-            }
-
+        Solution(String[] line) {
             cache = new HashMap<>();
+            map = new HashMap<>();
+            for (String s : line) {
+                String[] splitted = s.split(",");
+                String key = splitted[0] + SEP + splitted[1];
+                Set<Character> set = new HashSet<>();
+                for (char c : splitted[2].toCharArray())
+                    set.add(c);
+                map.put(key, set);
+            }
         }
 
-        public boolean check(String input) {
-            if (cache.containsKey(input)) {
-                return cache.get(input);
+        private void getNextLevel(List<String> res, String curr, int start, StringBuilder sb) {
+            if (start == curr.length()-1) {
+                res.add(new String(sb));
+                return;
+            }
+            for (int i=start; i<curr.length()-1; i++) {
+                String key = curr.charAt(i) + SEP + curr.charAt(i+1);
+                for (char c : map.get(key)) {
+                    sb.append(c);
+                    getNextLevel(res, curr, start+1, sb);
+                    sb.setLength(sb.length() - 1);
+                }
+            }
+        }
+
+        private boolean search(String input, String current) {
+            if (cache.containsKey(input)) return cache.get(input);
+            if (current.length() == 1) {
+                cache.put(current, input.contains(current));
+                return cache.get(current);
             }
 
-            if (input.length() == 1) {
-                cache.put(input, ruleSet.contains(input.charAt(0)));
-                return cache.get(input);
-            }
-
-            List<String> nextLevel = new ArrayList<>();
-            getNextLevel(nextLevel, input, 0, new StringBuilder());
-
-            for (String nextInput : nextLevel) {
-                if (check(nextInput)) {
-                    cache.put(input, true);
+            List<String> cands = new ArrayList<>();
+            getNextLevel(cands, current, 0, new StringBuilder());
+            for (String cand : cands) {
+                // System.out.println(cand);
+                if (cache.containsKey(cand)) return cache.get(cand);
+                boolean res = search(input, cand);
+                if (res) {
+                    cache.put(cand, true);
                     return true;
                 }
             }
 
-            cache.put(input, false);
             return false;
         }
 
-        private void getNextLevel(List<String> res, String input, int start, StringBuilder sb) {
-            if (start == input.length() - 1) {
-                res.add(sb.toString());
-                return;
-            }
-
-            char left = input.charAt(start);
-            char right = input.charAt(start + 1);
-            for (char c : transitionDict.get(left).get(right)) {
-                sb.append(c);
-                getNextLevel(res, input, start + 1, sb);
-                sb.setLength(sb.length() - 1);
-            }
+        public boolean check(String input) {
+            cache.clear();
+            return search(input, input);
         }
     }
 
@@ -89,10 +82,13 @@ public class StringPyramidsTransitionMatrix {
                     "C,A,A", "C,B,C", "C,C,D", "C,D,B",
                     "D,A,BC", "D,B,D", "D,C,A", "D,D,C"
             };
-            Solution sol = new StringPyramidsTransitionMatrix().new Solution(lines, "CD");
+            Solution sol = new StringPyramidsTransitionMatrix().new Solution(lines);
+            // sol.check("ABCD");
             assertTrue(sol.check("ABCD"));
-            assertFalse(sol.check("AACC"));
+            assertTrue(sol.check("AACC"));
             assertTrue(sol.check("AAAA"));
+            assertFalse(sol.check("CCCC"));
+            assertFalse(sol.check("DDDD"));
         }
     }
 }

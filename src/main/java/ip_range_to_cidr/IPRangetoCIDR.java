@@ -43,7 +43,6 @@ public class IPRangetoCIDR {
             String a = "";
             long start = ipToLong(startIp);
             long end = start + range - 1;
-
             List<String> res = new ArrayList<>();
             while (start <= end) {
                 // identify the location of first 1's from lower bit to higher bit of start IP
@@ -69,13 +68,12 @@ public class IPRangetoCIDR {
                 String ip = longToIP(start);
                 res.add(ip + "/" + curMask);
                 // We have already included 2^(32 - curMask) numbers of IP into result
-                // So the next round start must add that number
+                // So the next roundUp start must insert that number
                 start += Math.pow(2, (32 - curMask));
             }
             return res;
         }
     }
-
 
     /*
         IP range to CIDR
@@ -107,12 +105,13 @@ public class IPRangetoCIDR {
             long end = start + range - 1;
             List<String> res = new ArrayList<>();
             while (start <= end) {
-                long currCovered = start & (-start);
-                int currMask = 32 - (int) (Math.log(currCovered) / Math.log(2));
-                int currRangeMask = 32 - (int) Math.floor(Math.log(end - start + 1) / Math.log(2));
-                currMask = Math.max(currMask, currRangeMask);
-                res.add(longToIp(start) + "/" + String.valueOf(currMask));
-                start += Math.pow(2, (32 - currMask));
+                long locOfFirstOne = start & (-start);
+                int curMask = 32 - (int) (Math.log(locOfFirstOne) / Math.log(2));
+                double currRange = Math.log(end - start + 1) / Math.log(2);
+                int currRangeMask = 32 - (int) (Math.log(end - start + 1) / Math.log(2));
+                curMask = Math.max(curMask, currRangeMask);
+                res.add(longToIp(start) + "/" + curMask);
+                start += (int) Math.pow(2, (32-curMask));
             }
             return res;
         }

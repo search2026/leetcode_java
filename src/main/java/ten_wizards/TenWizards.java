@@ -102,15 +102,15 @@ public class TenWizards {
                 }
             }
 
-            List<Integer> path = new ArrayList<>();
+            List<Integer> res = new ArrayList<>();
             int t = target;
             while (t != source) {
-                path.add(t);
+                res.add(t);
                 t = parent[t];
             }
-            path.add(source);
-            Collections.reverse(path);
-            return path;
+            res.add(source);
+            Collections.reverse(res);
+            return res;
         }
     }
 
