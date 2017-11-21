@@ -83,7 +83,7 @@ public class ${className} {
         public void test1() {
             Solution sol = new ${className}().new Solution();
             assertEquals(1, 1);
-        }        
+        }
     }
 }
 """)

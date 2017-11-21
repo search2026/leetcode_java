@@ -1,7 +1,5 @@
 package common;
 
-import nested_list_weight_sum.NestedListWeightSum;
-
 import java.util.ArrayList;
 import java.util.List;
 
