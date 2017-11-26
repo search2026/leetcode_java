@@ -3,9 +3,7 @@ package meeting_rooms;
 import common.Interval;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

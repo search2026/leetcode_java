@@ -25,16 +25,16 @@ public class PalindromePairs {
             List<List<Integer>> res = new ArrayList<>();
             if (words == null) return res;
             HashMap<String, Integer> map = new HashMap<>();
-            for (int i = 0; i < words.length; ++i) map.put(words[i], i);
-            for (int i = 0; i < words.length; ++i) {
+            for (int i = 0; i < words.length; i++) map.put(words[i], i);
+            for (int i = 0; i < words.length; i++) {
                 int left = 0, right = 0;
                 while (left <= right) {
                     String s = words[i].substring(left, right);
                     Integer j = map.get(new StringBuilder(s).reverse().toString());
                     if (j != null && i != j && isPalindrome(words[i].substring(left == 0 ? right : 0, left == 0 ? words[i].length() : left)))
                         res.add(Arrays.asList(left == 0 ? new Integer[]{i, j} : new Integer[]{j, i}));
-                    if (right < words[i].length()) ++right;
-                    else ++left;
+                    if (right < words[i].length()) right++;
+                    else left++;
                 }
             }
             return res;
@@ -63,29 +63,17 @@ public class PalindromePairs {
             // Case1: If s1 is a blank string, then for any string that is palindrome s2, s1+s2 and s2+s1 are palindrome.
             // Case 2: If s2 is the reversing string of s1, then s1+s2 and s2+s1 are palindrome.
             // Case 3: If s1[0:cut] is palindrome and there exists s2 is the reversing string of s1[cut+1:] , then s2+s1 is palindrome.
-            // Case 4: Similiar to case3. If s1[cut+1: ] is palindrome and there exists s2 is the reversing string of s1[0:cut] , then s1+s2 is palindrome.
+            // Case 4: Similar to case3. If s1[cut+1: ] is palindrome and there exists s2 is the reversing string of s1[0:cut] , then s1+s2 is palindrome.
             for (int i = 0; i < words.length; i++) {
-                // j <= words[i].length() to make substring
                 for (int j = 0; j <= words[i].length(); j++) {
-                    String str1 = words[i].substring(0, j);
-                    String str2 = words[i].substring(j);
-                    if (isPalindrome(str1)) {
-                        String str2rvs = new StringBuilder(str2).reverse().toString();
-                        if (map.containsKey(str2rvs) && map.get(str2rvs) != i) {
-                            List<Integer> list = new ArrayList<>();
-                            list.add(map.get(str2rvs));
-                            list.add(i);
-                            res.add(list);
-                        }
+                    String s1 = words[i].substring(0, j), s2 = words[i].substring(j);
+                    if (isPalindrome(s1)) {
+                        String t = new StringBuilder(s2).reverse().toString();
+                        if (map.getOrDefault(t, i) != i) res.add(Arrays.asList(map.get(t), i));
                     }
-                    if (isPalindrome(str2)) {
-                        String str1rvs = new StringBuilder(str1).reverse().toString();
-                        if (map.containsKey(str1rvs) && map.get(str1rvs) != i && str2.length() != 0) {
-                            List<Integer> list = new ArrayList<>();
-                            list.add(i);
-                            list.add(map.get(str1rvs));
-                            res.add(list);
-                        }
+                    if (isPalindrome(s2) && !s2.isEmpty()) {
+                        String t = new StringBuilder(s1).reverse().toString();
+                        if (map.getOrDefault(t, i) != i) res.add(Arrays.asList(i, map.get(t)));
                     }
                 }
             }

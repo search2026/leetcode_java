@@ -8,87 +8,90 @@ import static org.junit.Assert.assertTrue;
 
 public class RegularExpressionMatching {
     /*
-        Regular Expression Matching
-        Leetcode #10
-        https://leetcode.com/problems/regular-expression-matching/
-        Difficulty: Hard
-     */
-    public class Solution_2 {
-        public boolean isMatch(String s, String p) {
-            if (s == null || p == null) return false;
-            boolean[][] dp = new boolean[s.length() + 1][p.length() + 1];
-            dp[0][0] = true;
-            for (int m = 1; m <= p.length(); m++) {
-                if (p.charAt(m - 1) == '*') {
-                    dp[0][m] = dp[0][m - 2];
-                }
-            }
-
-            for (int j = 1; j <= p.length(); j++) {
-                if (p.charAt(j - 1) == '*' && p.charAt(j - 2) != '.') {
-                    for (int i = 1; i <= s.length(); i++) {
-                        if (dp[i][j - 1] || dp[i][j - 2]) dp[i][j] = true;
-                        else if (dp[i - 1][j] && i > 1 && p.charAt(j - 2) == s.charAt(i - 2) && s.charAt(i - 2) == s.charAt(i - 1)) {
-                            dp[i][j] = true;
-                        }
-                    }
-                } else if (p.charAt(j - 1) == '*' && p.charAt(j - 2) == '.') {
-                    for (int i = 1; i <= s.length(); i++) {
-                        if (dp[i][j - 1] || dp[i][j - 2]) {
-                            dp[i][j] = true;
-                            while (i <= s.length()) {
-                                dp[i][j] = true;
-                                i++;
-                            }
-                        }
-                    }
-                } else {
-                    for (int i = 1; i <= s.length(); i++) {
-                        if (p.charAt(j - 1) == s.charAt(i - 1) || p.charAt(j - 1) == '.') {
-                            dp[i][j] = dp[i - 1][j - 1];
-                        }
-                    }
-                }
-            }
-            return dp[s.length()][p.length()];
-        }
-    }
-
-    /*
         Regular Expression Matching - Dynamic Programming
         https://leetcode.com/problems/regular-expression-matching/
         Difficulty: Hard
     */
     public class Solution {
         public boolean isMatch(String s, String p) {
+            if (s == null && p == null) return true;
             if (s == null || p == null) return false;
-            boolean[][] dp = new boolean[p.length() + 1][s.length() + 1];
+            int m = s.length(), n = p.length();
+            boolean[][] dp = new boolean[m + 1][n + 1];
             dp[0][0] = true;
-            for (int i = 1; i <= p.length(); i++) {
-                dp[i][0] = p.charAt(i - 1) == '*' && dp[i - 2][0];
-                for (int j = 1; j <= s.length(); j++) {
-                    if (p.charAt(i - 1) == '*') {
-                        if (dp[i - 2][j]) {
-                            dp[i][j] = true;
-                            continue;
-                        }
-                        char prev = p.charAt(i - 2);
-                        for (int k = j; k > 0; k--) {
-                            if (prev != '.' && prev != s.charAt(k - 1)) {
-                                break;
-                            }
-                            if (dp[i - 2][k - 1]) {
-                                dp[i][j] = true;
-                                break;
-                            }
-                        }
+            for (int i = 0; i < m + 1; i++) {
+                for (int j = 1; j < n + 1; j++) {
+                    if (p.charAt(j - 1) != '*') {
+                        dp[i][j] = i > 0 && dp[i - 1][j - 1]
+                                && (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.');
                     } else {
-                        dp[i][j] = dp[i - 1][j - 1] && (p.charAt(i - 1) == '.' || p.charAt(i - 1) == s.charAt(j - 1));
+                        dp[i][j] = dp[i][j - 2] || (i > 0 && dp[i - 1][j] && (s.charAt(i - 1) == p.charAt(j - 2)
+                                || p.charAt(j - 2) == '.'));
                     }
                 }
-
             }
-            return dp[p.length()][s.length()];
+            return dp[m][n];
+        }
+    }
+
+    /*
+        Regular Expression Matching - Recursion
+        Leetcode #10
+        https://leetcode.com/problems/regular-expression-matching/
+        Difficulty: Hard
+     */
+    public class Solution_2 {
+        public boolean isMatch(String s, String p) {
+            if (s == null && p == null) return true;
+            if (s == null || p == null) return false;
+            for (int i = 0; i < p.length(); s = s.substring(1)) {
+                char c = p.charAt(i);
+                if (i + 1 >= p.length() || p.charAt(i + 1) != '*')
+                    i++;
+                else if (isMatch(s, p.substring(i + 2)))
+                    return true;
+
+                if (s.isEmpty() || (c != '.' && c != s.charAt(0)))
+                    return false;
+            }
+
+            return s.isEmpty();
+        }
+    }
+
+    /*
+        Regular Expression Matching - Recursion
+        Leetcode #10
+        https://leetcode.com/problems/regular-expression-matching/
+        Difficulty: Hard
+     */
+    public class Solution_3 {
+        private boolean isMatch(String s, int idx1, String p, int idx2) {
+            if (s.length() == idx1 && p.length() == idx2) return true;
+            if (p.length() == idx2) return false;
+            if (s.length() == idx1) {
+                if (idx2 + 1 >= p.length() || p.charAt(idx2 + 1) != '*') {
+                    return false;
+                }
+                return isMatch(s, idx1, p, idx2 + 2);
+            }
+
+            if (idx2 + 1 <= p.length() - 1 && p.charAt(idx2 + 1) == '*') {
+                if (s.charAt(idx1) == p.charAt(idx2) || p.charAt(idx2) == '.') {
+                    return isMatch(s, idx1 + 1, p, idx2) || isMatch(s, idx1, p, idx2 + 2);
+                }
+                return isMatch(s, idx1, p, idx2 + 2);
+            } else if (p.charAt(idx2) == '.') {
+                return isMatch(s, idx1 + 1, p, idx2 + 1);
+            } else {
+                return p.charAt(idx2) == s.charAt(idx1) && isMatch(s, idx1 + 1, p, idx2 + 1);
+            }
+        }
+
+        public boolean isMatch(String s, String p) {
+            if (s == null && p == null) return true;
+            if (s == null || p == null) return false;
+            return isMatch(s, 0, p, 0);
         }
     }
 
@@ -109,6 +112,19 @@ public class RegularExpressionMatching {
         @Test
         public void test2() {
             Solution_2 sol = new RegularExpressionMatching().new Solution_2();
+            assertFalse(sol.isMatch("aa", "a"));
+            assertTrue(sol.isMatch("aa", "aa"));
+            assertFalse(sol.isMatch("aaa", "aa"));
+            assertTrue(sol.isMatch("aa", "a*"));
+            assertTrue(sol.isMatch("aa", ".*"));
+            assertTrue(sol.isMatch("ab", ".*"));
+            assertTrue(sol.isMatch("aab", "c*a*b"));
+            assertTrue(true);
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new RegularExpressionMatching().new Solution_3();
             assertFalse(sol.isMatch("aa", "a"));
             assertTrue(sol.isMatch("aa", "aa"));
             assertFalse(sol.isMatch("aaa", "aa"));

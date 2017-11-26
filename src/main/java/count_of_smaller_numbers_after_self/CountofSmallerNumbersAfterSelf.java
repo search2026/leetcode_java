@@ -130,7 +130,7 @@ public class CountofSmallerNumbersAfterSelf {
 //
 //            for (int i : nums) {
 //                remove(findRoot, i);
-//                search.add(query(findRoot, 0, i));
+//                search.insert(query(findRoot, 0, i));
 //            }
 //
 //            return search;

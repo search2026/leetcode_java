@@ -1,5 +1,6 @@
 package word_search;
 
+import common.Trie;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -95,7 +96,7 @@ public class WordSearch {
         Difficulty: Medium
     */
     public class Solution_3 {
-        Set<String> result = new HashSet<>();
+        Set<String> res = new HashSet<>();
         int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
         private void search(char[][] board, boolean[][] visited, String str, int i, int j, Trie trie) {
@@ -108,13 +109,12 @@ public class WordSearch {
             str = str + board[i][j];
 
             if (!trie.startsWith(str)) return;
-            if (trie.search(str)) result.add(str);
+            if (trie.search(str)) res.add(str);
 
             visited[i][j] = true;
             for (int[] dir : dirs) {
                 search(board, visited, str, i + dir[0], j + dir[1], trie);
             }
-
             visited[i][j] = false;
         }
 
@@ -135,52 +135,10 @@ public class WordSearch {
                 }
             }
 
-            return new ArrayList<String>(result);
+            return new ArrayList<>(res);
         }
 
-        //Trie Node
-        class TrieNode {
-            public TrieNode[] children = new TrieNode[26];
-            public String item = "";
-        }
-
-        //Trie
-        class Trie {
-            public TrieNode root = new TrieNode();
-
-            public void insert(String word) {
-                TrieNode node = root;
-                for (char c : word.toCharArray()) {
-                    if (node.children[c - 'a'] == null) {
-                        node.children[c - 'a'] = new TrieNode();
-                    }
-                    node = node.children[c - 'a'];
-                }
-                node.item = word;
-            }
-
-            public boolean search(String word) {
-                TrieNode node = root;
-                for (char c : word.toCharArray()) {
-                    if (node.children[c - 'a'] == null)
-                        return false;
-                    node = node.children[c - 'a'];
-                }
-                return node.item.equals(word);
-            }
-
-            public boolean startsWith(String prefix) {
-                TrieNode node = root;
-                for (char c : prefix.toCharArray()) {
-                    if (node.children[c - 'a'] == null)
-                        return false;
-                    node = node.children[c - 'a'];
-                }
-                return true;
-            }
-        }
     }
-
 
     /*
         Word Search II - Backtracking + Trie

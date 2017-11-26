@@ -102,7 +102,7 @@ public class IntersectionofTwoArrays {
       for (Integer num : nums1) {
         int idx = Arrays.binarySearch(nums2, num);
         if (idx >= 0) set.add(num);
-//        if (binarySearch(nums2, num)) set.add(num);
+//        if (binarySearch(nums2, num)) set.insert(num);
       }
       int i = 0;
       int[] rslt = new int[set.size()];

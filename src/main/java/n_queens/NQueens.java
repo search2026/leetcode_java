@@ -25,7 +25,7 @@ public class NQueens {
         }
 
         public void search(int n, int row, int[] colForRow, List<List<String>> rslt) {
-            if (row == n) { //findRoot a suitable solution, add to result list
+            if (row == n) { //findRoot a suitable solution, insert to result list
                 List<String> list = new ArrayList<String>();
                 for (int i = 0; i < n; i++) {
                     StringBuilder buff = new StringBuilder();

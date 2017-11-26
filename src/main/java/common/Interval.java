@@ -3,7 +3,7 @@ package common;
 /*
     Define Interval Class
  */
-public final class Interval {
+public class Interval {
   public int start;
   public int end;
 

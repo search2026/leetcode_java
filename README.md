@@ -1,11 +1,10 @@
-java-exercise
-========
+# Java Coding Exercise
 
 Some Java coding exercises. Under development and optimization.
 
 ## Requirements
 * Java >= 1.8.151
-* Gradle >= 4.2.1
+* Gradle >= 4.3.1
 
 ## Generate an IntelliJ IDEA project
 
@@ -29,7 +28,7 @@ If you write some unit tests, you can use the following command to run them.
 
 ```bash
 # run all tests
-gradlew test 
+gradle test 
 # run TwoSum test only
 gradle -Dtest.single=TwoSum test
 # run TwoSum test only with some informnation
