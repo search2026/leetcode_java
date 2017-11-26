@@ -19,7 +19,7 @@ public class HouseRobber {
             if (n == 0) return 0;
             if (n == 1) return nums[0];
 
-            int f1 = nums[0]; // exclude max
+            int f1 = nums[0]; // max sof far, excluding current
             int f2 = Math.max(nums[0], nums[1]); // max so far
             for (int i = 2; i < n; i++) {
                 int f = Math.max(f1 + nums[i], f2);
