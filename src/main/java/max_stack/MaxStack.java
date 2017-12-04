@@ -10,7 +10,7 @@ public class MaxStack {
     /*
         Max Stack - Two Stacks
         Leetcode #716
-        https://segmentfault.com/q/1010000012119679
+        https://leetcode.com/articles/max-stack/
         https://discuss.leetcode.com/category/1579/max-stack
         Difficulty: Hard
      */
@@ -67,14 +67,67 @@ public class MaxStack {
         }
     }
 
-
     /*
-        Max Stack - PriorityQueue + Map + Doubly Linked Node
-        https://segmentfault.com/q/1010000012119679
+        Max Stack - PriorityQueue + Stack
+        Leetcode #716
+        https://leetcode.com/articles/max-stack/
         https://discuss.leetcode.com/category/1579/max-stack
         Difficulty: Hard
      */
     public class Solution_2 {
+        Stack<Integer> s;
+        PriorityQueue<Integer> pq;
+
+        public Solution_2() {
+            s = new Stack<Integer>();
+            pq = new PriorityQueue<Integer>(10000, Collections.reverseOrder());
+        }
+
+        public void push(int x) {
+            s.push(x);
+            pq.offer(x);
+        }
+
+        public int pop() {
+            int pop = s.pop();
+            pq.remove(pop);
+            return pop;
+        }
+
+        public int top() {
+            return s.peek();
+        }
+
+        public int peekMax() {
+            return pq.peek();
+        }
+
+        public int popMax() {
+            int max = pq.poll();
+            Stack<Integer> ts = new Stack<>();
+            while (!s.isEmpty()) {
+                if (s.peek() != max) {
+                    ts.push(s.pop());
+                } else {
+                    s.pop();
+                    break;
+                }
+            }
+            while (!ts.isEmpty()) {
+                s.push(ts.pop());
+            }
+            return max;
+        }
+    }
+
+    /*
+        Max Stack - PriorityQueue + Map + Doubly Linked Node
+        Leetcode #716
+        https://leetcode.com/articles/max-stack/
+        https://discuss.leetcode.com/category/1579/max-stack
+        Difficulty: Hard
+     */
+    public class Solution_3 {
         class DLNode {
             DLNode prev;
             DLNode next;
@@ -96,7 +149,7 @@ public class MaxStack {
         /**
          * initialize your data structure here.
          */
-        public Solution_2() {
+        public Solution_3() {
             q = new PriorityQueue();
             m = new HashMap();
             tail = new DLNode(FAKE);
@@ -165,6 +218,20 @@ public class MaxStack {
         @Test
         public void test2() {
             Solution_2 sol = new MaxStack().new Solution_2();
+            sol.push(5);
+            sol.push(1);
+            sol.push(5);
+            assertEquals(5, sol.top());
+            assertEquals(5, sol.popMax());
+            assertEquals(1, sol.top());
+            assertEquals(5, sol.peekMax());
+            assertEquals(1, sol.pop());
+            assertEquals(5, sol.top());
+        }
+
+        @Test
+        public void test3() {
+            Solution_3 sol = new MaxStack().new Solution_3();
             sol.push(5);
             sol.push(1);
             sol.push(5);
