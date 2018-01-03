@@ -3,7 +3,7 @@ package count_complete_tree_nodes;
 import common.TreeNode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CountCompleteTreeNodes {
     /*

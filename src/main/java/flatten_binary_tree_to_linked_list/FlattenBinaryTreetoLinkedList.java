@@ -3,7 +3,7 @@ package flatten_binary_tree_to_linked_list;
 import common.TreeNode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FlattenBinaryTreetoLinkedList {
     /*

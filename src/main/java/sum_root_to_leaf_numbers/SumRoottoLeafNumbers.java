@@ -3,7 +3,7 @@ package sum_root_to_leaf_numbers;
 import common.TreeNode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SumRoottoLeafNumbers {
     /*

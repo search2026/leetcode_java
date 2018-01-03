@@ -3,7 +3,7 @@ package lowest_common_ancestor_of_a_binary_search_tree;
 import common.TreeNode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LowestCommonAncestorofaBinarySearchTree {
     /*

@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import common.TreeNode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BinarySearchTreeIterator {
     /*

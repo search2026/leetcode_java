@@ -3,7 +3,7 @@ package populating_next_right_pointers_in_each_node;
 import common.TreeLinkNode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PopulatingNextRightPointersinEachNode {
     /*
