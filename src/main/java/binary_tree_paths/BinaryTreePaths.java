@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class BinaryTreePaths {
@@ -16,27 +17,17 @@ public class BinaryTreePaths {
         Difficulty: Easy
      */
     public class Solution {
-        public List<String> binaryTreePaths(TreeNode root) {
-            List<String> rslt = new ArrayList<String>();
-            if (root == null) return rslt;
-            helper(root, rslt, "");
-            return rslt;
+        private void search(TreeNode root, List<String> res, String s) {
+            if (root.left == null && root.right == null) res.add(s + root.val);
+            if (root.left != null) search(root.left, res, s + root.val + "->");
+            if (root.right != null) search(root.right, res, s + root.val + "->");
         }
 
-        public void helper(TreeNode root, List<String> rslt, String item) {
-            if (root.left == null && root.right == null) {
-                if (item.length() == 0) {
-                    rslt.add("" + root.val);
-                } else {
-                    rslt.add(item + "->" + root.val);
-                }
-                return;
-            }
-            if (root.left != null)
-                helper(root.left, rslt, item.length()==0? ""+root.val : item+"->"+root.val);
-            if (root.right != null)
-                helper(root.right, rslt, item.length()==0? ""+root.val : item+"->"+root.val);
-
+        public List<String> binaryTreePaths(TreeNode root) {
+            List<String> res = new ArrayList<>();
+            if (root == null) return res;
+            search(root, res, "");
+            return res;
         }
     }
 
@@ -44,7 +35,14 @@ public class BinaryTreePaths {
         @Test
         public void test1() {
             Solution sol = new BinaryTreePaths().new Solution();
-            assertTrue(true);
+            TreeNode root = new TreeNode(1);
+            root.left = new TreeNode(2);
+            root.right = new TreeNode(3);
+            root.left.right = new TreeNode(5);
+            List<String> res = sol.binaryTreePaths(root);
+            assertEquals(2, res.size());
+            assertEquals("1->2->5", res.get(0));
+            assertEquals("1->3", res.get(1));
         }
     }
 }

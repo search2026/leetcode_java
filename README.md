@@ -4,7 +4,7 @@ Some Java coding exercises. Under development and optimization.
 
 ## Requirements
 * Java >= 1.8.151
-* Gradle >= 4.3.1
+* Gradle >= 4.4
 
 ## Generate an IntelliJ IDEA project
 

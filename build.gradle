@@ -24,9 +24,13 @@ repositories {
 }
 
 dependencies {
-    compile 'junit:junit:4.12'
+    compile 'org.junit.jupiter:junit-jupiter-engine:5.0.2'
+    compile 'org.junit.vintage:junit-vintage-engine:4.12.2'    // backward compatiable with junit 4
     compile 'org.apache.commons:commons-lang3:3.4'
-    testCompile 'junit:junit:4.12'
+//    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.0.2'
+//    testCompile 'org.junit.vintage:junit-vintage-engine:4.12.2'
+    testRuntime("org.junit.platform:junit-platform-launcher:1.0.2")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.2")
 }
 
 sourceSets.test.java.srcDir 'src/main/java'
@@ -69,7 +73,7 @@ package ${questionPackage};
 
 import java.util.*;
 import org.junit.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ${className} {
     /*

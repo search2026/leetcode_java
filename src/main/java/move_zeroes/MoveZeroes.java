@@ -1,40 +1,29 @@
 package move_zeroes;
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MoveZeroes {
     /*
-        Move Zeroes
+        Move Zeroes - Two Pointers
         Leetcode #283
         https://leetcode.com/problems/move-zeroes/
         Difficulty: Easy
      */
     public class Solution {
         public void moveZeroes(int[] nums) {
-            if (nums == null || nums.length == 0) {
-                return;
-            }
-
-            int i = 0;
-            int j = 0;
-
-            // Step 2: compress the nums array by filling out the 0s
-            while (i < nums.length) {
-                if (nums[i] != 0) {
-                    nums[j] = nums[i];
-                    j++;
-                    i++;
-                } else {
-                    i++;
+            if (nums == null || nums.length < 2) return;
+            int p1 = 0, p2 = 0;
+            while (p1 < nums.length) {
+                if (nums[p1] != 0) {
+                    nums[p2] = nums[p1];
+                    p2++;
                 }
+                p1++;
             }
-
-            // Step 1: append 0s to the end
-            while (j < nums.length) {
-                nums[j] = 0;
-                j++;
+            while (p2 < nums.length) {
+                nums[p2] = 0;
+                p2++;
             }
         }
     }
@@ -43,7 +32,10 @@ public class MoveZeroes {
         @Test
         public void test1() {
             Solution sol = new MoveZeroes().new Solution();
-            assertEquals(3, 3);
+            int[] nums = {0, 1, 0, 3, 12};
+            sol.moveZeroes(nums);
+            int[] res = {1, 3, 12, 0, 0};
+            Assert.assertArrayEquals(res, nums);
         }
     }
 }
