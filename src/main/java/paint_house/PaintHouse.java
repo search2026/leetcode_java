@@ -2,7 +2,7 @@ package paint_house;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PaintHouse {
     /*

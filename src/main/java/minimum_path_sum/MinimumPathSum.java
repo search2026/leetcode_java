@@ -3,7 +3,7 @@ package minimum_path_sum;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MinimumPathSum {
     /*

@@ -3,7 +3,7 @@ package copy_list_with_random_pointer;
 import common.RandomListNode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CopyListwithRandomPointer {
   /*

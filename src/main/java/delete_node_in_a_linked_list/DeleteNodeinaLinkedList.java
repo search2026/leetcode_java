@@ -3,7 +3,7 @@ package delete_node_in_a_linked_list;
 import common.ListNode;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DeleteNodeinaLinkedList {
     /*

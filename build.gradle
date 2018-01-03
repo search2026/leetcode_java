@@ -23,14 +23,22 @@ repositories {
     mavenCentral()
 }
 
+ext.junitVintageVersion  = '4.12.2'
+ext.junitPlatformVersion = '1.0.2'
+ext.junitJupiterVersion  = '5.0.2'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
 dependencies {
-    compile 'org.junit.jupiter:junit-jupiter-engine:5.0.2'
-    compile 'org.junit.vintage:junit-vintage-engine:4.12.2'    // backward compatiable with junit 4
-    compile 'org.apache.commons:commons-lang3:3.4'
-//    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.0.2'
-//    testCompile 'org.junit.vintage:junit-vintage-engine:4.12.2'
-    testRuntime("org.junit.platform:junit-platform-launcher:1.0.2")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.2")
+    compile("org.apache.commons:commons-lang3:3.7")
+    compile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    // backward compatible with junit 4
+    compile("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testCompile("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
+    testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
 
 sourceSets.test.java.srcDir 'src/main/java'

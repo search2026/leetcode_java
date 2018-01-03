@@ -2,7 +2,7 @@ package bitwise_and_of_numbers_range;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BitwiseANDofNumbersRange {
     /*

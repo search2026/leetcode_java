@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.Deque;
 import java.util.LinkedList;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 
 public class ConvertSortedArraytoBinarySearchTree {

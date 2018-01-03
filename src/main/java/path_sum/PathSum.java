@@ -7,7 +7,7 @@ import common.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PathSum {
     /*
