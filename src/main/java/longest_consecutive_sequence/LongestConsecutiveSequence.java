@@ -1,10 +1,10 @@
 package longest_consecutive_sequence;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LongestConsecutiveSequence {
     /*
@@ -15,25 +15,25 @@ public class LongestConsecutiveSequence {
      */
     public class Solution {
         public int longestConsecutive(int[] nums) {
-            HashSet<Integer> hs = new HashSet<Integer>();
+            HashSet<Integer> set = new HashSet<>();
             for (int n : nums) {
-                hs.add(n);
+                set.add(n);
             }
-            int rslt = 0;
+            int res = 0;
             for (int n : nums) {
                 int i = n - 1;
-                while (hs.contains(i)) {
-                    hs.remove(i);
+                while (set.contains(i)) {
+                    set.remove(i);
                     i--;
                 }
                 int j = n + 1;
-                while (hs.contains(j)) {
-                    hs.remove(j);
+                while (set.contains(j)) {
+                    set.remove(j);
                     j++;
                 }
-                rslt = Math.max(rslt, j - i - 1);
+                res = Math.max(res, j - i - 1);
             }
-            return rslt;
+            return res;
         }
     }
 
@@ -41,7 +41,10 @@ public class LongestConsecutiveSequence {
         @Test
         public void test1() {
             Solution sol = new LongestConsecutiveSequence().new Solution();
-            assertEquals(3, 3);
+            assertEquals(4, sol.longestConsecutive(new int[]{100, 4, 200, 1, 3, 2}));
+            assertEquals(2, sol.longestConsecutive(new int[]{1, 2, 5, 6}));
+            assertEquals(3, sol.longestConsecutive(new int[]{3, 5, 6, 12, 7}));
+            assertEquals(3, sol.longestConsecutive(new int[]{1, 6, 2, 7, 3}));
         }
     }
 }

@@ -1,7 +1,7 @@
 package lowest_common_ancestor_of_a_binary_search_tree;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

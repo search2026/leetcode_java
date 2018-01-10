@@ -1,10 +1,10 @@
 package find_the_celebrity;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FindtheCelebrity {
     /*

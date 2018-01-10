@@ -1,9 +1,9 @@
 package delete_a_node_in_a_bst;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DeleteaNodeinaBST {
     /*

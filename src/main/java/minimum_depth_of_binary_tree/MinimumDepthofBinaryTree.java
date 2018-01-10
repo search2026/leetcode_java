@@ -1,12 +1,12 @@
 package minimum_depth_of_binary_tree;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MinimumDepthofBinaryTree {
   /*

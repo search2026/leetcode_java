@@ -1,7 +1,7 @@
 package count_of_smaller_numbers_after_self;
 
 import common.SegmentTreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;

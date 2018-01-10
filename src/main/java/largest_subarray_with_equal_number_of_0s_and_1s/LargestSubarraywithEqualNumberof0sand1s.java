@@ -2,7 +2,7 @@ package largest_subarray_with_equal_number_of_0s_and_1s;
 
 import java.util.*;
 import org.junit.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LargestSubarraywithEqualNumberof0sand1s {
     /*

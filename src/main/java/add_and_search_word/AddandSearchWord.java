@@ -1,6 +1,6 @@
 package add_and_search_word;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;

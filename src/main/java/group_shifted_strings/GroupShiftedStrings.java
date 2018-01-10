@@ -1,10 +1,10 @@
 package group_shifted_strings;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GroupShiftedStrings {
     /*

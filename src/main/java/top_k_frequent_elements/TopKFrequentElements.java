@@ -2,7 +2,7 @@ package top_k_frequent_elements;
 
 import java.util.*;
 import org.junit.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TopKFrequentElements {
     /*

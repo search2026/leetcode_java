@@ -1,11 +1,11 @@
 package longest_substring_with_at_most_two_distinct_characters;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LongestSubstringwithAtMostTwoDistinctCharacters {
   /*

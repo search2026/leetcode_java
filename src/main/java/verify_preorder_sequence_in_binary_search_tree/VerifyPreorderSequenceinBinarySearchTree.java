@@ -1,6 +1,6 @@
 package verify_preorder_sequence_in_binary_search_tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;

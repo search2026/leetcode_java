@@ -1,10 +1,10 @@
 package number_of_connected_components_in_an_undirected_graph;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NumberofConnectedComponentsinanUndirectedGraph {
     /*

@@ -1,7 +1,7 @@
 package construct_binary_tree_from_inorder_and_postorder_traversal;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
