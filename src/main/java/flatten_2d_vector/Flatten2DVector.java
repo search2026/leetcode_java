@@ -1,6 +1,6 @@
 package flatten_2d_vector;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,7 +1,7 @@
 package flatten_binary_tree_to_linked_list;
 
 import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

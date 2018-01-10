@@ -1,6 +1,6 @@
 package wildcard_matching;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.*;

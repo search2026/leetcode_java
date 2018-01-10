@@ -1,6 +1,6 @@
 package max_sum_of_rectangle_no_larger_than_k;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.TreeSet;
 

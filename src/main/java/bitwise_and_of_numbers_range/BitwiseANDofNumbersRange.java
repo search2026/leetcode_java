@@ -1,6 +1,6 @@
 package bitwise_and_of_numbers_range;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

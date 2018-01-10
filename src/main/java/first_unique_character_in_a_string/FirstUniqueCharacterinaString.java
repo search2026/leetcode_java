@@ -1,6 +1,6 @@
 package first_unique_character_in_a_string;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

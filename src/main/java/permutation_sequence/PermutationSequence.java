@@ -1,6 +1,6 @@
 package permutation_sequence;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 

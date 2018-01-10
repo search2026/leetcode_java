@@ -1,6 +1,6 @@
 package simplify_path;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayDeque;
 

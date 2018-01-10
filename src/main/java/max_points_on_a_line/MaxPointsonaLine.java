@@ -1,6 +1,6 @@
 package max_points_on_a_line;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.awt.Point;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package design_hit_counter;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

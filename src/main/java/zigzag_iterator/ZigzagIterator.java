@@ -1,6 +1,6 @@
 package zigzag_iterator;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package kth_smallest_element_in_a_bst;
 
 import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

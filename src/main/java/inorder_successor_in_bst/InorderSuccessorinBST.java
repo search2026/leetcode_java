@@ -1,7 +1,7 @@
 package inorder_successor_in_bst;
 
 import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

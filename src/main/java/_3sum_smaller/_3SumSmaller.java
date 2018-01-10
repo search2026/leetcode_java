@@ -1,6 +1,6 @@
 package _3sum_smaller;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 

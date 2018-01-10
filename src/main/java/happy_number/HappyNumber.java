@@ -1,6 +1,6 @@
 package happy_number;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;

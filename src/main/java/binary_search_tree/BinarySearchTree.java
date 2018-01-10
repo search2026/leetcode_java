@@ -1,6 +1,6 @@
 package binary_search_tree;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;

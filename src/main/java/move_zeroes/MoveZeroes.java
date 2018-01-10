@@ -1,7 +1,7 @@
 package move_zeroes;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class MoveZeroes {
     /*

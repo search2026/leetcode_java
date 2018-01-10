@@ -1,6 +1,6 @@
 package guess_number_higher_or_lower;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

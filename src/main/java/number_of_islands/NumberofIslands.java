@@ -1,7 +1,7 @@
 package number_of_islands;
 
 import common.UnionFind2D;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.*;
 

@@ -3,7 +3,7 @@ package binary_search_tree_iterator;
 import java.util.ArrayDeque;
 
 import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

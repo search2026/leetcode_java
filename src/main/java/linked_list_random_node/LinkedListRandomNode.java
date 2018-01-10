@@ -1,7 +1,7 @@
 package linked_list_random_node;
 
 import common.ListNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Random;
 

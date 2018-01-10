@@ -1,6 +1,6 @@
 package expression_add_operators;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;

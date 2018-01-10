@@ -1,6 +1,6 @@
 package number_of_connected_components_in_an_undirected_graph;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.*;
 
