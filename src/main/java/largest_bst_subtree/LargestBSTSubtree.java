@@ -1,9 +1,9 @@
 package largest_bst_subtree;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LargestBSTSubtree {
   /*

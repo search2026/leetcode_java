@@ -1,11 +1,12 @@
 package binary_tree_level_order_traversal;
 
 import common.TreeNode;
-import org.junit.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BinaryTreeLevelOrderTraversal {
     /*
@@ -104,13 +105,13 @@ public class BinaryTreeLevelOrderTraversal {
             List<List<Integer>> res = sol.levelOrder(root);
             assertEquals(3, res.size());
             assertEquals(1, res.get(0).size());
-            assertEquals(3, (int)res.get(0).get(0));
+            assertEquals(3, (int) res.get(0).get(0));
             assertEquals(2, res.get(1).size());
-            assertEquals(9, (int)res.get(1).get(0));
-            assertEquals(20, (int)res.get(1).get(1));
+            assertEquals(9, (int) res.get(1).get(0));
+            assertEquals(20, (int) res.get(1).get(1));
             assertEquals(2, res.get(2).size());
-            assertEquals(15, (int)res.get(2).get(0));
-            assertEquals(7, (int)res.get(2).get(1));
+            assertEquals(15, (int) res.get(2).get(0));
+            assertEquals(7, (int) res.get(2).get(1));
         }
 
         @Test
@@ -124,13 +125,13 @@ public class BinaryTreeLevelOrderTraversal {
             List<List<Integer>> res = sol.levelOrder(root);
             assertEquals(3, res.size());
             assertEquals(1, res.get(0).size());
-            assertEquals(3, (int)res.get(0).get(0));
+            assertEquals(3, (int) res.get(0).get(0));
             assertEquals(2, res.get(1).size());
-            assertEquals(9, (int)res.get(1).get(0));
-            assertEquals(20, (int)res.get(1).get(1));
+            assertEquals(9, (int) res.get(1).get(0));
+            assertEquals(20, (int) res.get(1).get(1));
             assertEquals(2, res.get(2).size());
-            assertEquals(15, (int)res.get(2).get(0));
-            assertEquals(7, (int)res.get(2).get(1));
+            assertEquals(15, (int) res.get(2).get(0));
+            assertEquals(7, (int) res.get(2).get(1));
         }
 
         @Test
@@ -144,13 +145,13 @@ public class BinaryTreeLevelOrderTraversal {
             List<List<Integer>> res = sol.levelOrderBottom(root);
             assertEquals(3, res.size());
             assertEquals(2, res.get(0).size());
-            assertEquals(15, (int)res.get(0).get(0));
-            assertEquals(7, (int)res.get(0).get(1));
+            assertEquals(15, (int) res.get(0).get(0));
+            assertEquals(7, (int) res.get(0).get(1));
             assertEquals(2, res.get(1).size());
-            assertEquals(9, (int)res.get(1).get(0));
-            assertEquals(20, (int)res.get(1).get(1));
+            assertEquals(9, (int) res.get(1).get(0));
+            assertEquals(20, (int) res.get(1).get(1));
             assertEquals(1, res.get(2).size());
-            assertEquals(3, (int)res.get(2).get(0));
+            assertEquals(3, (int) res.get(2).get(0));
         }
     }
 }

@@ -1,7 +1,7 @@
 package closest_binary_search_tree_value;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

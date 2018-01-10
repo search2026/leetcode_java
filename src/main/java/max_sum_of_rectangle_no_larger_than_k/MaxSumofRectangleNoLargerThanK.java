@@ -1,10 +1,10 @@
 package max_sum_of_rectangle_no_larger_than_k;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.TreeSet;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaxSumofRectangleNoLargerThanK {
   /*

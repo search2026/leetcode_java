@@ -1,10 +1,10 @@
 package graph_valid_tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GraphValidTree {
   /*

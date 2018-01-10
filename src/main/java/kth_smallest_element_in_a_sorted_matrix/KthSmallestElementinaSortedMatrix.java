@@ -1,8 +1,8 @@
 package kth_smallest_element_in_a_sorted_matrix;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KthSmallestElementinaSortedMatrix {
   /*

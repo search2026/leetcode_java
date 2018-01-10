@@ -1,10 +1,10 @@
 package implement_queue_using_stacks;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ImplementQueueusingStacks {
     /*

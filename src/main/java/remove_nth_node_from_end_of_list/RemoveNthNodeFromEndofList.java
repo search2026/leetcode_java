@@ -1,9 +1,9 @@
 package remove_nth_node_from_end_of_list;
 
 import common.ListNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RemoveNthNodeFromEndofList {
     /*

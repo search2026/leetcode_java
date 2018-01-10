@@ -1,7 +1,7 @@
 package binary_tree_vertical_order_traversal;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,11 +1,11 @@
 package kth_largest_element_in_an_array;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class kthLargestElementinanArray {
     /*

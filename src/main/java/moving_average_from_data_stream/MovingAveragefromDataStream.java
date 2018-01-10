@@ -2,7 +2,7 @@ package moving_average_from_data_stream;
 
 import java.util.*;
 import org.junit.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MovingAveragefromDataStream {
     /*
