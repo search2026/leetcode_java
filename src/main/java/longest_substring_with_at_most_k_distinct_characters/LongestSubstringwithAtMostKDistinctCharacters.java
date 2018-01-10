@@ -1,6 +1,6 @@
 package longest_substring_with_at_most_k_distinct_characters;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
 package container_with_most_water;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

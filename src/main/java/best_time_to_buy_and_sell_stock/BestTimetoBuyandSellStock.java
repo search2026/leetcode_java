@@ -1,6 +1,6 @@
 package best_time_to_buy_and_sell_stock;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,6 +1,6 @@
 package _3sum_closest;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 

@@ -1,6 +1,6 @@
 package integer_to_roman;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.*;
 

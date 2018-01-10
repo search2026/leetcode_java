@@ -1,6 +1,6 @@
 package substring_with_concatenation_of_all_words;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.*;
 

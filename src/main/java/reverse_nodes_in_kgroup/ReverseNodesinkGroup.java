@@ -1,7 +1,7 @@
 package reverse_nodes_in_kgroup;
 
 import common.ListNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

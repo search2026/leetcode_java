@@ -1,6 +1,6 @@
 package letter_combinations_of_a_phone_number;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;

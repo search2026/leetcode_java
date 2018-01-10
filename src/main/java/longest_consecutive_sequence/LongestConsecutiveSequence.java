@@ -1,6 +1,6 @@
 package longest_consecutive_sequence;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.HashSet;
 

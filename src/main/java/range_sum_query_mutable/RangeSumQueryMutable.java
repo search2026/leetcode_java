@@ -1,6 +1,6 @@
 package range_sum_query_mutable;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import common.SegmentTreeNode;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

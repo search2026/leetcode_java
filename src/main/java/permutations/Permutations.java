@@ -1,10 +1,10 @@
 package permutations;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Permutations {
     /*
@@ -14,8 +14,8 @@ public class Permutations {
         Difficulty: Medium
     */
     public class Solution {
-        private void search(int[] nums, List<List<Integer>> permList, List<Integer> curr, boolean[] visited, int level, int n) {
-            if (level == n) {
+        private void search(int[] nums, List<List<Integer>> permList, List<Integer> curr, boolean[] visited, int n) {
+            if (curr.size() == n) {
                 permList.add(new ArrayList<>(curr));
                 return;
             }
@@ -24,7 +24,7 @@ public class Permutations {
                 if (!visited[i]) {
                     curr.add(nums[i]);
                     visited[i] = true;
-                    search(nums, permList, curr, visited, level + 1, n);
+                    search(nums, permList, curr, visited, n);
                     visited[i] = false;
                     curr.remove(curr.size() - 1);
                 }
@@ -37,8 +37,7 @@ public class Permutations {
 
             int n = nums.length;
             boolean[] visited = new boolean[n];
-            List<Integer> curr = new ArrayList<>();
-            search(nums, permList, curr, visited, 1, n);
+            search(nums, permList, new ArrayList<Integer>(), visited, n);
 
             return permList;
         }
@@ -79,18 +78,18 @@ public class Permutations {
         Difficulty: Medium
     */
     public class Solution_3 {
-        private void search(int[] nums, List<List<Integer>> permList, List<Integer> curr, boolean[] visited) {
-            if (curr.size() == nums.length) {
+        private void search(int[] nums, List<List<Integer>> permList, List<Integer> curr, boolean[] visited, int n) {
+            if (curr.size() == n) {
                 permList.add(new ArrayList<>(curr));
                 return;
             }
 
-            for (int i = 0; i < nums.length; i++) {
+            for (int i = 0; i < n; i++) {
                 if (i > 0 && !visited[i - 1] && nums[i] == nums[i - 1]) continue;
                 if (!visited[i]) {
                     visited[i] = true;
                     curr.add(nums[i]);
-                    search(nums, permList, curr, visited);
+                    search(nums, permList, curr, visited, n);
                     curr.remove(curr.size() - 1);
                     visited[i] = false;
                 }
@@ -98,16 +97,15 @@ public class Permutations {
         }
 
         public List<List<Integer>> permuteUnique(int[] nums) {
-            List<List<Integer>> permList = new ArrayList<>();
-            if (nums == null || nums.length == 0) return permList;
+            List<List<Integer>> res = new ArrayList<>();
+            if (nums == null || nums.length == 0) return res;
 
             int n = nums.length;
             boolean[] visited = new boolean[n];
-            List<Integer> curr = new ArrayList<>();
             Arrays.sort(nums);
 
-            search(nums, permList, curr, visited);
-            return permList;
+            search(nums, res, new ArrayList<Integer>(), visited, n);
+            return res;
         }
     }
 
@@ -143,15 +141,15 @@ public class Permutations {
         }
     }
 
-    public class UnitTest {
+    public static class UnitTest {
         @Test
         public void test1() {
             Solution sol = new Permutations().new Solution();
             int[] test = {1, 2, 3};
-            List<List<Integer>> rslt = sol.permute(test);
-            assertEquals(6, rslt.size());
-            assertEquals(test.length, rslt.get(0).size());
-            Collections.sort(rslt, new Comparator<List<Integer>>() {
+            List<List<Integer>> res = sol.permute(test);
+            assertEquals(6, res.size());
+            assertEquals(test.length, res.get(0).size());
+            Collections.sort(res, new Comparator<List<Integer>>() {
                 @Override
                 public int compare(List<Integer> o1, List<Integer> o2) {
                     if (o1.get(0).equals(o2.get(0)))
@@ -159,22 +157,22 @@ public class Permutations {
                     return o1.get(0) - o2.get(0);
                 }
             });
-            assertEquals(1, (int) rslt.get(0).get(0));
-            assertEquals(2, (int) rslt.get(0).get(1));
-            assertEquals(3, (int) rslt.get(0).get(2));
-            assertEquals(3, (int) rslt.get(rslt.size() - 1).get(0));
-            assertEquals(2, (int) rslt.get(rslt.size() - 1).get(1));
-            assertEquals(1, (int) rslt.get(rslt.size() - 1).get(2));
+            assertEquals(1, (int) res.get(0).get(0));
+            assertEquals(2, (int) res.get(0).get(1));
+            assertEquals(3, (int) res.get(0).get(2));
+            assertEquals(3, (int) res.get(res.size() - 1).get(0));
+            assertEquals(2, (int) res.get(res.size() - 1).get(1));
+            assertEquals(1, (int) res.get(res.size() - 1).get(2));
         }
 
         @Test
         public void test2() {
             Solution_2 sol = new Permutations().new Solution_2();
             int[] test = {1, 2, 3};
-            List<List<Integer>> rslt = sol.permute(test);
-            assertEquals(6, rslt.size());
-            assertEquals(test.length, rslt.get(0).size());
-            Collections.sort(rslt, new Comparator<List<Integer>>() {
+            List<List<Integer>> res = sol.permute(test);
+            assertEquals(6, res.size());
+            assertEquals(test.length, res.get(0).size());
+            Collections.sort(res, new Comparator<List<Integer>>() {
                 @Override
                 public int compare(List<Integer> o1, List<Integer> o2) {
                     if (o1.get(0).equals(o2.get(0)))
@@ -182,22 +180,22 @@ public class Permutations {
                     return o1.get(0) - o2.get(0);
                 }
             });
-            assertEquals(1, (int) rslt.get(0).get(0));
-            assertEquals(2, (int) rslt.get(0).get(1));
-            assertEquals(3, (int) rslt.get(0).get(2));
-            assertEquals(3, (int) rslt.get(rslt.size() - 1).get(0));
-            assertEquals(2, (int) rslt.get(rslt.size() - 1).get(1));
-            assertEquals(1, (int) rslt.get(rslt.size() - 1).get(2));
+            assertEquals(1, (int) res.get(0).get(0));
+            assertEquals(2, (int) res.get(0).get(1));
+            assertEquals(3, (int) res.get(0).get(2));
+            assertEquals(3, (int) res.get(res.size() - 1).get(0));
+            assertEquals(2, (int) res.get(res.size() - 1).get(1));
+            assertEquals(1, (int) res.get(res.size() - 1).get(2));
         }
 
         @Test
         public void test3() {
             Solution_3 sol = new Permutations().new Solution_3();
             int[] test = {1, 2, 1};
-            List<List<Integer>> rslt = sol.permuteUnique(test);
-            assertEquals(3, rslt.size());
-            assertEquals(test.length, rslt.get(0).size());
-            Collections.sort(rslt, new Comparator<List<Integer>>() {
+            List<List<Integer>> res = sol.permuteUnique(test);
+            assertEquals(3, res.size());
+            assertEquals(test.length, res.get(0).size());
+            Collections.sort(res, new Comparator<List<Integer>>() {
                 @Override
                 public int compare(List<Integer> o1, List<Integer> o2) {
                     if (o1.get(0).equals(o2.get(0)))
@@ -205,22 +203,22 @@ public class Permutations {
                     return o1.get(0) - o2.get(0);
                 }
             });
-            assertEquals(1, (int) rslt.get(0).get(0));
-            assertEquals(1, (int) rslt.get(0).get(1));
-            assertEquals(2, (int) rslt.get(0).get(2));
-            assertEquals(2, (int) rslt.get(rslt.size() - 1).get(0));
-            assertEquals(1, (int) rslt.get(rslt.size() - 1).get(1));
-            assertEquals(1, (int) rslt.get(rslt.size() - 1).get(2));
+            assertEquals(1, (int) res.get(0).get(0));
+            assertEquals(1, (int) res.get(0).get(1));
+            assertEquals(2, (int) res.get(0).get(2));
+            assertEquals(2, (int) res.get(res.size() - 1).get(0));
+            assertEquals(1, (int) res.get(res.size() - 1).get(1));
+            assertEquals(1, (int) res.get(res.size() - 1).get(2));
         }
 
         @Test
         public void test4() {
             Solution_4 sol = new Permutations().new Solution_4();
             int[] test = {1, 2, 1};
-            List<List<Integer>> rslt = sol.permuteUnique(test);
-            assertEquals(3, rslt.size());
-            assertEquals(test.length, rslt.get(0).size());
-            Collections.sort(rslt, new Comparator<List<Integer>>() {
+            List<List<Integer>> res = sol.permuteUnique(test);
+            assertEquals(3, res.size());
+            assertEquals(test.length, res.get(0).size());
+            Collections.sort(res, new Comparator<List<Integer>>() {
                 @Override
                 public int compare(List<Integer> o1, List<Integer> o2) {
                     if (o1.get(0).equals(o2.get(0)))
@@ -228,12 +226,12 @@ public class Permutations {
                     return o1.get(0) - o2.get(0);
                 }
             });
-            assertEquals(1, (int) rslt.get(0).get(0));
-            assertEquals(1, (int) rslt.get(0).get(1));
-            assertEquals(2, (int) rslt.get(0).get(2));
-            assertEquals(2, (int) rslt.get(rslt.size() - 1).get(0));
-            assertEquals(1, (int) rslt.get(rslt.size() - 1).get(1));
-            assertEquals(1, (int) rslt.get(rslt.size() - 1).get(2));
+            assertEquals(1, (int) res.get(0).get(0));
+            assertEquals(1, (int) res.get(0).get(1));
+            assertEquals(2, (int) res.get(0).get(2));
+            assertEquals(2, (int) res.get(res.size() - 1).get(0));
+            assertEquals(1, (int) res.get(res.size() - 1).get(1));
+            assertEquals(1, (int) res.get(res.size() - 1).get(2));
         }
     }
 }

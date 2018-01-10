@@ -1,6 +1,6 @@
 package valid_bipartit_graph;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;

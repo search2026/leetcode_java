@@ -1,7 +1,7 @@
 package clone_graph;
 
 import common.UndirectedGraphNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;

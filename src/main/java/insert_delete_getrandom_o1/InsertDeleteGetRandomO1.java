@@ -1,6 +1,6 @@
 package insert_delete_getrandom_o1;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;

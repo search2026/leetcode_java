@@ -1,6 +1,6 @@
 package roman_to_integer;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;

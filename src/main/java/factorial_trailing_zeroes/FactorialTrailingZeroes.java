@@ -1,6 +1,6 @@
 package factorial_trailing_zeroes;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

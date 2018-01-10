@@ -1,7 +1,7 @@
 package copy_list_with_random_pointer;
 
 import common.RandomListNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

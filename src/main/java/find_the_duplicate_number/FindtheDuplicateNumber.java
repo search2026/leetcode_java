@@ -1,6 +1,6 @@
 package find_the_duplicate_number;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

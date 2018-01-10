@@ -1,7 +1,7 @@
 package binary_tree_postorder_traversal;
 
 import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

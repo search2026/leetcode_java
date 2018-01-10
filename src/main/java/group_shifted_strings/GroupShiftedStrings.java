@@ -1,6 +1,6 @@
 package group_shifted_strings;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.*;
 

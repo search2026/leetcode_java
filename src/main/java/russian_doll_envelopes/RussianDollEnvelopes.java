@@ -1,6 +1,6 @@
 package russian_doll_envelopes;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Comparator;

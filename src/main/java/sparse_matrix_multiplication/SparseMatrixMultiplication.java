@@ -1,8 +1,8 @@
 package sparse_matrix_multiplication;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.*;
+
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

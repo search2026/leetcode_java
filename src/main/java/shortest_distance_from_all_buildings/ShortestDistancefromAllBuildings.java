@@ -1,6 +1,6 @@
 package shortest_distance_from_all_buildings;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
