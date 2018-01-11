@@ -1,11 +1,9 @@
 package word_break;
 
-import org.junit.Test;
-
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import org.junit.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WordBreak {
