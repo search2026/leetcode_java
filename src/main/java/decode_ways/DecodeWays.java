@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DecodeWays {
     /*
-        Decode Ways
+        Decode Ways - Dynamic Programming
         Leetcode #91
         https://leetcode.com/problems/decode-ways/
         Difficulty: Medium
@@ -29,33 +29,24 @@ public class DecodeWays {
     }
 
     /*
-        Decode Ways
+        Decode Ways - Dynamic Programming Top Down
         Leetcode #91
         https://leetcode.com/problems/decode-ways/
         Difficulty: Medium
      */
     public class Solution_2 {
         public int numDecodings(String s) {
-            if (s==null || s.length()==0 || s.charAt(0)=='0') return 0;
-            int n = s.length();
-            int[] dp = new int[n+1];
-            dp[0] = 1;
-            dp[1] = s.charAt(0) == '0' ? 0 : 1;
-            for (int i=2; i<=s.length(); i++) {
-                if (s.charAt(i-1) == '0') {
-                    if (s.charAt(i-2) == '1' || s.charAt(i-2) == '2') dp[i] = dp[i-2]; // 10, 20
-                    else return 0;  // 30, 40, 50.....90
-                } else {
-                    if (s.charAt(i-2) == '0') dp[i] = dp[i-1];  // 01, 02, 03...09
-                    else if (s.charAt(i-2) == '1') dp[i] = dp[i-1] + dp[i-2]; // 11, 12, 13... 19
-                    else if (s.charAt(i-2) >= '3') dp[i] = dp[i-1]; // 31, 32...39, 41, 42...49, 51...91, 99
-                    else {
-                        if (s.charAt(i-1) == '7' || s.charAt(i-1) == '8' || s.charAt(i-1) == '9') dp[i] = dp[i-1]; // 27, 28, 29
-                        else dp[i] = dp[i-1] + dp[i-2]; // 21, 22, ..26
-                    }
-                }
+            if (s == null || s.length() == 0 || s.charAt(0) == '0') return 0;
+            int pre = 27, digit, res = 0, first = 1, second = 1;
+            for (int i = s.length() - 1; i >= 0; i--) {
+                digit = s.charAt(i) - '0';
+                if (digit == 0) res = 0;
+                else res = first + (digit * 10 + pre < 27 ? second : 0);
+                second = first;
+                first = res;
+                pre = digit;
             }
-            return dp[n];
+            return res;
         }
     }
 
@@ -63,7 +54,23 @@ public class DecodeWays {
         @Test
         public void test1() {
             Solution sol = new DecodeWays().new Solution();
+            assertEquals(1, sol.numDecodings("5"));
             assertEquals(2, sol.numDecodings("12"));
+            assertEquals(2, sol.numDecodings("15"));
+            assertEquals(2, sol.numDecodings("26"));
+            assertEquals(0, sol.numDecodings("30"));
+            assertEquals(1, sol.numDecodings("42"));
+        }
+
+        @Test
+        public void test2() {
+            Solution_2 sol = new DecodeWays().new Solution_2();
+            assertEquals(1, sol.numDecodings("5"));
+            assertEquals(2, sol.numDecodings("12"));
+            assertEquals(2, sol.numDecodings("15"));
+            assertEquals(2, sol.numDecodings("26"));
+            assertEquals(0, sol.numDecodings("30"));
+            assertEquals(1, sol.numDecodings("42"));
         }
     }
 }

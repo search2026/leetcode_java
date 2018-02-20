@@ -1,13 +1,12 @@
 package flatten_2d_vector;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Flatten2DVector {

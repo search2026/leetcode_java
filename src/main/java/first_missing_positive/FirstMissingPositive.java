@@ -12,24 +12,22 @@ public class FirstMissingPositive {
         Difficulty: Hard
      */
     public class Solution {
+        private void swap(int[] nums, int i, int j) {
+            nums[i] ^= nums[j];
+            nums[j] ^= nums[i];
+            nums[i] ^= nums[j];
+        }
+
         public int firstMissingPositive(int[] nums) {
+            if (nums == null || nums.length == 0) return -1;
             int n = nums.length;
             for (int i = 0; i < n; i++) {
-                if (nums[i] <= 0) {
-                    nums[i] = n + 1;
-                }
+                while (nums[i] > 0 && nums[i] <= n && nums[i] != nums[nums[i] - 1])
+                    swap(nums, i, nums[i] - 1);
             }
-            for (int i = 0; i < n; i++) {
-                int temp = Math.abs(nums[i]);
-                if (temp <= n && nums[temp - 1] > 0) {
-                    nums[temp - 1] = -nums[temp - 1];
-                }
-            }
-            for (int i = 0; i < n; i++) {
-                if (nums[i] > 0) {
+            for (int i = 0; i < n; i++)
+                if (nums[i] != i + 1)
                     return i + 1;
-                }
-            }
             return n + 1;
         }
     }
@@ -38,7 +36,8 @@ public class FirstMissingPositive {
         @Test
         public void test1() {
             Solution sol = new FirstMissingPositive().new Solution();
-            assertTrue(true);
+            assertEquals(3, sol.firstMissingPositive(new int[]{1, 2, 0}));
+            assertEquals(2, sol.firstMissingPositive(new int[]{3, 4, -1, 1}));
         }
     }
 }
