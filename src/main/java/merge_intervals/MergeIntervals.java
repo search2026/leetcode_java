@@ -27,20 +27,20 @@ public class MergeIntervals {
       
       Collections.sort(intervals, (Interval i1, Interval i2) -> (i1.start - i2.start));
 
-      List<Interval> intervalList = new ArrayList<>();
-      Interval last = intervals.get(0);
+      List<Interval> res = new ArrayList<>();
+      Interval prev = intervals.get(0);
       for (int i = 1; i < intervals.size(); i++) {
         Interval cur = intervals.get(i);
-        if (cur.start <= last.end) {
-          last.end = Math.max(last.end, cur.end);
+        if (cur.start <= prev.end) {
+          prev.end = Math.max(prev.end, cur.end);
         } else {
-          intervalList.add(last);
-          last = cur;
+          res.add(prev);
+          prev = cur;
         }
       }
 
-      intervalList.add(last);
-      return intervalList;
+      res.add(prev);
+      return res;
     }
   }
 
@@ -57,13 +57,13 @@ public class MergeIntervals {
       Collections.sort(intervals, (Interval i1, Interval i2) -> (i1.start - i2.start));
 
       ListIterator<Interval> it = intervals.listIterator();
-      Interval cur = it.next();
+      Interval prev = it.next();
       while (it.hasNext()) {
-        Interval next = it.next();
-        if (cur.end < next.start) {
-          cur = next;
+        Interval curr = it.next();
+        if (prev.end < curr.start) {
+          prev = curr;
         } else {
-          cur.end = Math.max(cur.end, next.end);
+          prev.end = Math.max(prev.end, curr.end);
           it.remove();
         }
       }

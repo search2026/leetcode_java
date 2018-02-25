@@ -101,7 +101,7 @@ public class SpiralMatrix {
      */
     public class Solution_3 {
         public int[][] generateMatrix(int n) {
-            if (n < 0) return null;
+            if (n < 0) return new int[][]{};
             int[][] matrix = new int[n][n];
             if (n == 0) return matrix;
 
@@ -143,7 +143,7 @@ public class SpiralMatrix {
      */
     public class Solution_4 {
         public int[][] generateMatrix(int n) {
-            if (n < 0) return null;
+            if (n < 0) return new int[][]{};
             int[][] matrix = new int[n][n];
             if (n == 1) return matrix;
 
@@ -224,6 +224,8 @@ public class SpiralMatrix {
             expected.add(4);
             expected.add(5);
             assertEquals(printed, expected);
+            // [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+            // [1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]
         }
 
         @Test

@@ -1,4 +1,5 @@
 # gradle/build/.class files
+gradle/*
 .gradle/*
 build/
 *.class
