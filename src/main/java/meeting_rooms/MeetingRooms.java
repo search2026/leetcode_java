@@ -118,11 +118,10 @@ public class MeetingRooms {
             for (int i = 1; i < intervals.length; i++) {
                 if (intervals[i].start < pq.peek()) {
                     rooms++;
-                    pq.offer(intervals[i].end);
                 } else {
                     pq.poll();
-                    pq.offer(intervals[i].end);
                 }
+                pq.offer(intervals[i].end);
             }
 
             return rooms;

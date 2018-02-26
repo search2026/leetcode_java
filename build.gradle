@@ -24,14 +24,15 @@ repositories {
 }
 
 ext.junitVintageVersion  = '4.12.2'
-ext.junitPlatformVersion = '1.0.2'
-ext.junitJupiterVersion  = '5.0.2'
+ext.junitPlatformVersion = '1.1.0'
+ext.junitJupiterVersion  = '5.1.0'
 
 apply plugin: 'java'
 apply plugin: 'idea'
 
 dependencies {
     compile("org.apache.commons:commons-lang3:3.7")
+    compile('org.apache.commons:commons-collections4:4.1')
     compile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     // backward compatible with junit 4
     compile("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
@@ -44,7 +45,7 @@ dependencies {
 sourceSets.test.java.srcDir 'src/main/java'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.1'
+    gradleVersion = '4.5.1'
 }
 
 task question {

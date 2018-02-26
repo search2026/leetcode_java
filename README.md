@@ -1,10 +1,10 @@
-# Java Coding Exercise
+# Leetcode problems solved in Java
 
 Some Java coding exercises. Under development and optimization.
 
 ## Requirements
-* Java >= 1.8.151
-* Gradle >= 4.4
+* Java >= 1.8.161
+* Gradle >= 4.5
 
 ## Generate an IntelliJ IDEA project
 

@@ -2,10 +2,7 @@ package insert_delete_getrandom_o1;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,9 +14,9 @@ public class InsertDeleteGetRandomO1 {
         Difficulty: Medium
      */
     public class RandomizedSet {
-        ArrayList<Integer> nums;
-        HashMap<Integer, Integer> val2PosMap;
-        java.util.Random rand;
+        List<Integer> nums;
+        Map<Integer, Integer> val2PosMap;
+        Random rand;
 
         /**
          * Initialize your data structure here.
@@ -27,7 +24,7 @@ public class InsertDeleteGetRandomO1 {
         public RandomizedSet() {
             nums = new ArrayList<Integer>();
             val2PosMap = new HashMap<Integer, Integer>();
-            rand = new java.util.Random();
+            rand = new Random();
         }
 
         /**
@@ -75,7 +72,7 @@ public class InsertDeleteGetRandomO1 {
     public class RandomizedCollection {
         ArrayList<Integer> nums;
         HashMap<Integer, Set<Integer>> val2PosMap;
-        java.util.Random rand;
+        Random rand;
 
         /**
          * Initialize your data structure here.
@@ -83,7 +80,7 @@ public class InsertDeleteGetRandomO1 {
         public RandomizedCollection() {
             nums = new ArrayList<>();
             val2PosMap = new HashMap<>();
-            rand = new java.util.Random();
+            rand = new Random();
         }
 
         /**

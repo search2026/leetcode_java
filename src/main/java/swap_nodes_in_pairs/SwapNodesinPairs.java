@@ -18,15 +18,15 @@ public class SwapNodesinPairs {
 
             ListNode dummy = new ListNode(0);
             dummy.next = head;
-            ListNode p = dummy;
+            ListNode prev = dummy;
 
-            while (p.next != null && p.next.next != null) {
-                ListNode first = p.next;
-                ListNode second = p.next.next;
+            while (prev.next != null && prev.next.next != null) {
+                ListNode first = prev.next;
+                ListNode second = prev.next.next;
                 first.next = second.next;
-                p.next = second;
+                prev.next = second;
                 second.next = first;
-                p = first;
+                prev = first;
             }
 
             return dummy.next;
