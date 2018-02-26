@@ -40,9 +40,9 @@ public class FlattenBinaryTreetoLinkedList {
             TreeNode cur = root;
             while (cur != null) {
                 if (cur.left != null) {
-                    TreeNode last = cur.left;
-                    while (last.right != null) last = last.right;
-                    last.right = cur.right;
+                    TreeNode leftClosetToMiddle = cur.left;
+                    while (leftClosetToMiddle.right != null) leftClosetToMiddle = leftClosetToMiddle.right;
+                    leftClosetToMiddle.right = cur.right;
                     cur.right = cur.left;
                     cur.left = null;
                 }

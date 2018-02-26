@@ -23,13 +23,13 @@ public class CloneGraph {
             if (node == null) return null;
             if (map.containsKey(node)) return map.get(node);
 
-            UndirectedGraphNode node_cloned = new UndirectedGraphNode(node.label);
-            map.put(node, node_cloned);
+            UndirectedGraphNode nodeCloned = new UndirectedGraphNode(node.label);
+            map.put(node, nodeCloned);
             for (UndirectedGraphNode nbr : node.neighbors) {
-                node_cloned.neighbors.add(clone(map, nbr));
+                nodeCloned.neighbors.add(clone(map, nbr));
             }
 
-            return node_cloned;
+            return nodeCloned;
         }
 
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
@@ -50,9 +50,9 @@ public class CloneGraph {
 
             Queue<UndirectedGraphNode> q = new ArrayDeque<>();
             Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
-            UndirectedGraphNode root_cloned = new UndirectedGraphNode(node.label);
+            UndirectedGraphNode rootCloned = new UndirectedGraphNode(node.label);
             q.offer(node);
-            map.put(node, root_cloned);
+            map.put(node, rootCloned);
 
             while (!q.isEmpty()) {
                 UndirectedGraphNode curr = q.poll();
@@ -60,15 +60,15 @@ public class CloneGraph {
                     if (map.containsKey(nbr)) {
                         map.get(curr).neighbors.add(map.get(nbr));
                     } else {
-                        UndirectedGraphNode nbr_cloned = new UndirectedGraphNode(nbr.label);
-                        map.get(curr).neighbors.add(nbr_cloned);
                         q.offer(nbr);
-                        map.put(nbr, nbr_cloned);
+                        UndirectedGraphNode nodeCloned = new UndirectedGraphNode(nbr.label);
+                        map.get(curr).neighbors.add(nodeCloned);
+                        map.put(nbr, nodeCloned);
                     }
                 }
             }
 
-            return root_cloned;
+            return rootCloned;
         }
     }
 

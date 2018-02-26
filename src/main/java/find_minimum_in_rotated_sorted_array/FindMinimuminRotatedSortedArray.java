@@ -55,6 +55,8 @@ public class FindMinimuminRotatedSortedArray {
         @Test
         public void test1() {
             Solution sol = new FindMinimuminRotatedSortedArray().new Solution();
+            assertEquals(1, sol.findMin(new int[]{2, 1}));
+            assertEquals(1, sol.findMin(new int[]{3, 1, 2}));
             assertEquals(0, sol.findMin(new int[]{4, 5, 6, 7, 0, 1, 2}));
             assertEquals(7, sol.findMin(new int[]{7, 8, 9, 11}));
             assertEquals(-4, sol.findMin(new int[]{-1, 0, 9, 11, -4}));
@@ -63,6 +65,8 @@ public class FindMinimuminRotatedSortedArray {
         @Test
         public void test2() {
             Solution_2 sol = new FindMinimuminRotatedSortedArray().new Solution_2();
+            assertEquals(1, sol.findMin(new int[]{2, 1}));
+            assertEquals(1, sol.findMin(new int[]{3, 1, 2}));
             assertEquals(0, sol.findMin(new int[]{4, 5, 6, 7, 0, 1, 2}));
             assertEquals(0, sol.findMin(new int[]{4, 5, 5, 6, 7, 7, 7, 0, 0, 1, 2}));
             assertEquals(7, sol.findMin(new int[]{7, 8, 9, 11}));
