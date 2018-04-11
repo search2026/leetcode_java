@@ -17,7 +17,7 @@ public class _3Sum {
      */
     public class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
+            List<List<Integer>> res = new ArrayList<>();
             Arrays.sort(nums);
             for (int i = 0; i < nums.length; i++) {
                 if (i == 0 || nums[i] != nums[i - 1]) {
@@ -25,11 +25,11 @@ public class _3Sum {
                     int end = nums.length - 1;
                     while (start < end) {
                         if (nums[start] + nums[end] == -nums[i]) {
-                            List<Integer> solution = new ArrayList<Integer>();
+                            List<Integer> solution = new ArrayList<>();
                             solution.add(nums[i]);
                             solution.add(nums[start]);
                             solution.add(nums[end]);
-                            rslt.add(solution);
+                            res.add(solution);
                             int startnum = nums[start];
                             int endnum = nums[end];
                             while (start < nums.length && nums[start] == startnum) {
@@ -46,7 +46,7 @@ public class _3Sum {
                     }
                 }
             }
-            return rslt;
+            return res;
         }
     }
 

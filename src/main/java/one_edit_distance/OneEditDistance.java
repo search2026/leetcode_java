@@ -21,7 +21,7 @@ public class OneEditDistance {
       if (m > n) return isOneEditDistance(t, s);
       if (n - m > 1) return false;
       int i = 0, shift = n - m;
-      while (i < m && s.charAt(i) == t.charAt(i)) ++i;
+      while (i < m && s.charAt(i) == t.charAt(i)) i++;
       // if two string are the same (shift==0), return false
       if (i == m) return shift > 0;
       // if n==m skip current char in s (modify operation in s)

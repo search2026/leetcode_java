@@ -43,7 +43,7 @@ public class _4Sum {
                     while (l < r) {
                         int sum = num[i] + num[j] + num[l] + num[r];
                         if (sum == target) {
-                            ArrayList<Integer> list = new ArrayList<Integer>();
+                            ArrayList<Integer> list = new ArrayList<>();
                             list.add(num[i]);
                             list.add(num[j]);
                             list.add(num[l]);

@@ -60,11 +60,11 @@ public class MergeIntervals {
       Interval prev = it.next();
       while (it.hasNext()) {
         Interval curr = it.next();
-        if (prev.end < curr.start) {
-          prev = curr;
-        } else {
+        if (curr.start <= prev.end) {
           prev.end = Math.max(prev.end, curr.end);
           it.remove();
+        } else {
+          prev = curr;
         }
       }
       return intervals;

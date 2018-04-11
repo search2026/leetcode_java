@@ -56,6 +56,14 @@ public class MeetingRooms {
         public boolean canAttendMeetings(Interval[] intervals) {
             try {
                 Arrays.sort(intervals, new IntervalComparator());
+                Interval prev = intervals[0];
+                for (int i = 1; i < intervals.length; i++) {
+                    Interval cur = intervals[i];
+                    if (prev.end > cur.start) {
+                        return false;
+                    }
+                    prev = cur;
+                }
             } catch (Exception e) {
                 return false;
             }

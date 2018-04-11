@@ -23,7 +23,7 @@ public class MinimumWindowSubstring {
             int count = 0;
             int p1 = 0;
 
-            String rslt = "";
+            String res = "";
             int minWinSize = Integer.MAX_VALUE;
             for (int p2 = 0; p2 < s.length(); p2++) {
                 if (target[(int) (s.charAt(p2))] == 0) continue;
@@ -41,11 +41,11 @@ public class MinimumWindowSubstring {
                     }
                     if (p2 - p1 + 1 < minWinSize) {
                         minWinSize = p2 - p1 + 1;
-                        rslt = s.substring(p1, p2 + 1);
+                        res = s.substring(p1, p2 + 1);
                     }
                 }
             }
-            return rslt;
+            return res;
         }
     }
 
