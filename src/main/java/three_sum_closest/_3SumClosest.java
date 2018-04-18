@@ -1,4 +1,4 @@
-package _3sum_closest;
+package three_sum_closest;
 
 import org.junit.Test;
 

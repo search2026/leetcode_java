@@ -29,7 +29,6 @@ public class TwoSum {
             }
 
             return null;
-            // throw new IllegalArgumentException("No two summ solution");
         }
     }
 
@@ -44,13 +43,13 @@ public class TwoSum {
         public int[] twoSum(int[] nums, int target) {
             if (nums == null || nums.length < 2) return null;
 
-            int p1 = 0, p2 = nums.length - 1;
+            int left = 0, right = nums.length - 1;
 
-            while (p1 < p2) {
-                int sum = nums[p1] + nums[p2];
-                if (sum == target) return new int[]{p1, p2};
-                else if (sum < target) p1++;
-                else p2--;
+            while (left < right) {
+                int sum = nums[left] + nums[right];
+                if (sum == target) return new int[]{left + 1, right + 1};
+                else if (sum < target) left++;
+                else right--;
             }
 
             return null;
@@ -107,7 +106,7 @@ public class TwoSum {
         public void test2() {
             Solution_2 sol = new TwoSum().new Solution_2();
             int[] test = {5, 25, 75};
-            assertArrayEquals(new int[]{1, 2}, sol.twoSum(test, 100));
+            assertArrayEquals(new int[]{2, 3}, sol.twoSum(test, 100));
             assertArrayEquals(null, sol.twoSum(test, 99));
         }
 

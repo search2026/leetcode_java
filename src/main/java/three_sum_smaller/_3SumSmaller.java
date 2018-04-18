@@ -1,4 +1,4 @@
-package _3sum_smaller;
+package three_sum_smaller;
 
 import org.junit.Test;
 

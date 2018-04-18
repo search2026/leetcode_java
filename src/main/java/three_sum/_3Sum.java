@@ -1,4 +1,4 @@
-package _3Sum;
+package three_sum;
 
 import org.junit.Test;
 

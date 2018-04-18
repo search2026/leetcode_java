@@ -19,6 +19,8 @@ public class SearchforaRange {
                 if (nums[mid] < target) {
                     left = mid + 1;
                 } else {
+                    //should not be mid-1 when A[mid]==target.
+                    //could be mid even if A[mid]>target because mid<right.
                     right = mid - 1;
                 }
             }

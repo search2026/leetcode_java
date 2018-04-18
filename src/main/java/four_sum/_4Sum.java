@@ -1,4 +1,4 @@
-package _4sum;
+package four_sum;
 
 import org.junit.Test;
 
