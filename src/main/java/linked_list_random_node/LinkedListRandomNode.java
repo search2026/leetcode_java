@@ -42,7 +42,7 @@ public class LinkedListRandomNode {
   public static class UnitTest {
     @Test
     public void test1() {
-      //Solution_3 sol = new LinkedListRandomNode().new Solution_3();
+      //Solution_4 sol = new LinkedListRandomNode().new Solution_4();
       // Init a singly linked list [1,2,3].
       ListNode head = new ListNode(1);
       head.next = new ListNode(2);

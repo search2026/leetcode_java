@@ -34,7 +34,7 @@ public class CombinationSum {
             List<List<Integer>> combo = new ArrayList<>();
             if (candidates == null || candidates.length == 0) return combo;
             Arrays.sort(candidates);
-            search(candidates, combo, new ArrayList<Integer>(), 0, target);
+            search(candidates, combo, new ArrayList<>(), 0, target);
             return combo;
         }
     }

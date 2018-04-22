@@ -14,6 +14,46 @@ public class SpiralMatrix {
         Difficulty: Medium
      */
     public class Solution {
+        int[][] dirs = new int[][] {
+                {0, 1},
+                {1, 0},
+                {0, -1},
+                {-1, 0}
+        };
+
+        public List<Integer> spiralOrder(int[][] matrix) {
+            List res = new ArrayList();
+            if (matrix == null || matrix.length == 0 ||
+                    matrix[0] == null || matrix[0].length == 0) return res;
+
+            int m = matrix.length, n = matrix[0].length;
+            boolean[][] seen = new boolean[m][n];
+            int row = 0, col = 0, di = 0;
+            for (int i = 0; i < m * n; i++) {
+                res.add(matrix[row][col]);
+                seen[row][col] = true;
+                int newRow = row + dirs[di][0];
+                int newCol = col + dirs[di][1];
+                if (0 <= newRow && newRow < m && 0 <= newCol && newCol < n && !seen[newRow][newCol]) {
+                    row = newRow;
+                    col = newCol;
+                } else {
+                    di = (di + 1) % 4;
+                    row += dirs[di][0];
+                    col += dirs[di][1];
+                }
+            }
+            return res;
+        }
+    }
+
+    /*
+        Spiral Matrix
+        Leetcode #54
+        https://leetcode.com/problems/spiral-matrix/
+        Difficulty: Medium
+     */
+    public class Solution_2 {
         public List<Integer> spiralOrder(int[][] matrix) {
             List<Integer> spiralList = new ArrayList<>();
             if (matrix == null || matrix.length == 0 ||
@@ -25,13 +65,13 @@ public class SpiralMatrix {
             int colEnd = matrix[0].length - 1;
 
             while (rowStart <= rowEnd && colStart <= colEnd) {
-                for (int i = colStart; i <= colEnd; i++) spiralList.add(matrix[rowStart][i]);
+                for (int j = colStart; j <= colEnd; j++) spiralList.add(matrix[rowStart][j]);
                 if (++rowStart > rowEnd) break;
 
                 for (int i = rowStart; i <= rowEnd; i++) spiralList.add(matrix[i][colEnd]);
                 if (--colEnd < colStart) break;
 
-                for (int i = colEnd; i >= colStart; i--) spiralList.add(matrix[rowEnd][i]);
+                for (int j = colEnd; j >= colStart; j--) spiralList.add(matrix[rowEnd][j]);
                 if (--rowEnd < rowStart) break;
 
                 for (int i = rowEnd; i >= rowStart; i--) spiralList.add(matrix[i][colStart]);
@@ -48,7 +88,7 @@ public class SpiralMatrix {
         https://leetcode.com/problems/spiral-matrix/
         Difficulty: Medium
      */
-    public class Solution_2 {
+    public class Solution_3 {
         public List<Integer> spiralOrder(int[][] matrix) {
             List<Integer> spiralList = new ArrayList<>();
             if (matrix == null || matrix.length == 0 ||
@@ -99,7 +139,7 @@ public class SpiralMatrix {
         https://leetcode.com/problems/spiral-matrix-ii/
         Difficulty: Medium
      */
-    public class Solution_3 {
+    public class Solution_4 {
         public int[][] generateMatrix(int n) {
             if (n < 0) return new int[][]{};
             int[][] matrix = new int[n][n];
@@ -141,7 +181,7 @@ public class SpiralMatrix {
         https://leetcode.com/problems/spiral-matrix-ii/
         Difficulty: Medium
      */
-    public class Solution_4 {
+    public class Solution_5 {
         public int[][] generateMatrix(int n) {
             if (n < 0) return new int[][]{};
             int[][] matrix = new int[n][n];
@@ -233,6 +273,30 @@ public class SpiralMatrix {
             Solution_3 sol = new SpiralMatrix().new Solution_3();
             int[][] matrix = {
                     {1, 2, 3},
+                    {4, 5, 6},
+                    {7, 8, 9}
+            };
+            List<Integer> printed = sol.spiralOrder(matrix);
+            List<Integer> expected = new ArrayList<>();
+            expected.add(1);
+            expected.add(2);
+            expected.add(3);
+            expected.add(6);
+            expected.add(9);
+            expected.add(8);
+            expected.add(7);
+            expected.add(4);
+            expected.add(5);
+            assertEquals(printed, expected);
+            // [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+            // [1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]
+        }
+
+        @Test
+        public void test4() {
+            Solution_4 sol = new SpiralMatrix().new Solution_4();
+            int[][] matrix = {
+                    {1, 2, 3},
                     {8, 9, 4},
                     {7, 6, 5}
             };
@@ -245,8 +309,8 @@ public class SpiralMatrix {
         }
 
         @Test
-        public void test4() {
-            Solution_4 sol = new SpiralMatrix().new Solution_4();
+        public void test5() {
+            Solution_5 sol = new SpiralMatrix().new Solution_5();
             int[][] matrix = {
                     {1, 2, 3},
                     {8, 9, 4},

@@ -130,7 +130,7 @@ public class LowestCommonAncestorofaBinaryTree {
         https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
         Difficulty: Medium
      */
-//    public class Solution_3 {
+//    public class Solution_4 {
 //        public Node findLCA(Node findRoot, Node p, Node q) {
 //            if (findRoot == null || p == null || q == null) return null;
 //            int depth1 = getDepth(findRoot, p);

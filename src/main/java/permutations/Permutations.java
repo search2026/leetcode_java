@@ -104,7 +104,7 @@ public class Permutations {
             boolean[] visited = new boolean[n];
             Arrays.sort(nums);
 
-            search(nums, res, new ArrayList<Integer>(), visited, n);
+            search(nums, res, new ArrayList<>(), visited, n);
             return res;
         }
     }

@@ -107,7 +107,7 @@ public class FlattenNestedListIterator {
     public static class UnitTest {
         @Test
         public void test1() {
-            //Solution_3 sol = new FlattenNestedListIterator().new Solution_3();
+            //Solution_4 sol = new FlattenNestedListIterator().new Solution_4();
             assertEquals(1, 1);
         }
     }
