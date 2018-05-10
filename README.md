@@ -3,8 +3,8 @@
 Some Java coding exercises. Under development and optimization.
 
 ## Requirements
-* Java >= 1.8.161
-* Gradle >= 4.6
+* Java >= 1.8.171
+* Gradle >= 4.7
 
 ## Generate an IntelliJ IDEA project
 
