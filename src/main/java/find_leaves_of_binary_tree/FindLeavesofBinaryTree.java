@@ -3,7 +3,7 @@ package find_leaves_of_binary_tree;
 import java.util.*;
 
 import common.TreeNode;
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

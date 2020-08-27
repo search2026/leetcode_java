@@ -2,7 +2,7 @@ package find_all_anagrams_in_a_string;
 
 import java.util.*;
 
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

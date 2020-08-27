@@ -1,6 +1,6 @@
 package maximum_product_of_word_lengths;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

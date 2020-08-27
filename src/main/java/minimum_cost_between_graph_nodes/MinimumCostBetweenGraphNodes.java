@@ -2,7 +2,7 @@ package minimum_cost_between_graph_nodes;
 
 import java.util.*;
 
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

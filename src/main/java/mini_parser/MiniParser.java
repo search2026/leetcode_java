@@ -1,7 +1,7 @@
 package mini_parser;
 
 import common.NestedInteger;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

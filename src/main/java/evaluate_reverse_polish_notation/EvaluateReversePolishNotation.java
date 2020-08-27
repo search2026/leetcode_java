@@ -1,6 +1,6 @@
 package evaluate_reverse_polish_notation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

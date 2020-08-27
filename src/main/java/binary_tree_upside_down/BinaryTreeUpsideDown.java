@@ -1,7 +1,7 @@
 package binary_tree_upside_down;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

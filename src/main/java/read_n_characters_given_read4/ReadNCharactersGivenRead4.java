@@ -1,7 +1,7 @@
 package read_n_characters_given_read4;
 
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

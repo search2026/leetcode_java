@@ -1,6 +1,6 @@
 package rearrange_string_k_distance_apart;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

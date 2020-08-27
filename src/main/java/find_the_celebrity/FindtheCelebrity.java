@@ -1,6 +1,6 @@
 package find_the_celebrity;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

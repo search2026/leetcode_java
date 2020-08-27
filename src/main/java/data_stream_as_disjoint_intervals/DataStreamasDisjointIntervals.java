@@ -1,7 +1,7 @@
 package data_stream_as_disjoint_intervals;
 
 import common.Interval;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

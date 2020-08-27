@@ -1,6 +1,6 @@
 package fraction_to_recurring_decimal;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;

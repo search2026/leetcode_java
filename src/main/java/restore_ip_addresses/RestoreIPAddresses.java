@@ -1,6 +1,6 @@
 package restore_ip_addresses;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package longest_substring_without_repeating_characters;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;

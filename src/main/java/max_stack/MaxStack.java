@@ -2,7 +2,7 @@ package max_stack;
 
 import java.util.*;
 
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,9 +1,8 @@
 package reverse_vowels_of_a_string;
 
 import java.util.*;
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ReverseVowelsofaString {

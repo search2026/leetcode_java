@@ -1,7 +1,7 @@
 package nested_list_weight_sum;
 
 import common.NestedInteger;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;

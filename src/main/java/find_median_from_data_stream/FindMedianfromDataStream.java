@@ -1,6 +1,6 @@
 package find_median_from_data_stream;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.PriorityQueue;

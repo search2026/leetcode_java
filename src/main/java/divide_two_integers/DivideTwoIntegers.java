@@ -1,6 +1,6 @@
 package divide_two_integers;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Integer.MAX_VALUE;
 import static org.junit.jupiter.api.Assertions.assertEquals;

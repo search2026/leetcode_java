@@ -2,7 +2,7 @@ package convert_sorted_list_to_binary_search_tree;
 
 import common.ListNode;
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;

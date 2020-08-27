@@ -1,6 +1,6 @@
 package verify_preorder_serialization_of_a_binary_tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.StringTokenizer;
 

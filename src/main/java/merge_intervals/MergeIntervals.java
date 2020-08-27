@@ -1,7 +1,7 @@
 package merge_intervals;
 
 import common.Interval;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

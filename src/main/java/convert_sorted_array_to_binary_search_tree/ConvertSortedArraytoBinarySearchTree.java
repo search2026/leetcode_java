@@ -1,7 +1,7 @@
 package convert_sorted_array_to_binary_search_tree;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Deque;
 import java.util.LinkedList;

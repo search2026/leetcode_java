@@ -2,8 +2,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = "1.11"
+targetCompatibility = "1.11"
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
@@ -23,16 +23,16 @@ repositories {
     mavenCentral()
 }
 
-ext.junitVintageVersion  = '4.12.2'
-ext.junitPlatformVersion = '1.1.0'
-ext.junitJupiterVersion  = '5.1.0'
+ext.junitVintageVersion  = '4.12.3'
+ext.junitPlatformVersion = '1.6.2'
+ext.junitJupiterVersion  = '5.6.2'
 
 apply plugin: 'java'
 apply plugin: 'idea'
 
 dependencies {
-    compile("org.apache.commons:commons-lang3:3.7")
-    compile('org.apache.commons:commons-collections4:4.1')
+    compile("org.apache.commons:commons-lang3:3.11")
+    compile('org.apache.commons:commons-collections4:4.4')
     compile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
     // backward compatible with junit 4
     compile("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
@@ -44,11 +44,11 @@ dependencies {
 
 sourceSets.test.java.srcDir 'src/main/java'
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.7'
+wrapper {
+    gradleVersion = '5.6.3'
 }
 
-task question {
+tasks.register("question")  {
     doLast {
         def insertUnderlineIfStartsWithDigit = { s ->
             if (Character.isDigit(s.charAt(0))) {

@@ -1,7 +1,7 @@
 package count_of_range_sum;
 
 import common.SegmentTreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.HashSet;

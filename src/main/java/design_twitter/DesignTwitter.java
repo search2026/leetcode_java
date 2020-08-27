@@ -1,6 +1,6 @@
 package design_twitter;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;

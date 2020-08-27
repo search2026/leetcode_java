@@ -1,6 +1,6 @@
 package design_snake_game;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

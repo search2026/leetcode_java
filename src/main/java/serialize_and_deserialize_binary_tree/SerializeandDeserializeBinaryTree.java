@@ -1,7 +1,7 @@
 package serialize_and_deserialize_binary_tree;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

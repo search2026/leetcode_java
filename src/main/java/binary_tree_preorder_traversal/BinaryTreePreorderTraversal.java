@@ -1,7 +1,7 @@
 package binary_tree_preorder_traversal;
 
 import common.TreeNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

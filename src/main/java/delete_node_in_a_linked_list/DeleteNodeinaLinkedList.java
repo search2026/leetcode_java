@@ -1,7 +1,7 @@
 package delete_node_in_a_linked_list;
 
 import common.ListNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

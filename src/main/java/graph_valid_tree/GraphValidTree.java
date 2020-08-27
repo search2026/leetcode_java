@@ -1,6 +1,6 @@
 package graph_valid_tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

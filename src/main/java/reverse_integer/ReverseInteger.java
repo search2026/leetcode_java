@@ -1,6 +1,6 @@
 package reverse_integer;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;

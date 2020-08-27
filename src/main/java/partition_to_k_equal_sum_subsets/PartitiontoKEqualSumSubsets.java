@@ -1,6 +1,6 @@
 package partition_to_k_equal_sum_subsets;
 
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;

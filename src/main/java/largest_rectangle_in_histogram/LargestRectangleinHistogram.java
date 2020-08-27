@@ -1,6 +1,6 @@
 package largest_rectangle_in_histogram;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -1,6 +1,6 @@
 package implement_stack_using_queues;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 package the_skyline_problem;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
