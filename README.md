@@ -3,8 +3,8 @@
 Some Java coding exercises. Under development and optimization.
 
 ## Requirements
-* Java >= 1.8.171
-* Gradle >= 4.7
+* Java >= 11.0.6
+* Gradle >= 5.6.3
 
 ## Generate an IntelliJ IDEA project
 
@@ -36,6 +36,12 @@ gradle -Dtest.single=TwoSum test --info
 ```
 
 ## Update Logs
+
+9/25/2018
+* Minmimum Java version is 11
+* Minimum Gradle version is 5.6.3
+* Fully support Junit 5
+* Overhaul project structure
 
 6/4/2016
 * Update leetcode questions to #353
