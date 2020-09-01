@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+version = '1.0.0'
+
+sourceCompatibility = "1.11"
+targetCompatibility = "1.11"
+
+ext.junitPlatformVersion = '1.6.2'
+ext.junitJupiterVersion  = '5.6.2'
+
+dependencies {
+    api "org.apache.commons:commons-lang3:3.11"
+    api "org.apache.commons:commons-collections4:4.4"
+    api "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+    testImplementation "org.junit.platform:junit-platform-runner:${junitPlatformVersion}"
+    testImplementation "org.junit.platform:junit-platform-launcher:${junitPlatformVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+}
