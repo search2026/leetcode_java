@@ -1,11 +1,9 @@
-package remove_nth_node_from_end_of_list;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.ListNode;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class RemoveNthNodeFromEndOfList {
 
-public class RemoveNthNodeFromEndofList {
     /*
         Remove Nth Node From End of List
         Leetcode #19
@@ -33,11 +31,4 @@ public class RemoveNthNodeFromEndofList {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new RemoveNthNodeFromEndofList().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

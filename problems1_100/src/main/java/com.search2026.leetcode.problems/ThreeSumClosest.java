@@ -1,18 +1,15 @@
-package three_sum_closest;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class ThreeSumClosest {
 
-public class _3SumClosest {
     /*
-        3 Sum Closest
-        Leetcode #16
-        https://leetcode.com/problems/3sum-closest/
-        Difficulty: Medium
-     */
+    3 Sum Closest
+    Leetcode #16
+    https://leetcode.com/problems/3sum-closest/
+    Difficulty: Medium
+ */
     public class Solution {
         public int threeSumClosest(int[] nums, int target) {
             Arrays.sort(nums);
@@ -42,11 +39,4 @@ public class _3SumClosest {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new _3SumClosest().new Solution();
-            assertTrue(true);
-        }
-    }
 }

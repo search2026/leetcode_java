@@ -1,10 +1,7 @@
-package container_with_most_water;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.search2026.leetcode.problems;
 
 public class ContainerWithMostWater {
+
     /*
         Container with Most Water
         Leetcode #11
@@ -29,11 +26,4 @@ public class ContainerWithMostWater {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ContainerWithMostWater().new Solution();
-            assertTrue(true);
-        }
-    }
 }

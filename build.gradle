@@ -1,8 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 
-sourceCompatibility = "1.11"
-targetCompatibility = "1.11"
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
@@ -43,6 +45,11 @@ wrapper {
 allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
 
     repositories {
         jcenter()

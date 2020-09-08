@@ -1,10 +1,7 @@
-package longest_common_prefix;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.search2026.leetcode.problems;
 
 public class LongestCommonPrefix {
+
     /*
         Longest Common Prefix
         https://leetcode.com/problems/longest-common-prefix/
@@ -30,11 +27,4 @@ public class LongestCommonPrefix {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new LongestCommonPrefix().new Solution();
-            assertTrue(true);
-        }
-    }
 }

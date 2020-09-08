@@ -1,14 +1,11 @@
-package four_sum;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class FourSum {
 
-public class _4Sum {
     /*
         4 Sum
         Leetcode #18
@@ -17,9 +14,9 @@ public class _4Sum {
      */
     public class Solution {
         public List<List<Integer>> fourSum(int[] num, int target) {
-            List<List<Integer>> ret = new ArrayList<List<Integer>>();
+            List<List<Integer>> res = new ArrayList<List<Integer>>();
             if (num == null) {
-                return ret;
+                return res;
             }
 
             Arrays.sort(num);
@@ -49,7 +46,7 @@ public class _4Sum {
                             list.add(num[l]);
                             list.add(num[r]);
 
-                            ret.add(list);
+                            res.add(list);
 
                             do {
                                 l++;
@@ -67,15 +64,8 @@ public class _4Sum {
                 }
             }
 
-            return ret;
+            return res;
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new _4Sum().new Solution();
-            assertTrue(true);
-        }
-    }
 }
