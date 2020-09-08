@@ -10,6 +10,9 @@ targetCompatibility = "1.11"
 ext.junitPlatformVersion = '1.6.2'
 ext.junitJupiterVersion  = '5.6.2'
 
+apply plugin: 'java'
+apply plugin: 'idea'
+
 dependencies {
     api "org.apache.commons:commons-lang3:3.11"
     api "org.apache.commons:commons-collections4:4.4"

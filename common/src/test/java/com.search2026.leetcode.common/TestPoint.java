@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPoint {
+
     @Test
     public void testPointAccess() {
         int x = 4;
@@ -12,4 +13,5 @@ public class TestPoint {
         assertEquals(x, p.x);
         assertEquals(y, p.y);
     }
+
 }

@@ -1,7 +1,9 @@
 rootProject.name = 'leetcode'
 
 include(
-        'common'
+        'common',
+        'problems1_100'
 )
 
 project(':common').name = 'leetcode-common'
+project(':problems1_100').name = 'leetcode-problems1-100'

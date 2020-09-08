@@ -3,6 +3,11 @@ package com.search2026.leetcode.common;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+   Inside nested integer data structure, each element is either an integer, or a list -- whose
+   elements may also be integers or other lists.
+ */
+
 public class NestedInteger {
     private List<NestedInteger> list;
     private Integer integer;
@@ -69,4 +74,5 @@ public class NestedInteger {
             return sb.toString();
         }
     }
+
 }

@@ -7,9 +7,9 @@ targetCompatibility = "1.11"
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 group = 'search2026'
-archivesBaseName = 'java-coding'
+archivesBaseName = 'leetcode-java'
 version = '1.0'
-description = 'java coding exercise'
+description = 'leetcode problem solution in Java'
 
 repositories {
     mavenCentral()
