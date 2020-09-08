@@ -1,7 +1,11 @@
 plugins {
-    id 'java-library'
+    id 'java'
 }
 
+version = '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'idea'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -9,5 +13,4 @@ java {
 }
 
 dependencies {
-    implementation(project(":leetcode-common"))
 }

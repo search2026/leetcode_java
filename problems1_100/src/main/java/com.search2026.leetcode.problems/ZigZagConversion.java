@@ -1,8 +1,4 @@
-package zigzag_conversion;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.search2026.leetcode.problems;
 
 public class ZigZagConversion {
     /*
@@ -34,11 +30,4 @@ public class ZigZagConversion {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ZigZagConversion().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

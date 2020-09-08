@@ -32,7 +32,7 @@ public class TwoSum {
     /*
         Two Sum II - Two Pointers
         Leetcode #167
-        https://leetcode.com/discuss/oj/two-sum-ii-input-array-is-sorted
+        https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
         http://www.cnblogs.com/grandyang/p/5185815.html
         Difficulty: Medium
      */

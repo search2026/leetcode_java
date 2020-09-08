@@ -1,12 +1,7 @@
-package regular_expression_matching;
-
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.*;
+package com.search2026.leetcode.problems;
 
 public class RegularExpressionMatching {
+
     /*
         Regular Expression Matching - Dynamic Programming
         https://leetcode.com/problems/regular-expression-matching/
@@ -23,10 +18,10 @@ public class RegularExpressionMatching {
                 for (int j = 1; j < n + 1; j++) {
                     if (p.charAt(j - 1) != '*') {
                         dp[i][j] = i > 0 && dp[i - 1][j - 1]
-                                && (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.');
+                                           && (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.');
                     } else {
                         dp[i][j] = dp[i][j - 2] || (i > 0 && dp[i - 1][j] && (s.charAt(i - 1) == p.charAt(j - 2)
-                                || p.charAt(j - 2) == '.'));
+                                                                                      || p.charAt(j - 2) == '.'));
                     }
                 }
             }
@@ -95,44 +90,4 @@ public class RegularExpressionMatching {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new RegularExpressionMatching().new Solution();
-            assertFalse(sol.isMatch("aa", "a"));
-            assertTrue(sol.isMatch("aa", "aa"));
-            assertFalse(sol.isMatch("aaa", "aa"));
-            assertTrue(sol.isMatch("aa", "a*"));
-            assertTrue(sol.isMatch("aa", ".*"));
-            assertTrue(sol.isMatch("ab", ".*"));
-            assertTrue(sol.isMatch("aab", "c*a*b"));
-            assertTrue(true);
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new RegularExpressionMatching().new Solution_2();
-            assertFalse(sol.isMatch("aa", "a"));
-            assertTrue(sol.isMatch("aa", "aa"));
-            assertFalse(sol.isMatch("aaa", "aa"));
-            assertTrue(sol.isMatch("aa", "a*"));
-            assertTrue(sol.isMatch("aa", ".*"));
-            assertTrue(sol.isMatch("ab", ".*"));
-            assertTrue(sol.isMatch("aab", "c*a*b"));
-            assertTrue(true);
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new RegularExpressionMatching().new Solution_3();
-            assertFalse(sol.isMatch("aa", "a"));
-            assertTrue(sol.isMatch("aa", "aa"));
-            assertFalse(sol.isMatch("aaa", "aa"));
-            assertTrue(sol.isMatch("aa", "a*"));
-            assertTrue(sol.isMatch("aa", ".*"));
-            assertTrue(sol.isMatch("ab", ".*"));
-            assertTrue(sol.isMatch("aab", "c*a*b"));
-            assertTrue(true);
-        }
-    }
 }

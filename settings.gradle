@@ -2,8 +2,17 @@ rootProject.name = 'leetcode'
 
 include(
         'common',
-        'problems1_100'
+        'problems1_100',
+        'problems101_200',
+        'problems201_300',
+        'problems301_400',
+        'problems401_500'
 )
 
 project(':common').name = 'leetcode-common'
 project(':problems1_100').name = 'leetcode-problems1-100'
+project(':problems101_200').name = 'leetcode-problems101-200'
+project(':problems201_300').name = 'leetcode-problems201-300'
+project(':problems301_400').name = 'leetcode-problems301-400'
+project(':problems401_500').name = 'leetcode-problems401-500'
+

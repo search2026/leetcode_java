@@ -1,26 +1,16 @@
-# Leetcode problems solved in Java
+# Leetcode problems solution collections in Java
 
-Some Java coding exercises. Under development and optimization.
+A collection Java solutions to [leetcode problems](https://leetcode.com/problemset/all/). Still under development.
 
 ## Requirements
-* Java >= 11.0.6
-* Gradle >= 5.6.3
+* Java >= 11.0.8
+* Gradle == 5.6.3
 
-## Generate an IntelliJ IDEA project
 
-```bash
-gradle idea
-```
-
-## Generate a file for a question
-
-```bash
-gradle -q question "-Pq=Some Question"
-```
-
-The above command will generate a source file called `src/main/java/some_question/SomeQuestion.java`, and you can write your solution in this file directly.
-
-Unit tests are also embedded as inner classes of the main code. For an explanation of this design choice see Ben J. Christensen's [JUnit Tests as Inner Classes](http://benjchristensen.com/2011/10/23/junit-tests-as-inner-classes/).
+## Intellij Settings
+* Recommended version: Intellij IDEA Community 2020.2.1+
+* project structure level: SDK default 11
+* Gradle settings ==> runs tests uses ==> "IntelliJ IDEA"
 
 ## Run unit tests
 
@@ -30,15 +20,15 @@ If you write some unit tests, you can use the following command to run them.
 # run all tests
 gradle test 
 # run TwoSum test only
-gradle -Dtest.single=TwoSum test
+gradle -Dtest.single=TestTwoSum test
 # run TwoSum test only with some informnation
-gradle -Dtest.single=TwoSum test --info
+gradle -Dtest.single=TestTwoSum test --info
 ```
 
 ## Update Logs
 
-9/25/2018
-* Minmimum Java version is 11
+9/25/2020
+* Minimum Java version is 11
 * Minimum Gradle version is 5.6.3
 * Fully support Junit 5
 * Overhaul project structure
