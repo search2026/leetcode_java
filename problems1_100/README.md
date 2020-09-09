@@ -1,6 +1,6 @@
 ## Leetcode Problems 1-100
 
-| Leetcode Number | Problem | Difficulty | Solution | Data Structure / Algorithm Applied | Note |
+| Leetcode Number | Problem | Difficulty | Solution | Applied Data Structure / Algorithms | Note |
 |---|---|---|---|---|---|
 | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Medium | | | |
 | 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium | | | |
@@ -32,73 +32,73 @@
 | 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr/) | Easy | | | |
 | 29 | [https://leetcode.com/problems/divide-two-integers/](Divide Two Integers) | Medium | | | |
 | 30 | [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/) | Hard | | | |
-| 31 | | Medium | | | |
-| 32 | | Hard | | | |
-| 33 | | Medium | | | |
-| 34 | | Medium | | | |
-| 35 | | Easy | | | |
-| 36 | | Medium | | | |
-| 37 | | Hard | | | |
-| 38 | | Easy | | | |
-| 39 | | Medium | | | |
-| 40 | | Medium | | | |
-| 41 | | Hard | | | |
-| 42 | | Hard | | | |
-| 43 | | Medium | | | |
-| 44 | | Hard | | | |
-| 45 | | Hard | | | |
-| 46 | | Medium | | | |
-| 47 | | Medium | | | |
-| 48 | | Medium | | | |
-| 49 | | Medium | | | |
-| 50 | | Medium | | | |
-| 51 | | | | | |
-| 52 | | | | | |
-| 53 | | | | | |
-| 54 | | | | | |
-| 55 | | | | | |
-| 56 | | | | | |
-| 57 | | | | | |
-| 58 | | | | | |
-| 59 | | | | | |
-| 60 | | | | | |
-| 61 | | | | | |
-| 62 | | | | | |
-| 63 | | | | | |
-| 64 | | | | | |
-| 65 | | | | | |
-| 66 | | | | | |
-| 67 | | | | | |
-| 68 | | | | | |
-| 69 | | | | | |
-| 70 | | | | | |
-| 71 | | | | | |
-| 72 | | | | | |
-| 73 | | | | | |
-| 74 | | | | | |
-| 75 | | | | | |
-| 76 | | | | | |
-| 77 | | | | | |
-| 78 | | | | | |
-| 79 | | | | | |
-| 80 | | | | | |
-| 81 | | | | | |
-| 82 | | | | | |
-| 83 | | | | | |
-| 84 | | | | | |
-| 85 | | | | | |
-| 86 | | | | | |
-| 87 | | | | | |
-| 88 | | | | | |
-| 89 | | | | | |
-| 90 | | | | | |
-| 91 | | | | | |
-| 92 | | | | | |
-| 93 | | | | | |
-| 94 | | | | | |
-| 95 | | | | | |
-| 96 | | | | | |
-| 97 | | | | | |
-| 98 | | | | | |
-| 99 | | | | | |
-| 100 | | | | | |
+| 31 | [Next Permutation](https://leetcode.com/problems/next-permutation/) | Medium | | | |
+| 32 | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | Hard | | | |
+| 33 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Medium | | | |
+| 34 | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Medium | | | |
+| 35 | [Search Insert Position](https://leetcode.com/problems/search-insert-position/) | Easy | | | |
+| 36 | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) | Medium | | | |
+| 37 | [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) | Hard | | | |
+| 38 | [Count and Say](https://leetcode.com/problems/count-and-say/) | Easy | | | |
+| 39 | [Combination Sum](https://leetcode.com/problems/combination-sum/) | Medium | | | |
+| 40 | [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/) | Medium | | | |
+| 41 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | Hard | | | |
+| 42 | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Hard | | | |
+| 43 | [Multiply Strings](https://leetcode.com/problems/multiply-strings/) | Medium | | | |
+| 44 | [Wildcard Matching](https://leetcode.com/problems/wildcard-matching/) | Hard | | | |
+| 45 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | Hard | | | |
+| 46 | [Permutations](https://leetcode.com/problems/permutations/) | Medium | | | |
+| 47 | [Permutations II](https://leetcode.com/problems/permutations-ii/) | Medium | | | |
+| 48 | [Rotate Image](https://leetcode.com/problems/rotate-image/) | Medium | | | |
+| 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | | | |
+| 50 | [Pow(x, n)](https://leetcode.com/problems/powx-n/) | Medium | | | |
+| 51 | []() | Hard | | | |
+| 52 | []() | Hard | | | |
+| 53 | []() | Easy | | | |
+| 54 | []() | Medium | | | |
+| 55 | [Jump Game](https://leetcode.com/problems/jump-game/) | Medium | | | |
+| 56 | []() | Medium | | | |
+| 57 | []() | Hard | | | |
+| 58 | []() | Easy | | | |
+| 59 | []() | Medium | | | |
+| 60 | []() | Hard | | | |
+| 61 | []() | Medium | | | |
+| 62 | []() | Medium | | | |
+| 63 | []() | Medium | | | |
+| 64 | []() | Medium | | | |
+| 65 | []() | Hard | | | |
+| 66 | []() | Easy | | | |
+| 67 | []() | Easy | | | |
+| 68 | []() | Hard | | | |
+| 69 | []() | Easy | | | |
+| 70 | []() | Easy | | | |
+| 71 | []() | Medium | | | |
+| 72 | []() | Hard | | | |
+| 73 | []() | Medium | | | |
+| 74 | []() | Medium | | | |
+| 75 | []() | Medium | | | |
+| 76 | []() | Hard | | | |
+| 77 | []() | Medium | | | |
+| 78 | []() | Medium | | | |
+| 79 | []() | Medium | | | |
+| 80 | []() | Medium | | | |
+| 81 | []() | Medium | | | |
+| 82 | []() | Medium | | | |
+| 83 | []() | Easy | | | |
+| 84 | []() | Hard | | | |
+| 85 | []() | Hard | | | |
+| 86 | []() | Medium | | | |
+| 87 | []() | Hard | | | |
+| 88 | []() | Easy | | | |
+| 89 | []() | Medium | | | |
+| 90 | []() | Medium | | | |
+| 91 | []() | Medium | | | |
+| 92 | []() | Medium | | | |
+| 93 | []() | Medium | | | |
+| 94 | []() | Medium | | | |
+| 95 | []() | Medium | | | |
+| 96 | []() | Medium | | | |
+| 97 | []() | Hard | | | |
+| 98 | []() | Medium | | | |
+| 99 | []() | Hard | | | |
+| 100 | []() | Easy | | | |
