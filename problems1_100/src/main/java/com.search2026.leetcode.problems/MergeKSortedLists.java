@@ -1,21 +1,19 @@
-package merge_k_sorted_lists;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class MergeKSortedLists {
 
-public class MergekSortedLists {
     /*
-        Merge K Sorted Lists - Heap
-        Leetcode #23
-        https://leetcode.com/problems/merge-k-sorted-lists/
-        Difficulty: Hard
-     */
+    Merge K Sorted Lists - Heap
+    Leetcode #23
+    https://leetcode.com/problems/merge-k-sorted-lists/
+    Difficulty: Hard
+ */
     public class Solution {
         public ListNode mergeKLists(ListNode[] lists) {
             if (lists == null || lists.length == 0) return null;
@@ -85,43 +83,4 @@ public class MergekSortedLists {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new MergekSortedLists().new Solution();
-            ListNode list1 = new ListNode(1);
-            list1.next = new ListNode(3);
-            list1.next.next = new ListNode(6);
-            ListNode list2 = new ListNode(2);
-            list2.next = new ListNode(4);
-            ListNode list3 = new ListNode(5);
-            ListNode[] lists = {list1, list2, list3};
-            ListNode mergered = sol.mergeKLists(lists);
-            assertEquals(1, mergered.val);
-            assertEquals(2, mergered.next.val);
-            assertEquals(3, mergered.next.next.val);
-            assertEquals(4, mergered.next.next.next.val);
-            assertEquals(5, mergered.next.next.next.next.val);
-            assertEquals(6, mergered.next.next.next.next.next.val);
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new MergekSortedLists().new Solution_2();
-            ListNode list1 = new ListNode(1);
-            list1.next = new ListNode(3);
-            list1.next.next = new ListNode(6);
-            ListNode list2 = new ListNode(2);
-            list2.next = new ListNode(4);
-            ListNode list3 = new ListNode(5);
-            ListNode[] lists = {list1, list2, list3};
-            ListNode mergered = sol.mergeKLists(lists);
-            assertEquals(1, mergered.val);
-            assertEquals(2, mergered.next.val);
-            assertEquals(3, mergered.next.next.val);
-            assertEquals(4, mergered.next.next.next.val);
-            assertEquals(5, mergered.next.next.next.next.val);
-            assertEquals(6, mergered.next.next.next.next.next.val);
-        }
-    }
 }

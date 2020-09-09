@@ -1,10 +1,7 @@
-package remove_element;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.search2026.leetcode.problems;
 
 public class RemoveElement {
+
     /*
         Remove Element
         leetcode #27
@@ -20,14 +17,6 @@ public class RemoveElement {
                 }
             }
             return len;
-        }
-    }
-
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new RemoveElement().new Solution();
-            assertEquals(7, 7);
         }
     }
 }

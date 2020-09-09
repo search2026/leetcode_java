@@ -1,13 +1,10 @@
-package generate_parentheses;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class GenerateParentheses {
+
     /*
         Generate Parentheses
         Leetcode #22
@@ -74,11 +71,4 @@ public class GenerateParentheses {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new GenerateParentheses().new Solution();
-            assertTrue(true);
-        }
-    }
 }

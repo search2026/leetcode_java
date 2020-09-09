@@ -22,16 +22,16 @@
 | 18 | [4Sum](https://leetcode.com/problems/4sum/) | Medium | | | |
 | 19 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium | | | |
 | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Easy | | | |
-| 21 | | Easy | | | |
-| 22 | | Medium | | | |
-| 23 | | Hard | | | |
-| 24 | | Medium | | | |
-| 25 | | Hard | | | |
-| 26 | | Easy | | | |
-| 27 | | Easy | | | |
-| 28 | | Easy | | | |
-| 29 | | Medium | | | |
-| 30 | | Hard | | | |
+| 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | Easy | | | |
+| 22 | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) | Medium | | | |
+| 23 | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | Hard | | | |
+| 24 | [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | Medium | | | |
+| 25 | [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | Hard | | | |
+| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | | | |
+| 27 | [Remove Element](https://leetcode.com/problems/remove-element/) | Easy | | | |
+| 28 | [Implement strStr()](https://leetcode.com/problems/implement-strstr/) | Easy | | | |
+| 29 | [https://leetcode.com/problems/divide-two-integers/](Divide Two Integers) | Medium | | | |
+| 30 | [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/) | Hard | | | |
 | 31 | | Medium | | | |
 | 32 | | Hard | | | |
 | 33 | | Medium | | | |

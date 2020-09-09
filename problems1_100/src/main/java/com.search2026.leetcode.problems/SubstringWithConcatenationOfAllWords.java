@@ -1,12 +1,9 @@
-package substring_with_concatenation_of_all_words;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class SubstringWithConcatenationOfAllWords {
 
-public class SubstringwithConcatenationofAllWords {
     /*
         Substring with Concatenation of All Words - Sliding Window (Timeout)
         Leetcode #30
@@ -166,32 +163,4 @@ public class SubstringwithConcatenationofAllWords {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new SubstringwithConcatenationofAllWords().new Solution();
-            String[] words = new String[]{"foo", "bar"};
-            List<Integer> rslt = sol.findSubstring("barfoothefoobarman", words);
-            assertEquals(0, (int) rslt.get(0));
-            assertEquals(9, (int) rslt.get(1));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new SubstringwithConcatenationofAllWords().new Solution_2();
-            String[] words = new String[]{"foo", "bar"};
-            List<Integer> rslt = sol.findSubstring("barfoothefoobarman", words);
-            assertEquals(0, (int) rslt.get(0));
-            assertEquals(9, (int) rslt.get(1));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new SubstringwithConcatenationofAllWords().new Solution_3();
-            String[] words = new String[]{"foo", "bar"};
-            List<Integer> rslt = sol.findSubstring("barfoothefoobarman", words);
-            assertEquals(0, (int) rslt.get(0));
-            assertEquals(9, (int) rslt.get(1));
-        }
-    }
 }

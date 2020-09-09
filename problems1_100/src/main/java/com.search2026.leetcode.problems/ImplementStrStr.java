@@ -1,10 +1,7 @@
-package implement_strstr;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+public class ImplementStrStr {
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class ImplementstrStr {
     /*
         Implement strstr - Brute Force
         Leetcode #28
@@ -172,33 +169,4 @@ public class ImplementstrStr {
         }
     }
 
-    public class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ImplementstrStr().new Solution();
-            assertEquals(1, sol.strStr("acd1f3ghjk", "cd1f"));
-            assertEquals(-1, sol.strStr("acd1f3ghjk", "cd2f"));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new ImplementstrStr().new Solution_2();
-            assertEquals(1, sol.strStr("acd1f3ghjk", "cd1f"));
-            assertEquals(-1, sol.strStr("acd1f3ghjk", "cd2f"));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new ImplementstrStr().new Solution_3();
-            assertEquals(1, sol.strStr("acd1f3ghjk", "cd1f"));
-            assertEquals(-1, sol.strStr("acd1f3ghjk", "cd2f"));
-        }
-
-        @Test
-        public void test4() {
-            Solution_4 sol = new ImplementstrStr().new Solution_4();
-            assertEquals(1, sol.strStr("acd1f3ghjk", "cd1f"));
-            assertEquals(-1, sol.strStr("acd1f3ghjk", "cd2f"));
-        }
-    }
 }

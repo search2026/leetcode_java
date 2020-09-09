@@ -1,10 +1,7 @@
-package remove_duplicates_from_sorted_array;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+public class RemoveDuplicatesFromSortedArray {
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class RemoveDuplicatesfromSortedArray {
     /*
         Remove Duplicates from Sorted Array
         Leetcode #80
@@ -49,11 +46,4 @@ public class RemoveDuplicatesfromSortedArray {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new RemoveDuplicatesfromSortedArray().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

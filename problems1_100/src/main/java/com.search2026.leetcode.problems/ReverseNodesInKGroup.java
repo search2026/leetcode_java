@@ -1,11 +1,9 @@
-package reverse_nodes_in_kgroup;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.ListNode;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class ReverseNodesInKGroup {
 
-public class ReverseNodesinkGroup {
     /*
         Reverse Nodes in K Group
         Leetcode #25
@@ -52,11 +50,4 @@ public class ReverseNodesinkGroup {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ReverseNodesinkGroup().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }
