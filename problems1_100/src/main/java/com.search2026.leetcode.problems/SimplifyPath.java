@@ -1,10 +1,6 @@
-package simplify_path;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.ArrayDeque;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SimplifyPath {
     /*
@@ -39,11 +35,4 @@ public class SimplifyPath {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new SimplifyPath().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

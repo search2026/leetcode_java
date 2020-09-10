@@ -1,16 +1,13 @@
-package search_a_2d_matrix;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+public class SearchA2DMatrix {
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class Searcha2DMatrix {
     /*
-        Search a 2D Matrix
-        Leetcode #74
-        https://leetcode.com/problems/search-a-2d-matrix/
-        Difficulty: Medium
-    */
+    Search a 2D Matrix
+    Leetcode #74
+    https://leetcode.com/problems/search-a-2d-matrix/
+    Difficulty: Medium
+*/
     public class Solution {
         public boolean searchMatrix(int[][] matrix, int target) {
             if (matrix.length == 0 || matrix[0].length == 0) {
@@ -40,7 +37,7 @@ public class Searcha2DMatrix {
         https://leetcode.com/problems/search-a-2d-matrix-ii/
         Difficulty: Medium
     */
-    public class SolutionII {
+    public class Solution_2 {
         public boolean searchMatrix(int[][] matrix, int target) {
             // check corner case
             if (matrix == null || matrix.length == 0) {
@@ -73,11 +70,4 @@ public class Searcha2DMatrix {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new Searcha2DMatrix().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

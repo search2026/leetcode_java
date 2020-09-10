@@ -1,10 +1,7 @@
-package set_matrix_zeroes;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.search2026.leetcode.problems;
 
 public class SetMatrixZeroes {
+
     /*
         Set Matrix Zeroes
         Leetcode #73
@@ -63,11 +60,4 @@ public class SetMatrixZeroes {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new SetMatrixZeroes().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

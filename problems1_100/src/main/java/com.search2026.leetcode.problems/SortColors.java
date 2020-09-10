@@ -1,10 +1,7 @@
-package sort_colors;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.search2026.leetcode.problems;
 
 public class SortColors {
+
     /*
         Sort Colors
         Leetcode #75
@@ -29,11 +26,4 @@ public class SortColors {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new SortColors().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

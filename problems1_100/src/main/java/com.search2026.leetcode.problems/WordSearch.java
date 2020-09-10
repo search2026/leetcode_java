@@ -1,18 +1,14 @@
-package word_search;
+package com.search2026.leetcode.problems;
 
-import common.Trie;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.Trie;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.*;
-
 public class WordSearch {
+
     /*
         Word Search
         Leetcode #79
@@ -195,67 +191,4 @@ public class WordSearch {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new WordSearch().new Solution();
-            char[][] board = new char[][]{
-                    {'A', 'B', 'C', 'E'},
-                    {'S', 'F', 'C', 'S'},
-                    {'A', 'D', 'E', 'E'}
-            };
-            assertTrue(sol.exist(board, "ABCCED"));
-            assertTrue(sol.exist(board, "SEE"));
-            assertFalse(sol.exist(board, "ABCB"));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new WordSearch().new Solution_2();
-            char[][] board = new char[][]{
-                    {'A', 'B', 'C', 'E'},
-                    {'S', 'F', 'C', 'S'},
-                    {'A', 'D', 'E', 'E'}
-            };
-            assertTrue(sol.search(board, "ABCCED"));
-            assertTrue(sol.search(board, "SEE"));
-            // assertFalse(sol.search(board, "ABCB"));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new WordSearch().new Solution_3();
-            char[][] board = new char[][]{
-                    {'o', 'a', 'a', 'n'},
-                    {'e', 't', 'a', 'e'},
-                    {'i', 'h', 'k', 'r'},
-                    {'i', 'f', 'l', 'v'}
-            };
-            String[] words = {"oath", "pea", "eat", "rain"};
-            List<String> res = sol.findWords(board, words);
-            assertEquals(2, res.size());
-            assertTrue(res.contains("oath"));
-            assertTrue(res.contains("eat"));
-            assertFalse(res.contains("pea"));
-            assertFalse(res.contains("rain"));
-        }
-
-        @Test
-        public void test4() {
-            Solution_4 sol = new WordSearch().new Solution_4();
-            char[][] board = new char[][]{
-                    {'o', 'a', 'a', 'n'},
-                    {'e', 't', 'a', 'e'},
-                    {'i', 'h', 'k', 'r'},
-                    {'i', 'f', 'l', 'v'}
-            };
-            String[] words = {"oath", "pea", "eat", "rain"};
-            List<String> res = sol.findWords(board, words);
-            assertEquals(2, res.size());
-            assertTrue(res.contains("oath"));
-            assertTrue(res.contains("eat"));
-            assertFalse(res.contains("pea"));
-            assertFalse(res.contains("rain"));
-        }
-    }
 }

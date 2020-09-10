@@ -4,7 +4,7 @@ public class RemoveDuplicatesFromSortedArray {
 
     /*
         Remove Duplicates from Sorted Array
-        Leetcode #80
+        Leetcode #26
         https://leetcode.com/problems/remove-duplicates-from-sorted-array/
         Difficulty: Easy
      */
@@ -25,12 +25,12 @@ public class RemoveDuplicatesFromSortedArray {
 
     /*
         Remove Duplicates from Sorted Array II
-        Leetcode #81
+        Leetcode #80
         https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
         Difficulty: Medium
      */
     public class Solution_2 {
-        public int removeDuplicatesII(int[] nums) {
+        public int removeDuplicates(int[] nums) {
             int len = 0;
             boolean twice = false;
             for (int i = 0; i < nums.length; i++) {

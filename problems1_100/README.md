@@ -72,16 +72,16 @@
 | 68 | [Text Justification](https://leetcode.com/problems/text-justification/) | Hard | | | |
 | 69 | [Sqrt(x)](https://leetcode.com/problems/sqrtx/) | Easy | | | |
 | 70 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | Easy | | | |
-| 71 | []() | Medium | | | |
-| 72 | []() | Hard | | | |
-| 73 | []() | Medium | | | |
-| 74 | []() | Medium | | | |
-| 75 | []() | Medium | | | |
-| 76 | []() | Hard | | | |
-| 77 | []() | Medium | | | |
-| 78 | []() | Medium | | | |
-| 79 | []() | Medium | | | |
-| 80 | []() | Medium | | | |
+| 71 | [Simplify Path](https://leetcode.com/problems/simplify-path/) | Medium | | | |
+| 72 | [Edit Distance](https://leetcode.com/problems/edit-distance/) | Hard | | | |
+| 73 | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | Medium | | | |
+| 74 | [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | Medium | | | |
+| 75 | [Sort Colors](https://leetcode.com/problems/sort-colors/) | Medium | | | |
+| 76 | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | Hard | | | |
+| 77 | [Combinations](https://leetcode.com/problems/combinations/) | Medium | | | |
+| 78 | [Subsets](https://leetcode.com/problems/subsets/) | Medium | | | |
+| 79 | [Word Search](https://leetcode.com/problems/word-search/) | Medium | | | |
+| 80 | [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) | Medium | | | |
 | 81 | []() | Medium | | | |
 | 82 | []() | Medium | | | |
 | 83 | []() | Easy | | | |
@@ -91,7 +91,7 @@
 | 87 | []() | Hard | | | |
 | 88 | []() | Easy | | | |
 | 89 | []() | Medium | | | |
-| 90 | []() | Medium | | | |
+| 90 | [Subsets II](https://leetcode.com/problems/subsets-ii/) | Medium | | | |
 | 91 | []() | Medium | | | |
 | 92 | []() | Medium | | | |
 | 93 | []() | Medium | | | |

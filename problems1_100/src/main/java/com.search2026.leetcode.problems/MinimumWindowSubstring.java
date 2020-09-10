@@ -1,12 +1,9 @@
-package minimum_window_substring;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class MinimumWindowSubstring {
+
     /*
         Minimum Window Substring - Array
         Leetcode #76
@@ -129,29 +126,4 @@ public class MinimumWindowSubstring {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new MinimumWindowSubstring().new Solution();
-            String s = "ADOBECODEBANC";
-            String t = "ABC";
-            assertEquals("BANC", sol.minWindow(s, t));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new MinimumWindowSubstring().new Solution_2();
-            String s = "ADOBECODEBANC";
-            String t = "ABC";
-            assertEquals("BANC", sol.minWindow(s, t));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new MinimumWindowSubstring().new Solution_3();
-            String s = "ADOBECODEBANC";
-            String t = "ABC";
-            assertEquals("BANC", sol.minWindow(s, t));
-        }
-    }
 }
