@@ -82,7 +82,7 @@
 | 78 | [Subsets](https://leetcode.com/problems/subsets/) | Medium | | | |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | Medium | | | |
 | 80 | [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) | Medium | | | |
-| 81 | []() | Medium | | | |
+| 81 | [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) | Medium | | | |
 | 82 | []() | Medium | | | |
 | 83 | []() | Easy | | | |
 | 84 | []() | Hard | | | |
