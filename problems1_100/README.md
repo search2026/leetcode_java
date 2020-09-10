@@ -52,26 +52,26 @@
 | 48 | [Rotate Image](https://leetcode.com/problems/rotate-image/) | Medium | | | |
 | 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | | | |
 | 50 | [Pow(x, n)](https://leetcode.com/problems/powx-n/) | Medium | | | |
-| 51 | []() | Hard | | | |
-| 52 | []() | Hard | | | |
-| 53 | []() | Easy | | | |
-| 54 | []() | Medium | | | |
+| 51 | [N-Queens](https://leetcode.com/problems/n-queens/) | Hard | | | |
+| 52 | [N-Queens II](https://leetcode.com/problems/n-queens-ii/) | Hard | | | |
+| 53 | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | Easy | | | |
+| 54 | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | Medium | | | |
 | 55 | [Jump Game](https://leetcode.com/problems/jump-game/) | Medium | | | |
-| 56 | []() | Medium | | | |
-| 57 | []() | Hard | | | |
-| 58 | []() | Easy | | | |
-| 59 | []() | Medium | | | |
-| 60 | []() | Hard | | | |
-| 61 | []() | Medium | | | |
-| 62 | []() | Medium | | | |
-| 63 | []() | Medium | | | |
-| 64 | []() | Medium | | | |
-| 65 | []() | Hard | | | |
-| 66 | []() | Easy | | | |
-| 67 | []() | Easy | | | |
-| 68 | []() | Hard | | | |
-| 69 | []() | Easy | | | |
-| 70 | []() | Easy | | | |
+| 56 | [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | Medium | | | |
+| 57 | [Insert Interval](https://leetcode.com/problems/insert-interval/) | Hard | | | |
+| 58 | [Length of Last Word](https://leetcode.com/problems/length-of-last-word/) | Easy | | | |
+| 59 | [Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) | Medium | | | |
+| 60 | [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/) | Hard | | | |
+| 61 | [Rotate List](https://leetcode.com/problems/rotate-list/) | Medium | | | |
+| 62 | [Unique Paths](https://leetcode.com/problems/unique-paths/) | Medium | | | |
+| 63 | [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) | Medium | | | |
+| 64 | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | Medium | | | |
+| 65 | [Valid Number](https://leetcode.com/problems/valid-number/) | Hard | | | |
+| 66 | [Plus One](https://leetcode.com/problems/plus-one/) | Easy | | | |
+| 67 | [Add Binary](https://leetcode.com/problems/add-binary/) | Easy | | | |
+| 68 | [Text Justification](https://leetcode.com/problems/text-justification/) | Hard | | | |
+| 69 | [Sqrt(x)](https://leetcode.com/problems/sqrtx/) | Easy | | | |
+| 70 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | Easy | | | |
 | 71 | []() | Medium | | | |
 | 72 | []() | Hard | | | |
 | 73 | []() | Medium | | | |
