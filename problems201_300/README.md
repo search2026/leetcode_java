@@ -6,6 +6,8 @@
 | 202 | | | | | |
 | 203 | | | | | |
 | | | | | | |
+| 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Easy | | | |
+| | | | | | |
 | 212 | [https://leetcode.com/problems/word-search-ii/](https://leetcode.com/problems/word-search-ii/) | Hard | | | |
 | | | | | | |
 | 216 | [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/) | Medium | | | |

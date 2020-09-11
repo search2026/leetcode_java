@@ -83,22 +83,22 @@
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | Medium | | | |
 | 80 | [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) | Medium | | | |
 | 81 | [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) | Medium | | | |
-| 82 | []() | Medium | | | |
-| 83 | []() | Easy | | | |
-| 84 | []() | Hard | | | |
-| 85 | []() | Hard | | | |
-| 86 | []() | Medium | | | |
-| 87 | []() | Hard | | | |
-| 88 | []() | Easy | | | |
-| 89 | []() | Medium | | | |
+| 82 | [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Medium | | | |
+| 83 | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | Easy | | | |
+| 84 | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Hard | | | |
+| 85 | [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/) | Hard | | | |
+| 86 | [Partition List](https://leetcode.com/problems/partition-list/) | Medium | | | |
+| 87 | [Scramble String](https://leetcode.com/problems/scramble-string/) | Hard | | | |
+| 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | Easy | | | |
+| 89 | [Gray Code](https://leetcode.com/problems/gray-code/) | Medium | | | |
 | 90 | [Subsets II](https://leetcode.com/problems/subsets-ii/) | Medium | | | |
-| 91 | []() | Medium | | | |
-| 92 | []() | Medium | | | |
-| 93 | []() | Medium | | | |
-| 94 | []() | Medium | | | |
-| 95 | []() | Medium | | | |
-| 96 | []() | Medium | | | |
-| 97 | []() | Hard | | | |
-| 98 | []() | Medium | | | |
-| 99 | []() | Hard | | | |
-| 100 | []() | Easy | | | |
+| 91 | [Decode Ways](https://leetcode.com/problems/decode-ways/) | Medium | | | |
+| 92 | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) | Medium | | | |
+| 93 | [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) | Medium | | | |
+| 94 | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Medium | | | |
+| 95 | [Unique Binary Search Trees II](https://leetcode.com/problems/unique-binary-search-trees-ii/) | Medium | | | |
+| 96 | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) | Medium | | | |
+| 97 | [Interleaving String](https://leetcode.com/problems/interleaving-string/) | Hard | | | |
+| 98 | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) | Medium | | | |
+| 99 | [Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree/) | Hard | | | |
+| 100 | [Same Tree](https://leetcode.com/problems/same-tree/) | Easy | | | |
