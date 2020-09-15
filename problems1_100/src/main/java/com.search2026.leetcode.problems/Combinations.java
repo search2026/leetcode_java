@@ -78,7 +78,7 @@ public class Combinations {
             List<Integer> curr = new ArrayList<>();
             int i = 1;
             while (i <= n || curr.size() != 0) {
-                if (curr.size() == k) combList.add(new ArrayList(curr));
+                if (curr.size() == k) combList.add(new ArrayList<>(curr));
 
                 if (i > n || curr.size() == k) {
                     i = curr.get(curr.size() - 1) + 1;

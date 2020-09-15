@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestRemoveDuplicatesFromSortedList {
+public class RemoveDuplicatesFromSortedListTest {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         RemoveDuplicatesFromSortedList.Solution sol = new RemoveDuplicatesFromSortedList().new Solution();
         ListNode root = new ListNode(1);
         root.next = new ListNode(1);
@@ -22,16 +22,16 @@ public class TestRemoveDuplicatesFromSortedList {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         RemoveDuplicatesFromSortedList.Solution_2 sol = new RemoveDuplicatesFromSortedList().new Solution_2();
         ListNode root = new ListNode(1);
         root.next = new ListNode(1);
         root.next.next = new ListNode(1);
         root.next.next.next = new ListNode(2);
         root.next.next.next.next = new ListNode(3);
-        sol.deleteDuplicates(root);
-        assertEquals(2, root.val);
-        assertEquals(3, root.next.val);
+        ListNode res = sol.deleteDuplicates(root);
+        assertEquals(2, res.val);
+        assertEquals(3, res.next.val);
     }
 
 }

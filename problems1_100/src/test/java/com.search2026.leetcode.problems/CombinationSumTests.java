@@ -6,10 +6,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestCombinationSum {
+public class CombinationSumTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         CombinationSum.Solution sol = new CombinationSum().new Solution();
         int[] candidates = new int[]{2, 3, 6, 7};
         List<List<Integer>> comb = sol.combinationSum(candidates, 7);
@@ -23,7 +23,7 @@ public class TestCombinationSum {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         CombinationSum.Solution_2 sol = new CombinationSum().new Solution_2();
         int[] candidates = new int[]{2, 3, 6, 7};
         List<List<Integer>> comb = sol.combinationSum(candidates, 7);
@@ -37,7 +37,7 @@ public class TestCombinationSum {
     }
 
     @Test
-    public void test3() {
+    public void testSolution3() {
         CombinationSum.Solution_3 sol = new CombinationSum().new Solution_3();
         int[] candidates = new int[]{10, 1, 2, 7, 6, 1, 5};
         List<List<Integer>> comb = sol.combinationSum2(candidates, 8);
@@ -59,7 +59,7 @@ public class TestCombinationSum {
     }
 
     @Test
-    public void test4() {
+    public void testSolution4() {
         CombinationSum.Solution_4 sol = new CombinationSum().new Solution_4();
         int[] candidates = new int[]{10, 1, 2, 7, 6, 1, 5};
         List<List<Integer>> combo = sol.combinationSum2(candidates, 8);
@@ -67,7 +67,7 @@ public class TestCombinationSum {
     }
 
     @Test
-    public void test5() {
+    public void testSolution5() {
         CombinationSum.Solution_5 sol = new CombinationSum().new Solution_5();
         List<List<Integer>> combo = sol.combinationSum3(3, 7);
         assertEquals(1, combo.size());
@@ -93,7 +93,7 @@ public class TestCombinationSum {
     }
 
     @Test
-    public void test6() {
+    public void testSolution6() {
         CombinationSum.Solution_6 sol = new CombinationSum().new Solution_6();
         assertEquals(7, sol.combinationSum4(new int[]{1, 3, 2}, 4));
     }

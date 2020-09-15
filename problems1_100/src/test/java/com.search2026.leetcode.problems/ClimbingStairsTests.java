@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestClimbingStairs {
+public class ClimbingStairsTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         ClimbingStairs.Solution sol = new ClimbingStairs().new Solution();
         assertEquals(1, sol.climbStairs(1));
         assertEquals(2, sol.climbStairs(2));
@@ -19,7 +19,7 @@ public class TestClimbingStairs {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         ClimbingStairs.Solution_2 sol = new ClimbingStairs().new Solution_2();
         assertEquals(1, sol.climbStairs(1));
         assertEquals(2, sol.climbStairs(2));
@@ -31,7 +31,7 @@ public class TestClimbingStairs {
     }
 
     @Test
-    public void test3() {
+    public void testSolution3() {
         ClimbingStairs.Solution_3 sol = new ClimbingStairs().new Solution_3();
         assertEquals(1, sol.climbStairs(1));
         assertEquals(2, sol.climbStairs(2));

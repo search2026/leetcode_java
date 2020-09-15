@@ -2,6 +2,7 @@ package com.search2026.leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class CombinationSum {
@@ -57,7 +58,7 @@ public class CombinationSum {
                     else {
                         for (List<Integer> l : dp.get(i - candidates[j] - 1)) {
                             if (candidates[j] <= l.get(0)) {
-                                List t = new ArrayList<Integer>();
+                                List<Integer> t = new ArrayList<Integer>();
                                 t.add(candidates[j]);
                                 t.addAll(l);
                                 currList.add(t);
@@ -112,7 +113,7 @@ public class CombinationSum {
     public class Solution_4 {
         public List<List<Integer>> combinationSum2(int[] candidates, int target) {
             if (candidates == null || candidates.length == 0)
-                return new ArrayList<List<Integer>>();
+                return new ArrayList<>();
 
             Arrays.sort(candidates);
             List<List<List<Integer>>> dp = new ArrayList<>();
@@ -120,11 +121,11 @@ public class CombinationSum {
             for (int i = 1; i <= target; i++) {
                 List<List<Integer>> currList = new ArrayList<>();
                 for (int j = 0; j < candidates.length && candidates[j] <= i; j++) {
-                    if (i == candidates[j]) currList.add(Arrays.asList(candidates[j]));
+                    if (i == candidates[j]) currList.add(Collections.singletonList(candidates[j]));
                     else {
                         for (List<Integer> l : dp.get(i - candidates[j] - 1)) {
                             if (candidates[j] <= l.get(0)) {
-                                List t = new ArrayList<Integer>();
+                                List<Integer> t = new ArrayList<>();
                                 t.add(candidates[j]);
                                 t.addAll(l);
                                 currList.add(t);
@@ -161,7 +162,7 @@ public class CombinationSum {
 
         public List<List<Integer>> combinationSum3(int k, int n) {
             List<List<Integer>> comb = new ArrayList<>();
-            search(comb, new ArrayList<Integer>(), k, 1, n);
+            search(comb, new ArrayList<>(), k, 1, n);
             return comb;
         }
     }

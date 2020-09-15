@@ -4,33 +4,33 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestImplementStrStr {
+public class ImplementStrStrTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         ImplementStrStr.Solution sol = new ImplementStrStr().new Solution();
-        assertEquals(1, sol.strStr("hello", "ll"));
+        assertEquals(2, sol.strStr("hello", "ll"));
         assertEquals(-1, sol.strStr("aaaaa", "bba"));
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         ImplementStrStr.Solution_2 sol = new ImplementStrStr().new Solution_2();
-        assertEquals(1, sol.strStr("hello", "ll"));
+        assertEquals(2, sol.strStr("hello", "ll"));
         assertEquals(-1, sol.strStr("aaaaa", "bba"));
     }
 
     @Test
-    public void test3() {
+    public void testSolution3() {
         ImplementStrStr.Solution_3 sol = new ImplementStrStr().new Solution_3();
-        assertEquals(1, sol.strStr("hello", "ll"));
+        assertEquals(2, sol.strStr("hello", "ll"));
         assertEquals(-1, sol.strStr("aaaaa", "bba"));
     }
 
     @Test
-    public void test4() {
+    public void testSolution4() {
         ImplementStrStr.Solution_4 sol = new ImplementStrStr().new Solution_4();
-        assertEquals(1, sol.strStr("hello", "ll"));
+        assertEquals(2, sol.strStr("hello", "ll"));
         assertEquals(-1, sol.strStr("aaaaa", "bba"));
     }
 

@@ -4,10 +4,10 @@ import com.search2026.leetcode.common.ListNode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestAddTwoNumbers {
+public class AddTwoNumbersTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         AddTwoNumbers.Solution sol = new AddTwoNumbers().new Solution();
         ListNode list1 = new ListNode(2);
         list1.next = new ListNode(4);
@@ -25,7 +25,7 @@ public class TestAddTwoNumbers {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         AddTwoNumbers.Solution_2 sol = new AddTwoNumbers().new Solution_2();
         ListNode list1 = new ListNode(2);
         list1.next = new ListNode(4);
