@@ -76,18 +76,18 @@ public class RecoverBinarySearchTree {
             swap.get(swap.size()-1).val = temp;
         }
 
-        public void helper(TreeNode root, ArrayList<TreeNode> inorderlist, ArrayList<TreeNode> swap) {
+        public void helper(TreeNode root, ArrayList<TreeNode> inOrderList, ArrayList<TreeNode> swap) {
             if (root == null) return;
-            helper(root.left, inorderlist, swap);
-            if (inorderlist.size() != 0) {
-                TreeNode pre = inorderlist.get(inorderlist.size()-1);
+            helper(root.left, inOrderList, swap);
+            if (inOrderList.size() != 0) {
+                TreeNode pre = inOrderList.get(inOrderList.size()-1);
                 if (pre.val > root.val) { //findRoot a case that has been swapped
                     swap.add(pre);
                     swap.add(root);
                 }
             }
-            inorderlist.add(root);
-            helper(root.right, inorderlist, swap);
+            inOrderList.add(root);
+            helper(root.right, inOrderList, swap);
         }
     }
 

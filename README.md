@@ -27,11 +27,12 @@ gradle -Dtest.single=TestTwoSum test --info
 
 ## Update Logs
 
-9/25/2020
+ETA 10/1/2020
 * Minimum Java version is 11
 * Minimum Gradle version is 5.6.3
 * Fully support Junit 5
 * Overhaul project structure
+* Update tests for all existed solutions
 
 6/4/2016
 * Update leetcode questions to #353

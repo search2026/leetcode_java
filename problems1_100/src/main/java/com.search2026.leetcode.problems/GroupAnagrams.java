@@ -23,7 +23,7 @@ public class GroupAnagrams {
                 if (map.containsKey(str)) {
                     map.get(str).add(s);
                 } else {
-                    ArrayList<String> list = new ArrayList<String>();
+                    ArrayList<String> list = new ArrayList<>();
                     list.add(s);
                     map.put(str, list);
                 }

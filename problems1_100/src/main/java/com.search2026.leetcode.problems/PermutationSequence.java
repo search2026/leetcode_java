@@ -12,7 +12,7 @@ public class PermutationSequence {
      */
     public class Solution {
         public String getPermutation(int n, int k) {
-            ArrayList<Integer> nums = new ArrayList<Integer>();
+            ArrayList<Integer> nums = new ArrayList<>();
             int[] factors = new int[n + 1];
             factors[0] = 1;
             int tmp = 1;
@@ -26,8 +26,8 @@ public class PermutationSequence {
             k--;
             for (int i = 0; i < n; i++) {
                 int digit = 0;
-                int index = k / factors[n - i - 1];
-                digit = nums.remove(index);
+                int idx = k / factors[n - i - 1];
+                digit = nums.remove(idx);
                 k = k % factors[n - i - 1];
                 res.append(digit);
             }

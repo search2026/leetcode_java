@@ -13,9 +13,7 @@ public class IntegerToRoman {
 
         private String repeat(char c, int times) {
             StringBuilder result = new StringBuilder();
-            for (int i = 0; i < times; i++) {
-                result.append(c);
-            }
+            result.append(String.valueOf(c).repeat(Math.max(0, times)));
             return result.toString();
         }
 

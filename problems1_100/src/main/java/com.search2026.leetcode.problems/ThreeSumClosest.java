@@ -5,11 +5,11 @@ import java.util.Arrays;
 public class ThreeSumClosest {
 
     /*
-    3 Sum Closest
-    Leetcode #16
-    https://leetcode.com/problems/3sum-closest/
-    Difficulty: Medium
- */
+        3 Sum Closest
+        Leetcode #16
+        https://leetcode.com/problems/3sum-closest/
+        Difficulty: Medium
+     */
     public class Solution {
         public int threeSumClosest(int[] nums, int target) {
             Arrays.sort(nums);

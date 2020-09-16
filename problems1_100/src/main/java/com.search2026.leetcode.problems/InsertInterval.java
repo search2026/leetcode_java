@@ -8,11 +8,11 @@ import java.util.List;
 public class InsertInterval {
 
     /*
-    Insert Interval
-    Leetcode #57
-    https://leetcode.com/problems/insert-interval/
-    Difficulty: Hard
- */
+        Insert Interval
+        Leetcode #57
+        https://leetcode.com/problems/insert-interval/
+        Difficulty: Hard
+     */
     public class Solution {
         public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
             if (newInterval == null || intervals == null) return intervals;

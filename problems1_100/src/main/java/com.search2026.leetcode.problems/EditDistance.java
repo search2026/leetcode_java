@@ -11,8 +11,8 @@ public class EditDistance {
     public class Solution {
         public int minDistance(String word1, String word2) {
             if (word1 == null || word2 == null) return 0;
-            if (word1 == null || word1.length() == 0) return word2.length();
-            if (word2 == null || word2.length() == 0) return word1.length();
+            if (word1.length() == 0) return word2.length();
+            if (word2.length() == 0) return word1.length();
 
             int m = word1.length(), n = word2.length();
             int[][] dp = new int[m + 1][n + 1];
@@ -42,8 +42,8 @@ public class EditDistance {
     public class Solution_2 {
         public int minDistance(String word1, String word2) {
             if (word1 == null || word2 == null) return 0;
-            if (word1 == null || word1.length() == 0) return word2.length();
-            if (word2 == null || word2.length() == 0) return word1.length();
+            if (word1.length() == 0) return word2.length();
+            if (word2.length() == 0) return word1.length();
             int m = word1.length(), n = word2.length();
 
             int[] dp1 = new int[n + 1];

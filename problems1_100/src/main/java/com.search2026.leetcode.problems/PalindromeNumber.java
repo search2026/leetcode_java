@@ -1,12 +1,13 @@
 package com.search2026.leetcode.problems;
 
 public class PalindromeNumber {
+
     /*
-    Palindrome Number
-    Leetcode #9
-    https://leetcode.com/problems/palindrome-number/
-    Difficulty: Easy
- */
+        Palindrome Number
+        Leetcode #9
+        https://leetcode.com/problems/palindrome-number/
+        Difficulty: Easy
+     */
     public class Solution {
         public boolean isPalindrome(int x) {
             if (x == 0) return true;

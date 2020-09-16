@@ -3,11 +3,11 @@ package com.search2026.leetcode.problems;
 public class RotateImage {
 
     /*
-    Rotate Image
-    https://leetcode.com/problems/rotate-image/
-    Leetcode #48
-    Difficulty: Medium
- */
+        Rotate Image
+        https://leetcode.com/problems/rotate-image/
+        Leetcode #48
+        Difficulty: Medium
+     */
     public class Solution {
         public void rotate(int[][] matrix) {
             int n = matrix.length;

@@ -52,7 +52,7 @@ public class MergeIntervals {
         public List<Interval> merge(List<Interval> intervals) {
             if (intervals == null || intervals.size() == 0) return intervals;
 
-            Collections.sort(intervals, (Interval i1, Interval i2) -> (i1.start - i2.start));
+            intervals.sort((Interval i1, Interval i2) -> (i1.start - i2.start));
 
             ListIterator<Interval> it = intervals.listIterator();
             Interval prev = it.next();

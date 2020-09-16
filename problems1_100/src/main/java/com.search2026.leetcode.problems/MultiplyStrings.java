@@ -13,42 +13,42 @@ public class MultiplyStrings {
      */
     public class Solution {
         private List<Integer> multiply(List<Integer> l1, List<Integer> l2) {
-            List<Integer> result = new ArrayList<Integer>();
+            List<Integer> res = new ArrayList<>();
             for (int offset = 0; offset < l2.size(); offset++) {
                 if (l2.get(offset) != 0) {
                     List<Integer> temp = multiplyDigit(l1, l2.get(offset));
-                    result = add(temp, result, offset);
+                    res = add(temp, res, offset);
                 }
             }
-            return result;
+            return res;
         }
 
         private List<Integer> add(List<Integer> l1, List<Integer> l2, int offset) {
-            List<Integer> result = new ArrayList<Integer>();
-            int index = 0;
-            while (index < offset) {
-                if (index < l2.size()) {
-                    result.add(l2.get(index));
+            List<Integer> res = new ArrayList<>();
+            int idx = 0;
+            while (idx < offset) {
+                if (idx < l2.size()) {
+                    res.add(l2.get(idx));
                 } else {
-                    result.add(0);
+                    res.add(0);
                 }
-                index++;
+                idx++;
             }
             int carry = 0;
             for (int i : l1) {
-                int value = i + carry + (index < l2.size() ? l2.get(index) : 0);
-                result.add(value % 10);
+                int value = i + carry + (idx < l2.size() ? l2.get(idx) : 0);
+                res.add(value % 10);
                 carry = value / 10;
-                index++;
+                idx++;
             }
             if (carry != 0) {
-                result.add(carry);
+                res.add(carry);
             }
-            return result;
+            return res;
         }
 
         private List<Integer> toList(String s) {
-            List<Integer> result = new ArrayList<Integer>();
+            List<Integer> result = new ArrayList<>();
             for (int i = s.length() - 1; i >= 0; i--) {
                 result.add(s.charAt(i) - '0');
             }
@@ -73,7 +73,7 @@ public class MultiplyStrings {
         }
 
         private List<Integer> multiplyDigit(List<Integer> l, int digit) {
-            List<Integer> result = new ArrayList<Integer>();
+            List<Integer> result = new ArrayList<>();
             int carry = 0;
             for (int i : l) {
                 result.add((i * digit + carry) % 10);

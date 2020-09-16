@@ -14,7 +14,7 @@ public class FourSum {
      */
     public class Solution {
         public List<List<Integer>> fourSum(int[] num, int target) {
-            List<List<Integer>> res = new ArrayList<List<Integer>>();
+            List<List<Integer>> res = new ArrayList<>();
             if (num == null) {
                 return res;
             }
@@ -34,31 +34,31 @@ public class FourSum {
                         continue;
                     }
 
-                    int l = j + 1;
-                    int r = len - 1;
+                    int left = j + 1;
+                    int right = len - 1;
 
-                    while (l < r) {
-                        int sum = num[i] + num[j] + num[l] + num[r];
+                    while (left < right) {
+                        int sum = num[i] + num[j] + num[left] + num[right];
                         if (sum == target) {
                             ArrayList<Integer> list = new ArrayList<>();
                             list.add(num[i]);
                             list.add(num[j]);
-                            list.add(num[l]);
-                            list.add(num[r]);
+                            list.add(num[left]);
+                            list.add(num[right]);
 
                             res.add(list);
 
                             do {
-                                l++;
-                            } while (l < r && num[l] == num[l - 1]);
+                                left++;
+                            } while (left < right && num[left] == num[left - 1]);
 
                             do {
-                                r--;
-                            } while (l < r && num[r] == num[r + 1]);
+                                right--;
+                            } while (left < right && num[right] == num[right + 1]);
                         } else if (sum < target) {
-                            l++;
+                            left++;
                         } else {
-                            r--;
+                            right--;
                         }
                     }
                 }

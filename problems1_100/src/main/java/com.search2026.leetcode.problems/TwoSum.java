@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
+
     /*
         Two Sum - HashMap
         Leetcode #1
@@ -89,4 +90,5 @@ public class TwoSum {
             return false;
         }
     }
+
 }

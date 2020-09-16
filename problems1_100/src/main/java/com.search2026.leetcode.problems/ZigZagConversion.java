@@ -1,6 +1,7 @@
 package com.search2026.leetcode.problems;
 
 public class ZigZagConversion {
+
     /*
         ZigZag Conversion
         Leetcode #6

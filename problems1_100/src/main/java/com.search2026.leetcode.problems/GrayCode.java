@@ -13,7 +13,7 @@ public class GrayCode {
      */
     public class Solution {
         public ArrayList<Integer> grayCode(int n) {
-            ArrayList<Integer> codeList = new ArrayList<Integer>();
+            ArrayList<Integer> codeList = new ArrayList<>();
             if (n < 0) return codeList;
             codeList.add(0);
             for (int i = 0; i < n; i++) {

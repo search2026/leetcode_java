@@ -22,7 +22,7 @@ public class NQueens {
 
         public void search(int n, int row, int[] colForRow, List<List<String>> rslt) {
             if (row == n) { //findRoot a suitable solution, insert to result list
-                List<String> list = new ArrayList<String>();
+                List<String> list = new ArrayList<>();
                 for (int i = 0; i < n; i++) {
                     StringBuilder buff = new StringBuilder();
                     for (int m = 0; m < n; m++) {
@@ -45,14 +45,14 @@ public class NQueens {
         }
 
         public List<List<String>> solveNQueens(int n) {
-            List<List<String>> rslt = new ArrayList<List<String>>();
-            search(n, 0, new int[n], rslt);
-            return rslt;
+            List<List<String>> res = new ArrayList<>();
+            search(n, 0, new int[n], res);
+            return res;
         }
     }
 
     /*
-        N-Queens II - Mathmatic
+        N-Queens II - Mathematics
         Leetcode #52
         https://leetcode.com/problems/n-queens_ii/
         Difficulty: Hard
@@ -107,10 +107,10 @@ public class NQueens {
         }
 
         public int totalNQueens(int n) {
-            ArrayList<Integer> rslt = new ArrayList<Integer>();
-            rslt.add(0);
-            search(n, 0, new int[n], rslt);
-            return rslt.get(0);
+            ArrayList<Integer> res = new ArrayList<>();
+            res.add(0);
+            search(n, 0, new int[n], res);
+            return res.get(0);
         }
     }
 

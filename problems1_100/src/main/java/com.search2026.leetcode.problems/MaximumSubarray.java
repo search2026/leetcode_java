@@ -31,31 +31,31 @@ public class MaximumSubarray {
         Difficulty: Medium
       */
     public class Solution_2 {
-        private void search(int[] nums, int[] rslt, int left, int right) {
+        private void search(int[] nums, int[] res, int left, int right) {
             if (left == right) {
-                Arrays.fill(rslt, nums[left]);
+                Arrays.fill(res, nums[left]);
                 return;
             }
 
             int mid = left + (right - left) / 2;
-            int[] leftRslt = new int[4];
-            search(nums, leftRslt, left, mid);
-            int[] rightRslt = new int[4];
-            search(nums, rightRslt, mid + 1, right);
+            int[] leftRes = new int[4];
+            search(nums, leftRes, left, mid);
+            int[] rightRes = new int[4];
+            search(nums, rightRes, mid + 1, right);
 
-            rslt[0] = Math.max(Math.max(leftRslt[0], rightRslt[0]), leftRslt[2] + rightRslt[1]);
-            rslt[1] = Math.max(leftRslt[1], leftRslt[3] + +rightRslt[1]);
-            rslt[2] = Math.max(rightRslt[2], rightRslt[3] + +leftRslt[2]);
-            rslt[3] = leftRslt[3] + rightRslt[3];
+            res[0] = Math.max(Math.max(leftRes[0], rightRes[0]), leftRes[2] + rightRes[1]);
+            res[1] = Math.max(leftRes[1], leftRes[3] + +rightRes[1]);
+            res[2] = Math.max(rightRes[2], rightRes[3] + +leftRes[2]);
+            res[3] = leftRes[3] + rightRes[3];
         }
 
         public int maxSubArray(int[] nums) {
             if (nums == null || nums.length == 0)
                 throw new IllegalArgumentException("null or empty input array");
 
-            int[] rslt = new int[4]; //maxSoFar, leftMax, rightMax, currSum
-            search(nums, rslt, 0, nums.length - 1);
-            return rslt[0];
+            int[] res = new int[4]; //maxSoFar, leftMax, rightMax, currSum
+            search(nums, res, 0, nums.length - 1);
+            return res[0];
         }
     }
 

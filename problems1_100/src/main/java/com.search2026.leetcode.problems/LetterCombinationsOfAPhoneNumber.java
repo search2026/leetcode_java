@@ -6,21 +6,21 @@ import java.util.List;
 public class LetterCombinationsOfAPhoneNumber {
 
     /*
-    Letter Combinations of a Phone Number
-    https://leetcode.com/problems/letter-combinations-of-a-phone-number/
-    Difficulty: Medium
- */
+        Letter Combinations of a Phone Number
+        https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+        Difficulty: Medium
+     */
     public class Solution {
         String[] Panel = {" ", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-        private void search(ArrayList<String> comb, String digits, String cur) {
-            if (cur.length() == digits.length()) {
-                comb.add(cur);
+        private void search(ArrayList<String> comb, String digits, String curr) {
+            if (curr.length() == digits.length()) {
+                comb.add(curr);
                 return;
             }
-            String letters = Panel[digits.charAt(cur.length()) - '0'];
+            String letters = Panel[digits.charAt(curr.length()) - '0'];
             for (int i = 0; i < letters.length(); i++) {
-                search(comb, digits, cur + letters.charAt(i));
+                search(comb, digits, curr + letters.charAt(i));
             }
         }
 

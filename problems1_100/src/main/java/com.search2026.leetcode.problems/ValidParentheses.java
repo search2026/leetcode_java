@@ -8,11 +8,11 @@ import java.util.Map;
 public class ValidParentheses {
 
     /*
-    Valid Parentheses
-    Leetcode #20
-    https://leetcode.com/problems/valid-parentheses/
-    Difficulty: Easy
- */
+        Valid Parentheses
+        Leetcode #20
+        https://leetcode.com/problems/valid-parentheses/
+        Difficulty: Easy
+     */
     public class Solution {
         public boolean isValid(String s) {
             Deque<Character> stack = new ArrayDeque<>();

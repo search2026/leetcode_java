@@ -18,10 +18,10 @@ public class MaximalRectangle {
             int[] height = new int[matrix[0].length];
             int maxArea = 0;
 
-            for (int row = 0; row < matrix.length; row++) {
+            for (char[] chars : matrix) {
                 Deque<Integer> stack = new ArrayDeque<>();
                 for (int i = 0; i < matrix[0].length; i++) {
-                    if (matrix[row][i] != '0') height[i] = height[i] + 1;
+                    if (chars[i] != '0') height[i] = height[i] + 1;
                     else height[i] = 0;
                 }
                 for (int col = 0; col < matrix[0].length; col++) {
@@ -61,21 +61,21 @@ public class MaximalRectangle {
             Arrays.fill(right, n-1);
 
             int maxArea = 0;
-            for (int i = 0; i < m; i++) {
+            for (char[] chars : matrix) {
                 int curLeft = 0, curRight = n - 1;
                 for (int j = 0; j < n; j++) {
-                    if (matrix[i][j] == '1') height[j]++;
+                    if (chars[j] == '1') height[j]++;
                     else height[j] = 0;
                 }
                 for (int j = 0; j < n; j++) {
-                    if (matrix[i][j] == '1') left[j] = Math.max(left[j], curLeft);
+                    if (chars[j] == '1') left[j] = Math.max(left[j], curLeft);
                     else {
                         left[j] = 0;
                         curLeft = j + 1;
                     }
                 }
                 for (int j = n - 1; j >= 0; j--) {
-                    if (matrix[i][j] == '1') right[j] = Math.min(right[j], curRight);
+                    if (chars[j] == '1') right[j] = Math.min(right[j], curRight);
                     else {
                         right[j] = n - 1;
                         curRight = j - 1;

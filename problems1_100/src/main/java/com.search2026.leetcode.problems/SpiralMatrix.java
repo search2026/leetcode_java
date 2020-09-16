@@ -6,11 +6,11 @@ import java.util.List;
 public class SpiralMatrix {
 
     /*
-    Spiral Matrix
-    Leetcode #54
-    https://leetcode.com/problems/spiral-matrix/
-    Difficulty: Medium
- */
+        Spiral Matrix
+        Leetcode #54
+        https://leetcode.com/problems/spiral-matrix/
+        Difficulty: Medium
+     */
     public class Solution {
         int[][] dirs = new int[][] {
                 {0, 1},

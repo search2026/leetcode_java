@@ -3,6 +3,7 @@ package com.search2026.leetcode.problems;
 import java.util.ArrayDeque;
 
 public class SimplifyPath {
+
     /*
         Simplify Path
         Leetcode #71

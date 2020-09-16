@@ -3,11 +3,11 @@ package com.search2026.leetcode.problems;
 public class SearchA2DMatrix {
 
     /*
-    Search a 2D Matrix
-    Leetcode #74
-    https://leetcode.com/problems/search-a-2d-matrix/
-    Difficulty: Medium
-*/
+        Search a 2D Matrix
+        Leetcode #74
+        https://leetcode.com/problems/search-a-2d-matrix/
+        Difficulty: Medium
+    */
     public class Solution {
         public boolean searchMatrix(int[][] matrix, int target) {
             if (matrix.length == 0 || matrix[0].length == 0) {

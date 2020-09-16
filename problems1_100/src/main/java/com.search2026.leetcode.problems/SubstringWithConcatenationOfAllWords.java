@@ -60,7 +60,7 @@ public class SubstringWithConcatenationOfAllWords {
      */
     public class Solution_2 {
         public List<Integer> findSubstring(String s, String[] words) {
-            List<Integer> res = new ArrayList<Integer>(s.length());
+            List<Integer> res = new ArrayList<>(s.length());
             if (s == null || s.length() == 0 || words == null || words.length == 0) {
                 return res;
             }
@@ -72,7 +72,7 @@ public class SubstringWithConcatenationOfAllWords {
             }
             int last = sLen - wordLen + 1;
 
-            Map<String, Integer> mapping = new HashMap<String, Integer>(words.length);
+            Map<String, Integer> mapping = new HashMap<>(words.length);
             int[][] table = new int[2][words.length];
             int failures = 0, index = 0;
             for (int i = 0; i < words.length; ++i) {

@@ -12,7 +12,7 @@ public class RestoreIPAddresses {
         Difficulty: Medium
      */
     public class Solution {
-        private String toAddr(ArrayList<Integer> solution) {
+        private String toAddress(ArrayList<Integer> solution) {
             String addr = "";
             addr += solution.get(0);
             addr += ".";
@@ -24,9 +24,9 @@ public class RestoreIPAddresses {
             return addr;
         }
 
-        private void search(String s, int start, ArrayList<Integer> cur, List<String> rslt) {
+        private void search(String s, int start, ArrayList<Integer> cur, List<String> res) {
             if (start == s.length() && cur.size() == 4) {
-                rslt.add(toAddr(cur));
+                res.add(toAddress(cur));
                 return;
             }
             if (s.length() - start > (4 - cur.size()) * 3) {
@@ -40,7 +40,7 @@ public class RestoreIPAddresses {
                 num = num * 10 + s.charAt(i) - '0';
                 if (num < 256) {
                     cur.add(num);
-                    search(s, i + 1, cur, rslt);
+                    search(s, i + 1, cur, res);
                     cur.remove(cur.size() - 1);
                 }
                 if (num == 0) {
@@ -50,9 +50,9 @@ public class RestoreIPAddresses {
         }
 
         public List<String> restoreIpAddresses(String s) {
-            List<String> rslt = new ArrayList<String>();
-            search(s, 0, new ArrayList<Integer>(), rslt);
-            return rslt;
+            List<String> res = new ArrayList<>();
+            search(s, 0, new ArrayList<>(), res);
+            return res;
         }
     }
 
@@ -72,22 +72,22 @@ public class RestoreIPAddresses {
             return true;
         }
 
-        public void search(ArrayList<String> rslt, String cur, String s, int idx, int level) {
+        public void search(ArrayList<String> res, String curr, String s, int idx, int level) {
             if (level == 4) {
                 String str = s.substring(idx);
                 if (isValid(str)) {
-                    cur = cur + "." + str;
-                    rslt.add(cur);
+                    curr = curr + "." + str;
+                    res.add(curr);
                 }
                 return;
             }
             for (int i = idx; i < idx + 3 && i < s.length(); i++) {
                 String str = s.substring(idx, i + 1);
                 if (isValid(str)) {
-                    if (cur.length() == 0) {
-                        search(rslt, str, s, i + 1, level + 1);
+                    if (curr.length() == 0) {
+                        search(res, str, s, i + 1, level + 1);
                     } else {
-                        search(rslt, cur + "." + str, s, i + 1, level + 1);
+                        search(res, curr + "." + str, s, i + 1, level + 1);
                     }
                 }
             }
