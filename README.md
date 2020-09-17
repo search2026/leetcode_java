@@ -27,7 +27,7 @@ gradle -Dtest.single=TestTwoSum test --info
 
 ## Update Logs
 
-ETA 10/1/2020
+ETA 11/1/2020
 * Minimum Java version is 11
 * Minimum Gradle version is 5.6.3
 * Fully support Junit 5

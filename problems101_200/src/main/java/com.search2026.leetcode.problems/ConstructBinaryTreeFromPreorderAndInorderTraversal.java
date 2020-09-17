@@ -1,13 +1,11 @@
-package construct_binary_tree_from_preorder_and_inorder_traversal;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 
-public class ConstructBinaryTreefromPreorderandInorderTraversal {
     /*
         Construct Binary Tree from Preorder and Inorder Traversal
         Leetcode #105
@@ -39,11 +37,4 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ConstructBinaryTreefromPreorderandInorderTraversal().new Solution();
-            assertTrue(true);
-        }
-    }
 }

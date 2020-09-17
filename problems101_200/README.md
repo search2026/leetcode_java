@@ -3,55 +3,55 @@
 | Leetcode Number | Problem | Difficulty | Solution | Applied Data Structure / Algorithms | Note |
 |---|---|---|---|---|---|
 | 101 | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | Easy | | | |
-| 102 | | | | | |
-| 103 | | | | | |
-| 104 | | | | | |
-| 105 | | | | | |
-| 106 | | | | | |
-| 107 | | | | | |
-| 108 | | | | | |
-| 109 | | | | | |
-| 110 | | | | | |
-| 111 | | | | | |
-| 112 | | | | | |
-| 113 | | | | | |
-| 114 | | | | | |
-| 115 | | | | | |
-| 116 | | | | | |
-| 117 | | | | | |
-| 118 | | | | | |
-| 119 | | | | | |
-| 120 | | | | | |
-| 121 | | | | | |
-| 122 | | | | | |
-| 123 | | | | | |
-| 124 | | | | | |
-| 125 | | | | | |
-| 126 | | | | | |
-| 127 | | | | | |
-| 128 | | | | | |
-| 129 | | | | | |
-| 130 | | | | | |
-| 131 | | | | | |
-| 132 | | | | | |
-| 133 | | | | | |
-| 134 | | | | | |
-| 135 | | | | | |
-| 136 | | | | | |
-| 137 | | | | | |
-| 138 | | | | | |
-| 139 | | | | | |
-| 140 | | | | | |
-| 141 | | | | | |
-| 142 | | | | | |
-| 143 | | | | | |
-| 144 | | | | | |
-| 145 | | | | | |
-| 146 | | | | | |
-| 147 | | | | | |
-| 148 | | | | | |
-| 149 | | | | | |
-| 150 | | | | | |
+| 102 | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Medium | | | |
+| 103 | [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) | Medium | | | |
+| 104 | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Easy | | | |
+| 105 | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | Medium | | | |
+| 106 | [Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | Medium | | | |
+| 107 | [Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/) | Easy | | | |
+| 108 | [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/) | Easy | | | |
+| 109 | [Convert Sorted List to Binary Search Tree](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/) | Medium | | | |
+| 110 | [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/) | Easy | | | |
+| 111 | | Easy | | | |
+| 112 | | Easy | | | |
+| 113 | | Medium | | | |
+| 114 | | Medium | | | |
+| 115 | | Hard | | | |
+| 116 | | Medium | | | |
+| 117 | | Medium | | | |
+| 118 | | Easy | | | |
+| 119 | | Easy | | | |
+| 120 | | Medium | | | |
+| 121 | | Easy | | | |
+| 122 | | Easy | | | |
+| 123 | | Hard | | | |
+| 124 | | Hard | | | |
+| 125 | | Easy | | | |
+| 126 | | Hard | | | |
+| 127 | | Medium | | | |
+| 128 | | Hard | | | |
+| 129 | | Medium | | | |
+| 130 | | Medium | | | |
+| 131 | | Medium | | | |
+| 132 | | Hard | | | |
+| 133 | | Medium | | | |
+| 134 | | Medium | | | |
+| 135 | | Hard | | | |
+| 136 | | Easy | | | |
+| 137 | | Medium | | | |
+| 138 | | Medium | | | |
+| 139 | | Medium | | | |
+| 140 | | Hard | | | |
+| 141 | | Easy | | | |
+| 142 | | Medium | | | |
+| 143 | | Medium | | | |
+| 144 | | Medium | | | |
+| 145 | | Medium | | | |
+| 146 | | Medium | | | |
+| 147 | | Medium | | | |
+| 148 | | Medium | | | |
+| 149 | | Hard | | | |
+| 150 | | Medium | | | |
 | 151 | | | | | |
 | 152 | | | | | |
 | 153 | | | | | |

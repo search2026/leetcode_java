@@ -1,15 +1,12 @@
-package convert_sorted_array_to_binary_search_tree;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class ConvertSortedArrayToBinarySearchTree {
 
-public class ConvertSortedArraytoBinarySearchTree {
     /*
         Convert Sorted Array to Binary Search Tree - Recursion
         Leetcode #108
@@ -79,33 +76,4 @@ public class ConvertSortedArraytoBinarySearchTree {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ConvertSortedArraytoBinarySearchTree().new Solution();
-            int[] test = {1, 3, 5, 6, 7, 8, 9};
-            TreeNode root = sol.sortedArrayToBST(test);
-            assertEquals(6, root.val);
-            assertEquals(3, root.left.val);
-            assertEquals(8, root.right.val);
-            assertEquals(1, root.left.left.val);
-            assertEquals(5, root.left.right.val);
-            assertEquals(7, root.right.left.val);
-            assertEquals(9, root.right.right.val);
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new ConvertSortedArraytoBinarySearchTree().new Solution_2();
-            int[] test = {1, 3, 5, 6, 7, 8, 9};
-            TreeNode root = sol.sortedArrayToBST(test);
-            assertEquals(6, root.val);
-            assertEquals(3, root.left.val);
-            assertEquals(8, root.right.val);
-            assertEquals(1, root.left.left.val);
-            assertEquals(5, root.left.right.val);
-            assertEquals(7, root.right.left.val);
-            assertEquals(9, root.right.right.val);
-        }
-    }
 }

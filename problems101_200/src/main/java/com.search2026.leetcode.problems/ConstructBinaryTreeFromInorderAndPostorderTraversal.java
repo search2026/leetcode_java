@@ -1,14 +1,12 @@
-package construct_binary_tree_from_inorder_and_postorder_traversal;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
-public class ConstructBinaryTreefromInorderandPostorderTraversal {
     /*
         Construct Binary Tree from Inorder and Postorder Traversal
         Leetcode #165
@@ -29,8 +27,8 @@ public class ConstructBinaryTreefromInorderandPostorderTraversal {
 
         public TreeNode buildTree(int[] inorder, int[] postorder) {
             assert inorder != null && postorder != null
-                    && inorder.length == postorder.length;
-            Map<Integer, Integer> inorderNodes = new HashMap<Integer, Integer>();
+                           && inorder.length == postorder.length;
+            Map<Integer, Integer> inorderNodes = new HashMap<>();
             for (int i = 0; i < inorder.length; i++) {
                 inorderNodes.put(inorder[i], i);
             }
@@ -38,11 +36,4 @@ public class ConstructBinaryTreefromInorderandPostorderTraversal {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ConstructBinaryTreefromInorderandPostorderTraversal().new Solution();
-            assertTrue(true);
-        }
-    }
 }
