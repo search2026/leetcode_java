@@ -1,13 +1,13 @@
-package symmetric_tree;
+package com.search2026.leetcode.problems;
 
+import com.search2026.leetcode.common.TreeNode;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
-
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.List;
 
 public class SymmetricTree {
+
     /*
         Symmetric Tree - Recursive
         Leetcode #101
@@ -20,7 +20,7 @@ public class SymmetricTree {
             if (left == null || right == null) return false;
 
             return left.val == right.val && isSymmetric(left.left, right.right)
-                    && isSymmetric(left.right, right.left);
+                           && isSymmetric(left.right, right.left);
         }
 
         public boolean isSymmetric(TreeNode root) {
@@ -42,8 +42,8 @@ public class SymmetricTree {
             if (root == null) {
                 return true;
             }
-            LinkedList<TreeNode> lefts = new LinkedList<TreeNode>();
-            LinkedList<TreeNode> rights = new LinkedList<TreeNode>();
+            LinkedList<TreeNode> lefts = new LinkedList<>();
+            LinkedList<TreeNode> rights = new LinkedList<>();
             lefts.add(root.left);
             rights.add(root.right);
             while (!lefts.isEmpty() && !rights.isEmpty()) {
@@ -67,11 +67,4 @@ public class SymmetricTree {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new SymmetricTree().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }
