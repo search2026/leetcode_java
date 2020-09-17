@@ -1,7 +1,5 @@
-## Leetcode Problems 401-500
+## Leetcode Problems 501-600
 
 | Leetcode Number | Problem | Difficulty | Solution | Applied Data Structure / Algorithms | Note |
 |---|---|---|---|---|---|
-| 401 | | | | | |
-| 402 | | | | | |
-| 403 | | | | | |
+| | | | | | | | |
