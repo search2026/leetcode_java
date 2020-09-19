@@ -3,8 +3,7 @@ package com.search2026.leetcode.problems;
 import com.search2026.leetcode.common.TreeNode;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BalancedBinaryTreeTests {
 
