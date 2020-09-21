@@ -1,16 +1,14 @@
-package binary_tree_preorder_traversal;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class BinaryTreePreorderTraversal {
+
     /*
         Binary Tree Preorder Traversal - Using Stacks
         Leetcode #144
@@ -19,17 +17,17 @@ public class BinaryTreePreorderTraversal {
     */
     public class Solution {
         public List<Integer> preorderTraversal(TreeNode root) {
-            ArrayList<Integer> rslt = new ArrayList<Integer>();
+            ArrayList<Integer> res = new ArrayList<>();
             if (root == null)
-                return rslt;
+                return res;
 
-            Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+            Deque<TreeNode> stack = new ArrayDeque<>();
             TreeNode p = root;
 
             while (!stack.isEmpty() || p != null) {
                 if (p != null) {
                     stack.offerLast(p);
-                    rslt.add(p.val);
+                    res.add(p.val);
                     p = p.left;
                 } else {
                     p = stack.removeLast();
@@ -37,7 +35,7 @@ public class BinaryTreePreorderTraversal {
                 }
             }
 
-            return rslt;
+            return res;
         }
     }
 
@@ -49,11 +47,11 @@ public class BinaryTreePreorderTraversal {
     */
     public class Solution_2 {
         public List<Integer> preorderTraversal(TreeNode root) {
-            List<Integer> rslt = new ArrayList<Integer>();
+            List<Integer> res = new ArrayList<>();
             TreeNode p = root;
             while (p != null) {
                 if (p.left == null) {
-                    rslt.add(p.val);
+                    res.add(p.val);
                     p = p.right;
                 } else {
                     TreeNode temp = p.left;
@@ -61,7 +59,7 @@ public class BinaryTreePreorderTraversal {
                         temp = temp.right;
                     }
                     if (temp.right == null) {
-                        rslt.add(p.val);
+                        res.add(p.val);
                         temp.right = p;
                         p = p.left;
                     } else {
@@ -70,15 +68,8 @@ public class BinaryTreePreorderTraversal {
                     }
                 }
             }
-            return rslt;
+            return res;
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new BinaryTreePreorderTraversal().new Solution();
-            assertEquals(1, 1);
-        }
-    }
 }

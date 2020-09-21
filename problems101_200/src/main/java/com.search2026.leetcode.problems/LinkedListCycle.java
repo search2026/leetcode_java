@@ -1,11 +1,9 @@
-package linked_list_cycle;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.search2026.leetcode.common.ListNode;
 
 public class LinkedListCycle {
+
     /*
         Linked List Cycle
         https://leetcode.com/problems/linked-list-cycle/
@@ -28,7 +26,7 @@ public class LinkedListCycle {
     }
 
     /*
-        Linked List Cycle
+        Linked List Cycle II
         https://leetcode.com/problems/linked-list-cycle-ii/
         leetcode 142
         Difficulty: Medium
@@ -57,11 +55,4 @@ public class LinkedListCycle {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new LinkedListCycle().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }

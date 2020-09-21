@@ -1,11 +1,9 @@
-package reorder_list;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.search2026.leetcode.common.ListNode;
 
 public class ReorderList {
+
     /*
         Reorder List
         Leetcode #143
@@ -63,11 +61,4 @@ public class ReorderList {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ReorderList().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

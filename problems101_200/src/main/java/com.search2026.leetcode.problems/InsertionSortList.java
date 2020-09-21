@@ -1,11 +1,9 @@
-package insertion_sort_list;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.search2026.leetcode.common.ListNode;
 
 public class InsertionSortList {
+
     /*
         Insert Sort List
         leetcode #147
@@ -34,11 +32,4 @@ public class InsertionSortList {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new InsertionSortList().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }

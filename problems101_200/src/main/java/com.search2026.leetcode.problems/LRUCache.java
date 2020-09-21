@@ -1,15 +1,11 @@
-package lru_cache;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
 public class LRUCache {
+
     /*
         LRU Cache naive double linked list + hashmap approach
         Leetcode #146
@@ -17,13 +13,13 @@ public class LRUCache {
         Difficulty: Hard
         Double Linked List
      */
-    public class LRUCache_1 {
+    public class Solution {
         private HashMap<Integer, DoubleLinkedListNode> map;
         private DoubleLinkedListNode head;
         private DoubleLinkedListNode tail;
         private int capacity;
 
-        public LRUCache_1(int capacity) {
+        public Solution(int capacity) {
             map = new HashMap<>();
             this.capacity = capacity;
         }
@@ -103,11 +99,11 @@ public class LRUCache {
         Difficulty: Hard
         LinkedHashMap
      */
-    public class LRUCache_2 {
+    public class Solution_2 {
         private Map<Integer, Integer> map;
         private int capacity;
 
-        public LRUCache_2(int capacity) {
+        public Solution_2(int capacity) {
             this.capacity = capacity;
             map = new LinkedHashMap<>(capacity + 1);
         }
@@ -131,38 +127,4 @@ public class LRUCache {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            LRUCache_1 lru = new LRUCache().new LRUCache_1(5);
-            lru.set(1, 1);
-            lru.set(2, 2);
-            lru.set(3, 3);
-            lru.set(4, 4);
-            assertEquals(lru.get(4), 4);
-            assertEquals(lru.get(6), -1);
-            lru.set(5, 5);
-            lru.set(6, 6);
-            assertEquals(lru.get(6), 6);
-            assertEquals(lru.get(1), -1);
-        }
-
-        @Test
-        public void test2() {
-            LRUCache_2 lru = new LRUCache().new LRUCache_2(5);
-            lru.set(4, 4);
-            lru.set(3, 3);
-            lru.set(2, 2);
-            lru.set(1, 1);
-            assertEquals(lru.get(4), 4);
-            assertEquals(lru.get(6), -1);
-            lru.set(6, 6);
-            lru.set(5, 5);
-            assertEquals(lru.get(6), 6);
-            assertEquals(lru.get(3), -1);
-        }
-    }
 }
-
-
-

@@ -1,15 +1,13 @@
-package binary_tree_postorder_traversal;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class BinaryTreePostorderTraversal {
+
     /*
         Binary Tree Postorder Traversal - Using Stacks
         Leetcode #94
@@ -18,10 +16,10 @@ public class BinaryTreePostorderTraversal {
     */
     public class Solution {
         public List<Integer> postorderTraversal(TreeNode root) {
-            ArrayList<Integer> rslt = new ArrayList<Integer>();
-            if (root == null) return rslt;
+            ArrayList<Integer> res = new ArrayList<>();
+            if (root == null) return res;
 
-            ArrayDeque<TreeNode> stack = new ArrayDeque<TreeNode>();
+            ArrayDeque<TreeNode> stack = new ArrayDeque<>();
             TreeNode pre = null;
             stack.offerLast(root);
             while (!stack.isEmpty()) {
@@ -37,12 +35,12 @@ public class BinaryTreePostorderTraversal {
                         stack.offerLast(p.right);
                     }
                 } else {
-                    rslt.add(p.val);
+                    res.add(p.val);
                     stack.removeLast();
                 }
                 pre = p;
             }
-            return rslt;
+            return res;
         }
     }
 
@@ -54,7 +52,7 @@ public class BinaryTreePostorderTraversal {
     */
     public class Solution_2 {
         public List<Integer> postorderTraversal(TreeNode root) {
-            ArrayList<Integer> rslt = new ArrayList<Integer>();
+            ArrayList<Integer> res = new ArrayList<>();
             TreeNode dummy = new TreeNode(0);
             dummy.left = root;
             TreeNode cur = dummy;
@@ -73,17 +71,17 @@ public class BinaryTreePostorderTraversal {
                         reverse(cur.left, pre);
                         TreeNode temp = pre;
                         while (temp != cur.left) {
-                            rslt.add(temp.val);
+                            res.add(temp.val);
                             temp = temp.right;
                         }
-                        rslt.add(temp.val);
+                        res.add(temp.val);
                         reverse(pre, cur.left);
                         pre.right = null;
                         cur = cur.right;
                     }
                 }
             }
-            return rslt;
+            return res;
         }
 
         private void reverse(TreeNode start, TreeNode end) {
@@ -101,11 +99,4 @@ public class BinaryTreePostorderTraversal {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new BinaryTreePostorderTraversal().new Solution();
-            assertEquals(1, 1);
-        }
-    }
 }
