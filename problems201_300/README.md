@@ -12,6 +12,8 @@
 | | | | | | |
 | 216 | [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/) | Medium | [CombinationSum.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/CombinationSum.java) | | |
 | | | | | | |
+| 229 | [Majority Element II](https://leetcode.com/problems/majority-element-ii/) | | | | |
+| | | | | | |
 | | | | | | |
 | 240 | [Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/) | Medium | [SearchA2DMatrix.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/SearchA2DMatrix.java) | | |
 | | | | | | |
