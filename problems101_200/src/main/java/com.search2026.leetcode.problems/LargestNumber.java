@@ -1,13 +1,10 @@
-package largest_number;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class LargestNumber {
+
     /*
         Largest Number
         https://leetcode.com/problems/largest-number/
@@ -54,12 +51,4 @@ public class LargestNumber {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new LargestNumber().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }
-

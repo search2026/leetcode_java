@@ -1,15 +1,12 @@
-package repeated_dna_sequences;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class RepeatedDNASequences {
+
     /*
         Repeated DNA Sequences
         Leetcode #187
@@ -18,8 +15,8 @@ public class RepeatedDNASequences {
      */
     public class Solution {
         public List<String> findRepeatedDnaSequences(String s) {
-            Set<String> sequences = new HashSet<String>();
-            Set<String> result = new HashSet<String>();
+            Set<String> sequences = new HashSet<>();
+            Set<String> result = new HashSet<>();
             for (int i = 0; i + 10 <= s.length(); i++) {
                 String substring = s.substring(i, i + 10);
                 if (sequences.contains(substring)) {
@@ -29,16 +26,8 @@ public class RepeatedDNASequences {
                 }
             }
             System.gc();
-            return new ArrayList<String>(result);
+            return new ArrayList<>(result);
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new RepeatedDNASequences().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }
-

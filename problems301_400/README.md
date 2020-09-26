@@ -2,11 +2,19 @@
 
 | Leetcode Number | Problem | Difficulty | Solution | Applied Data Structure / Algorithms | Note |
 |---|---|---|---|---|---|
-| 301 | | | | | |
-| 302 | | | | | |
-| 303 | | | | | |
+| 301 | []() | | | | |
+| 302 | []() | | | | |
+| 303 | []() | | | | |
+| 304 | []() | | | | |
+| 305 | [Number of Islands II](https://leetcode.com/problems/number-of-islands-ii/) | | | | |
 | | | | | | |
 | 309 | [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | Medium | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| 337 | [House Robber III](https://leetcode.com/problems/house-robber-iii/) | | | | |
+| | | | | | |
+| | | | | | |
 | | | | | | |
 | 377 | [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) | [CombinationSum.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/CombinationSum.java) | | | |
 | | | | | | |

@@ -1,10 +1,7 @@
-package number_of_1_bits;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+public class NumberOf1Bits {
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class Numberof1Bits {
     /*
         Number of 1 Bits
         Leetcode #191
@@ -22,12 +19,4 @@ public class Numberof1Bits {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new Numberof1Bits().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }
-

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class IntersectionOfTwoLinkedListsTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         IntersectionOfTwoLinkedLists.Solution sol = new IntersectionOfTwoLinkedLists().new Solution();
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
@@ -35,7 +35,7 @@ public class IntersectionOfTwoLinkedListsTests {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         IntersectionOfTwoLinkedLists.Solution_2 sol = new IntersectionOfTwoLinkedLists().new Solution_2();
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
@@ -62,7 +62,7 @@ public class IntersectionOfTwoLinkedListsTests {
     }
 
     @Test
-    public void test3() {
+    public void testSolution3() {
         IntersectionOfTwoLinkedLists.Solution_3 sol = new IntersectionOfTwoLinkedLists().new Solution_3();
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);

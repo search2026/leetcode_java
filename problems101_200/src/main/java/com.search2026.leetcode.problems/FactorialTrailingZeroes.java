@@ -1,10 +1,7 @@
-package factorial_trailing_zeroes;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.search2026.leetcode.problems;
 
 public class FactorialTrailingZeroes {
+
     /*
         Factorial Trailing Zeros
         leetcode #172
@@ -22,12 +19,4 @@ public class FactorialTrailingZeroes {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new FactorialTrailingZeroes().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-

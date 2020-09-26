@@ -1,10 +1,7 @@
-package rotate_array;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.search2026.leetcode.problems;
 
 public class RotateArray {
+
     /*
         Rotate Array
         Leetcode #189
@@ -30,12 +27,4 @@ public class RotateArray {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new RotateArray().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }
-

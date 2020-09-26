@@ -1,13 +1,11 @@
-package number_of_islands;
+package com.search2026.leetcode.problems;
 
-import common.UnionFind2D;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.UnionFind2D;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class NumberOfIslands {
 
-public class NumberofIslands {
     /*
         Number of Islands - Flood Fill
         Leetcode #200
@@ -129,7 +127,7 @@ public class NumberofIslands {
         Difficulty: Medium
     */
     public class Solution_3 {
-        Map<Integer, Set<Integer>> adj = new HashMap<Integer, Set<Integer>>();
+        Map<Integer, Set<Integer>> adj = new HashMap<>();
         int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
         private void merge(int[][] grid, int i, int j, int islandNumber) {
@@ -232,85 +230,4 @@ public class NumberofIslands {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new NumberofIslands().new Solution();
-            char[][] island = new char[][]{
-                    new char[]{'1', '1', '1', '1', '0'},
-                    new char[]{'1', '1', '0', '1', '0'},
-                    new char[]{'1', '1', '1', '0', '0'},
-                    new char[]{'0', '0', '0', '0', '0'}
-            };
-            assertEquals(1, sol.numIslands(island));
-
-            island = new char[][]{
-                    new char[]{'1', '1', '0', '0', '0'},
-                    new char[]{'1', '1', '0', '0', '0'},
-                    new char[]{'0', '0', '1', '0', '0'},
-                    new char[]{'0', '0', '0', '1', '1'}
-            };
-            assertEquals(3, sol.numIslands(island));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new NumberofIslands().new Solution_2();
-            char[][] island = new char[][]{
-                    new char[]{'1', '1', '1', '1', '0'},
-                    new char[]{'1', '1', '0', '1', '0'},
-                    new char[]{'1', '1', '1', '0', '0'},
-                    new char[]{'0', '0', '0', '0', '0'}
-            };
-            assertEquals(1, sol.numIslands(island));
-
-            island = new char[][]{
-                    new char[]{'1', '1', '0', '0', '0'},
-                    new char[]{'1', '1', '0', '0', '0'},
-                    new char[]{'0', '0', '1', '0', '0'},
-                    new char[]{'0', '0', '0', '1', '1'}
-            };
-            assertEquals(3, sol.numIslands(island));
-        }
-
-        @Test
-        public void test4() {
-            Solution_4 sol = new NumberofIslands().new Solution_4();
-
-            int[][] positions = new int[][]{
-                    {0, 0},
-                    {0, 1},
-                    {1, 2},
-                    {2, 1}
-            };
-            // positions[0][0] = 1;
-            List<Integer> res = sol.numIslands2(3, 3, positions);
-
-            assertEquals(positions.length, res.size());
-            assertEquals(1, (int)res.get(0));
-            assertEquals(1, (int)res.get(1));
-            assertEquals(2, (int)res.get(2));
-            assertEquals(3, (int)res.get(3));
-        }
-
-        @Test
-        public void test5() {
-            Solution_5 sol = new NumberofIslands().new Solution_5();
-
-            int[][] positions = new int[][]{
-                    {0, 0},
-                    {0, 1},
-                    {1, 2},
-                    {2, 1}
-            };
-            // positions[0][0] = 1;
-            List<Integer> res = sol.numIslands2(3, 3, positions);
-
-            assertEquals(positions.length, res.size());
-            assertEquals(1, (int)res.get(0));
-            assertEquals(1, (int)res.get(1));
-            assertEquals(2, (int)res.get(2));
-            assertEquals(3, (int)res.get(3));
-        }
-    }
 }

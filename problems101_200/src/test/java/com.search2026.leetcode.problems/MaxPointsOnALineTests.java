@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MaxPointsOnALineTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         MaxPointsOnALine.Solution sol = new MaxPointsOnALine().new Solution();
         Point[] points = new Point[1];
         points[0] = new Point(0, 0);

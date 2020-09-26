@@ -52,53 +52,53 @@
 | 148 | [Sort List](https://leetcode.com/problems/sort-list/) | Medium | | | |
 | 149 | [Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/) | Hard | | | |
 | 150 | [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/) | Medium | | | |
-| 151 | [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) | | | | |
-| 152 | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | | | | |
-| 153 | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | | | | |
-| 154 | [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) | | | | |
-| 155 | [Min Stack](https://leetcode.com/problems/min-stack/) | | | | |
-| 156 | [Binary Tree Upside Down](https://leetcode.com/problems/binary-tree-upside-down/) | | | | |
-| 157 | [Read N Characters Given Read4](https://leetcode.com/problems/read-n-characters-given-read4/) | | | | |
-| 158 | [Read N Characters Given Read4 II - Call multiple times](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/) | | | | |
-| 159 | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) | | | | |
-| 160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | | | | |
-| 161 | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/) | | | | |
-| 162 | [Find Peak Element](https://leetcode.com/problems/find-peak-element/) | | | | |
-| 163 | [Missing Ranges](https://leetcode.com/problems/missing-ranges/) | | | | |
-| 164 | [Maximum Gap](https://leetcode.com/problems/maximum-gap/) | | | | |
-| 165 | [Compare Version Numbers](https://leetcode.com/problems/compare-version-numbers/) | | | | |
-| 166 | [Fraction to Recurring Decimal](https://leetcode.com/problems/fraction-to-recurring-decimal/) | | | | |
+| 151 | [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) | Medium | | | |
+| 152 | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | Medium | | | |
+| 153 | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Medium | | | |
+| 154 | [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) | Hard | | | |
+| 155 | [Min Stack](https://leetcode.com/problems/min-stack/) | Easy | | | |
+| 156 | [Binary Tree Upside Down](https://leetcode.com/problems/binary-tree-upside-down/) | Medium | | | |
+| 157 | [Read N Characters Given Read4](https://leetcode.com/problems/read-n-characters-given-read4/) | Easy | | | |
+| 158 | [Read N Characters Given Read4 II - Call multiple times](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/) | Hard | | | |
+| 159 | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/) | Medium | | | |
+| 160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Easy | | | |
+| 161 | [One Edit Distance](https://leetcode.com/problems/one-edit-distance/) | Medium | | | |
+| 162 | [Find Peak Element](https://leetcode.com/problems/find-peak-element/) | Medium | | | |
+| 163 | [Missing Ranges](https://leetcode.com/problems/missing-ranges/) | Medium | | | |
+| 164 | [Maximum Gap](https://leetcode.com/problems/maximum-gap/) | Hard | | | |
+| 165 | [Compare Version Numbers](https://leetcode.com/problems/compare-version-numbers/) | Medium | | | |
+| 166 | [Fraction to Recurring Decimal](https://leetcode.com/problems/fraction-to-recurring-decimal/) | Medium | | | |
 | 167 | [Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Easy | [TwoSum.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/TwoSum.java) | | |
-| 168 | [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/) | | | | |
-| 169 | [Majority Element](https://leetcode.com/problems/majority-element/) | | | | |
+| 168 | [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/) | Easy | | | |
+| 169 | [Majority Element](https://leetcode.com/problems/majority-element/) | Easy | | | |
 | 170 | [Two Sum III - Data structure design](https://leetcode.com/problems/two-sum-iii-data-structure-design/) | Easy | [TwoSum.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/TwoSum.java) | | |
-| 171 | []() | | | | |
-| 172 | []() | | | | |
-| 173 | []() | | | | |
-| 174 | []() | | | | |
-| 175 | []() | | | | |
-| 176 | []() | | | | |
-| 177 | []() | | | | |
-| 178 | []() | | | | |
-| 179 | []() | | | | |
-| 180 | []() | | | | |
-| 181 | []() | | | | |
-| 182 | []() | | | | |
-| 183 | []() | | | | |
-| 184 | []() | | | | |
-| 185 | []() | | | | |
-| 186 | []() | | | | |
-| 187 | []() | | | | |
-| 188 | [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) | hard | | | |
-| 189 | []() | | | | |
-| 190 | []() | | | | |
-| 191 | []() | | | | |
-| 192 | []() | | | | |
-| 193 | []() | | | | |
-| 194 | []() | | | | |
-| 195 | []() | | | | |
-| 196 | []() | | | | |
-| 197 | []() | | | | |
-| 198 | []() | | | | |
-| 199 | []() | | | | |
-| 200 | []() | | | | |
+| 171 | [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/) | Easy | | | |
+| 172 | [Factorial Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes/) | Easy | | | |
+| 173 | [Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/) | Medium | | | |
+| 174 | [Dungeon Game](https://leetcode.com/problems/dungeon-game/) | Hard | | | |
+| 175 | [Combine Two Tables](https://leetcode.com/problems/combine-two-tables/) | Easy | | | SQL |
+| 176 | [Second Highest Salary](https://leetcode.com/problems/second-highest-salary/) | Easy | | | SQL |
+| 177 | [Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/) | Medium | | | SQL |
+| 178 | [Rank Scores](https://leetcode.com/problems/rank-scores/) | Medium | | | SQL |
+| 179 | [Largest Number](https://leetcode.com/problems/largest-number/) | Medium | | | |
+| 180 | [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | Medium | | | SQL |
+| 181 | [Employees Earning More Than Their Managers](https://leetcode.com/problems/employees-earning-more-than-their-managers/) | Easy | | | SQL |
+| 182 | [Duplicate Emails](https://leetcode.com/problems/duplicate-emails/) | Easy | | | SQL |
+| 183 | [Customers Who Never Order](https://leetcode.com/problems/customers-who-never-order/) | Easy | | | SQL |
+| 184 | [Department Highest Salary](https://leetcode.com/problems/department-highest-salary/) | Medium | | | SQL |
+| 185 | [Department Top Three Salaries](https://leetcode.com/problems/department-top-three-salaries/) | Hard | | | SQL |
+| 186 | [Reverse Words in a String II](https://leetcode.com/problems/reverse-words-in-a-string-ii/) | Medium | | | |
+| 187 | [Repeated DNA Sequences](https://leetcode.com/problems/repeated-dna-sequences/) | Medium | | | |
+| 188 | [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) | Hard | | | |
+| 189 | [Rotate Array](https://leetcode.com/problems/rotate-array/) | Easy | | | |
+| 190 | [Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | | | |
+| 191 | [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) | Easy | | | |
+| 192 | [Word Frequency](https://leetcode.com/problems/word-frequency/) | Medium | | | Linux command |
+| 193 | [Valid Phone Numbers](https://leetcode.com/problems/valid-phone-numbers/) | Easy | | | Linux command |
+| 194 | [Transpose File](https://leetcode.com/problems/transpose-file/) | Medium | | | Linux command |
+| 195 | [Tenth Line](https://leetcode.com/problems/tenth-line/) | Easy | | | Linux command |
+| 196 | [Delete Duplicate Emails](https://leetcode.com/problems/delete-duplicate-emails/) | Easy | | | SQL |
+| 197 | [Rising Temperature](https://leetcode.com/problems/rising-temperature/) | Easy | | | SQL |
+| 198 | [House Robber](https://leetcode.com/problems/house-robber/) | Easy | | | |
+| 199 | [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) | Medium | | | |
+| 200 | [Number of Islands](https://leetcode.com/problems/number-of-islands/) | Medium | | | |

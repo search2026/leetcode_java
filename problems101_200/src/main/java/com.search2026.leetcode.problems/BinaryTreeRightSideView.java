@@ -1,14 +1,12 @@
-package binary_tree_right_side_view;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class BinaryTreeRightSideView {
+
     /*
         Binary Tree Right Side View
         Leetcode #199
@@ -17,13 +15,13 @@ public class BinaryTreeRightSideView {
      */
     public class Solution {
         public List<Integer> rightSideView(TreeNode root) {
-            List<Integer> res = new ArrayList<Integer>();
+            List<Integer> res = new ArrayList<>();
             if (root != null) {
-                List<TreeNode> level = new ArrayList<TreeNode>();
+                List<TreeNode> level = new ArrayList<>();
                 level.add(root);
                 while (!level.isEmpty()) {
                     res.add(level.get(level.size() - 1).val);
-                    List<TreeNode> nextLevel = new ArrayList<TreeNode>();
+                    List<TreeNode> nextLevel = new ArrayList<>();
                     for (TreeNode node : level) {
                         if (node.left != null) {
                             nextLevel.add(node.left);
@@ -39,12 +37,4 @@ public class BinaryTreeRightSideView {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new BinaryTreeRightSideView().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-

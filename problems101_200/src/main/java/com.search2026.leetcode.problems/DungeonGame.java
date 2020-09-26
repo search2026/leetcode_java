@@ -1,10 +1,7 @@
-package dungeon_game;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.search2026.leetcode.problems;
 
 public class DungeonGame {
+
     /*
         Dungeon Game
         Leetcode #174
@@ -34,12 +31,4 @@ public class DungeonGame {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new DungeonGame().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-

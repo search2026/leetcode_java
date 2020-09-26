@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SingleNumberTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         SingleNumber.Solution sol = new SingleNumber().new Solution();
 
         int[] test1 = {1, 2, -3, -3, 2};
@@ -21,7 +21,7 @@ public class SingleNumberTests {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         SingleNumber.Solution_2 sol = new SingleNumber().new Solution_2();
 
         int[] test1 = {1, 2, -3, -3, 2};
@@ -35,7 +35,7 @@ public class SingleNumberTests {
     }
 
     @Test
-    public void test3() {
+    public void testSolution3() {
         SingleNumber.Solution_3 sol = new SingleNumber().new Solution_3();
 
         int[] test1 = {1, 2, -3, -3, -3, 2, 2};
@@ -49,7 +49,7 @@ public class SingleNumberTests {
     }
 
     @Test
-    public void test4() {
+    public void testSolution4() {
         SingleNumber.Solution_4 sol = new SingleNumber().new Solution_4();
 
         int[] test1 = {1, 2, -3, -3, -3, 2, 2};
@@ -63,7 +63,7 @@ public class SingleNumberTests {
     }
 
     @Test
-    public void test5() {
+    public void testSolution5() {
         SingleNumber.Solution_5 sol = new SingleNumber().new Solution_5();
 
         int[] test1 = {1, 2, -3, -3, -3, 2, 2};
@@ -77,7 +77,7 @@ public class SingleNumberTests {
     }
 
     @Test
-    public void test6() {
+    public void testSolution6() {
         SingleNumber.Solution_6 sol = new SingleNumber().new Solution_6();
 
         int[] test1 = {1, 2, -3, -3, -3, 2, 2};
@@ -91,7 +91,7 @@ public class SingleNumberTests {
     }
 
     @Test
-    public void test7() {
+    public void testSolution7() {
         SingleNumber.Solution_7 sol = new SingleNumber().new Solution_7();
 
         int[] test1 = {1, 2, 1, 3, 2, 5};
@@ -102,7 +102,7 @@ public class SingleNumberTests {
     }
 
     @Test
-    public void test8() {
+    public void testSolution8() {
         SingleNumber.Solution_8 sol = new SingleNumber().new Solution_8();
 
         int[] test1 = {1, 2, 1, 3, 2, 5};
@@ -113,7 +113,7 @@ public class SingleNumberTests {
     }
 
     @Test
-    public void test9() {
+    public void testSolution9() {
         SingleNumber.Solution_9 sol = new SingleNumber().new Solution_9();
 
         int[] test1 = {1, 2, -3, -3, -3, 2, 2};

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BinaryTreeUpsideDownTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         BinaryTreeUpsideDown.Solution sol = new BinaryTreeUpsideDown().new Solution();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -40,7 +40,7 @@ public class BinaryTreeUpsideDownTests {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         BinaryTreeUpsideDown.Solution_2 sol = new BinaryTreeUpsideDown().new Solution_2();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);

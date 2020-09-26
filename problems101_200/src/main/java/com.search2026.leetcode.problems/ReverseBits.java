@@ -1,13 +1,10 @@
-package reverse_bits;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class ReverseBits {
+
     /*
         Reverse Bits
         Leetcode #190
@@ -82,24 +79,4 @@ public class ReverseBits {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ReverseBits().new Solution();
-            assertEquals(964176192, sol.reverseBits(43261596));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new ReverseBits().new Solution_2();
-            assertEquals(964176192, sol.reverseBits(43261596));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new ReverseBits().new Solution_3();
-            assertEquals(964176192, sol.reverseBits(43261596));
-        }
-    }
 }
-

@@ -1,10 +1,7 @@
-package excel_sheet_column_number;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.search2026.leetcode.problems;
 
 public class ExcelSheetColumnNumber {
+
     /*
         Excel Sheet Column Number
         Leetcode #171
@@ -22,12 +19,4 @@ public class ExcelSheetColumnNumber {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ExcelSheetColumnNumber().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-

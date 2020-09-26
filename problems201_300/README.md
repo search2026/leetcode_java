@@ -9,6 +9,7 @@
 | 206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Easy | [ReverseLinkedList.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/ReverseLinkedList.java) | | |
 | | | | | | |
 | 212 | [Word Search II](https://leetcode.com/problems/word-search-ii/) | Hard | [WordSearch.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/WordSearch.java) | | |
+| 213 | [House Robber II](https://leetcode.com/problems/house-robber-ii/) | Medium | | | |
 | | | | | | |
 | 216 | [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/) | Medium | [CombinationSum.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/CombinationSum.java) | | |
 | | | | | | |

@@ -1,13 +1,11 @@
-package binary_search_tree_iterator;
+package com.search2026.leetcode.problems;
+
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.ArrayDeque;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 public class BinarySearchTreeIterator {
+
     /*
         Binary Search Tree Iterator
         Leetcode #173
@@ -16,7 +14,7 @@ public class BinarySearchTreeIterator {
      */
     public class BSTIterator {
 
-        private ArrayDeque<TreeNode> stack = new ArrayDeque<TreeNode>();
+        private ArrayDeque<TreeNode> stack = new ArrayDeque<>();
 
         private TreeNode current = null;
 
@@ -61,12 +59,4 @@ public class BinarySearchTreeIterator {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            BSTIterator sol = new BinarySearchTreeIterator().new BSTIterator(new TreeNode(1));
-            assertTrue(true);
-        }
-    }
 }
-

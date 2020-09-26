@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BinaryTreeMaximumPathSumTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         BinaryTreeMaximumPathSum.Solution sol = new BinaryTreeMaximumPathSum().new Solution();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(4);

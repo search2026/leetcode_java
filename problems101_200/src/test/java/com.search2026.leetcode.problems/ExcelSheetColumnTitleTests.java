@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ExcelSheetColumnTitleTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         ExcelSheetColumnTitle.Solution sol = new ExcelSheetColumnTitle().new Solution();
         assertEquals("A", sol.convertToTitle(1));
         assertEquals("AB", sol.convertToTitle(28));
