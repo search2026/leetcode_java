@@ -1,10 +1,7 @@
-package minimum_size_subarray_sum;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.search2026.leetcode.problems;
 
 public class MinimumSizeSubarraySum {
+
     /*
         Minimum Size Subarray Sum
         Leetcode #209
@@ -30,11 +27,4 @@ public class MinimumSizeSubarraySum {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new MinimumSizeSubarraySum().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }

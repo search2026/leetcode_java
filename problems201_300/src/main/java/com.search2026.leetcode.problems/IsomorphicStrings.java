@@ -1,15 +1,12 @@
-package isomorphic_strings;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class IsomorphicStrings {
+
     /*
         Isomorphic Strings
         Leetcode #205
@@ -18,8 +15,8 @@ public class IsomorphicStrings {
      */
     public class Solution {
         public boolean isIsomorphic(String s, String t) {
-            Map<Character, Character> mapping = new HashMap<Character, Character>();
-            Set<Character> mapped = new HashSet<Character>();
+            Map<Character, Character> mapping = new HashMap<>();
+            Set<Character> mapped = new HashSet<>();
             for (int i = 0; i < s.length(); i++) {
                 char c1 = s.charAt(i);
                 char c2 = t.charAt(i);
@@ -39,13 +36,4 @@ public class IsomorphicStrings {
         }
     }
 
-
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new IsomorphicStrings().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }
-

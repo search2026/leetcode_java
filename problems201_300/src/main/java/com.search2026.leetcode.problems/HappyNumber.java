@@ -1,15 +1,10 @@
-package happy_number;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.*;
-
 public class HappyNumber {
+
     /*
         Happy Number
         leetcode #202
@@ -67,19 +62,4 @@ public class HappyNumber {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new HappyNumber().new Solution();
-            assertTrue(sol.isHappy(19));
-            assertFalse(sol.isHappy(18));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new HappyNumber().new Solution_2();
-            assertTrue(sol.isHappy(19));
-            assertFalse(sol.isHappy(18));
-        }
-    }
 }

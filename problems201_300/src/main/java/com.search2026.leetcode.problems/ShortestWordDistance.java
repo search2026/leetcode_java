@@ -1,15 +1,12 @@
-package shortest_word_distance;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class ShortestWordDistance {
+
     /*
         Shortest Word Distance
         Leetcode #243
@@ -104,33 +101,4 @@ public class ShortestWordDistance {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ShortestWordDistance().new Solution();
-            String[] test = {"practice", "makes", "perfect", "coding", "makes"};
-            assertEquals(3, sol.shortestDistance(test, "coding", "practice"));
-            assertEquals(1, sol.shortestDistance(test, "coding", "makes"));
-            assertEquals(1, sol.shortestDistance(test, "makes", "coding"));
-        }
-
-        @Test
-        public void test2() {
-            String[] test = {"the", "quick", "brown", "fox", "quick"};
-            WordDistance sol = new ShortestWordDistance().new WordDistance(test);
-            assertEquals(3, sol.shortest("fox", "the"));
-            assertEquals(1, sol.shortest("quick", "fox"));
-            assertEquals(1, sol.shortest("fox", "quick"));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new ShortestWordDistance().new Solution_3();
-            String[] test = {"practice", "makes", "perfect", "coding", "makes"};
-            assertEquals(3, sol.shortestWordDistance(test, "coding", "practice"));
-            assertEquals(1, sol.shortestWordDistance(test, "coding", "makes"));
-            assertEquals(1, sol.shortestWordDistance(test, "makes", "coding"));
-            assertEquals(3, sol.shortestWordDistance(test, "makes", "makes"));
-        }
-    }
 }

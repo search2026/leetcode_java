@@ -1,10 +1,7 @@
-package count_primes;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.search2026.leetcode.problems;
 
 public class CountPrimes {
+
     /*
         Count Primes
         Leetcode #204
@@ -40,12 +37,4 @@ public class CountPrimes {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new CountPrimes().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-

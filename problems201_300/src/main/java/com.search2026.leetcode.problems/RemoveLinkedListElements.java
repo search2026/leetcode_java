@@ -1,11 +1,9 @@
-package remove_linked_list_elements;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.search2026.leetcode.common.ListNode;
 
 public class RemoveLinkedListElements {
+
     /*
         Remove Linked List Elements
         Leetcode #203
@@ -20,11 +18,4 @@ public class RemoveLinkedListElements {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new RemoveLinkedListElements().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

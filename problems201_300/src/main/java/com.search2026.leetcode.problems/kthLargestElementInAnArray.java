@@ -1,14 +1,11 @@
-package kth_largest_element_in_an_array;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class kthLargestElementInAnArray {
 
-public class kthLargestElementinanArray {
     /*
         Kth Largest number in an Array - QuickSelect
         Leetcode #215
@@ -160,29 +157,4 @@ public class kthLargestElementinanArray {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new kthLargestElementinanArray().new Solution();
-            assertEquals(5, sol.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new kthLargestElementinanArray().new Solution_2();
-            assertEquals(5, sol.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new kthLargestElementinanArray().new Solution_3();
-            assertEquals(5, sol.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
-        }
-
-        @Test
-        public void test4() {
-            Solution_4 sol = new kthLargestElementinanArray().new Solution_4();
-            assertEquals(5, sol.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
-        }
-    }
 }

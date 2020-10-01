@@ -1,13 +1,12 @@
-package course_schedule;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
-
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 
 public class CourseSchedule {
+
     /*
         Course Schedule - DFS
         Leetcode #207
@@ -99,18 +98,18 @@ public class CourseSchedule {
     public class Solution_3 {
         public int[] findOrder(int numCourses, int[][] prerequisites) {
             if (numCourses <= 0) return new int[0];
-            int[] rslt = new int[numCourses];
+            int[] res = new int[numCourses];
 
-            List<List<Integer>> graph = new ArrayList<List<Integer>>();
+            List<List<Integer>> graph = new ArrayList<>();
             for (int i = 0; i < numCourses; i++)
-                graph.add(new ArrayList<Integer>());
+                graph.add(new ArrayList<>());
             int[] inDegree = new int[numCourses];
             for (int[] pre: prerequisites) {
                 inDegree[pre[0]]++;
                 graph.get(pre[1]).add(pre[0]);
             }
 
-            Queue<Integer> leaves = new ArrayDeque<Integer>();
+            Queue<Integer> leaves = new ArrayDeque<>();
             for (int i = 0; i < numCourses; i++) {
                 if (inDegree[i] == 0) {
                     leaves.offer(i);
@@ -119,7 +118,7 @@ public class CourseSchedule {
             int count = 0;
             while (!leaves.isEmpty()) {
                 int cur = leaves.poll();
-                rslt[count++] = cur;
+                res[count++] = cur;
                 for (Integer course: graph.get(cur)) {
                     inDegree[course]--;
                     if (inDegree[course] == 0) leaves.offer(course);
@@ -127,49 +126,8 @@ public class CourseSchedule {
             }
             //if cycle exists
             if (count != numCourses) return new int[0];
-            return rslt;
+            return res;
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new CourseSchedule().new Solution();
-            int n = 2;
-            int[][] pre = new int[][]{
-                    new int[]{1, 0}
-            };
-            assertTrue(sol.canFinish(n, pre));
-
-            pre = new int[][]{
-                    new int[]{1, 0},
-                    new int[]{0, 1}
-            };
-            assertFalse(sol.canFinish(n, pre));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new CourseSchedule().new Solution_2();
-            int n = 2;
-            int[][] pre = new int[][]{
-                    new int[]{1, 0}
-            };
-            assertTrue(sol.canFinish(n, pre));
-
-            pre = new int[][]{
-                    new int[]{1, 0},
-                    new int[]{0, 1}
-            };
-            assertFalse(sol.canFinish(n, pre));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new CourseSchedule().new Solution_3();
-            assertArrayEquals(new int[]{0, 1}, sol.findOrder(2, new int[][]{{1, 0}}));
-            assertArrayEquals(new int[]{0, 1, 2, 3}, sol.findOrder(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}}));
-        }
-    }
 }
-

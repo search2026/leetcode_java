@@ -1,12 +1,9 @@
-package the_skyline_problem;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class TheSkylineProblem {
+
     /*
          The Skyline Problem
          Leetcode #218
@@ -18,11 +15,11 @@ public class TheSkylineProblem {
             List<int[]> result = new ArrayList<int[]>();
 
             if (buildings == null || buildings.length == 0
-                    || buildings[0].length == 0) {
+                        || buildings[0].length == 0) {
                 return result;
             }
 
-            List<Edge> edges = new ArrayList<Edge>();
+            List<Edge> edges = new ArrayList<>();
 
             // update all left/right edges
             for (int[] building : buildings) {
@@ -83,7 +80,7 @@ public class TheSkylineProblem {
     */
     public class Solution_2 {
         public List<int[]> getSkyline(int[][] buildings) {
-            List<int[]> rslt = new ArrayList<>();
+            List<int[]> res = new ArrayList<>();
             List<int[]> height = new ArrayList<>();
             for (int[] b : buildings) {
                 height.add(new int[]{b[0], -b[2]});
@@ -105,11 +102,11 @@ public class TheSkylineProblem {
                 }
                 int cur = pq.peek();
                 if (prev != cur) {
-                    rslt.add(new int[]{h[0], cur});
+                    res.add(new int[]{h[0], cur});
                     prev = cur;
                 }
             }
-            return rslt;
+            return res;
         }
     }
 
@@ -125,12 +122,4 @@ public class TheSkylineProblem {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new TheSkylineProblem().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }
-

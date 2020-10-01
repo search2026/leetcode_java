@@ -1,10 +1,7 @@
-package shortest_palindrome;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.search2026.leetcode.problems;
 
 public class ShortestPalindrome {
+
     /*
         Shortest Palindrome
         Leetcode #214
@@ -36,12 +33,4 @@ public class ShortestPalindrome {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ShortestPalindrome().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }
-

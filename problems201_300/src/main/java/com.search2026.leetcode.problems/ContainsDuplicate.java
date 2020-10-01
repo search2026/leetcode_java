@@ -1,16 +1,11 @@
-package contains_duplicate;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.TreeSet;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class ContainsDuplicate {
+
     /*
         Contains Duplicate - Set
         Leetcode #217
@@ -100,8 +95,8 @@ public class ContainsDuplicate {
                 long remappedNum = (long) nums[i] - Integer.MIN_VALUE;
                 long bucket = remappedNum / ((long) t + 1);
                 if (map.containsKey(bucket)
-                        || (map.containsKey(bucket - 1) && remappedNum - map.get(bucket - 1) <= t)
-                        || (map.containsKey(bucket + 1) && map.get(bucket + 1) - remappedNum <= t))
+                            || (map.containsKey(bucket - 1) && remappedNum - map.get(bucket - 1) <= t)
+                            || (map.containsKey(bucket + 1) && map.get(bucket + 1) - remappedNum <= t))
                     return true;
                 if (map.entrySet().size() >= k) {
                     long lastBucket = ((long) nums[i - k] - Integer.MIN_VALUE) / ((long) t + 1);
@@ -113,38 +108,4 @@ public class ContainsDuplicate {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ContainsDuplicate().new Solution();
-            int[] nums = {1, 9, 21, 18, -5};
-            assertFalse(sol.containsDuplicate(nums));
-            nums = new int[]{1, 9, 21, 18, -5, 7, 21, 3};
-            assertTrue(sol.containsDuplicate(nums));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new ContainsDuplicate().new Solution_2();
-            int[] nums = {1, 9, 21, 18, -5, 7, 21, 3};
-            assertTrue(sol.containsNearbyDuplicate(nums, 10));
-            assertFalse(sol.containsNearbyDuplicate(nums, 2));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new ContainsDuplicate().new Solution_3();
-            int[] nums = {1, 9, 21, 18, -5, 7, 21, 3};
-            assertTrue(sol.containsNearbyAlmostDuplicate(nums, 10, 2));
-            assertFalse(sol.containsNearbyAlmostDuplicate(nums, 2, 2));
-        }
-
-        @Test
-        public void test4() {
-            Solution_4 sol = new ContainsDuplicate().new Solution_4();
-            int[] nums = {1, 9, 21, 18, -5, 7, 21, 3};
-            assertTrue(sol.containsNearbyAlmostDuplicate(nums, 10, 2));
-            assertFalse(sol.containsNearbyAlmostDuplicate(nums, 2, 2));
-        }
-    }
 }

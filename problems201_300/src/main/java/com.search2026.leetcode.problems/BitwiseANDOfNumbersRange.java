@@ -1,10 +1,7 @@
-package bitwise_and_of_numbers_range;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+public class BitwiseANDOfNumbersRange {
 
-import static org.junit.jupiter.api.Assertions.*;
-
-public class BitwiseANDofNumbersRange {
     /*
         Bitwise AND of Numbers Range
         Leetcode #201
@@ -25,12 +22,4 @@ public class BitwiseANDofNumbersRange {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new BitwiseANDofNumbersRange().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-
