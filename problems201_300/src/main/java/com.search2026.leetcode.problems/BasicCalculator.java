@@ -1,13 +1,10 @@
-package basic_calculator;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class BasicCalculator {
+
     /*
         Basic Calculator - Recursive
         Leetcode #224
@@ -270,54 +267,4 @@ public class BasicCalculator {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new BasicCalculator().new Solution();
-            assertEquals(2, sol.calculate("1 + 1"));
-            assertEquals(3, sol.calculate(" 2-1 + 2 "));
-            assertEquals(23, sol.calculate("(1+(4+5+2)-3)+(6+8)"));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new BasicCalculator().new Solution_2();
-            assertEquals(2, sol.calculate("1 + 1"));
-            assertEquals(3, sol.calculate(" 2-1 + 2 "));
-            assertEquals(23, sol.calculate("(1+(4+5+2)-3)+(6+8)"));
-        }
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new BasicCalculator().new Solution_3();
-            assertEquals(2, sol.calculate("1 + 1"));
-            assertEquals(3, sol.calculate(" 2-1 + 2 "));
-            assertEquals(23, sol.calculate("(1+(4+5+2)-3)+(6+8)"));
-        }
-
-        @Test
-        public void test4() {
-            Solution_4 sol = new BasicCalculator().new Solution_4();
-            assertEquals(7, sol.calculate("3+2*2"));
-            assertEquals(1, sol.calculate(" 3/2 "));
-            assertEquals(5, sol.calculate(" 3+5 / 2 "));
-        }
-
-        @Test
-        public void test5() {
-            Solution_5 sol = new BasicCalculator().new Solution_5();
-            assertEquals(7, sol.calculate("3+2*2"));
-            assertEquals(1, sol.calculate(" 3/2 "));
-            assertEquals(5, sol.calculate(" 3+5 / 2 "));
-        }
-
-        @Test
-        public void test6() {
-            Solution_6 sol = new BasicCalculator().new Solution_6();
-            assertEquals(7, sol.calculate("3+2*2"));
-            assertEquals(1, sol.calculate(" 3/2 "));
-            assertEquals(5, sol.calculate(" 3+5 / 2 "));
-        }
-    }
 }
-

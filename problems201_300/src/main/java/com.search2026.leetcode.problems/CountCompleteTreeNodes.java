@@ -1,11 +1,9 @@
-package count_complete_tree_nodes;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;;
-
-import static org.junit.jupiter.api.Assertions.*;
+import com.search2026.leetcode.common.TreeNode;
 
 public class CountCompleteTreeNodes {
+
     /*
         Count Complete Tree Nodes
         https://leetcode.com/problems/count-complete-tree-nodes/
@@ -58,11 +56,4 @@ public class CountCompleteTreeNodes {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new CountCompleteTreeNodes().new Solution();
-            assertTrue(true);
-        }
-    }
 }

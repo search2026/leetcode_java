@@ -1,13 +1,10 @@
-package summary_ranges;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class SummaryRanges {
+
     /*
         Summary Ranges
         Leetcode #228
@@ -16,7 +13,7 @@ public class SummaryRanges {
      */
     public class Solution {
         public List<String> summaryRanges(int[] nums) {
-            List<String> results = new ArrayList<String>();
+            List<String> results = new ArrayList<>();
             if (nums == null || nums.length == 0) {
                 return results;
             }
@@ -58,11 +55,4 @@ public class SummaryRanges {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new SummaryRanges().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

@@ -22,16 +22,16 @@
 | 218 | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/) | Hard | []() | | |
 | 219 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | Easy | []() | | |
 | 220 | [Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/) | Medium | []() | | |
-| 221 | []() | Medium | []() | | |
-| 222 | []() | Medium | []() | | |
-| 223 | []() | Medium | []() | | |
-| 224 | []() | Hard | []() | | |
-| 225 | []() | Easy | []() | | |
-| 226 | []() | Easy | []() | | |
-| 227 | []() | Medium | []() | | |
-| 228 | []() | Medium | []() | | |
+| 221 | [Maximal Square](https://leetcode.com/problems/maximal-square/) | Medium | []() | | |
+| 222 | [Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/) | Medium | []() | | |
+| 223 | [Rectangle Area](https://leetcode.com/problems/rectangle-area/) | Medium | []() | | |
+| 224 | [Basic Calculator](https://leetcode.com/problems/basic-calculator/) | Hard | []() | | |
+| 225 | [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) | Easy | []() | | |
+| 226 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | Easy | []() | | |
+| 227 | [Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/) | Medium | []() | | |
+| 228 | [Summary Ranges](https://leetcode.com/problems/summary-ranges/) | Medium | []() | | |
 | 229 | [Majority Element II](https://leetcode.com/problems/majority-element-ii/) | Medium | [MajorityElement.java](https://github.com/search2026/leetcode_java/blob/master/problems101_200/src/main/java/com.search2026.leetcode.problems/MajorityElement.java) | | |
-| 230 | []() | Medium | []() | | |
+| 230 | [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) | Medium | []() | | |
 | 231 | []() | Easy | []() | | |
 | 232 | []() | Easy | []() | | |
 | 233 | []() | Hard | []() | | |

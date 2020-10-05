@@ -1,15 +1,12 @@
-package kth_smallest_element_in_a_bst;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.*;
+public class KthSmallestElementInABST {
 
-public class KthSmallestElementinaBST {
     /*
         Kth Smallest Element in a BST
         Leetcode #230
@@ -18,13 +15,13 @@ public class KthSmallestElementinaBST {
      */
     public class Solution {
         int counter;
-        int rslt;
+        int res;
         public int kthSmallest(TreeNode root, int k) {
             if (root == null || k == 0) return 0;
 
             counter = k;
             helper(root);
-            return rslt;
+            return res;
         }
 
         private void helper(TreeNode root) {
@@ -33,7 +30,7 @@ public class KthSmallestElementinaBST {
             helper(root.left);
             counter--;
             if (counter == 0) {
-                rslt = root.val;
+                res = root.val;
                 return;
             }
 
@@ -96,11 +93,4 @@ public class KthSmallestElementinaBST {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new KthSmallestElementinaBST().new Solution();
-            assertTrue(true);
-        }
-    }
 }

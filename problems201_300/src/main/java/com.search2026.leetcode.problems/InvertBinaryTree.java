@@ -1,12 +1,9 @@
-package invert_binary_tree;
+package com.search2026.leetcode.problems;
 
-import java.util.*;
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import com.search2026.leetcode.common.TreeNode;
 
 public class InvertBinaryTree {
+
     /*
         Invert Binary Tree
         Leetcode #226
@@ -26,11 +23,4 @@ public class InvertBinaryTree {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new InvertBinaryTree().new Solution();
-            assertTrue(true);
-        }
-    }
 }

@@ -1,12 +1,10 @@
-package implement_stack_using_queues;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+import java.util.LinkedList;
+import java.util.Queue;
 
-import java.util.*;
+public class ImplementStackUsingQueues {
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class ImplementStackusingQueues {
     /*
         Implement Stack using Queues
         Leetcode #225
@@ -64,11 +62,4 @@ public class ImplementStackusingQueues {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            MyStack sol = new ImplementStackusingQueues().new MyStack();
-            assertEquals(3, 3);
-        }
-    }
 }

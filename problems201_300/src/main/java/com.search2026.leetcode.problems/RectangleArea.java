@@ -1,10 +1,7 @@
-package rectangle_area;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.search2026.leetcode.problems;
 
 public class RectangleArea {
+
     /*
         Rectangle Area
         Leetcode #223
@@ -28,11 +25,4 @@ public class RectangleArea {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new RectangleArea().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

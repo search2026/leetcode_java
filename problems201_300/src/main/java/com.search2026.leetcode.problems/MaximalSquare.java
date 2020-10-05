@@ -1,12 +1,9 @@
-package maximal_square;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class MaximalSquare {
+
     /*
         Maximal Square - DP
         Leetcode #221
@@ -90,42 +87,4 @@ public class MaximalSquare {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new MaximalSquare().new Solution();
-            char[][] grid = new char[][]{
-                    new char[]{'1', '0', '1', '0', '0'},
-                    new char[]{'1', '0', '1', '1', '1'},
-                    new char[]{'1', '1', '1', '1', '1'},
-                    new char[]{'1', '0', '0', '1', '0'}
-            };
-            assertEquals(4, sol.maximalSquare(grid));
-        }
-
-        @Test
-        public void test2() {
-            Solution_2 sol = new MaximalSquare().new Solution_2();
-            char[][] grid = new char[][]{
-                    new char[]{'1', '0', '1', '0', '0'},
-                    new char[]{'1', '0', '1', '1', '1'},
-                    new char[]{'1', '1', '1', '1', '1'},
-                    new char[]{'1', '0', '0', '1', '0'}
-            };
-            assertEquals(4, sol.maximalSquare(grid));
-        }
-
-
-        @Test
-        public void test3() {
-            Solution_3 sol = new MaximalSquare().new Solution_3();
-            char[][] grid = new char[][]{
-                    new char[]{'1', '0', '1', '0', '0'},
-                    new char[]{'1', '0', '1', '1', '1'},
-                    new char[]{'1', '1', '1', '1', '1'},
-                    new char[]{'1', '0', '0', '1', '0'}
-            };
-            assertEquals(4, sol.maximalSquare(grid));
-        }
-    }
 }
