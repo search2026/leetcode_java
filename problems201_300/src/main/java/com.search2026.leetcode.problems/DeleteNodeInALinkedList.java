@@ -1,11 +1,9 @@
-package delete_node_in_a_linked_list;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.ListNode;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class DeleteNodeInALinkedList {
 
-public class DeleteNodeinaLinkedList {
     /*
         Delete Node in a Linked List
         Leetcode #237
@@ -23,12 +21,4 @@ public class DeleteNodeinaLinkedList {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new DeleteNodeinaLinkedList().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-

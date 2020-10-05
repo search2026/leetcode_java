@@ -1,10 +1,7 @@
-package product_of_array_except_self;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+public class ProductOfArrayExceptSelf {
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class ProductofArrayExceptSelf {
     /*
         Product of Array Except Self
         Leetcode #238
@@ -71,11 +68,4 @@ public class ProductofArrayExceptSelf {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ProductofArrayExceptSelf().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

@@ -1,12 +1,9 @@
-package strobogrammatic_number;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class StrobogrammaticNumber {
+
     /*
         Strobogrammtic Number
         Leetcode #246
@@ -32,7 +29,7 @@ public class StrobogrammaticNumber {
                     }
                 } else {
                     if ((num.charAt(lo) == '6' && num.charAt(hi) == '9') ||
-                            (num.charAt(lo) == '9' && num.charAt(hi) == '6')) {
+                                (num.charAt(lo) == '9' && num.charAt(hi) == '6')) {
                         hi--;
                         lo++;
                     } else {
@@ -55,9 +52,9 @@ public class StrobogrammaticNumber {
         http://buttercola.blogspot.com/2015/08/leetcode-strobogrammatic-number-ii.html
         Difficulty: Medium
      */
-    public class SolutionII {
-        private List<String> result = new ArrayList<String>();
-        private Map<String, String> hashMap = new HashMap<String, String>();
+    public class Solution_2 {
+        private List<String> result = new ArrayList<>();
+        private Map<String, String> hashMap = new HashMap<>();
 
         public List<String> findStrobogrammatic(int n) {
             result.clear();
@@ -73,7 +70,7 @@ public class StrobogrammaticNumber {
             if (n <= 0) {
                 return;
             }
-            List<String> currResult = new ArrayList<String>();
+            List<String> currResult = new ArrayList<>();
             int size = 0;
             if (n == 1) {
                 if (!result.isEmpty()) {
@@ -146,9 +143,9 @@ public class StrobogrammaticNumber {
         http://buttercola.blogspot.com/2015/09/leetcode-strobogrammatic-number-iii.html
         Difficulty: Hard
      */
-    public class SolutionIII {
+    public class Solution_3 {
         private int count = 0;
-        private Map<Character, Character> map = new HashMap<Character, Character>();
+        private Map<Character, Character> map = new HashMap<>();
 
         public int strobogrammaticInRange(String low, String high) {
             if (low == null || low.length() == 0 || high == null || high.length() == 0) {
@@ -206,11 +203,4 @@ public class StrobogrammaticNumber {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new StrobogrammaticNumber().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

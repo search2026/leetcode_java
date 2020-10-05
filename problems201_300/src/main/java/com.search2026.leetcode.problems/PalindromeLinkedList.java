@@ -1,11 +1,9 @@
-package palindrome_linked_list;
+package com.search2026.leetcode.problems;
 
-import common.ListNode;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.search2026.leetcode.common.ListNode;
 
 public class PalindromeLinkedList {
+
     /*
         Palindrome Linked List
         Leetcode #234
@@ -90,11 +88,4 @@ public class PalindromeLinkedList {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new PalindromeLinkedList().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

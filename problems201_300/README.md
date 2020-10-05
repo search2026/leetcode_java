@@ -32,26 +32,26 @@
 | 228 | [Summary Ranges](https://leetcode.com/problems/summary-ranges/) | Medium | []() | | |
 | 229 | [Majority Element II](https://leetcode.com/problems/majority-element-ii/) | Medium | [MajorityElement.java](https://github.com/search2026/leetcode_java/blob/master/problems101_200/src/main/java/com.search2026.leetcode.problems/MajorityElement.java) | | |
 | 230 | [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) | Medium | []() | | |
-| 231 | []() | Easy | []() | | |
-| 232 | []() | Easy | []() | | |
-| 233 | []() | Hard | []() | | |
-| 234 | []() | Easy | []() | | |
-| 235 | []() | Easy | []() | | |
-| 236 | []() | Medium | []() | | |
-| 237 | []() | Easy | []() | | |
-| 238 | []() | Medium | []() | | |
-| 239 | []() | Hard | []() | | |
+| 231 | [Power of Two](https://leetcode.com/problems/power-of-two/) | Easy | []() | | |
+| 232 | [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) | Easy | []() | | |
+| 233 | [Number of Digit One](https://leetcode.com/problems/number-of-digit-one/) | Hard | []() | | |
+| 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | Easy | []() | | |
+| 235 | [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | Easy | []() | | |
+| 236 | [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) | Medium | []() | | |
+| 237 | [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/) | Easy | []() | | |
+| 238 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | Medium | []() | | |
+| 239 | [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) | Hard | []() | | |
 | 240 | [Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/) | Medium | [SearchA2DMatrix.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/SearchA2DMatrix.java) | | |
-| 241 | []() | Medium | []() | | |
-| 242 | []() | Easy | []() | | |
+| 241 | [Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/) | Medium | []() | | |
+| 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | []() | | |
 | 243 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Shortest Word Distance](https://leetcode.com/problems/shortest-word-distance/) | Easy | []() | | |
 | 244 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Shortest Word Distance II](https://leetcode.com/problems/shortest-word-distance-ii/) | Medium | []() | | |
 | 245 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Shortest Word Distance III](https://leetcode.com/problems/shortest-word-distance-iii/) | Medium | []() | | |
-| 246 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Easy | []() | | |
-| 247 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
-| 248 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Hard | []() | | |
-| 249 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
-| 250 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
+| 246 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) | Easy | []() | | |
+| 247 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Strobogrammatic Number II](https://leetcode.com/problems/strobogrammatic-number-ii/) | Medium | []() | | |
+| 248 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Strobogrammatic Number III](https://leetcode.com/problems/strobogrammatic-number-iii/) | Hard | []() | | |
+| 249 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Group Shifted Strings](https://leetcode.com/problems/group-shifted-strings/) | Medium | []() | | |
+| 250 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Count Univalue Subtrees](https://leetcode.com/problems/count-univalue-subtrees/) | Medium | []() | | |
 | 251 | []() | | []() | | |
 | 252 | []() | | []() | | |
 | 253 | []() | | []() | | |

@@ -1,12 +1,9 @@
-package group_shifted_strings;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class GroupShiftedStrings {
+
     /*
         Group Shifted Strings
         Leetcode #249
@@ -16,9 +13,9 @@ public class GroupShiftedStrings {
      */
     public class Solution {
         public List<List<String>> groupStrings(String[] strings) {
-            List<List<String>> result = new ArrayList<List<String>>();
+            List<List<String>> res = new ArrayList<>();
             if (strings == null || strings.length == 0) {
-                return result;
+                return res;
             }
 
             Arrays.sort(strings, new LexComparator());
@@ -50,10 +47,10 @@ public class GroupShiftedStrings {
             Iterator it = map.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry) it.next();
-                result.add((List<String>) pair.getValue());
+                res.add((List<String>) pair.getValue());
             }
 
-            return result;
+            return res;
         }
 
         private class LexComparator implements Comparator<String> {
@@ -73,11 +70,4 @@ public class GroupShiftedStrings {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new GroupShiftedStrings().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }

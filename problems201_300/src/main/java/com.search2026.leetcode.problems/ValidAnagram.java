@@ -1,12 +1,9 @@
-package valid_anagram;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.Arrays;
 
 public class ValidAnagram {
+
     /*
         Valid Anagram
         Leetcode #242
@@ -43,11 +40,4 @@ public class ValidAnagram {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new ValidAnagram().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }

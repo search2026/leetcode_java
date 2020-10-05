@@ -1,13 +1,9 @@
-package sliding_window_maximum;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.Deque;
 import java.util.LinkedList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class SlidingWindowMaximum {
+
     /*
         Sliding Windows Maximum
         Leetcode #239
@@ -18,7 +14,7 @@ public class SlidingWindowMaximum {
         public int[] maxSlidingWindow(int[] nums, int k) {
             if (k == 0) return new int[0];
 
-            LinkedList<Integer> q = new LinkedList<Integer>();
+            LinkedList<Integer> q = new LinkedList<>();
 
             int[] res = new int[nums.length - k + 1];
 
@@ -38,11 +34,4 @@ public class SlidingWindowMaximum {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new SlidingWindowMaximum().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

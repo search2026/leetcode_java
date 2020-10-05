@@ -1,13 +1,11 @@
-package count_univalue_subtrees;
+package com.search2026.leetcode.problems;
 
-import common.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.search2026.leetcode.common.TreeNode;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class CountUnivalueSubtrees {
+
     /*
         Count Univalue Subtrees
         Leetcode #250
@@ -36,12 +34,4 @@ public class CountUnivalueSubtrees {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new CountUnivalueSubtrees().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-

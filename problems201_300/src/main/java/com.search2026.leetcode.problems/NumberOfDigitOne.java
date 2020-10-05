@@ -1,10 +1,7 @@
-package number_of_digit_one;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+public class NumberOfDigitOne {
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class NumberofDigitOne {
     /*
         Number of Digital One
         Leetcode #233
@@ -23,11 +20,4 @@ public class NumberofDigitOne {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new NumberofDigitOne().new Solution();
-            assertEquals(3, 3);
-        }
-    }
 }

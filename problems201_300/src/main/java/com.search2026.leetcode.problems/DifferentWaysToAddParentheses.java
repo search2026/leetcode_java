@@ -1,13 +1,10 @@
-package different_ways_to_add_parentheses;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class DifferentWaysToAddParentheses {
 
-public class DifferentWaystoAddParentheses {
     /*
         Different Ways to Add Parentheses
         Leetcode #241
@@ -16,9 +13,9 @@ public class DifferentWaystoAddParentheses {
      */
     public class Solution {
         public List<Integer> diffWaysToCompute(String input) {
-            List<Integer> result = new ArrayList<Integer>();
+            List<Integer> res = new ArrayList<>();
             if (input == null || input.length() == 0) {
-                return result;
+                return res;
             }
 
             for (int i = 0; i < input.length(); i++) {
@@ -34,17 +31,17 @@ public class DifferentWaystoAddParentheses {
                 for (int num1 : left) {
                     for (int num2 : right) {
                         int val = calculate(num1, num2, c);
-                        result.add(val);
+                        res.add(val);
                     }
                 }
             }
 
             // only contains one number
-            if (result.isEmpty()) {
-                result.add(Integer.parseInt(input));
+            if (res.isEmpty()) {
+                res.add(Integer.parseInt(input));
             }
 
-            return result;
+            return res;
         }
 
         private int calculate(int num1, int num2, char operator) {
@@ -72,11 +69,4 @@ public class DifferentWaystoAddParentheses {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new DifferentWaystoAddParentheses().new Solution();
-            assertTrue(true);
-        }
-    }
 }
