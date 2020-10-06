@@ -1,15 +1,12 @@
-package unique_word_abbreviation;
-
-import org.junit.jupiter.api.Test;
+package com.search2026.leetcode.problems;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class UniqueWordAbbreviation {
+
     /*
         Unique Word Abbreviation
         Leetcode #288
@@ -66,11 +63,4 @@ public class UniqueWordAbbreviation {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            ValidWordAbbr sol = new UniqueWordAbbreviation().new ValidWordAbbr(new String[]{});
-            assertEquals(7, 7);
-        }
-    }
 }

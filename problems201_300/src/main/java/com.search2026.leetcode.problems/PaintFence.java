@@ -1,10 +1,7 @@
-package paint_fence;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.search2026.leetcode.problems;
 
 public class PaintFence {
+
     /*
         Paint Fence
         Leetcode #276
@@ -36,7 +33,7 @@ public class PaintFence {
         http://buttercola.blogspot.com/2015/09/leetcode-paint-fence.html
         Difficulty: Easy
     */
-    public class SolutionII {
+    public class Solution_2 {
         public int numWays(int n, int k) {
             if (n <= 0 || k <= 0) {
                 return 0;
@@ -65,11 +62,4 @@ public class PaintFence {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new PaintFence().new Solution();
-            assertEquals(7, 7);
-        }
-    }
 }

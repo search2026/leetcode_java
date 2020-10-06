@@ -1,12 +1,7 @@
-package find_the_celebrity;
+package com.search2026.leetcode.problems;
 
-import org.junit.jupiter.api.Test;
+public class FindTheCelebrity {
 
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-public class FindtheCelebrity {
     /*
         Find the Celebrity
         Leetcode #277
@@ -50,12 +45,4 @@ public class FindtheCelebrity {
         }
     }
 
-    public static class UnitTest {
-        @Test
-        public void test1() {
-            Solution sol = new FindtheCelebrity().new Solution();
-            assertTrue(true);
-        }
-    }
 }
-
