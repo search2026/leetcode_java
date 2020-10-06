@@ -82,7 +82,7 @@
 | 278 | [First Bad Version](https://leetcode.com/problems/first-bad-version/) | Easy | []() | | |
 | 279 | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) | Medium | []() | | |
 | 280 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Wiggle Sort ](https://leetcode.com/problems/wiggle-sort/) | Medium | []() | | |
-| 281 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
+| 281 | ![](../resources/dollar-sign-10x10.png?raw=true")[Zigzag Iterator](../resources/ZigzagIterator.md) | Medium | []() | | |
 | 282 | []() | Hard | []() | | |
 | 283 | []() | Easy | []() | | |
 | 284 | []() | Medium | []() | | |
