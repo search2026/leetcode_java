@@ -44,61 +44,61 @@
 | 240 | [Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/) | Medium | [SearchA2DMatrix.java](https://github.com/search2026/leetcode_java/blob/master/problems1_100/src/main/java/com.search2026.leetcode.problems/SearchA2DMatrix.java) | | |
 | 241 | [Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/) | Medium | []() | | |
 | 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | []() | | |
-| 243 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Shortest Word Distance](https://leetcode.com/problems/shortest-word-distance/) | Easy | []() | | |
-| 244 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Shortest Word Distance II](https://leetcode.com/problems/shortest-word-distance-ii/) | Medium | []() | | |
-| 245 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Shortest Word Distance III](https://leetcode.com/problems/shortest-word-distance-iii/) | Medium | []() | | |
-| 246 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) | Easy | []() | | |
-| 247 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Strobogrammatic Number II](https://leetcode.com/problems/strobogrammatic-number-ii/) | Medium | []() | | |
-| 248 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Strobogrammatic Number III](https://leetcode.com/problems/strobogrammatic-number-iii/) | Hard | []() | | |
-| 249 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Group Shifted Strings](https://leetcode.com/problems/group-shifted-strings/) | Medium | []() | | |
-| 250 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Count Univalue Subtrees](https://leetcode.com/problems/count-univalue-subtrees/) | Medium | []() | | |
-| 251 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/) | Medium | []() | | |
-| 252 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/) | Easy | []() | | |
-| 253 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) | Medium | []() | | |
-| 254 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Factor Combinations](https://leetcode.com/problems/factor-combinations/) | Medium | []() | | |
-| 255 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Verify Preorder Sequence in Binary Search Tree](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/) | Medium | []() | | |
-| 256 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Paint House](https://leetcode.com/problems/paint-house/) | Medium | []() | | |
+| 243 | ![](../resources/dollar-sign-10x10.png?raw=true")[Shortest Word Distance](https://leetcode.com/problems/shortest-word-distance/) | Easy | []() | | |
+| 244 | ![](../resources/dollar-sign-10x10.png?raw=true")[Shortest Word Distance II](https://leetcode.com/problems/shortest-word-distance-ii/) | Medium | []() | | |
+| 245 | ![](../resources/dollar-sign-10x10.png?raw=true")[Shortest Word Distance III](https://leetcode.com/problems/shortest-word-distance-iii/) | Medium | []() | | |
+| 246 | ![](../resources/dollar-sign-10x10.png?raw=true")[Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/) | Easy | []() | | |
+| 247 | ![](../resources/dollar-sign-10x10.png?raw=true")[Strobogrammatic Number II](https://leetcode.com/problems/strobogrammatic-number-ii/) | Medium | []() | | |
+| 248 | ![](../resources/dollar-sign-10x10.png?raw=true")[Strobogrammatic Number III](https://leetcode.com/problems/strobogrammatic-number-iii/) | Hard | []() | | |
+| 249 | ![](../resources/dollar-sign-10x10.png?raw=true")[Group Shifted Strings](https://leetcode.com/problems/group-shifted-strings/) | Medium | []() | | |
+| 250 | ![](../resources/dollar-sign-10x10.png?raw=true")[Count Univalue Subtrees](https://leetcode.com/problems/count-univalue-subtrees/) | Medium | []() | | |
+| 251 | ![](../resources/dollar-sign-10x10.png?raw=true")[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/) | Medium | []() | | |
+| 252 | ![](../resources/dollar-sign-10x10.png?raw=true")[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/) | Easy | []() | | |
+| 253 | ![](../resources/dollar-sign-10x10.png?raw=true")[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) | Medium | []() | | |
+| 254 | ![](../resources/dollar-sign-10x10.png?raw=true")[Factor Combinations](https://leetcode.com/problems/factor-combinations/) | Medium | []() | | |
+| 255 | ![](../resources/dollar-sign-10x10.png?raw=true")[Verify Preorder Sequence in Binary Search Tree](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/) | Medium | []() | | |
+| 256 | ![](../resources/dollar-sign-10x10.png?raw=true")[Paint House](https://leetcode.com/problems/paint-house/) | Medium | []() | | |
 | 257 | [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | Easy | []() | | |
 | 258 | [Add Digits](https://leetcode.com/problems/add-digits/) | Easy | []() | | |
-| 259 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[3Sum Smaller](https://leetcode.com/problems/3sum-smaller/) | Medium | []() | | |
+| 259 | ![](../resources/dollar-sign-10x10.png?raw=true")[3Sum Smaller](https://leetcode.com/problems/3sum-smaller/) | Medium | []() | | |
 | 260 | [Single Number III](https://leetcode.com/problems/single-number-iii/) | Medium | [SingleNumber.java](https://github.com/search2026/leetcode_java/blob/master/problems101_200/src/main/java/com.search2026.leetcode.problems/SingleNumber.java) | | |
-| 261 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/) | Medium | []() | | |
+| 261 | ![](../resources/dollar-sign-10x10.png?raw=true")[Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/) | Medium | []() | | |
 | 262 | [Trips and Users](https://leetcode.com/problems/trips-and-users/) | Hard | []() | | SQL |
 | 263 | [Ugly Number](https://leetcode.com/problems/ugly-number/) | Easy | []() | | |
 | 264 | [Ugly Number II](https://leetcode.com/problems/ugly-number-ii/) | Medium | []() | | |
-| 265 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Paint House II](https://leetcode.com/problems/paint-house-ii/) | Hard | []() | | |
-| 266 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/) | Easy | [](https://leetcode.com/problems/palindrome-permutation/) | | |
-| 267 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/) | Medium | []() | | |
+| 265 | ![](../resources/dollar-sign-10x10.png?raw=true")[Paint House II](https://leetcode.com/problems/paint-house-ii/) | Hard | []() | | |
+| 266 | ![](../resources/dollar-sign-10x10.png?raw=true")[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/) | Easy | [](https://leetcode.com/problems/palindrome-permutation/) | | |
+| 267 | ![](../resources/dollar-sign-10x10.png?raw=true")[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/) | Medium | []() | | |
 | 268 | [Missing Number](https://leetcode.com/problems/missing-number/) | Easy | []() | | |
-| 269 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/) | Hard | []() | | |
-| 270 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Closest Binary Search Tree Value](https://leetcode.com/problems/closest-binary-search-tree-value/) | Easy | []() | | |
-| 271 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/) | Medium | []() | | |
-| 272 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Closest Binary Search Tree Value II](https://leetcode.com/problems/closest-binary-search-tree-value-ii/) | Hard | []() | | |
+| 269 | ![](../resources/dollar-sign-10x10.png?raw=true")[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/) | Hard | []() | | |
+| 270 | ![](../resources/dollar-sign-10x10.png?raw=true")[Closest Binary Search Tree Value](https://leetcode.com/problems/closest-binary-search-tree-value/) | Easy | []() | | |
+| 271 | ![](../resources/dollar-sign-10x10.png?raw=true")[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/) | Medium | []() | | |
+| 272 | ![](../resources/dollar-sign-10x10.png?raw=true")[Closest Binary Search Tree Value II](https://leetcode.com/problems/closest-binary-search-tree-value-ii/) | Hard | []() | | |
 | 273 | [Integer to English Words](https://leetcode.com/problems/integer-to-english-words/) | Hard | []() | | |
 | 274 | [H-Index](https://leetcode.com/problems/h-index/) | Medium | []() | | |
 | 275 | [H-Index II](https://leetcode.com/problems/h-index-ii/) | Medium | []() | | |
-| 276 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Paint Fence](https://leetcode.com/problems/paint-fence/) | Easy | []() | | |
-| 277 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) | Medium | []() | | |
+| 276 | ![](../resources/dollar-sign-10x10.png?raw=true")[Paint Fence](https://leetcode.com/problems/paint-fence/) | Easy | []() | | |
+| 277 | ![](../resources/dollar-sign-10x10.png?raw=true")[Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) | Medium | []() | | |
 | 278 | [First Bad Version](https://leetcode.com/problems/first-bad-version/) | Easy | []() | | |
 | 279 | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) | Medium | []() | | |
-| 280 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[Wiggle Sort ](https://leetcode.com/problems/wiggle-sort/) | Medium | []() | | |
+| 280 | ![](../resources/dollar-sign-10x10.png?raw=true")[Wiggle Sort ](https://leetcode.com/problems/wiggle-sort/) | Medium | []() | | |
 | 281 | ![](../resources/dollar-sign-10x10.png?raw=true")[Zigzag Iterator](../resources/ZigzagIterator.md) | Medium | []() | | |
 | 282 | []() | Hard | []() | | |
 | 283 | []() | Easy | []() | | |
 | 284 | []() | Medium | []() | | |
-| 285 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
-| 286 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
+| 285 | ![](../resources/dollar-sign-10x10.png?raw=true")[]() | Medium | []() | | |
+| 286 | ![](../resources/dollar-sign-10x10.png?raw=true")[]() | Medium | []() | | |
 | 287 | []() | Medium | []() | | |
-| 288 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
+| 288 | ![](../resources/dollar-sign-10x10.png?raw=true")[]() | Medium | []() | | |
 | 289 | []() | Medium | []() | | |
 | 290 | []() | Easy | []() | | |
-| 291 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Hard | []() | | |
+| 291 | ![](../resources/dollar-sign-10x10.png?raw=true")[]() | Hard | []() | | |
 | 292 | []() | Easy | []() | | |
-| 293 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Easy | []() | | |
-| 294 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
+| 293 | ![](../resources/dollar-sign-10x10.png?raw=true")[]() | Easy | []() | | |
+| 294 | ![](../resources/dollar-sign-10x10.png?raw=true")[]() | Medium | []() | | |
 | 295 | []() | Hard | []() | | |
-| 296 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Hard | []() | | |
+| 296 | ![](../resources/dollar-sign-10x10.png?raw=true")[]() | Hard | []() | | |
 | 297 | []() | Hard | []() | | |
-| 298 | <img src="https://i.ibb.co/Wzj68NS/dollar-sign-10x10.png" alt="dollar-sign-10x10" border="0">[]() | Medium | []() | | |
+| 298 | ![](../resources/dollar-sign-10x10.png?raw=true")[]() | Medium | []() | | |
 | 299 | []() | Medium | []() | | |
 | 300 | []() | Medium | []() | | |

@@ -1,11 +1,12 @@
-### [LeetCode] 281. Zigzag Iterator
+### Leetcode 281. Zigzag Iterator
+Subscribed Problems
+Leetcode link: https://leetcode.com/problems/zigzag-iterator/
 
-Subscribe Only
-Leetcode https://leetcode.com/problems/zigzag-iterator/
+---
 
 Given two 1d vectors, implement an iterator to return their elements alternately.
 
-Example:
+<strong>Example:</strong>
 ```
 Input:
 v1 = [1,2]
