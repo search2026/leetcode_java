@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LowestCommonAncestorOfABinarySearchTreeTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         TreeNode node_0 = new TreeNode(0);
         TreeNode node_2 = new TreeNode(2);
         TreeNode node_3 = new TreeNode(3);
@@ -37,7 +37,7 @@ public class LowestCommonAncestorOfABinarySearchTreeTests {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         TreeNode node_0 = new TreeNode(0);
         TreeNode node_2 = new TreeNode(2);
         TreeNode node_3 = new TreeNode(3);

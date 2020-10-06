@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class VerifyPreorderSequenceInBinarySearchTreeTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         VerifyPreorderSequenceInBinarySearchTree.Solution sol =
                 new VerifyPreorderSequenceInBinarySearchTree().new Solution();
         assertFalse(sol.verifyPreorder(new int[]{5, 2, 6, 1, 3}));

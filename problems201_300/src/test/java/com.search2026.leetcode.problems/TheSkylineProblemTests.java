@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TheSkylineProblemTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         TheSkylineProblem.Solution sol = new TheSkylineProblem().new Solution();
         int[][] buildings = {
                 {2, 9, 10},

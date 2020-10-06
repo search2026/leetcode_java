@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CountCompleteTreeNodesTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         CountCompleteTreeNodes.Solution sol = new CountCompleteTreeNodes().new Solution();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);

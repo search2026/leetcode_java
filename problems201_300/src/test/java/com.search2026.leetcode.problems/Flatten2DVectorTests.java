@@ -13,14 +13,14 @@ public class Flatten2DVectorTests {
     @Test
     public void testSolution() {
         List<List<Integer>> test = new ArrayList<>();
-        test.add(new ArrayList<Integer>() {{
+        test.add(new ArrayList<>() {{
             add(1);
             add(2);
         }});
-        test.add(new ArrayList<Integer>() {{
+        test.add(new ArrayList<>() {{
             add(3);
         }});
-        test.add(new ArrayList<Integer>() {{
+        test.add(new ArrayList<>() {{
             add(4);
             add(5);
             add(6);
@@ -39,14 +39,14 @@ public class Flatten2DVectorTests {
     @Test
     public void testSolution2() {
         List<List<Integer>> test = new ArrayList<>();
-        test.add(new ArrayList<Integer>() {{
+        test.add(new ArrayList<>() {{
             add(1);
             add(2);
         }});
-        test.add(new ArrayList<Integer>() {{
+        test.add(new ArrayList<>() {{
             add(3);
         }});
-        test.add(new ArrayList<Integer>() {{
+        test.add(new ArrayList<>() {{
             add(4);
             add(5);
             add(6);

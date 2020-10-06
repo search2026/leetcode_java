@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ValidAnagramTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         ValidAnagram.Solution sol = new ValidAnagram().new Solution();
         assertEquals(3, 3);
     }

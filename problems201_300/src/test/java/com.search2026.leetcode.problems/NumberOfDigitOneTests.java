@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class NumberOfDigitOneTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         NumberOfDigitOne.Solution sol = new NumberOfDigitOne().new Solution();
         assertEquals(6, sol.countDigitOne(13));
     }

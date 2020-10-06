@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CountUnivalueSubtreesTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         CountUnivalueSubtrees.Solution sol = new CountUnivalueSubtrees().new Solution();
         TreeNode root = new TreeNode(5);
         root.left = new TreeNode(1);
