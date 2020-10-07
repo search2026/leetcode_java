@@ -49,7 +49,7 @@ public class UglyNumber {
                 return 0;
             }
 
-            List<Integer> nums = new ArrayList<Integer>();
+            List<Integer> nums = new ArrayList<>();
             nums.add(1);
 
             int i = 0;

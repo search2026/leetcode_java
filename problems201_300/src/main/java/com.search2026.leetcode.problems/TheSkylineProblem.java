@@ -12,11 +12,11 @@ public class TheSkylineProblem {
     */
     public class Solution {
         public List<int[]> getSkyline(int[][] buildings) {
-            List<int[]> result = new ArrayList<int[]>();
+            List<int[]> res = new ArrayList<>();
 
             if (buildings == null || buildings.length == 0
                         || buildings[0].length == 0) {
-                return result;
+                return res;
             }
 
             List<Edge> edges = new ArrayList<>();
@@ -53,21 +53,21 @@ public class TheSkylineProblem {
             for (Edge edge : edges) {
                 if (edge.isStart) {
                     if (heightHeap.isEmpty() || edge.height > heightHeap.peek()) {
-                        result.add(new int[]{edge.x, edge.height});
+                        res.add(new int[]{edge.x, edge.height});
                     }
                     heightHeap.add(edge.height);
                 } else {
                     heightHeap.remove(edge.height);
 
                     if (heightHeap.isEmpty()) {
-                        result.add(new int[]{edge.x, 0});
+                        res.add(new int[]{edge.x, 0});
                     } else if (edge.height > heightHeap.peek()) {
-                        result.add(new int[]{edge.x, heightHeap.peek()});
+                        res.add(new int[]{edge.x, heightHeap.peek()});
                     }
                 }
             }
 
-            return result;
+            return res;
         }
     }
 

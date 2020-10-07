@@ -45,23 +45,23 @@ public class DifferentWaysToAddParentheses {
         }
 
         private int calculate(int num1, int num2, char operator) {
-            int result = 0;
+            int res = 0;
 
             switch (operator) {
                 case '+':
-                    result = num1 + num2;
+                    res = num1 + num2;
                     break;
 
                 case '-':
-                    result = num1 - num2;
+                    res = num1 - num2;
                     break;
 
                 case '*':
-                    result = num1 * num2;
+                    res = num1 * num2;
                     break;
             }
 
-            return result;
+            return res;
         }
 
         private boolean isOperator(char operator) {

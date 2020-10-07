@@ -91,30 +91,30 @@ public class LowestCommonAncestorOfABinaryTree {
             return list1.get(i - 1);
         }
 
-        private boolean getPath(TreeNode root, TreeNode target, List<TreeNode> result) {
+        private boolean getPath(TreeNode root, TreeNode target, List<TreeNode> res) {
             if (root == null) {
                 return false;
             }
 
-            result.add(root);
+            res.add(root);
 
             if (root == target) {
                 return true;
             }
 
             if (root.left != null) {
-                if (getPath(root.left, target, result)) {
+                if (getPath(root.left, target, res)) {
                     return true;
                 } else {
-                    result.remove(result.size() - 1);
+                    res.remove(res.size() - 1);
                 }
             }
 
             if (root.right != null) {
-                if (getPath(root.right, target, result)) {
+                if (getPath(root.right, target, res)) {
                     return true;
                 } else {
-                    result.remove(result.size() - 1);
+                    res.remove(res.size() - 1);
                 }
             }
 

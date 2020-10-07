@@ -12,12 +12,12 @@ public class MissingRangesTests {
     public void testSolution() {
         MissingRanges.Solution sol = new MissingRanges().new Solution();
         int[] test = {0, 1, 3, 50, 75};
-        List<String> results = sol.findMissingRanges(test, 0, 99);
-        assertEquals(4, results.size());
-        assertEquals("2", results.get(0));
-        assertEquals("4->49", results.get(1));
-        assertEquals("51->74", results.get(2));
-        assertEquals("76->99", results.get(3));
+        List<String> res = sol.findMissingRanges(test, 0, 99);
+        assertEquals(4, res.size());
+        assertEquals("2", res.get(0));
+        assertEquals("4->49", res.get(1));
+        assertEquals("51->74", res.get(2));
+        assertEquals("76->99", res.get(3));
     }
 
 }

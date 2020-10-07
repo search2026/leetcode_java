@@ -36,11 +36,11 @@ public class IntegerToEnglishWords {
                 num /= 1000;
             }
 
-            String result = sb.toString();
-            if (result.charAt(result.length() - 1) == ' ') {
-                return result.substring(0, result.length() - 1);
+            String res = sb.toString();
+            if (res.charAt(res.length() - 1) == ' ') {
+                return res.substring(0, res.length() - 1);
             } else {
-                return result;
+                return res;
             }
         }
 

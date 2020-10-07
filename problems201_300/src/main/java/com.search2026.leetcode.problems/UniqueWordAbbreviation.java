@@ -42,11 +42,7 @@ public class UniqueWordAbbreviation {
             }
 
             String abbr = getAbbr(word);
-            if (!abbrDict.containsKey(abbr) || abbrDict.get(abbr).equals(word)) {
-                return true;
-            } else {
-                return false;
-            }
+            return !abbrDict.containsKey(abbr) || abbrDict.get(abbr).equals(word);
         }
 
         private String getAbbr(String word) {

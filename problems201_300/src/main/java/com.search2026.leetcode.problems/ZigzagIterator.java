@@ -27,26 +27,26 @@ public class ZigzagIterator {
     }
 
     public int next() {
-        int result = 0;
+        int res = 0;
         if (i >= v1.size()) {
-            result = v2.get(j);
+            res = v2.get(j);
             j++;
         } else if (j >= v2.size()) {
-            result = v1.get(i);
+            res = v1.get(i);
             i++;
         } else {
             if (listId == 0) {
-                result = v1.get(i);
+                res = v1.get(i);
                 i++;
                 listId = 1;
             } else {
-                result = v2.get(j);
+                res = v2.get(j);
                 j++;
                 listId = 0;
             }
         }
 
-        return result;
+        return res;
     }
 
     public boolean hasNext() {

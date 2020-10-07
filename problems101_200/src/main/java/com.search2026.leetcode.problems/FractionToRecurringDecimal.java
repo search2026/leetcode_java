@@ -30,8 +30,8 @@ public class FractionToRecurringDecimal {
             den = Math.abs(den);
 
             // quotient
-            long res = num / den;
-            result += String.valueOf(res);
+            long resLong = num / den;
+            result += String.valueOf(resLong);
 
             // if remainder is 0, return result
             long remainder = (num % den) * 10;
@@ -39,22 +39,22 @@ public class FractionToRecurringDecimal {
                 return result;
 
             // right-hand side of decimal point
-            HashMap<Long, Integer> map = new HashMap<Long, Integer>();
+            HashMap<Long, Integer> map = new HashMap<>();
             result += ".";
             while (remainder != 0) {
                 // if digits repeat
                 if (map.containsKey(remainder)) {
                     int beg = map.get(remainder);
                     String part1 = result.substring(0, beg);
-                    String part2 = result.substring(beg, result.length());
+                    String part2 = result.substring(beg);
                     result = part1 + "(" + part2 + ")";
                     return result;
                 }
 
                 // continue
                 map.put(remainder, result.length());
-                res = remainder / den;
-                result += String.valueOf(res);
+                resLong = remainder / den;
+                result += String.valueOf(resLong);
                 remainder = (remainder % den) * 10;
             }
 

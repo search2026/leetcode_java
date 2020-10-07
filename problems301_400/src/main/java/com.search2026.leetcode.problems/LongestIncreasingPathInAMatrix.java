@@ -4,6 +4,7 @@ public class LongestIncreasingPathInAMatrix {
 
     /*
         Longest Increasing Path in Matrix
+        Leetcode #329
         https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
         Difficulty: Medium
      */
@@ -26,17 +27,17 @@ public class LongestIncreasingPathInAMatrix {
         }
 
         public int longestIncreasingPath(int[][] matrix) {
-            int rslt = 0;
-            if (matrix == null || matrix.length == 0) return rslt;
+            int res = 0;
+            if (matrix == null || matrix.length == 0) return res;
             int m = matrix.length;
             int n = matrix[0].length;
             int[][] dp = new int[m][n];
 
             for (int i = 0; i < m; i++)
                 for (int j = 0; j < n; j++)
-                    rslt = Math.max(rslt, search(matrix, dp, i, j));
+                    res = Math.max(res, search(matrix, dp, i, j));
 
-            return rslt;
+            return res;
         }
     }
 

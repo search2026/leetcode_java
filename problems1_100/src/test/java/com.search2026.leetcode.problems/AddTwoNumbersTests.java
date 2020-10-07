@@ -17,11 +17,11 @@ public class AddTwoNumbersTests {
         list2.next = new ListNode(6);
         list2.next.next = new ListNode(4);
 
-        ListNode result = sol.addTwoNumbers(list1, list2);
+        ListNode res = sol.addTwoNumbers(list1, list2);
 
-        assertEquals(7, result.val);
-        assertEquals(0, result.next.val);
-        assertEquals(8, result.next.next.val);
+        assertEquals(7, res.val);
+        assertEquals(0, res.next.val);
+        assertEquals(8, res.next.next.val);
     }
 
     @Test
@@ -35,11 +35,11 @@ public class AddTwoNumbersTests {
         list2.next = new ListNode(6);
         list2.next.next = new ListNode(4);
 
-        ListNode result = sol.addTwoNumbers(list1, list2);
+        ListNode res = sol.addTwoNumbers(list1, list2);
 
-        assertEquals(7, result.val);
-        assertEquals(0, result.next.val);
-        assertEquals(8, result.next.next.val);
+        assertEquals(7, res.val);
+        assertEquals(0, res.next.val);
+        assertEquals(8, res.next.next.val);
     }
 
 }

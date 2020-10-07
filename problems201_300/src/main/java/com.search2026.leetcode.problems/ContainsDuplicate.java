@@ -13,9 +13,6 @@ public class ContainsDuplicate {
         Difficulty: Easy
      */
     public class Solution {
-        // Contains Duplicates
-        // https://leetcode.com/problems/contains-duplicate/
-        // Difficulty: Easy
         public boolean containsDuplicate(int[] nums) {
             if (nums == null || nums.length == 0) {
                 return false;

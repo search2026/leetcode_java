@@ -20,7 +20,7 @@ public class NQueens {
             return true;
         }
 
-        public void search(int n, int row, int[] colForRow, List<List<String>> rslt) {
+        public void search(int n, int row, int[] colForRow, List<List<String>> res) {
             if (row == n) { //findRoot a suitable solution, insert to result list
                 List<String> list = new ArrayList<>();
                 for (int i = 0; i < n; i++) {
@@ -32,14 +32,14 @@ public class NQueens {
                     String st = buff.toString();
                     list.add(st);
                 }
-                rslt.add(list);
+                res.add(list);
                 return;
             }
 
             for (int i = 0; i < n; i++) {
                 colForRow[row] = i;
                 if (validate(row, colForRow)) {
-                    search(n, row+1, colForRow, rslt);
+                    search(n, row+1, colForRow, res);
                 }
             }
         }
@@ -93,15 +93,15 @@ public class NQueens {
             return true;
         }
 
-        private void search(int n, int row, int[] ColForRow, ArrayList<Integer> rslt) {
+        private void search(int n, int row, int[] ColForRow, ArrayList<Integer> res) {
             if (row == n) { //findRoot a suitable solution
-                rslt.set(0, rslt.get(0) + 1);
+                res.set(0, res.get(0) + 1);
                 return;
             }
             for (int i = 0; i < n; i++) {
                 ColForRow[row] = i;
                 if (validate(row, ColForRow)) {
-                    search(n, row + 1, ColForRow, rslt);
+                    search(n, row + 1, ColForRow, res);
                 }
             }
         }

@@ -97,15 +97,15 @@ public class PalindromePermutation {
             return res;
         }
 
-        private void permute(String left, String candidate, String single, int l, List<String> rslt) {
+        private void permute(String left, String candidate, String single, int l, List<String> res) {
             if (left.length() == l) {
                 String right = new StringBuffer(left).reverse().toString();
-                rslt.add(left + single + right);
+                res.add(left + single + right);
             }
             for (int i = 0; i < candidate.length(); i++) {
                 if (i > 0 && candidate.charAt(i) == candidate.charAt(i - 1))
                     continue;
-                permute(left + candidate.charAt(i), candidate.substring(0, i) + candidate.substring(i + 1), single, l, rslt);
+                permute(left + candidate.charAt(i), candidate.substring(0, i) + candidate.substring(i + 1), single, l, res);
             }
         }
     }

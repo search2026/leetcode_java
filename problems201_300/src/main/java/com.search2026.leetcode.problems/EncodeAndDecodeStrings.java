@@ -33,9 +33,9 @@ public class EncodeAndDecodeStrings {
 
         // Decodes a single string to a list of strings.
         public List<String> decode(String s) {
-            List<String> result = new ArrayList<>();
+            List<String> res = new ArrayList<>();
             if (s == null || s.length() == 0) {
-                return result;
+                return res;
             }
 
             int i = 0;
@@ -48,11 +48,11 @@ public class EncodeAndDecodeStrings {
                 }
 
                 String str = s.substring(i + 1, i + len + 1);
-                result.add(str);
+                res.add(str);
                 i = i + len + 1;
             }
 
-            return result;
+            return res;
         }
     }
 

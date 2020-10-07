@@ -48,11 +48,11 @@ public class MultiplyStrings {
         }
 
         private List<Integer> toList(String s) {
-            List<Integer> result = new ArrayList<>();
+            List<Integer> res = new ArrayList<>();
             for (int i = s.length() - 1; i >= 0; i--) {
-                result.add(s.charAt(i) - '0');
+                res.add(s.charAt(i) - '0');
             }
-            return result;
+            return res;
         }
 
         private String toString(List<Integer> l) {
@@ -73,16 +73,16 @@ public class MultiplyStrings {
         }
 
         private List<Integer> multiplyDigit(List<Integer> l, int digit) {
-            List<Integer> result = new ArrayList<>();
+            List<Integer> res = new ArrayList<>();
             int carry = 0;
             for (int i : l) {
-                result.add((i * digit + carry) % 10);
+                res.add((i * digit + carry) % 10);
                 carry = (i * digit + carry) / 10;
             }
             if (carry != 0) {
-                result.add(carry);
+                res.add(carry);
             }
-            return result;
+            return res;
         }
 
         public String multiply(String num1, String num2) {

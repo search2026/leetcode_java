@@ -39,7 +39,7 @@ public class MajorityElement {
     */
     public class Solution_2 {
         public List<Integer> majorityElement(int[] nums) {
-            List<Integer> result = new ArrayList<Integer>();
+            List<Integer> res = new ArrayList<Integer>();
 
             Integer n1 = null, n2 = null;
             int c1 = 0, c2 = 0;
@@ -72,11 +72,11 @@ public class MajorityElement {
             }
 
             if (c1 > nums.length / 3)
-                result.add(n1);
+                res.add(n1);
             if (c2 > nums.length / 3)
-                result.add(n2);
+                res.add(n2);
 
-            return result;
+            return res;
         }
     }
 

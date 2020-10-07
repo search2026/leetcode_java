@@ -15,7 +15,7 @@ public class ProductOfArrayExceptSelf {
             }
 
             int len = nums.length;
-            int[] result = new int[len];
+            int[] res = new int[len];
             int[] before = new int[len];
             int[] after = new int[len];
 
@@ -30,10 +30,10 @@ public class ProductOfArrayExceptSelf {
             }
 
             for (int i = 0; i < len; i++) {
-                result[i] = before[i] * after[i];
+                res[i] = before[i] * after[i];
             }
 
-            return result;
+            return res;
         }
     }
 
@@ -49,22 +49,22 @@ public class ProductOfArrayExceptSelf {
                 return new int[0];
             }
 
-            int[] result = new int[nums.length];
-            result[0] = 1;
+            int[] res = new int[nums.length];
+            res[0] = 1;
 
             // before a[i]
             for (int i = 1; i < nums.length; i++) {
-                result[i] = result[i - 1] * nums[i - 1];
+                res[i] = res[i - 1] * nums[i - 1];
             }
 
             // after a[i]
             int after = 1;
             for (int i = nums.length - 2; i >= 0; i--) {
-                result[i] *= after * nums[i + 1];
+                res[i] *= after * nums[i + 1];
                 after *= nums[i + 1];
             }
 
-            return result;
+            return res;
         }
     }
 

@@ -95,10 +95,10 @@ public class SingleNumberTests {
         SingleNumber.Solution_7 sol = new SingleNumber().new Solution_7();
 
         int[] test1 = {1, 2, 1, 3, 2, 5};
-        int[] result = sol.singleNumber(test1);
-        assertEquals(2, result.length);
-        assertEquals(5, result[0]);
-        assertEquals(3, result[1]);
+        int[] res = sol.singleNumber(test1);
+        assertEquals(2, res.length);
+        assertEquals(5, res[0]);
+        assertEquals(3, res[1]);
     }
 
     @Test
@@ -106,10 +106,10 @@ public class SingleNumberTests {
         SingleNumber.Solution_8 sol = new SingleNumber().new Solution_8();
 
         int[] test1 = {1, 2, 1, 3, 2, 5};
-        int[] result = sol.singleNumber(test1);
-        assertEquals(2, result.length);
-        assertEquals(5, result[0]);
-        assertEquals(3, result[1]);
+        int[] res = sol.singleNumber(test1);
+        assertEquals(2, res.length);
+        assertEquals(5, res[0]);
+        assertEquals(3, res[1]);
     }
 
     @Test

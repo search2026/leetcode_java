@@ -13,15 +13,15 @@ public class SummaryRanges {
      */
     public class Solution {
         public List<String> summaryRanges(int[] nums) {
-            List<String> results = new ArrayList<>();
+            List<String> res = new ArrayList<>();
             if (nums == null || nums.length == 0) {
-                return results;
+                return res;
             }
 
             if (nums.length == 1) {
                 String temp = Integer.toString(nums[0]);
-                results.add(temp);
-                return results;
+                res.add(temp);
+                return res;
             }
 
             int lo = 0;
@@ -35,7 +35,7 @@ public class SummaryRanges {
                         sb.append("->");
                         sb.append(Integer.toString(nums[i - 1]));
                     }
-                    results.add(sb.toString());
+                    res.add(sb.toString());
                     lo = i;
                 }
             }
@@ -48,10 +48,10 @@ public class SummaryRanges {
                     sb.append("->");
                     sb.append(Integer.toString(nums[nums.length - 1]));
                 }
-                results.add(sb.toString());
+                res.add(sb.toString());
             }
 
-            return results;
+            return res;
         }
     }
 

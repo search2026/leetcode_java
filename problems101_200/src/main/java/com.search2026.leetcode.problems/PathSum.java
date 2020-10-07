@@ -41,21 +41,21 @@ public class PathSum {
             return res;
         }
 
-        private void pathSum(TreeNode root, int sum, ArrayList<Integer> nodes, List<List<Integer>> rslt) {
+        private void pathSum(TreeNode root, int sum, ArrayList<Integer> nodes, List<List<Integer>> curr) {
             if (root.left == null && root.right == null) {
                 if (root.val == sum) {
                     ArrayList<Integer> temp = new ArrayList<>(nodes);
                     temp.add(root.val);
-                    rslt.add(temp);
+                    curr.add(temp);
                 }
                 return;
             }
             nodes.add(root.val);
             if (root.left != null) {
-                pathSum(root.left, sum - root.val, nodes, rslt);
+                pathSum(root.left, sum - root.val, nodes, curr);
             }
             if (root.right != null) {
-                pathSum(root.right, sum - root.val, nodes, rslt);
+                pathSum(root.right, sum - root.val, nodes, curr);
             }
             nodes.remove(nodes.size() - 1);
         }

@@ -17,19 +17,19 @@ public class PowXN {
             }
             boolean negative = n < 0;
             n = Math.abs(n);
-            double rslt = 1;
+            double res = 1;
             double times = x;
             while (n != 0) {
                 if ((n & 1) == 1) {
-                    rslt *= times;
+                    res *= times;
                 }
                 times *= times;
                 n >>= 1;
             }
             if (negative) {
-                return overflow ? 1 / (rslt * x) : 1 / rslt;
+                return overflow ? 1 / (res * x) : 1 / res;
             }
-            return rslt;
+            return res;
         }
     }
 

@@ -24,11 +24,11 @@ public class Triangle {
                 dp[0] = dp[0] + triangle.get(i).get(0);
             }
 
-            int rslt = dp[0];
+            int res = dp[0];
             for (int i=1; i<n; i++)
-                if (dp[i] < rslt)
-                    rslt = dp[i];
-            return rslt;
+                if (dp[i] < res)
+                    res = dp[i];
+            return res;
         }
     }
 

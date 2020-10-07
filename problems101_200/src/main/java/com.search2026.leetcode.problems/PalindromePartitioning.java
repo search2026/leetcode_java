@@ -53,16 +53,16 @@ public class PalindromePartitioning {
         Difficulty: Medium
      */
     public class Solution_2 {
-        private void search(String s, boolean[][] dp, int pos, List<String> cur, List<List<String>> rslt) {
+        private void search(String s, boolean[][] dp, int pos, List<String> curr, List<List<String>> res) {
             if (pos == s.length()) {
-                rslt.add(new ArrayList<>(cur));
+                res.add(new ArrayList<>(curr));
                 return;
             }
             for (int i = pos; i < s.length(); i++) {
                 if (dp[pos][i]) {
-                    cur.add(s.substring(pos, i + 1));
-                    search(s, dp, i + 1, cur, rslt);
-                    cur.remove(cur.size() - 1);
+                    curr.add(s.substring(pos, i + 1));
+                    search(s, dp, i + 1, curr, res);
+                    curr.remove(curr.size() - 1);
                 }
             }
         }

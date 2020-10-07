@@ -12,9 +12,9 @@ public class IntegerToRoman {
         private final char[] symbols = new char[]{'M', 'D', 'C', 'L', 'X', 'V', 'I'};
 
         private String repeat(char c, int times) {
-            StringBuilder result = new StringBuilder();
-            result.append(String.valueOf(c).repeat(Math.max(0, times)));
-            return result.toString();
+            StringBuilder sb = new StringBuilder();
+            sb.append(String.valueOf(c).repeat(Math.max(0, times)));
+            return sb.toString();
         }
 
         public String intToRoman(int num) {

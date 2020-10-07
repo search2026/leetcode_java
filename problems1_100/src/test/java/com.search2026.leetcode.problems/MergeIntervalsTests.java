@@ -18,12 +18,12 @@ public class MergeIntervalsTests {
         intervals.add(new Interval(2, 6));
         intervals.add(new Interval(8, 10));
         intervals.add(new Interval(15, 18));
-        List<Interval> rslt = sol.merge(intervals);
-        assertEquals(3, rslt.size());
-        assertEquals(1, rslt.get(0).start);
-        assertEquals(6, rslt.get(0).end);
-        assertEquals(8, rslt.get(1).start);
-        assertEquals(10, rslt.get(1).end);
+        List<Interval> res = sol.merge(intervals);
+        assertEquals(3, res.size());
+        assertEquals(1, res.get(0).start);
+        assertEquals(6, res.get(0).end);
+        assertEquals(8, res.get(1).start);
+        assertEquals(10, res.get(1).end);
     }
 
     @Test
@@ -34,12 +34,12 @@ public class MergeIntervalsTests {
         intervals.add(new Interval(2, 6));
         intervals.add(new Interval(8, 10));
         intervals.add(new Interval(15, 18));
-        List<Interval> rslt = sol.merge(intervals);
-        assertEquals(3, rslt.size());
-        assertEquals(1, rslt.get(0).start);
-        assertEquals(6, rslt.get(0).end);
-        assertEquals(8, rslt.get(1).start);
-        assertEquals(10, rslt.get(1).end);
+        List<Interval> res = sol.merge(intervals);
+        assertEquals(3, res.size());
+        assertEquals(1, res.get(0).start);
+        assertEquals(6, res.get(0).end);
+        assertEquals(8, res.get(1).start);
+        assertEquals(10, res.get(1).end);
     }
 
 }

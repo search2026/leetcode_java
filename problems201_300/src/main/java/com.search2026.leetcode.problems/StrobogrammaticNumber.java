@@ -53,75 +53,75 @@ public class StrobogrammaticNumber {
         Difficulty: Medium
      */
     public class Solution_2 {
-        private List<String> result = new ArrayList<>();
+        private List<String> res = new ArrayList<>();
         private Map<String, String> hashMap = new HashMap<>();
 
         public List<String> findStrobogrammatic(int n) {
-            result.clear();
+            res.clear();
             hashMap.clear();
             fillHashMap(hashMap);
 
             findStrobogrammaticHelper(n);
 
-            return result;
+            return res;
         }
 
         private void findStrobogrammaticHelper(int n) {
             if (n <= 0) {
                 return;
             }
-            List<String> currResult = new ArrayList<>();
+            List<String> curr = new ArrayList<>();
             int size = 0;
             if (n == 1) {
-                if (!result.isEmpty()) {
-                    size = result.get(0).length();
+                if (!res.isEmpty()) {
+                    size = res.get(0).length();
                     int mid = size / 2;
 
-                    for (String str : result) {
+                    for (String str : res) {
                         StringBuffer sb = new StringBuffer(str);
                         sb.insert(mid, '0');
-                        currResult.add(sb.toString());
+                        curr.add(sb.toString());
 
                         sb.setCharAt(mid, '1');
-                        currResult.add(sb.toString());
+                        curr.add(sb.toString());
 
                         sb.setCharAt(mid, '8');
-                        currResult.add(sb.toString());
+                        curr.add(sb.toString());
                     }
-                    result.clear();
-                    result.addAll(new ArrayList(currResult));
+                    res.clear();
+                    res.addAll(new ArrayList(curr));
                 } else {
-                    result.add("0");
-                    result.add("1");
-                    result.add("8");
+                    res.add("0");
+                    res.add("1");
+                    res.add("8");
                 }
             }
 
             if (n > 1) {
-                if (result.isEmpty()) {
+                if (res.isEmpty()) {
                     Iterator it = hashMap.entrySet().iterator();
                     while (it.hasNext()) {
                         Map.Entry pair = (Map.Entry) it.next();
                         String elem = pair.getKey() + "" + pair.getValue();
                         if (!elem.equals("00")) {
-                            result.add(elem);
+                            res.add(elem);
                         }
                     }
                 } else {
-                    size = result.get(0).length();
+                    size = res.get(0).length();
                     int mid = size / 2;
-                    for (String str : result) {
+                    for (String str : res) {
                         Iterator it = hashMap.entrySet().iterator();
                         while (it.hasNext()) {
                             Map.Entry pair = (Map.Entry) it.next();
                             StringBuffer sb = new StringBuffer(str);
                             String elem = pair.getKey() + "" + pair.getValue();
                             sb.insert(mid, elem);
-                            currResult.add(sb.toString());
+                            curr.add(sb.toString());
                         }
                     }
-                    result.clear();
-                    result.addAll(new ArrayList(currResult));
+                    res.clear();
+                    res.addAll(new ArrayList(curr));
                 }
             }
 

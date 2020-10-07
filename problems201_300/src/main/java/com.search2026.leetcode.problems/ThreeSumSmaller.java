@@ -17,7 +17,7 @@ public class ThreeSumSmaller {
                 return 0;
             }
 
-            int result = 0;
+            int res = 0;
             Arrays.sort(nums);
 
             for (int i = 0; i < nums.length - 2; i++) {
@@ -25,7 +25,7 @@ public class ThreeSumSmaller {
                 int k = nums.length - 1;
                 while (j < k) {
                     if (nums[i] + nums[j] + nums[k] < target) {
-                        result += (k - j);
+                        res += (k - j);
                         j++;
                     } else {
                         k--;
@@ -33,7 +33,7 @@ public class ThreeSumSmaller {
                 }
             }
 
-            return result;
+            return res;
         }
     }
 

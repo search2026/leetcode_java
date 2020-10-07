@@ -69,13 +69,13 @@ public class ReverseBits {
             byte[] bytes = new byte[4];
             for (int i = 0; i < 4; i++) // convert int into 4 bytes
                 bytes[i] = (byte) ((n >>> 8 * i) & 0xFF);
-            int result = 0;
+            int res = 0;
             for (int i = 0; i < 4; i++) {
-                result += reverseByte(bytes[i]); // reverse per byte
+                res += reverseByte(bytes[i]); // reverse per byte
                 if (i < 3)
-                    result <<= 8;
+                    res <<= 8;
             }
-            return result;
+            return res;
         }
     }
 
