@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Random;
 
-public class kthLargestElementInAnArray {
+public class KthLargestElementInAnArray {
 
     /*
         Kth Largest number in an Array - QuickSelect

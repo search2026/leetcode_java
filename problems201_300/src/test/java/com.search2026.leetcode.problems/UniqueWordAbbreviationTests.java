@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UniqueWordAbbreviationTests {
 
     @Test
-    public void testSolution1() {
+    public void testSolution() {
         String[] dict = {"deer", "door", "cake", "card"};
         UniqueWordAbbreviation.ValidWordAbbr sol = new UniqueWordAbbreviation().new ValidWordAbbr(dict);
         assertFalse(sol.isUnique("dear"));
