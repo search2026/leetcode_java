@@ -72,8 +72,8 @@ public class MaxSumofRectangle {
      * return {maxSum, left, right}
      */
     private int[] kadane(int[] a) {
-      //result[0] == maxSum, result[1] == start, result[2] == end;
-      int[] result = new int[]{Integer.MIN_VALUE, 0, -1};
+      //res[0] == maxSum, res[1] == start, res[2] == end;
+      int[] res = new int[]{Integer.MIN_VALUE, 0, -1};
       int currentSum = 0;
       int localStart = 0;
 
@@ -82,22 +82,22 @@ public class MaxSumofRectangle {
         if (currentSum < 0) {
           currentSum = 0;
           localStart = i + 1;
-        } else if (currentSum > result[0]) {
-          result[0] = currentSum;
+        } else if (currentSum > res[0]) {
+          res[0] = currentSum;
         }
       }
 
       //all numbers in a are negative
-      if (result[2] == -1) {
-        result[0] = 0;
+      if (res[2] == -1) {
+        res[0] = 0;
         for (int i = 0; i < a.length; i++) {
-          if (a[i] > result[0]) {
-            result[0] = a[i];
+          if (a[i] > res[0]) {
+            res[0] = a[i];
           }
         }
       }
 
-      return result;
+      return res;
     }
 
     public int maxSumSubmatrix(int[][] matrix) {
@@ -106,7 +106,7 @@ public class MaxSumofRectangle {
 
       int m = matrix.length;
       int n = matrix[0].length;
-      int[] currentResult;
+      int[] currRes;
       int maxSum = Integer.MIN_VALUE;
       int left = 0;
       int top = 0;
@@ -121,13 +121,13 @@ public class MaxSumofRectangle {
           for (int i = 0; i < m; i++) {
             sums[i] += matrix[i][rightCol];
           }
-          currentResult = kadane(sums);
-          if (currentResult[0] > maxSum) {
-            maxSum = currentResult[0];
+          currRes = kadane(sums);
+          if (currRes[0] > maxSum) {
+            maxSum = currRes[0];
             left = leftCol;
-            top = currentResult[1];
+            top = currRes[1];
             right = rightCol;
-            bottom = currentResult[2];
+            bottom = currRes[2];
           }
         }
       }

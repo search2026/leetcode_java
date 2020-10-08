@@ -7,8 +7,7 @@ public class GroupShiftedStrings {
     /*
         Group Shifted Strings
         Leetcode #249
-        https://leetcode.com/discuss/questions/oj/group-shifted-strings
-        http://buttercola.blogspot.com/2015/08/leetcode-group-shifted-strings.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/GroupShiftedStrings.md
         Difficulty: Easy
      */
     public class Solution {
@@ -20,7 +19,7 @@ public class GroupShiftedStrings {
 
             Arrays.sort(strings, new LexComparator());
 
-            Map<String, List<String>> map = new HashMap<String, List<String>>();
+            Map<String, List<String>> map = new HashMap<>();
 
             for (String s : strings) {
                 StringBuffer sb = new StringBuffer();
@@ -37,16 +36,16 @@ public class GroupShiftedStrings {
                     list.add(s);
                     map.put(original, list);
                 } else {
-                    List<String> list = new ArrayList<String>();
+                    List<String> list = new ArrayList<>();
                     list.add(s);
                     map.put(original, list);
                 }
             }
 
             // Iterate the map
-            Iterator it = map.entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry) it.next();
+            Iterator iter = map.entrySet().iterator();
+            while (iter.hasNext()) {
+                Map.Entry pair = (Map.Entry) iter.next();
                 res.add((List<String>) pair.getValue());
             }
 

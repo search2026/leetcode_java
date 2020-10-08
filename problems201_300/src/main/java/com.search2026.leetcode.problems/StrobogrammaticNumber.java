@@ -7,7 +7,7 @@ public class StrobogrammaticNumber {
     /*
         Strobogrammtic Number
         Leetcode #246
-        http://buttercola.blogspot.com/2015/08/leetcode-strobogrammatic-number.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/StrobogrammaticNumber.md
         Difficulty: Easy
      */
     public class Solution {
@@ -49,7 +49,7 @@ public class StrobogrammaticNumber {
     /*
         Strobogrammtic Number II
         Leetcode #247
-        http://buttercola.blogspot.com/2015/08/leetcode-strobogrammatic-number-ii.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/StrobogrammaticNumberII.md
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -140,7 +140,7 @@ public class StrobogrammaticNumber {
     /*
         Strobogrammtic Number III
         Leetcode #248
-        http://buttercola.blogspot.com/2015/09/leetcode-strobogrammatic-number-iii.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/StrobogrammaticNumberIII.md
         Difficulty: Hard
      */
     public class Solution_3 {

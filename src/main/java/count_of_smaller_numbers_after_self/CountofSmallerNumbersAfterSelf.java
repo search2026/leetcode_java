@@ -232,11 +232,11 @@ public class CountofSmallerNumbersAfterSelf {
         }
 
         public List<Integer> countSmaller(int[] nums) {
-            List<Integer> rslt = new ArrayList<Integer>();
-            if (nums == null) return rslt;
+            List<Integer> res = new ArrayList<Integer>();
+            if (nums == null) return res;
 
             int n = nums.length;
-            if (n <= 0) return rslt;
+            if (n <= 0) return res;
 
             // map input to sorted order. How about duplicates?
             int[] tmp = nums.clone();
@@ -247,10 +247,10 @@ public class CountofSmallerNumbersAfterSelf {
 
             root = buildTree(nums, 0, nums.length);
             for (int i = nums.length - 1; i >= 0; i--) {
-                rslt.add(0, (int)query(root, 0, nums[i] - 1));
+                res.add(0, (int)query(root, 0, nums[i] - 1));
                 update(root, nums[i], 1);
             }
-            return rslt;
+            return res;
         }
     }
 

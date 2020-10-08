@@ -13,12 +13,12 @@ public class CuttingaRod {
     public class Solution {
         int search(int[] price, int end) {
             if (end<=0) return 0;
-            int rslt = Integer.MIN_VALUE;
+            int res = Integer.MIN_VALUE;
 
             for (int i = 0; i < end; i++)
-                rslt = Math.max(rslt, price[i] + search(price, end - i - 1));
+                res = Math.max(res, price[i] + search(price, end - i - 1));
 
-            return rslt;
+            return res;
         }
 
         int cutRod(int[] price) {

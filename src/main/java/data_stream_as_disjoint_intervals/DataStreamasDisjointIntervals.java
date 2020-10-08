@@ -139,20 +139,20 @@ public class DataStreamasDisjointIntervals {
       sr.addNum(7);
       sr.addNum(2);
       sr.addNum(6);
-      List<Interval> rslt = sr.getIntervals();
-      assertEquals(2, rslt.size());
-      assertEquals(1, rslt.get(0).start);
-      assertEquals(3, rslt.get(0).end);
-      assertEquals(6, rslt.get(1).start);
-      assertEquals(7, rslt.get(1).end);
+      List<Interval> res = sr.getIntervals();
+      assertEquals(2, res.size());
+      assertEquals(1, res.get(0).start);
+      assertEquals(3, res.get(0).end);
+      assertEquals(6, res.get(1).start);
+      assertEquals(7, res.get(1).end);
 
       sr.addNum(4);
-      rslt = sr.getIntervals();
-      assertEquals(2, rslt.size());
-      assertEquals(1, rslt.get(0).start);
-      assertEquals(4, rslt.get(0).end);
-      assertEquals(6, rslt.get(1).start);
-      assertEquals(7, rslt.get(1).end);
+      res = sr.getIntervals();
+      assertEquals(2, res.size());
+      assertEquals(1, res.get(0).start);
+      assertEquals(4, res.get(0).end);
+      assertEquals(6, res.get(1).start);
+      assertEquals(7, res.get(1).end);
     }
 
     @Test
@@ -163,20 +163,20 @@ public class DataStreamasDisjointIntervals {
       sr.addNum(7);
       sr.addNum(2);
       sr.addNum(6);
-      List<Interval> rslt = sr.getIntervals();
-      assertEquals(2, rslt.size());
-      assertEquals(1, rslt.get(0).start);
-      assertEquals(3, rslt.get(0).end);
-      assertEquals(6, rslt.get(1).start);
-      assertEquals(7, rslt.get(1).end);
+      List<Interval> res = sr.getIntervals();
+      assertEquals(2, res.size());
+      assertEquals(1, res.get(0).start);
+      assertEquals(3, res.get(0).end);
+      assertEquals(6, res.get(1).start);
+      assertEquals(7, res.get(1).end);
 
       sr.addNum(5);
-      rslt = sr.getIntervals();
-      assertEquals(2, rslt.size());
-      assertEquals(1, rslt.get(0).start);
-      assertEquals(3, rslt.get(0).end);
-      assertEquals(5, rslt.get(1).start);
-      assertEquals(7, rslt.get(1).end);
+      res = sr.getIntervals();
+      assertEquals(2, res.size());
+      assertEquals(1, res.get(0).start);
+      assertEquals(3, res.get(0).end);
+      assertEquals(5, res.get(1).start);
+      assertEquals(7, res.get(1).end);
     }
 
     @Test
@@ -187,20 +187,20 @@ public class DataStreamasDisjointIntervals {
       sr.addNum(7);
       sr.addNum(2);
       sr.addNum(6);
-      List<Interval> rslt = sr.getIntervals();
-      assertEquals(2, rslt.size());
-      assertEquals(1, rslt.get(0).start);
-      assertEquals(3, rslt.get(0).end);
-      assertEquals(6, rslt.get(1).start);
-      assertEquals(7, rslt.get(1).end);
+      List<Interval> res = sr.getIntervals();
+      assertEquals(2, res.size());
+      assertEquals(1, res.get(0).start);
+      assertEquals(3, res.get(0).end);
+      assertEquals(6, res.get(1).start);
+      assertEquals(7, res.get(1).end);
 
       sr.addNum(5);
-      rslt = sr.getIntervals();
-      assertEquals(2, rslt.size());
-      assertEquals(1, rslt.get(0).start);
-      assertEquals(3, rslt.get(0).end);
-      assertEquals(5, rslt.get(1).start);
-      assertEquals(7, rslt.get(1).end);
+      res = sr.getIntervals();
+      assertEquals(2, res.size());
+      assertEquals(1, res.get(0).start);
+      assertEquals(3, res.get(0).end);
+      assertEquals(5, res.get(1).start);
+      assertEquals(7, res.get(1).end);
     }
   }
 }

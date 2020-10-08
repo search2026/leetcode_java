@@ -9,8 +9,7 @@ public class Flatten2DVector {
     /*
         Flatten 2D Vector
         Leetcode #251
-        https://leetcode.com/discuss/questions/oj/flatten-2d-vector
-        http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/Flatten2DVector.md
         Difficulty: Medium
      */
     public class Solution implements Iterator<Integer> {
@@ -49,8 +48,7 @@ public class Flatten2DVector {
     /*
         Flatten 2D Vector
         Leetcode #251
-        https://leetcode.com/discuss/questions/oj/flatten-2d-vector
-        http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/Flatten2DVector.md
         Difficulty: Medium
      */
     public class Solution_2 implements Iterator<Integer> {
@@ -78,8 +76,7 @@ public class Flatten2DVector {
     /*
         Flatten 2D Vector
         Leetcode #251
-        https://leetcode.com/discuss/questions/oj/flatten-2d-vector
-        http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/Flatten2DVector.md
         Difficulty: Medium
      */
     public class Solution_3 implements Iterator<Integer> {
@@ -141,8 +138,7 @@ public class Flatten2DVector {
     /*
         Flatten 2D Vector
         Leetcode #251
-        https://leetcode.com/discuss/questions/oj/flatten-2d-vector
-        http://buttercola.blogspot.com/2015/08/leetcode-flatten-2d-vector.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/Flatten2DVector.md
         Difficulty: Medium
      */
     public class Solution_4 implements Iterator<Integer> {

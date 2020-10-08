@@ -24,9 +24,9 @@ public class CountingBits {
         @Test
         public void test1() {
             Solution sol = new CountingBits().new Solution();
-            int[] rslt = sol.countBits(5);
+            int[] res = sol.countBits(5);
             int[] expected = {0,1,1,2,1,2};
-            assertArrayEquals(expected, rslt);
+            assertArrayEquals(expected, res);
         }
     }
 }

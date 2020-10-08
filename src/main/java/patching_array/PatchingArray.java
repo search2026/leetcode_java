@@ -14,20 +14,20 @@ public class PatchingArray {
     public class Solution {
         public int minPatches(int[] nums, int n) {
             long sum = 0;
-            int rslt = 0;
+            int res = 0;
             for (int cur : nums) {
                 if (sum >= n) break;
                 while (sum + 1 < cur && sum < n) {
                     sum += sum + 1;
-                    rslt++;
+                    res++;
                 }
                 sum += cur;
             }
             while (sum < n) {
                 sum += sum + 1;
-                rslt++;
+                res++;
             }
-            return rslt;
+            return res;
         }
     }
 
@@ -41,17 +41,17 @@ public class PatchingArray {
     public class Solution_2 {
         public int minPatches(int[] nums, int n) {
             long sum = 1;
-            int rslt = 0, i = 0;
+            int res = 0, i = 0;
             while (sum <= n) {
                 if (i < nums.length && nums[i] <= sum) {
                     sum += nums[i];
                     i++;
                 } else {
                     sum += sum;
-                    rslt++;
+                    res++;
                 }
             }
-            return rslt;
+            return res;
         }
     }
 

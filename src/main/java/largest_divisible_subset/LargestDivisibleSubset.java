@@ -120,153 +120,153 @@ public class LargestDivisibleSubset {
     public void test1() {
       Solution sol = new LargestDivisibleSubset().new Solution();
       int[] test = {1};
-      List<Integer> result = sol.largestDivisibleSubset(test);
+      List<Integer> res = sol.largestDivisibleSubset(test);
       List<Integer> expected = new ArrayList<Integer>() {{
         add(1);
       }};
-      assertEquals(1, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(1, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 3};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(3);
       }};
-      assertEquals(2, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(2, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 4, 8};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(2);
         add(4);
         add(8);
       }};
-      assertEquals(4, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(4, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 3, 4, 6, 24};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(3);
         add(6);
         add(24);
       }};
-      assertEquals(4, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(4, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{546, 669};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(669);
       }};
-      assertEquals(1, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(1, res.size());
+      assertTrue(res.equals(expected));
     }
 
     @Test
     public void test2() {
       Solution_2 sol = new LargestDivisibleSubset().new Solution_2();
       int[] test = {1};
-      List<Integer> result = sol.largestDivisibleSubset(test);
+      List<Integer> res = sol.largestDivisibleSubset(test);
       List<Integer> expected = new ArrayList<Integer>() {{
         add(1);
       }};
-      assertEquals(1, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(1, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 3};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(2);
       }};
-      assertEquals(2, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(2, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 4, 8};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(2);
         add(4);
         add(8);
       }};
-      assertEquals(4, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(4, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 3, 4, 6, 24};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(3);
         add(6);
         add(24);
       }};
-      assertEquals(4, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(4, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{546, 669};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(546);
       }};
-      assertEquals(1, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(1, res.size());
+      assertTrue(res.equals(expected));
     }
 
     @Test
     public void test3() {
       Solution_3 sol = new LargestDivisibleSubset().new Solution_3();
       int[] test = {1};
-      List<Integer> result = sol.largestDivisibleSubset(test);
+      List<Integer> res = sol.largestDivisibleSubset(test);
       List<Integer> expected = new ArrayList<Integer>() {{
         add(1);
       }};
-      assertEquals(1, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(1, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 3};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(3);
       }};
-      assertEquals(2, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(2, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 4, 8};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(2);
         add(4);
         add(8);
       }};
-      assertEquals(4, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(4, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{1, 2, 3, 4, 6, 24};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(1);
         add(3);
         add(6);
         add(24);
       }};
-      assertEquals(4, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(4, res.size());
+      assertTrue(res.equals(expected));
 
       test = new int[]{546, 669};
-      result = sol.largestDivisibleSubset(test);
+      res = sol.largestDivisibleSubset(test);
       expected = new ArrayList<Integer>() {{
         add(669);
       }};
-      assertEquals(1, result.size());
-      assertTrue(result.equals(expected));
+      assertEquals(1, res.size());
+      assertTrue(res.equals(expected));
     }
   }
 }

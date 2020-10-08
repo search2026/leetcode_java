@@ -16,11 +16,11 @@ public class GeneralizedAbbreviation {
         Difficulty: Medium
      */
     public class Solution {
-        public void search(List<String> rslt, String cur, int start, String word) {
+        public void search(List<String> res, String curr, int start, String word) {
             if (start > word.length())
                 return;
 
-            rslt.add(cur + word.substring(start));
+            res.add(curr + word.substring(start));
 
             int i = 0;
             if (start > 0) {
@@ -29,15 +29,15 @@ public class GeneralizedAbbreviation {
 
             for (; i < word.length(); i++) {
                 for (int j = 1; j <= word.length(); j++) {
-                    search(rslt, cur + word.substring(start, i) + j, i + j, word);
+                    search(res, curr + word.substring(start, i) + j, i + j, word);
                 }
             }
         }
 
         public List<String> generateAbbreviations(String word) {
-            List<String> rslt = new ArrayList<String>();
-            search(rslt, "", 0, word);
-            return rslt;
+            List<String> res = new ArrayList<>();
+            search(res, "", 0, word);
+            return res;
         }
     }
 

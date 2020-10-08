@@ -8,8 +8,7 @@ public class MissingRanges {
     /*
         Missing Ranges
         Leetcode #163
-        https://leetcode.com/discuss/questions/oj/missing-ranges?sort=votes
-        http://www.cnblogs.com/grandyang/p/5184890.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/MissingRanges.md
         Difficulty: Medium
      */
     public class Solution {

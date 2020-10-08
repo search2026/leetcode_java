@@ -10,8 +10,7 @@ public class ShortestWordDistance {
     /*
         Shortest Word Distance
         Leetcode #243
-        https://leetcode.com/discuss/questions/oj/shortest-word-distance?sort=votes
-        http://www.cnblogs.com/anne-vista/p/4831049.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/ShortestWordDistance.md
         Difficulty: Easy
     */
     public class Solution {
@@ -34,8 +33,7 @@ public class ShortestWordDistance {
     /*
         Shortest Word Distance II
         Leetcode #244
-        https://leetcode.com/discuss/oj/shortest-word-distance-ii
-        http://sbzhouhao.net/LeetCode/LeetCode-Shortest-Word-Distance-II.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/ShortestWordDistanceII.md
         Difficulty: Medium
     */
     public class WordDistance {
@@ -76,8 +74,7 @@ public class ShortestWordDistance {
     /*
         Shortest Word Distance III
         Leetcode #245
-        https://leetcode.com/discuss/questions/oj/shortest-word-distance-iii?sort=votes
-        http://www.cnblogs.com/anne-vista/p/4831092.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/ShortestWordDistanceIII.md
         Difficulty: Medium
     */
     public class Solution_3 {

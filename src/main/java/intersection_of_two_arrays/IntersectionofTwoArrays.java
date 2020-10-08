@@ -37,11 +37,11 @@ public class IntersectionofTwoArrays {
         }
       }
 
-      int[] rslt = new int[list.size()];
+      int[] res = new int[list.size()];
       int i = 0;
-      for (Integer d : list) rslt[i++] = d;
+      for (Integer d : list) res[i++] = d;
 
-      return rslt;
+      return res;
     }
   }
 
@@ -64,11 +64,11 @@ public class IntersectionofTwoArrays {
 
       hs1.retainAll(hs2);
 
-      int[] rslt = new int[hs1.size()];
+      int[] res = new int[hs1.size()];
       int i = 0;
-      for (Integer d : hs1) rslt[i++] = d;
+      for (Integer d : hs1) res[i++] = d;
 
-      return rslt;
+      return res;
     }
   }
 
@@ -105,11 +105,11 @@ public class IntersectionofTwoArrays {
 //        if (binarySearch(nums2, num)) set.insert(num);
       }
       int i = 0;
-      int[] rslt = new int[set.size()];
+      int[] res = new int[set.size()];
       for (Integer num : set) {
-        rslt[i++] = num;
+        res[i++] = num;
       }
-      return rslt;
+      return res;
     }
   }
 
@@ -144,10 +144,10 @@ public class IntersectionofTwoArrays {
           break;
       }
 
-      int[] rslt = new int[list.size()];
-      for (int i = 0; i < list.size(); i++) rslt[i] = list.get(i);
+      int[] res = new int[list.size()];
+      for (int i = 0; i < list.size(); i++) res[i] = list.get(i);
 
-      return rslt;
+      return res;
     }
   }
 
@@ -176,10 +176,10 @@ public class IntersectionofTwoArrays {
         }
       }
 
-      int[] rslt = new int[list.size()];
-      for (int i = 0; i < list.size(); i++) rslt[i] = list.get(i);
+      int[] res = new int[list.size()];
+      for (int i = 0; i < list.size(); i++) res[i] = list.get(i);
 
-      return rslt;
+      return res;
     }
   }
 
@@ -190,12 +190,12 @@ public class IntersectionofTwoArrays {
   */
   public class Solution_6 {
     public List<Integer> findCommon(int[][] input) {
-      List<Integer> rslt = new ArrayList<Integer>();
-      if (input == null || input.length == 0) return rslt;
+      List<Integer> res = new ArrayList<Integer>();
+      if (input == null || input.length == 0) return res;
 
       for (int i = 0; i < input.length; i++) {
         // a null array makes no intersection
-        if (input[i] == null || input[i].length == 0) return rslt;
+        if (input[i] == null || input[i].length == 0) return res;
       }
 
       int size = input.length;
@@ -219,10 +219,10 @@ public class IntersectionofTwoArrays {
           }
         }
 
-        if (findEqual) rslt.add(initial);
+        if (findEqual) res.add(initial);
       }
 
-      return rslt;
+      return res;
     }
   }
 
@@ -232,9 +232,9 @@ public class IntersectionofTwoArrays {
       Solution sol = new IntersectionofTwoArrays().new Solution();
       int[] a = {1, 2, 2, 1};
       int[] b = {2, 2};
-      int[] rslt = sol.intersection(a, b);
-      assertEquals(1, rslt.length);
-      assertEquals(2, rslt[0]);
+      int[] res = sol.intersection(a, b);
+      assertEquals(1, res.length);
+      assertEquals(2, res[0]);
     }
 
     @Test
@@ -242,9 +242,9 @@ public class IntersectionofTwoArrays {
       Solution_2 sol = new IntersectionofTwoArrays().new Solution_2();
       int[] a = {1, 2, 2, 1};
       int[] b = {2, 2};
-      int[] rslt = sol.intersection(a, b);
-      assertEquals(1, rslt.length);
-      assertEquals(2, rslt[0]);
+      int[] res = sol.intersection(a, b);
+      assertEquals(1, res.length);
+      assertEquals(2, res[0]);
     }
 
     @Test
@@ -252,9 +252,9 @@ public class IntersectionofTwoArrays {
       Solution_3 sol = new IntersectionofTwoArrays().new Solution_3();
       int[] a = {1, 2, 2, 1};
       int[] b = {2, 2};
-      int[] rslt = sol.intersection(a, b);
-      assertEquals(1, rslt.length);
-      assertEquals(2, rslt[0]);
+      int[] res = sol.intersection(a, b);
+      assertEquals(1, res.length);
+      assertEquals(2, res[0]);
     }
 
     @Test
@@ -262,10 +262,10 @@ public class IntersectionofTwoArrays {
       Solution_4 sol = new IntersectionofTwoArrays().new Solution_4();
       int[] a = {1, 2, 2, 1};
       int[] b = {2, 2};
-      int[] rslt = sol.intersect(a, b);
-      assertEquals(2, rslt.length);
-      assertEquals(2, rslt[0]);
-      assertEquals(2, rslt[1]);
+      int[] res = sol.intersect(a, b);
+      assertEquals(2, res.length);
+      assertEquals(2, res[0]);
+      assertEquals(2, res[1]);
     }
 
     @Test
@@ -273,10 +273,10 @@ public class IntersectionofTwoArrays {
       Solution_5 sol = new IntersectionofTwoArrays().new Solution_5();
       int[] a = {1, 2, 2, 1};
       int[] b = {2, 2};
-      int[] rslt = sol.intersect(a, b);
-      assertEquals(2, rslt.length);
-      assertEquals(2, rslt[0]);
-      assertEquals(2, rslt[1]);
+      int[] res = sol.intersect(a, b);
+      assertEquals(2, res.length);
+      assertEquals(2, res[0]);
+      assertEquals(2, res[1]);
     }
   }
 }

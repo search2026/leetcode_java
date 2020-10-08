@@ -7,8 +7,7 @@ public class BinaryTreeUpsideDown {
     /*
         Binary Tree Upside Down - Top Down Approach
         Leetcode #156
-        https://leetcode.com/discuss/oj/binary-tree-upside-down
-        http://www.cnblogs.com/grandyang/p/5172838.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeUpsideDown.md
         Difficulty: Medium
      */
     public class Solution {
@@ -29,8 +28,7 @@ public class BinaryTreeUpsideDown {
     /*
         Binary Tree Upside Down - Bottom Up Approach
         Leetcode #156
-        https://leetcode.com/discuss/oj/binary-tree-upside-down
-        http://www.cnblogs.com/grandyang/p/5172838.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeUpsideDown.md
         Difficulty: Medium
      */
     public class Solution_2 {

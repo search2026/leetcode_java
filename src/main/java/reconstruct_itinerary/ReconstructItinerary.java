@@ -14,16 +14,16 @@ public class ReconstructItinerary {
         Difficulty: Medium
      */
     public class Solution {
-        public void search(LinkedList<String> rslt, String cur, Map<String, PriorityQueue<String>> adj) {
-            while (adj.containsKey(cur) && !adj.get(cur).isEmpty()) {
-                search(rslt, adj.get(cur).poll(), adj);
+        public void search(LinkedList<String> res, String curr, Map<String, PriorityQueue<String>> adj) {
+            while (adj.containsKey(curr) && !adj.get(curr).isEmpty()) {
+                search(res, adj.get(curr).poll(), adj);
             }
-            rslt.addFirst(cur);
+            res.addFirst(curr);
         }
 
         public List<String> findItinerary(String[][] tickets) {
             if (tickets == null || tickets.length == 0) return new LinkedList<String>();
-            LinkedList<String> rslt = new LinkedList<String>();
+            LinkedList<String> res = new LinkedList<String>();
             Map<String, PriorityQueue<String>> adj = new HashMap<String, PriorityQueue<String>>();
             for (String[] ticket : tickets) {
                 if (!adj.containsKey(ticket[0])) {
@@ -31,8 +31,8 @@ public class ReconstructItinerary {
                 }
                 adj.get(ticket[0]).offer(ticket[1]);
             }
-            search(rslt, "JFK", adj);
-            return rslt;
+            search(res, "JFK", adj);
+            return res;
         }
     }
 
@@ -46,9 +46,9 @@ public class ReconstructItinerary {
                     new String[]{"SFO", "SJC"},
                     new String[]{"LHR", "SFO"}
             };
-            List<String> rslt = sol.findItinerary(tickets);
-            String[] tmpArray = new String[rslt.size()];
-            tmpArray = rslt.toArray(tmpArray);
+            List<String> res = sol.findItinerary(tickets);
+            String[] tmpArray = new String[res.size()];
+            tmpArray = res.toArray(tmpArray);
             assertArrayEquals(new String[]{"JFK", "MUC", "LHR", "SFO", "SJC"}, tmpArray);
 
             tickets = new String[][]{
@@ -58,9 +58,9 @@ public class ReconstructItinerary {
                     new String[]{"ATL", "JFK"},
                     new String[]{"ATL", "SFO"}
             };
-            rslt = sol.findItinerary(tickets);
-            tmpArray = new String[rslt.size()];
-            tmpArray = rslt.toArray(tmpArray);
+            res = sol.findItinerary(tickets);
+            tmpArray = new String[res.size()];
+            tmpArray = res.toArray(tmpArray);
             assertArrayEquals(new String[]{"JFK", "ATL", "JFK", "SFO", "ATL", "SFO"}, tmpArray);
         }
     }

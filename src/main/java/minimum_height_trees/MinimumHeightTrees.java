@@ -68,8 +68,8 @@ public class MinimumHeightTrees {
                     new int[]{1, 2},
                     new int[]{1, 3}
             };
-            List<Integer> rslt = sol.findMinHeightTrees(n, edges);
-            int[] tmpArray = toIntArray(rslt);
+            List<Integer> res = sol.findMinHeightTrees(n, edges);
+            int[] tmpArray = toIntArray(res);
             assertArrayEquals(new int[]{1}, tmpArray);
 
             n = 6;
@@ -80,8 +80,8 @@ public class MinimumHeightTrees {
                     new int[]{4, 3},
                     new int[]{5, 4}
             };
-            rslt = sol.findMinHeightTrees(n, edges);
-            tmpArray = toIntArray(rslt);
+            res = sol.findMinHeightTrees(n, edges);
+            tmpArray = toIntArray(res);
             assertArrayEquals(new int[]{3, 4}, tmpArray);
         }
 

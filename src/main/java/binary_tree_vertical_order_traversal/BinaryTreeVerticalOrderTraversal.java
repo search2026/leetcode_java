@@ -20,11 +20,11 @@ public class BinaryTreeVerticalOrderTraversal {
      */
     public class Solution {
         public List<List<Integer>> verticalOrder(TreeNode root) {
-            List<List<Integer>> rslt = new ArrayList<List<Integer>>();
-            if (root == null) return rslt;
-            HashMap<Integer, ArrayList<Integer>> map = new HashMap<Integer, ArrayList<Integer>>();
-            LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
-            LinkedList<Integer> colQue = new LinkedList<Integer>();
+            List<List<Integer>> res = new ArrayList<List<Integer>>();
+            if (root == null) return res;
+            HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
+            LinkedList<TreeNode> queue = new LinkedList<>();
+            LinkedList<Integer> colQue = new LinkedList<>();
             queue.offer(root);
             colQue.offer(0);
             map.put(0, new ArrayList<Integer>());
@@ -54,9 +54,9 @@ public class BinaryTreeVerticalOrderTraversal {
             }
             for (int k = min; k <= max; k++) {
                 if (map.containsKey(k))
-                    rslt.add(new ArrayList<Integer>(map.get(k)));
+                    res.add(new ArrayList<Integer>(map.get(k)));
             }
-            return rslt;
+            return res;
         }
     }
 

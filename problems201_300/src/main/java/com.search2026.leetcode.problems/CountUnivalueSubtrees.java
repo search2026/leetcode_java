@@ -9,8 +9,7 @@ public class CountUnivalueSubtrees {
     /*
         Count Univalue Subtrees
         Leetcode #250
-        https://leetcode.com/discuss/questions/oj/count-univalue-subtrees?sort=votes
-        http://buttercola.blogspot.com/2015/09/leetcode-count-univalue-subtrees.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/CountUnivalueSubtrees.md
         Difficulty: Medium
      */
     public class Solution {

@@ -217,64 +217,64 @@ public class PalindromePairs {
         public void test1() {
             Solution sol = new PalindromePairs().new Solution();
             String[] test = new String[]{"bat", "tab", "cat"};
-            List<List<Integer>> rslt = sol.palindromePairs(test);
-            assertEquals(2, rslt.size());
+            List<List<Integer>> res = sol.palindromePairs(test);
+            assertEquals(2, res.size());
 
             test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
-            rslt = sol.palindromePairs(test);
-            assertEquals(4, rslt.size());
+            res = sol.palindromePairs(test);
+            assertEquals(4, res.size());
 
             test = new String[]{"a", ""};
-            rslt = sol.palindromePairs(test);
-            assertEquals(2, rslt.size());
+            res = sol.palindromePairs(test);
+            assertEquals(2, res.size());
         }
 
         @Test
         public void test2() {
             Solution_2 sol = new PalindromePairs().new Solution_2();
             String[] test = new String[]{"bat", "tab", "cat"};
-            List<List<Integer>> rslt = sol.palindromePairs(test);
-            assertEquals(2, rslt.size());
+            List<List<Integer>> res = sol.palindromePairs(test);
+            assertEquals(2, res.size());
 
             test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
-            rslt = sol.palindromePairs(test);
-            assertEquals(4, rslt.size());
+            res = sol.palindromePairs(test);
+            assertEquals(4, res.size());
 
             test = new String[]{"a", ""};
-            rslt = sol.palindromePairs(test);
-            assertEquals(2, rslt.size());
+            res = sol.palindromePairs(test);
+            assertEquals(2, res.size());
         }
 
         @Test
         public void test3() {
             Solution_3 sol = new PalindromePairs().new Solution_3();
             String[] test = new String[]{"bat", "tab", "cat"};
-            List<List<Integer>> rslt = sol.palindromePairs(test);
-            assertEquals(2, rslt.size());
+            List<List<Integer>> res = sol.palindromePairs(test);
+            assertEquals(2, res.size());
 
             test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
-            rslt = sol.palindromePairs(test);
-            assertEquals(4, rslt.size());
+            res = sol.palindromePairs(test);
+            assertEquals(4, res.size());
 
             test = new String[]{"a", ""};
-            rslt = sol.palindromePairs(test);
-            assertEquals(2, rslt.size());
+            res = sol.palindromePairs(test);
+            assertEquals(2, res.size());
         }
 
         @Test
         public void test4() {
             Solution_4 sol = new PalindromePairs().new Solution_4();
             String[] test = new String[]{"bat", "tab", "cat"};
-            List<List<Integer>> rslt = sol.palindromePairs(test);
-            assertEquals(2, rslt.size());
+            List<List<Integer>> res = sol.palindromePairs(test);
+            assertEquals(2, res.size());
 
             test = new String[]{"abcd", "dcba", "lls", "s", "sssll"};
-            rslt = sol.palindromePairs(test);
-            assertEquals(4, rslt.size());
+            res = sol.palindromePairs(test);
+            assertEquals(4, res.size());
 
             test = new String[]{"a", ""};
-            rslt = sol.palindromePairs(test);
-            assertEquals(2, rslt.size());
+            res = sol.palindromePairs(test);
+            assertEquals(2, res.size());
         }
     }
 }

@@ -5,8 +5,7 @@ public class ReadNCharactersGivenRead4 {
     /*
         Read N Characters Given Read4
         Leetcode #157
-        https://leetcode.com/discuss/questions/oj/read-n-characters-given-read4?sort=votes
-        http://www.cnblogs.com/grandyang/p/5174322.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/ReadNCharactersGivenRead4.md
         Difficulty: Hard
       */
     public class Solution {
@@ -33,8 +32,7 @@ public class ReadNCharactersGivenRead4 {
     /*
         Read N Characters Given Read4 II
         Leetcode #158
-        https://leetcode.com/discuss/questions/oj/read-n-characters-given-read4-ii-call-multiple-times?sort=votes
-        http://www.cnblogs.com/grandyang/p/5181672.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/ReadNCharactersGivenRead4II.md
         Difficulty: Hard
       */
     public class Solution_2 {

@@ -57,8 +57,7 @@ public class TwoSum {
     /*
         Two Sum III Data Structure
         Leetcode #170
-        https://leetcode.com/discuss/questions/oj/two-sum-iii-data-structure-design?sort=votes
-        http://www.cnblogs.com/grandyang/p/5184143.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/TwoSumIII.md
         Difficulty: Medium
      */
     public class TwoSumDS {

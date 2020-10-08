@@ -8,8 +8,7 @@ public class FactorCombinations {
     /*
         Factor Combinations
         Leetcode #254
-        https://leetcode.com/discuss/questions/oj/factor-combinations?sort=votes
-        http://www.cnblogs.com/EdwardLiu/p/5068718.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/FactorCombinations.md
         Difficulty: Medium
      */
     public class Solution {

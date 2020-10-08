@@ -13,9 +13,9 @@ public class TopKFrequentElements {
      */
     public class Solution {
         public List<Integer> topKFrequent(int[] nums, int k) {
-            List<Integer> rslt = new ArrayList<>();
-            if (nums == null || nums.length == 0) return rslt;
-            if (k < 1) return rslt;
+            List<Integer> res = new ArrayList<>();
+            if (nums == null || nums.length == 0) return res;
+            if (k < 1) return res;
 
             int n = nums.length;
 
@@ -34,12 +34,12 @@ public class TopKFrequentElements {
                 bucket[freq].add(key);
             }
 
-            for (int pos = bucket.length - 1; pos >= 0 && rslt.size() < k; pos--) {
+            for (int pos = bucket.length - 1; pos >= 0 && res.size() < k; pos--) {
                 if (bucket[pos] != null) {
-                    rslt.addAll(bucket[pos]);
+                    res.addAll(bucket[pos]);
                 }
             }
-            return rslt;
+            return res;
         }
     }
 
@@ -51,9 +51,9 @@ public class TopKFrequentElements {
      */
     public class Solution_2 {
         public List<Integer> topKFrequent(int[] nums, int k) {
-            List<Integer> rslt = new ArrayList<Integer>();
-            if (nums == null || nums.length == 0) return rslt;
-            if (k < 1) return rslt;
+            List<Integer> res = new ArrayList<Integer>();
+            if (nums == null || nums.length == 0) return res;
+            if (k < 1) return res;
 
             HashMap<Integer, Integer> freqMap = new HashMap<Integer, Integer>();
             for(int num: nums){
@@ -64,9 +64,9 @@ public class TopKFrequentElements {
             pq.addAll(freqMap.entrySet());
 
             for(int i = 0; i < k; i++){
-                rslt.add(pq.poll().getKey());
+                res.add(pq.poll().getKey());
             }
-            return rslt;
+            return res;
         }
     }
 
@@ -76,12 +76,12 @@ public class TopKFrequentElements {
             Solution sol = new TopKFrequentElements().new Solution();
             int[] testArray = {1,1,1,2,2,3};
             int[] expected = new int[]{1,2};
-            List<Integer> rslt = sol.topKFrequent(testArray, 2);
-            Integer[] rsltArray = new Integer[rslt.size()];
-            rsltArray = rslt.toArray(rsltArray);
-            assertEquals(expected.length, rsltArray.length);
+            List<Integer> res = sol.topKFrequent(testArray, 2);
+            Integer[] resArray = new Integer[res.size()];
+            resArray = res.toArray(resArray);
+            assertEquals(expected.length, resArray.length);
             for (int i=0; i<expected.length; i++) {
-                assertEquals(expected[i], (int)rsltArray[i]);
+                assertEquals(expected[i], (int)resArray[i]);
             }
         }
 
@@ -90,12 +90,12 @@ public class TopKFrequentElements {
             Solution_2 sol = new TopKFrequentElements().new Solution_2();
             int[] testArray = {1,1,1,2,2,3};
             int[] expected = new int[]{1,2};
-            List<Integer> rslt = sol.topKFrequent(testArray, 2);
-            Integer[] rsltArray = new Integer[rslt.size()];
-            rsltArray = rslt.toArray(rsltArray);
-            assertEquals(expected.length, rsltArray.length);
+            List<Integer> res = sol.topKFrequent(testArray, 2);
+            Integer[] resArray = new Integer[res.size()];
+            resArray = res.toArray(resArray);
+            assertEquals(expected.length, resArray.length);
             for (int i=0; i<expected.length; i++) {
-                assertEquals(expected[i], (int)rsltArray[i]);
+                assertEquals(expected[i], (int)resArray[i]);
             }
         }
     }

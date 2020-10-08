@@ -46,9 +46,9 @@ public class CountofRangeSum {
         }
 
         public int countRangeSum(int[] nums, int lower, int upper) {
-            int rslt = 0;
+            int res = 0;
             int n = nums.length;
-            if (n <= 0) return rslt;
+            if (n <= 0) return res;
 
             long[] sum_array = new long[n];
             sum_array[0] = nums[0];
@@ -69,10 +69,10 @@ public class CountofRangeSum {
             for (int i = n - 1; i >= 0; i--) {
                 update(root, sum);
                 sum -= nums[i];
-                rslt += count(root, lower + sum, upper + sum);
+                res += count(root, lower + sum, upper + sum);
             }
 
-            return rslt;
+            return res;
         }
 
         public class SegmentTreeNode {

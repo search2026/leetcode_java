@@ -94,23 +94,23 @@ public class RearrangeStringkDistanceApart {
     @Test
     public void test1() {
       Solution sol = new RearrangeStringkDistanceApart().new Solution();
-      String rslt = sol.rearrangeString("aabbcc", 3);
-      assertEquals("acbacb", rslt);
-      rslt = sol.rearrangeString("aaabc", 3);
-      assertEquals("", rslt);
-      rslt = sol.rearrangeString("aaadbbcc", 2);
-      assertEquals("abcabcad", rslt);
+      String res = sol.rearrangeString("aabbcc", 3);
+      assertEquals("acbacb", res);
+      res = sol.rearrangeString("aaabc", 3);
+      assertEquals("", res);
+      res = sol.rearrangeString("aaadbbcc", 2);
+      assertEquals("abcabcad", res);
     }
 
     @Test
     public void test2() {
       Solution_2 sol = new RearrangeStringkDistanceApart().new Solution_2();
-      String rslt = sol.rearrangeString("aabbcc", 3);
-      assertEquals("abcabc", rslt);
-      rslt = sol.rearrangeString("aaabc", 3);
-      assertEquals("", rslt);
-      rslt = sol.rearrangeString("aaadbbcc", 2);
-      assertEquals("abacabcd", rslt);
+      String res = sol.rearrangeString("aabbcc", 3);
+      assertEquals("abcabc", res);
+      res = sol.rearrangeString("aaabc", 3);
+      assertEquals("", res);
+      res = sol.rearrangeString("aaadbbcc", 2);
+      assertEquals("abacabcd", res);
     }
   }
 }

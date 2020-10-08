@@ -36,18 +36,18 @@ public class AndroidUnlockPatterns {
     }
 
     public int numberOfPatterns(int m, int n) {
-      int rslt = 0;
+      int res = 0;
       int[][] start = {{0, 0}, {0, 1}, {1, 1}};
       boolean[][] board = new boolean[3][3];
       for (int len = m; len <= n; len++) {
         for (int i = 0; i < 3; i++) {
           int x = start[i][0], y = start[i][1];
           search(x, y, len, board);
-          rslt += i != 2 ? res * 4 : res;
-          res = 0;
+          res += i != 2 ? this.res * 4 : this.res;
+          this.res = 0;
         }
       }
-      return rslt;
+      return res;
     }
   }
 

@@ -39,21 +39,21 @@ public class LexicographicalNumbers {
     @Test
     public void test1() {
       Solution sol = new LexicographicalNumbers().new Solution();
-      List<Integer> rslt = sol.lexicalOrder(13);
-      assertEquals(13, rslt.size());
-      assertEquals(1, (int) rslt.get(0));
-      assertEquals(10, (int) rslt.get(1));
-      assertEquals(11, (int) rslt.get(2));
-      assertEquals(12, (int) rslt.get(3));
-      assertEquals(13, (int) rslt.get(4));
-      assertEquals(2, (int) rslt.get(5));
-      assertEquals(3, (int) rslt.get(6));
-      assertEquals(4, (int) rslt.get(7));
-      assertEquals(5, (int) rslt.get(8));
-      assertEquals(6, (int) rslt.get(9));
-      assertEquals(7, (int) rslt.get(10));
-      assertEquals(8, (int) rslt.get(11));
-      assertEquals(9, (int) rslt.get(12));
+      List<Integer> res = sol.lexicalOrder(13);
+      assertEquals(13, res.size());
+      assertEquals(1, (int) res.get(0));
+      assertEquals(10, (int) res.get(1));
+      assertEquals(11, (int) res.get(2));
+      assertEquals(12, (int) res.get(3));
+      assertEquals(13, (int) res.get(4));
+      assertEquals(2, (int) res.get(5));
+      assertEquals(3, (int) res.get(6));
+      assertEquals(4, (int) res.get(7));
+      assertEquals(5, (int) res.get(8));
+      assertEquals(6, (int) res.get(9));
+      assertEquals(7, (int) res.get(10));
+      assertEquals(8, (int) res.get(11));
+      assertEquals(9, (int) res.get(12));
     }
   }
 }

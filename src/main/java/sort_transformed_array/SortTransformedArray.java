@@ -24,10 +24,10 @@ public class SortTransformedArray {
         q.offer(temp);
       }
 
-      int[] rslt = new int[nums.length];
-      for (int i = 0; i < nums.length; i++) rslt[i] = q.poll();
+      int[] res = new int[nums.length];
+      for (int i = 0; i < nums.length; i++) res[i] = q.poll();
 
-      return rslt;
+      return res;
     }
   }
 
@@ -46,16 +46,16 @@ public class SortTransformedArray {
     public int[] sortTransformedArray(int[] nums, int a, int b, int c) {
       if (nums == null || nums.length == 0) return new int[]{};
       int n = nums.length, p1 = 0, p2 = n - 1;
-      int[] rslt = new int[n];
+      int[] res = new int[n];
       int idx = a >= 0 ? n - 1 : 0;
       while (p1 <= p2) {
         if (a >= 0) {
-          rslt[idx--] = cal(nums[p1], a, b, c) >= cal(nums[p2], a, b, c) ? cal(nums[p1++], a, b, c) : cal(nums[p2--], a, b, c);
+          res[idx--] = cal(nums[p1], a, b, c) >= cal(nums[p2], a, b, c) ? cal(nums[p1++], a, b, c) : cal(nums[p2--], a, b, c);
         } else {
-          rslt[idx++] = cal(nums[p1], a, b, c) >= cal(nums[p2], a, b, c) ? cal(nums[p2--], a, b, c) : cal(nums[p1++], a, b, c);
+          res[idx++] = cal(nums[p1], a, b, c) >= cal(nums[p2], a, b, c) ? cal(nums[p2--], a, b, c) : cal(nums[p1++], a, b, c);
         }
       }
-      return rslt;
+      return res;
     }
   }
 
@@ -64,20 +64,20 @@ public class SortTransformedArray {
     public void test1() {
       Solution sol = new SortTransformedArray().new Solution();
       int[] testArr = {-4, -2, 2, 4};
-      int[] rslt1 = {3, 9, 15, 33};
-      int[] rslt2 = {-23, -5, 1, 7};
-      assertArrayEquals(rslt1, sol.sortTransformedArray(testArr, 1, 3, 5));
-      assertArrayEquals(rslt2, sol.sortTransformedArray(testArr, -1, 3, 5));
+      int[] res1 = {3, 9, 15, 33};
+      int[] res2 = {-23, -5, 1, 7};
+      assertArrayEquals(res1, sol.sortTransformedArray(testArr, 1, 3, 5));
+      assertArrayEquals(res2, sol.sortTransformedArray(testArr, -1, 3, 5));
     }
 
     @Test
     public void test2() {
       Solution_2 sol = new SortTransformedArray().new Solution_2();
       int[] testArr = {-4, -2, 2, 4};
-      int[] rslt1 = {3, 9, 15, 33};
-      int[] rslt2 = {-23, -5, 1, 7};
-      assertArrayEquals(rslt1, sol.sortTransformedArray(testArr, 1, 3, 5));
-      assertArrayEquals(rslt2, sol.sortTransformedArray(testArr, -1, 3, 5));
+      int[] res1 = {3, 9, 15, 33};
+      int[] res2 = {-23, -5, 1, 7};
+      assertArrayEquals(res1, sol.sortTransformedArray(testArr, 1, 3, 5));
+      assertArrayEquals(res2, sol.sortTransformedArray(testArr, -1, 3, 5));
     }
   }
 }

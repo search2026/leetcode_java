@@ -8,8 +8,7 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters {
     /*
         Longest Substring with At Most Two Distinct Characters
         leetcode #159
-        https://leetcode.com/discuss/questions/oj/longest-substring-with-at-most-two-distinct-characters?sort=votes
-        http://www.cnblogs.com/grandyang/p/5185561.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
         Difficulty: Hard
      */
     public class Solution {
@@ -33,8 +32,7 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters {
     /*
         Longest Substring with At Most Two Distinct Characters - Sliding Windows
         leetcode #159
-        https://leetcode.com/discuss/questions/oj/longest-substring-with-at-most-two-distinct-characters?sort=votes
-        http://www.cnblogs.com/grandyang/p/5185561.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
         Difficulty: Hard
      */
     public class Solution_2 {
@@ -56,8 +54,7 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters {
     /*
         Longest Substring with At Most Two Distinct Characters - Template
         leetcode #159
-        https://leetcode.com/discuss/questions/oj/longest-substring-with-at-most-two-distinct-characters?sort=votes
-        http://www.cnblogs.com/grandyang/p/5351347.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
         https://leetcode.com/discuss/72701/here-10-line-template-that-can-solve-most-substring-problems
         Difficulty: Hard
      */
