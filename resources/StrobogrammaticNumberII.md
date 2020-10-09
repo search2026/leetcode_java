@@ -8,7 +8,7 @@ A strobogrammatic number is a number that looks the same when rotated 180 degree
 
 Find all strobogrammatic numbers that are of length = n.
 
-<strong>Example:</strong>
+**Example:**
 ```
 Input:  n = 2
 Output: ["11","69","88","96"]

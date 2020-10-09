@@ -20,4 +20,4 @@ Return:
   ["a","z"]
 ]
 ```
-<strong>Note:</strong> For the return value, each <em>inner</em> list's elements must follow the lexicographic order.
+**Note:** For the return value, each *inner* list's elements must follow the lexicographic order.

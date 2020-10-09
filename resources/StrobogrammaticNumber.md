@@ -8,17 +8,17 @@ A strobogrammatic number is a number that looks the same when rotated 180 degree
 
 Write a function to determine if a number is strobogrammatic. The number is represented as a string.
 
-<strong>Example 1:</strong>
+**Example 1:**
 ```
 Input:  "69"
 Output: true
 ```
-<strong>Example 2:</strong>
+**Example 2:**
 ```
 Input:  "88"
 Output: true
 ```
-<strong>Example 3:</strong>
+**Example 3:**
 ```
 Input:  "962"
 Output: false

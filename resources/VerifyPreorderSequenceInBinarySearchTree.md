@@ -16,15 +16,15 @@ Consider the following binary search tree:
   / \
  1   3
 ```
-<strong>Example 1:</strong>
+**Example 1:**
 ```
 Input: [5,2,6,1,3]
 Output: false
 ```
-<strong>Example 2:</strong>
+**Example 2:**
 ```
 Input: [5,2,1,3,6]
 Output: true
 ```
-<strong>Follow up:</strong>
+**Follow up:**
 Could you do it using only constant space complexity?

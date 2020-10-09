@@ -10,8 +10,7 @@ public class UniqueWordAbbreviation {
     /*
         Unique Word Abbreviation
         Leetcode #288
-        https://leetcode.com/discuss/questions/oj/unique-word-abbreviation
-        http://buttercola.blogspot.com/2015/10/leetcode-unique-word-abbreviation.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/resources/UniqueWordAbbreviation.md
         Difficulty: Medium
      */
     public class ValidWordAbbr {
@@ -19,8 +18,8 @@ public class UniqueWordAbbreviation {
         private Map<String, String> abbrDict;
 
         public ValidWordAbbr(String[] dictionary) {
-            uniqueDict = new HashSet<String>();
-            abbrDict = new HashMap<String, String>();
+            uniqueDict = new HashSet<>();
+            abbrDict = new HashMap<>();
 
             for (String word : dictionary) {
                 if (!uniqueDict.contains(word)) {

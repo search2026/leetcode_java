@@ -1,6 +1,5 @@
 ### Leetcode 2291. Word Pattern II
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/word-pattern-ii/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/word-pattern-ii/)
 
 ---
 
@@ -8,21 +7,24 @@ Given a `pattern` and a string `str`, find if strfollows the same pattern.
 
 Here follow means a full match, such that there is a bijection between a letter in `pattern` and a non-empty substring in `str`.
 
-<strong>Example 1:</strong>
+**Example 1:**
 ```
 Input: pattern = "abab", str = "redblueredblue"
 Output: true
 ```
-<strong>Example 2:</strong>
+
+**Example 2:**
 ```
 Input: pattern = pattern = "aaaa", str = "asdasdasdasd"
 Output: true
 ```
-<strong>Example 3:</strong>
+
+**Example 3:**
 ```
 Input: pattern = "aabb", str = "xyzabcxzyabc"
 Output: false
 ```
-<strong>Notes:</strong>
+
+**Notes:**
 You may assume both `pattern` and `str` contains only lowercase letters.
 

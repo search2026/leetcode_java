@@ -14,7 +14,7 @@
 | 310 | []() | | []() | | |
 | | | | | | |
 | | | | | | |
-| 324 | [Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/) | Medium | [WiggleSort.java](../problems201_300/src/main/java/com.search2026.leetcode.problems/WiggleSort.java) | | |
+| 324 | [Wiggle Sort II](../resources/WiggleSortII.md) | Medium | [WiggleSort.java](../problems201_300/src/main/java/com.search2026.leetcode.problems/WiggleSort.java) | | |
 | | | | | | |
 | 329 | [https://leetcode.com/problems/longest-increasing-path-in-a-matrix/](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) | Hard | | | |
 | | | | | | |

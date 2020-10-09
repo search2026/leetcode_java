@@ -10,15 +10,14 @@ public class PalindromePermutation {
     /*
         Palindrome Permutation
         Leetcode #266
-        https://leetcode.com/discuss/oj/palindrome-permutation
-        http://www.cnblogs.com/EdwardLiu/p/5069359.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/PalindromePermutation.md
         Difficulty: Easy
     */
     public class Solution {
         public boolean canPermutePalindrome(String s) {
             if (s == null || s.length() == 0) return true;
             int n = s.length();
-            Map<Character, Integer> map = new HashMap<Character, Integer>();
+            Map<Character, Integer> map = new HashMap<>();
 
             for (int i = 0; i < s.length(); i++) {
                 char c = s.charAt(i);
@@ -52,8 +51,7 @@ public class PalindromePermutation {
     /*
         Palindrome Permutation II
         Leetcode #267
-        https://leetcode.com/discuss/questions/oj/palindrome-permutation-ii
-        http://www.cnblogs.com/EdwardLiu/p/5069573.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/PalindromePermutationII.md
         Difficulty: Medium
     */
     public class Solution_2 {

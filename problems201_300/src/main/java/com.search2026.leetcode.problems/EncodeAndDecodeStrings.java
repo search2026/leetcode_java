@@ -8,8 +8,7 @@ public class EncodeAndDecodeStrings {
     /*
         Encode and Decode Strings
         Leetcode #271
-        https://leetcode.com/discuss/questions/oj/encode-and-decode-strings?sort=votes
-        http://buttercola.blogspot.com/2015/09/leetcode-encode-and-decode-strings.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/EncodeAndDecodeStrings.md
         Difficulty: Medium
      */
     public class Solution {

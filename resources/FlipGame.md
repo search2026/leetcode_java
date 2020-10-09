@@ -1,6 +1,5 @@
 ### Leetcode 293. Flip Game
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/flip-game/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/flip-game/)
 
 ---
 
@@ -8,7 +7,7 @@ You are playing the following Flip Game with your friend: Given a string that co
 
 Write a function to compute all possible states of the string after one valid move.
 
-<strong>Example</strong>
+**Example**
 ```
 given `s = "++++"`, after one move, it may become one of the following states:
 [
@@ -17,5 +16,6 @@ given `s = "++++"`, after one move, it may become one of the following states:
   "++--"
 ]
 ```
-<strong>Note:</strong>
+
+**Note:**
 If there is no valid move, return an empty list `[]`.

@@ -17,16 +17,16 @@ Given 2d vector =
 ```
 
 
-By calling <em>next</em> repeatedly until <em>hasNext</em>  returns false, the order of elements returned by <em>next</em> should be: `[1,2,3,4,5,6]`.
+By calling *next* repeatedly until *hasNext*  returns false, the order of elements returned by *next* should be: `[1,2,3,4,5,6]`.
 
-<strong>Hint</strong>:
+**Hint**:
 <ol>
 <li>How many variables do you need to keep track?</li>
-<li>Two variables is all you need. Try with <code>x</code> and <code>y</code>.</li>
+<li>Two variables is all you need. Try with *x* and *y*.</li>
 <li>Beware of empty rows. It could be the first few rows.</li>
 <li>To write correct code, think about the invariant to maintain. What is it?</li>
-<li>The invariant is <code>x</code> and <code>y</code> must always point to a valid point in the 2d vector. Should you maintain your invariant  ahead of <em>time</em> or <em>right</em> when you need it?</li>
-<li>Not sure? Think about how you would implement <code>hasNext()</code>. Which is more complex?</li>
+<li>The invariant is *x* and *y* must always point to a valid point in the 2d vector. Should you maintain your invariant  ahead of *time* or *right* when you need it?</li>
+<li>Not sure? Think about how you would implement *hasNext()*. Which is more complex?</li>
 <li>Common logic in two different places should be refactored into a common method.</li>
 </ol>
 

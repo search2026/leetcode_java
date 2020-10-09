@@ -5,8 +5,7 @@ public class PaintFence {
     /*
         Paint Fence
         Leetcode #276
-        https://leetcode.com/discuss/oj/paint-fence
-        http://buttercola.blogspot.com/2015/09/leetcode-paint-fence.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/PaintFence.md
         Difficulty: Medium
      */
     public class Solution {
@@ -29,8 +28,7 @@ public class PaintFence {
     /*
         Paint Fence
         Leetcode #276
-        https://leetcode.com/discuss/oj/paint-fence
-        http://buttercola.blogspot.com/2015/09/leetcode-paint-fence.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/PaintFence.md
         Difficulty: Easy
     */
     public class Solution_2 {

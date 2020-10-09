@@ -5,8 +5,7 @@ public class WiggleSort {
     /*
         Wiggle Sort
         Leetcode #280
-        https://leetcode.com/discuss/questions/oj/wiggle-sort?sort=votes
-        http://buttercola.blogspot.com/2015/09/leetcode-wiggle-sort.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/WiggleSort.md
         Difficulty: Medium
      */
     public class Solution {
@@ -38,8 +37,7 @@ public class WiggleSort {
     /*
         Wiggle Sort II
         Leetcode #324
-        https://leetcode.com/discuss/questions/oj/wiggle-sort-ii?sort=votes
-        https://leetcode.com/problems/wiggle-sort-ii/
+        https://github.com/search2026/leetcode_java/blob/master/resources/WiggleSortII.md
         Difficulty: Medium
    */
     public class Solution_2 {

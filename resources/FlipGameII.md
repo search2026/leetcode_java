@@ -1,6 +1,5 @@
 ### Leetcode 294. Flip Game II
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/flip-game-ii/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/flip-game-ii/)
 
 ---
 
@@ -8,10 +7,11 @@ You are playing the following Flip Game with your friend: Given a string that co
 
 Write a function to determine if the starting player can guarantee a win.
 
-<strong>Example:</strong>
+**Example:**
 ```
 Input: s = "++++"
 Output: true 
 Explanation: The starting player can guarantee a win by flipping the middle "++" to become "+--+".
 ```
-<strong>Follow up</strong>: Derive your algorithm's runtime complexity.
+
+**Follow up**: Derive your algorithm's runtime complexity.

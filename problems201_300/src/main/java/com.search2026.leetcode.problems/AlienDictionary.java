@@ -7,8 +7,7 @@ public class AlienDictionary {
     /*
         Alien Dictionary - BFS
         Leetcode #269
-        https://leetcode.com/discuss/questions/oj/alien-dictionary?sort=votes
-        http://buttercola.blogspot.com/2015/09/leetcode-alien-dictionary.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/AlienDictionary.md
         Difficulty: Hard
      */
     public class Solution {
@@ -65,8 +64,7 @@ public class AlienDictionary {
     /*
         Alien Dictionary - Topological Sorting
         Leetcode #269
-        https://leetcode.com/discuss/questions/oj/alien-dictionary?sort=votes
-        http://buttercola.blogspot.com/2015/09/leetcode-alien-dictionary.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/AlienDictionary.md
         Difficulty: Hard
      */
     public class Solution_2 {

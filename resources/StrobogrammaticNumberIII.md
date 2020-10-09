@@ -8,11 +8,11 @@ A strobogrammatic number is a number that looks the same when rotated 180 degree
 
 Write a function to count the total strobogrammatic numbers that exist in the range of low <= num <= high.
 
-<strong>Example:</strong>
+**Example:**
 ```
 Input: low = "50", high = "100"
 Output: 3 
 Explanation: 69, 88, and 96 are three strobogrammatic numbers.
 ```
-<strong>Note:</strong>
-Because the range might be a large number, the <em>low</em> and <em>high</em> numbers are represented as string.
+**Note:**
+Because the range might be a large number, the *low* and *high* numbers are represented as string.

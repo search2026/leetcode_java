@@ -6,14 +6,14 @@ Subscribed Problem
 
 You are given a m x n 2D grid initialized with these three possible values.
 <ol>
-<li><code>-1</code> - A wall or an obstacle.</li>
-<li><code>0</code> - A gate.</li>
-<li><code>INF</code> - Infinity means an empty room. We use the value <code>2 31 - 1 = 2147483647</code> to represent <code>INF</code> as you may assume that the distance to a gate is less than <code>2147483647</code>.</li>
+<li>*-1* - A wall or an obstacle.</li>
+<li>*0* - A gate.</li>
+<li>*INF* - Infinity means an empty room. We use the value *2 31 - 1 = 2147483647* to represent *INF* as you may assume that the distance to a gate is less than *2147483647*.</li>
 </ol>
 Fill each empty room with the distance to its nearest gate. If it is impossible to reach a gate, it should be filled with INF.
 
 
-<strong>Example:<strong>
+**Example:**
 
 ```
 given the 2D grid

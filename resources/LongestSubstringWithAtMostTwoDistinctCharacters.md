@@ -4,15 +4,15 @@ Subscribed Problem
 
 ---
 
-Given a string <em>s</em> , find the length of the longest substring <em>t</em> that contains at most 2 distinct characters.
+Given a string *s* , find the length of the longest substring *t* that contains at most 2 distinct characters.
 
-<strong>Example 1:</strong>
+**Example 1:**
 ```
 Input: "eceba"
 Output: 3
 Explanation: _t_ is "ece" which its length is 3.
 ```
-<strong>Example 2:</strong>
+**Example 2:**
 ```
 Input: "ccaabbb"
 Output: 5

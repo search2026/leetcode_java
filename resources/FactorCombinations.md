@@ -11,23 +11,23 @@ Numbers can be regarded as product of its factors. For example,
 ```
 Write a function that takes an integer  n  and return all possible combinations of its factors.
 
-<strong>Note:</strong>
+**Note:**
 <ol>
 <li>You may assume that  n  is always positive.</li>
 <li>Factors should be greater than 1 and less than  n.</li>
 </ol>
 
-<strong>Example 1:</strong>
+**Example 1:**
 ```
 Input: 1
 Output: []
 ```
-<strong>Example 2:</strong>
+**Example 2:**
 ```
 Input: 37
 Output:[]
 ```
-<strong>Example 3:</strong>
+**Example 3:**
 ```
 Input: 12
 Output:
@@ -37,7 +37,7 @@ Output:
   [3, 4]
 ]
 ```
-<strong>Example 4:</strong>
+**Example 4:**
 ```
 Input: 32
 Output:

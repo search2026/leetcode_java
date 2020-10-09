@@ -4,30 +4,30 @@ Subscribed Problem
 
 ---
 
-Given two strings <em>s</em> and <em>t</em> , determine if they are both one edit distance apart.
+Given two strings *s* and *t* , determine if they are both one edit distance apart.
 
-<strong>Note:</strong>
+**Note:**
 
 There are 3 possibilities to satisfy one edit distance apart:
 <ol>
-<li>Insert a character into <em>s</em> to get <em>t</em></li>
-<li>Delete a character from <em>s</em> to get <em>t</em></li>
-<li>Replace a character of <em>s</em> to get <em>t</em></li>
+<li>Insert a character into *s* to get *t*</li>
+<li>Delete a character from *s* to get *t*</li>
+<li>Replace a character of *s* to get *t*</li>
 </ol>
 
-<strong>Example 1:</strong>
+**Example 1:**
 ```
 Input: _s_ = "ab", _t_ = "acb"
 Output: true
 Explanation: We can insert 'c' into _s_  to get  _t._
 ```
-<strong>Example 2:</strong>
+**Example 2:**
 ```
 Input: _s_ = "cab", _t_ = "ad"
 Output: false
 Explanation: We cannot get _t_ from _s_ by only one step.
 ```
-<strong>Example 3:</strong>
+**Example 3:**
 ```
 Input: _s_ = "1203", _t_ = "1213"
 Output: true

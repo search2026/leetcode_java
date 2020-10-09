@@ -8,7 +8,7 @@ Given a binary tree, find the length of the longest consecutive sequence path.
 
 The path refers to any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The longest consecutive path need to be from parent to child (cannot be the reverse).
 
-<strong>Example 1:</strong>
+**Example 1:**
 ```
 Input:
 
@@ -24,7 +24,7 @@ Output: 3
 
 Explanation: Longest consecutive sequence path is 3-4-5, so return 3.
 ```
-<strong>Example 2:</strong>
+**Example 2:**
 ```
 Input:
 
