@@ -1,6 +1,5 @@
 ### Leetcode 254. Factor Combinations
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/factor-combinations/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/factor-combinations/)
 
 ---
 
@@ -12,21 +11,21 @@ Numbers can be regarded as product of its factors. For example,
 Write a function that takes an integer  n  and return all possible combinations of its factors.
 
 **Note:**
-<ol>
-<li>You may assume that  n  is always positive.</li>
-<li>Factors should be greater than 1 and less than  n.</li>
-</ol>
+1. You may assume that *n* is always positive.
+1. Factors should be greater than 1 and less than *n*.
 
 **Example 1:**
 ```
 Input: 1
 Output: []
 ```
+
 **Example 2:**
 ```
 Input: 37
 Output:[]
 ```
+
 **Example 3:**
 ```
 Input: 12
@@ -37,6 +36,7 @@ Output:
   [3, 4]
 ]
 ```
+
 **Example 4:**
 ```
 Input: 32

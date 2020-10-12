@@ -1,6 +1,5 @@
 ### Leetcode 296. Best Meeting Point
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/best-meeting-point/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/best-meeting-point/)
 
 ---
 
@@ -22,7 +21,6 @@ Explanation: Given three people living at (0,0), (0,4), and (2,2):
              The point (0,2) is an ideal meeting point, as the total travel distance 
              of 2+2+2=6 is minimal. So return 6.
 ```
+
 **Hint:**
-<ol>
-<li>Try to solve it in one dimension first. How can this solution apply to the two dimension case?</li>
-</ol>
+Try to solve it in one dimension first. How can this solution apply to the two dimension case?

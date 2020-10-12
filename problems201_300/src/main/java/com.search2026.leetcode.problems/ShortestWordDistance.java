@@ -40,13 +40,13 @@ public class ShortestWordDistance {
         private Map<String, List<Integer>> map;
 
         public WordDistance(String[] words) {
-            map = new HashMap<String, List<Integer>>();
+            map = new HashMap<>();
             for (int i = 0; i < words.length; i++) {
                 String w = words[i];
                 if (map.containsKey(w)) {
                     map.get(w).add(i);
                 } else {
-                    List<Integer> list = new ArrayList<Integer>();
+                    List<Integer> list = new ArrayList<>();
                     list.add(i);
                     map.put(w, list);
                 }

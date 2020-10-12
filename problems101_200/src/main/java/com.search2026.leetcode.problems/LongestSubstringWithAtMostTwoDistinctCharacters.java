@@ -55,7 +55,6 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters {
         Longest Substring with At Most Two Distinct Characters - Template
         leetcode #159
         https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
-        https://leetcode.com/discuss/72701/here-10-line-template-that-can-solve-most-substring-problems
         Difficulty: Hard
      */
     public class Solution_3 {

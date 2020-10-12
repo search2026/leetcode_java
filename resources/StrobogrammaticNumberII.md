@@ -1,6 +1,5 @@
 ### Leetcode 247. Strobogrammatic Number II
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/strobogrammatic-number-ii/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/strobogrammatic-number-ii/)
 
 ---
 

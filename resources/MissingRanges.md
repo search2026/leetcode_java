@@ -1,6 +1,5 @@
 ### Leetcode 163. Missing Ranges
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/missing-ranges/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/missing-ranges/)
 
 ---
 

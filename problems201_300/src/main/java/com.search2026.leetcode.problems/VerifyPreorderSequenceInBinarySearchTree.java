@@ -9,7 +9,7 @@ public class VerifyPreorderSequenceInBinarySearchTree {
     /*
         Verify Preorder Sequence in Binary Search Tree
         Leetcode #255
-        https://github.com/search2026/leetcode_java/blob/master/VerifyPreorderSequenceInBinarySearchTree.md
+        https://github.com/search2026/leetcode_java/blob/master/resources/VerifyPreorderSequenceInBinarySearchTree.md
         Difficulty: Easy
      */
     public class Solution {
@@ -40,8 +40,7 @@ public class VerifyPreorderSequenceInBinarySearchTree {
     /*
         Verify Preorder Sequence in Binary Search Tree constant space
         Leetcode #255
-        https://leetcode.com/discuss/questions/oj/verify-preorder-sequence-in-binary-search-tree?sort=votes
-        http://buttercola.blogspot.com/2015/09/leetcode-verify-preorder-sequence-in.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/VerifyPreorderSequenceInBinarySearchTree.md
         Difficulty: Easy
    */
     public class Solution_2 {
@@ -72,8 +71,7 @@ public class VerifyPreorderSequenceInBinarySearchTree {
     /*
         Verify Preorder Sequence in Binary Search Tree using one stack
         Leetcode #255
-        https://leetcode.com/discuss/questions/oj/verify-preorder-sequence-in-binary-search-tree?sort=votes
-        http://buttercola.blogspot.com/2015/09/leetcode-verify-preorder-sequence-in.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/VerifyPreorderSequenceInBinarySearchTree.md
         Difficulty: Easy
    */
     public class Solution_3 {

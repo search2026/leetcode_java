@@ -1,6 +1,5 @@
 ### Leetcode 256. Paint House
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/paint-house/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/paint-house/)
 
 ---
 

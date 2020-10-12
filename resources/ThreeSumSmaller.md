@@ -1,6 +1,5 @@
 ### Leetcode 259. 3Sum Smaller
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/3sum-smaller/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/3sum-smaller/)
 
 ---
 

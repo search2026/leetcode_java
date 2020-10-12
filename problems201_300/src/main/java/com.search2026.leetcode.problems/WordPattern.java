@@ -19,7 +19,7 @@ public class WordPattern {
             String[] words = str.split(" ");
             if (pattern.length() != words.length) return false;
 
-            Map<Character, String> map = new HashMap<Character, String>();
+            Map<Character, String> map = new HashMap<>();
             for (int i = 0; i < pattern.length(); i++) {
                 if (!map.containsKey(pattern.charAt(i))) {
                     if (map.values().contains(words[i])) return false;
@@ -35,13 +35,12 @@ public class WordPattern {
     /*
         Word Pattern II
         Leetcode #291
-        https://leetcode.com/discuss/questions/oj/word-pattern-ii
-        http://www.cnblogs.com/EdwardLiu/p/5081358.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/WordPatternII.md
         Difficulty: Medium
     */
     public class Solution_2 {
-        Map<Character, String> map = new HashMap<Character, String>();
-        Set<String> set = new HashSet<String>();
+        Map<Character, String> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
 
         public boolean search(String pattern, String str, int i, int j) {
             if (i == pattern.length() && j == str.length()) return true;

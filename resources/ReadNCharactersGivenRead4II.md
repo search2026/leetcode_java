@@ -1,11 +1,9 @@
 ### Leetcode 158. Read N Characters Given Read4 II - Call multiple times
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/)
 
 ---
 
 Given a file and assume that you can only read the file using a given method `read4`, implement a method `read` to read *n* characters. Your method `read` may be called multiple times.
-
 
 **Method read4:**
 
@@ -22,6 +20,7 @@ Definition of read4:
 
 Note: buf[] is destination not source, the results from read4 will be copied to buf[]
 ```
+
 Below is a high level example of how `read4` works:
 ```
 File file("abcdefghijk"); // File is "abcdefghijk", initially file pointer (fp) points to 'a'
@@ -55,6 +54,7 @@ sol.read(buf, 1); // After calling your read method, buf should contain "a". We 
 sol.read(buf, 2); // Now buf should contain "bc". We read a total of 2 characters from the file, so return 2.
 sol.read(buf, 1); // We have reached the end of file, no more characters can be read. So return 0.
 ```
+
 **Example 2:**
 ```
 File file("abc");
@@ -64,10 +64,8 @@ sol.read(buf, 1); // We have reached the end of file, no more characters can be 
 ```
 
 **Note:**
-<ol>
-<li>Consider that you cannot manipulate the file directly, the file is only accessible for *read4* but not for *read*.</li>
-<li>The *read* function may be called multiple times.</li>
-<li>Please remember to RESET your class variables declared in Solution, as static/class variables are persisted across multiple test cases. Please see [here](https://leetcode.com/faq/) for more details.</li>
-<li>You may assume the destination buffer array, *buf*, is guaranteed to have enough space for storing *n* characters.</li>
-<li>It is guaranteed that in a given test case the same buffer *buf* is called by *read*.</li>
-</ol>
+1. Consider that you cannot manipulate the file directly, the file is only accessible for *read4* but not for *read*.
+1. The *read* function may be called multiple times.
+1. Please remember to RESET your class variables declared in Solution, as static/class variables are persisted across multiple test cases. Please see [here](https://leetcode.com/faq/) for more details.
+1. You may assume the destination buffer array, *buf*, is guaranteed to have enough space for storing *n* characters.
+1. It is guaranteed that in a given test case the same buffer *buf* is called by *read*.

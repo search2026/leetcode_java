@@ -1,6 +1,5 @@
 ### Leetcode 265. Paint House II
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/paint-house-ii/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/paint-house-ii/)
 
 ---
 

@@ -16,7 +16,7 @@
 | | | | | | |
 | 324 | [Wiggle Sort II](../resources/WiggleSortII.md) | Medium | [WiggleSort.java](../problems201_300/src/main/java/com.search2026.leetcode.problems/WiggleSort.java) | | |
 | | | | | | |
-| 329 | [https://leetcode.com/problems/longest-increasing-path-in-a-matrix/](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) | Hard | | | |
+| 329 | [Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) | Hard | | | |
 | | | | | | |
 | 337 | [House Robber III](https://leetcode.com/problems/house-robber-iii/) | | [HouseRobber.java](../problems101_200/src/main/java/com.search2026.leetcode.problems/HouseRobber.java) | | |
 | | | | | | |

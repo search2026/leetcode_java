@@ -14,4 +14,5 @@ Output: true
 Explanation: The starting player can guarantee a win by flipping the middle "++" to become "+--+".
 ```
 
-**Follow up**: Derive your algorithm's runtime complexity.
+**Follow up**:
+Derive your algorithm's runtime complexity.

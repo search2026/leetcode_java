@@ -1,6 +1,5 @@
 ### Leetcode 281. Zigzag Iterator
-Subscribed Problems
-[Leetcode link](https://leetcode.com/problems/zigzag-iterator/) 
+[Leetcode Subscribed Problems](https://leetcode.com/problems/zigzag-iterator/) 
 
 ---
 

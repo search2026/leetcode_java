@@ -1,6 +1,5 @@
 ### Leetcode 250. Count Univalue Subtrees
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/count-univalue-subtrees/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/count-univalue-subtrees/)
 
 ---
 

@@ -1,6 +1,5 @@
 ### LeetCode 298. Binary Tree Longest Consecutive Sequence
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/)
 
 ---
 
@@ -24,6 +23,7 @@ Output: 3
 
 Explanation: Longest consecutive sequence path is 3-4-5, so return 3.
 ```
+
 **Example 2:**
 ```
 Input:

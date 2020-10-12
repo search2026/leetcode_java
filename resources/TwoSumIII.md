@@ -1,6 +1,5 @@
 ### Leetcode 170. Two Sum III - Data structure design
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/two-sum-iii-data-structure-design/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/two-sum-iii-data-structure-design/)
 
 ---
 
@@ -16,6 +15,7 @@ add(1); add(3); add(5);
 find(4) -> true
 find(7) -> false
 ```
+
 **Example 2:**
 ```
 add(3); add(1); add(2);

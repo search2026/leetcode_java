@@ -1,6 +1,5 @@
 ### Leetcode 248. Strobogrammatic Number III
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/strobogrammatic-number-iii/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/strobogrammatic-number-iii/)
 
 ---
 
@@ -14,5 +13,6 @@ Input: low = "50", high = "100"
 Output: 3 
 Explanation: 69, 88, and 96 are three strobogrammatic numbers.
 ```
+
 **Note:**
 Because the range might be a large number, the *low* and *high* numbers are represented as string.

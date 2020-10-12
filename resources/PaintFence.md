@@ -12,7 +12,7 @@ Return the total number of ways you can paint the fence.
 **Note:**
 *n* and *k* are non-negative integers.
 
-Example:
+**Example:**
 ```
 Input: n = 3, k = 2
 Output: 6

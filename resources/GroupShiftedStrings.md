@@ -1,6 +1,5 @@
 ### Leetcode 249. Group Shifted Strings
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/group-shifted-strings/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/group-shifted-strings/)
 
 ---
 
@@ -20,4 +19,6 @@ Return:
   ["a","z"]
 ]
 ```
-**Note:** For the return value, each *inner* list's elements must follow the lexicographic order.
+
+**Note:**
+For the return value, each *inner* list's elements must follow the lexicographic order.

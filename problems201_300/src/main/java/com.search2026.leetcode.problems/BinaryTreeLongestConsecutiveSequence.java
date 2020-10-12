@@ -7,8 +7,7 @@ public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence
         Leetcode #298
-        https://leetcode.com/discuss/questions/oj/binary-tree-longest-consecutive-sequence?sort=votes
-        http://www.cnblogs.com/grandyang/p/5252599.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeLongestConsecutiveSequence.md
         Difficulty: Medium
      */
     public class Solution {
@@ -30,8 +29,7 @@ public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence
         Leetcode #298
-        https://leetcode.com/discuss/questions/oj/binary-tree-longest-consecutive-sequence?sort=votes
-        http://www.cnblogs.com/grandyang/p/5252599.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeLongestConsecutiveSequence.md
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -56,8 +54,7 @@ public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence II
         Leetcode #549
-        https://discuss.leetcode.com/category/705/binary-tree-longest-consecutive-sequence-ii
-        http://www.cnblogs.com/grandyang/p/6864398.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeLongestConsecutiveSequenceII.md
         Difficulty: Hard
      */
     public class Solution_3 {
@@ -84,8 +81,7 @@ public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence II
         Leetcode #549
-        https://discuss.leetcode.com/category/705/binary-tree-longest-consecutive-sequence-ii
-        http://www.cnblogs.com/grandyang/p/6864398.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeLongestConsecutiveSequenceII.md
         Difficulty: Hard
      */
     public class Solution_4 {

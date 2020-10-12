@@ -1,6 +1,5 @@
 ### Leetcode 255. Verify Preorder Sequence in Binary Search Tree
-Subscribed Problem
-[Leetcode link](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/)
+[Leetcode Subscribed Problem](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/)
 
 ---
 
@@ -16,15 +15,18 @@ Consider the following binary search tree:
   / \
  1   3
 ```
+
 **Example 1:**
 ```
 Input: [5,2,6,1,3]
 Output: false
 ```
+
 **Example 2:**
 ```
 Input: [5,2,1,3,6]
 Output: true
 ```
+
 **Follow up:**
 Could you do it using only constant space complexity?

@@ -9,7 +9,7 @@ Write a function to compute all possible states of the string after one valid mo
 
 **Example**
 ```
-given `s = "++++"`, after one move, it may become one of the following states:
+given s = "++++", after one move, it may become one of the following states:
 [
   "--++",
   "+--+",

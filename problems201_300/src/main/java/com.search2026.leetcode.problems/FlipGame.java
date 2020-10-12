@@ -8,8 +8,7 @@ public class FlipGame {
     /*
         Flip Game
         Leetcode #293
-        https://leetcode.com/discuss/questions/oj/flip-game?sort=votes
-        http://www.cnblogs.com/anne-vista/p/4886775.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/FlipGame.md
         Difficulty: Easy
     */
     public class Solution {
@@ -27,8 +26,7 @@ public class FlipGame {
     /*
         Flip Game II
         Leetcode #294
-        https://leetcode.com/discuss/questions/oj/flip-game-ii?sort=votes
-        http://www.cnblogs.com/anne-vista/p/4886786.html
+        https://github.com/search2026/leetcode_java/blob/master/resources/FlipGameII.md
         Difficulty: Medium
     */
     public class Solution_2 {
