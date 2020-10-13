@@ -10,7 +10,7 @@ public class FallingSquares {
     /*
         Falling Squares - Intervals
         Leetcode #699
-        https://leetcode.com/problems/falling-squares/description/
+        https://leetcode.com/problems/falling-squares/
         Difficulty: Hard
      */
     public class Solution {
@@ -52,7 +52,7 @@ public class FallingSquares {
     /*
         Falling Squares - Segment Tree
         Leetcode #699
-        https://leetcode.com/problems/falling-squares/description/
+        https://leetcode.com/problems/falling-squares/
         Difficulty: Hard
      */
     public class Solution_2 {

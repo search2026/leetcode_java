@@ -11,7 +11,7 @@ public class PartitiontoKEqualSumSubsets {
     /*
         Partition to K Equal Sum Subsets
         Leetcode #698
-        https://leetcode.com/problems/partition-to-k-equal-sum-subsets/description/
+        https://leetcode.com/problems/partition-to-k-equal-sum-subsets/
         Difficult: Hard
      */
     public class Solution {
@@ -42,7 +42,7 @@ public class PartitiontoKEqualSumSubsets {
     /*
         Partition to K Equal Sum Subsets
         Leetcode #698
-        https://leetcode.com/problems/partition-to-k-equal-sum-subsets/description/
+        https://leetcode.com/problems/partition-to-k-equal-sum-subsets/
         Difficult: Hard
      */
     public class Solution_2 {

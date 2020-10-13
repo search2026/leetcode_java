@@ -37,7 +37,7 @@ public class WiggleSort {
     /*
         Wiggle Sort II
         Leetcode #324
-        https://github.com/search2026/leetcode_java/blob/master/resources/WiggleSortII.md
+        https://leetcode.com/problems/wiggle-sort-ii/
         Difficulty: Medium
    */
     public class Solution_2 {

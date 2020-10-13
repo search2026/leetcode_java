@@ -50,7 +50,7 @@ public class DecodeWays {
     /*
         Decode Ways II - Dynamic Programming
         Leetcode #639
-        https://leetcode.com/problems/decode-ways-ii/description/
+        https://leetcode.com/problems/decode-ways-ii/
         Difficulty: Medium
      */
     public class Solution_3 {
@@ -101,7 +101,7 @@ public class DecodeWays {
     /*
         Decode Ways II - Dynamic Programming Template
         Leetcode #639
-        https://leetcode.com/problems/decode-ways-ii/description/
+        https://leetcode.com/problems/decode-ways-ii/
         Difficulty: Medium
      */
     public class Solution_4 {
