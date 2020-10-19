@@ -52,53 +52,53 @@
 | 348 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Design Tic-Tac-Toe](../resources/DesignTicTacToe.md) | Medium | []() | | |
 | 349 | [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) | Easy | []() | | |
 | 350 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) | Easy | []() | | |
-| 351 | []() | | []() | | |
-| 352 | []() | | []() | | |
-| 353 | []() | | []() | | |
-| 354 | []() | | []() | | |
-| 355 | []() | | []() | | |
-| 356 | []() | | []() | | |
-| 357 | []() | | []() | | |
-| 358 | []() | | []() | | |
-| 359 | []() | | []() | | |
-| 360 | []() | | []() | | |
-| 361 | []() | | []() | | |
-| 362 | []() | | []() | | |
-| 363 | []() | | []() | | |
-| 364 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Nested List Weight Sum II](../resources/NestedListWeightSumII.md) | | []() | | |
-| 365 | []() | | []() | | |
-| 366 | []() | | []() | | |
-| 367 | []() | | []() | | |
-| 368 | []() | | []() | | |
-| 369 | []() | | []() | | |
-| 370 | []() | | []() | | |
-| 371 | []() | | []() | | |
-| 372 | []() | | []() | | |
-| 373 | []() | | []() | | |
-| 374 | []() | | []() | | |
-| 375 | []() | | []() | | |
-| 376 | []() | | []() | | |
-| 377 | [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) | |  [CombinationSum.java](../problems1_100/src/main/java/com.search2026.leetcode.problems/CombinationSum.java) | | |
-| 378 | []() | | []() | | |
-| 379 | []() | | []() | | |
-| 380 | []() | | []() | | |
-| 381 | []() | | []() | | |
-| 382 | []() | | []() | | |
-| 383 | []() | | []() | | |
-| 384 | []() | | []() | | |
-| 385 | []() | | []() | | |
-| 386 | []() | | []() | | |
-| 387 | []() | | []() | | |
-| 388 | []() | | []() | | |
-| 389 | []() | | []() | | |
-| 390 | []() | | []() | | |
-| 391 | []() | | []() | | |
-| 392 | []() | | []() | | |
-| 393 | []() | | []() | | |
-| 394 | []() | | []() | | |
-| 395 | []() | | []() | | |
-| 396 | []() | | []() | | |
-| 397 | []() | | []() | | |
-| 398 | []() | | []() | | |
-| 399 | []() | | []() | | |
-| 400 | []() | | []() | | |
+| 351 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Android Unlock Patterns](../resources/AndroidUnlockPatterns.md) | Medium | []() | | |
+| 352 | [Data Stream as Disjoint Intervals](https://leetcode.com/problems/data-stream-as-disjoint-intervals/) | Hard | []() | | |
+| 353 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Design Snake Game](../resources/DesignSnakeGame.md) | Medium | []() | | |
+| 354 | [Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/) | Hard | []() | | |
+| 355 | [Design Twitter](https://leetcode.com/problems/design-twitter/) | Medium | []() | | |
+| 356 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Line Reflection](../resources/LineReflection.md) | Medium | []() | | |
+| 357 | [Count Numbers with Unique Digits](https://leetcode.com/problems/count-numbers-with-unique-digits/) | Medium | []() | | |
+| 358 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Rearrange String k Distance Apart](../resources/RearrangeStringKDistanceApart.md) | Hard | []() | | |
+| 359 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Logger Rate Limiter](../resources/LoggerRateLimiter.md) | Easy | []() | | |
+| 360 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Sort Transformed Array](../resources/SortTransformedArray.md) | Medium | []() | | |
+| 361 | []() | Medium | []() | | |
+| 362 | []() | Medium | []() | | |
+| 363 | [Max Sum of Rectangle No Larger Than K](https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/) | Hard | []() | | |
+| 364 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Nested List Weight Sum II](../resources/NestedListWeightSumII.md) | Medium | []() | | |
+| 365 | [Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/) | Medium | []() | | |
+| 366 | []() | Medium | []() | | |
+| 367 | [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/) | Easy | []() | | |
+| 368 | [Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/) | Medium | []() | | |
+| 369 | []() | Medium | []() | | |
+| 370 | []() | Medium | []() | | |
+| 371 | []() | Medium | []() | | |
+| 372 | []() | Medium | []() | | |
+| 373 | []() | Medium | []() | | |
+| 374 | []() | Easy | []() | | |
+| 375 | []() | Medium | []() | | |
+| 376 | []() | Medium | []() | | |
+| 377 | [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) | Medium |  [CombinationSum.java](../problems1_100/src/main/java/com.search2026.leetcode.problems/CombinationSum.java) | | |
+| 378 | []() | Medium | []() | | |
+| 379 | []() | Medium | []() | | |
+| 380 | []() | Medium | []() | | |
+| 381 | []() | Hard | []() | | |
+| 382 | []() | Medium | []() | | |
+| 383 | []() | Easy | []() | | |
+| 384 | []() | Medium | []() | | |
+| 385 | []() | Medium | []() | | |
+| 386 | []() | Medium | []() | | |
+| 387 | []() | Easy | []() | | |
+| 388 | []() | Medium | []() | | |
+| 389 | []() | Easy | []() | | |
+| 390 | []() | Medium | []() | | |
+| 391 | []() | Hard | []() | | |
+| 392 | []() | Easy | []() | | |
+| 393 | []() | Medium | []() | | |
+| 394 | []() | Medium | []() | | |
+| 395 | []() | Medium | []() | | |
+| 396 | []() | Medium | []() | | |
+| 397 | []() | Medium | []() | | |
+| 398 | []() | Medium | []() | | |
+| 399 | []() | Medium | []() | | |
+| 400 | []() | Medium | []() | | |
