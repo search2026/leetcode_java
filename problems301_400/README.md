@@ -62,43 +62,43 @@
 | 358 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Rearrange String k Distance Apart](../resources/RearrangeStringKDistanceApart.md) | Hard | []() | | |
 | 359 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Logger Rate Limiter](../resources/LoggerRateLimiter.md) | Easy | []() | | |
 | 360 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Sort Transformed Array](../resources/SortTransformedArray.md) | Medium | []() | | |
-| 361 | []() | Medium | []() | | |
-| 362 | []() | Medium | []() | | |
+| 361 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Bomb Enemy](../resources/BombEnemy.md) | Medium | []() | | |
+| 362 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Design Hit Counter](../resources/DesignHitCounter.md) | Medium | []() | | |
 | 363 | [Max Sum of Rectangle No Larger Than K](https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/) | Hard | []() | | |
 | 364 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Nested List Weight Sum II](../resources/NestedListWeightSumII.md) | Medium | []() | | |
 | 365 | [Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/) | Medium | []() | | |
-| 366 | []() | Medium | []() | | |
+| 366 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Find Leaves of Binary Tree](../resources/FindLeavesOfBinaryTree.md) | Medium | []() | | |
 | 367 | [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/) | Easy | []() | | |
 | 368 | [Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/) | Medium | []() | | |
-| 369 | []() | Medium | []() | | |
-| 370 | []() | Medium | []() | | |
-| 371 | []() | Medium | []() | | |
-| 372 | []() | Medium | []() | | |
-| 373 | []() | Medium | []() | | |
-| 374 | []() | Easy | []() | | |
-| 375 | []() | Medium | []() | | |
-| 376 | []() | Medium | []() | | |
+| 369 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Plus One Linked List](../resources/PlusOneLinkedList.md) | Medium | []() | | |
+| 370 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Range Addition](../resources/RangeAddition.md) | Medium | []() | | |
+| 371 | [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/) | Medium | []() | | |
+| 372 | [Super Pow](https://leetcode.com/problems/super-pow/) | Medium | []() | | |
+| 373 | [Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/) | Medium | []() | | |
+| 374 | [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/) | Easy | []() | | |
+| 375 | [Guess Number Higher or Lower II](https://leetcode.com/problems/guess-number-higher-or-lower-ii/) | Medium | []() | | |
+| 376 | [Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/) | Medium | []() | | |
 | 377 | [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/) | Medium |  [CombinationSum.java](../problems1_100/src/main/java/com.search2026.leetcode.problems/CombinationSum.java) | | |
-| 378 | []() | Medium | []() | | |
-| 379 | []() | Medium | []() | | |
-| 380 | []() | Medium | []() | | |
-| 381 | []() | Hard | []() | | |
-| 382 | []() | Medium | []() | | |
-| 383 | []() | Easy | []() | | |
-| 384 | []() | Medium | []() | | |
-| 385 | []() | Medium | []() | | |
-| 386 | []() | Medium | []() | | |
-| 387 | []() | Easy | []() | | |
-| 388 | []() | Medium | []() | | |
-| 389 | []() | Easy | []() | | |
-| 390 | []() | Medium | []() | | |
-| 391 | []() | Hard | []() | | |
-| 392 | []() | Easy | []() | | |
-| 393 | []() | Medium | []() | | |
-| 394 | []() | Medium | []() | | |
-| 395 | []() | Medium | []() | | |
-| 396 | []() | Medium | []() | | |
-| 397 | []() | Medium | []() | | |
-| 398 | []() | Medium | []() | | |
-| 399 | []() | Medium | []() | | |
-| 400 | []() | Medium | []() | | |
+| 378 | [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) | Medium | []() | | |
+| 379 | ![](../resources/Dollar-Sign-10x10.png?raw=true")[Design Phone Directory](../resources/DesignPhoneDirectory.md) | Medium | []() | | |
+| 380 | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) | Medium | []() | | |
+| 381 | [Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/) | Hard | []() | | |
+| 382 | [Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/) | Medium | []() | | |
+| 383 | [Ransom Note](https://leetcode.com/problems/ransom-note/) | Easy | []() | | |
+| 384 | [Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/) | Medium | []() | | |
+| 385 | [Mini Parser](https://leetcode.com/problems/mini-parser/) | Medium | []() | | |
+| 386 | [Lexicographical Numbers](https://leetcode.com/problems/lexicographical-numbers/) | Medium | []() | | |
+| 387 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) | Easy | []() | | |
+| 388 | [Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/) | Medium | []() | | |
+| 389 | [Find the Difference](https://leetcode.com/problems/find-the-difference/) | Easy | []() | | |
+| 390 | [Elimination Game](https://leetcode.com/problems/elimination-game/) | Medium | []() | | |
+| 391 | [Perfect Rectangle](https://leetcode.com/problems/perfect-rectangle/) | Hard | []() | | |
+| 392 | [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | Easy | []() | | |
+| 393 | [UTF-8 Validation](https://leetcode.com/problems/utf-8-validation/) | Medium | []() | | |
+| 394 | [Decode String](https://leetcode.com/problems/decode-string/) | Medium | []() | | |
+| 395 | [Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/) | Medium | []() | | |
+| 396 | [Rotate Function](https://leetcode.com/problems/rotate-function/) | Medium | []() | | |
+| 397 | [Integer Replacement](https://leetcode.com/problems/integer-replacement/) | Medium | []() | | |
+| 398 | [Random Pick Index](https://leetcode.com/problems/random-pick-index/) | Medium | []() | | |
+| 399 | [Evaluate Division](https://leetcode.com/problems/evaluate-division/) | Medium | []() | | |
+| 400 | [Nth Digit](https://leetcode.com/problems/nth-digit/) | Medium | []() | | |

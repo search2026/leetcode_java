@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BulbSwitcherTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         BulbSwitcher.Solution sol = new BulbSwitcher().new Solution();
         assertEquals(4, sol.bulbSwitch(18));
     }

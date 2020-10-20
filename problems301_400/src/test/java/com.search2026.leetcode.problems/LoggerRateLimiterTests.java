@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class LoggerRateLimiterTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         LoggerRateLimiter.Logger logger = new LoggerRateLimiter().new Logger();
         // logging string "foo" at timestamp 1
         assertTrue(logger.shouldPrintMessage(1, "foo"));
@@ -29,7 +29,7 @@ public class LoggerRateLimiterTests {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         LoggerRateLimiter.Solution logger = new LoggerRateLimiter().new Solution();
         // logging string "foo" at timestamp 1
         assertTrue(logger.shouldPrintMessage(1, "foo"));

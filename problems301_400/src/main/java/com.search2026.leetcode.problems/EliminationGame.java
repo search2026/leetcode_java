@@ -1,0 +1,29 @@
+package com.search2026.leetcode.problems;
+
+public class EliminationGame {
+
+    /*
+        Elimination Game - O(logN)
+        Leetcode #390
+        https://leetcode.com/problems/elimination-game/
+        Difficulty: Medium
+     */
+    public class Solution {
+        public int lastRemaining(int n) {
+            boolean left = true;
+            int remaining = n;
+            int step = 1;
+            int head = 1;
+            while (remaining > 1) {
+                if (left || remaining % 2 ==1) {
+                    head = head + step;
+                }
+                remaining = remaining / 2;
+                step = step * 2;
+                left = !left;
+            }
+            return head;
+        }
+    }
+
+}

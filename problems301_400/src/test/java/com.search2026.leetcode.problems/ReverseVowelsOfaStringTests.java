@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ReverseVowelsOfaStringTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         ReverseVowelsOfaString.Solution sol = new ReverseVowelsOfaString().new Solution();
         assertEquals("", sol.reverseVowels(""));
         assertEquals("", sol.reverseVowels(null));

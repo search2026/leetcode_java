@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class WaterAndJugProblemTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         WaterAndJugProblem.Solution sol = new WaterAndJugProblem().new Solution();
         assertTrue(sol.canMeasureWater(3, 5, 4));
         assertFalse(sol.canMeasureWater(2, 6, 5));

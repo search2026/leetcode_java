@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CountNumbersWithUniqueDigitsTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         CountNumbersWithUniqueDigits.Solution sol = new CountNumbersWithUniqueDigits().new Solution();
         assertEquals(1, sol.countNumbersWithUniqueDigits(0));
         assertEquals(10, sol.countNumbersWithUniqueDigits(1));
@@ -25,7 +25,7 @@ public class CountNumbersWithUniqueDigitsTests {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         CountNumbersWithUniqueDigits.Solution_2 sol = new CountNumbersWithUniqueDigits().new Solution_2();
         assertEquals(1, sol.countNumbersWithUniqueDigits(0));
         assertEquals(10, sol.countNumbersWithUniqueDigits(1));
@@ -42,7 +42,7 @@ public class CountNumbersWithUniqueDigitsTests {
     }
 
     @Test
-    public void test3() {
+    public void testSolution3() {
         CountNumbersWithUniqueDigits.Solution_3 sol = new CountNumbersWithUniqueDigits().new Solution_3();
         assertEquals(1, sol.countNumbersWithUniqueDigits(0));
         assertEquals(10, sol.countNumbersWithUniqueDigits(1));

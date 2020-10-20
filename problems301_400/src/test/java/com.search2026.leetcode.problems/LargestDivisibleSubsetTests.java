@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class LargestDivisibleSubsetTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         LargestDivisibleSubset.Solution sol = new LargestDivisibleSubset().new Solution();
         int[] test = {1};
         List<Integer> res = sol.largestDivisibleSubset(test);
@@ -62,7 +62,7 @@ public class LargestDivisibleSubsetTests {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         LargestDivisibleSubset.Solution_2 sol = new LargestDivisibleSubset().new Solution_2();
         int[] test = {1};
         List<Integer> res = sol.largestDivisibleSubset(test);
@@ -113,7 +113,7 @@ public class LargestDivisibleSubsetTests {
     }
 
     @Test
-    public void test3() {
+    public void testSolution3() {
         LargestDivisibleSubset.Solution_3 sol = new LargestDivisibleSubset().new Solution_3();
         int[] test = {1};
         List<Integer> res = sol.largestDivisibleSubset(test);

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class LineReflectionTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         LineReflection.Solution sol = new LineReflection().new Solution();
         int[][] test1 = {
                 {1, 1},

@@ -1,43 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-}
-
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-
 group = 'search2026'
 archivesBaseName = 'leetcode-java'
 version = '1.0'
 description = 'leetcode problem solution in Java'
-
-repositories {
-    mavenCentral()
-}
-
-
-apply plugin: 'java'
-apply plugin: 'idea'
-
-
-ext.junitPlatformVersion = '1.7.0'
-ext.junitJupiterVersion  = '5.7.0'
-
-dependencies {
-    implementation "org.apache.commons:commons-lang3:3.11"
-    implementation "org.apache.commons:commons-collections4:4.4"
-    // required for tests under root src folder
-    implementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
-
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
-    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
-    testImplementation "org.junit.platform:junit-platform-runner:${junitPlatformVersion}"
-    testImplementation "org.junit.platform:junit-platform-launcher:${junitPlatformVersion}"
-}
-
-sourceSets.test.java.srcDir 'src/main/java'
 
 wrapper {
     gradleVersion = '5.6.3'
@@ -51,6 +18,8 @@ allprojects {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
     repositories {
         jcenter()

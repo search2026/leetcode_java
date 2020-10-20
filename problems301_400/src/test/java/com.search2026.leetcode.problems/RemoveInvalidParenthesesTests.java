@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class RemoveInvalidParenthesesTests {
 
     @Test
-    public void test1() {
+    public void testSolution() {
         RemoveInvalidParentheses.Solution sol = new RemoveInvalidParentheses().new Solution();
         List<String> res = sol.removeInvalidParentheses("()())()");
         assertEquals(2, res.size());
@@ -32,7 +32,7 @@ public class RemoveInvalidParenthesesTests {
     }
 
     @Test
-    public void test2() {
+    public void testSolution2() {
         RemoveInvalidParentheses.Solution_2 sol = new RemoveInvalidParentheses().new Solution_2();
         List<String> res = sol.removeInvalidParentheses("()())()");
         assertEquals(2, res.size());
