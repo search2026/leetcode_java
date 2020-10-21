@@ -7,7 +7,7 @@ public class LargestBSTSubtree {
     /*
         Largest BST Subtree - New Node Structure
         Leetcode #333
-        https://github.com/search2026/leetcode_java/blob/master/resources/LargestBSTSubtree.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/LargestBSTSubtree.md
         Difficulty: Medium
      */
     public class Solution {
@@ -55,7 +55,7 @@ public class LargestBSTSubtree {
     /*
         Largest BST Subtree - O(NlogN)
         Leetcode #333
-        https://github.com/search2026/leetcode_java/blob/master/resources/LargestBSTSubtree.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/LargestBSTSubtree.md
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -82,7 +82,7 @@ public class LargestBSTSubtree {
     /*
         Largest BST Subtree - O(N)
         Leetcode #333
-        https://github.com/search2026/leetcode_java/blob/master/resources/LargestBSTSubtree.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/LargestBSTSubtree.md
         Difficulty: Medium
      */
     public class Solution_3 {

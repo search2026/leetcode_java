@@ -5,7 +5,7 @@ public class PaintHouse {
     /*
         Paint House - Time O(n*k*k) Solution
         Leetcode #256
-        https://github.com/search2026/leetcode_java/blob/master/resources/PaintHouse.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/PaintHouse.md
         Difficulty: Medium
     */
     public class Solution {
@@ -35,7 +35,7 @@ public class PaintHouse {
     /*
         Paint House
         Leetcode #256
-        https://github.com/search2026/leetcode_java/blob/master/resources/PaintHouse.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/PaintHouse.md
         Difficulty: Medium
     */
     public class Solution_2 {
@@ -55,7 +55,7 @@ public class PaintHouse {
     /*
         Paint House II - Time O(n*K) Solution
         Leetcode #265
-        https://github.com/search2026/leetcode_java/blob/master/resources/PaintHouseII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/PaintHouseII.md
         Difficulty: Hard
     */
     public class Solution_3 {

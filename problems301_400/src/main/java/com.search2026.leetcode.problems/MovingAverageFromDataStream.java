@@ -8,7 +8,7 @@ public class MovingAverageFromDataStream {
     /*
         Moving Average from Data Stream - Queue
         Leetcode #346
-        https://github.com/search2026/leetcode_java/blob/master/resources/MovingAverageFromDataStream.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/MovingAverageFromDataStream.md
         Difficulty: Easy
      */
     public class MovingAverage {

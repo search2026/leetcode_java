@@ -8,7 +8,7 @@ public class ZigzagIterator {
     /*
         Zigzag Iterator
         Leetcode #281
-        https://github.com/search2026/leetcode_java/blob/master/resources/ZigzagIterator.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/ZigzagIterator.md
         Difficulty: Medium
      */
     private List<Integer> v1;

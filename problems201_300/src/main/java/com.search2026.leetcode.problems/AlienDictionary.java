@@ -7,7 +7,7 @@ public class AlienDictionary {
     /*
         Alien Dictionary - BFS
         Leetcode #269
-        https://github.com/search2026/leetcode_java/blob/master/resources/AlienDictionary.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/AlienDictionary.md
         Difficulty: Hard
      */
     public class Solution {
@@ -64,7 +64,7 @@ public class AlienDictionary {
     /*
         Alien Dictionary - Topological Sorting
         Leetcode #269
-        https://github.com/search2026/leetcode_java/blob/master/resources/AlienDictionary.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/AlienDictionary.md
         Difficulty: Hard
      */
     public class Solution_2 {

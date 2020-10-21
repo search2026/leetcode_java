@@ -15,7 +15,7 @@
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 549 | ![](../media/Dollar-Sign-10x10.png?raw=true")[Binary Tree Longest Consecutive Sequence II](../resources/BinaryTreeLongestConsecutiveSequenceII.md) | | [BinaryTreeLongestConsecutiveSequence.java](../problems201_300/src/main/java/com.search2026.leetcode.problems/BinaryTreeLongestConsecutiveSequence.java) | | | | |
+| 549 | ![](../media/Dollar-Sign-10x10.png?raw=true")[Binary Tree Longest Consecutive Sequence II](resources/BinaryTreeLongestConsecutiveSequenceII.md) | | [BinaryTreeLongestConsecutiveSequence.java](../problems201_300/src/main/java/com.search2026.leetcode.problems/BinaryTreeLongestConsecutiveSequence.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |

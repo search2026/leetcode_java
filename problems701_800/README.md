@@ -13,7 +13,7 @@
 | 709 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
 | 710 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 716 | [Max Stack](../resources/MaxStack.md) | Easy | [MaxStack.java](src/main/java/com.search2026.leetcode.problems/MaxStack.java) | | | | |
+| 716 | ![](../media/Dollar-Sign-10x10.png?raw=true")[Max Stack](../resources/MaxStack.md) | Easy | [MaxStack.java](src/main/java/com.search2026.leetcode.problems/MaxStack.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
 | | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |

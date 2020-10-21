@@ -7,7 +7,7 @@ public class PlusOneLinkedList {
     /*
         Plus One Linked List
         Leetcode #369
-        https://github.com/search2026/leetcode_java/blob/master/resources/PlusOneLinkedList.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/PlusOneLinkedList.md
         Difficulty: Medium
      */
     public class Solution {

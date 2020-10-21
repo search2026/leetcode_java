@@ -9,7 +9,7 @@ public class BestMeetingPoint {
     /*
         Best Meeting Point
         Leetcode #296
-        https://github.com/search2026/leetcode_java/blob/master/resources/BestMeetingPoint.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/BestMeetingPoint.md
         Difficulty: Hard
      */
     public class Solution {

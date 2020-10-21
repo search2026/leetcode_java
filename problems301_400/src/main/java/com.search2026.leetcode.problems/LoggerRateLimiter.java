@@ -8,7 +8,7 @@ public class LoggerRateLimiter {
     /*
         Logger Rate Limiter
         Leetcode #359
-        https://github.com/search2026/leetcode_java/blob/master/resources/LoggerRateLimiter.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/LoggerRateLimiter.md
         Difficult: Easy
      */
     public class Solution {
@@ -32,7 +32,7 @@ public class LoggerRateLimiter {
     /*
         Logger Rate Limiter
         Leetcode #359
-        https://github.com/search2026/leetcode_java/blob/master/resources/LoggerRateLimiter.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/LoggerRateLimiter.md
         Difficult: Easy
      */
     public class Logger {

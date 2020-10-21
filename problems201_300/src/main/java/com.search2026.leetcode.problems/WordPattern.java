@@ -35,7 +35,7 @@ public class WordPattern {
     /*
         Word Pattern II
         Leetcode #291
-        https://github.com/search2026/leetcode_java/blob/master/resources/WordPatternII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/WordPatternII.md
         Difficulty: Medium
     */
     public class Solution_2 {

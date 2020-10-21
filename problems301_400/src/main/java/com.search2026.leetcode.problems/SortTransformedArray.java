@@ -7,7 +7,7 @@ public class SortTransformedArray {
     /*
         Sort Transformed Array - Heap
         Leetcode #360
-        https://github.com/search2026/leetcode_java/blob/master/resources/SortTransformedArray.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/SortTransformedArray.md
         Difficulty: Medium
      */
     public class Solution {
@@ -29,7 +29,7 @@ public class SortTransformedArray {
     /*
         Sort Transformed Array - Two Pointers
         Leetcode #360
-        https://github.com/search2026/leetcode_java/blob/master/resources/SortTransformedArray.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/SortTransformedArray.md
         Difficulty: Medium
      */
     public class Solution_2 {

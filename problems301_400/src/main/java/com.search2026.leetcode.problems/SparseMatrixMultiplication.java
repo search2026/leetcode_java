@@ -5,7 +5,7 @@ public class SparseMatrixMultiplication {
     /*
         Sparse Matrix Multiplication
         Leetcode #311
-        https://github.com/search2026/leetcode_java/blob/master/resources/SparseMatrixMultiplication.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/SparseMatrixMultiplication.md
         Difficulty: Easy
      */
     public class Solution {

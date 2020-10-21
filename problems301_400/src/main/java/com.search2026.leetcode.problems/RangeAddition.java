@@ -5,7 +5,7 @@ public class RangeAddition {
     /*
         Range Addition - Brute Force
         Leetcode #370
-        https://github.com/search2026/leetcode_java/blob/master/resources/RangeAddition.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/RangeAddition.md
         Difficulty: Medium
      */
     public class Solution {
@@ -27,7 +27,7 @@ public class RangeAddition {
     /*
         Range Addition - O(N+K) time complexity
         Leetcode #370
-        https://github.com/search2026/leetcode_java/blob/master/resources/RangeAddition.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/RangeAddition.md
         Difficulty: Medium
      */
     public class Solution_2 {

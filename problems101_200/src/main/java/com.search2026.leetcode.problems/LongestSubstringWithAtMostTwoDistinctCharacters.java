@@ -8,7 +8,7 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters {
     /*
         Longest Substring with At Most Two Distinct Characters
         leetcode #159
-        https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
+        https://github.com/search2026/leetcode_java/blob/master/problems101_200/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
         Difficulty: Hard
      */
     public class Solution {
@@ -32,7 +32,7 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters {
     /*
         Longest Substring with At Most Two Distinct Characters - Sliding Windows
         leetcode #159
-        https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
+        https://github.com/search2026/leetcode_java/blob/master/problems101_200/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
         Difficulty: Hard
      */
     public class Solution_2 {
@@ -54,7 +54,7 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters {
     /*
         Longest Substring with At Most Two Distinct Characters - Template
         leetcode #159
-        https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
+        https://github.com/search2026/leetcode_java/blob/master/problems101_200/resources/LongestSubstringWithAtMostTwoDistinctCharacters.md
         Difficulty: Hard
      */
     public class Solution_3 {

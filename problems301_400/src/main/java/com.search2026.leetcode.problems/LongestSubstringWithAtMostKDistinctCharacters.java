@@ -8,7 +8,7 @@ public class LongestSubstringWithAtMostKDistinctCharacters {
     /*
         Longest Substring with At Most K Distinct Characters - Sliding Window
         leetcode #340
-        https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostKDistinctCharacters.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/LongestSubstringWithAtMostKDistinctCharacters.md
         Difficulty: Hard
      */
     public class Solution {
@@ -32,7 +32,7 @@ public class LongestSubstringWithAtMostKDistinctCharacters {
     /*
         Longest Substring with At Most K Distinct Characters - template
         leetcode #340
-        https://github.com/search2026/leetcode_java/blob/master/resources/LongestSubstringWithAtMostKDistinctCharacters.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/LongestSubstringWithAtMostKDistinctCharacters.md
         Difficulty: Hard
    */
     public class Solution_2 {

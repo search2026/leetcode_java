@@ -4,7 +4,7 @@ public class WallsAndGates {
     /*
         Walls and Gates - BFS
         Leetcode #286
-        https://github.com/search2026/leetcode_java/blob/master/resources/WallsAndGates.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/WallsAndGates.md
         Difficulty: Medium
      */
     public class Solution {
@@ -33,7 +33,7 @@ public class WallsAndGates {
     /*
         Walls and Gates - DFS
         Leetcode #286
-        https://github.com/search2026/leetcode_java/blob/master/resources/WallsAndGates.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/WallsAndGates.md
         Difficulty: Medium
      */
     public class Solution_2 {

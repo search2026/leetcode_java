@@ -32,7 +32,7 @@ public class ReverseWordsInAString {
     /*
         Reverse Words in a String II
         Leetcode #186
-        https://github.com/search2026/leetcode_java/blob/master/resources/ReverseWordsInAStringII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems101_200/resources/ReverseWordsInAStringII.md
         Difficulty: Medium
      */
     public class Solution_2 {

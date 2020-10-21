@@ -7,7 +7,7 @@ public class NumberOfConnectedComponentsInAnUndirectedGraph {
     /*
         Number of Connected Components in an Undirected Graph - BFS/DFS
         Leetcode #323
-        https://github.com/search2026/leetcode_java/blob/master/resources/NumberOfConnectedComponentsInAnUndirectedGraph.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/NumberOfConnectedComponentsInAnUndirectedGraph.md
         Difficulty: Medium
      */
     public class Solution {
@@ -61,7 +61,7 @@ public class NumberOfConnectedComponentsInAnUndirectedGraph {
     /*
         Number of Connected Components in an Undirected Graph - Union Find
         Leetcode #323
-        https://github.com/search2026/leetcode_java/blob/master/resources/NumberOfConnectedComponentsInAnUndirectedGraph.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/NumberOfConnectedComponentsInAnUndirectedGraph.md
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -92,7 +92,7 @@ public class NumberOfConnectedComponentsInAnUndirectedGraph {
     /*
         Number of Connected Components in an Undirected Graph
         Leetcode #323
-        https://github.com/search2026/leetcode_java/blob/master/resources/NumberOfConnectedComponentsInAnUndirectedGraph.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/NumberOfConnectedComponentsInAnUndirectedGraph.md
         Difficulty: Medium
      */
     public class Solution_3 {

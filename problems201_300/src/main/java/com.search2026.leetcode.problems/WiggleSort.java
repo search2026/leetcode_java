@@ -5,7 +5,7 @@ public class WiggleSort {
     /*
         Wiggle Sort
         Leetcode #280
-        https://github.com/search2026/leetcode_java/blob/master/resources/WiggleSort.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/WiggleSort.md
         Difficulty: Medium
      */
     public class Solution {

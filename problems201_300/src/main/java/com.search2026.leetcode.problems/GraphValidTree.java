@@ -7,7 +7,7 @@ public class GraphValidTree {
     /*
         Graph Valid Tree - DFS
         Leetcode #261
-        https://github.com/search2026/leetcode_java/blob/master/resources/GraphValidTree.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/GraphValidTree.md
         Difficulty: Medium
      */
     public class Solution {
@@ -45,7 +45,7 @@ public class GraphValidTree {
     /*
         Graph Valid Tree - BFS
         Leetcode #261
-        https://github.com/search2026/leetcode_java/blob/master/resources/GraphValidTree.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/GraphValidTree.md
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -81,7 +81,7 @@ public class GraphValidTree {
     /*
         Graph Valid Tree - Union & Find
         Leetcode #261
-        https://github.com/search2026/leetcode_java/blob/master/resources/GraphValidTree.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/GraphValidTree.md
         Difficulty: Medium
     */
     public class Solution_3 {

@@ -7,7 +7,7 @@ public class GroupShiftedStrings {
     /*
         Group Shifted Strings
         Leetcode #249
-        https://github.com/search2026/leetcode_java/blob/master/resources/GroupShiftedStrings.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/GroupShiftedStrings.md
         Difficulty: Easy
      */
     public class Solution {

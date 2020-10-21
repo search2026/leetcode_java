@@ -8,7 +8,7 @@ public class ShortestDistanceFromAllBuildings {
     /*
         Shortest Distance From All Building
         Leetcode #317
-        https://github.com/search2026/leetcode_java/blob/master/resources/ShortestDistanceFromAllBuildings.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/ShortestDistanceFromAllBuildings.md
         Difficulty: Hard
      */
     public class Solution {
@@ -68,7 +68,7 @@ public class ShortestDistanceFromAllBuildings {
     /*
         Shortest Distance From All Building
         Leetcode #317
-        https://github.com/search2026/leetcode_java/blob/master/resources/ShortestDistanceFromAllBuildings.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/ShortestDistanceFromAllBuildings.md
         Difficulty: Hard
      */
     public class Solution_2 {

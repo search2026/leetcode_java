@@ -13,7 +13,7 @@ Rules for a valid pattern:
 
  
 
-![](../resources/AndroidUnlockPatterns_001.png?raw=true") 
+![](AndroidUnlockPatterns_001.png?raw=true") 
 
 Explanation:
 ```

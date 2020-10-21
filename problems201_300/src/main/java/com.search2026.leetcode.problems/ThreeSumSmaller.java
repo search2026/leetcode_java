@@ -7,7 +7,7 @@ public class ThreeSumSmaller {
     /*
         3 Sum Smaller
         Leetcode #259
-        https://github.com/search2026/leetcode_java/blob/master/resources/ThreeSumSmaller.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/ThreeSumSmaller.md
         Difficulty: Medium
      */
     public class Solution {

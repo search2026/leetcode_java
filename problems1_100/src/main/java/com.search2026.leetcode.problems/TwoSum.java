@@ -34,7 +34,6 @@ public class TwoSum {
         Two Sum II - Two Pointers
         Leetcode #167
         https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-        http://www.cnblogs.com/grandyang/p/5185815.html
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -57,7 +56,7 @@ public class TwoSum {
     /*
         Two Sum III Data Structure
         Leetcode #170
-        https://github.com/search2026/leetcode_java/blob/master/resources/TwoSumIII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems101_200/resources/TwoSumIII.md
         Difficulty: Medium
      */
     public class TwoSumDS {

@@ -5,7 +5,7 @@ public class AndroidUnlockPatterns {
     /*
         Android Unlock Patterns
         Leetcode #351
-        https://github.com/search2026/leetcode_java/blob/master/resources/AndroidUnlockPatterns.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/AndroidUnlockPatterns.md
         Difficulty: Medium
      */
     public class Solution {
@@ -50,7 +50,7 @@ public class AndroidUnlockPatterns {
     /*
         Android Unlock Patterns
         Leetcode #351
-        https://github.com/search2026/leetcode_java/blob/master/resources/AndroidUnlockPatterns.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/AndroidUnlockPatterns.md
         Difficulty: Medium
      */
     public class Solution_2 {

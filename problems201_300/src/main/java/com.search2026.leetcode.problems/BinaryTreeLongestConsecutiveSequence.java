@@ -7,7 +7,7 @@ public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence
         Leetcode #298
-        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeLongestConsecutiveSequence.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/BinaryTreeLongestConsecutiveSequence.md
         Difficulty: Medium
      */
     public class Solution {
@@ -29,7 +29,7 @@ public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence
         Leetcode #298
-        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeLongestConsecutiveSequence.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/BinaryTreeLongestConsecutiveSequence.md
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -54,7 +54,7 @@ public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence II
         Leetcode #549
-        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeLongestConsecutiveSequenceII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems501_600/resources/BinaryTreeLongestConsecutiveSequenceII.md
         Difficulty: Hard
      */
     public class Solution_3 {
@@ -81,7 +81,7 @@ public class BinaryTreeLongestConsecutiveSequence {
     /*
         Binary Tree Longest Consecutive Sequence II
         Leetcode #549
-        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeLongestConsecutiveSequenceII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems501_600/resources/BinaryTreeLongestConsecutiveSequenceII.md
         Difficulty: Hard
      */
     public class Solution_4 {

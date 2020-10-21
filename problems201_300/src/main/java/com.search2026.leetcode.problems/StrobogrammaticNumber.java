@@ -7,7 +7,7 @@ public class StrobogrammaticNumber {
     /*
         Strobogrammtic Number
         Leetcode #246
-        https://github.com/search2026/leetcode_java/blob/master/resources/StrobogrammaticNumber.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/StrobogrammaticNumber.md
         Difficulty: Easy
      */
     public class Solution {
@@ -49,7 +49,7 @@ public class StrobogrammaticNumber {
     /*
         Strobogrammtic Number II
         Leetcode #247
-        https://github.com/search2026/leetcode_java/blob/master/resources/StrobogrammaticNumberII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/StrobogrammaticNumberII.md
         Difficulty: Medium
      */
     public class Solution_2 {
@@ -140,7 +140,7 @@ public class StrobogrammaticNumber {
     /*
         Strobogrammtic Number III
         Leetcode #248
-        https://github.com/search2026/leetcode_java/blob/master/resources/StrobogrammaticNumberIII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/StrobogrammaticNumberIII.md
         Difficulty: Hard
      */
     public class Solution_3 {

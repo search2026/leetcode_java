@@ -3,11 +3,11 @@
 A collection Java/SQL/Bash solutions to [leetcode problems](https://leetcode.com/problemset/all/). Still under development.
 
 ## Requirements
-* Java >= 11.0.8
+* Java >= 11.0.9
 * Gradle == 6.6.1
 
 ## Intellij Settings
-* Recommended version: Intellij IDEA Community 2020.2.1+
+* Recommended version: Intellij IDEA Community 2020.2+
 * project structure level: SDK default 11
 * Gradle settings ==> runs tests uses ==> "IntelliJ IDEA"
 
@@ -24,7 +24,7 @@ gradle -Dtest.single=TestTwoSum test
 gradle -Dtest.single=TestTwoSum test --info
 ```
 
-## Problems
+## Problems List
 
 | Problems | Note |
 |---|---|
@@ -36,18 +36,36 @@ gradle -Dtest.single=TestTwoSum test --info
 
 ## Abbreviations
 
-Abbreviations are used to name identifier
+Abbreviations are used to name identifiers.
 
 | Abbreviations | Meaning |
 |---|---|
-| | |
-| | |
-| | |
-| | |
+| sol | instance of a Solution class |
+| res | return result from a method |
+| temp | temporary variable |
+| cand | candidate |
+| i, j, k | variables in loops |
+| m, n | variable for to loop column/row in a 2-D table |
+| col | column in a 2-D table |
+| row | row in a 2-D table |
+| idx | index/position in a iterable object |
+| curr | current/intermediate value |
+| iter | instance of a iterator |
+| prev | previous state |
+| next | next state |
+| start | start of time interval |
+| end | end of time interval |
+| left | left direction |
+| right | right direction |
+| up | upper direction |
+| down | down direction |
+| mid | middle |
+| head, tail | head or tail for a list |
+| root | root node for a tree |
 
 ## Update Logs
 
-10/20/2020
+10/21/2020
 * Minimum Java version is 11
 * Minimum Gradle version is 6
 * Fully support Junit 5

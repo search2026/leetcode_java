@@ -10,7 +10,7 @@ public class DesignSnakeGame {
     /*
         Design Snake Game
         Leetcode #353
-        https://github.com/search2026/leetcode_java/blob/master/resources/DesignSnakeGame.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/DesignSnakeGame.md
         Difficulty: Medium
      */
     public class SnakeGame {

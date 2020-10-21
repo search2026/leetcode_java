@@ -7,7 +7,7 @@ public class RearrangeStringKDistanceApart {
     /*
         Rearrange String k Distance Apart
         Leetcode #358
-        https://github.com/search2026/leetcode_java/blob/master/resources/RearrangeStringKDistanceApart.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/RearrangeStringKDistanceApart.md
         Difficulty: Hard
      */
     public class Solution {
@@ -50,7 +50,7 @@ public class RearrangeStringKDistanceApart {
     /*
         Rearrange String k Distance Apart
         Leetcode #358
-        https://github.com/search2026/leetcode_java/blob/master/resources/RearrangeStringKDistanceApart.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/RearrangeStringKDistanceApart.md
         Difficulty: Hard
      */
     public class Solution_2 {

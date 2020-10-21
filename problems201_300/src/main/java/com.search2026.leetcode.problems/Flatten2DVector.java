@@ -9,7 +9,7 @@ public class Flatten2DVector {
     /*
         Flatten 2D Vector
         Leetcode #251
-        https://github.com/search2026/leetcode_java/blob/master/resources/Flatten2DVector.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/Flatten2DVector.md
         Difficulty: Medium
      */
     public class Solution implements Iterator<Integer> {
@@ -48,7 +48,7 @@ public class Flatten2DVector {
     /*
         Flatten 2D Vector
         Leetcode #251
-        https://github.com/search2026/leetcode_java/blob/master/resources/Flatten2DVector.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/Flatten2DVector.md
         Difficulty: Medium
      */
     public class Solution_2 implements Iterator<Integer> {
@@ -76,7 +76,7 @@ public class Flatten2DVector {
     /*
         Flatten 2D Vector
         Leetcode #251
-        https://github.com/search2026/leetcode_java/blob/master/resources/Flatten2DVector.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/Flatten2DVector.md
         Difficulty: Medium
      */
     public class Solution_3 implements Iterator<Integer> {
@@ -138,7 +138,7 @@ public class Flatten2DVector {
     /*
         Flatten 2D Vector
         Leetcode #251
-        https://github.com/search2026/leetcode_java/blob/master/resources/Flatten2DVector.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/Flatten2DVector.md
         Difficulty: Medium
      */
     public class Solution_4 implements Iterator<Integer> {

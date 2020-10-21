@@ -11,7 +11,7 @@ public class MeetingRooms {
     /*
         Meeting Rooms
         Leetcode #252
-        https://github.com/search2026/leetcode_java/blob/master/resources/MeetingRooms.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/MeetingRooms.md
         Difficulty: Easy
      */
     public class Solution {
@@ -35,7 +35,7 @@ public class MeetingRooms {
     /*
         Meeting Rooms
         Leetcode #252
-        https://github.com/search2026/leetcode_java/blob/master/resources/MeetingRooms.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/MeetingRooms.md
         Difficulty: Easy
      */
     public class Solution_2 {
@@ -71,7 +71,7 @@ public class MeetingRooms {
     /*
         Meeting Rooms II - Two Arrays
         Leetcode #253
-        https://github.com/search2026/leetcode_java/blob/master/resources/MeetingRoomsII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/MeetingRoomsII.md
         Difficulty: Medium
     */
     public class Solution_3 {
@@ -106,7 +106,7 @@ public class MeetingRooms {
     /*
         Meeting Rooms II - Priority Queue
         Leetcode #253
-        https://github.com/search2026/leetcode_java/blob/master/resources/MeetingRoomsII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/MeetingRoomsII.md
         Difficulty: Medium
     */
     public class Solution_4 {

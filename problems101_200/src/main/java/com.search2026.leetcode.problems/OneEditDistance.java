@@ -5,7 +5,7 @@ public class OneEditDistance {
     /*
         One Edit Distance
         leetcode #161
-        https://github.com/search2026/leetcode_java/blob/master/resources/OneEditDistance.md
+        https://github.com/search2026/leetcode_java/blob/master/problems101_200/resources/OneEditDistance.md
         Difficulty: Medium
      */
     public class Solution {

@@ -7,7 +7,7 @@ public class InorderSuccessorInBST {
     /*
         Inorder Successor in BST
         Leetcode #285
-        https://github.com/search2026/leetcode_java/blob/master/resources/InorderSuccessorInBST.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/InorderSuccessorInBST.md
         Difficulty: Medium
      */
     public class Solution {

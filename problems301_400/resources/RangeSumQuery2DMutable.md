@@ -5,7 +5,7 @@
 
 Given a 2D matrix matrix , find the sum of the elements inside the rectangle defined by its upper left corner (*row*1, *col*1) and lower right corner (*row*2, *col*2).
 
-![](../resources/RangeSumQuery2DMutable_001.png?raw=true")
+![](RangeSumQuery2DMutable_001.png?raw=true")
 
 The above rectangle (with the red border) is defined by (*row*1, *col*1) = **(2, 1)** and (*row*2, *col*2) = **(4, 3)**, which contains sum = **8**.
 

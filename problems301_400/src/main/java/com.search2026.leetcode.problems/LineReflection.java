@@ -8,7 +8,7 @@ public class LineReflection {
     /*
         Line Reflection
         Leetcode #356
-        https://github.com/search2026/leetcode_java/blob/master/resources/LineReflection.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/LineReflection.md
         Difficulty: Medium
      */
     public class Solution {

@@ -5,7 +5,7 @@ public class FindTheCelebrity {
     /*
         Find the Celebrity
         Leetcode #277
-        https://github.com/search2026/leetcode_java/blob/master/resources/FindTheCelebrity.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/FindTheCelebrity.md
         Difficulty: Medium
      */
     public class Solution {

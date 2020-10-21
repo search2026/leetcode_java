@@ -67,7 +67,7 @@ public class RangeSumQueryMutable {
     /*
         Range Sum Query 2D - Mutable
         Leetcode #308
-        https://github.com/search2026/leetcode_java/blob/master/resources/RangeSumQuery2DMutable.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/RangeSumQuery2DMutable.md
         Difficulty: Hard
     */
     public class NumMatrix {

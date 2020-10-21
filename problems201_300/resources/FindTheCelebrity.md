@@ -12,7 +12,7 @@ You are given a helper function `bool knows(a, b)` which tells you whether A kno
  
 **Example 1:**
 
-![](../resources/FindTheCelebrity_001.png?raw=true")
+![](FindTheCelebrity_001.png?raw=true")
 ```
 Input: graph = [
   [1,1,0],
@@ -25,7 +25,7 @@ Explanation: There are three persons labeled with 0, 1 and 2. graph[i][j] = 1 me
 
 **Example 2:**
 
-![](../resources/FindTheCelebrity_002.png?raw=true")
+![](FindTheCelebrity_002.png?raw=true")
 ```
 Input: graph = [
   [1,0,1],

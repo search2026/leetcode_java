@@ -7,7 +7,7 @@ public class DesignPhoneDirectory {
     /*
         Design Phone Directory - Using bitset
         Leetcode #379
-        https://github.com/search2026/leetcode_java/blob/master/resources/DesignPhoneDirectory.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/DesignPhoneDirectory.md
         Difficulty: Medium
      */
     public class PhoneDirectory {
@@ -34,12 +34,12 @@ public class DesignPhoneDirectory {
         }
 
         public boolean check(int number) {
-            return bitset.get(number) == false;
+            return !bitset.get(number);
         }
 
         public void release(int number) {
             //handle release of unallocated ones
-            if (bitset.get(number) == false)
+            if (!bitset.get(number))
                 return;
             bitset.clear(number);
             if (number < smallestFreeIndex) {

@@ -5,8 +5,7 @@ public class SmallestRectangleEnclosingBlackPixels {
     /*
         Smallest Rectangle Enclosing Black Pixels
         Leetcode #302
-        https://leetcode.com/discuss/questions/oj/smallest-rectangle-enclosing-black-pixels?sort=votes
-        http://blog.csdn.net/xudli/article/details/49738267
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/SmallestRectangleEnclosingBlackPixels.md
         Difficulty: Medium
      */
     public class Solution {

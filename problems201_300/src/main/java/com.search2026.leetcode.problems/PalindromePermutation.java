@@ -10,7 +10,7 @@ public class PalindromePermutation {
     /*
         Palindrome Permutation
         Leetcode #266
-        https://github.com/search2026/leetcode_java/blob/master/resources/PalindromePermutation.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/PalindromePermutation.md
         Difficulty: Easy
     */
     public class Solution {
@@ -51,7 +51,7 @@ public class PalindromePermutation {
     /*
         Palindrome Permutation II
         Leetcode #267
-        https://github.com/search2026/leetcode_java/blob/master/resources/PalindromePermutationII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/PalindromePermutationII.md
         Difficulty: Medium
     */
     public class Solution_2 {

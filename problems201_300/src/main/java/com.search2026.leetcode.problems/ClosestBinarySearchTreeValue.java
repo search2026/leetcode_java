@@ -9,7 +9,7 @@ public class ClosestBinarySearchTreeValue {
     /*
         Closest Binary Search Tree Value - Recursion
         Leetcode #270
-        https://github.com/search2026/leetcode_java/blob/master/resources/ClosestBinarySearchTreeValue.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/ClosestBinarySearchTreeValue.md
         Difficulty: Easy
       */
     public class Solution {
@@ -25,7 +25,7 @@ public class ClosestBinarySearchTreeValue {
     /*
         Closest Binary Search Tree Value - Iterative
         Leetcode #270
-        https://github.com/search2026/leetcode_java/blob/master/resources/ClosestBinarySearchTreeValue.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/ClosestBinarySearchTreeValue.md
         Difficulty: Easy
       */
     public class Solution_2 {
@@ -42,7 +42,7 @@ public class ClosestBinarySearchTreeValue {
     /*
         Closest Binary Search Tree Value II
         Leetcode #272
-        https://github.com/search2026/leetcode_java/blob/master/resources/ClosestBinarySearchTreeValueII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/ClosestBinarySearchTreeValueII.md
         Difficulty: Hard
       */
     public class Solution_3 {

@@ -9,7 +9,7 @@ public class CountUnivalueSubtrees {
     /*
         Count Univalue Subtrees
         Leetcode #250
-        https://github.com/search2026/leetcode_java/blob/master/resources/CountUnivalueSubtrees.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/CountUnivalueSubtrees.md
         Difficulty: Medium
      */
     public class Solution {

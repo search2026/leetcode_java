@@ -7,7 +7,7 @@ public class MaximumSizeSubarraySumEqualsK {
     /*
         Maximum Size Subarray Sum Equals k
         Leetcode #325
-        https://github.com/search2026/leetcode_java/blob/master/resources/MaximumSizeSubarraySumEqualsK.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/MaximumSizeSubarraySumEqualsK.md
         Difficulty: Medium
      */
     public class Solution {

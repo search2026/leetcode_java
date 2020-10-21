@@ -5,7 +5,7 @@ public class DesignTicTacToe {
     /*
         Design Tic-Tac-Toe
         Leetcode #348
-        https://github.com/search2026/leetcode_java/blob/master/resources/DesignTicTacToe.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/DesignTicTacToe.md
         Difficulty: Medium
      */
     public class TicTacToe {

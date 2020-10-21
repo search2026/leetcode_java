@@ -12,7 +12,7 @@ public class BinaryTreeVerticalOrderTraversal {
     /*
         Binary Tree Vertical Order Traversal
         Leetcode #314
-        https://github.com/search2026/leetcode_java/blob/master/resources/BinaryTreeVerticalOrderTraversal.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/BinaryTreeVerticalOrderTraversal.md
         Difficulty: Medium
      */
     public class Solution {

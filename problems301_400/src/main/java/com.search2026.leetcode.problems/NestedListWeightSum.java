@@ -10,7 +10,7 @@ public class NestedListWeightSum {
     /*
         Nested List Weight Sum - Top Down
         Leetcode #339
-        https://github.com/search2026/leetcode_java/blob/master/resources/NestedListWeightSum.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/NestedListWeightSum.md
         Difficulty: Easy
      */
     public class Solution {
@@ -30,7 +30,7 @@ public class NestedListWeightSum {
     /*
         Nested List Weight Sum - Bottom Up
         Leetcode #339
-        https://github.com/search2026/leetcode_java/blob/master/resources/NestedListWeightSum.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/NestedListWeightSum.md
         Difficulty: Easy
      */
     public class Solution_2 {
@@ -46,7 +46,7 @@ public class NestedListWeightSum {
     /*
         Nested List Weight Sum II - Recursive
         Leetcode #364
-        https://github.com/search2026/leetcode_java/blob/master/resources/NestedListWeightSumII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/NestedListWeightSumII.md
         Difficulty: Medium
    */
     public class Solution_3 {
@@ -70,7 +70,7 @@ public class NestedListWeightSum {
     /*
         Nested List Weight Sum II - Recursive
         Leetcode #364
-        https://github.com/search2026/leetcode_java/blob/master/resources/NestedListWeightSumII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/NestedListWeightSumII.md
         Difficulty: Medium
    */
     public class Solution_4 {
@@ -99,7 +99,7 @@ public class NestedListWeightSum {
     /*
         Nested List Weight Sum II - Iterative
         Leetcode #364
-        https://github.com/search2026/leetcode_java/blob/master/resources/NestedListWeightSumII.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/NestedListWeightSumII.md
         Difficulty: Medium
     */
     public class Solution_5 {
