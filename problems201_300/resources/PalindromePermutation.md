@@ -1,4 +1,4 @@
-### Leetcode 267. Palindrome Permutation
+### Leetcode 266. Palindrome Permutation
 [Leetcode Subscribed Problem](https://leetcode.com/problems/palindrome-permutation/)
 
 ---

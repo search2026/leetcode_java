@@ -1,4 +1,4 @@
-### Leetcode 244. Shortest Word Distance
+### Leetcode 243. Shortest Word Distance
 [Leetcode Subscribed Problem](https://leetcode.com/problems/shortest-word-distance/)
 
 ---

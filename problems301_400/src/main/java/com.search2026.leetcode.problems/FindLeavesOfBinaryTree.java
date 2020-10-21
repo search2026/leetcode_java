@@ -10,7 +10,7 @@ public class FindLeavesOfBinaryTree {
     /*
         Find Leaves of Binary Tree
         Leetcode #366
-        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/FindTheCelebrity.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/FindLeavesOfBinaryTree.md
         Difficulty: Medium
      */
     public class Solution {
@@ -39,7 +39,7 @@ public class FindLeavesOfBinaryTree {
     /*
         Find Leaves of Binary Tree - Modify Tree Nodes
         Leetcode #366
-        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/FindTheCelebrity.md
+        https://github.com/search2026/leetcode_java/blob/master/problems301_400/resources/FindLeavesOfBinaryTree.md
         Difficulty: Medium
    */
     public class Solution_2 {

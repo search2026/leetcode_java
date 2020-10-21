@@ -10,7 +10,7 @@ public class UniqueWordAbbreviation {
     /*
         Unique Word Abbreviation
         Leetcode #288
-        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/resources/UniqueWordAbbreviation.md
+        https://github.com/search2026/leetcode_java/blob/master/problems201_300/resources/UniqueWordAbbreviation.md
         Difficulty: Medium
      */
     public class ValidWordAbbr {

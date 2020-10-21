@@ -7,7 +7,7 @@ public class MaxStack {
     /*
         Max Stack - Two Stacks
         Leetcode #716
-        https://github.com/search2026/leetcode_java/blob/master/problems701_800/resources/InorderSuccessorInBST.md
+        https://github.com/search2026/leetcode_java/blob/master/problems701_800/resources/MaxStack.md
         Difficulty: Easy
      */
     public class Solution {
@@ -66,7 +66,7 @@ public class MaxStack {
     /*
         Max Stack - PriorityQueue + Stack
         Leetcode #716
-        https://github.com/search2026/leetcode_java/blob/master/problems701_800/resources/InorderSuccessorInBST.md
+        https://github.com/search2026/leetcode_java/blob/master/problems701_800/resources/MaxStack.md
         Difficulty: Hard
      */
     public class Solution_2 {
@@ -118,7 +118,7 @@ public class MaxStack {
     /*
         Max Stack - PriorityQueue + Map + Doubly Linked Node
         Leetcode #716
-        https://github.com/search2026/leetcode_java/blob/master/problems701_800/resources/InorderSuccessorInBST.md
+        https://github.com/search2026/leetcode_java/blob/master/problems701_800/resources/MaxStack.md
         Difficulty: Hard
      */
     public class Solution_3 {

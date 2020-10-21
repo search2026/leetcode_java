@@ -1,4 +1,4 @@
-### Leetcode 2291. Word Pattern II
+### Leetcode 291. Word Pattern II
 [Leetcode Subscribed Problem](https://leetcode.com/problems/word-pattern-ii/)
 
 ---
