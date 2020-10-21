@@ -1,5 +1,7 @@
 package com.search2026.leetcode.problems;
 
+import java.util.*;
+
 public class MaxStack {
 
     /*
@@ -74,8 +76,8 @@ public class MaxStack {
         PriorityQueue<Integer> pq;
 
         public Solution_2() {
-            s = new Stack<Integer>();
-            pq = new PriorityQueue<Integer>(10000, Collections.reverseOrder());
+            s = new Stack<>();
+            pq = new PriorityQueue<>(10000, Collections.reverseOrder());
         }
 
         public void push(int x) {
@@ -138,22 +140,22 @@ public class MaxStack {
         int FAKE = 10000007;
 
         PriorityQueue<Integer> q;
-        Map<Integer, List<DLNode>> m;
+        Map<Integer, List<DLNode>> map;
         DLNode tail;
 
         /**
          * initialize your data structure here.
          */
         public Solution_3() {
-            q = new PriorityQueue();
-            m = new HashMap();
+            q = new PriorityQueue<>();
+            map = new HashMap<>();
             tail = new DLNode(FAKE);
         }
 
         public void push(int x) {
             DLNode node = new DLNode(x);
-            if (!m.containsKey(x)) m.put(x, new ArrayList());
-            List<DLNode> l = m.get(x);
+            if (!map.containsKey(x)) map.put(x, new ArrayList<>());
+            List<DLNode> l = map.get(x);
             if (l.size() == 0) q.add(-x);
             l.add(node);
             tail.next = node;
@@ -164,7 +166,7 @@ public class MaxStack {
         public int pop() {
             DLNode node = tail;
             int x = node.val;
-            List<DLNode> l = m.get(x);
+            List<DLNode> l = map.get(x);
             l.remove(l.size() - 1);
             if (l.size() == 0) q.remove(-x);
             tail = node.prev;
@@ -182,7 +184,7 @@ public class MaxStack {
 
         public int popMax() {
             int x = -1 * q.peek();
-            List<DLNode> l = m.get(x);
+            List<DLNode> l = map.get(x);
             DLNode node = l.get(l.size() - 1);
             if (node == tail) return pop();
             l.remove(l.size() - 1);

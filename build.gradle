@@ -7,7 +7,7 @@ version = '1.0'
 description = 'leetcode problem solution in Java'
 
 wrapper {
-    gradleVersion = '5.6.3'
+    gradleVersion = '6.6.1'
 }
 
 allprojects {

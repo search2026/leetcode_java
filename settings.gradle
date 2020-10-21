@@ -6,7 +6,12 @@ include(
         'problems101_200',
         'problems201_300',
         'problems301_400',
-        'problems401_500'
+        'problems401_500',
+        'problems501_600',
+        'problems601_700',
+        'problems701_800',
+        'problems801_900',
+        'problems901_1000'
 )
 
 project(':common').name = 'leetcode-common'
@@ -15,4 +20,9 @@ project(':problems101_200').name = 'leetcode-problems101-200'
 project(':problems201_300').name = 'leetcode-problems201-300'
 project(':problems301_400').name = 'leetcode-problems301-400'
 project(':problems401_500').name = 'leetcode-problems401-500'
+project(':problems501_600').name = 'leetcode-problems501-600'
+project(':problems601_700').name = 'leetcode-problems601-700'
+project(':problems701_800').name = 'leetcode-problems701-800'
+project(':problems801_900').name = 'leetcode-problems801-900'
+project(':problems901_1000').name = 'leetcode-problems901-1000'
 

@@ -2,7 +2,7 @@
 
 | Leetcode Number | Problem | Difficulty | Solution | Applied Data Structure / Algorithms | Note |
 |---|---|---|---|---|---|
-| 401 | | | | | |
+| 401 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java | | |
 | 402 | | | | | |
 | 403 | | | | | |
 | | []() | | []() | | |

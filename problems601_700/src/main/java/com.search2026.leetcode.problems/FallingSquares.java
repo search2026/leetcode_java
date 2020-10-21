@@ -1,5 +1,8 @@
 package com.search2026.leetcode.problems;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class FallingSquares {
 
     /*
@@ -32,8 +35,8 @@ public class FallingSquares {
         }
 
         public List<Integer> fallingSquares(int[][] positions) {
-            List<Interval> intervals = new ArrayList<>();
-            List<Integer> res = new ArrayList<>();
+            List<Interval> intervals = new LinkedList<>();
+            List<Integer> res = new LinkedList<>();
             int h = 0;
             for (int[] pos : positions) {
                 Interval cur = new Interval(pos[0], pos[0] + pos[1] - 1, pos[1]);
@@ -112,7 +115,7 @@ public class FallingSquares {
         }
 
         public List<Integer> fallingSquares(int[][] positions) {
-            List<Integer> res = new ArrayList<>();
+            List<Integer> res = new LinkedList<>();
             int left = 0, right = 1_000_000_000;
             if (positions.length == 0) return res;
             SegNode root = new SegNode(left, right, 0);
