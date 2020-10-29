@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
 # Solution using head, wc, and cut commands
-ncol=`head -n1 file.txt | wc -w`
+ncol=$(head -n1 file.txt | wc -w)
 
-for i in `seq 1 $ncol`
-do
-    echo `cut -d' ' -f$i file.txt`
+for i in $(seq 1 $ncol); do
+  echo $(cut -d' ' -f$i file.txt)
 done
 
 # Solution using head, wc, xargs, cut, and paste commands
