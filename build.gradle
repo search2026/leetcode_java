@@ -2,9 +2,9 @@ apply plugin: 'java'
 apply plugin: 'idea'
 
 group = 'search2026'
-archivesBaseName = 'leetcode-java'
+archivesBaseName = 'leetcode-java-sql-shell'
 version = '1.0'
-description = 'leetcode problem solution in Java'
+description = 'leetcode problem solution in Java/SQL/Shell'
 
 wrapper {
     gradleVersion = '6.6.1'
@@ -29,18 +29,41 @@ allprojects {
         }
     }
 
-    dependencies {
-        implementation "org.apache.commons:commons-lang3:3.11"
-        implementation "org.apache.commons:commons-collections4:4.4"
+    ext {
+        collections4Version = '4.4'
+        junitbomVersion = '5.7.0'
+        lang3Version = '3.11'
+        log4jVersion = '2.13.3'
+    }
 
-        testImplementation(platform('org.junit:junit-bom:5.7.0'))
-        testImplementation('org.junit.jupiter:junit-jupiter')
+    dependencies {
+        implementation "org.apache.commons:commons-collections4:${collections4Version}"
+        implementation "org.apache.commons:commons-lang3:${lang3Version}"
+
+        implementation "org.apache.logging.log4j:log4j-api:${log4jVersion}"
+        implementation "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+
+        // Junit5 tests
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${junitbomVersion}"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitbomVersion}"
+        // Support for Junit4 tests
+        testCompileOnly "junit:junit:4.12"
+        testRuntimeOnly "org.junit.vintage:junit-vintage-engine:${junitbomVersion}"
     }
 
     test {
         useJUnitPlatform()
         testLogging {
-            events "passed", "skipped", "failed"
+            events 'PASSED', 'FAILED', 'SKIPPED'
+        }
+        afterSuite { desc, result ->
+            if (!desc.parent) {
+                println "\nTest result: ${result.resultType}"
+                println "Test summary: ${result.testCount} tests completed, " +
+                        "${result.successfulTestCount} succeeded, " +
+                        "${result.failedTestCount} failed, " +
+                        "${result.skippedTestCount} skipped"
+            }
         }
     }
 }
