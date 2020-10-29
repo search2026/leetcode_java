@@ -11,7 +11,8 @@ include(
         'problems601_700',
         'problems701_800',
         'problems801_900',
-        'problems901_1000'
+        'problems901_1000',
+        'problems1101_1200',
 )
 
 project(':common').name = 'leetcode-common'
@@ -25,4 +26,5 @@ project(':problems601_700').name = 'leetcode-problems601-700'
 project(':problems701_800').name = 'leetcode-problems701-800'
 project(':problems801_900').name = 'leetcode-problems801-900'
 project(':problems901_1000').name = 'leetcode-problems901-1000'
+project(':problems1101_1200').name = 'leetcode-problems1101-1200'
 

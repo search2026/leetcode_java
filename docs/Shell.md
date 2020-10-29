@@ -8,6 +8,12 @@
 - [Sed - An Introduction and Tutorial](https://www.grymoire.com/Unix/Sed.html)
 - [Awk - An Introduction and Tutorial](https://www.grymoire.com/Unix/Awk.html)
 - Both awk and sed are tools that transform text. But awk can do more things besides just manipulating text. It is a programming language by itself with most of the things you learn in programming, like arrays, loops, if/else flow control etc. You can "program" in sed as well, but you won't want to maintain the code written in it.
+- MacOs install GNU grep, GNU sed, and GNU awk
+```
+brew install grep # use ggrep command to invoke GNU grep
+brew install gnu-sed # use gsed command to invoke GNU sed
+brew install gawk # use gawk command to invoke GNU awk
+```
 
 ### Problems
 

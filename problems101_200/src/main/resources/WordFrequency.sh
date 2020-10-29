@@ -12,6 +12,7 @@ cat words.txt | tr -s ' ' '\n' | sort | uniq -c | sort -r | awk '{ print $2, $1 
 # sort -n means "compare according to string numerical value".
 # sort -r means "reverse the result of comparisons".
 # sort -k 2 means "sort by the second word"
+# shellcheck disable=SC1004
 awk '\
 { for (i=1; i<=NF; i++) { ++D[$i]; } }\
 END { for (i in D) { print i, D[i] } }\
