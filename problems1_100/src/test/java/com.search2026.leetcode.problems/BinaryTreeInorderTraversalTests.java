@@ -11,7 +11,7 @@ public class BinaryTreeInorderTraversalTests {
 
     @Test
     public void testSolution() {
-        BinaryTreeInorderTraversal.Solution sol = new BinaryTreeInorderTraversal().new Solution();
+        BinaryTreeInorderTraversal.Solution sol = new BinaryTreeInorderTraversal.Solution();
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
@@ -24,7 +24,7 @@ public class BinaryTreeInorderTraversalTests {
 
     @Test
     public void testSolution2() {
-        BinaryTreeInorderTraversal.Solution_2 sol = new BinaryTreeInorderTraversal().new Solution_2();
+        BinaryTreeInorderTraversal.Solution_2 sol = new BinaryTreeInorderTraversal.Solution_2();
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);

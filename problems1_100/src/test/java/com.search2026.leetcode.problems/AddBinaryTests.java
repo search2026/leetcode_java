@@ -8,7 +8,7 @@ public class AddBinaryTests {
 
     @Test
     public void testSolution() {
-        AddBinary.Solution sol = new AddBinary().new Solution();
+        AddBinary.Solution sol = new AddBinary.Solution();
         assertEquals("0", sol.addBinary("0", "0"));
         assertEquals("100", sol.addBinary("11", "1"));
         assertEquals("10110", sol.addBinary("11", "10011"));

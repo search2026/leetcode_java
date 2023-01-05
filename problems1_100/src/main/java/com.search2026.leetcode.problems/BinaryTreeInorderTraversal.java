@@ -15,7 +15,7 @@ public class BinaryTreeInorderTraversal {
         https://leetcode.com/problems/binary-tree-inorder-traversal/
         Difficulty: Medium
     */
-    public class Solution {
+    public static class Solution {
         public List<Integer> inorderTraversal(TreeNode root) {
             ArrayList<Integer> res = new ArrayList<>();
             if (root == null) return res;
@@ -44,7 +44,7 @@ public class BinaryTreeInorderTraversal {
         https://leetcode.com/problems/binary-tree-inorder-traversal/
         Difficulty: Medium
     */
-    public class Solution_2 {
+    public static class Solution_2 {
         public List<Integer> inorderTraversal(TreeNode root) {
             List<Integer> res = new ArrayList<>();
             TreeNode p = root;

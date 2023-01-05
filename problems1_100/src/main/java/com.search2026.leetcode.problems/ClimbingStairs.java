@@ -8,9 +8,11 @@ public class ClimbingStairs {
         https://leetcode.com/problems/climbing-stairs/
         Difficulty: Easy
      */
-    public class Solution {
+    public static class Solution {
         public int climbStairs(int n) {
-            if (n == 1) return 1;
+            if (n == 1) {
+                return 1;
+            }
             int f1 = 1;
             int f2 = 2;
             for (int i = 3; i <= n; i++) {
@@ -28,7 +30,7 @@ public class ClimbingStairs {
         https://leetcode.com/problems/climbing-stairs/
         Difficulty: Easy
      */
-    public class Solution_2 {
+    public static class Solution_2 {
         public int climbStairs(int n) {
             double root5 = Math.sqrt(5);
             return (int) ((Math.pow((1 + root5) / 2, n + 1) - Math.pow((1 - root5) / 2, n + 1)) / root5 + 0.5);
@@ -41,7 +43,7 @@ public class ClimbingStairs {
         https://leetcode.com/problems/climbing-stairs/
         Difficulty: Easy
      */
-    public class Solution_3 {
+    public static class Solution_3 {
         public int climbStairs(int n) {
             double root5 = Math.sqrt(5);
             double phi = (1 + root5) / 2;

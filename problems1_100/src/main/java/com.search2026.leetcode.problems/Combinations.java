@@ -1,7 +1,6 @@
 package com.search2026.leetcode.problems;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,7 +12,7 @@ public class Combinations {
         https://leetcode.com/problems/combinations/
         Difficulty: Medium
      */
-    public class Solution {
+    public static class Solution {
         private void search(List<List<Integer>> comb, List<Integer> curr, int start, int end, int k) {
             if (k == 0) {
                 comb.add(new ArrayList<>(curr));
@@ -29,7 +28,9 @@ public class Combinations {
 
         public List<List<Integer>> combine(int n, int k) {
             List<List<Integer>> combList = new ArrayList<>();
-            if (n < 1 || k < 1 || n < k) return combList;
+            if (k < 1 || n < k) {
+                return combList;
+            }
 
             search(combList, new ArrayList<>(), 1, n, k);
 
@@ -43,15 +44,17 @@ public class Combinations {
         https://leetcode.com/problems/combinations/
         Difficulty: Medium
      */
-    public class Solution_2 {
+    public static class Solution_2 {
         public List<List<Integer>> combine(int n, int k) {
-            List<List<Integer>> combList = new ArrayList<>();
-            if (n < 1 || k < 1 || n < k) return combList;
-            for (int i = 1; i <= n; i++) combList.add(Arrays.asList(i));
+            List<List<Integer>> comboList = new ArrayList<>();
+            if (k < 1 || n < k) {
+                return comboList;
+            }
+            for (int i = 1; i <= n; i++) comboList.add(List.of(i));
             for (int i = 2; i <= k; i++) {
                 List<List<Integer>> newCombs = new ArrayList<>();
                 for (int j = i; j <= n; j++) {
-                    for (List<Integer> comb : combList) {
+                    for (List<Integer> comb : comboList) {
                         if (comb.get(comb.size() - 1) < j) {
                             List<Integer> newComb = new ArrayList<>(comb);
                             newComb.add(j);
@@ -59,9 +62,9 @@ public class Combinations {
                         }
                     }
                 }
-                combList = newCombs;
+                comboList = newCombs;
             }
-            return combList;
+            return comboList;
         }
     }
 
@@ -71,14 +74,16 @@ public class Combinations {
         https://leetcode.com/problems/combinations/
         Difficulty: Medium
      */
-    public class Solution_3 {
+    public static class Solution_3 {
         public List<List<Integer>> combine(int n, int k) {
-            List<List<Integer>> combList = new ArrayList<>();
-            if (n < 1 || k < 1 || n < k) return combList;
+            List<List<Integer>> comboList = new ArrayList<>();
+            if (k < 1 || n < k) {
+                return comboList;
+            }
             List<Integer> curr = new ArrayList<>();
             int i = 1;
             while (i <= n || curr.size() != 0) {
-                if (curr.size() == k) combList.add(new ArrayList<>(curr));
+                if (curr.size() == k) comboList.add(new ArrayList<>(curr));
 
                 if (i > n || curr.size() == k) {
                     i = curr.get(curr.size() - 1) + 1;
@@ -88,7 +93,7 @@ public class Combinations {
                     i++;
                 }
             }
-            return combList;
+            return comboList;
         }
     }
 
@@ -98,18 +103,18 @@ public class Combinations {
         https://leetcode.com/problems/combinations/
         Difficulty: Medium
      */
-    public class Solution_4 {
+    public static class Solution_4 {
         public List<List<Integer>> combine(int n, int k) {
             if (k == n || k == 0) {
                 List<Integer> row = new LinkedList<>();
                 for (int i = 1; i <= k; ++i) row.add(i);
-                return new LinkedList<>(Arrays.asList(row));
+                return new LinkedList<>(List.of(row));
             }
 
-            List<List<Integer>> combList = this.combine(n - 1, k - 1);
-            combList.forEach(e -> e.add(n));
-            combList.addAll(this.combine(n - 1, k));
-            return combList;
+            List<List<Integer>> comboList = this.combine(n - 1, k - 1);
+            comboList.forEach(e -> e.add(n));
+            comboList.addAll(this.combine(n - 1, k));
+            return comboList;
         }
     }
 

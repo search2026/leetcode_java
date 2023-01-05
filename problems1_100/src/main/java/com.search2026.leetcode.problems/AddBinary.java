@@ -8,7 +8,7 @@ public class AddBinary {
         https://leetcode.com/problems/add-binary/
         Difficulty: Easy
      */
-    public class Solution {
+    public static class Solution {
         public String addBinary(String a, String b) {
             if (a == null || a.length() == 0) return b;
             if (b == null || b.length() == 0) return a;

@@ -8,7 +8,7 @@ public class ClimbingStairsTests {
 
     @Test
     public void testSolution() {
-        ClimbingStairs.Solution sol = new ClimbingStairs().new Solution();
+        ClimbingStairs.Solution sol = new ClimbingStairs.Solution();
         assertEquals(1, sol.climbStairs(1));
         assertEquals(2, sol.climbStairs(2));
         assertEquals(3, sol.climbStairs(3));
@@ -20,7 +20,7 @@ public class ClimbingStairsTests {
 
     @Test
     public void testSolution2() {
-        ClimbingStairs.Solution_2 sol = new ClimbingStairs().new Solution_2();
+        ClimbingStairs.Solution_2 sol = new ClimbingStairs.Solution_2();
         assertEquals(1, sol.climbStairs(1));
         assertEquals(2, sol.climbStairs(2));
         assertEquals(3, sol.climbStairs(3));
@@ -32,7 +32,7 @@ public class ClimbingStairsTests {
 
     @Test
     public void testSolution3() {
-        ClimbingStairs.Solution_3 sol = new ClimbingStairs().new Solution_3();
+        ClimbingStairs.Solution_3 sol = new ClimbingStairs.Solution_3();
         assertEquals(1, sol.climbStairs(1));
         assertEquals(2, sol.climbStairs(2));
         assertEquals(3, sol.climbStairs(3));
