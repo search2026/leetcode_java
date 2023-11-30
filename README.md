@@ -3,11 +3,11 @@
 A collection Java/SQL/Bash solutions to [leetcode problems](https://leetcode.com/problemset/all/). Still under development.
 
 ## Requirements
-* Java >= 11.0.9
-* Gradle == 6.6.1
+* Java >= 17.0.9
+* Gradle == 7.6.3
 
 ## Intellij Settings
-* Recommended version: Intellij IDEA Community 2020.2+
+* Recommended version: Intellij IDEA Community 2023.2+
 * project structure level: SDK default 11
 * Gradle settings ==> runs tests uses ==> "IntelliJ IDEA"
 
@@ -64,6 +64,11 @@ Abbreviations are used to name identifiers.
 | root | root node for a tree |
 
 ## Update Logs
+
+11/20/2023
+* Minimum Java version is 17
+* Minimum Gradle version is 7
+* Fully support Junit 5
 
 10/21/2020
 * Minimum Java version is 11

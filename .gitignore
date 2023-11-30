@@ -32,4 +32,10 @@ hs_err_pid*
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# windows file 
 gradlew
+gradlew.bat
+
+
+
