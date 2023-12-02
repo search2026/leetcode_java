@@ -13,22 +13,22 @@
 - [Solution in SQL](../problems501_600/src/main/resources/FindCustomerReferee.sql)
 
 [595. Big Countries](https://leetcode.com/problems/big-countries/)
-- [Solution in SQL](../problems1101_1200/src/main/java/com.search2026.leetcode.problems/PrintInOrder.java)
+- [Solution in SQL](../problems501_600/src/main/resources/BigCountries.sql)
 
 [1148. Article Views I](https://leetcode.com/problems/article-views-i/)
-- [Solution in SQL](../problems1101_1200/src/main/java/com.search2026.leetcode.problems/PrintInOrder.java)
+- [Solution in SQL](../problems1101_1200/src/main/resources/ArticleViewI.sql)
 
 [1683. Invalid Tweets](https://leetcode.com/problems/study-plan-v2/)
-- [Solution in SQL](../problems1101_1200/src/main/java/com.search2026.leetcode.problems/PrintInOrder.java)
+- [Solution in SQL](../problems1601_1700/src/main/resources/InvalidTweets.sql)
 
 
 #### Basic Joins
 
 [1378. Replace Employee ID With The Unique Identifier](https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/)
-- [Solution in SQL](../problems1101_1200/src/main/java/com.search2026.leetcode.problems/PrintInOrder.java)
+- [Solution in SQL](../problems1301_1400/src/main/resources/ReplaceEmployeeIDWithTheUniqueIdentifier.sql)
 
 [1068. Product Sales Analysis I](https://leetcode.com/problems/product-sales-analysis-i/)
-- [Solution in SQL](../problems1101_1200/src/main/java/com.search2026.leetcode.problems/PrintInOrder.java)
+- [Solution in SQL](../problems1001_1100/src/main/resources/ProductSalesAnalysisI.sql)
 
 [1581. Customer Who Visited but Did Not Make Any Transactions](https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/)
 - [Solution in SQL](../problems1101_1200/src/main/java/com.search2026.leetcode.problems/PrintInOrder.java)
