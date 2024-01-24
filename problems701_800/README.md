@@ -1,23 +1,24 @@
 ## Leetcode Problems 701-800
 
-| Leetcode Number | Problem | Difficulty | Solution | Applied Data Structure / Algorithms | Note |
-|---|---|---|---|---|---|
-| 701 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 702 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 703 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 704 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 705 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 706 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 707 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 708 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 709 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 710 | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| 716 | ![](../media/Dollar-Sign-10x10.png?raw=true")[Max Stack](../resources/MaxStack.md) | Easy | [MaxStack.java](src/main/java/com.search2026.leetcode.problems/MaxStack.java) | | | | |
-| | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
-| | []() | | [.java](src/main/java/com.search2026.leetcode.problems/.java) | | | | |
+| Leetcode Number | Problem                                                                                              | Difficulty | Solution                                                                                                | Applied Data Structure / Algorithms | Note |
+|-----------------|------------------------------------------------------------------------------------------------------|------------|---------------------------------------------------------------------------------------------------------|-------------------------------------|------|
+| 701             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 702             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 703             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 704             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 705             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 706             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 707             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 708             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 709             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 710             | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+|                 | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 716             | ![](../media/Dollar-Sign-10x10.png?raw=true")[Max Stack](resources/MaxStack.md)                      | Easy       | [MaxStack.java](src/main/java/com.search2026.leetcode.problems/MaxStack.java)                           |                                     |      | | |
+|                 | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+|                 | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+|                 | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 770             | [Basic Calculator IV](https://leetcode.com/problems/basic-calculator-iv/)                            | Hard       | [MaxStack.java](../problems201_300/src/main/java/com.search2026.leetcode.problems/BasicCalculator.java) |                                     |      | | |
+|                 | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+| 772             | ![](../media/Dollar-Sign-10x10.png?raw=true")[Basic Calculator III](resources/BasicCalculatorIII.md) | Hard       | [MaxStack.java](../problems201_300/src/main/java/com.search2026.leetcode.problems/BasicCalculator.java) |                                     |      | | |
+|                 | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |
+|                 | []()                                                                                                 |            | [.java](src/main/java/com.search2026.leetcode.problems/.java)                                           |                                     |      | | |

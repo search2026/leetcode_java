@@ -31,9 +31,9 @@ allprojects {
 
     ext {
         collections4Version = '4.4'
-        junitbomVersion = '5.7.0'
-        lang3Version = '3.11'
-        log4jVersion = '2.13.3'
+        junitbomVersion = '5.10.1'
+        lang3Version = '3.14.0'
+        log4jVersion = '2.22.1'
     }
 
     dependencies {
@@ -47,7 +47,7 @@ allprojects {
         testImplementation "org.junit.jupiter:junit-jupiter-api:${junitbomVersion}"
         testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitbomVersion}"
         // Support for Junit4 tests
-        testCompileOnly "junit:junit:4.12"
+        testCompileOnly "junit:junit:4.13.2"
         testRuntimeOnly "org.junit.vintage:junit-vintage-engine:${junitbomVersion}"
     }
 
