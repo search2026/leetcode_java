@@ -18,37 +18,17 @@ public class SummaryRanges {
                 return res;
             }
 
-            if (nums.length == 1) {
-                String temp = Integer.toString(nums[0]);
-                res.add(temp);
-                return res;
-            }
+            for (int i = 0; i < nums.length; i++) {
+                int start = nums[i];
+                while (i + 1 < nums.length && nums[i] + 1 == nums[i + 1]) {
+                    i++;
+                }
 
-            int lo = 0;
-            for (int i = 1; i < nums.length; i++) {
-                if (nums[i] - nums[i - 1] == 1) {
-                    continue;
+                if (start != nums[i]) {
+                    res.add(start + "->" + nums[i]);
                 } else {
-                    StringBuffer sb = new StringBuffer();
-                    sb.append(Integer.toString(nums[lo]));
-                    if (i - lo > 1) {
-                        sb.append("->");
-                        sb.append(Integer.toString(nums[i - 1]));
-                    }
-                    res.add(sb.toString());
-                    lo = i;
+                    res.add("" + start);
                 }
-            }
-
-            // Handle the trailing numbers
-            if (lo < nums.length) {
-                StringBuffer sb = new StringBuffer();
-                sb.append(nums[lo]);
-                if (nums.length - lo > 1) {
-                    sb.append("->");
-                    sb.append(Integer.toString(nums[nums.length - 1]));
-                }
-                res.add(sb.toString());
             }
 
             return res;

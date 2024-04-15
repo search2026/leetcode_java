@@ -22,7 +22,6 @@ public class GameOfLifeTests {
         assertArrayEquals(new int[]{0, 1, 1}, board[2]);
         assertArrayEquals(new int[]{0, 1, 0}, board[3]);
     }
-
     @Test
     public void testSolution2() {
         GameOfLife.Solution_2 sol = new GameOfLife().new Solution_2();

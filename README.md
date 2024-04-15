@@ -3,8 +3,8 @@
 A collection Java/SQL/Bash solutions to [leetcode problems](https://leetcode.com/problemset/all/). Still under development.
 
 ## Requirements
-* Java >= 17.0.9
-* Gradle == 7.6.3
+* Java >= 21.0.2
+* Gradle == 8.7
 
 ## Intellij Settings
 * Recommended version: Intellij IDEA Community 2023.2+
