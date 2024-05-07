@@ -1,43 +1,50 @@
 ### Leetcode 156. Binary Tree Upside Down
-[Leetcode Subscribed Problem](https://leetcode.com/problems/binary-tree-upside-down/)
+
+[Leetcode Subscribed Problem](https://leetcode.com/problems/binary-tree-upside-down/description/)
 
 ---
 
-Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left node that shares the same parent node) or empty, flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. Return the new root.
 
-**Example:**
+Given the `root` of a binary tree, turn the tree upside down and return the `new root`.
+
+You can turn a binary tree upside down with the following steps:
+
+1. The original left child becomes the new root.
+2. The original root becomes the new right child.
+3. The original right child becomes the new left child.
+
+![](BinaryTreeUpsideDown-001.jpg)
+
+The mentioned steps are done level by level. It is guaranteed that every right node has a sibling (a left node with the
+same parent) and has no children.
+
+**Example 1:**
+
+![](BinaryTreeUpsideDown-002.jpg)
+
 ```
-Input: [1,2,3,4,5]
-
-    1
-   / \
-  2   3
- / \
-4   5
-
-Output: return the root of the binary tree [4,5,2,#,#,3,1]
-
-   4
-  / \
- 5   2
-    / \
-   3   1
-
-Clarification:
+Input: root = [1,2,3,4,5]
+Output: [4,5,2,null,null,3,1]
 ```
-Confused what `[4,5,2,#,#,3,1]` means? Read more below on how binary tree is serialized on OJ.
 
-The serialization of a binary tree follows a level order traversal, where '#' signifies a path terminator where no node exists below.
+**Example 2:**
 
-Here's an example:
 ```
-   1
-  / \
- 2   3
-    /
-   4
-    \
-     5
+Input: root = []
+Output: []
 ```
-The above binary tree is serialized as `[1,2,3,#,#,4,#,#,5]`.
+
+**Example 2:**
+
+```
+Input: root = [1]
+Output: [1]
+```
+
+**Constraints:**
+
+- The number of nodes in the tree will be in the range `[0, 10]`.
+- `1 <= Node.val <= 10`
+- Every right node in the tree has a sibling (a left node that shares the same parent).
+- Every right node in the tree has no children.
 
